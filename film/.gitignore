@@ -1,0 +1,5 @@
+node_modules/
+snapshots/
+.hyperframes/
+renders/*_hq.mp4
+renders/parts/

@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en" data-composition-variables='[{"id":"scratchVO","type":"boolean","label":"Show SCRATCH VO subtitles (review only)","default":false}]'>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1920, height=1080" />
+<title>Ch 6 · The Answer</title>
+<link rel="stylesheet" href="shared/film.css" />
+<script src="shared/vendor/gsap.min.js"></script>
+<script id="timing" type="application/json">
+{
+  "chapter": 6,
+  "title": "The Answer",
+  "seed": 606,
+  "defaults": {
+    "lead": 0.5,
+    "gap": 0.45,
+    "tail": 0.7
+  },
+  "scenes": [
+    {
+      "id": "card",
+      "min": 3.0,
+      "md": "Chapter card 06",
+      "out": "crossfade"
+    },
+    {
+      "id": "water",
+      "vo": [
+        "C6_01"
+      ],
+      "min": 7,
+      "xin": 0.4,
+      "md": "A water drop with the five suspect icons circling it; STILL DEBATED",
+      "out": "drop becomes the sun"
+    },
+    {
+      "id": "life",
+      "vo": [
+        "C6_02"
+      ],
+      "min": 9,
+      "xin": 0.4,
+      "md": "Savanna silhouette (MD art, no person) behind a 1950–2023 life dial; lower third ERASTO B. MPEMBA · 1950–2023",
+      "flow": {
+        "file": "FLOW_12_rangers_evening.mp4",
+        "in": 1.0,
+        "out": 7.0,
+        "refs": [],
+        "tier": "B",
+        "status": "OPTIONAL: MD savanna in use"
+      },
+      "out": "dial → field grid"
+    },
+    {
+      "id": "legacy",
+      "vo": [
+        "C6_03"
+      ],
+      "min": 7,
+      "xin": 0.4,
+      "md": "MPEMBA EFFECT lighting up across fields: colloids · granular gases · magnetic systems · quantum systems",
+      "out": "grid folds to paper"
+    },
+    {
+      "id": "quote",
+      "vo": [
+        "C6_04"
+      ],
+      "min": 5,
+      "xin": 0.3,
+      "md": "The red-pen quote, small and quiet, on the notebook",
+      "out": "push to FLOW_13"
+    },
+    {
+      "id": "return",
+      "vo": [
+        "C6_05"
+      ],
+      "tail": 1.0,
+      "min": 11.8,
+      "xin": 0.3,
+      "md": "FLOW_13 kitchen at dusk, steam turns to frost (a visual metaphor, labelled); then the race replay: the hot dot takes the shortcut",
+      "flow": {
+        "file": "FLOW_13_kitchen_return.mp4",
+        "in": 0.3,
+        "out": 7.95,
+        "refs": [
+          "REF_kitchen",
+          "GEO_F01_room_0.5s",
+          "PROP_F02_cups_4.6s",
+          "STYLE_F01_kitchen_3.0s"
+        ],
+        "tier": "A",
+        "status": "RECEIVED 2026-09-28 (see film/FLOW_REVIEW_BATCH2.md)"
+      },
+      "out": "end card"
+    },
+    {
+      "id": "end",
+      "min": 7,
+      "xin": 0.3,
+      "md": "End card: GUY WONDERS WHY · THE BOY WHO FROZE HOT WATER, frost melts off HOT; honest summary line; sources note",
+      "out": "end"
+    }
+  ],
+  "vo": {
+    "C6_01": {
+      "text": "Whether his ice cream froze first for all the reasons we think, we'll probably never know. The water is still argued over.",
+      "estimate": 9.0,
+      "source": "estimate"
+    },
+    "C6_02": {
+      "text": "Erasto Mpemba didn't become a physicist. He became a wildlife officer and spent four decades in Tanzania's wildlife service. He died in 2023, at seventy-three.",
+      "estimate": 10.8,
+      "source": "estimate"
+    },
+    "C6_03": {
+      "text": "By then, his name was on a whole family of effects, in classical physics and quantum physics alike.",
+      "estimate": 7.1,
+      "source": "estimate"
+    },
+    "C6_04": {
+      "text": "His teacher's answer, as he remembered it, was that he was confused.",
+      "estimate": 4.8,
+      "source": "estimate"
+    },
+    "C6_05": {
+      "text": "Physics took sixty years to give its answer. He was asking the right question.",
+      "estimate": 5.9,
+      "source": "estimate"
+    }
+  }
+}
+</script>
+<style>
+  .fcard{position:absolute;top:360px;width:380px;height:300px;background:#0d141e;border:2px solid #243447;border-radius:12px}
+  .fcard .f{position:absolute;left:0;right:0;top:70px;text-align:center;font-family:var(--display);font-weight:800;font-size:46px;letter-spacing:.04em;color:var(--paper)}
+  .fcard .m{position:absolute;left:0;right:0;top:170px;text-align:center;font-family:var(--serif);font-style:italic;font-size:40px;color:var(--frost)}
+  .q{font-family:var(--hand);font-weight:700;font-size:92px;line-height:1.05;color:var(--pen);white-space:nowrap}
+  #endT1{font-family:var(--display);font-weight:800;font-size:110px;letter-spacing:.14em;padding-left:.14em;color:var(--paper);line-height:1}
+  #endT2{font-family:var(--display);font-weight:900;font-size:220px;letter-spacing:.01em;line-height:.95;color:var(--paper);white-space:nowrap}
+  #hotW{position:relative;display:inline-block;color:#dff6ff;text-shadow:0 0 36px rgba(143,227,255,.65)}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="ch6" data-start="0" data-duration="56.200" data-width="1920" data-height="1080">
+
+  <div id="sc-card" class="scene clip dark" data-scene="card" data-start="0.000" data-duration="3.000" data-track-index="1">
+    <div class="chcard"><div class="num">CHAPTER 06</div><div class="title">THE ANSWER</div><div class="rule"></div></div>
+  </div>
+
+  <div id="sc-water" class="scene clip dark" data-scene="water" data-start="2.600" data-duration="10.200" data-track-index="2">
+    <div class="cam" id="wcam">
+      <svg class="full" viewBox="0 0 1920 1080">
+        <g transform="translate(960 540)"><path id="drop" d="M0,-230 C90,-90 170,0 170,90 C170,190 90,250 0,250 C-90,250 -170,190 -170,90 C-170,0 -90,-90 0,-230 Z" fill="rgba(143,227,255,.08)" stroke="#8fe3ff" stroke-width="7"/></g>
+      </svg>
+      <div class="abs hand" id="dq" style="left:910px;top:470px;font-size:150px;color:#8fe3ff">?</div>
+      <div id="orbit"></div>
+      <div class="abs tag frost" id="deb" style="left:0;right:0;top:900px;text-align:center;opacity:0">Water: still debated</div>
+    </div>
+  </div>
+
+  <div id="sc-life" class="scene clip" data-scene="life" data-start="12.400" data-duration="12.000" data-track-index="3" style="background:linear-gradient(180deg,#1a0f0a 0%,#5a2a10 45%,#c8642a 78%,#f0a060 100%)">
+    <div class="cam" id="lcam">
+      <svg class="full" viewBox="0 0 1920 1080">
+        <circle id="sun" cx="1320" cy="640" r="120" fill="#ffd9a8" opacity=".85"/>
+        <path d="M0,760 C300,730 600,760 960,740 C1300,722 1600,752 1920,736 L1920,1080 L0,1080 Z" fill="#1a0e08"/>
+        <g fill="#140b06"><path d="M520,760 L540,560 L548,560 L560,760 Z"/><path d="M380,560 C460,520 560,520 700,560 C640,590 460,592 380,560 Z"/><path d="M440,520 C500,490 600,492 660,520 C610,540 490,540 440,520 Z"/></g>
+        <g id="grass" stroke="#140b06" stroke-width="3"></g>
+        <g id="dial" fill="none" stroke="#f4e6d0" stroke-width="3" opacity=".9"><line x1="260" y1="900" x2="1660" y2="900"/></g>
+      </svg>
+      <div class="abs lower" id="lt" style="left:120px;top:110px;opacity:0"><div class="name" style="color:#f7ecdc">Erasto B. Mpemba</div><div class="strip">1950 – 2023</div></div>
+      <div id="marks"></div>
+    </div>
+  </div>
+
+  <div id="sc-legacy" class="scene clip dark" data-scene="legacy" data-start="24.000" data-duration="8.300" data-track-index="4">
+    <div class="cam" id="gcam">
+      <div class="abs mono" id="gh" style="left:0;right:0;top:170px;text-align:center;font-size:26px;font-weight:600;letter-spacing:.3em;color:#a9bccf">Where the name turns up now</div>
+      <div id="fields"></div>
+      <div class="abs note" style="left:0;right:0;top:960px;text-align:center">Classical and quantum systems studied under the Mpemba name · examples</div>
+    </div>
+  </div>
+
+  <div id="sc-quote" class="scene clip paperworld" data-scene="quote" data-start="32.000" data-duration="6.000" data-track-index="5">
+    <div class="cam" id="qcam">
+      <div class="page"><div class="rules"></div><div class="margin"></div></div>
+      <div class="lamp" style="opacity:.85"></div>
+      <div class="abs" id="quote" style="left:380px;top:360px"><div class="q">“…that you were confused.”</div><div class="mono" style="font-size:20px;font-weight:600;color:#3a3f4a;margin-top:26px">— his teacher, as Mpemba recalled it</div></div>
+    </div>
+  </div>
+
+  <div id="sc-return" class="scene clip" data-scene="return" data-start="37.700" data-duration="11.800" data-track-index="6" style="background:#0c0a08">
+    <img id="f13hold" class="fullvid" src="assets/flow/F13_hold_7.9s.jpg" alt="" style="opacity:0;transform:scale(1.065)">
+  </div>
+  <!-- FLOW_13 at root level so its own timing drives frames and visibility -->
+  <div id="f13wrap" class="abs" style="inset:0;overflow:hidden;pointer-events:none">
+    <video id="f13" class="fullvid" src="assets/flow/FLOW_13_kitchen_return.mp4" playsinline data-has-audio="true" data-volume="0.5" style="transform:scale(1.065)" data-scene="return" data-at="0.2" data-len="7.65" data-start="37.900" data-duration="7.650" data-media-start="0.3" data-usable-in="0.3" data-usable-out="7.95" data-track-index="10"></video>
+  </div>
+  <div id="retOver" class="abs" style="inset:0;pointer-events:none;opacity:0">
+    <div class="abs tag" id="meta" style="left:80px;top:975px;color:#f4efe2;opacity:0;background:rgba(10,8,6,.62);padding:10px 18px 10px 22px;border-radius:4px">A visual metaphor · not a measurement</div>
+    <div id="replay" class="abs dark" style="inset:0;opacity:0">
+      <svg class="full" viewBox="0 0 1920 1080">
+        <line x1="360" y1="700" x2="1560" y2="700" stroke="#3b5268" stroke-width="4"/>
+        <rect x="1552" y="666" width="16" height="68" fill="#8fe3ff" opacity=".9"/>
+        <path id="scPath" d="M360,686 C700,420 1200,420 1558,686" fill="none" stroke="#ff6a2b" stroke-width="5" stroke-dasharray="3 12" stroke-linecap="round"/>
+        <line id="coldTrail" x1="1293" y1="714" x2="1293" y2="714" stroke="#8fe3ff" stroke-width="6" stroke-linecap="round"/>
+        <circle id="cDot" cx="1293" cy="714" r="13" fill="#8fe3ff"/>
+        <circle id="hDot" cx="360" cy="686" r="15" fill="#ff6a2b"/>
+      </svg>
+      <div class="abs tag ember" style="left:340px;top:740px">Hot</div><div class="abs tag frost" style="left:1260px;top:740px">Cold</div>
+      <div class="abs tag" id="scLab" style="left:0;right:0;top:400px;text-align:center;color:var(--ember2);opacity:0">The shortcut</div>
+      <div class="abs note" style="left:360px;top:1010px">Illustration</div>
+    </div>
+  </div>
+
+  <div id="sc-end" class="scene clip dark" data-scene="end" data-start="49.200" data-duration="7.000" data-track-index="7">
+    <div class="cam" id="ecam">
+      <div class="abs" style="left:0;right:0;top:250px;text-align:center">
+        <div class="mono" id="endS" style="font-size:28px;font-weight:600;letter-spacing:.5em;padding-left:.5em;color:#a9bccf"><b id="dot" style="display:inline-block;width:14px;height:14px;border-radius:50%;background:#8fe3ff;margin-right:20px;vertical-align:2px"></b>Guy Wonders Why</div>
+        <div id="endT1" style="margin-top:34px">THE BOY WHO</div>
+        <div id="endT2">FROZE <span id="hotW">HOT<svg viewBox="0 0 300 200" preserveAspectRatio="none" style="position:absolute;left:-4%;top:6%;width:108%;height:92%"><g id="frostE" stroke="#f2fcff" stroke-width="2.4" fill="none" stroke-linecap="round"></g></svg></span> WATER</div>
+      </div>
+      <div class="abs" id="honest" style="left:0;right:0;top:830px;text-align:center"><div class="mono" style="font-size:22px;letter-spacing:.16em;color:#c9d6e2">Hot water freezing first: still debated.</div><div class="mono" style="font-size:22px;letter-spacing:.16em;color:#c9d6e2;margin-top:10px">Hot systems cooling faster: demonstrated.</div><div class="note" style="margin-top:22px">Sources in the description</div></div>
+    </div>
+  </div>
+
+  <audio id="music" src="assets/audio/music.wav" data-start="0" data-duration="56.200" data-volume="1" data-track-index="20"></audio>
+  <audio id="sfx" src="assets/audio/sfx.wav" data-start="0" data-duration="56.200" data-volume="1" data-track-index="21"></audio>
+  <!-- VO:BEGIN (generated by tools/retime_chapters.py) -->
+  <audio id="vo_c6_01" src="assets/vo/C6_01.wav" data-start="3.100" data-duration="9.000" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_c6_02" src="assets/vo/C6_02.wav" data-start="12.900" data-duration="10.800" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_c6_03" src="assets/vo/C6_03.wav" data-start="24.500" data-duration="7.100" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_c6_04" src="assets/vo/C6_04.wav" data-start="32.500" data-duration="4.800" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_c6_05" src="assets/vo/C6_05.wav" data-start="38.200" data-duration="5.900" data-volume="1" data-track-index="22"></audio>
+  <!-- VO:END -->
+
+  <div id="flash"></div><div id="vignette"></div><div id="grain" data-layout-ignore></div><div id="black"></div>
+  <div id="scratch" data-layout-allow-caption-zone><span class="tagx">SCRATCH VO</span><span class="txt" id="scratchTxt"></span></div>
+</div>
+
+<script src="shared/film.js"></script>
+<script>
+window.__timelines = window.__timelines || {};
+FILM_INIT();
+(function () {
+  const { tl, S, E, D, V, VE, P, rnd, $, $$, el, div } = FILM;
+  FILM.sceneFade('card', .5, .45); FILM.card('card');
+
+  // ═════════ water: still debated ═════════
+  FILM.sceneFade('water', .5, .45);
+  FILM.drift('#wcam', 'water', 1.04, 1.0);
+  FILM.draw('#drop', S('water') + .3, 1.2);
+  FILM.pop('#dq', S('water') + 1.2, .4);
+  const names = ['evaporation', 'dissolved gas', 'convection', 'frost', 'supercooling'];
+  const orb = { a: 0 };
+  const tags = names.map((n, i) => { const d = div('abs tag', $('#orbit'), n); d.style.color = i < 3 ? '#ffb27a' : '#8fe3ff'; d.style.opacity = 0; return d; });
+  const drawOrb = () => tags.forEach((d, i) => { const a = orb.a + i / 5 * Math.PI * 2; d.style.left = (960 + Math.cos(a) * 470 - 90).toFixed(1) + 'px'; d.style.top = (540 + Math.sin(a) * 300 - 14).toFixed(1) + 'px'; });
+  drawOrb();
+  tl.to(orb, { a: Math.PI * .8, duration: D('water'), ease: 'none', onUpdate: drawOrb }, S('water'));
+  tags.forEach((d, i) => { tl.set(d, { opacity: 0 }, 0); tl.to(d, { opacity: 1, duration: .4 }, P('C6_01', .2) + i * .15); });
+  FILM.up('#deb', P('C6_01', .7), .5, 10);
+
+  // ═════════ life ═════════
+  FILM.sceneFade('life', .6, .45);
+  tl.fromTo('#lcam', { scale: 1.08 }, { scale: 1.0, duration: D('life'), ease: 'sine.out', immediateRender: false }, S('life'));
+  tl.fromTo('#sun', { attr: { cy: 700 } }, { attr: { cy: 600 }, duration: D('life'), ease: 'none', immediateRender: false }, S('life'));
+  for (let i = 0; i < 160; i++) { const x = rnd() * 1920, h = 10 + rnd() * 26; el('line', { x1: x, y1: 752, x2: x + (rnd() - .5) * 10, y2: 752 - h }, $('#grass')); }
+  FILM.up('#lt', S('life') + .4, .6, 12);
+  const YX = y => 260 + (y - 1950) / 73 * 1400;
+  FILM.draw('#dial line', P('C6_02', .1), 1.2);
+  const marks = [[1950, 'born'], [1963, 'the ice cream'], [1969, '“Cool?”'], [2023, 'died, aged 73']];
+  marks.forEach(([y, t], i) => {
+    el('line', { x1: YX(y), y1: 884, x2: YX(y), y2: 916, class: 'mk' }, $('#dial'));
+    const lab = div('abs', $('#marks'), `<div class="mono" style="font-size:20px;font-weight:600;color:#f7ecdc;letter-spacing:.14em">${y}</div><div class="serif i" style="font-size:30px;color:#f7ecdc">${t}</div>`);
+    lab.style.left = (YX(y) - 60) + 'px'; lab.style.top = (y === 1969 ? 800 : 930) + 'px'; lab.style.width = '220px';
+    FILM.up(lab, P('C6_02', .15 + i * .2), .4, 8);
+  });
+  // four decades in the wildlife service (career ended around retirement, c. 2011)
+  el('rect', { x: YX(1971), y: 892, width: YX(2011) - YX(1971), height: 16, fill: '#f0a060', class: 'career', opacity: .9 }, $('#dial'));
+  FILM.wipeIn('.career', P('C6_02', .5), 1.2, 'left');
+  const cl = div('abs serif i', $('#marks'), 'four decades · wildlife service'); cl.style.cssText += `left:${YX(1986)}px;top:846px;font-size:30px;color:#f7ecdc`;
+  FILM.up(cl, P('C6_02', .55), .4, 8);
+
+  // ═════════ legacy ═════════
+  FILM.sceneFade('legacy', .5, .45);
+  FILM.drift('#gcam', 'legacy', 1.03, 1.0);
+  FILM.up('#gh', S('legacy') + .3, .5, 10);
+  ['Colloids', 'Granular gases', 'Magnetic systems', 'Quantum systems'].forEach((f, i) => {
+    const c = div('fcard', $('#fields'), `<div class="f">${f}</div><div class="m">Mpemba effect</div>`); c.style.left = (140 + i * 420) + 'px';
+    FILM.up(c, P('C6_03', .1 + i * .12), .45, 24);
+    tl.to(c, { borderColor: '#8fe3ff', duration: .3 }, P('C6_03', .1 + i * .12) + .3);
+  });
+
+  // ═════════ quote ═════════
+  FILM.sceneFade('quote', .5, .4);
+  FILM.drift('#qcam', 'quote', 1.05, 1.0);
+  FILM.up('#quote', S('quote') + .2, .6, 14);
+
+  // ═════════ return: built around the real FLOW_13 ═════════
+  // clip map (reviewed): 0.3–3.0 wide empty room at dusk, freezer ajar (cyan), cup on table · slow push ·
+  // 3.0–4.25 steam rises · 4.25–5.5 steam turns to glittering frost · 5.5–7.95 frosted rim hold
+  FILM.sceneFade('return', .5, 0);
+  tl.set('#retOver', { opacity: 1 }, S('return')); tl.set('#retOver', { opacity: 0 }, E('return'));
+  const R0 = S('return') + .2, rt = c => R0 + (c - .3);
+  tl.to('#f13hold', { opacity: 1, duration: .01 }, rt(7.9));
+  FILM.show('#meta', rt(4.1), .5);                       // the steam→frost is labelled as a metaphor
+  tl.to('#meta', { opacity: 0, duration: .4 }, rt(7.6));
+  // then the opening's race, replayed with the shortcut
+  const RP = Math.max(rt(7.9), E('return') - 3.8);
+  tl.to('#replay', { opacity: 1, duration: .6 }, RP);
+  const sp = $('#scPath'), Ls = sp.getTotalLength(), spts = []; for (let i = 0; i <= 120; i++) { const q = sp.getPointAtLength(Ls * i / 120); spts.push([q.x, q.y]); }
+  const hd = { u: 0 }, cd = { x: 1293 };
+  const drawR = () => { const k = hd.u * 120, i = Math.floor(k), f = k - i, a = spts[i], b = spts[Math.min(120, i + 1)]; $('#hDot').setAttribute('cx', a[0] + (b[0] - a[0]) * f); $('#hDot').setAttribute('cy', a[1] + (b[1] - a[1]) * f); $('#cDot').setAttribute('cx', cd.x); $('#coldTrail').setAttribute('x2', cd.x); };
+  drawR();
+  FILM.show('#scLab', RP + .5, .4);
+  tl.to(hd, { u: 1, duration: 2.0, ease: 'power2.inOut', onUpdate: drawR }, RP + .6);
+  tl.to(cd, { x: 1450, duration: 2.0, ease: 'sine.inOut', onUpdate: drawR }, RP + .6);
+  FILM.flash(RP + 2.6, .2, .4);
+
+  // ═════════ end card ═════════
+  FILM.sceneFade('end', .5, 0);
+  tl.fromTo('#ecam', { scale: 1.06 }, { scale: 1.0, duration: D('end'), ease: 'expo.out', immediateRender: false }, S('end'));
+  FILM.up('#endS', S('end') + .3, .5, 10); FILM.up('#endT1', S('end') + .4, .6, 20); FILM.up('#endT2', S('end') + .5, .6, 26);
+  // frost melts off HOT and it glows ember again
+  const fg = $('#frostE');
+  const fb = (x, y, a, len, dep) => { if (dep <= 0) return; const x2 = x + Math.cos(a) * len, y2 = y + Math.sin(a) * len; el('path', { d: `M${x.toFixed(1)},${y.toFixed(1)} L${x2.toFixed(1)},${y2.toFixed(1)}`, 'vector-effect': 'non-scaling-stroke', class: 'fe', 'data-d': dep }, fg); fb(x2, y2, a - .6, len * .62, dep - 1); fb(x2, y2, a + .6, len * .62, dep - 1); };
+  [[20, 190, -1.2], [150, 200, -1.57], [280, 190, -1.9], [0, 60, -0.2], [300, 70, 3.3]].forEach(([x, y, a]) => fb(x, y, a, 70 + rnd() * 20, 5));
+  const MELT = S('end') + 1.6;
+  $$('.fe').forEach(p => tl.to(p, { opacity: 0, duration: .5 }, MELT + (+p.dataset.d) * .12 + rnd() * .1));
+  tl.to('#hotW', { color: '#ff6a2b', textShadow: '0 0 40px rgba(255,106,43,.55)', duration: 1.4, ease: 'power1.inOut' }, MELT + .3);
+  tl.to('#dot', { backgroundColor: '#ff6a2b', duration: 1.0 }, MELT + .5);
+  FILM.up('#honest', S('end') + 2.6, .6, 10);
+
+  FILM.finish('ch6');
+})();
+</script>
+</body>
+</html>

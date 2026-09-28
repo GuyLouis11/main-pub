@@ -1,0 +1,5 @@
+@font-face{font-family:'Big Shoulders Display';font-style:normal;font-weight:100 900;font-display:block;src:url('./BigShouldersDisplay-var.woff2') format('woff2');}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:100 800;font-display:block;src:url('./JetBrainsMono-var.woff2') format('woff2');}
+@font-face{font-family:'Caveat';font-style:normal;font-weight:400 700;font-display:block;src:url('./Caveat-var.woff2') format('woff2');}
+@font-face{font-family:'Instrument Serif';font-style:normal;font-weight:400;font-display:block;src:url('./InstrumentSerif-400-normal.woff2') format('woff2');}
+@font-face{font-family:'Instrument Serif';font-style:italic;font-weight:400;font-display:block;src:url('./InstrumentSerif-400-italic.woff2') format('woff2');}

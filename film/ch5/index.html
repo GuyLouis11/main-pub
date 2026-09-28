@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="en" data-composition-variables='[{"id":"scratchVO","type":"boolean","label":"Show SCRATCH VO subtitles (review only)","default":false}]'>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1920, height=1080" />
+<title>Ch 5 · The Shortcut</title>
+<link rel="stylesheet" href="shared/film.css" />
+<script src="shared/vendor/gsap.min.js"></script>
+<script id="timing" type="application/json">
+{
+  "chapter": 5,
+  "title": "The Shortcut",
+  "seed": 505,
+  "defaults": {
+    "lead": 0.5,
+    "gap": 0.45,
+    "tail": 0.7
+  },
+  "scenes": [
+    {
+      "id": "card",
+      "min": 3.0,
+      "md": "Chapter card 05",
+      "out": "crossfade"
+    },
+    {
+      "id": "sametemp",
+      "vo": [
+        "C5_01"
+      ],
+      "min": 9,
+      "xin": 0.4,
+      "md": "One readout, 40°; two boxes both at 40° with differently arranged particles; = between readouts, ≠ between boxes",
+      "out": "boxes fold into route diagram"
+    },
+    {
+      "id": "shortcut",
+      "vo": [
+        "C5_02"
+      ],
+      "min": 10,
+      "xin": 0.4,
+      "md": "Lu & Raz 2017 citation; routes to the cold state: cold start winds through a slow plateau, hot start takes a direct shortcut and arrives first",
+      "out": "routes flatten into landscape silhouette"
+    },
+    {
+      "id": "landscape",
+      "vo": [
+        "C5_03",
+        "C5_04"
+      ],
+      "gap": 0.6,
+      "tail": 1.2,
+      "min": 14,
+      "xin": 0.5,
+      "md": "HERO: layered energy landscape; cold marble rolls into the wrong valley and is stuck; hot marble starts higher, takes the slope straight into the lowest valley, turns frost",
+      "out": "iris to black, laser line"
+    },
+    {
+      "id": "lab",
+      "vo": [
+        "C5_05"
+      ],
+      "min": 10,
+      "xin": 0.0,
+      "md": "MD green laser + credit (Simon Fraser University · 2020, Kumar · Bechhoefer) → FLOW_10 lab 2.95–7.35 s → Flow's bloom → drawn microscope with one glowing bead",
+      "flow": {
+        "file": "FLOW_10_optics_lab.mp4",
+        "in": 2.95,
+        "out": 7.35,
+        "refs": [
+          "STYLE_F01_kitchen_3.0s"
+        ],
+        "tier": "A",
+        "status": "RECEIVED 2026-09-28 (0–2.9 s unusable: copied kitchen; see film/FLOW_REVIEW_BATCH2.md)"
+      },
+      "out": "bloom irises into microscope circle"
+    },
+    {
+      "id": "bead",
+      "vo": [
+        "C5_06",
+        "C5_07"
+      ],
+      "gap": 0.5,
+      "min": 12,
+      "xin": 0.0,
+      "md": "Microscope circle: glowing bead in a laser-sculpted double well (shape morphs); then log-scale cooling curves: hotter starts drop faster",
+      "out": "curves mirror upward"
+    },
+    {
+      "id": "quantum",
+      "vo": [
+        "C5_08"
+      ],
+      "min": 10,
+      "xin": 0.4,
+      "md": "Ion-trap schematic (four rods, violet beams, one glowing ion; 2024); mirror: heating curves where the cold start heats faster",
+      "flow": {
+        "file": "FLOW_11_trapped_ion.mp4",
+        "in": 1.0,
+        "out": 6.0,
+        "refs": [
+          "STYLE_F01_kitchen_3.0s"
+        ],
+        "tier": "B",
+        "status": "OPTIONAL: MD schematic in use"
+      },
+      "out": "points become two starts"
+    },
+    {
+      "id": "principle",
+      "vo": [
+        "C5_09"
+      ],
+      "tail": 1.4,
+      "min": 10,
+      "xin": 0.4,
+      "md": "Two starts to one target: the far (hot) start takes the direct line and arrives first; dissolve to warm dusk",
+      "out": "warm dusk → Chapter 6"
+    }
+  ],
+  "vo": {
+    "C5_01": {
+      "text": "\"Temperature\" is one number. But a hot system isn't one number. It's billions of particles arranged in a particular way. Two systems can have the same temperature and still be arranged very differently.",
+      "estimate": 13.8,
+      "source": "estimate"
+    },
+    "C5_02": {
+      "text": "In 2017 two theorists, Zhiyue Lu and Oren Raz, showed that this opens a door. A system that starts hotter can sometimes sit on a shortcut to the cold state, a route that skips the slow part of cooling.",
+      "estimate": 15.5,
+      "source": "estimate"
+    },
+    "C5_03": {
+      "text": "Picture a landscape of hills and valleys. Cooling means settling into the lowest valley. A cold start can drift into the wrong valley and get stuck, waiting to climb out.",
+      "estimate": 12.3,
+      "source": "estimate"
+    },
+    "C5_04": {
+      "text": "A hot start begins higher up, but it can land on the slope that runs straight down into the right one.",
+      "estimate": 8.3,
+      "source": "estimate"
+    },
+    "C5_05": {
+      "text": "In 2020, at Simon Fraser University, Avinash Kumar and John Bechhoefer built that landscape with light: a single glass bead, far thinner than a hair, held in water by a laser.",
+      "estimate": 12.1,
+      "source": "estimate"
+    },
+    "C5_06": {
+      "text": "By controlling the laser, they sculpted the hills and valleys the bead could explore. Then they cooled it from different starting temperatures.",
+      "estimate": 9.0,
+      "source": "estimate"
+    },
+    "C5_07": {
+      "text": "Starts that were hotter cooled faster. Under the right conditions, exponentially faster.",
+      "estimate": 5.1,
+      "source": "estimate"
+    },
+    "C5_08": {
+      "text": "And it didn't stop there. In 2024, experiments with single trapped ions showed Mpemba-like shortcuts in the quantum world, and the mirror image, where a cold system heats up faster.",
+      "estimate": 12.4,
+      "source": "estimate"
+    },
+    "C5_09": {
+      "text": "So the effect is real. Not as a kitchen rule that always works, but as something deeper: sometimes, starting further away is the fastest way to arrive.",
+      "estimate": 10.9,
+      "source": "estimate"
+    }
+  }
+}
+</script>
+<style>
+  .box{position:absolute;top:360px;width:600px;height:440px;border:3px solid #3b5268;border-radius:14px;background:rgba(13,20,30,.6)}
+  .readout{font-family:var(--mono);font-weight:600;letter-spacing:-.02em;color:var(--ember2)}
+  .node{position:absolute;font-family:var(--mono);font-weight:600;font-size:22px;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap}
+  .cite .who{font-family:var(--serif);font-style:italic;font-size:56px;color:var(--paper);line-height:1}
+  .cite .src{font-family:var(--mono);font-size:22px;letter-spacing:.22em;color:#9fb3c8;margin-top:12px}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="ch5" data-start="0" data-duration="111.000" data-width="1920" data-height="1080">
+
+  <!-- ───────── card ───────── -->
+  <div id="sc-card" class="scene clip dark" data-scene="card" data-start="0.000" data-duration="3.000" data-track-index="1">
+    <div class="chcard"><div class="num">CHAPTER 05</div><div class="title">THE SHORTCUT</div><div class="rule"></div></div>
+  </div>
+
+  <!-- ───────── same temperature, different arrangement ───────── -->
+  <div id="sc-sametemp" class="scene clip dark" data-scene="sametemp" data-start="2.600" data-duration="15.000" data-track-index="2">
+    <div class="cam" id="tcam">
+      <div class="abs" id="bigRead" style="left:0;right:0;top:110px;text-align:center"><div class="lab" style="font-size:24px;line-height:1;margin-bottom:30px">Temperature</div><div class="readout" style="font-size:150px;line-height:1.05">40.0°</div></div>
+      <div class="box" id="boxA" style="left:210px"></div>
+      <div class="box" id="boxB" style="left:1110px"></div>
+      <svg class="full" viewBox="0 0 1920 1080"><g id="partsA"></g><g id="partsB"></g>
+        <g id="neq" opacity="0" stroke="#efe7d5" stroke-width="11" stroke-linecap="round"><line x1="915" y1="560" x2="1005" y2="560"/><line x1="915" y1="605" x2="1005" y2="605"/><line x1="985" y1="515" x2="935" y2="650" stroke="#ff6a2b"/></g>
+      </svg>
+      <div class="abs readout" id="rA" style="left:210px;width:600px;top:300px;text-align:center;font-size:44px;opacity:0">40.0°</div>
+      <div class="abs readout" id="rB" style="left:1110px;width:600px;top:300px;text-align:center;font-size:44px;opacity:0">40.0°</div>
+      <div class="abs" id="eqR" style="left:940px;top:290px;font-family:var(--mono);font-size:54px;color:var(--paper);opacity:0">=</div>
+    </div>
+  </div>
+
+  <!-- ───────── shortcut routes ───────── -->
+  <div id="sc-shortcut" class="scene clip dark" data-scene="shortcut" data-start="17.200" data-duration="16.700" data-track-index="3">
+    <div class="cam" id="scam">
+      <div class="abs cite" id="cite" style="left:120px;top:96px"><div class="who">Zhiyue Lu · Oren Raz</div><div class="src">PNAS · 2017 · theory</div></div>
+      <svg class="full" viewBox="0 0 1920 1080">
+        <path id="plateau" d="M620,760 C760,700 900,700 1040,700 L1260,700" fill="none" stroke="#243447" stroke-width="44" stroke-linecap="round" opacity="0"/>
+        <path id="routeCold" d="M380,780 C480,770 560,730 640,715 C760,690 900,705 1040,700 C1160,696 1240,700 1300,690 C1420,670 1500,600 1580,520" fill="none" stroke="#8fe3ff" stroke-width="7" stroke-linecap="round" stroke-dasharray="1 1"/>
+        <path id="routeHot" d="M380,330 C760,330 1200,420 1580,520" fill="none" stroke="#ff6a2b" stroke-width="7" stroke-linecap="round"/>
+        <circle id="dotCold" r="15" fill="#8fe3ff" cx="380" cy="780"/>
+        <circle id="dotHot" r="15" fill="#ff6a2b" cx="380" cy="330"/>
+        <circle cx="1580" cy="520" r="30" fill="none" stroke="#e3f8ff" stroke-width="4"/>
+        <circle id="goalPing" cx="1580" cy="520" r="30" fill="none" stroke="#e3f8ff" stroke-width="3" opacity="0"/>
+      </svg>
+      <div class="node" id="nHot" style="left:300px;top:268px;color:var(--ember)">Hot start</div>
+      <div class="node" id="nCold" style="left:300px;top:818px;color:var(--frost)">Cold start</div>
+      <div class="node" id="nGoal" style="left:1630px;top:506px;color:var(--frost2)">Cold state</div>
+      <div class="node" id="nSlow" style="left:840px;top:752px;color:#7f93a8">the slow part</div>
+    </div>
+  </div>
+
+  <!-- ───────── HERO: energy landscape ───────── -->
+  <div id="sc-landscape" class="scene clip" data-scene="landscape" data-start="33.400" data-duration="22.900" data-track-index="4" style="background:linear-gradient(#070a10 0%, #0c1522 60%, #0a0f18 100%)">
+    <div class="cam" id="lcam">
+      <svg class="full" viewBox="0 0 1920 1080">
+        <defs>
+          <linearGradient id="landFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a2a3c"/><stop offset="1" stop-color="#0a111a"/></linearGradient>
+          <linearGradient id="valleyGlow" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fe3ff" stop-opacity="0"/><stop offset="1" stop-color="#8fe3ff" stop-opacity=".35"/></linearGradient>
+          <radialGradient id="mHot"><stop offset="0" stop-color="#ffe0cc"/><stop offset=".55" stop-color="#ff6a2b"/><stop offset="1" stop-color="#b8400f"/></radialGradient>
+          <radialGradient id="mCold"><stop offset="0" stop-color="#ffffff"/><stop offset=".55" stop-color="#8fe3ff"/><stop offset="1" stop-color="#3aa6d8"/></radialGradient>
+        </defs>
+        <g id="ridges"></g>
+        <path id="land" fill="url(#landFill)" stroke="#8ea2b8" stroke-width="4"/>
+        <g id="contours" fill="none" stroke="#8ea2b8" stroke-opacity=".16" stroke-width="2"></g>
+        <path id="deepGlow" fill="url(#valleyGlow)" opacity="0"/>
+        <g id="frostSpark"></g>
+        <circle id="mC" r="26" fill="url(#mCold)" opacity="0"/>
+        <circle id="mH" r="26" fill="url(#mHot)" opacity="0"/>
+        <path id="climb" fill="none" stroke="#8fe3ff" stroke-width="3" stroke-dasharray="6 10" opacity="0"/>
+      </svg>
+      <div class="node" id="lWrong" style="left:0;top:0;color:#9fb3c8;opacity:0">Stuck</div>
+      <div class="node" id="lLow" style="left:0;top:0;color:var(--frost2);opacity:0">Lowest valley · cold state</div>
+      <div class="abs note" style="left:120px;top:1010px">Illustrative landscape</div>
+    </div>
+  </div>
+
+  <!-- ───────── the lab (credit + FLOW_10) ───────── -->
+  <div id="sc-lab" class="scene clip" data-scene="lab" data-start="56.300" data-duration="13.300" data-track-index="5" style="background:#030507">
+    <div class="cam" id="labcam">
+      <svg class="full" viewBox="0 0 1920 1080">
+        <defs><filter id="gl" x="-10%" y="-200%" width="120%" height="500%"><feGaussianBlur stdDeviation="6"/></filter></defs>
+        <g id="laser"><path id="laserPath" d="M-20,620 L760,620 L900,480 L1940,480" fill="none" stroke="#6dff9c" stroke-width="10" filter="url(#gl)" opacity=".6"/><path id="laserCore" d="M-20,620 L760,620 L900,480 L1940,480" fill="none" stroke="#d8ffe6" stroke-width="3"/></g>
+      </svg>
+      <div class="abs cite" id="labCite" style="left:120px;top:150px"><div class="who">Avinash Kumar · John Bechhoefer</div><div class="src">Simon Fraser University · 2020 · experiment</div></div>
+    </div>
+    <svg class="full" viewBox="0 0 1920 1080" id="labScope" style="opacity:0">
+      <defs><radialGradient id="scopeBg2"><stop offset="0" stop-color="#0f2419"/><stop offset="1" stop-color="#040806"/></radialGradient>
+        <radialGradient id="beadG2"><stop offset="0" stop-color="#ffffff"/><stop offset=".45" stop-color="#d8fff0"/><stop offset="1" stop-color="#6dff9c" stop-opacity="0"/></radialGradient></defs>
+      <circle cx="620" cy="540" r="380" fill="url(#scopeBg2)"/><circle id="bead2" cx="620" cy="620" r="30" fill="url(#beadG2)"/>
+      <circle cx="620" cy="540" r="380" fill="none" stroke="#3b5268" stroke-width="10"/>
+    </svg>
+    <div class="abs lab" id="beadLab" style="left:1080px;top:510px;opacity:0;text-transform:none;letter-spacing:.06em;font-size:26px">One glass bead, about 1.5&nbsp;micrometres across, in water</div>
+  </div>
+
+  <!-- FLOW_10 at root level (own timing drives frames and visibility). Reviewed: 0–2.9 s shows the 1963 kitchen
+       (Flow copied the style reference) → never used; 2.95–6.2 lab, 6.25–6.75 Flow's bloom; 17–25 px border cropped -->
+  <div id="f10wrap" class="abs" style="inset:0;overflow:hidden;pointer-events:none">
+    <video id="flow10" class="fullvid" src="assets/flow/FLOW_10_optics_lab.mp4" muted playsinline style="transform:scale(1.085)" data-scene="lab" data-at="C5_05|2.4" data-len="4.4" data-start="59.200" data-duration="4.400" data-media-start="2.95" data-usable-in="2.95" data-usable-out="7.4" data-track-index="10"></video>
+  </div>
+  <div id="labOver" class="abs" style="inset:0;pointer-events:none;opacity:0">
+    <div class="abs tag" id="labTag" style="left:80px;top:975px;color:#e8fff0;opacity:0;background:rgba(3,6,5,.6);padding:10px 18px 10px 22px;border-radius:4px">Simon Fraser University · 2020 · illustrative recreation</div>
+    <div id="labBloom" class="abs" style="inset:0;background:radial-gradient(circle at 50% 50%, #f1fff4 0%, #cfffe0 45%, #9dffc0 100%);opacity:0"></div>
+  </div>
+
+  <!-- ───────── bead in a sculpted double well ───────── -->
+  <div id="sc-bead" class="scene clip dark" data-scene="bead" data-start="69.600" data-duration="15.800" data-track-index="6">
+    <div class="cam" id="bcam">
+      <svg class="full" viewBox="0 0 1920 1080">
+        <defs>
+          <clipPath id="scope"><circle cx="620" cy="540" r="380"/></clipPath>
+          <radialGradient id="beadG"><stop offset="0" stop-color="#ffffff"/><stop offset=".45" stop-color="#d8fff0"/><stop offset="1" stop-color="#6dff9c" stop-opacity="0"/></radialGradient>
+          <radialGradient id="scopeBg"><stop offset="0" stop-color="#0f2419"/><stop offset="1" stop-color="#040806"/></radialGradient>
+        </defs>
+        <g id="scopeG">
+          <circle cx="620" cy="540" r="380" fill="url(#scopeBg)"/>
+          <g clip-path="url(#scope)">
+            <path id="well" fill="none" stroke="#6dff9c" stroke-width="5" opacity=".85"/>
+            <g id="cloud"></g>
+            <circle id="bead" r="30" fill="url(#beadG)"/>
+          </g>
+          <circle id="scopeRing" cx="620" cy="540" r="380" fill="none" stroke="#3b5268" stroke-width="10"/>
+        </g>
+        <g id="logplot" opacity="0">
+          <line x1="1160" y1="220" x2="1160" y2="800" stroke="#3b5268" stroke-width="3"/>
+          <line x1="1160" y1="800" x2="1800" y2="800" stroke="#3b5268" stroke-width="3"/>
+          <g id="logTicks" stroke="#2c3f52" stroke-width="2"></g>
+          <path id="lgCool" fill="none" stroke="#8fe3ff" stroke-width="6" stroke-linecap="round"/>
+          <path id="lgWarm" fill="none" stroke="#ffb27a" stroke-width="6" stroke-linecap="round"/>
+          <path id="lgHot" fill="none" stroke="#ff6a2b" stroke-width="8" stroke-linecap="round"/>
+        </g>
+      </svg>
+      <div class="abs lab" id="lgY" style="left:1100px;top:180px;opacity:0">Distance from cold state · log</div>
+      <div class="abs lab" id="lgX" style="left:1640px;top:820px;opacity:0">Time →</div>
+      <div class="abs tag" id="lgHotL" style="left:1400px;top:0;color:var(--ember);opacity:0">Hotter start</div>
+      <div class="abs tag" id="lgCoolL" style="left:1600px;top:0;color:var(--frost);opacity:0">Cooler start</div>
+      <div class="abs note" style="left:1160px;top:860px" id="lgNote">Illustrative · shape of the published result, not its data</div>
+      <div class="abs lab" id="sculpt" style="left:420px;top:960px;opacity:0">Laser-sculpted landscape</div>
+    </div>
+  </div>
+
+  <!-- ───────── quantum + inverse ───────── -->
+  <div id="sc-quantum" class="scene clip dark" data-scene="quantum" data-start="85.000" data-duration="13.600" data-track-index="7">
+    <div class="cam" id="qcam">
+      <svg class="full" viewBox="0 0 1920 1080">
+        <defs><radialGradient id="ionG"><stop offset="0" stop-color="#ffffff"/><stop offset=".4" stop-color="#c9b6ff"/><stop offset="1" stop-color="#7b5cff" stop-opacity="0"/></radialGradient>
+          <filter id="vg" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="5"/></filter></defs>
+        <g id="trap" transform="translate(520 540)">
+          <circle r="250" fill="none" stroke="#243447" stroke-width="3" stroke-dasharray="4 10"/>
+          <g fill="#1b2838" stroke="#8ea2b8" stroke-width="4"><circle cx="-130" cy="-130" r="58"/><circle cx="130" cy="-130" r="58"/><circle cx="-130" cy="130" r="58"/><circle cx="130" cy="130" r="58"/></g>
+          <g id="beams" stroke="#8f6bff" stroke-width="8" filter="url(#vg)" opacity="0"><line x1="-420" y1="-60" x2="0" y2="0"/><line x1="420" y1="60" x2="0" y2="0"/></g>
+          <circle id="ion" r="30" fill="url(#ionG)" opacity="0"/>
+        </g>
+        <g id="mirror" opacity="0">
+          <line x1="1060" y1="540" x2="1800" y2="540" stroke="#8ea2b8" stroke-width="2" stroke-dasharray="8 8"/>
+          <path id="mCoolDown" fill="none" stroke="#ff6a2b" stroke-width="6" stroke-linecap="round" opacity=".45"/>
+          <path id="mUpCold" fill="none" stroke="#8fe3ff" stroke-width="7" stroke-linecap="round"/>
+          <path id="mUpWarm" fill="none" stroke="#ffb27a" stroke-width="6" stroke-linecap="round"/>
+        </g>
+      </svg>
+      <div class="abs tag" id="qTag" style="left:300px;top:860px;color:#c9b6ff;opacity:0">Single trapped ions · 2024</div>
+      <div class="abs tag" id="qInv" style="left:1060px;top:220px;color:var(--frost);opacity:0">Mirror image: heating</div>
+      <div class="abs lab" id="qColdL" style="left:1600px;top:0;color:var(--frost);opacity:0">Cold start</div>
+      <div class="abs note" style="left:1060px;top:900px" id="qNote">Illustrative</div>
+    </div>
+  </div>
+
+  <!-- ───────── principle ───────── -->
+  <div id="sc-principle" class="scene clip dark" data-scene="principle" data-start="98.200" data-duration="12.800" data-track-index="8">
+    <div class="cam" id="pcam">
+      <svg class="full" viewBox="0 0 1920 1080">
+        <path id="pNear" d="M760,700 C820,560 700,470 820,420 C960,360 1000,560 1120,520 C1220,490 1180,380 1300,360" fill="none" stroke="#8fe3ff" stroke-width="6" stroke-linecap="round" stroke-dasharray="2 12"/>
+        <path id="pFar" d="M260,860 L1300,360" fill="none" stroke="#ff6a2b" stroke-width="7" stroke-linecap="round"/>
+        <circle id="pNearDot" cx="760" cy="700" r="16" fill="#8fe3ff"/>
+        <circle id="pFarDot" cx="260" cy="860" r="18" fill="#ff6a2b"/>
+        <g id="flag" transform="translate(1300 360)"><circle r="34" fill="none" stroke="#e3f8ff" stroke-width="4"/><circle id="flagPing" r="34" fill="none" stroke="#e3f8ff" stroke-width="3" opacity="0"/></g>
+      </svg>
+      <div id="dusk" class="abs" style="inset:0;background:linear-gradient(180deg,#2a1608 0%,#7a3a12 55%,#ff9a4a 100%);opacity:0"></div>
+    </div>
+  </div>
+
+  <!-- ───────── audio ───────── -->
+  <audio id="music" src="assets/audio/music.wav" data-start="0" data-duration="111.000" data-volume="1" data-track-index="20"></audio>
+  <audio id="sfx" src="assets/audio/sfx.wav" data-start="0" data-duration="111.000" data-volume="1" data-track-index="21"></audio>
+  <!-- VO:BEGIN (generated by tools/retime_chapters.py) -->
+  <audio id="vo_c5_01" src="assets/vo/C5_01.wav" data-start="3.100" data-duration="13.800" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_c5_02" src="assets/vo/C5_02.wav" data-start="17.700" data-duration="15.500" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_c5_03" src="assets/vo/C5_03.wav" data-start="33.900" data-duration="12.300" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_c5_04" src="assets/vo/C5_04.wav" data-start="46.800" data-duration="8.300" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_c5_05" src="assets/vo/C5_05.wav" data-start="56.800" data-duration="12.100" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_c5_06" src="assets/vo/C5_06.wav" data-start="70.100" data-duration="9.000" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_c5_07" src="assets/vo/C5_07.wav" data-start="79.600" data-duration="5.100" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_c5_08" src="assets/vo/C5_08.wav" data-start="85.500" data-duration="12.400" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_c5_09" src="assets/vo/C5_09.wav" data-start="98.700" data-duration="10.900" data-volume="1" data-track-index="22"></audio>
+  <!-- VO:END -->
+
+  <div id="flash"></div><div id="vignette"></div><div id="grain" data-layout-ignore></div><div id="black"></div>
+  <div id="scratch" data-layout-allow-caption-zone><span class="tagx">SCRATCH VO</span><span class="txt" id="scratchTxt"></span></div>
+</div>
+
+<script src="shared/film.js"></script>
+<script>
+window.__timelines = window.__timelines || {};   // FILM.finish() registers this chapter's timeline
+FILM_INIT();
+(function () {
+  const { tl, S, E, D, V, VE, P, rnd, $, $$, el } = FILM;
+  const lerp = (a, b, k) => a + (b - a) * k;
+
+  // ═════════ card ═════════
+  FILM.sceneFade('card', .5, .45); FILM.card('card');
+
+  // ═════════ same temperature, different arrangement ═════════
+  FILM.sceneFade('sametemp', .5, .45);
+  FILM.drift('#tcam', 'sametemp', 1.03, 1.0);
+  FILM.up('#bigRead', S('sametemp') + .4, .6, 20);
+  const partsA = [], partsB = [];
+  for (let i = 0; i < 70; i++) {                         // A: evenly spread
+    const gx = i % 10, gy = Math.floor(i / 10);
+    partsA.push({ x: 250 + 52 + gx * 54 + (rnd() - .5) * 20, y: 360 + 50 + gy * 56 + (rnd() - .5) * 20 });
+  }
+  for (let i = 0; i < 70; i++) {                         // B: two clumps
+    const c = i % 2 ? [1110 + 170, 360 + 150] : [1110 + 430, 360 + 300], a = rnd() * 6.28, r = Math.sqrt(rnd()) * 105;
+    partsB.push({ x: c[0] + Math.cos(a) * r, y: c[1] + Math.sin(a) * r });
+  }
+  [[partsA, '#partsA'], [partsB, '#partsB']].forEach(([arr, g]) => arr.forEach(p => { p.w = 6 + rnd() * 8; p.ph = rnd() * 6.28; p.e = el('circle', { cx: p.x, cy: p.y, r: 7, fill: '#ffb27a' }, $(g)); }));
+  const jig = { t: 0 };
+  const drawJig = () => [partsA, partsB].forEach(arr => arr.forEach(p => { p.e.setAttribute('cx', (p.x + 6 * Math.sin(p.w * jig.t + p.ph)).toFixed(1)); p.e.setAttribute('cy', (p.y + 6 * Math.cos(p.w * .8 * jig.t + p.ph)).toFixed(1)); }));
+  drawJig();
+  tl.to(jig, { t: D('sametemp'), duration: D('sametemp'), ease: 'none', onUpdate: drawJig }, S('sametemp'));
+  tl.set('#boxA, #boxB, #partsA, #partsB', { opacity: 0 }, 0);
+  tl.to('#boxA, #partsA', { opacity: 1, duration: .5 }, P('C5_01', .3));
+  tl.to('#boxB, #partsB', { opacity: 1, duration: .5 }, P('C5_01', .38));
+  tl.to('#bigRead', { y: -40, scale: .8, opacity: .5, duration: .6, ease: 'power2.inOut' }, P('C5_01', .3));
+  FILM.up('#rA, #rB', P('C5_01', .45), .4, 10);
+  FILM.show('#eqR', P('C5_01', .5), .3);
+  FILM.show('#neq', P('C5_01', .78), .3);
+  FILM.flash(P('C5_01', .78), .15, .3);
+  tl.to('#tcam', { opacity: 0, scale: .96, duration: .5 }, E('sametemp') - .5);
+
+  // ═════════ shortcut routes ═════════
+  FILM.sceneFade('shortcut', .5, .45);
+  FILM.drift('#scam', 'shortcut', 1.03, 1.0);
+  FILM.up('#cite', S('shortcut') + .3, .6, 16);
+  FILM.show('#nHot, #nCold, #nGoal', P('C5_02', .3), .4);
+  const rc = $('#routeCold'), rhP = $('#routeHot');
+  const Lc = rc.getTotalLength(), Lh = rhP.getTotalLength();
+  const ptsC = [], ptsH = [];
+  for (let i = 0; i <= 200; i++) { const a = rc.getPointAtLength(Lc * i / 200), b = rhP.getPointAtLength(Lh * i / 200); ptsC.push([a.x, a.y]); ptsH.push([b.x, b.y]); }
+  const along = (pts, u) => { const k = Math.max(0, Math.min(200, u * 200)), i = Math.floor(k), f = k - i, a = pts[i], b = pts[Math.min(200, i + 1)]; return [lerp(a[0], b[0], f), lerp(a[1], b[1], f)]; };
+  rc.setAttribute('stroke-dasharray', `${Lc} ${Lc}`); rc.setAttribute('stroke-dashoffset', Lc);
+  rhP.setAttribute('stroke-dasharray', `${Lh} ${Lh}`); rhP.setAttribute('stroke-dashoffset', Lh);
+  const race = { c: 0, h: 0 };
+  const drawRoutes = () => {
+    const [cx, cy] = along(ptsC, race.c), [hx, hy] = along(ptsH, race.h);
+    $('#dotCold').setAttribute('cx', cx); $('#dotCold').setAttribute('cy', cy); rc.setAttribute('stroke-dashoffset', Lc * (1 - race.c));
+    $('#dotHot').setAttribute('cx', hx); $('#dotHot').setAttribute('cy', hy); rhP.setAttribute('stroke-dashoffset', Lh * (1 - race.h));
+  };
+  drawRoutes();
+  const R0 = P('C5_02', .42), RD = Math.max(3.2, E('shortcut') - R0 - 1.2);
+  FILM.show('#plateau, #nSlow', R0 + .2, .5);
+  // the cold start crawls through the plateau (slow middle); the hot start goes straight in
+  tl.to(race, { c: .28, duration: RD * .2, ease: 'power1.out', onUpdate: drawRoutes }, R0);
+  tl.to(race, { c: .72, duration: RD * .65, ease: 'none', onUpdate: drawRoutes }, R0 + RD * .2);
+  tl.to(race, { c: .86, duration: RD * .15, ease: 'none', onUpdate: drawRoutes }, R0 + RD * .85);
+  tl.to(race, { h: 1, duration: RD * .55, ease: 'power2.inOut', onUpdate: drawRoutes }, R0 + RD * .2);
+  tl.fromTo('#goalPing', { attr: { r: 30 }, opacity: 1 }, { attr: { r: 90 }, opacity: 0, duration: .8, ease: 'power2.out', immediateRender: false }, R0 + RD * .75);
+  tl.to('#scam', { opacity: 0, y: 40, duration: .5, ease: 'power2.in' }, E('shortcut') - .5);
+
+  // ═════════ HERO: landscape ═════════
+  FILM.sceneFade('landscape', .6, 0);
+  // profile y(x): left rise, shallow wrong valley, middle hill, deep right valley, high right slope
+  const bumps = [[520, 250, -150], [880, 170, 150], [1330, 230, -310]];
+  const LY = x => { let y = 640 - (x < 260 ? (260 - x) * .9 : 0) - (x > 1560 ? (x - 1560) * 1.25 : 0); bumps.forEach(([c, w, h]) => { y -= h * Math.exp(-((x - c) ** 2) / (2 * w * w) * 1.6); }); return y; };
+  let dl = 'M-20,1100 L-20,' + LY(-20).toFixed(1); for (let x = 0; x <= 1940; x += 8) dl += ' L' + x + ',' + LY(x).toFixed(1); dl += ' L1940,1100 Z';
+  $('#land').setAttribute('d', dl);
+  for (let k = 1; k <= 7; k++) { let d = ''; for (let x = 0; x <= 1940; x += 12) d += (d ? ' L' : 'M') + x + ',' + (LY(x) + k * 34).toFixed(1); el('path', { d }, $('#contours')); }
+  for (let r = 0; r < 3; r++) { let d = 'M-20,1100'; for (let x = -20; x <= 1940; x += 20) d += ' L' + x + ',' + (330 + r * 70 + 70 * Math.sin(x / (230 - r * 40) + r * 2) + 40 * Math.sin(x / 97 + r)).toFixed(1); d += ' L1940,1100 Z'; el('path', { d, fill: ['#0e1826', '#111d2c', '#132234'][r], opacity: .9 }, $('#ridges')); }
+  let dg = 'M1100,' + LY(1100).toFixed(1); for (let x = 1100; x <= 1560; x += 8) dg += ' L' + x + ',' + LY(x).toFixed(1); dg += ' Z'; $('#deepGlow').setAttribute('d', dg);
+  for (let i = 0; i < 26; i++) { const x = 1180 + rnd() * 300; el('circle', { cx: x, cy: LY(x) - 6 - rnd() * 20, r: 1.5 + rnd() * 2.5, fill: '#e3f8ff', opacity: 0, class: 'spark' }, $('#frostSpark')); }
+  // valley labels positioned from the profile
+  const lowX = 1330, wrongX = 520;
+  $('#lWrong').style.left = (wrongX - 50) + 'px'; $('#lWrong').style.top = (LY(wrongX) + 40) + 'px';
+  $('#lLow').style.left = (lowX - 200) + 'px'; $('#lLow').style.top = (LY(lowX) + 44) + 'px';
+  $('#climb').setAttribute('d', `M${wrongX},${LY(wrongX) - 30} Q700,${LY(880) - 140} 880,${LY(880) - 40}`);
+  // marbles ride the profile
+  const mC = { x: 700 }, mH = { x: 1760 };
+  const place = (id, st) => { $(id).setAttribute('cx', st.x); $(id).setAttribute('cy', LY(st.x) - 26); };
+  place('#mC', mC); place('#mH', mH);
+  tl.fromTo('#lcam', { scale: 1.12, x: -120 }, { scale: 1.0, x: 0, duration: 3.2, ease: 'power2.out', immediateRender: false }, S('landscape'));
+  tl.to('#lcam', { scale: 1.04, duration: Math.max(1, D('landscape') - 3.2), ease: 'sine.inOut' }, S('landscape') + 3.2);
+  FILM.show('#lLow', P('C5_03', .35), .5);
+  tl.to('#deepGlow', { opacity: 1, duration: .8 }, P('C5_03', .35));
+  // cold start: drops into the wrong valley and stays there
+  FILM.show('#mC', P('C5_03', .55), .3);
+  tl.to(mC, { x: wrongX, duration: 1.4, ease: 'power2.in', onUpdate: () => place('#mC', mC) }, P('C5_03', .6));
+  tl.to(mC, { x: wrongX + 22, duration: .3, yoyo: true, repeat: Math.max(5, Math.floor((E('landscape') - P('C5_03', .6) - 1.4) / .3)), ease: 'sine.inOut', onUpdate: () => place('#mC', mC) }, P('C5_03', .6) + 1.4);
+  FILM.up('#lWrong', P('C5_03', .85), .4, 8);
+  FILM.draw('#climb', P('C5_03', .9), .8);
+  tl.to('#climb', { opacity: .7, duration: .01 }, P('C5_03', .9));
+  // hot start: higher, on the slope that runs straight into the lowest valley
+  FILM.show('#mH', V('C5_04'), .3);
+  tl.fromTo('#mH', { scale: 1.6, transformOrigin: '50% 50%' }, { scale: 1, duration: .4, ease: 'back.out(2)', immediateRender: false }, V('C5_04'));
+  const HR = P('C5_04', .45);
+  tl.to(mH, { x: lowX, duration: 1.6, ease: 'power2.in', onUpdate: () => place('#mH', mH) }, HR);
+  tl.to(mH, { x: lowX - 30, duration: .5, ease: 'sine.out', onUpdate: () => place('#mH', mH) }, HR + 1.6);
+  tl.to(mH, { x: lowX, duration: .6, ease: 'sine.inOut', onUpdate: () => place('#mH', mH) }, HR + 2.1);
+  tl.to('#mH', { attr: { fill: 'url(#mCold)' }, duration: .01 }, HR + 1.7);
+  FILM.flash(HR + 1.65, .22, .5);
+  $$('.spark').forEach((sp, i) => tl.to(sp, { attr: { opacity: 1 }, duration: .15, yoyo: true, repeat: 3 }, HR + 1.7 + i * .03));
+
+  // ═════════ the lab: credit + real FLOW_10, then Flow's own bloom irises into the microscope ═════════
+  FILM.sceneFade('lab', .4, 0);
+  tl.set('#labOver', { opacity: 1 }, S('lab')); tl.set('#labOver', { opacity: 0 }, E('lab'));
+  FILM.up('#labCite', V('C5_05') + .1, .6, 14);
+  tl.set('#laserPath, #laserCore', { attr: { 'stroke-dasharray': '2400 2400', 'stroke-dashoffset': 2400 } }, 0);
+  tl.to('#laserPath, #laserCore', { attr: { 'stroke-dashoffset': 0 }, duration: 1.4, ease: 'power2.inOut' }, S('lab') + .3);
+  tl.fromTo('#labcam', { scale: 1.0 }, { scale: 1.06, duration: D('lab'), ease: 'none', immediateRender: false }, S('lab'));
+  const F0 = V('C5_05') + 2.4, ft = c => F0 + (c - 2.95);          // clip time → timeline
+  FILM.show('#labTag', ft(3.2), .4);
+  tl.to('#labTag', { opacity: 0, duration: .3 }, ft(6.1));
+  // Flow blooms to white-green at 6.25–6.75; hold that white, then open onto the drawn microscope
+  tl.to('#labBloom', { opacity: 1, duration: .35 }, ft(6.55));
+  tl.set('#labScope', { opacity: 1 }, ft(7.0)); tl.set('#labcam > svg:first-child, #labCite', { opacity: 0 }, ft(7.0));
+  tl.to('#labBloom', { opacity: 0, duration: .8, ease: 'power2.out' }, ft(7.05));
+  tl.fromTo('#labScope', { scale: 1.8, transformOrigin: '620px 540px' }, { scale: 1, duration: 1.0, ease: 'expo.out', immediateRender: false }, ft(7.0));
+  tl.fromTo('#bead2', { attr: { cx: 560 } }, { attr: { cx: 690 }, duration: .9, yoyo: true, repeat: Math.max(3, Math.ceil((E('lab') - ft(7)) / .9)), ease: 'sine.inOut', immediateRender: false }, ft(7.0));
+  FILM.up('#beadLab', Math.max(ft(7.4), P('C5_05', .72)), .5, 8);
+
+  // ═════════ bead in a sculpted double well ═════════
+  FILM.sceneFade('bead', .01, 0);
+  
+  const wellP = { a: 0 };  // 0: gentle single dip → 1: sculpted asymmetric double well
+  // wells dip DOWN on screen: g(u) > 0 where the bead is most likely to settle
+  const WY = (x, a) => { const u = (x - 620) / 300; const g = (1 - a) * (1 - u * u * .8) + a * (.62 * Math.exp(-((u + .45) ** 2) * 9) + 1.25 * Math.exp(-((u - .42) ** 2) * 7)); return 560 + 170 * g; };
+  const drawWell = () => { let d = ''; for (let x = 240; x <= 1000; x += 8) d += (d ? ' L' : 'M') + x + ',' + WY(x, wellP.a).toFixed(1); $('#well').setAttribute('d', d); };
+  drawWell();
+  const bd = { t: 0, heat: 1 };
+  const drawBead = () => { const x = 620 + 150 * Math.sin(bd.t * 3.1) * bd.heat + 26 * Math.sin(bd.t * 11.7), y = WY(Math.max(250, Math.min(990, x)), wellP.a) - 34 + 8 * Math.sin(bd.t * 17); $('#bead').setAttribute('cx', x.toFixed(1)); $('#bead').setAttribute('cy', y.toFixed(1)); };
+  drawBead();
+  tl.to(bd, { t: D('bead'), duration: D('bead'), ease: 'none', onUpdate: drawBead }, S('bead'));
+  tl.to(wellP, { a: 1, duration: 2.2, ease: 'power2.inOut', onUpdate: () => { drawWell(); drawBead(); } }, P('C5_06', .15));
+  FILM.show('#sculpt', P('C5_06', .15), .4);
+  tl.to(bd, { heat: .15, duration: 3, ease: 'power2.out', onUpdate: drawBead }, P('C5_06', .7));
+  // log-scale cooling curves (illustrative shape): hotter starts fall away faster
+  tl.to('#scopeG', { x: -120, scale: .82, transformOrigin: '620px 540px', duration: .8, ease: 'power2.inOut' }, V('C5_07') - .3);
+  FILM.show('#logplot, #lgY, #lgX', V('C5_07') - .1, .5);
+  for (let k = 0; k <= 4; k++) el('line', { x1: 1160, y1: 220 + k * 145, x2: 1800, y2: 220 + k * 145 }, $('#logTicks'));
+  const LX = t => 1160 + t * 640, LYg = v => 800 - (v + 4) / 4 * 580;   // v = log10 distance (0 … −4)
+  const lg = (v0, r) => { let d = ''; for (let i = 0; i <= 80; i++) { const t = i / 80, v = Math.max(-4, v0 - r * t * 4); d += (i ? ' L' : 'M') + LX(t).toFixed(1) + ',' + LYg(v).toFixed(1); if (v <= -4) break; } return d; };
+  $('#lgCool').setAttribute('d', lg(-.6, .5)); $('#lgWarm').setAttribute('d', lg(-.3, .56)); $('#lgHot').setAttribute('d', lg(0, 1.9));
+  ['#lgCool', '#lgWarm', '#lgHot'].forEach((s, i) => FILM.wipeIn(s, V('C5_07') + .3 + i * .35, 1.1, 'left'));
+  $('#lgHotL').style.top = (LYg(-3.8) - 18) + 'px'; $('#lgHotL').style.left = (LX(.53) + 18) + 'px';
+  $('#lgCoolL').style.top = (LYg(-2.6) - 52) + 'px'; $('#lgCoolL').style.left = (LX(1) - 250) + 'px';
+  FILM.up('#lgHotL', V('C5_07') + 1.4, .4, 8); FILM.up('#lgCoolL', V('C5_07') + 1.0, .4, 8);
+  tl.to('#bcam', { opacity: 0, duration: .45 }, E('bead') - .45);
+
+  // ═════════ quantum + inverse ═════════
+  FILM.sceneFade('quantum', .5, .45);
+  FILM.drift('#qcam', 'quantum', 1.04, 1.0);
+  FILM.show('#beams', P('C5_08', .1), .6);
+  FILM.pop('#ion', P('C5_08', .2), .5);
+  tl.to('#ion', { scale: 1.25, transformOrigin: '50% 50%', duration: .6, yoyo: true, repeat: Math.floor(D('quantum') / .6), ease: 'sine.inOut' }, P('C5_08', .3));
+  FILM.up('#qTag', P('C5_08', .22), .4, 8);
+  // mirror image: the cooling race reflected into a heating race, the cold start wins
+  const MXq = t => 1060 + t * 740;
+  const down = (() => { let d = ''; for (let i = 0; i <= 60; i++) { const t = i / 60; d += (i ? ' L' : 'M') + MXq(t).toFixed(1) + ',' + (540 - 260 * Math.exp(-3 * t)).toFixed(1); } return d; })();
+  const up = (y0, r) => { let d = ''; for (let i = 0; i <= 60; i++) { const t = i / 60; d += (i ? ' L' : 'M') + MXq(t).toFixed(1) + ',' + (540 + (y0 - 540) * Math.exp(-r * t) - 0).toFixed(1); } return d; };
+  $('#mCoolDown').setAttribute('d', down);
+  $('#mUpCold').setAttribute('d', up(820, 5.5)); $('#mUpWarm').setAttribute('d', up(720, 1.8));
+  FILM.show('#mirror', P('C5_08', .55), .4);
+  FILM.up('#qInv', P('C5_08', .6), .4, 8);
+  tl.fromTo('#mCoolDown', { scaleY: 1, transformOrigin: '50% 540px' }, { scaleY: -1, duration: .9, ease: 'power2.inOut', immediateRender: false }, P('C5_08', .62));
+  FILM.wipeIn('#mUpCold', P('C5_08', .72), 1.0, 'left'); FILM.wipeIn('#mUpWarm', P('C5_08', .72), 1.6, 'left');
+  $('#qColdL').style.top = '600px';
+  FILM.up('#qColdL', P('C5_08', .8), .4, 8);
+
+  // ═════════ principle ═════════
+  FILM.sceneFade('principle', .5, 0);
+  FILM.drift('#pcam', 'principle', 1.05, 1.0);
+  const pn = $('#pNear'), pf = $('#pFar'), Ln = pn.getTotalLength(), Lf = pf.getTotalLength();
+  const ptsN = [], ptsF = []; for (let i = 0; i <= 200; i++) { const a = pn.getPointAtLength(Ln * i / 200), b = pf.getPointAtLength(Lf * i / 200); ptsN.push([a.x, a.y]); ptsF.push([b.x, b.y]); }
+  pf.setAttribute('stroke-dasharray', `${Lf} ${Lf}`); pf.setAttribute('stroke-dashoffset', Lf);
+  const pr = { n: 0, f: 0 };
+  const drawP = () => { const [nx, ny] = along(ptsN, pr.n), [fx, fy] = along(ptsF, pr.f); $('#pNearDot').setAttribute('cx', nx); $('#pNearDot').setAttribute('cy', ny); $('#pFarDot').setAttribute('cx', fx); $('#pFarDot').setAttribute('cy', fy); pf.setAttribute('stroke-dashoffset', Lf * (1 - pr.f)); };
+  drawP();
+  const PR = P('C5_09', .35);
+  tl.to(pr, { n: .62, duration: 3.2, ease: 'none', onUpdate: drawP }, PR);
+  tl.to(pr, { f: 1, duration: 2.4, ease: 'power2.inOut', onUpdate: drawP }, PR + .2);
+  tl.fromTo('#flagPing', { attr: { r: 34 }, opacity: 1 }, { attr: { r: 110 }, opacity: 0, duration: .9, ease: 'power2.out', immediateRender: false }, PR + 2.6);
+  FILM.flash(PR + 2.6, .15, .4);
+  tl.to('#dusk', { opacity: .85, duration: 1.4, ease: 'power1.in' }, E('principle') - 1.5);
+
+  FILM.finish('ch5');
+})();
+</script>
+</body>
+</html>

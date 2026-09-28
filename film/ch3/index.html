@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en" data-composition-variables='[{"id":"scratchVO","type":"boolean","label":"Show SCRATCH VO subtitles (review only)","default":false}]'>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1920, height=1080" />
+<title>Ch 3 · Why It Shouldn't Happen</title>
+<link rel="stylesheet" href="shared/film.css" />
+<script src="shared/vendor/gsap.min.js"></script>
+<script id="timing" type="application/json">
+{
+  "chapter": 3,
+  "title": "Why It Shouldn't Happen",
+  "seed": 303,
+  "defaults": {
+    "lead": 0.5,
+    "gap": 0.45,
+    "tail": 0.7
+  },
+  "scenes": [
+    {
+      "id": "card",
+      "min": 3.0,
+      "md": "Chapter card 03",
+      "out": "crossfade"
+    },
+    {
+      "id": "molecules",
+      "vo": [
+        "C3_01"
+      ],
+      "lead": 0.6,
+      "min": 8,
+      "xin": 0.4,
+      "md": "Cup of jiggling molecules (ember → frost); temperature bar; cooling curve draws fast-then-slow",
+      "out": "crossfade to graph"
+    },
+    {
+      "id": "race",
+      "vo": [
+        "C3_02",
+        "C3_03"
+      ],
+      "gap": 0.6,
+      "min": 12,
+      "xin": 0.4,
+      "md": "Opening race graph reprised: hot must pass cold's start; HEAD START bracket; then ember drop = frost drop becomes ≠",
+      "out": "≠ slides up into lineup heading"
+    },
+    {
+      "id": "lineup",
+      "vo": [
+        "C3_04",
+        "C3_05",
+        "C3_06",
+        "C3_07",
+        "C3_08",
+        "C3_09"
+      ],
+      "gap": 0.55,
+      "lead": 0.9,
+      "tail": 1.6,
+      "min": 20,
+      "xin": 0.4,
+      "md": "Five suspect cards; each lifts with its own animated evidence (steam, bubbles, convection loops, frost pad, dice) and nudges the hot curve on a live mini race chart; then trial squares fill mixed and the curve wavers: RESULTS VARY",
+      "flow": {
+        "file": "FLOW_08_steam_macro.mp4",
+        "in": 1.0,
+        "out": 5.0,
+        "refs": [
+          "REF_kitchen"
+        ],
+        "tier": "B",
+        "status": "OPTIONAL: MD steam fallback in use"
+      },
+      "out": "cards drop, fade to black"
+    }
+  ],
+  "vo": {
+    "C3_01": {
+      "text": "So what's so impossible about it? Temperature is just how hard the molecules are jiggling. Put water in a freezer and the jiggling drains away, fast at first, then slower.",
+      "estimate": 12.3,
+      "source": "estimate"
+    },
+    "C3_02": {
+      "text": "To reach freezing, hot water has to drain through every temperature on the way down, including the one the cold water started at. At that moment it's exactly where the cold cup was at the start, and the cold cup is already further along.",
+      "estimate": 17.4,
+      "source": "estimate"
+    },
+    "C3_03": {
+      "text": "If they really were the same water, hot could never win. So if it wins, something has changed. The hot water isn't the same water anymore.",
+      "estimate": 10.8,
+      "source": "estimate"
+    },
+    "C3_04": {
+      "text": "Suspect one: evaporation. Hot water steams. It loses mass, and less water has less heat to lose.",
+      "estimate": 7.3,
+      "source": "estimate"
+    },
+    "C3_05": {
+      "text": "Suspect two: dissolved gas. Heating drives air out of water, and gas-free water may behave differently.",
+      "estimate": 7.0,
+      "source": "estimate"
+    },
+    "C3_06": {
+      "text": "Suspect three: convection. A hot cup churns, carrying heat to its surface, where it escapes.",
+      "estimate": 6.3,
+      "source": "estimate"
+    },
+    "C3_07": {
+      "text": "Suspect four: frost. A warm cup can melt the frost under it and sit in better contact with the cold.",
+      "estimate": 8.2,
+      "source": "estimate"
+    },
+    "C3_08": {
+      "text": "And suspect five: supercooling. Water can drop below zero without freezing, and whether it does is partly luck.",
+      "estimate": 7.4,
+      "source": "estimate"
+    },
+    "C3_09": {
+      "text": "Every one of these can tilt the race. None of them wins every time. And that's where the story takes an uncomfortable turn.",
+      "estimate": 9.6,
+      "source": "estimate"
+    }
+  }
+}
+</script>
+<style>
+  .panel{position:absolute;background:#0d141e;border:2px solid #243447;border-radius:10px}
+  .scard{position:absolute;top:640px;width:300px;height:330px;background:#0d141e;border:2px solid #243447;border-radius:12px}
+  .scard .n{position:absolute;left:20px;top:16px;font-family:var(--mono);font-weight:600;font-size:22px;letter-spacing:.2em;color:#7f93a8}
+  .scard .nm{position:absolute;left:0;right:0;top:206px;text-align:center;font-family:var(--display);font-weight:800;font-size:40px;letter-spacing:.04em;color:var(--paper);white-space:nowrap}
+  .scard svg.ic{position:absolute;left:80px;top:54px;width:140px;height:130px}
+  .scard .trials{position:absolute;left:34px;right:34px;top:272px;display:flex;gap:8px}
+  .scard .trials i{flex:1;height:26px;border-radius:3px;background:#1b2838;opacity:0}
+  .evtag{font-family:var(--mono);font-weight:600;font-size:26px;letter-spacing:.18em;white-space:nowrap}
+  #stamp{position:absolute;left:1360px;top:270px;transform:rotate(-7deg);border:4px solid var(--frost);color:var(--frost);font-family:var(--display);font-weight:900;font-size:64px;letter-spacing:.06em;padding:4px 22px;opacity:0}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="ch3" data-start="0" data-duration="96.450" data-width="1920" data-height="1080">
+
+  <!-- ───────── card ───────── -->
+  <div id="sc-card" class="scene clip dark" data-scene="card" data-start="0.000" data-duration="3.000" data-track-index="1">
+    <div class="chcard"><div class="num">CHAPTER 03</div><div class="title">WHY IT<br>SHOULDN'T HAPPEN</div><div class="rule"></div></div>
+  </div>
+
+  <!-- ───────── molecules ───────── -->
+  <div id="sc-molecules" class="scene clip dark" data-scene="molecules" data-start="2.600" data-duration="13.600" data-track-index="2">
+    <div class="cam" id="mcam">
+      <svg class="full" viewBox="0 0 1920 1080">
+        <defs>
+          <linearGradient id="glass" x1="0" x2="1"><stop offset="0" stop-color="#cfe9ff" stop-opacity=".22"/><stop offset=".2" stop-color="#cfe9ff" stop-opacity=".05"/><stop offset=".8" stop-color="#cfe9ff" stop-opacity=".03"/><stop offset="1" stop-color="#cfe9ff" stop-opacity=".18"/></linearGradient>
+          <clipPath id="mclip"><path d="M-104,6 L-80,276 L80,276 L104,6 Z"/></clipPath>
+          <radialGradient id="coldEdge" cx="50%" cy="50%" r="75%"><stop offset=".62" stop-color="#8fe3ff" stop-opacity="0"/><stop offset="1" stop-color="#8fe3ff" stop-opacity=".28"/></radialGradient>
+        </defs>
+        <rect id="freezerEdge" x="0" y="0" width="1920" height="1080" fill="url(#coldEdge)" opacity="0"/>
+        <g transform="translate(560 250) scale(1.9)">
+          <g clip-path="url(#mclip)"><g id="mols"></g></g>
+          <path d="M-110,0 L-85,280 Q-84,292 -72,292 L72,292 Q84,292 85,280 L110,0" fill="url(#glass)" stroke="#dff3ff" stroke-opacity=".55" stroke-width="2"/>
+          <ellipse cx="0" cy="0" rx="110" ry="12" fill="none" stroke="#dff3ff" stroke-opacity=".6" stroke-width="2"/>
+        </g>
+        <!-- thermometer -->
+        <g transform="translate(170 300)">
+          <rect x="-14" y="0" width="28" height="460" rx="14" fill="#0d141e" stroke="#3b5268" stroke-width="3"/>
+          <rect id="thermoFill" x="-8" y="6" width="16" height="448" rx="8" fill="#ff6a2b"/>
+          <circle cx="0" cy="490" r="30" fill="#0d141e" stroke="#3b5268" stroke-width="3"/><circle id="thermoBulb" cx="0" cy="490" r="22" fill="#ff6a2b"/>
+        </g>
+        <!-- cooling chart -->
+        <g id="mchart" opacity="0">
+          <line x1="1120" y1="250" x2="1120" y2="820" stroke="#3b5268" stroke-width="3"/>
+          <line x1="1120" y1="820" x2="1790" y2="820" stroke="#3b5268" stroke-width="3"/>
+          <path id="mcurve" fill="none" stroke="#ff6a2b" stroke-width="7" stroke-linecap="round"/>
+          <circle id="mhead" r="11" fill="#ffd9c2"/>
+        </g>
+      </svg>
+      <div class="abs lab" style="left:120px;top:236px">Temperature</div>
+      <div class="abs lab" id="mYl" style="left:1060px;top:236px;opacity:0">°C</div>
+      <div class="abs lab" id="mXl" style="left:1560px;top:846px;opacity:0">Time in freezer →</div>
+      <div class="abs tag frost" id="mFreezer" style="left:120px;top:120px;opacity:0">Freezer −18°C</div>
+      <div class="abs disp" id="mTemp" style="left:250px;top:120px;font-size:88px;font-family:var(--mono);font-weight:600;letter-spacing:-.02em;width:360px;text-align:right">90°</div>
+    </div>
+  </div>
+
+  <!-- ───────── race ───────── -->
+  <div id="sc-race" class="scene clip dark" data-scene="race" data-start="15.800" data-duration="30.000" data-track-index="3">
+    <div class="cam" id="rcam">
+      <svg class="full" viewBox="0 0 1920 1080" id="rsvg">
+        <defs><pattern id="hatch" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="14" stroke="#8fe3ff" stroke-opacity=".22" stroke-width="3"/></pattern></defs>
+        <g id="rgraph">
+          <line x1="260" y1="150" x2="260" y2="930" stroke="#8ea2b8" stroke-width="5"/>
+          <rect x="260" y="930" width="1460" height="70" fill="url(#hatch)"/>
+          <line x1="260" y1="930" x2="1720" y2="930" stroke="#8fe3ff" stroke-width="3"/>
+          <line id="rband" x1="260" y1="756.7" x2="1720" y2="756.7" stroke="#8fe3ff" stroke-width="2" stroke-dasharray="10 10" opacity=".7"/>
+          <path id="rcold" fill="none" stroke="#8fe3ff" stroke-width="7" stroke-linecap="round"/>
+          <path id="rhot" fill="none" stroke="#ff6a2b" stroke-width="5" stroke-linecap="round" stroke-dasharray="14 12"/>
+          <circle id="rhead" r="12" fill="#ffd9c2"/>
+          <line id="rcursor" x1="1000" y1="140" x2="1000" y2="930" stroke="#e8eef5" stroke-width="2" stroke-dasharray="4 8" opacity="0"/>
+          <circle id="rcoldDot" cx="1000" cy="0" r="12" fill="#e3f8ff" opacity="0"/>
+          <circle id="rhotDot" cx="1000" cy="756.7" r="14" fill="none" stroke="#ffd9c2" stroke-width="4" opacity="0"/>
+          <path id="rbracket" fill="none" stroke="#8fe3ff" stroke-width="4" stroke-linecap="round"/>
+        </g>
+        <g id="eq" opacity="0">
+          <g id="dropH" transform="translate(700 560)"><path d="M0,-150 C60,-60 110,0 110,60 C110,125 60,165 0,165 C-60,165 -110,125 -110,60 C-110,0 -60,-60 0,-150 Z" fill="rgba(255,106,43,.14)" stroke="#ff6a2b" stroke-width="7" id="dropHPath"/></g>
+          <g id="dropC" transform="translate(1220 560)"><path d="M0,-150 C60,-60 110,0 110,60 C110,125 60,165 0,165 C-60,165 -110,125 -110,60 C-110,0 -60,-60 0,-150 Z" fill="rgba(143,227,255,.14)" stroke="#8fe3ff" stroke-width="7"/></g>
+          <g id="eqSign" stroke="#efe7d5" stroke-width="12" stroke-linecap="round"><line x1="915" y1="535" x2="1005" y2="535"/><line x1="915" y1="585" x2="1005" y2="585"/></g>
+          <line id="eqStrike" x1="985" y1="490" x2="935" y2="630" stroke="#ff6a2b" stroke-width="12" stroke-linecap="round" opacity="0"/>
+        </g>
+      </svg>
+      <div class="abs lab" id="rl90" style="left:120px;top:136px">90°C</div>
+      <div class="abs lab" id="rl20" style="left:120px;top:742px">20°C</div>
+      <div class="abs lab" style="left:140px;top:916px">0°C</div>
+      <div class="abs tag frost" id="rColdLab" style="left:1480px;top:708px">Cold starts here</div>
+      <div class="abs tag ember" id="rHotLab" style="left:300px;top:118px;opacity:0">Hot, if it were the same water</div>
+      <div class="abs tag frost" id="rHead" style="left:760px;width:220px;text-align:right;top:778px;opacity:0">Head start</div>
+      <div class="abs note" id="rIllus" style="left:260px;top:1012px">Illustrative curves · not measured data</div>
+      <div class="abs tag ember" id="eqH" style="left:560px;top:760px;width:280px;text-align:center;opacity:0">Hot water</div>
+      <div class="abs tag frost" id="eqC" style="left:1080px;top:760px;width:280px;text-align:center;opacity:0">Cold water</div>
+    </div>
+  </div>
+
+  <!-- ───────── lineup ───────── -->
+  <div id="sc-lineup" class="scene clip dark" data-scene="lineup" data-start="45.400" data-duration="51.050" data-track-index="4">
+    <div class="cam" id="lcam">
+      <div class="abs mono" id="lhead" style="left:120px;top:52px;font-size:26px;font-weight:600;letter-spacing:.24em;color:#a9bccf">What makes hot water different?</div>
+      <svg class="full" viewBox="0 0 1920 1080">
+        <defs>
+          <clipPath id="lclip"><path d="M-104,6 L-80,276 L80,276 L104,6 Z"/></clipPath>
+          <linearGradient id="lglass" x1="0" x2="1"><stop offset="0" stop-color="#cfe9ff" stop-opacity=".22"/><stop offset=".2" stop-color="#cfe9ff" stop-opacity=".05"/><stop offset="1" stop-color="#cfe9ff" stop-opacity=".16"/></linearGradient>
+          <linearGradient id="lwater" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd2b4" stop-opacity=".28"/><stop offset="1" stop-color="#ff6a2b" stop-opacity=".22"/></linearGradient>
+        </defs>
+        <!-- evidence stage: one cup, five treatments -->
+        <g id="stage" transform="translate(600 250) scale(1.14)">
+          <g id="shelf" opacity="0"><rect x="-260" y="296" width="520" height="16" fill="#1c2a3a"/><path id="frostPad" d="M-120,296 q10,-12 20,0 q10,-14 20,0 q10,-10 20,0 q10,-14 20,0 q10,-12 20,0 q10,-14 20,0 q10,-10 20,0 q10,-14 20,0 q10,-12 20,0 q10,-14 20,0 q10,-12 20,0 q10,-14 20,0 Z" fill="#e3f8ff" opacity=".85"/></g>
+          <g id="lcup">
+            <g clip-path="url(#lclip)">
+              <rect id="lwaterRect" x="-120" y="60" width="240" height="230" fill="url(#lwater)"/>
+              <g id="bubbles"></g>
+              <g id="loops" fill="none" stroke="#ffb27a" stroke-width="5" stroke-linecap="round" opacity="0">
+                <path class="lp" d="M-30,250 C-90,230 -90,110 -30,90 C0,80 10,120 -10,160" stroke-dasharray="18 14"/>
+                <path class="lp" d="M30,250 C90,230 90,110 30,90 C0,80 -10,120 10,160" stroke-dasharray="18 14"/>
+              </g>
+            </g>
+            <ellipse id="lsurf" cx="0" cy="60" rx="99" ry="11" fill="none" stroke="#ffc9a3" stroke-width="3" opacity=".8"/>
+            <path d="M-110,0 L-85,280 Q-84,292 -72,292 L72,292 Q84,292 85,280 L110,0" fill="url(#lglass)" stroke="#dff3ff" stroke-opacity=".6" stroke-width="3"/>
+            <ellipse cx="0" cy="0" rx="110" ry="12" fill="none" stroke="#dff3ff" stroke-opacity=".6" stroke-width="3"/>
+          </g>
+          <g id="steam" fill="none" stroke="#ffd2b0" stroke-width="6" stroke-linecap="round" opacity="0"></g>
+          <g id="upArrows" stroke="#ff6a2b" stroke-width="6" stroke-linecap="round" fill="none" opacity="0">
+            <path d="M-40,40 L-40,-40 M-52,-26 L-40,-42 L-28,-26"/><path d="M40,40 L40,-40 M28,-26 L40,-42 L52,-26"/>
+          </g>
+          <g id="coldArrows" stroke="#8fe3ff" stroke-width="6" stroke-linecap="round" fill="none" opacity="0">
+            <path d="M-50,360 L-50,300 M-62,314 L-50,298 L-38,314"/><path d="M0,370 L0,300 M-12,314 L0,298 L12,314"/><path d="M50,360 L50,300 M38,314 L50,298 L62,314"/>
+          </g>
+          <g id="dice" opacity="0" transform="translate(310 170)">
+            <g id="die1"><rect x="-44" y="-44" width="88" height="88" rx="14" fill="#efe7d5"/><g class="pips" fill="#06080c"></g></g>
+            <g id="die2" transform="translate(120 20)"><rect x="-44" y="-44" width="88" height="88" rx="14" fill="#efe7d5"/><g class="pips" fill="#06080c"></g></g>
+          </g>
+        </g>
+        <!-- mini race chart -->
+        <g id="mini">
+          <rect x="1270" y="130" width="560" height="430" rx="12" fill="#0d141e" stroke="#243447" stroke-width="2"/>
+          <line x1="1320" y1="170" x2="1320" y2="500" stroke="#3b5268" stroke-width="3"/>
+          <line x1="1320" y1="500" x2="1790" y2="500" stroke="#3b5268" stroke-width="3"/>
+          <path id="miniBand" fill="rgba(255,106,43,.14)" stroke="none" opacity="0"/>
+          <path id="miniGhost" fill="none" stroke="#ff6a2b" stroke-width="3" stroke-dasharray="8 8" opacity=".35"/>
+          <path id="miniCold" fill="none" stroke="#8fe3ff" stroke-width="6" stroke-linecap="round"/>
+          <path id="miniHot" fill="none" stroke="#ff6a2b" stroke-width="6" stroke-linecap="round"/>
+        </g>
+      </svg>
+      <div class="abs lab" style="left:1300px;top:516px;font-size:18px">0°C</div>
+      <div class="abs note" style="left:1300px;top:576px">Illustrative · the race, suspect by suspect</div>
+      <div class="abs evtag" id="tag1" style="left:930px;top:300px;color:var(--ember2);opacity:0">− Mass</div>
+      <div class="abs evtag" id="tag2" style="left:930px;top:300px;color:var(--ember2);opacity:0">− Dissolved air</div>
+      <div class="abs evtag" id="tag3" style="left:930px;top:300px;color:var(--ember2);opacity:0">Heat → surface</div>
+      <div class="abs evtag" id="tag4" style="left:930px;top:300px;color:var(--frost);opacity:0">Better contact</div>
+      <div class="abs evtag" id="tag5" style="left:930px;top:470px;color:var(--frost);opacity:0">Liquid at −3°C</div>
+      <div id="stamp">RESULTS VARY</div>
+      <div id="cards"></div>
+    </div>
+  </div>
+
+  <!-- ───────── audio ───────── -->
+  <audio id="music" src="assets/audio/music.wav" data-start="0" data-duration="96.450" data-volume="1" data-track-index="20"></audio>
+  <audio id="sfx" src="assets/audio/sfx.wav" data-start="0" data-duration="96.450" data-volume="1" data-track-index="21"></audio>
+  <!-- VO:BEGIN (generated by tools/retime_chapters.py) -->
+  <audio id="vo_c3_01" src="assets/vo/C3_01.wav" data-start="3.200" data-duration="12.300" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_c3_02" src="assets/vo/C3_02.wav" data-start="16.300" data-duration="17.400" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_c3_03" src="assets/vo/C3_03.wav" data-start="34.300" data-duration="10.800" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_c3_04" src="assets/vo/C3_04.wav" data-start="46.300" data-duration="7.300" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_c3_05" src="assets/vo/C3_05.wav" data-start="54.150" data-duration="7.000" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_c3_06" src="assets/vo/C3_06.wav" data-start="61.700" data-duration="6.300" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_c3_07" src="assets/vo/C3_07.wav" data-start="68.550" data-duration="8.200" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_c3_08" src="assets/vo/C3_08.wav" data-start="77.300" data-duration="7.400" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_c3_09" src="assets/vo/C3_09.wav" data-start="85.250" data-duration="9.600" data-volume="1" data-track-index="22"></audio>
+  <!-- VO:END -->
+
+  <div id="flash"></div><div id="vignette"></div><div id="grain" data-layout-ignore></div><div id="black"></div>
+  <div id="scratch" data-layout-allow-caption-zone><span class="tagx">SCRATCH VO</span><span class="txt" id="scratchTxt"></span></div>
+</div>
+
+<script src="shared/film.js"></script>
+<script>
+window.__timelines = window.__timelines || {};   // FILM.finish() registers this chapter's timeline
+FILM_INIT();   // shared/film.js: lays out scenes from the timing block (must run after it is in the DOM)
+(function () {
+  const { tl, S, E, D, V, VE, P, rnd, $, $$, el, div } = FILM;
+  const lerp = (a, b, k) => a + (b - a) * k;
+  const mix = (c1, c2, k) => { const a = c1.match(/\w\w/g).map(h => parseInt(h, 16)), b = c2.match(/\w\w/g).map(h => parseInt(h, 16)); return '#' + a.map((v, i) => Math.round(lerp(v, b[i], k)).toString(16).padStart(2, '0')).join(''); };
+
+  // ═════════ card ═════════
+  FILM.sceneFade('card', .5, .45);
+  FILM.card('card');
+
+  // ═════════ molecules ═════════
+  FILM.sceneFade('molecules', .5, .45);
+  FILM.drift('#mcam', 'molecules', 1.04, 1.0);
+  const molG = $('#mols'), mols = [];
+  while (mols.length < 110) {
+    const y = 64 + rnd() * 206, half = lerp(98, 80, (y - 6) / 270) - 8, x = (rnd() * 2 - 1) * half;
+    mols.push({ x, y, w: 5 + rnd() * 9, p: rnd() * 6.28, q: rnd() * 6.28, e: el('circle', { cx: x, cy: y, r: 5.2 }, molG) });
+  }
+  const mT = { T: 90 }, mClock = { t: 0 };
+  const renderMols = () => {
+    const k = mT.T / 90, amp = 1.2 + 11 * k, col = mix('8fe3ff', 'ff6a2b', Math.min(1, k * 1.15));
+    mols.forEach(m => { m.e.setAttribute('cx', (m.x + amp * Math.sin(m.w * mClock.t + m.p)).toFixed(1)); m.e.setAttribute('cy', (m.y + amp * Math.cos(m.w * .9 * mClock.t + m.q)).toFixed(1)); m.e.setAttribute('fill', col); });
+    const h = 448 * (mT.T + 18) / 108; $('#thermoFill').setAttribute('y', 6 + 448 - h); $('#thermoFill').setAttribute('height', h);
+    $('#thermoFill').setAttribute('fill', col); $('#thermoBulb').setAttribute('fill', col);
+    $('#mTemp').textContent = Math.round(mT.T) + '°'; $('#mTemp').style.color = col;
+  };
+  renderMols();
+  tl.to(mClock, { t: D('molecules'), duration: D('molecules'), ease: 'none', onUpdate: renderMols }, S('molecules'));
+  const coolStart = P('C3_01', .52), coolEnd = Math.max(coolStart + 3, E('molecules') - .9);
+  const coolEase = gsap.parseEase('power3.out');
+  tl.to(mT, { T: 4, duration: coolEnd - coolStart, ease: 'power3.out', onUpdate: renderMols }, coolStart);
+  tl.to('#freezerEdge', { opacity: 1, duration: .8 }, coolStart - .3);
+  FILM.up('#mFreezer', coolStart - .3, .5, 12);
+  // cooling curve: x linear in time, shape = the same ease (fast first, then slower)
+  const MX0 = 1120, MX1 = 1780, MY = T => 820 - T / 90 * 570;
+  let md = ''; for (let i = 0; i <= 120; i++) { const u = i / 120; md += (i ? ' L' : 'M') + lerp(MX0, MX1, u).toFixed(1) + ',' + MY(90 - 86 * coolEase(u)).toFixed(1); }
+  $('#mcurve').setAttribute('d', md);
+  FILM.show('#mchart, #mYl, #mXl', coolStart - .2, .5);
+  const mc = { u: 0 };
+  const drawM = () => { $('#mcurve').style.clipPath = `inset(-20px ${((1 - mc.u) * (MX1 - MX0 + 20)).toFixed(1)}px -20px -20px)`; $('#mhead').setAttribute('cx', lerp(MX0, MX1, mc.u)); $('#mhead').setAttribute('cy', MY(90 - 86 * coolEase(mc.u))); };
+  drawM();
+  tl.to(mc, { u: 1, duration: coolEnd - coolStart, ease: 'none', onUpdate: drawM }, coolStart);
+
+  // ═════════ race ═════════
+  FILM.sceneFade('race', .5, 0);
+  FILM.drift('#rcam', 'race', 1.03, 1.0);
+  const GY = T => 930 - T / 90 * 780;
+  const coldT = x => 20 * Math.pow(Math.max(0, 1 - (x - 260) / 1380), 1.3);
+  const expT = x => 90 * Math.exp(-1.5 * (x - 260) / 740);
+  const pathOf = (fn, x0, x1) => { let d = ''; for (let x = x0; x <= x1 + .01; x += 6) d += (d ? ' L' : 'M') + x.toFixed(1) + ',' + GY(Math.max(0, fn(x))).toFixed(1); return d; };
+  $('#rcold').setAttribute('d', pathOf(coldT, 260, 1700));
+  $('#rhot').setAttribute('d', pathOf(expT, 260, 1700));
+  const hotPts = []; for (let x = 260; x <= 1700; x += 6) hotPts.push([x, GY(expT(x))]);
+  FILM.wipeIn('#rcold', S('race') + .4, 1.4, 'left');
+  const rh = { u: 0 };
+  const drawR = () => { const n = hotPts.length - 1, k = Math.min(n, rh.u * n), i = Math.floor(k), f = k - i, a = hotPts[i], b = hotPts[Math.min(n, i + 1)]; $('#rhead').setAttribute('cx', lerp(a[0], b[0], f)); $('#rhead').setAttribute('cy', lerp(a[1], b[1], f)); $('#rhot').style.clipPath = `inset(-20px ${(1700 - lerp(a[0], b[0], f)).toFixed(1)}px -20px -20px)`; };
+  drawR();
+  const passU = (1000 - 260) / (1700 - 260);
+  FILM.up('#rHotLab', P('C3_02', .08), .4, 10);
+  tl.to(rh, { u: passU, duration: Math.max(1.2, P('C3_02', .55) - P('C3_02', .12)), ease: 'power1.inOut', onUpdate: drawR }, P('C3_02', .12));
+  // the moment hot reaches the cold's starting temperature
+  const PM = P('C3_02', .58);
+  $('#rcoldDot').setAttribute('cy', GY(coldT(1000)));
+  $('#rbracket').setAttribute('d', `M1030,${GY(20)} L1044,${GY(20)} L1044,${GY(coldT(1000))} L1030,${GY(coldT(1000))}`);
+  tl.to('#rcursor', { opacity: .8, duration: .3 }, PM);
+  FILM.pop('#rhotDot', PM, .3);
+  FILM.pop('#rcoldDot', PM + .25, .3);
+  FILM.draw('#rbracket', PM + .45, .4);
+  $('#rHead').style.top = (GY((20 + coldT(1000)) / 2) - 16) + 'px';
+  FILM.up('#rHead', PM + .6, .4, 8);
+  tl.to(rh, { u: 1, duration: 1.6, ease: 'power1.in', onUpdate: drawR }, P('C3_02', .8));
+  // C3_03: "not the same water" → the equation breaks
+  const Q = V('C3_03');
+  tl.to('#rgraph, #rl90, #rl20, #rColdLab, #rHotLab, #rHead, #rIllus', { opacity: .12, duration: .6 }, Q - .2);
+  tl.to('#rgraph', { scale: .92, transformOrigin: '50% 30%', duration: 1.2, ease: 'power2.out' }, Q - .2);
+  FILM.show('#eq', Q + .2, .5);
+  FILM.up('#eqH, #eqC', Q + .5, .5, 10);
+  tl.set('#eqStrike', { attr: { x2: 985, y2: 490 } }, 0);
+  tl.set('#eqStrike', { attr: { opacity: 1 } }, P('C3_03', .48));
+  tl.to('#eqStrike', { attr: { x2: 935, y2: 630 }, duration: .35, ease: 'power3.out' }, P('C3_03', .48));
+  FILM.flash(P('C3_03', .48), .18, .3);
+  tl.set('#dropHPath', { attr: { 'stroke-dasharray': '22 12' } }, P('C3_03', .72));
+  tl.fromTo('#dropH', { rotation: 0 }, { rotation: 6, transformOrigin: '50% 50%', duration: .18, yoyo: true, repeat: 5, ease: 'sine.inOut', immediateRender: false }, P('C3_03', .72));
+  tl.to('#rcam', { y: -60, opacity: 0, duration: .5, ease: 'power2.in' }, E('race') - .5);
+
+  // ═════════ lineup ═════════
+  FILM.sceneFade('lineup', .5, 0);
+  FILM.drift('#lcam', 'lineup', 1.02, 1.0);
+  FILM.up('#lhead', S('lineup') + .3, .5, 12);
+  const names = ['Evaporation', 'Dissolved gas', 'Convection', 'Frost', 'Supercooling'];
+  const icons = [
+    '<path d="M40,110 L100,110 L94,70 L46,70 Z" fill="none" stroke="#efe7d5" stroke-width="5"/><path d="M58,58 c-8,-12 8,-18 0,-32 M78,58 c-8,-12 8,-18 0,-32" fill="none" stroke="#ffb27a" stroke-width="5" stroke-linecap="round"/>',
+    '<path d="M40,120 L100,120 L94,40 L46,40 Z" fill="none" stroke="#efe7d5" stroke-width="5"/><circle cx="62" cy="96" r="7" fill="none" stroke="#ffb27a" stroke-width="4"/><circle cx="78" cy="74" r="5" fill="none" stroke="#ffb27a" stroke-width="4"/><circle cx="70" cy="22" r="6" fill="none" stroke="#ffb27a" stroke-width="4"/>',
+    '<path d="M40,120 L100,120 L94,30 L46,30 Z" fill="none" stroke="#efe7d5" stroke-width="5"/><path d="M60,105 C38,90 44,56 64,52 M80,105 C102,90 96,56 76,52" fill="none" stroke="#ffb27a" stroke-width="5" stroke-linecap="round"/>',
+    '<path d="M44,96 L96,96 L92,40 L48,40 Z" fill="none" stroke="#efe7d5" stroke-width="5"/><path d="M26,112 q8,-10 16,0 q8,-10 16,0 q8,-10 16,0 q8,-10 16,0 q8,-10 16,0 q8,-10 16,0" fill="none" stroke="#8fe3ff" stroke-width="5"/>',
+    '<rect x="26" y="40" width="50" height="50" rx="9" fill="none" stroke="#efe7d5" stroke-width="5"/><circle cx="51" cy="65" r="5" fill="#efe7d5"/><rect x="70" y="62" width="44" height="44" rx="8" fill="none" stroke="#8fe3ff" stroke-width="5" transform="rotate(14 92 84)"/><circle cx="84" cy="76" r="4" fill="#8fe3ff"/><circle cx="100" cy="92" r="4" fill="#8fe3ff"/>',
+  ];
+  const cards = names.map((nm, i) => {
+    const c = div('scard', $('#cards'), `<div class="n">0${i + 1}</div><svg class="ic" viewBox="0 0 140 130">${icons[i]}</svg><div class="nm">${nm}</div><div class="trials">${'<i></i>'.repeat(8)}</div>`);
+    c.style.left = (110 + i * 340) + 'px'; c.id = 'card' + i; return c;
+  });
+  tl.set('.scard', { opacity: 0, y: 60 }, 0);
+  tl.to('.scard', { opacity: .55, y: 0, duration: .5, stagger: .08, ease: 'power3.out' }, S('lineup') + .35);
+
+  // mini chart: T(t) = (T0 + a) e^(−k t) − a, a = 8 → reaches 0 at ln((T0+a)/a)/k
+  const MX = t => 1320 + t / 3 * 470, MYm = T => 500 - T / 90 * 330, A8 = 8;
+  const curvePts = (T0, k) => { const pts = []; for (let i = 0; i <= 90; i++) { const t = i / 90 * 3, T = Math.max(0, (T0 + A8) * Math.exp(-k * t) - A8); pts.push([MX(t), MYm(T)]); if (T <= 0) break; } return pts; };
+  const toD = pts => pts.map((p, i) => (i ? 'L' : 'M') + p[0].toFixed(1) + ',' + p[1].toFixed(1)).join(' ');
+  const curve = (T0, k) => toD(curvePts(T0, k));
+  $('#miniCold').setAttribute('d', curve(20, 1.0));
+  const hk = { k: 1.0, lo: 1.0, hi: 1.0, band: 0 };
+  const drawMini = () => {
+    $('#miniHot').setAttribute('d', curve(90, hk.k));
+    if (hk.band > 0) { const lo = curvePts(90, hk.lo), hi = curvePts(90, hk.hi); $('#miniBand').setAttribute('d', toD(lo.concat(hi.slice().reverse())) + ' Z'); }
+  };
+  $('#miniGhost').setAttribute('d', curve(90, 1.0));
+  drawMini();
+  FILM.show('#mini', S('lineup') + .5, .5);
+
+  // one cup, five treatments; each suspect lifts its card, animates its evidence, nudges the curve
+  const steamG = $('#steam');
+  for (let i = 0; i < 5; i++) el('path', { class: 'st', d: `M${-60 + i * 30},-10 c-12,-20 12,-32 0,-52 c-10,-16 8,-24 0,-38` }, steamG);
+  const bubG = $('#bubbles'), bubs = [];
+  for (let i = 0; i < 14; i++) bubs.push({ x: (rnd() - .5) * 150, r: 3 + rnd() * 6, s: rnd(), e: el('circle', { r: 4, cx: 0, cy: 260, fill: 'none', stroke: '#ffd2b4', 'stroke-width': 3 }, bubG) });
+  // dice: all six faces pre-built per die; rolls toggle face visibility with reversible tl.set
+  const pipsFor = n => ({ 1: [[0, 0]], 2: [[-20, -20], [20, 20]], 3: [[-20, -20], [0, 0], [20, 20]], 4: [[-20, -20], [20, -20], [-20, 20], [20, 20]], 5: [[-20, -20], [20, -20], [0, 0], [-20, 20], [20, 20]], 6: [[-20, -22], [20, -22], [-20, 0], [20, 0], [-20, 22], [20, 22]] }[n]);
+  const faces = $$('#dice .pips').map(g => [1, 2, 3, 4, 5, 6].map(n => { const f = el('g', { opacity: n === 3 ? 1 : 0 }, g); pipsFor(n).forEach(([x, y]) => el('circle', { cx: x, cy: y, r: 8 }, f)); return f; }));
+  const showFace = (d, n, t) => faces[d].forEach((f, i) => tl.set(f, { attr: { opacity: i + 1 === n ? 1 : 0 } }, t));
+  const ks = [1.25, 1.5, 1.75, 2.0, 2.3];
+  const beats = ['C3_04', 'C3_05', 'C3_06', 'C3_07', 'C3_08'];
+  beats.forEach((id, i) => {
+    const t0 = V(id), t1 = VE(id) + .25;
+    tl.to('#card' + i, { opacity: 1, y: -34, borderColor: i < 3 ? '#ff6a2b' : '#8fe3ff', duration: .4, ease: 'power3.out' }, t0);
+    if (i) tl.to('#card' + (i - 1), { opacity: .7, y: 0, borderColor: '#243447', duration: .4 }, t0);
+    FILM.up('#tag' + (i + 1), P(id, .35), .4, 10);
+    tl.to('#tag' + (i + 1), { opacity: 0, duration: .3 }, t1 - .1);
+    tl.to(hk, { k: ks[i], duration: .9, ease: 'power2.inOut', onUpdate: drawMini }, P(id, .5));
+    tl.set('#miniGhost', { attr: { d: curve(90, i ? ks[i - 1] : 1.0) } }, P(id, .5));
+  });
+  // 1 evaporation
+  tl.to('#steam', { opacity: .75, duration: .4 }, V('C3_04'));
+  $$('#steam .st').forEach((p, i) => tl.fromTo(p, { y: 8, opacity: 0 }, { y: -18, opacity: 1, duration: 1.1, ease: 'sine.out', repeat: Math.ceil((VE('C3_04') - V('C3_04')) / 1.1), immediateRender: false }, V('C3_04') + i * .22));
+  tl.to('#lwaterRect', { attr: { y: 86 }, duration: VE('C3_04') - V('C3_04'), ease: 'none' }, V('C3_04'));
+  tl.to('#lsurf', { attr: { cy: 86 }, duration: VE('C3_04') - V('C3_04'), ease: 'none' }, V('C3_04'));
+  tl.to('#steam', { opacity: 0, duration: .4 }, VE('C3_04'));
+  // 2 dissolved gas
+  const gb = { t: 0 }, G0 = V('C3_05'), GD = VE('C3_05') - G0 + .3;
+  const drawBub = () => bubs.forEach(b => { const u = (gb.t * (.35 + b.s * .4) + b.s) % 1; b.e.setAttribute('cx', b.x + Math.sin(u * 9 + b.s * 6) * 6); b.e.setAttribute('cy', 275 - u * 300); b.e.setAttribute('r', b.r * (0.6 + u * .6)); b.e.setAttribute('opacity', gb.t > 0 ? (u < .85 ? 1 : (1 - u) / .15) : 0); });
+  drawBub();
+  tl.to(gb, { t: GD, duration: GD, ease: 'none', onUpdate: drawBub }, G0);
+  tl.to('#bubbles', { opacity: 0, duration: .3 }, VE('C3_05'));
+  // 3 convection
+  tl.to('#loops', { opacity: 1, duration: .4 }, V('C3_06'));
+  tl.to('.lp', { attr: { 'stroke-dashoffset': -320 }, duration: VE('C3_06') - V('C3_06') + .3, ease: 'none' }, V('C3_06'));
+  FILM.show('#upArrows', P('C3_06', .45), .3);
+  tl.fromTo('#upArrows', { y: 0 }, { y: -26, duration: .7, repeat: 3, yoyo: true, ease: 'sine.inOut', immediateRender: false }, P('C3_06', .45));
+  tl.to('#loops, #upArrows', { opacity: 0, duration: .35 }, VE('C3_06'));
+  // 4 frost
+  tl.to('#shelf', { opacity: 1, duration: .4 }, V('C3_07') - .1);
+  tl.to('#frostPad', { scaleY: .25, transformOrigin: '50% 100%', opacity: .35, duration: 1.4, ease: 'power2.inOut' }, P('C3_07', .3));
+  tl.to('#lcup', { y: 6, duration: 1.2, ease: 'power2.inOut' }, P('C3_07', .35));
+  FILM.show('#coldArrows', P('C3_07', .55), .3);
+  tl.fromTo('#coldArrows', { y: 14 }, { y: -8, duration: .6, repeat: 3, yoyo: true, ease: 'sine.inOut', immediateRender: false }, P('C3_07', .55));
+  tl.to('#shelf, #coldArrows', { opacity: 0, duration: .35 }, VE('C3_07'));
+  tl.to('#lcup', { y: 0, duration: .3 }, VE('C3_07'));
+  // 5 supercooling
+  tl.to('#lwaterRect', { attr: { fill: 'rgba(143,227,255,.22)' }, duration: .5 }, V('C3_08'));
+  tl.to('#lsurf', { attr: { stroke: '#d9f4ff' }, duration: .5 }, V('C3_08'));
+  tl.to('#dice', { opacity: 1, duration: .3 }, P('C3_08', .4));
+  const rolls = 9, R0 = P('C3_08', .4);
+  for (let r = 0; r <= rolls; r++) {
+    const t = R0 + r * .16, last = r === rolls;
+    tl.set('#die1', { rotation: last ? 0 : (r * 47) % 360, transformOrigin: '50% 50%' }, t);
+    tl.set('#die2', { rotation: last ? 0 : (r * 71) % 360, transformOrigin: '50% 50%' }, t);
+    showFace(0, last ? 5 : 1 + Math.floor(rnd() * 6), t); showFace(1, last ? 2 : 1 + Math.floor(rnd() * 6), t);
+  }
+  tl.to('#dice', { opacity: 0, duration: .3 }, VE('C3_08'));
+
+  // C3_09: every suspect, sometimes. Trial squares fill mixed; the curve wavers; RESULTS VARY
+  const Z = V('C3_09');
+  tl.to('#stage', { opacity: .25, duration: .5 }, Z - .1);
+  tl.to('#card4', { y: 0, borderColor: '#243447', duration: .4 }, Z);
+  tl.to('.scard', { opacity: 1, duration: .4 }, Z);
+  $$('.scard .trials i').forEach((sq, j) => {
+    const win = rnd() < .5;
+    sq.style.background = win ? '#ff6a2b' : '#33475c';
+    tl.to(sq, { opacity: 1, duration: .12 }, Z + .3 + (j % 8) * .09 + Math.floor(j / 8) * .05);
+  });
+  tl.set(hk, { lo: 1.35, hi: 2.45, band: 0 }, 0);
+  tl.to(hk, { band: 1, duration: .01, onUpdate: drawMini }, P('C3_09', .45));
+  FILM.show('#miniBand', P('C3_09', .45), .4);
+  tl.to(hk, { k: 1.45, duration: .7, yoyo: true, repeat: 3, ease: 'sine.inOut', onUpdate: drawMini }, P('C3_09', .45));
+  tl.fromTo('#stamp', { opacity: 0, scale: 1.5 }, { opacity: 1, scale: 1, duration: .3, ease: 'back.out(2.5)', immediateRender: false }, P('C3_09', .55));
+  tl.set('#stamp', { opacity: 0 }, 0);
+  tl.to('.scard', { y: 80, opacity: 0, duration: .6, stagger: .06, ease: 'power2.in' }, E('lineup') - 1.2);
+
+  FILM.finish('ch3');
+})();
+</script>
+</body>
+</html>

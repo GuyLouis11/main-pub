@@ -1,0 +1,69 @@
+/* Guy Wonders Why: "The Boy Who Froze Hot Water". Shared design system for chapters.
+   Same tokens as the opening (hot-water-opening/index.html) so the film reads as one piece. */
+@import url('fonts/fonts.css');
+
+:root{
+  --ink:#06080c; --ink2:#0c1119; --panel:#0f1824;
+  --paper:#efe7d5; --paperInk:#1d2b4a; --pen:#b3261a;
+  --ember:#ff6a2b; --ember2:#ffb27a; --frost:#8fe3ff; --frost2:#e3f8ff;
+  --dim:#8ea2b8; --grid:#2c3f52;
+  --display:'Big Shoulders Display', Impact, sans-serif;
+  --serif:'Instrument Serif', Georgia, serif;
+  --mono:'JetBrains Mono', ui-monospace, monospace;
+  --hand:'Caveat', cursive;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:var(--ink)}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:var(--ink);color:var(--paper)}
+.scene{position:absolute;inset:0;overflow:hidden}
+.cam{position:absolute;inset:0;transform-origin:50% 50%}
+.abs{position:absolute}
+svg{overflow:visible}
+.full{position:absolute;left:0;top:0;width:1920px;height:1080px}
+
+/* type */
+.mono{font-family:var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.disp{font-family:var(--display);font-weight:900;line-height:.95;letter-spacing:.01em}
+.serif{font-family:var(--serif)}
+.serif.i{font-style:italic}
+.hand{font-family:var(--hand);font-weight:600;color:var(--paperInk);white-space:nowrap}
+.write{clip-path:inset(-20% 100% -20% 0)}
+.tag{font-family:var(--mono);font-weight:600;font-size:22px;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap}
+.lab{font-family:var(--mono);font-size:22px;letter-spacing:.12em;color:var(--dim);text-transform:uppercase;white-space:nowrap}
+.note{font-family:var(--mono);font-size:17px;letter-spacing:.16em;color:#7d8fa3;text-transform:uppercase;white-space:nowrap}
+.ember{color:var(--ember)} .frost{color:var(--frost)} .paperc{color:var(--paper)}
+
+/* worlds */
+.dark{background:radial-gradient(1300px 780px at 50% 48%, var(--panel) 0%, var(--ink) 72%)}
+.paperworld{background:#e9e0cb}
+.page{position:absolute;left:-60px;top:-50px;width:2040px;height:1180px;background:url(img/paper.jpg) center/cover, var(--paper)}
+.page .rules{position:absolute;inset:0;background:repeating-linear-gradient(to bottom, transparent 0 55px, rgba(80,120,160,.28) 55px 57px);-webkit-mask:linear-gradient(to bottom, transparent 0 130px, #000 150px)}
+.page .margin{position:absolute;left:250px;top:0;bottom:0;width:3px;background:rgba(200,70,60,.45)}
+.lamp{position:absolute;inset:0;background:radial-gradient(1100px 700px at 45% 45%, rgba(0,0,0,0) 30%, rgba(20,12,4,.55) 100%);opacity:0}
+
+/* taped photograph that hosts Flow footage */
+.photo{position:absolute}
+.photo .card{position:absolute;inset:-18px;background:#f7f2e6;box-shadow:0 30px 60px rgba(40,25,10,.35),0 2px 6px rgba(40,25,10,.25)}
+.photo video,.photo .fill{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#2a1a10}
+.tape{position:absolute;width:170px;height:48px;background:rgba(235,225,195,.78);box-shadow:0 2px 4px rgba(0,0,0,.08)}
+.fullvid{position:absolute;inset:0;width:1920px;height:1080px;object-fit:cover;background:#140d08}
+
+/* chapter card */
+.chcard{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px}
+.chcard .num{font-family:var(--mono);font-weight:600;font-size:26px;letter-spacing:.5em;padding-left:.5em;color:#a9bccf}
+.chcard .title{font-family:var(--display);font-weight:900;font-size:170px;letter-spacing:.02em;line-height:.9;color:var(--paper);text-align:center}
+.chcard .rule{width:520px;height:3px;background:linear-gradient(90deg, var(--ember), var(--frost))}
+
+/* lower third */
+.lower .name{font-family:var(--serif);font-style:italic;font-size:64px;line-height:1}
+.lower .strip{margin-top:16px;display:inline-block;background:#141b27;color:#efe7d5;font-family:var(--mono);font-weight:600;font-size:22px;letter-spacing:.22em;padding:12px 20px 12px 24px;text-transform:uppercase}
+
+/* global finishing */
+#flash{position:absolute;inset:0;z-index:20;background:#e9fbff;opacity:0;pointer-events:none}
+#vignette{position:absolute;inset:0;z-index:20;background:radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0) 55%, rgba(0,0,0,.45) 100%);pointer-events:none}
+#grain{position:absolute;inset:-64px;z-index:20;background:url(img/grain.png);opacity:.075;mix-blend-mode:overlay;pointer-events:none}
+#black{position:absolute;inset:0;z-index:21;background:#000;opacity:0;pointer-events:none}
+#scratch{position:absolute;z-index:22;left:50%;bottom:26px;transform:translateX(-50%);display:none;align-items:center;gap:14px;background:rgba(0,0,0,.72);padding:10px 22px;border-radius:6px;white-space:nowrap}
+#scratch .tagx{font-family:var(--mono);font-weight:600;font-size:16px;letter-spacing:.2em;color:#ffcf3a;border:1px solid #ffcf3a;padding:3px 8px}
+#scratch .txt{font-family:var(--mono);font-size:22px;color:#fff;max-width:1500px;overflow:hidden;text-overflow:ellipsis}
+.pending{position:absolute;z-index:19;left:28px;top:24px;font-family:var(--mono);font-weight:600;font-size:16px;letter-spacing:.18em;color:#ffcf3a;border:1px solid rgba(255,207,58,.8);padding:4px 10px;background:rgba(0,0,0,.45);text-transform:uppercase}

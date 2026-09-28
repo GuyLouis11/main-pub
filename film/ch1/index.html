@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en" data-composition-variables='[{"id":"scratchVO","type":"boolean","label":"Show SCRATCH VO subtitles (review only)","default":false}]'>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1920, height=1080" />
+<title>Ch 1 · The Kitchen</title>
+<link rel="stylesheet" href="shared/film.css" />
+<script src="shared/vendor/gsap.min.js"></script>
+<script id="timing" type="application/json">
+{
+  "chapter": 1,
+  "title": "The Kitchen",
+  "seed": 101,
+  "defaults": {
+    "lead": 0.5,
+    "gap": 0.45,
+    "tail": 0.7
+  },
+  "scenes": [
+    {
+      "id": "card",
+      "min": 3.0,
+      "md": "Chapter card 01",
+      "out": "crossfade to paper"
+    },
+    {
+      "id": "place",
+      "vo": [
+        "C1_01",
+        "C1_02",
+        "C1_03"
+      ],
+      "min": 16,
+      "xin": 0.4,
+      "md": "Ink ridgelines of the Usambara Mountains on notebook paper, pin MAGAMBA; recipe card writes on in sync (boil · sugar · cool · freezer); then Taped photo: FLOW_01 walk-in and door (0.2–3.4 s); on C1_03 the recipe step 'let it cool' is struck through in red, FLOW_01 door shut (6.2–7.7 s)",
+      "out": "page turn",
+      "gap": 0.6,
+      "flow": {
+        "file": "FLOW_01_kitchen_hot_mix.mp4",
+        "in": 0.2,
+        "out": 7.7,
+        "refs": [
+          "REF_erasto",
+          "REF_kitchen"
+        ],
+        "tier": "A",
+        "status": "RECEIVED"
+      }
+    },
+    {
+      "id": "later",
+      "vo": [
+        "C1_04"
+      ],
+      "min": 7,
+      "xin": 0.3,
+      "md": "'Later' clock dial; pencil sketch of two cups: one frosted (ice), one wavy (liquid); FLOW_02 face reaction (6.10–7.10 s, muted) in a small taped photo",
+      "flow": {
+        "file": "FLOW_02_freezer_reveal.mp4",
+        "in": 6.1,
+        "out": 7.1,
+        "refs": [
+          "REF_erasto",
+          "REF_kitchen"
+        ],
+        "tier": "A",
+        "status": "RECEIVED (audio muted: vocalisation)"
+      },
+      "out": "lamp dims"
+    },
+    {
+      "id": "teacher",
+      "vo": [
+        "C1_05",
+        "C1_06"
+      ],
+      "gap": 0.6,
+      "min": 8,
+      "xin": 0.3,
+      "md": "Red-pen quote callback, 'confused' circled; then a red ✗ slashes across his cup sketch",
+      "out": "page slides"
+    },
+    {
+      "id": "question",
+      "vo": [
+        "C1_07",
+        "C1_08"
+      ],
+      "gap": 0.6,
+      "tail": 1.2,
+      "min": 9,
+      "xin": 0.3,
+      "md": "FLOW_04 in taped photo → full frame; its locked top-down page matches the MD notebook; the pencil '?' redraws and its dot becomes a magnifying lens that irises out",
+      "flow": {
+        "file": "FLOW_04_kitchen_question.mp4",
+        "in": 0.35,
+        "out": 7.95,
+        "refs": [
+          "REF_erasto",
+          "REF_kitchen",
+          "STYLE_F01_kitchen_3.0s",
+          "GEO_F01_room_0.5s"
+        ],
+        "tier": "A",
+        "status": "RECEIVED 2026-09-28 (see film/FLOW_REVIEW_BATCH2.md)"
+      },
+      "out": "lens iris → Chapter 2"
+    }
+  ],
+  "vo": {
+    "C1_01": {
+      "text": "Magamba Secondary School, in the Usambara Mountains of north-eastern Tanganyika. A cookery class is making ice cream: boil the milk, add sugar, let it cool, then into the freezer.",
+      "estimate": 12.0,
+      "source": "estimate"
+    },
+    "C1_02": {
+      "text": "But the freezer is small, and space is scarce. If Erasto waits for his mix to cool, he could lose his place.",
+      "estimate": 9.0,
+      "source": "estimate"
+    },
+    "C1_03": {
+      "text": "So he doesn't wait.",
+      "estimate": 1.7,
+      "source": "estimate"
+    },
+    "C1_04": {
+      "text": "When the freezer is opened, his mix — the one that went in hot — has frozen. The one that went in cool hasn't.",
+      "estimate": 9.0,
+      "source": "estimate"
+    },
+    "C1_05": {
+      "text": "He asks why. By his own account, the answer he got was the one we've already read.",
+      "estimate": 7.0,
+      "source": "estimate"
+    },
+    "C1_06": {
+      "text": "It became a joke at his expense. As he remembered it, the idea was dismissed as \"Mpemba's physics\".",
+      "estimate": 7.4,
+      "source": "estimate"
+    },
+    "C1_07": {
+      "text": "Most thirteen-year-olds would let that go. Erasto doesn't. The question stays with him.",
+      "estimate": 6.6,
+      "source": "estimate"
+    },
+    "C1_08": {
+      "text": "Because if you really saw something that \"cannot happen\", that isn't a reason to stop. It's a reason to look closer.",
+      "estimate": 8.6,
+      "source": "estimate"
+    }
+  }
+}
+</script>
+<style>
+  .icard{position:absolute;background:#fbf8f0;box-shadow:0 18px 40px rgba(40,25,10,.25);border-top:10px solid #c9463a}
+  .icard .h{font-family:var(--hand);font-weight:700;font-size:64px;color:var(--paperInk);position:absolute;left:40px;top:18px}
+  .icard .st{font-family:var(--hand);font-weight:600;font-size:48px;line-height:1;color:var(--paperInk);position:absolute;left:44px;white-space:nowrap}
+  .q{font-family:var(--hand);font-weight:700;font-size:104px;line-height:1.05;color:var(--pen);white-space:nowrap}
+  .who{font-family:var(--mono);font-weight:600;font-size:22px;letter-spacing:.22em;color:#3a3f4a;text-transform:uppercase}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="ch1" data-start="0" data-duration="70.700" data-width="1920" data-height="1080">
+
+  <div id="sc-card" class="scene clip dark" data-scene="card" data-start="0.000" data-duration="3.000" data-track-index="1">
+    <div class="chcard"><div class="num">CHAPTER 01</div><div class="title">THE KITCHEN</div><div class="rule"></div></div>
+  </div>
+
+  <!-- one continuous notebook for the whole chapter; scenes are layers on it -->
+  <div id="sc-place" class="scene clip paperworld" data-scene="place" data-start="2.600" data-duration="25.100" data-track-index="2">
+    <div class="cam" id="pcam">
+      <div class="page"><div class="rules"></div><div class="margin"></div></div>
+      <svg class="full" viewBox="0 0 1920 1080">
+        <g id="ridges" fill="none" stroke="#1d2b4a" stroke-linecap="round" stroke-linejoin="round"></g>
+        <g id="pin" opacity="0"><line x1="1060" y1="250" x2="1060" y2="372" stroke="#b3261a" stroke-width="4"/><circle cx="1060" cy="244" r="16" fill="#b3261a"/><circle cx="1060" cy="244" r="6" fill="#fbf8f0"/></g>
+      </svg>
+      <div class="abs tag" id="pinLab" style="left:1096px;top:212px;color:#1d2b4a;opacity:0">Magamba Secondary School</div>
+      <div class="abs note" id="rangeLab" style="left:1096px;top:252px;color:#4a5670;opacity:0">Usambara Mountains · north-eastern Tanganyika</div>
+      <div class="icard" id="recipe" style="left:300px;top:560px;width:640px;height:400px;transform:rotate(-2deg)">
+        <div class="h">Ice cream</div>
+        <div class="st write" id="st1" style="top:120px;line-height:1">1. boil the milk</div>
+        <div class="st write" id="st2" style="top:186px;line-height:1">2. add sugar</div>
+        <div class="st write" id="st3" style="top:252px;line-height:1">3. let it cool</div>
+        <div class="st write" id="st4" style="top:318px;line-height:1">4. into the freezer</div>
+        <svg class="abs" style="left:30px;top:250px" width="360" height="60"><path id="strike" d="M10,34 C90,26 190,40 330,24" stroke="#b3261a" stroke-width="8" fill="none" stroke-linecap="round"/></svg>
+      </div>
+      <div class="photo" id="photo1" style="left:1000px;top:420px;width:800px;height:450px;opacity:0">
+        <div class="card"></div>
+        <img class="fill" src="assets/flow/F01_hold_3.4s.jpg" alt="">
+        <video id="f01a" src="assets/flow/FLOW_01_kitchen_hot_mix.mp4" muted playsinline data-scene="place" data-at="C1_02|0.2" data-len="3.2" data-start="15.900" data-duration="3.200" data-media-start="0.2" data-usable-in="0.2" data-usable-out="3.4" data-track-index="10"></video>
+        <video id="f01b" src="assets/flow/FLOW_01_kitchen_hot_mix.mp4" playsinline data-has-audio="true" data-volume="0.4" data-scene="place" data-at="C1_03|-0.2" data-len="1.5" data-start="25.100" data-duration="1.500" data-media-start="6.2" data-usable-in="6.2" data-usable-out="7.7" data-track-index="11"></video>
+        <div class="tape" style="left:-60px;top:-26px;transform:rotate(-24deg)"></div><div class="tape" style="right:-60px;bottom:-24px;transform:rotate(-20deg)"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- later: dial + sketch + tiny F02 reaction -->
+  <div id="sc-later" class="scene clip paperworld" data-scene="later" data-start="27.400" data-duration="10.200" data-track-index="4">
+    <div class="cam" id="lcam">
+      <div class="page"><div class="rules"></div><div class="margin"></div></div>
+      <svg class="full" viewBox="0 0 1920 1080">
+        <g id="dial" transform="translate(470 420)" fill="none" stroke="#1d2b4a" stroke-width="5" stroke-linecap="round">
+          <circle r="150"/><g id="dticks"></g>
+          <line id="hMin" x1="0" y1="0" x2="0" y2="-118" stroke-width="6"/><line id="hHr" x1="0" y1="0" x2="72" y2="0" stroke-width="8"/>
+        </g>
+        <g id="sketch" fill="none" stroke="#1d2b4a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+          <path class="sk" d="M880,520 L900,760 L1060,760 L1080,520"/>
+          <path class="sk" d="M1220,520 L1240,760 L1400,760 L1420,520"/>
+          <path class="sk ice" d="M896,600 L1064,600 M900,640 L1060,640 M904,680 L1058,680 M906,720 L1056,720 M930,580 L1000,760 M990,580 L1050,700 M890,640 L960,760" stroke="#3aa6d8" stroke-width="4"/>
+          <path class="sk liq" d="M1236,610 C1270,590 1300,630 1330,610 C1360,590 1390,630 1412,610" stroke="#3aa6d8" stroke-width="5"/>
+        </g>
+      </svg>
+      <div class="abs hand write" id="laterTxt" style="left:360px;top:620px;font-size:72px">later…</div>
+      <div class="abs hand write" id="iceTxt" style="left:900px;top:790px;font-size:52px">ice</div>
+      <div class="abs hand write" id="liqTxt" style="left:1210px;top:790px;font-size:52px">still liquid</div>
+      <div class="photo" id="photo2" style="left:1480px;top:160px;width:360px;height:203px;transform:rotate(3deg);opacity:0">
+        <div class="card"></div>
+        <img class="fill" src="assets/flow/F02_hold_7.05s.jpg" alt="">
+        <video id="f02" src="assets/flow/FLOW_02_freezer_reveal.mp4" muted playsinline data-playback-rate="0.6" data-scene="later" data-at="C1_04|0" data-len="1.6" data-start="27.900" data-duration="1.600" data-media-start="6.10" data-usable-in="6.1" data-usable-out="7.1" data-track-index="12"></video>
+        <div class="tape" style="left:-40px;top:-20px;width:110px;transform:rotate(-24deg)"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- teacher: red-pen callback -->
+  <div id="sc-teacher" class="scene clip paperworld" data-scene="teacher" data-start="37.300" data-duration="16.200" data-track-index="5">
+    <div class="cam" id="tcam">
+      <div class="page"><div class="rules"></div><div class="margin"></div></div>
+      <div class="lamp" id="lamp" style="opacity:.8"></div>
+      <div class="abs" id="quote" style="left:320px;top:250px">
+        <div class="q">“The answer I can give is</div>
+        <div class="q">that you were <span style="position:relative;display:inline-block">confused.”<svg viewBox="0 0 100 100" preserveAspectRatio="none" style="position:absolute;left:-7%;top:-12%;width:114%;height:128%"><path id="circ" d="M8,52 C6,20 50,6 80,14 C100,20 98,70 72,86 C44,100 4,86 6,52 C8,34 30,22 52,20" fill="none" stroke="#b3261a" stroke-width="3.2" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></span></div>
+        <div class="who" style="margin-top:30px;padding-left:8px">— his teacher, as Mpemba recalled it</div>
+      </div>
+      <svg class="full" viewBox="0 0 1920 1080" id="xsvg" opacity="0">
+        <g fill="none" stroke="#1d2b4a" stroke-width="5" stroke-linecap="round"><path d="M1180,560 L1200,800 L1360,800 L1380,560"/><path d="M1196,640 L1364,640 M1200,690 L1360,690" stroke="#3aa6d8" stroke-width="4"/></g>
+        <path id="xa" d="M1130,540 C1250,650 1340,760 1440,850" stroke="#b3261a" stroke-width="12" fill="none" stroke-linecap="round"/>
+        <path id="xb" d="M1440,540 C1330,640 1250,740 1130,850" stroke="#b3261a" stroke-width="12" fill="none" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- the question stays with him: FLOW_04 (real) → Flow's own push to the page → MD lens on its "?" -->
+  <div id="sc-question" class="scene clip paperworld" data-scene="question" data-start="53.200" data-duration="17.500" data-track-index="6">
+    <div class="cam" id="qcam">
+      <div class="page"><div class="rules"></div><div class="margin"></div></div>
+      <img id="f04hold" class="fullvid" src="assets/flow/F04_hold_7.9s.jpg" alt="" style="opacity:0">
+      <div class="photo" id="photo4" style="left:1000px;top:200px;width:800px;height:450px;opacity:0">
+        <div class="card"></div>
+        <video id="f04" src="assets/flow/FLOW_04_kitchen_question.mp4" playsinline data-has-audio="true" data-volume="0.5" data-scene="question" data-at="0.2" data-len="7.55" data-start="53.400" data-duration="7.550" data-media-start="0.35" data-usable-in="0.35" data-usable-out="7.95" data-track-index="13"></video>
+        <div class="tape" style="left:-60px;top:-26px;transform:rotate(-24deg)"></div><div class="tape" style="right:-60px;bottom:-24px;transform:rotate(-20deg)"></div>
+      </div>
+      <!-- positions measured from FLOW_04 at 7.5 s: "?" dot at (864,425) of 1280×720 → (1296,638) -->
+      <svg class="full" viewBox="0 0 1920 1080">
+        <path id="qtrace" d="M1218,413 C1225,350 1300,330 1340,352 C1385,378 1370,440 1320,480 C1290,505 1285,540 1287,577" fill="none" stroke="#b3261a" stroke-width="7" stroke-linecap="round"/>
+        <g id="lens" opacity="0" transform="translate(1296 638)"><circle r="64" fill="rgba(143,227,255,.18)" stroke="#1d2b4a" stroke-width="10"/><line x1="46" y1="46" x2="124" y2="124" stroke="#1d2b4a" stroke-width="16" stroke-linecap="round"/></g>
+      </svg>
+      <div id="iris" class="abs" style="inset:0;background:#06080c;opacity:0"></div>
+    </div>
+  </div>
+
+  <audio id="music" src="assets/audio/music.wav" data-start="0" data-duration="70.700" data-volume="1" data-track-index="20"></audio>
+  <audio id="sfx" src="assets/audio/sfx.wav" data-start="0" data-duration="70.700" data-volume="1" data-track-index="21"></audio>
+  <!-- VO:BEGIN (generated by tools/retime_chapters.py) -->
+  <audio id="vo_c1_01" src="assets/vo/C1_01.wav" data-start="3.100" data-duration="12.000" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_c1_02" src="assets/vo/C1_02.wav" data-start="15.700" data-duration="9.000" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_c1_03" src="assets/vo/C1_03.wav" data-start="25.300" data-duration="1.700" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_c1_04" src="assets/vo/C1_04.wav" data-start="27.900" data-duration="9.000" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_c1_05" src="assets/vo/C1_05.wav" data-start="37.800" data-duration="7.000" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_c1_06" src="assets/vo/C1_06.wav" data-start="45.400" data-duration="7.400" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_c1_07" src="assets/vo/C1_07.wav" data-start="53.700" data-duration="6.600" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_c1_08" src="assets/vo/C1_08.wav" data-start="60.900" data-duration="8.600" data-volume="1" data-track-index="22"></audio>
+  <!-- VO:END -->
+
+  <div id="flash"></div><div id="vignette"></div><div id="grain" data-layout-ignore></div><div id="black"></div>
+  <div id="scratch" data-layout-allow-caption-zone><span class="tagx">SCRATCH VO</span><span class="txt" id="scratchTxt"></span></div>
+</div>
+
+<script src="shared/film.js"></script>
+<script>
+window.__timelines = window.__timelines || {};
+FILM_INIT();
+(function () {
+  const { tl, S, E, D, V, VE, P, rnd, $, $$, el } = FILM;
+
+  FILM.sceneFade('card', .5, .45); FILM.card('card');
+
+  // ═════════ place + skip (one notebook page) ═════════
+  FILM.sceneFade('place', .6, .5);
+  FILM.drift('#pcam', 'place', 1.06, 1.0);
+  const SKIP = V('C1_02') - .3;
+  // ink ridgelines of the Usambara, drawn back to front
+  for (let r = 0; r < 4; r++) {
+    let d = ''; for (let x = 300; x <= 1820; x += 14) d += (d ? ' L' : 'M') + x + ',' + (330 + r * 48 + 60 * Math.sin(x / (170 - r * 18) + r * 1.7) + 26 * Math.sin(x / 61 + r)).toFixed(1);
+    el('path', { d, 'stroke-width': 5 - r, opacity: 1 - r * .2, class: 'ridge' }, $('#ridges'));
+  }
+  FILM.draw('.ridge', S('place') + .4, 2.2, 'power2.out');
+  FILM.show('#pin', P('C1_01', .12), .3);
+  tl.fromTo('#pin', { y: -40 }, { y: 0, duration: .45, ease: 'bounce.out', immediateRender: false }, P('C1_01', .12));
+  FILM.up('#pinLab', P('C1_01', .15), .4, 8); FILM.up('#rangeLab', P('C1_01', .2), .4, 8);
+  FILM.up('#recipe', P('C1_01', .45), .5, 30);
+  ['#st1', '#st2', '#st3', '#st4'].forEach((s, i) => FILM.write(s, P('C1_01', .56 + i * .1), .7));
+  // skip: photo of FLOW_01; the cool step gets struck through on "So he doesn't wait."
+  tl.to('#recipe', { x: -90, y: 40, rotation: -4, scale: .9, duration: .6, ease: 'power2.inOut' }, SKIP);
+  tl.to('#ridges, #pin, #pinLab, #rangeLab', { opacity: .25, duration: .6 }, SKIP);
+  tl.set('#photo1', { opacity: 0, y: -60, rotation: 6 }, 0);
+  tl.to('#photo1', { opacity: 1, y: 0, rotation: 1.5, duration: .6, ease: 'back.out(1.4)' }, SKIP + .1);
+  FILM.draw('#strike', V('C1_03') + .15, .35, 'power2.out');
+  FILM.flash(V('C1_03') + .15, .1, .25);
+
+  // ═════════ later ═════════
+  FILM.sceneFade('later', .5, .4);
+  FILM.drift('#lcam', 'later', 1.04, 1.0);
+  for (let i = 0; i < 12; i++) { const a = i / 12 * Math.PI * 2; el('line', { x1: Math.cos(a) * 128, y1: Math.sin(a) * 128, x2: Math.cos(a) * 142, y2: Math.sin(a) * 142 }, $('#dticks')); }
+  tl.fromTo('#hMin', { rotation: 0, transformOrigin: '50% 100%' }, { rotation: 720, transformOrigin: '50% 100%', duration: 2.2, ease: 'power2.inOut', immediateRender: false }, S('later') + .3);
+  tl.fromTo('#hHr', { rotation: 0, transformOrigin: '0% 50%' }, { rotation: 60, transformOrigin: '0% 50%', duration: 2.2, ease: 'power2.inOut', immediateRender: false }, S('later') + .3);
+  FILM.write('#laterTxt', S('later') + .4, .7);
+  FILM.draw('#sketch .sk:not(.ice):not(.liq)', P('C1_04', .2), .9);
+  FILM.draw('#sketch .ice', P('C1_04', .45), .9);
+  FILM.draw('#sketch .liq', P('C1_04', .62), .6);
+  FILM.write('#iceTxt', P('C1_04', .5), .5); FILM.write('#liqTxt', P('C1_04', .7), .6);
+  tl.set('#photo2', { opacity: 0, y: -30 }, 0);
+  tl.to('#photo2', { opacity: 1, y: 0, duration: .5, ease: 'back.out(1.4)' }, V('C1_04') - .2);
+
+  // ═════════ teacher ═════════
+  FILM.sceneFade('teacher', .5, .4);
+  FILM.drift('#tcam', 'teacher', 1.03, 1.0);
+  FILM.up('#quote', S('teacher') + .3, .6, 16);
+  FILM.draw('#circ', P('C1_05', .55), .5);
+  tl.to('#quote', { y: -120, scale: .72, transformOrigin: '0% 0%', opacity: .55, duration: .6, ease: 'power2.inOut' }, V('C1_06') - .2);
+  FILM.show('#xsvg', V('C1_06') + .2, .4);
+  FILM.draw('#xa', P('C1_06', .45), .3, 'power2.out'); FILM.draw('#xb', P('C1_06', .45) + .3, .3, 'power2.out');
+
+  // ═════════ question: built around the real FLOW_04 ═════════
+  // clip map (reviewed): 0.35–1.2 walks in · 1.25–2.8 sits, opens book · 3.0–5.4 sketches ·
+  // 5.5–6.4 Flow's own camera move to top-down · 6.5–7.95 locked page with two cups and "?"
+  FILM.sceneFade('question', .5, 0);
+  const Q0 = S('question') + .2, qt = c => Q0 + (c - .35);      // clip time → timeline time
+  tl.set('#photo4', { opacity: 0, y: -60, rotation: 6 }, 0);
+  tl.to('#photo4', { opacity: 1, y: 0, rotation: 1.5, duration: .6, ease: 'back.out(1.4)' }, S('question') + .05);
+  // push through the photograph while he sketches, so Flow's own move to the page plays full frame
+  tl.to('#photo4', { left: 0, top: 0, width: 1920, height: 1080, rotation: 0, duration: 1.3, ease: 'power3.inOut' }, qt(3.2));
+  tl.to('#photo4 .card, #photo4 .tape', { opacity: 0, duration: .5 }, qt(3.2));
+  // hold the page (still of the last frame) for the rest of the narration
+  tl.to('#f04hold', { opacity: 1, duration: .01 }, qt(7.9));
+  tl.fromTo('#f04hold', { scale: 1 }, { scale: 1.06, transformOrigin: '1296px 638px', duration: Math.max(1, E('question') - qt(7.9)), ease: 'sine.inOut', immediateRender: false }, qt(7.9));
+  // red pen goes over his "?" as "look closer" arrives; the dot becomes the lens; iris closes on it
+  FILM.draw('#qtrace', Math.max(qt(7.95), P('C1_08', .45)), .7, 'power1.inOut');
+  const LZ = Math.max(qt(8.2), P('C1_08', .72));
+  FILM.pop('#lens', LZ, .35);
+  tl.set('#iris', { opacity: 1, clipPath: 'circle(150% at 1296px 638px)' }, E('question') - 1.1);
+  tl.to('#iris', { clipPath: 'circle(0% at 1296px 638px)', duration: 1.0, ease: 'power3.in' }, E('question') - 1.1);
+  tl.set('#iris', { clipPath: 'circle(150% at 1296px 638px)' }, 0);
+
+  FILM.finish('ch1');
+})();
+</script>
+</body>
+</html>

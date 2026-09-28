@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en" data-composition-variables='[{"id":"scratchVO","type":"boolean","label":"Show SCRATCH VO subtitles (review only)","default":false}]'>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1920, height=1080" />
+<title>Ch 2 · The Visitor</title>
+<link rel="stylesheet" href="shared/film.css" />
+<script src="shared/vendor/gsap.min.js"></script>
+<script id="timing" type="application/json">
+{
+  "chapter": 2,
+  "title": "The Visitor",
+  "seed": 202,
+  "defaults": {
+    "lead": 0.5,
+    "gap": 0.45,
+    "tail": 0.7
+  },
+  "scenes": [
+    {
+      "id": "card",
+      "min": 3.0,
+      "md": "Chapter card 02",
+      "out": "crossfade"
+    },
+    {
+      "id": "route",
+      "vo": [
+        "C2_01"
+      ],
+      "min": 9,
+      "xin": 0.4,
+      "md": "Lat/long map: Magamba (Usambara) → Mkwawa High School, Iringa; University College, Dar es Salaam → Iringa (the visitor's route)",
+      "out": "Iringa pin grows into the question diagram"
+    },
+    {
+      "id": "ask",
+      "vo": [
+        "C2_02"
+      ],
+      "min": 10,
+      "xin": 0.4,
+      "md": "His question as a diagram: 35 °C and 100 °C containers → freezer → the 100 °C one freezes first → ?",
+      "out": "diagram chalks onto a blackboard"
+    },
+    {
+      "id": "scale",
+      "vo": [
+        "C2_03",
+        "C2_04"
+      ],
+      "gap": 0.5,
+      "min": 8,
+      "xin": 0.4,
+      "md": "Chalk balance, RIGHT vs WRONG: tips to WRONG (first thought), then wobbles back level (not dismissed)",
+      "out": "chalk dust → lab light"
+    },
+    {
+      "id": "lab",
+      "vo": [
+        "C2_05"
+      ],
+      "min": 8.6,
+      "xin": 0.3,
+      "md": "FLOW_07 1968 lab test full frame (hands only), tag; its frosting lid hands over to MD frost crystals",
+      "flow": {
+        "file": "FLOW_07_lab_test_1968.mp4",
+        "in": 0.1,
+        "out": 7.95,
+        "refs": [
+          "STYLE_F01_kitchen_3.0s"
+        ],
+        "tier": "A",
+        "status": "RECEIVED 2026-09-28 (see film/FLOW_REVIEW_BATCH2.md)"
+      },
+      "out": "frost wipe"
+    },
+    {
+      "id": "paper",
+      "vo": [
+        "C2_06"
+      ],
+      "tail": 1.2,
+      "min": 8,
+      "xin": 0.3,
+      "md": "Journal-page recreation: PHYSICS EDUCATION · 1969, title 'Cool?', Mpemba & Osborne; RECREATION tag; the '?' zooms to black",
+      "out": "'?' → Chapter 3"
+    }
+  ],
+  "vo": {
+    "C2_01": {
+      "text": "A few years later, Erasto is a student at Mkwawa High School in Iringa. A physicist from University College, Dar es Salaam, Denis Osborne, comes to give a talk.",
+      "estimate": 11.7,
+      "source": "estimate"
+    },
+    "C2_02": {
+      "text": "When the questions start, Erasto asks his. Two similar containers, equal volumes of water, one at thirty-five degrees, one at a hundred. Put both in a freezer, and the hundred-degree one freezes first. Why?",
+      "estimate": 14.9,
+      "source": "estimate"
+    },
+    "C2_03": {
+      "text": "Osborne's first thought is that the student must be mistaken.",
+      "estimate": 4.0,
+      "source": "estimate"
+    },
+    "C2_04": {
+      "text": "But he doesn't dismiss it. He isn't sure the student is right, and he isn't sure he's wrong.",
+      "estimate": 7.4,
+      "source": "estimate"
+    },
+    "C2_05": {
+      "text": "Back in Dar es Salaam, he has it tested. The hot water freezes first.",
+      "estimate": 5.9,
+      "source": "estimate"
+    },
+    "C2_06": {
+      "text": "In 1969 the student and the physicist publish together in the journal Physics Education. The title is one word, with a question mark: \"Cool?\"",
+      "estimate": 9.4,
+      "source": "estimate"
+    }
+  }
+}
+</script>
+<style>
+  .pinlab{position:absolute;font-family:var(--mono);font-weight:600;font-size:22px;letter-spacing:.16em;color:#1d2b4a;text-transform:uppercase;white-space:nowrap}
+  .pinsub{position:absolute;font-family:var(--mono);font-size:17px;letter-spacing:.14em;color:#4a5670;text-transform:uppercase;white-space:nowrap}
+  .chalk{font-family:var(--hand);font-weight:700;color:#eef3ea;white-space:nowrap}
+  #journal{position:absolute;left:560px;top:90px;width:800px;height:900px;background:#f4efe2;box-shadow:0 30px 70px rgba(0,0,0,.45);transform:rotate(-1.5deg)}
+  #journal .jh{position:absolute;left:60px;right:60px;top:50px;border-bottom:3px solid #1d2b4a;padding-bottom:14px;font-family:var(--mono);font-weight:600;font-size:22px;letter-spacing:.3em;color:#1d2b4a;display:flex;justify-content:space-between}
+  #journal .jt{position:absolute;left:0;right:0;top:250px;text-align:center;font-family:var(--serif);font-size:260px;color:#141b27;line-height:1}
+  #journal .jb{position:absolute;left:0;right:0;top:600px;text-align:center;font-family:var(--serif);font-style:italic;font-size:48px;color:#1d2b4a}
+  #journal .jl{position:absolute;left:90px;right:90px;top:700px;height:120px;background:repeating-linear-gradient(to bottom, rgba(29,43,74,.18) 0 3px, transparent 3px 22px)}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="ch2" data-start="0" data-duration="63.000" data-width="1920" data-height="1080">
+
+  <div id="sc-card" class="scene clip dark" data-scene="card" data-start="0.000" data-duration="3.000" data-track-index="1">
+    <div class="chcard"><div class="num">CHAPTER 02</div><div class="title">THE VISITOR</div><div class="rule"></div></div>
+  </div>
+
+  <!-- route map (approximate positions from latitude/longitude) -->
+  <div id="sc-route" class="scene clip paperworld" data-scene="route" data-start="2.600" data-duration="12.900" data-track-index="2">
+    <div class="cam" id="mcam">
+      <div class="page"><div class="rules" style="opacity:.35"></div></div>
+      <svg class="full" viewBox="0 0 1920 1080">
+        <g id="grid" stroke="#1d2b4a" stroke-opacity=".12" stroke-width="2"></g>
+        <path id="coast" d="M1440,300 C1470,380 1480,470 1500,560 C1512,610 1520,650 1522,700 C1530,780 1550,860 1570,960" fill="none" stroke="#1d2b4a" stroke-width="4" stroke-dasharray="2 10" stroke-linecap="round"/>
+        <path id="pathE" d="M1265,348 C1060,470 820,620 602,812" fill="none" stroke="#c9463a" stroke-width="6" stroke-dasharray="14 12" stroke-linecap="round"/>
+        <path id="pathO" d="M1496,660 C1250,690 900,760 602,812" fill="none" stroke="#1d2b4a" stroke-width="5" stroke-dasharray="4 12" stroke-linecap="round"/>
+        <g id="pins" fill="#b3261a"><circle id="pM" cx="1265" cy="348" r="14"/><circle id="pI" cx="602" cy="812" r="18"/><circle id="pD" cx="1496" cy="660" r="14" fill="#1d2b4a"/></g>
+      </svg>
+      <div class="pinlab" id="lM" style="left:1290px;top:300px">Magamba</div><div class="pinsub" id="sM" style="left:1290px;top:334px">Usambara Mountains</div>
+      <div class="pinlab" id="lI" style="left:470px;top:846px">Mkwawa High School</div><div class="pinsub" id="sI" style="left:470px;top:880px">Iringa</div>
+      <div class="pinlab" id="lD" style="left:1520px;top:612px">University College</div><div class="pinsub" id="sD" style="left:1520px;top:646px">Dar es Salaam</div>
+      <div class="pinsub" id="ocean" style="left:1640px;top:820px;color:#434d5e">Indian Ocean</div>
+      <div class="hand" id="later" style="position:absolute;left:320px;top:120px;font-size:70px;clip-path:inset(-20% 100% -20% 0)">a few years later…</div>
+      <div class="abs note" style="left:320px;top:1010px;color:#3f4756">Approximate positions</div>
+    </div>
+  </div>
+
+  <!-- his question, drawn -->
+  <div id="sc-ask" class="scene clip paperworld" data-scene="ask" data-start="15.100" data-duration="16.100" data-track-index="3">
+    <div class="cam" id="acam">
+      <div class="page"><div class="rules"></div><div class="margin"></div></div>
+      <svg class="full" viewBox="0 0 1920 1080">
+        <g id="freezer" fill="none" stroke="#1d2b4a" stroke-width="6" stroke-linejoin="round"><rect x="1080" y="360" width="560" height="470" rx="18"/><line x1="1080" y1="440" x2="1640" y2="440"/><path id="frostBox" d="M1100,460 L1620,460 L1620,810 L1100,810 Z" fill="rgba(143,227,255,.18)" stroke="none" opacity="0"/></g>
+        <g transform="translate(500 560)"><g id="bA"><path d="M-70,0 L-56,190 L56,190 L70,0" fill="rgba(143,227,255,.10)" stroke="#1d2b4a" stroke-width="6"/><path d="M-66,50 L66,50" stroke="#3aa6d8" stroke-width="4"/></g></g>
+        <g transform="translate(780 560)"><g id="bB"><path d="M-70,0 L-56,190 L56,190 L70,0" fill="rgba(255,106,43,.12)" stroke="#1d2b4a" stroke-width="6"/><path d="M-66,50 L66,50" stroke="#c9463a" stroke-width="4"/>
+          <g id="bSteam" fill="none" stroke="#c9463a" stroke-width="4" stroke-linecap="round"><path d="M-24,-10 c-10,-18 10,-30 0,-50"/><path d="M8,-14 c-10,-18 10,-30 0,-50"/><path d="M36,-10 c-10,-18 10,-30 0,-50"/></g>
+          <g id="bIce" opacity="0" stroke="#3aa6d8" stroke-width="4"><path d="M-62,70 L62,70 M-60,110 L60,110 M-58,150 L58,150 M-40,52 L10,188 M20,52 L50,150"/></g></g></g>
+        <path id="arrow" d="M900,660 L1050,660 M1020,630 L1052,660 L1020,690" fill="none" stroke="#1d2b4a" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="abs tag" id="tA" style="left:430px;top:780px;width:140px;text-align:center;color:#2b6f94">35 °C</div>
+      <div class="abs tag" id="tB" style="left:710px;top:780px;width:140px;text-align:center;color:#b3261a">100 °C</div>
+      <div class="abs hand" id="why" style="left:1700px;top:470px;font-size:190px;color:#b3261a;opacity:0">?</div>
+      <div class="abs note" style="left:320px;top:1010px;color:#3f4756">His question, as quoted in the 1969 paper</div>
+    </div>
+  </div>
+
+  <!-- the physicist's first thought, and second -->
+  <div id="sc-scale" class="scene clip" data-scene="scale" data-start="30.800" data-duration="13.100" data-track-index="4" style="background:radial-gradient(1200px 800px at 50% 45%, #25332b 0%, #151d18 75%)">
+    <div class="cam" id="scam">
+      <svg class="full" viewBox="0 0 1920 1080">
+        <g fill="none" stroke="#eef3ea" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity=".92">
+          <path id="post" d="M960,880 L960,330 M860,880 L1060,880"/>
+          <g id="beam"><path d="M600,330 L1320,330"/><path d="M600,330 L520,560 M600,330 L680,560 M470,560 Q600,640 730,560 Z"/><path d="M1320,330 L1240,560 M1320,330 L1400,560 M1190,560 Q1320,640 1450,560 Z"/></g>
+          <circle cx="960" cy="330" r="16" fill="#eef3ea"/>
+        </g>
+      </svg>
+      <div class="abs chalk" id="lR" style="left:520px;top:640px;width:160px;text-align:center;font-size:60px">right</div>
+      <div class="abs chalk" id="lW" style="left:1240px;top:640px;width:160px;text-align:center;font-size:60px">wrong</div>
+    </div>
+  </div>
+
+  <!-- the test: real FLOW_07 -->
+  <div id="sc-lab" class="scene clip" data-scene="lab" data-start="43.600" data-duration="8.600" data-track-index="5" style="background:#0c0a08">
+    <img id="f07hold" class="fullvid" src="assets/flow/F07_hold_7.9s.jpg" alt="" style="opacity:0">
+  </div>
+  <!-- FLOW_07 lives at root level (not inside a timed wrapper) so its own data-start drives both frames and visibility -->
+  <div id="f07wrap" class="abs" style="inset:0;overflow:hidden;pointer-events:none">
+    <video id="f07" class="fullvid" src="assets/flow/FLOW_07_lab_test_1968.mp4" playsinline data-has-audio="true" data-volume="0.55" style="transform:scale(1.075)" data-scene="lab" data-at="0.15" data-len="7.85" data-start="43.750" data-duration="7.850" data-media-start="0.1" data-usable-in="0.1" data-usable-out="7.95" data-track-index="10"></video>
+  </div>
+  <div id="labOver" class="abs" style="inset:0;pointer-events:none;opacity:0">
+    <svg class="full" viewBox="0 0 1920 1080"><g id="crystals" stroke="#f2fcff" stroke-width="3" fill="none" stroke-linecap="round"></g></svg>
+    <div class="abs tag" id="labTag" style="left:80px;top:990px;color:#f4efe2;opacity:0;text-shadow:0 2px 8px rgba(0,0,0,.6)">University College, Dar es Salaam · recreation</div>
+    <div id="frostWash" class="abs" style="inset:0;background:#eef8fb;opacity:0"></div>
+  </div>
+
+  <!-- the paper: recreation -->
+  <div id="sc-paper" class="scene clip" data-scene="paper" data-start="51.900" data-duration="11.100" data-track-index="6" style="background:radial-gradient(1200px 800px at 50% 50%, #1b2533 0%, #06080c 75%)">
+    <div class="cam" id="jcam">
+      <div id="journal"><div class="jh"><span>PHYSICS EDUCATION</span><span>1969</span></div><div class="jt">Cool<span id="qm">?</span></div><div class="jb">Mpemba &amp; Osborne</div><div class="jl"></div></div>
+      <div class="abs note" id="recr" style="left:560px;top:1010px">Recreation · not a facsimile of the original page</div>
+    </div>
+    <div id="toBlack" class="abs" style="inset:0;background:#06080c;opacity:0"></div>
+  </div>
+
+  <audio id="music" src="assets/audio/music.wav" data-start="0" data-duration="63.000" data-volume="1" data-track-index="20"></audio>
+  <audio id="sfx" src="assets/audio/sfx.wav" data-start="0" data-duration="63.000" data-volume="1" data-track-index="21"></audio>
+  <!-- VO:BEGIN (generated by tools/retime_chapters.py) -->
+  <audio id="vo_c2_01" src="assets/vo/C2_01.wav" data-start="3.100" data-duration="11.700" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_c2_02" src="assets/vo/C2_02.wav" data-start="15.600" data-duration="14.900" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_c2_03" src="assets/vo/C2_03.wav" data-start="31.300" data-duration="4.000" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_c2_04" src="assets/vo/C2_04.wav" data-start="35.800" data-duration="7.400" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_c2_05" src="assets/vo/C2_05.wav" data-start="44.100" data-duration="5.900" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_c2_06" src="assets/vo/C2_06.wav" data-start="52.400" data-duration="9.400" data-volume="1" data-track-index="22"></audio>
+  <!-- VO:END -->
+
+  <div id="flash"></div><div id="vignette"></div><div id="grain" data-layout-ignore></div><div id="black"></div>
+  <div id="scratch" data-layout-allow-caption-zone><span class="tagx">SCRATCH VO</span><span class="txt" id="scratchTxt"></span></div>
+</div>
+
+<script src="shared/film.js"></script>
+<script>
+window.__timelines = window.__timelines || {};
+FILM_INIT();
+(function () {
+  const { tl, S, E, D, V, VE, P, rnd, $, $$, el } = FILM;
+
+  FILM.sceneFade('card', .5, .45); FILM.card('card');
+
+  // ═════════ route ═════════
+  FILM.sceneFade('route', .6, .45);
+  FILM.drift('#mcam', 'route', 1.05, 1.0);
+  for (let lon = 35; lon <= 40; lon++) { const x = 300 + (lon - 34.5) * 254; el('line', { x1: x, y1: 80, x2: x, y2: 1040 }, $('#grid')); }
+  for (let lat = -4; lat >= -9; lat--) { const y = 150 + (-3.5 - lat) * 155; el('line', { x1: 200, y1: y, x2: 1800, y2: y }, $('#grid')); }
+  FILM.write('#later', S('route') + .3, 1.0);
+  FILM.draw('#coast', S('route') + .4, 1.2);
+  FILM.show('#ocean', S('route') + 1.0, .5);
+  FILM.pop('#pM', P('C2_01', .05), .3); FILM.up('#lM, #sM', P('C2_01', .06), .4, 8);
+  FILM.draw('#pathE', P('C2_01', .12), 1.4);
+  FILM.pop('#pI', P('C2_01', .25), .35); FILM.up('#lI, #sI', P('C2_01', .26), .4, 8);
+  FILM.pop('#pD', P('C2_01', .55), .3); FILM.up('#lD, #sD', P('C2_01', .56), .4, 8);
+  FILM.draw('#pathO', P('C2_01', .68), 1.4);
+  tl.to('#mcam', { scale: 1.25, transformOrigin: '602px 812px', duration: 1.0, ease: 'power2.in' }, E('route') - 1.0);
+
+  // ═════════ ask ═════════
+  FILM.sceneFade('ask', .5, .45);
+  FILM.drift('#acam', 'ask', 1.04, 1.0);
+  FILM.up('#bA, #tA', P('C2_02', .3), .5, 20);
+  FILM.up('#bB, #tB', P('C2_02', .36), .5, 20);
+  tl.fromTo('#bSteam', { y: 6, opacity: .2 }, { y: -12, opacity: .9, duration: .9, repeat: 5, yoyo: true, ease: 'sine.inOut', immediateRender: false }, P('C2_02', .36));
+  FILM.draw('#freezer rect, #freezer line', P('C2_02', .52), .8);
+  FILM.draw('#arrow', P('C2_02', .56), .5);
+  const IN = P('C2_02', .66);
+  tl.to('#bA', { x: 800, y: 70, scale: .8, duration: .8, ease: 'power2.inOut' }, IN);
+  tl.to('#bB', { x: 700, y: 70, scale: .8, duration: .8, ease: 'power2.inOut' }, IN + .1);
+  tl.to('#tA', { x: 800, y: 20, opacity: .9, duration: .8, ease: 'power2.inOut' }, IN);
+  tl.to('#tB', { x: 700, y: 20, opacity: .9, duration: .8, ease: 'power2.inOut' }, IN + .1);
+  tl.to('#frostBox', { opacity: 1, duration: .6 }, IN + .7);
+  tl.to('#bSteam', { opacity: 0, duration: .3 }, IN + .8);
+  tl.to('#bIce', { opacity: 1, duration: .5 }, P('C2_02', .82));
+  FILM.flash(P('C2_02', .82), .12, .3);
+  tl.fromTo('#why', { opacity: 0, scale: .6 }, { opacity: 1, scale: 1, duration: .45, ease: 'back.out(2)', immediateRender: false }, P('C2_02', .92));
+  tl.set('#why', { opacity: 0 }, 0);
+
+  // ═════════ scale ═════════
+  FILM.sceneFade('scale', .5, .45);
+  FILM.drift('#scam', 'scale', 1.03, 1.0);
+  FILM.draw('#post, #beam path', S('scale') + .2, 1.0);
+  FILM.write('#lR', S('scale') + .8, .5); FILM.write('#lW', S('scale') + 1.0, .5);
+  const tilt = (deg, t, d, ease) => { tl.to('#beam', { rotation: deg, svgOrigin: '960 330', duration: d, ease }, t); tl.to('#lR', { y: -Math.sin(deg * Math.PI / 180) * 360, duration: d, ease }, t); tl.to('#lW', { y: Math.sin(deg * Math.PI / 180) * 360, duration: d, ease }, t); };
+  tilt(11, P('C2_03', .35), .9, 'power2.inOut');              // his first thought: probably wrong
+  tilt(-4, P('C2_04', .25), .5, 'power2.out');                  // …but he doesn't dismiss it
+  tilt(2, P('C2_04', .25) + .5, .5, 'sine.inOut');
+  tilt(0, P('C2_04', .25) + 1.0, 1.4, 'elastic.out(1,0.35)');
+
+  // ═════════ lab: built around the real FLOW_07 ═════════
+  // clip map (reviewed): 0.0–1.35 two beakers poured (steam) · cut · 1.4–3.3 placed in chest freezer ·
+  // cut · 3.35–5.0 lid closes · 5.0–6.0 frost blooms on the lid glass · 6.0–7.95 frosted hold. Border cropped (scale 1.075).
+  FILM.sceneFade('lab', .35, 0);
+  tl.set('#labOver', { opacity: 1 }, S('lab')); tl.set('#labOver', { opacity: 0 }, E('lab'));
+  const L0 = S('lab') + .15, lt = c => L0 + (c - .1);
+  FILM.show('#labTag', L0 + .4, .5);
+  tl.to('#labTag', { opacity: 0, duration: .4 }, lt(4.8));
+  tl.to('#f07hold', { opacity: 1, duration: .01 }, lt(7.9));
+  // frost hand-off: Flow's frost keeps growing as drawn crystals, then washes to paper white
+  const cg = $('#crystals');
+  const br = (x, y, a, len, dep) => { if (dep <= 0) return; const x2 = x + Math.cos(a) * len, y2 = y + Math.sin(a) * len; el('path', { d: `M${x.toFixed(0)},${y.toFixed(0)} L${x2.toFixed(0)},${y2.toFixed(0)}`, class: 'cr', 'data-d': dep }, cg); br(x2, y2, a - .55, len * .62, dep - 1); br(x2, y2, a + .55, len * .62, dep - 1); };
+  [[0, 0, .6], [1920, 0, 2.5], [0, 1080, -.6], [1920, 1080, -2.5], [960, 0, 1.57], [960, 1080, -1.57]].forEach(([x, y, a]) => br(x, y, a, 240, 6));
+  const FR = Math.max(lt(6.3), E('lab') - 1.6);
+  $$('.cr').forEach((p, i) => { p.setAttribute('pathLength', 1); p.setAttribute('stroke-dasharray', '1 1'); p.setAttribute('stroke-dashoffset', 1); tl.set(p, { opacity: 0 }, 0); tl.set(p, { opacity: 1 }, FR + (6 - p.dataset.d) * .12); tl.to(p, { attr: { 'stroke-dashoffset': 0 }, duration: .25 }, FR + (6 - p.dataset.d) * .12); });
+  tl.to('#frostWash', { opacity: 1, duration: .6, ease: 'power2.in' }, E('lab') - .6);
+
+  // ═════════ paper ═════════
+  FILM.sceneFade('paper', .01, 0);
+  tl.fromTo('#journal', { opacity: 0, y: 40, rotation: 3 }, { opacity: 1, y: 0, rotation: -1.5, duration: .8, ease: 'power3.out', immediateRender: false }, S('paper') + .1);
+  tl.set('#journal', { opacity: 0 }, 0);
+  FILM.show('#recr', S('paper') + .8, .5);
+  tl.fromTo('#jcam', { scale: 1.0 }, { scale: 1.05, duration: D('paper'), ease: 'sine.inOut', immediateRender: false }, S('paper'));
+  tl.to('#qm', { color: '#ff6a2b', duration: .3 }, P('C2_06', .85));
+  // the "?" pulls us in → Chapter 3
+  tl.to('#jcam', { scale: 7, transformOrigin: '1185px 470px', duration: 1.1, ease: 'power3.in' }, E('paper') - 1.1);
+  tl.to('#toBlack', { opacity: 1, duration: .4 }, E('paper') - .45);
+
+  FILM.finish('ch2');
+})();
+</script>
+</body>
+</html>
