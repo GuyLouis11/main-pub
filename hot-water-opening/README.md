@@ -10,6 +10,8 @@ A ~33-second, 1920×1080 cold open (milestone 1 of the full film; see FILM_MANIF
 | `STORYBOARD.md` | timecoded shot / type / VO / sound sheet |
 | `HANDOFF_CODEX.md` | exact ElevenLabs lines and Google Flow prompts, filenames, timings |
 | `QA.md` | what's final vs placeholder, which checks actually ran |
+| `FILM_SCRIPT.md` | full-film narration (about 9½–10 min), chapter by chapter |
+| `FILM_MANIFEST.md` | continuity bible, scene-by-scene Flow vs motion-design plan, 11 new Flow clip specs, sources |
 
 ## Project layout
 ```
