@@ -1,6 +1,6 @@
 # The Boy Who Froze Hot Water: full script (v1)
 
-**Recommended length: about 9½–10 minutes.** The story has one human arc, one reversal and one payoff; padding it to 12+ minutes would sag. The narration is about 1,000 words at a natural pace plus designed breathing room (timing is estimated at 140 wpm + 30% for visual beats).
+**Recommended length: about 7½ minutes (7:40 estimated).** That comes from natural delivery (about 1,000 words at about 155 wpm) plus about 45 s of meaningful wordless beats: the freeze, the laugh in the hall, the landscape shortcut, the final replay. No slow reading, no filler. If real takes run faster, the film gets shorter; it doesn't get padded.
 
 **Format.** Narration (ElevenLabs `apOzcbHULxCnvWfHPd41`) carries the film. Google Flow shots (**F##**) are the lived moments. Motion design (**MD**) carries every explanation. On-screen text never repeats the narration.
 
@@ -15,7 +15,7 @@ Lines `VO_01`–`VO_08` are in `HANDOFF_CODEX.md`. It ends on the title card.
 
 ---
 
-## 1 · The Kitchen (0:33–2:10)
+## 1 · The Kitchen (0:33–1:48)
 
 **C1_01**
 > Magamba Secondary School, in the Usambara hills of north-eastern Tanganyika. `[verify location]` A cookery class is making ice cream: boil the milk, add sugar, let it cool, then into the freezer.
@@ -43,7 +43,7 @@ Lines `VO_01`–`VO_08` are in `HANDOFF_CODEX.md`. It ends on the title card.
 
 ---
 
-## 2 · The Visitor (2:10–3:22)
+## 2 · The Visitor (1:48–2:44)
 
 **C2_01**
 > A few years later, Erasto is at Mkwawa High School in Iringa. A physicist from the university in Dar es Salaam, Dr Denis Osborne, comes to give a talk.
@@ -65,7 +65,7 @@ Lines `VO_01`–`VO_08` are in `HANDOFF_CODEX.md`. It ends on the title card.
 
 ---
 
-## 3 · Why It Shouldn't Happen (3:22–5:19)
+## 3 · Why It Shouldn't Happen (2:44–4:13)
 
 **C3_01**
 > So what's so impossible about it? Temperature is just how hard the molecules are jiggling. Put water in a freezer and the jiggling drains away, fast at first, then slower.
@@ -96,7 +96,7 @@ Lines `VO_01`–`VO_08` are in `HANDOFF_CODEX.md`. It ends on the title card.
 
 ---
 
-## 4 · The Doubt (5:19–6:28)
+## 4 · The Doubt (4:13–5:05)
 
 **C4_01**
 > In 2012 the Royal Society of Chemistry offered a prize for the best explanation. Twenty-two thousand people sent one in.
@@ -118,7 +118,7 @@ Lines `VO_01`–`VO_08` are in `HANDOFF_CODEX.md`. It ends on the title card.
 
 ---
 
-## 5 · The Shortcut (6:28–8:46)
+## 5 · The Shortcut (5:05–6:51)
 
 **C5_01**
 > "Temperature" is one number. But a hot system isn't one number. It's billions of particles arranged in a particular way. Two systems can have the same temperature and still be arranged very differently.
@@ -149,7 +149,7 @@ Lines `VO_01`–`VO_08` are in `HANDOFF_CODEX.md`. It ends on the title card.
 
 ---
 
-## 6 · The Answer (8:46–9:40)
+## 6 · The Answer (6:51–7:39)
 
 **C6_01**
 > Whether his ice cream froze first for all the reasons we think, we'll probably never know. The water is still argued over.
