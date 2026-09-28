@@ -1,0 +1,19 @@
+{
+  "name": "gww-boy-who-froze-hot-water-opening",
+  "version": "1.0.0",
+  "description": "Guy Wonders Why: 30s opening, HyperFrames + GSAP",
+  "scripts": {
+    "audio": "python3 tools/make_audio.py",
+    "lint": "hyperframes lint",
+    "check": "hyperframes check",
+    "preview": "hyperframes preview",
+    "render:review": "hyperframes render -f 30 -q high --variables '{\"scratchVO\":true}' -o renders/opening_review_hq.mp4",
+    "render:clean": "hyperframes render -f 30 -q high -o renders/opening_clean_hq.mp4",
+    "small": "bash tools/make_small.sh"
+  },
+  "devDependencies": {
+    "gsap": "^3.15.0",
+    "hyperframes": "^0.8.85"
+  },
+  "private": true
+}

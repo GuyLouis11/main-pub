@@ -1,0 +1,690 @@
+<!doctype html>
+<html lang="en" data-composition-variables='[
+  {"id":"scratchVO","type":"boolean","label":"Show SCRATCH VO subtitles (review only)","default":false}
+]'>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1920, height=1080" />
+<title>The Boy Who Froze Hot Water — Opening</title>
+<link rel="stylesheet" href="assets/fonts/fonts.css" />
+<script src="assets/vendor/gsap.min.js"></script>
+<style>
+  :root{
+    --ink:#06080c; --ink2:#0c1119; --paper:#efe7d5; --paperInk:#1d2b4a;
+    --ember:#ff6a2b; --ember2:#ffb27a; --frost:#8fe3ff; --frost2:#e3f8ff;
+    --pen:#b3261a; --dim:#7d8aa0;
+    --display:'Big Shoulders Display', Impact, sans-serif;
+    --serif:'Instrument Serif', Georgia, serif;
+    --mono:'JetBrains Mono', ui-monospace, monospace;
+    --hand:'Caveat', cursive;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1920px;height:1080px;overflow:hidden;background:var(--ink)}
+  #root{position:relative;width:1920px;height:1080px;overflow:hidden;background:var(--ink);color:var(--paper)}
+  .scene{position:absolute;inset:0;overflow:hidden}
+  .cam{position:absolute;inset:0;transform-origin:50% 50%}
+  .abs{position:absolute}
+  svg{overflow:visible}
+  .mono{font-family:var(--mono);letter-spacing:.14em;text-transform:uppercase}
+
+  /* ---------- S1 race ---------- */
+  #s1{background:radial-gradient(1200px 700px at 50% 42%, #0f1824 0%, var(--ink) 70%)}
+  #s1 .hud{top:56px;font-size:22px;color:#9fb3c8}
+  #s1 .readout{top:150px;width:420px;margin-left:-210px;text-align:center}
+  #s1 .readout .lab{font-family:var(--display);font-weight:800;font-size:40px;letter-spacing:.32em;padding-left:.32em}
+  #s1 .readout .num{font-family:var(--mono);font-weight:600;font-size:92px;line-height:1.05;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+  #hotRead .lab,#hotRead .num{color:var(--ember)}
+  #coldRead .lab,#coldRead .num{color:var(--frost)}
+  .pill{position:absolute;left:50%;transform:translateX(-50%);white-space:nowrap;font-family:var(--mono);font-weight:600;font-size:24px;letter-spacing:.2em;padding:10px 18px 10px 22px;border-radius:4px}
+  #frozenPill{top:-58px;background:var(--frost2);color:#062033}
+  #liquidPill{top:-58px;border:2px solid #56708a;color:#b9c7d6}
+  .tick{font-family:var(--mono);font-size:20px;color:#7f93a8;transform:translateX(-50%)}
+  #finishLab{font-family:var(--mono);font-weight:600;font-size:20px;letter-spacing:.2em;color:var(--frost)}
+
+  /* ---------- S2 graph ---------- */
+  #s2{background:radial-gradient(1400px 800px at 45% 50%, #0d1520 0%, var(--ink) 72%)}
+  .glab{font-family:var(--mono);font-size:22px;color:#8ea2b8;letter-spacing:.12em}
+  .gtag{font-family:var(--mono);font-weight:600;font-size:24px;letter-spacing:.16em;white-space:nowrap}
+  #mustPass{font-family:var(--display);font-weight:800;font-size:46px;letter-spacing:.08em;color:var(--paper);white-space:nowrap}
+
+  /* ---------- S3 1963 notebook ---------- */
+  #s3{background:transparent}
+  #page{position:absolute;left:-60px;top:-50px;width:2040px;height:1180px;
+        background:url(assets/img/paper.jpg) center/cover, #efe7d5}
+  #rules{position:absolute;inset:0;background:repeating-linear-gradient(to bottom, transparent 0 55px, rgba(80,120,160,.28) 55px 57px);
+         -webkit-mask:linear-gradient(to bottom, transparent 0 130px, #000 150px)}
+  #margin{position:absolute;left:250px;top:0;bottom:0;width:3px;background:rgba(200,70,60,.45)}
+  .hand{font-family:var(--hand);font-weight:600;color:var(--paperInk);white-space:nowrap}
+  .write{clip-path:inset(-20% 100% -20% 0)}
+  #photo{position:absolute;left:880px;top:190px;width:960px;height:540px}
+  #photoCard{position:absolute;inset:-18px;background:#f7f2e6;box-shadow:0 30px 60px rgba(40,25,10,.35),0 2px 6px rgba(40,25,10,.25)}
+  #photo video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#2a1a10}
+  .tape{position:absolute;width:170px;height:48px;background:rgba(235,225,195,.78);box-shadow:0 2px 4px rgba(0,0,0,.08)}
+  #lower{left:300px;top:850px}
+  #lower .name{font-family:var(--serif);font-style:italic;font-size:76px;color:var(--paperInk);line-height:1}
+  #lower .strip{margin-top:18px;display:inline-block;background:#141b27;color:#efe7d5;font-family:var(--mono);font-weight:600;font-size:22px;letter-spacing:.22em;padding:12px 20px 12px 24px}
+  #quote{left:300px;top:250px}
+  #quote .q{font-family:var(--hand);font-weight:700;font-size:118px;line-height:1.05;color:var(--pen);white-space:nowrap}
+  #quote .who{font-family:var(--mono);font-weight:600;font-size:24px;letter-spacing:.22em;color:#3a3f4a;margin-top:34px;padding-left:8px}
+  #confusedWrap{position:relative;display:inline-block}
+  #confusedWrap svg{position:absolute;left:-7%;top:-12%;width:114%;height:128%}
+  #lamp{position:absolute;inset:0;background:radial-gradient(1100px 700px at 45% 45%, rgba(0,0,0,0) 30%, rgba(20,12,4,.55) 100%);opacity:0}
+
+  /* ---------- S4 not the first ---------- */
+  #s4{background:radial-gradient(1000px 800px at 50% 50%, #111a26 0%, var(--ink) 70%)}
+  #year{left:0;right:0;top:250px;text-align:center;font-family:var(--display);font-weight:900;font-size:300px;line-height:1;color:var(--paper);font-variant-numeric:tabular-nums;letter-spacing:.02em}
+  #yearWho{left:0;right:0;top:590px;text-align:center}
+  #yearWho .who{font-family:var(--serif);font-style:italic;font-size:92px;color:var(--ember2);line-height:1}
+  #yearWho .src{font-family:var(--mono);font-size:24px;letter-spacing:.24em;color:#9fb3c8;margin-top:18px}
+  #slotLab{left:0;right:0;top:330px;text-align:center;font-family:var(--mono);font-weight:600;font-size:26px;letter-spacing:.3em;color:#9fb3c8}
+  #slotWin{left:260px;right:260px;top:400px;height:220px;overflow:hidden}
+  #slotReel{position:absolute;left:0;right:0;top:0}
+  #slotReel div{height:220px;line-height:220px;text-align:center;font-family:var(--display);font-weight:800;font-size:170px;letter-spacing:.02em;color:var(--paper);white-space:nowrap}
+  #slotReel .qm{color:var(--frost);font-weight:900}
+  #slotRule{left:560px;right:560px;top:640px;height:2px;background:rgba(143,227,255,.35)}
+
+  /* ---------- S5 title ---------- */
+  #s5{background:radial-gradient(1200px 760px at 50% 55%, #0f1a27 0%, var(--ink) 72%)}
+  #titleWrap{left:0;right:0;top:290px;text-align:center}
+  #series{font-family:var(--mono);font-weight:600;font-size:28px;letter-spacing:.5em;padding-left:.5em;color:#a9bccf}
+  #series b{display:inline-block;width:14px;height:14px;border-radius:50%;background:var(--ember);margin-right:20px;vertical-align:2px}
+  #t1{font-family:var(--display);font-weight:800;font-size:118px;letter-spacing:.14em;padding-left:.14em;color:var(--paper);margin-top:34px;line-height:1}
+  #t2{font-family:var(--display);font-weight:900;font-size:236px;letter-spacing:.01em;line-height:.95;color:var(--paper);margin-top:8px;white-space:nowrap}
+  #t2 .w{display:inline-block}
+  #hotWord{position:relative;color:var(--ember);text-shadow:0 0 40px rgba(255,106,43,.55)}
+  #hotFrost{position:absolute;left:-4%;top:6%;width:108%;height:92%}
+  .flake{position:absolute;width:4px;height:4px;border-radius:50%;background:#cfefff}
+
+  /* ---------- global ---------- */
+  #flash{position:absolute;inset:0;z-index:10;background:#e9fbff;opacity:0;pointer-events:none}
+  #grain{position:absolute;inset:-64px;z-index:10;background:url(assets/img/grain.png);opacity:.075;mix-blend-mode:overlay;pointer-events:none}
+  #vignette{position:absolute;inset:0;z-index:10;background:radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0) 55%, rgba(0,0,0,.45) 100%);pointer-events:none}
+  #black{position:absolute;inset:0;z-index:11;background:#000;opacity:0;pointer-events:none}
+  #scratch{position:absolute;z-index:12;left:50%;bottom:26px;transform:translateX(-50%);display:none;align-items:center;gap:14px;
+           background:rgba(0,0,0,.72);padding:10px 22px;border-radius:6px;white-space:nowrap}
+  #scratch .tag{font-family:var(--mono);font-weight:600;font-size:16px;letter-spacing:.2em;color:#ffcf3a;border:1px solid #ffcf3a;padding:3px 8px}
+  #scratch .txt{font-family:var(--mono);font-size:24px;color:#ffffff}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="30" data-width="1920" data-height="1080">
+
+  <!-- ================= S1  THE RACE  (0 – 6.1) ================= -->
+  <div id="s1" class="scene clip" data-start="0" data-duration="6.6" data-track-index="1">
+    <div class="cam" id="s1cam">
+      <div class="abs mono hud" style="left:80px">Freezer &nbsp;<span style="color:var(--frost)">−18°C</span></div>
+      <div class="abs mono hud" style="right:80px;text-align:right">Time-lapse &nbsp;<span id="clock" style="color:#e8eef5">00:00</span></div>
+
+      <svg id="s1svg" class="abs" style="left:0;top:0" width="1920" height="1080" viewBox="0 0 1920 1080">
+        <defs>
+          <linearGradient id="glass" x1="0" x2="1">
+            <stop offset="0" stop-color="#cfe9ff" stop-opacity=".22"/><stop offset=".18" stop-color="#cfe9ff" stop-opacity=".05"/>
+            <stop offset=".8" stop-color="#cfe9ff" stop-opacity=".03"/><stop offset="1" stop-color="#cfe9ff" stop-opacity=".18"/>
+          </linearGradient>
+          <linearGradient id="hotLiquid" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ffd2b4" stop-opacity=".30"/><stop offset=".55" stop-color="#ff9a60" stop-opacity=".12"/><stop offset="1" stop-color="#ff6a2b" stop-opacity=".28"/>
+          </linearGradient>
+          <linearGradient id="coldLiquid" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#d9f4ff" stop-opacity=".26"/><stop offset=".55" stop-color="#8fe3ff" stop-opacity=".10"/><stop offset="1" stop-color="#8fe3ff" stop-opacity=".24"/>
+          </linearGradient>
+          <linearGradient id="iceFill" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#f2fcff" stop-opacity=".95"/><stop offset="1" stop-color="#a9dcf2" stop-opacity=".75"/>
+          </linearGradient>
+          <radialGradient id="hotGlow"><stop offset="0" stop-color="#ff6a2b" stop-opacity=".26"/><stop offset="1" stop-color="#ff6a2b" stop-opacity="0"/></radialGradient>
+          <radialGradient id="coldGlow"><stop offset="0" stop-color="#8fe3ff" stop-opacity=".18"/><stop offset="1" stop-color="#8fe3ff" stop-opacity="0"/></radialGradient>
+          <clipPath id="cupClip"><path d="M-104,6 L-80,276 L80,276 L104,6 Z"/></clipPath>
+          <pattern id="chk" width="16" height="16" patternUnits="userSpaceOnUse">
+            <rect width="8" height="8" fill="#8fe3ff"/><rect x="8" y="8" width="8" height="8" fill="#8fe3ff"/>
+          </pattern>
+        </defs>
+
+        <!-- wire shelf -->
+        <g opacity=".5"><line x1="200" y1="688" x2="1720" y2="688" stroke="#5f7d99" stroke-width="3"/>
+          <line x1="200" y1="700" x2="1720" y2="700" stroke="#2c3f52" stroke-width="2"/></g>
+        <g id="frostTop" opacity=".6"><rect x="0" y="0" width="1920" height="40" fill="#8fe3ff" opacity=".05"/></g>
+
+        <!-- HOT cup -->
+        <g transform="translate(660 400)"><g id="hotCup">
+          <ellipse id="hotHalo" cx="0" cy="190" rx="300" ry="230" fill="url(#hotGlow)"/>
+          <g id="steam" stroke="#ffd2b0" stroke-width="5" fill="none" stroke-linecap="round" opacity=".55">
+            <path class="st" d="M-40,-8 C-55,-30 -25,-45 -40,-70"/>
+            <path class="st" d="M0,-12 C-15,-36 18,-52 0,-80"/>
+            <path class="st" d="M40,-8 C55,-30 25,-45 42,-68"/>
+          </g>
+          <g clip-path="url(#cupClip)">
+            <rect id="hotLiq" x="-120" y="60" width="240" height="230" fill="url(#hotLiquid)"/>
+            <rect id="hotIce" x="-120" y="60" width="240" height="230" fill="url(#iceFill)" opacity="0"/>
+            <g id="hotCrystals" stroke="#ffffff" stroke-width="2.2" fill="none" stroke-linecap="round"></g>
+          </g>
+          <ellipse id="hotSurf" cx="0" cy="60" rx="99" ry="11" fill="none" stroke="#ffc9a3" stroke-width="3" opacity=".8"/>
+          <path d="M-110,0 L-85,280 Q-84,292 -72,292 L72,292 Q84,292 85,280 L110,0" fill="url(#glass)" stroke="#dff3ff" stroke-opacity=".55" stroke-width="3"/>
+          <ellipse cx="0" cy="0" rx="110" ry="12" fill="none" stroke="#dff3ff" stroke-opacity=".6" stroke-width="3"/>
+          <path d="M-88,30 L-70,262" stroke="#fff" stroke-opacity=".25" stroke-width="6" stroke-linecap="round"/>
+          <g id="hotRim" opacity="0"><path d="M-110,0 L-85,280 Q-84,292 -72,292 L72,292 Q84,292 85,280 L110,0" fill="none" stroke="#e3f8ff" stroke-width="7" stroke-dasharray="3 9" stroke-linecap="round"/></g>
+        </g></g>
+
+        <!-- COLD cup -->
+        <g transform="translate(1260 400)"><g id="coldCup">
+          <ellipse cx="0" cy="150" rx="240" ry="200" fill="url(#coldGlow)"/>
+          <g clip-path="url(#cupClip)">
+            <rect x="-120" y="60" width="240" height="230" fill="url(#coldLiquid)"/>
+          </g>
+          <ellipse id="coldSurf" cx="0" cy="60" rx="99" ry="11" fill="none" stroke="#d9f4ff" stroke-width="3" opacity=".75"/>
+          <path d="M-110,0 L-85,280 Q-84,292 -72,292 L72,292 Q84,292 85,280 L110,0" fill="url(#glass)" stroke="#dff3ff" stroke-opacity=".55" stroke-width="3"/>
+          <ellipse cx="0" cy="0" rx="110" ry="12" fill="none" stroke="#dff3ff" stroke-opacity=".6" stroke-width="3"/>
+          <path d="M-88,30 L-70,262" stroke="#fff" stroke-opacity=".25" stroke-width="6" stroke-linecap="round"/>
+        </g></g>
+      </svg>
+
+      <div id="hotRead" class="abs readout" style="left:660px"><div class="lab">HOT</div><div class="num" id="hotNum">90.0°</div></div>
+      <div id="coldRead" class="abs readout" style="left:1260px"><div class="lab">COLD</div><div class="num" id="coldNum">20.0°</div></div>
+      <div class="abs" style="left:660px;top:400px"><div id="frozenPill" class="pill" style="opacity:0">FROZEN SOLID</div></div>
+      <div class="abs" style="left:1260px;top:400px"><div id="liquidPill" class="pill" style="opacity:0">STILL LIQUID</div></div>
+    </div>
+  </div>
+
+  <!-- the race track: lives across S1 → S2 and becomes the graph's temperature axis -->
+  <div id="trackLayer" class="scene clip" data-start="0" data-duration="12.0" data-track-index="2" style="pointer-events:none;z-index:3">
+    <div class="cam" id="trackCam">
+      <svg class="abs" style="left:0;top:0" width="1920" height="1080" viewBox="0 0 1920 1080">
+        <g id="rig">
+          <line id="trackLine" x1="360" y1="880" x2="1560" y2="880" stroke="#3b5268" stroke-width="4"/>
+          <g id="trackTicks" stroke="#4d6780" stroke-width="3"></g>
+          <rect id="finish" x="1552" y="846" width="16" height="68" fill="url(#chk)" opacity=".9"/>
+          <line id="hotTrail" x1="360" y1="866" x2="360" y2="866" stroke="#ff6a2b" stroke-width="6" stroke-linecap="round" opacity=".85"/>
+          <line id="coldTrail" x1="1293" y1="894" x2="1293" y2="894" stroke="#8fe3ff" stroke-width="6" stroke-linecap="round" opacity=".85"/>
+          <circle id="hotDot" cx="360" cy="866" r="13" fill="#ff6a2b" stroke="#ffd9c2" stroke-width="3"/>
+          <circle id="coldDot" cx="1293" cy="894" r="13" fill="#8fe3ff" stroke="#e3f8ff" stroke-width="3"/>
+        </g>
+      </svg>
+      <div id="trackLabels"></div>
+      <div id="finishLab" class="abs" style="left:1590px;top:866px">0°C · FROZEN</div>
+    </div>
+  </div>
+
+  <!-- ================= S2  IT STARTS BEHIND  (5.9 – 11.9) ================= -->
+  <div id="s2" class="scene clip" data-start="5.9" data-duration="6.1" data-track-index="3" style="z-index:2">
+    <div class="cam" id="s2cam">
+      <svg class="abs" style="left:0;top:0" width="1920" height="1080" viewBox="0 0 1920 1080">
+        <defs>
+          <pattern id="hatch" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <line x1="0" y1="0" x2="0" y2="14" stroke="#8fe3ff" stroke-opacity=".22" stroke-width="3"/></pattern>
+          <filter id="glowE" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+        <g id="gGrid" opacity="0">
+          <rect x="260" y="930" width="1460" height="70" fill="url(#hatch)"/>
+          <line x1="260" y1="930" x2="1720" y2="930" stroke="#8fe3ff" stroke-width="3"/>
+          <line x1="260" y1="930" x2="1720" y2="930" stroke="#3b5268" stroke-width="0"/>
+        </g>
+        <g id="band20" opacity="0">
+          <line x1="260" y1="756.7" x2="1720" y2="756.7" stroke="#8fe3ff" stroke-width="2" stroke-dasharray="10 10" opacity=".7"/>
+        </g>
+        <path id="coldLine" fill="none" stroke="#8fe3ff" stroke-width="7" stroke-linecap="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1"/>
+        <path id="expLine" fill="none" stroke="#ff6a2b" stroke-width="4" stroke-linecap="round" opacity=".75" stroke-dasharray="0.012 0.012" pathLength="1"/>
+        <g id="passMark" opacity="0" transform="translate(1000 756.7)">
+          <circle r="16" fill="none" stroke="#e8eef5" stroke-width="4"/>
+          <circle id="passPulse" r="16" fill="none" stroke="#e8eef5" stroke-width="3"/>
+        </g>
+        <line id="cursor" x1="1150" y1="140" x2="1150" y2="930" stroke="#e8eef5" stroke-width="2" stroke-dasharray="4 8" opacity="0"/>
+        <path id="hotLine" fill="none" stroke="#ff6a2b" stroke-width="9" stroke-linecap="round" filter="url(#glowE)" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1"/>
+        <circle id="hotHead" r="12" fill="#ffd9c2" opacity="0"/>
+        <g id="finishBurst" transform="translate(1150 930)" opacity="0"></g>
+        <circle id="coldHead" cx="1150" r="11" fill="#e3f8ff" opacity="0"/>
+        <g id="cracks" stroke="#e3f8ff" stroke-width="3" fill="none" stroke-linejoin="round"></g>
+      </svg>
+      <div class="abs glab" id="yLab90" style="left:120px;top:136px;opacity:0">90°C</div>
+      <div class="abs glab" id="yLab20" style="left:120px;top:742px;opacity:0">20°C</div>
+      <div class="abs glab" id="yLab0" style="left:140px;top:916px;opacity:0">0°C</div>
+      <div class="abs glab" id="xLab" style="left:1440px;top:1010px;opacity:0">TIME IN FREEZER →</div>
+      <div class="abs gtag" id="band20Lab" style="left:1480px;top:708px;color:var(--frost);opacity:0">COLD STARTED HERE</div>
+      <div class="abs gtag" id="expLab" style="left:1330px;top:790px;color:var(--ember2);opacity:0">EXPECTED</div>
+      <div class="abs" id="mustPass" style="left:1040px;top:640px;opacity:0">IT MUST PASS HERE</div>
+      <div class="abs gtag" id="firstLab" style="left:870px;top:948px;color:var(--ember2);opacity:0">HOT · FROZEN ▸</div>
+      <div class="abs gtag" id="coldAt" style="left:1180px;top:0;color:var(--frost);opacity:0">COLD · STILL 5°C</div>
+    </div>
+  </div>
+
+  <!-- shatter shards: the dark frame breaks away to reveal 1963 -->
+  <div id="shardLayer" class="scene clip" data-start="11.4" data-duration="0.9" data-track-index="4" style="pointer-events:none;z-index:4">
+    <svg class="abs" style="left:0;top:0" width="1920" height="1080" viewBox="0 0 1920 1080"><g id="shards"></g></svg>
+  </div>
+
+  <!-- ================= S3  1963  (11.4 – 21.6) ================= -->
+  <div id="s3" class="scene clip" data-start="11.4" data-duration="10.2" data-track-index="0">
+    <div class="cam" id="s3cam">
+      <div id="page"><div id="rules"></div><div id="margin"></div></div>
+
+      <div class="abs hand write" id="head" style="left:300px;top:100px;font-size:66px">Cookery class: ice cream</div>
+      <div class="abs hand write" id="note1" style="left:300px;top:330px;font-size:54px">hot mix → straight in</div>
+      <div class="abs hand write" id="note2" style="left:300px;top:394px;font-size:44px;color:#4a5670">(no room to let it cool)</div>
+      <div class="abs hand write" id="note3" style="left:300px;top:540px;font-size:66px">…and it froze <span style="color:var(--pen)">first</span></div>
+      <svg class="abs" style="left:300px;top:630px" width="520" height="30"><path id="u3" d="M290,14 C340,8 400,20 470,10" stroke="#b3261a" stroke-width="6" fill="none" stroke-linecap="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1"/></svg>
+
+      <div id="photo">
+        <div id="photoCard"></div>
+        <video id="flow1" src="assets/flow/FLOW_01_kitchen_hot_mix.mp4" muted playsinline
+               data-start="11.9" data-duration="3.1" data-media-start="0.6" data-track-index="10"></video>
+        <video id="flow2" src="assets/flow/FLOW_02_freezer_reveal.mp4" muted playsinline
+               data-start="15.0" data-duration="2.8" data-media-start="0.8" data-track-index="11"></video>
+        <div class="tape" style="left:-60px;top:-26px;transform:rotate(-24deg)"></div>
+        <div class="tape" style="right:-60px;bottom:-24px;transform:rotate(-20deg)"></div>
+      </div>
+
+      <div id="lower" class="abs">
+        <div class="name write" id="nameTxt">Erasto Mpemba, 13</div>
+        <div class="strip" id="strip">Magamba Secondary School · Tanganyika · 1963</div>
+      </div>
+
+      <div id="lamp"></div>
+      <div id="quote" class="abs">
+        <div class="q write" id="q1">“The answer I can give is</div>
+        <div class="q write" id="q2">that you were <span id="confusedWrap">confused.”<svg viewBox="0 0 100 100" preserveAspectRatio="none"><path id="circ" d="M8,52 C6,20 50,6 80,14 C100,20 98,70 72,86 C44,100 4,86 6,52 C8,34 30,22 52,20" fill="none" stroke="#b3261a" stroke-width="3.2" stroke-linecap="round" vector-effect="non-scaling-stroke" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1"/></svg></span></div>
+        <div class="who" id="qwho">— his teacher, 1963</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= S4  NOT THE FIRST  (21.2 – 26.6) ================= -->
+  <div id="s4" class="scene clip" data-start="21.2" data-duration="5.4" data-track-index="5">
+    <div class="cam" id="s4cam">
+      <svg class="abs" style="left:0;top:0" width="1920" height="1080" viewBox="0 0 1920 1080">
+        <g id="dial" transform="translate(960 520)" fill="none" stroke="#8fe3ff">
+          <circle r="330" stroke-opacity=".10" stroke-width="2"/>
+          <circle r="420" stroke-opacity=".07" stroke-width="2"/>
+          <circle r="520" stroke-opacity=".05" stroke-width="2"/>
+          <g id="dialTicks" stroke-opacity=".25" stroke-width="3"></g>
+        </g>
+      </svg>
+      <div id="yearBox">
+        <div id="year" class="abs">1963</div>
+        <div id="yearWho" class="abs"><div class="who" id="whoName">&nbsp;</div><div class="src" id="whoSrc">&nbsp;</div></div>
+      </div>
+      <div id="slotLab" class="abs" style="opacity:0">Proposed explanations, still debated</div>
+      <div id="slotWin" class="abs" style="opacity:0">
+        <div id="slotReel">
+          <div>EVAPORATION?</div><div>CONVECTION?</div><div>DISSOLVED GAS?</div><div>SUPERCOOLING?</div><div>FROST?</div><div class="qm">?</div>
+        </div>
+      </div>
+      <div id="slotRule" class="abs" style="opacity:0"></div>
+    </div>
+  </div>
+
+  <!-- ================= S5  TITLE  (26.4 – 30) ================= -->
+  <div id="s5" class="scene clip" data-start="26.4" data-duration="3.6" data-track-index="6">
+    <div class="cam" id="s5cam">
+      <div id="flakes"></div>
+      <div id="titleWrap" class="abs">
+        <div id="series"><b></b>Guy Wonders Why</div>
+        <div id="t1">THE BOY WHO</div>
+        <div id="t2"><span class="w" id="w1">FROZE</span> <span class="w" id="hotWord">HOT<svg id="hotFrost" viewBox="0 0 300 200" preserveAspectRatio="none"><g id="frostG" stroke="#f2fcff" stroke-width="2.4" fill="none" stroke-linecap="round"></g></svg></span> <span class="w" id="w3">WATER</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= AUDIO ================= -->
+  <!-- Score + SFX: original, synthesized by tools/make_audio.py (final-candidate, not placeholder) -->
+  <audio id="music" src="assets/audio/score_music.wav" data-start="0" data-duration="30" data-volume="1" data-track-index="20"></audio>
+  <audio id="sfx" src="assets/audio/score_sfx.wav" data-start="0" data-duration="30" data-volume="1" data-track-index="21"></audio>
+  <!-- VO slots: currently SILENT PLACEHOLDERS. Drop ElevenLabs renders in with the same filenames. -->
+  <audio id="vo1" src="assets/audio/vo/VO_01.wav" data-start="0.35"  data-duration="3.4"  data-volume="1" data-track-index="22"></audio>
+  <audio id="vo2" src="assets/audio/vo/VO_02.wav" data-start="4.35"  data-duration="1.6"  data-volume="1" data-track-index="22"></audio>
+  <audio id="vo3" src="assets/audio/vo/VO_03.wav" data-start="6.4"   data-duration="4.6"  data-volume="1" data-track-index="22"></audio>
+  <audio id="vo4" src="assets/audio/vo/VO_04.wav" data-start="12.2"  data-duration="4.7"  data-volume="1" data-track-index="22"></audio>
+  <audio id="vo5" src="assets/audio/vo/VO_05.wav" data-start="17.05" data-duration="1.3"  data-volume="1" data-track-index="22"></audio>
+  <audio id="vo6" src="assets/audio/vo/VO_06.wav" data-start="21.35" data-duration="2.4"  data-volume="1" data-track-index="22"></audio>
+  <audio id="vo7" src="assets/audio/vo/VO_07.wav" data-start="24.05" data-duration="2.35" data-volume="1" data-track-index="22"></audio>
+
+  <!-- ================= GLOBAL FINISHING ================= -->
+  <div id="flash"></div>
+  <div id="vignette"></div>
+  <div id="grain" data-layout-ignore></div>
+  <div id="black"></div>
+  <div id="scratch" data-layout-allow-caption-zone><span class="tag">SCRATCH VO</span><span class="txt" id="scratchTxt"></span></div>
+</div>
+
+<script>
+(function(){
+  // ---------- deterministic helpers ----------
+  let seed = 1963;
+  const rnd = () => { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; };
+  const $ = s => document.querySelector(s);
+  const NS = 'http://www.w3.org/2000/svg';
+  const el = (tag, attrs, parent) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); parent && parent.appendChild(e); return e; };
+  const vars = (window.__hyperframes && window.__hyperframes.getVariables) ? window.__hyperframes.getVariables() : {};
+  const params = new URLSearchParams(location.search);
+  const SCRATCH = vars.scratchVO === true || vars.scratchVO === 'true' || params.get('scratch') === '1';
+
+  const tl = gsap.timeline({ paused: true });
+  tl.set('#s1cam, #s2cam, #s3cam, #s4cam, #s5cam', { x: 0, y: 0, scale: 1, rotation: 0, opacity: 1 }, 0);
+
+  // =====================================================================
+  // S1 — THE RACE
+  // =====================================================================
+  const TX = T => 1560 - (T / 90) * 1200;            // track x for temperature
+  // ticks + labels
+  const tickG = $('#trackTicks'), labs = $('#trackLabels');
+  [90, 75, 60, 45, 30, 15].forEach(T => {
+    el('line', { x1: TX(T), y1: 872, x2: TX(T), y2: 888 }, tickG);
+    const d = document.createElement('div');
+    d.className = 'abs tick trackTick'; d.style.left = TX(T) + 'px'; d.style.top = '922px'; d.textContent = T + '°';
+    labs.appendChild(d);
+  });
+
+  // crystal growth inside the hot cup (branching, seeded)
+  const cryG = $('#hotCrystals');
+  const branch = (x, y, ang, len, depth) => {
+    if (depth <= 0 || len < 8) return;
+    let d = `M${x.toFixed(1)},${y.toFixed(1)}`; let cx = x, cy = y;
+    const segs = 3;
+    for (let i = 0; i < segs; i++) { cx += Math.cos(ang) * len / segs + (rnd() - .5) * 6; cy += Math.sin(ang) * len / segs + (rnd() - .5) * 6; d += ` L${cx.toFixed(1)},${cy.toFixed(1)}`; }
+    el('path', { d, pathLength: 1, 'stroke-dasharray': '1 1', 'stroke-dashoffset': 1, class: 'cry', 'data-depth': depth, opacity: .5 + depth * .12 }, cryG);
+    const n = 2;
+    for (let i = 0; i < n; i++) branch(cx, cy, ang + (i ? 1 : -1) * (0.5 + rnd() * .5), len * (0.55 + rnd() * .15), depth - 1);
+  };
+  for (let i = 0; i < 7; i++) { const a = (i / 7) * Math.PI * 2 + rnd() * .4; branch((rnd() - .5) * 40, 150 + (rnd() - .5) * 60, a, 70 + rnd() * 30, 4); }
+
+  const hot = { T: 90 }, cold = { T: 20 }, clock = { m: 0 }, rew = { k: 0 };
+  const hotNum = $('#hotNum'), coldNum = $('#coldNum'), clockEl = $('#clock');
+  const fmt = T => (Math.max(0, T)).toFixed(1) + '°';
+  function drawRace() {
+    hotNum.textContent = fmt(hot.T); coldNum.textContent = fmt(cold.T);
+    // readouts keep the result; only the track dots rewind (rew.k) before the axis swing
+    const hx = TX(hot.T + (90 - hot.T) * rew.k), cx = TX(cold.T + (20 - cold.T) * rew.k);
+    $('#hotDot').setAttribute('cx', hx); $('#hotTrail').setAttribute('x2', hx);
+    $('#coldDot').setAttribute('cx', cx); $('#coldTrail').setAttribute('x2', cx);
+    const mm = Math.floor(clock.m), ss = Math.floor((clock.m - mm) * 60);
+    clockEl.textContent = String(mm).padStart(2, '0') + ':' + String(ss).padStart(2, '0');
+  }
+  drawRace();
+
+  // freezer door light: vertical slit opens
+  tl.fromTo('#s1', { clipPath: 'inset(0% 50% 0% 50%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: .65, ease: 'expo.out' }, 0.05);
+  tl.fromTo('#trackLayer', { clipPath: 'inset(0% 50% 0% 50%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: .65, ease: 'expo.out' }, 0.05);
+  tl.fromTo('#flash', { opacity: .35 }, { opacity: 0, duration: .5, ease: 'power2.out' }, 0.05);
+  tl.fromTo('#s1cam', { scale: 1.06 }, { scale: 1.0, duration: 4.1, ease: 'power2.out' }, 0);
+  tl.from('#hotCup, #coldCup', { y: 30, opacity: 0, duration: .6, ease: 'power3.out', stagger: .08 }, 0.2);
+  tl.from('#hotRead, #coldRead', { y: -20, opacity: 0, duration: .5, ease: 'power3.out', stagger: .08 }, 0.35);
+  tl.from('#rig', { opacity: 0, duration: .4 }, 0.55);
+  tl.from('#trackLine', { attr: { x2: 360 }, duration: .6, ease: 'power2.out' }, 0.55);
+  tl.from('.trackTick, #finishLab', { opacity: 0, y: 8, duration: .3, stagger: .04 }, 0.7);
+  // steam + liquid life
+  gsap.utils.toArray('#steam .st').forEach((p, i) => {
+    tl.fromTo(p, { y: 10, opacity: 0 }, { y: -16, opacity: .9, duration: 1.2, ease: 'sine.out', repeat: 2, yoyo: false, delay: 0 }, 0.3 + i * .35);
+  });
+  tl.to('#steam', { opacity: 0, duration: .8 }, 3.0);
+  tl.to('#coldSurf', { attr: { ry: 13 }, duration: .5, ease: 'sine.inOut', yoyo: true, repeat: 9 }, 0.3);
+  tl.to('#hotSurf', { attr: { ry: 14 }, duration: .3, ease: 'sine.inOut', yoyo: true, repeat: 11 }, 0.3);
+
+  // the race itself
+  tl.to(clock, { m: 47.2, duration: 3.15, ease: 'none', onUpdate: drawRace }, 1.0);
+  tl.to(hot, { T: 20, duration: 1.8, ease: 'power1.inOut', onUpdate: drawRace }, 1.0);
+  tl.to(hot, { T: 0, duration: 1.35, ease: 'power2.in', onUpdate: drawRace }, 2.8);
+  tl.to(cold, { T: 3.2, duration: 3.15, ease: 'sine.out', onUpdate: drawRace }, 1.0);
+  tl.to('#hotLiq', { opacity: .6, duration: 3, ease: 'none' }, 1.0);
+  tl.to('#hotHalo', { opacity: .35, duration: 3, ease: 'none' }, 1.0);
+
+  // FREEZE (4.15)
+  const F = 4.15;
+  tl.to('#flash', { opacity: .55, duration: .05 }, F).to('#flash', { opacity: 0, duration: .45, ease: 'power2.out' }, F + .05);
+  tl.to('#hotIce', { opacity: 1, duration: .5, ease: 'power2.out' }, F);
+  tl.to('#hotLiq, #hotSurf', { opacity: 0, duration: .3 }, F);
+  tl.to('#hotHalo', { opacity: 0, duration: .3 }, F);
+  tl.to('#hotRim', { opacity: .9, duration: .4 }, F + .1);
+  gsap.utils.toArray('.cry').forEach(p => {
+    const d = +p.getAttribute('data-depth');
+    tl.to(p, { attr: { 'stroke-dashoffset': 0 }, duration: .22, ease: 'power1.out' }, F + (4 - d) * .12);
+  });
+  tl.to('#hotNum, #hotRead .lab', { color: '#e3f8ff', duration: .2 }, F);
+  tl.to('#coldCup', { opacity: .55, duration: .5 }, F + .1);
+  tl.to('#coldRead', { opacity: .6, duration: .5 }, F + .1);
+  tl.fromTo('#frozenPill', { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: .25, ease: 'back.out(2)' }, F + .55);
+  tl.fromTo('#liquidPill', { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: .25, ease: 'back.out(2)' }, F + .75);
+  tl.fromTo('#s1cam', { x: -10 }, { x: 0, duration: .35, ease: 'elastic.out(1,0.3)', immediateRender: false }, F);
+  tl.to('#s1cam', { scale: 1.035, duration: 1.35, ease: 'sine.inOut' }, F + .1);
+  tl.to('#trackCam', { scale: 1.0, duration: .1 }, F);
+
+  // rewind: dots slide back to their starting temps, then the track swings up into an axis
+  const R = 5.55;
+  tl.to('#frozenPill, #liquidPill', { opacity: 0, duration: .2 }, R - .1);
+  tl.to(rew, { k: 1, duration: .45, ease: 'power3.inOut', onUpdate: drawRace }, R);
+  tl.to('#s1cam', { opacity: 0, scale: 1.08, filter: 'blur(6px)', duration: .5, ease: 'power2.in' }, R + .1);
+  tl.to('.trackTick, #finishLab', { opacity: 0, duration: .2 }, R);
+  tl.to('#hotDot', { attr: { cy: 880 }, duration: .3 }, R + .2);
+  tl.to('#coldDot', { attr: { cy: 880 }, duration: .3 }, R + .2);
+  tl.to('#hotTrail, #coldTrail, #finish', { opacity: 0, duration: .2 }, R + .2);
+  // track (90 end pinned) rotates 90° and scales 0.65 → graph y-axis from (260,150) to (260,930)
+  const rigP = { k: 0 }, rigEl = $('#rig');
+  const drawRig = () => { const k = rigP.k; rigEl.setAttribute('transform', `translate(${-100 * k} ${-730 * k}) translate(360 880) rotate(${90 * k}) scale(${1 - .35 * k}) translate(-360 -880)`); };
+  drawRig();
+  tl.to(rigP, { k: 1, duration: .75, ease: 'power3.inOut', onUpdate: drawRig }, 5.95);
+  tl.to('#trackLine', { attr: { 'stroke-width': 5 }, stroke: '#8ea2b8', duration: .75 }, 5.95);
+  tl.to('#hotDot, #coldDot', { opacity: 0, duration: .25 }, 7.2);
+
+  // =====================================================================
+  // S2 — IT STARTS BEHIND
+  // =====================================================================
+  const GY = T => 930 - (T / 90) * 780;
+  const pathFrom = (fn, x0, x1, step = 6) => { let d = ''; for (let x = x0; x <= x1 + .01; x += step) { const T = fn(x); d += (d ? ' L' : 'M') + x.toFixed(1) + ',' + GY(Math.max(0, T)).toFixed(1); } return d; };
+  const coldT = x => 20 * Math.pow(Math.max(0, 1 - (x - 260) / 1380), 1.3);
+  const expT = x => 90 * Math.exp(-1.5 * (x - 260) / 740);
+  const hotT = x => 90 * Math.pow(Math.max(0, 1 - (x - 260) / 890), 2.2);
+  $('#coldLine').setAttribute('d', pathFrom(coldT, 260, 1700));
+  $('#expLine').setAttribute('d', pathFrom(expT, 260, 1700));
+  $('#hotLine').setAttribute('d', pathFrom(hotT, 260, 1150, 4));
+  $('#coldHead').setAttribute('cy', GY(coldT(1150)));
+  $('#coldAt').style.top = (GY(coldT(1150)) - 56) + 'px';
+  // finish burst rays
+  for (let i = 0; i < 14; i++) { const a = Math.PI + (i / 13) * Math.PI; el('line', { x1: Math.cos(a) * 20, y1: Math.sin(a) * 20, x2: Math.cos(a) * (70 + rnd() * 50), y2: Math.sin(a) * (70 + rnd() * 50), stroke: i % 2 ? '#ffb27a' : '#e3f8ff', 'stroke-width': 4, 'stroke-linecap': 'round' }, $('#finishBurst')); }
+
+  const S2 = 5.9;
+  tl.from('#s2', { opacity: 0, duration: .35 }, S2 + .15);
+  tl.to('#gGrid', { opacity: 1, duration: .4 }, 6.2);
+  tl.to('#yLab90, #yLab0, #xLab', { opacity: 1, duration: .35, stagger: .06 }, 6.4);
+  tl.fromTo('#s2cam', { scale: 1.02 }, { scale: 1.0, duration: 4.6, ease: 'sine.out', immediateRender: false }, S2);
+  // expectation: cold and "expected hot" drawn together
+  const expDash = { off: 1 };
+  tl.set('#expLine', { attr: { 'stroke-dasharray': '0.012 0.012' } }, 0);
+  $('#expLine').style.clipPath = 'inset(0 100% 0 0)';
+  tl.to('#coldLine', { attr: { 'stroke-dashoffset': 0 }, duration: 1.6, ease: 'power1.inOut' }, 6.7);
+  tl.fromTo('#expLine', { clipPath: 'inset(0% 100% 0% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.6, ease: 'power1.inOut' }, 6.7);
+  tl.to('#expLab', { opacity: 1, duration: .3 }, 8.0);
+  // the band where cold started, and the point hot must pass
+  tl.to('#band20', { opacity: 1, duration: .4 }, 7.25);
+  tl.to('#band20Lab, #yLab20', { opacity: 1, duration: .3 }, 7.3);
+  tl.to('#passMark', { opacity: 1, duration: .2 }, 7.6);
+  tl.fromTo('#passPulse', { attr: { r: 16 }, opacity: 1 }, { attr: { r: 60 }, opacity: 0, duration: .8, repeat: 2, ease: 'power2.out' }, 7.6);
+  tl.fromTo('#mustPass', { opacity: 0, x: -14 }, { opacity: 1, x: 0, duration: .3, ease: 'power3.out' }, 7.65);
+  tl.to('#mustPass, #expLab', { opacity: 0, duration: .3 }, 9.3);
+  tl.to('#expLine', { opacity: .28, duration: .4 }, 8.7);
+  tl.to('#coldLine', { opacity: .55, duration: .4 }, 8.7);
+  // the real hot line dives, overtakes, finishes
+  const hotHead = { p: 0 };
+  const hl = $('#hotLine'), hh = $('#hotHead');
+  const HL = hl.getTotalLength(), headPts = []; for (let i = 0; i <= 200; i++) { const q = hl.getPointAtLength(HL * i / 200); headPts.push([q.x, q.y]); }
+  const moveHead = () => { const k = Math.min(200, Math.max(0, hotHead.p * 200)); const i = Math.floor(k), f = k - i, a = headPts[i], b = headPts[Math.min(200, i + 1)]; hh.setAttribute('cx', a[0] + (b[0] - a[0]) * f); hh.setAttribute('cy', a[1] + (b[1] - a[1]) * f); };
+  tl.set(hh, { opacity: 1 }, 8.8);
+  tl.to('#hotLine', { attr: { 'stroke-dashoffset': 0 }, duration: 1.7, ease: 'power2.in' }, 8.8);
+  tl.to(hotHead, { p: 1, duration: 1.7, ease: 'power2.in', onUpdate: moveHead }, 8.8);
+  const FIN = 10.5;
+  tl.to('#passMark', { scale: 1.6, opacity: 0, svgOrigin: '1000 756.7', duration: .3 }, 9.35);
+  tl.to('#flash', { opacity: .35, duration: .04 }, FIN).to('#flash', { opacity: 0, duration: .4 }, FIN + .04);
+  tl.fromTo('#finishBurst', { opacity: 1, scale: .3, svgOrigin: '1150 930' }, { scale: 1.2, opacity: 0, duration: .6, ease: 'power2.out', immediateRender: false }, FIN);
+  tl.to('#cursor', { opacity: .8, duration: .2 }, FIN);
+  tl.to('#coldHead', { opacity: 1, duration: .2 }, FIN + .05);
+  tl.fromTo('#firstLab', { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: .25, ease: 'back.out(2)' }, FIN + .05);
+  tl.fromTo('#coldAt', { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: .25, ease: 'back.out(2)' }, FIN + .2);
+  tl.fromTo('#s2cam', { x: 8 }, { x: 0, duration: .4, ease: 'elastic.out(1,0.3)', immediateRender: false }, FIN);
+  tl.to('#s2cam', { scale: 1.05, transformOrigin: '1150px 930px', duration: 1.0, ease: 'power2.in' }, 10.6);
+  tl.to('#rig', { opacity: 0, duration: .3 }, 11.2);
+
+  // cracks from the finish point → wedge shards
+  const P = [1150, 930];
+  const border = [];
+  const nW = 11;
+  for (let i = 0; i < nW; i++) {
+    const a = -Math.PI + (i / nW) * Math.PI * 2 + (rnd() - .5) * .25;
+    // intersect ray with screen rect (padded)
+    const dx = Math.cos(a), dy = Math.sin(a);
+    const ts = [];
+    if (dx) { ts.push((-40 - P[0]) / dx, (1960 - P[0]) / dx); }
+    if (dy) { ts.push((-40 - P[1]) / dy, (1120 - P[1]) / dy); }
+    const t = Math.min(...ts.filter(v => v > 0));
+    border.push({ a, x: P[0] + dx * t, y: P[1] + dy * t });
+  }
+  const crackG = $('#cracks');
+  border.forEach(b => {
+    let d = `M${P[0]},${P[1]}`; const steps = 7;
+    for (let s = 1; s <= steps; s++) { const k = s / steps; d += ` L${(P[0] + (b.x - P[0]) * k + (s < steps ? (rnd() - .5) * 26 : 0)).toFixed(1)},${(P[1] + (b.y - P[1]) * k + (s < steps ? (rnd() - .5) * 26 : 0)).toFixed(1)}`; }
+    el('path', { d, pathLength: 1, 'stroke-dasharray': '1 1', 'stroke-dashoffset': 1, class: 'crk' }, crackG);
+  });
+  gsap.utils.toArray('.crk').forEach((c, i) => tl.to(c, { attr: { 'stroke-dashoffset': 0 }, duration: .2, ease: 'power2.out' }, 11.25 + (i % 4) * .02));
+  // corners help wedges cover the whole frame
+  const corners = [[-40, -40], [1960, -40], [1960, 1120], [-40, 1120]].map(([x, y]) => ({ x, y, a: Math.atan2(y - P[1], x - P[0]) }));
+  const pts = border.concat(corners).sort((m, n) => m.a - n.a);
+  const shardG = $('#shards');
+  const rays = border.map(b => b.a).sort((m, n) => m - n);
+  for (let i = 0; i < rays.length; i++) {
+    const a0 = rays[i], a1 = i + 1 < rays.length ? rays[i + 1] : rays[0] + Math.PI * 2;
+    const poly = [[P[0], P[1]]];
+    pts.concat(pts.map(p => ({ ...p, a: p.a + Math.PI * 2 }))).filter(p => p.a >= a0 - 1e-6 && p.a <= a1 + 1e-6).forEach(p => poly.push([p.x, p.y]));
+    const g = el('g', { class: 'shard' }, shardG);
+    el('polygon', { points: poly.map(p => p.join(',')).join(' '), fill: '#0b1119', stroke: '#8fe3ff', 'stroke-opacity': .7, 'stroke-width': 2 }, g);
+    const mid = (a0 + a1) / 2;
+    g.dataset.dx = Math.cos(mid); g.dataset.dy = Math.sin(mid);
+  }
+  const SH = 11.45;
+  tl.to('#flash', { opacity: .7, duration: .04 }, SH).to('#flash', { opacity: 0, duration: .35 }, SH + .04);
+  gsap.utils.toArray('.shard').forEach((g, i) => {
+    const dx = +g.dataset.dx, dy = +g.dataset.dy;
+    tl.to(g, { x: dx * (500 + rnd() * 500), y: dy * (400 + rnd() * 400) + 350, rotation: (rnd() - .5) * 60, svgOrigin: `${P[0]} ${P[1]}`, opacity: 0, duration: .75, ease: 'power2.in' }, SH + .03 + rnd() * .06);
+  });
+
+  // =====================================================================
+  // S3 — 1963
+  // =====================================================================
+  tl.fromTo('#s3cam', { scale: 1.08, rotation: -1.2 }, { scale: 1.0, rotation: -0.6, duration: 5.6, ease: 'power2.out' }, 11.45);
+  tl.to('#s3cam', { scale: 1.04, rotation: -0.2, duration: 4.0, ease: 'sine.inOut' }, 17.05);
+  tl.fromTo('#photo', { y: -80, rotation: 7, opacity: 0 }, { y: 0, rotation: 1.6, opacity: 1, duration: .6, ease: 'back.out(1.4)' }, 11.85);
+  const write = (sel, t, d) => tl.fromTo(sel, { clipPath: 'inset(-20% 100% -20% 0%)' }, { clipPath: 'inset(-20% 0% -20% 0%)', duration: d, ease: 'none' }, t);
+  write('#head', 12.3, .9);
+  tl.fromTo('#strip', { clipPath: 'inset(0% 100% 0% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: .45, ease: 'power3.out' }, 12.6);
+  write('#note1', 13.35, .55);
+  write('#nameTxt', 13.6, .55);
+  write('#note2', 13.95, .5);
+  tl.to('#flash', { opacity: .25, duration: .03 }, 15.0).to('#flash', { opacity: 0, duration: .25 }, 15.03);
+  write('#note3', 15.3, .7);
+  tl.to('#u3', { attr: { 'stroke-dashoffset': 0 }, duration: .3, ease: 'power2.out' }, 16.0);
+  // his teacher had an answer: clear the desk, lamp dims
+  tl.to('#lamp', { opacity: 1, duration: 1.0 }, 17.0);
+  tl.to('#photo', { x: 260, y: 140, rotation: 8, opacity: 0, duration: .6, ease: 'power2.in' }, 17.25);
+  tl.to('#lower', { y: 40, opacity: 0, duration: .45, ease: 'power2.in' }, 17.35);
+  tl.to('#head, #note1, #note2, #note3, #u3', { opacity: 0, duration: .45, stagger: .04 }, 17.4);
+  // red pen quote
+  write('#q1', 18.2, .95);
+  write('#q2', 19.2, .95);
+  tl.to('#circ', { attr: { 'stroke-dashoffset': 0 }, duration: .38, ease: 'power1.inOut' }, 20.2);
+  tl.fromTo('#qwho', { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: .3 }, 20.45);
+  tl.fromTo('#quote', { scale: 1 }, { scale: 1.035, transformOrigin: '40% 50%', duration: 3, ease: 'sine.inOut' }, 18.2);
+  // rip away
+  tl.to('#s3cam', { y: -1250, rotation: -4, filter: 'blur(8px)', duration: .32, ease: 'power2.in' }, 21.08);
+
+  // =====================================================================
+  // S4 — HE WASN'T THE FIRST
+  // =====================================================================
+  for (let i = 0; i < 60; i++) { const a = i / 60 * Math.PI * 2; const r0 = i % 5 ? 330 : 310; el('line', { x1: Math.cos(a) * r0, y1: Math.sin(a) * r0, x2: Math.cos(a) * 345, y2: Math.sin(a) * 345 }, $('#dialTicks')); }
+  const yr = { v: 1963 };
+  const yearEl = $('#year');
+  const drawYear = () => { const v = Math.round(yr.v); yearEl.textContent = v > 0 ? String(v) : (Math.abs(v) || 1) + ' BC'; };
+  tl.fromTo('#s4', { opacity: 0 }, { opacity: 1, duration: .12 }, 21.3);
+  tl.set('#yearBox', { opacity: 0 }, 21.2);
+  tl.fromTo('#yearBox', { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: .2, ease: 'power3.out', immediateRender: false }, 21.38);
+  tl.fromTo('#s4cam', { scale: 1.0 }, { scale: 1.04, duration: 5.0, ease: 'none', immediateRender: false }, 21.2);
+  tl.fromTo('#dial', { rotation: 0, svgOrigin: '960 520' }, { rotation: -220, svgOrigin: '960 520', duration: 1.0, ease: 'power2.inOut' }, 21.25);
+  tl.set(yr, { v: 1963, onComplete: drawYear, onReverseComplete: drawYear }, 21.2);
+  tl.to(yr, { v: 1637, duration: .7, ease: 'expo.inOut', onUpdate: drawYear }, 21.3);
+  const slam = (t, name, src) => {
+    tl.fromTo('#year', { scale: 1.16 }, { scale: 1, duration: .35, ease: 'power4.out', transformOrigin: '50% 50%' }, t);
+    tl.call(() => {}, null, t);
+    tl.set('#whoName', { textContent: name }, t);
+    tl.set('#whoSrc', { textContent: src }, t);
+    tl.fromTo('#yearWho', { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: .3, ease: 'power3.out' }, t + .03);
+    tl.fromTo('#s4cam', { y: 10 }, { y: 0, duration: .3, ease: 'elastic.out(1,0.3)', immediateRender: false }, t);
+  };
+  slam(22.0, 'Descartes', '1637 · “Meteorology”');
+  tl.to('#yearWho', { opacity: 0, duration: .15 }, 22.3);
+  tl.to(yr, { v: -350, duration: .55, ease: 'expo.inOut', onUpdate: drawYear }, 22.32);
+  tl.fromTo('#dial', { rotation: -220 }, { rotation: -420, svgOrigin: '960 520', duration: .6, ease: 'power2.inOut', immediateRender: false }, 22.3);
+  slam(22.9, 'Aristotle', 'c. 350 BC · “Meteorologica”');
+  // fast-forward to today
+  tl.to('#yearWho', { opacity: 0, duration: .15 }, 23.5);
+  tl.to('#yearBox', { y: -260, opacity: 0, filter: 'blur(10px)', duration: .45, ease: 'power3.in' }, 23.55);
+  tl.to('#dial', { rotation: 180, svgOrigin: '960 520', duration: .6, ease: 'power3.in', immediateRender: false }, 23.5);
+  // slot machine of explanations
+  tl.to('#slotLab', { opacity: 1, duration: .25 }, 23.95);
+  tl.to('#slotRule', { opacity: 1, duration: .25 }, 24.0);
+  tl.fromTo('#slotWin', { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: .3, ease: 'power3.out' }, 24.0);
+  for (let k = 1; k <= 5; k++) tl.to('#slotReel', { y: -220 * k, duration: .16, ease: 'back.out(1.6)' }, 24.12 + k * .36 - .16 + .16);
+  tl.to('#slotReel .qm', { scale: 1.12, duration: .25, yoyo: true, repeat: 1, ease: 'sine.inOut', transformOrigin: '50% 50%' }, 26.0);
+  tl.to('#s4cam', { opacity: 0, scale: 1.12, duration: .22, ease: 'power2.in' }, 26.25);
+
+  // =====================================================================
+  // S5 — TITLE
+  // =====================================================================
+  const flakes = $('#flakes');
+  for (let i = 0; i < 70; i++) {
+    const f = document.createElement('div'); f.className = 'flake';
+    const s = 2 + rnd() * 4; f.style.width = f.style.height = s + 'px';
+    f.style.left = (rnd() * 1920) + 'px'; f.style.top = (rnd() * 1080) + 'px'; f.style.opacity = (.15 + rnd() * .5).toFixed(2);
+    flakes.appendChild(f);
+    tl.fromTo(f, { y: -40 - rnd() * 60, x: 0 }, { y: 120 + rnd() * 120, x: (rnd() - .5) * 80, duration: 3.6, ease: 'none' }, 26.4);
+  }
+  // frost fractal over HOT
+  const fg = $('#frostG');
+  const fb = (x, y, a, len, depth) => {
+    if (depth <= 0) return;
+    const x2 = x + Math.cos(a) * len, y2 = y + Math.sin(a) * len;
+    el('path', { d: `M${x.toFixed(1)},${y.toFixed(1)} L${x2.toFixed(1)},${y2.toFixed(1)}`, pathLength: 1, 'stroke-dasharray': '1 1', 'stroke-dashoffset': 1, class: 'frost', 'data-depth': depth, 'vector-effect': 'non-scaling-stroke' }, fg);
+    fb(x2, y2, a - .6, len * .62, depth - 1); fb(x2, y2, a + .6, len * .62, depth - 1);
+    if (depth > 2) fb(x + Math.cos(a) * len * .5, y + Math.sin(a) * len * .5, a + (rnd() > .5 ? 1 : -1) * 1.05, len * .45, depth - 2);
+  };
+  [[20, 190, -1.2], [150, 200, -1.57], [280, 190, -1.9], [0, 60, -0.2], [300, 70, 3.3]].forEach(([x, y, a]) => fb(x, y, a, 70 + rnd() * 20, 5));
+
+  const TH = 26.45;
+  tl.to('#flash', { opacity: .8, duration: .03 }, TH).to('#flash', { opacity: 0, duration: .5 }, TH + .03);
+  tl.fromTo('#s5cam', { scale: 1.1 }, { scale: 1.0, duration: 3.5, ease: 'expo.out' }, TH);
+  tl.fromTo('#series', { opacity: 0, y: -14 }, { opacity: 1, y: 0, duration: .45, ease: 'power3.out' }, TH + .2);
+  tl.fromTo('#t1', { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: .6, ease: 'expo.out' }, TH + .05);
+  tl.fromTo('#t2 .w', { opacity: 0, scale: 1.35, filter: 'blur(14px)' }, { opacity: 1, scale: 1, filter: 'blur(0px)', duration: .45, ease: 'power4.out', stagger: .09, transformOrigin: '50% 60%' }, TH);
+  gsap.utils.toArray('.frost').forEach(p => { const d = +p.getAttribute('data-depth'); tl.to(p, { attr: { 'stroke-dashoffset': 0 }, duration: .35, ease: 'power1.out' }, 26.9 + (5 - d) * .3 + rnd() * .1); });
+  tl.to('#hotWord', { color: '#dff6ff', textShadow: '0 0 36px rgba(143,227,255,.65)', duration: 1.5, ease: 'power1.inOut' }, 27.1);
+  tl.to('#series b', { backgroundColor: '#8fe3ff', duration: 1.2 }, 27.3);
+  tl.to('#black', { opacity: 1, duration: .45, ease: 'power1.in' }, 29.55);
+
+  // =====================================================================
+  // GLOBAL — grain jitter (seeded, 24 steps/s)
+  // =====================================================================
+  for (let t = 0; t < 30; t += 1 / 24) tl.set('#grain', { x: Math.round((rnd() - .5) * 120), y: Math.round((rnd() - .5) * 120) }, t);
+
+  // SCRATCH VO subtitles (review aid only; never in the final)
+  if (SCRATCH) {
+    const lines = [
+      [0.35, 3.75, 'Two cups of water. One hot, one cold. Same freezer.'],
+      [4.35, 5.95, 'The hot one freezes first.'],
+      [6.4, 11.0, "It has to pass the cold one's starting point. It's behind… and wins."],
+      [12.2, 16.9, 'In 1963, thirteen-year-old Erasto Mpemba saw it — making ice cream.'],
+      [17.05, 18.35, 'His teacher had an answer.'],
+      [21.35, 23.75, "He wasn't the first. Aristotle saw it too."],
+      [24.05, 26.4, 'The real answer? Stranger than anyone guessed.'],
+    ];
+    $('#scratch').style.display = 'flex';
+    tl.set('#scratch', { opacity: 0 }, 0);
+    lines.forEach(([a, b, txt]) => { tl.set('#scratchTxt', { textContent: txt }, a); tl.set('#scratch', { opacity: 1 }, a); tl.set('#scratch', { opacity: 0 }, b); });
+  }
+
+  window.__timelines = window.__timelines || {};
+  window.__timelines['main'] = tl;
+  tl.seek(0);
+})();
+</script>
+</body>
+</html>
