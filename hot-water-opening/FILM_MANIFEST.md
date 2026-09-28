@@ -44,7 +44,7 @@ If a generated clip contradicts this text but matches the refs, **the refs win**
 ### B3. Locations
 | ID | Place | Geography (fixed) | Light | Reference |
 |---|---|---|---|---|
-| L_KITCHEN | Magamba cookery room, 1963 | whitewashed walls; wooden worktable, centre; charcoal stove, left; **small white refrigerator with a tiny top freezer, back-right**; louvred window, right wall | afternoon sun from the right; F04 is later and warmer, F13 is dusk | `REF_kitchen.png` |
+| L_KITCHEN | Magamba cookery room, 1963 | plaster walls; wooden tables and stools; kettles and pots on shelves; **rounded white fridge with an upper freezer compartment, to the LEFT of a large louvred window** (as established in FLOW_01); no tiles, no modern tap | afternoon sun from the right; F04 is later and warmer, F13 is dusk | `REF_kitchen.png` |
 | L_HALL | Mkwawa High School hall, Iringa, about 1968 | rows of wooden benches, students in white shirts; lectern stage-left; tall windows, left | cool daylight through the windows | `REF_hall.png` (new) |
 | L_LAB68 | University College Dar es Salaam lab, about 1968 | long bench, glass beakers, mercury thermometers, **white chest freezer with a glass lid**, blackboard behind | fluorescent plus window daylight | `REF_lab1968.png` (new) |
 | L_LABNOW | modern optics lab | dark room, black optical table, mirrors, **green laser beam path**, microscope objective; a vacuum chamber with a viewport | dark; lasers are the key light | `REF_lab_modern.png` (new) |
@@ -103,10 +103,11 @@ MD = motion design (Claude). F = Flow clip (Codex). VO lines are in `FILM_SCRIPT
 ---
 
 ## D. Flow shot list (for Codex)
-Standard suffix (append to every prompt):
+Standard suffix (append to every prompt). **Never put the filename in the prompt**: FLOW_02 rendered it as a burned-in caption. Attach a still from FLOW_01 (about 3.0 s) as an extra style reference on every 1963 shot.
 ```
-Sound effects only. No music. No intelligible speech or dialogue. No on-screen text, captions,
-subtitles, logos, or legible writing on any paper or screen.
+Full-frame 16:9, no letterbox bars. Sound effects only. No music. No speech, dialogue, vocal
+sounds, gasps or laughter. No on-screen text, captions, subtitles, logos, or legible writing on
+any paper or screen.
 ```
 
 ### New reference stills (generate once, then reuse)
@@ -119,8 +120,8 @@ subtitles, logos, or legible writing on any paper or screen.
 ### Clips
 | # | File | Tier | Dur | Refs | Placement (VO) | Action | Camera | SFX |
 |---|---|---|---|---|---|---|---|---|
-| F01 | `FLOW_01_kitchen_hot_mix.mp4` | done/pending | 8 | erasto, kitchen | opening + 1.2 (C1_02) | see HANDOFF | tracking push | footsteps, clink, freezer, hum |
-| F02 | `FLOW_02_freezer_reveal.mp4` | done/pending | 8 | erasto, kitchen | opening + 1.3 (C1_04) | see HANDOFF | inside-freezer POV, rack focus | door, ice crackle, scrape |
+| F01 | `FLOW_01_kitchen_hot_mix.mp4` | **received** (usable 1.6–6.3; see FLOW_REVIEW.md) | 8 | erasto, kitchen | opening + 1.2 (C1_02) | see HANDOFF | tracking push | footsteps, clink, freezer, hum |
+| F02 | `FLOW_02_freezer_reveal.mp4` | **received** (usable 1.6–5.5, face 6.1–7.1 muted; see FLOW_REVIEW.md) | 8 | erasto, kitchen | opening + 1.3 (C1_04) | see HANDOFF | inside-freezer POV, rack focus | door, ice crackle, scrape |
 | F03 | `FLOW_03_teacher_answer.mp4` | A | 8 | erasto, kitchen | 1.4 (C1_05–06) | Next day in the same room. Erasto, holding his cup, looks up hopefully at the teacher (back to camera, soft focus). The teacher gives a small shake of the head and turns away to the worktable. Classmates in the background glance and laugh silently. Erasto lowers the cup but keeps looking at it. | over the teacher's shoulder onto Erasto, slow push-in | room murmur, indistinct laughter (no words), enamel tap |
 | F04 | `FLOW_04_kitchen_retest.mp4` | A | 8 | erasto, kitchen | 1.5 (C1_07–08) | Late afternoon, the room empty and the sun lower and warmer. Erasto alone sets two identical cups (one steaming) into the tiny freezer, closes it, then sits at the worktable and writes in a blue-ruled exercise book with a pencil. | static wide, then a slow push and tilt down, ending top-down on the exercise book page (no legible writing) | freezer door, pencil scratch, distant birds |
 | F05 | `FLOW_05_mkwawa_question.mp4` | A | 8 | erasto (build only), hall | 2.2 (C2_02–03) | Assembly hall seen from the back rows: rows of white-shirted backs facing the lectern. One student (taller, the boy from the reference now about 17, **seen only from behind**) stands up and raises his hand. Heads turn; a ripple of silent laughter runs along the benches; he stays standing. | locked wide from the back of the hall, slow push toward the standing figure | hall murmur rising into indistinct laughter (no words), bench creak |

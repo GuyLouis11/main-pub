@@ -107,13 +107,27 @@ def main():
         r'(<script id="timing" type="application/json">\n).*?(\n</script>)', lambda mm: mm.group(1) + block + mm.group(2), s, flags=re.S)
     open(HTML, "w", encoding="utf-8").write(s)
 
-    # flow clip media sanity (clips are 8 s; in-point + used length must fit)
-    for vid in re.findall(r'<video[^>]*>', s):
-        ms = float(re.search(r'data-media-start="([\d.]+)"', vid).group(1))
+    # flow clips: keep the used range inside the clip's reviewed usable window
+    # (data-usable-in/out, chosen from the real footage). Slide the in-point earlier if a
+    # longer VO stretches the slot; warn if even the whole usable window is too short.
+    def fit_media(mv):
+        vid = mv.group(0)
         du = float(re.search(r'data-duration="([\d.]+)"', vid).group(1))
-        if ms + du > 8.0:
-            vid_id = re.search(r'id="(\w+)"', vid).group(1)
-            rows.append(f"  !! {vid_id} needs {ms + du:.2f}s of source (> 8 s clip)")
+        ms = float(re.search(r'data-media-start="([\d.]+)"', vid).group(1))
+        uin = re.search(r'data-usable-in="([\d.]+)"', vid)
+        uout = re.search(r'data-usable-out="([\d.]+)"', vid)
+        lo = float(uin.group(1)) if uin else 0.0
+        hi = float(uout.group(1)) if uout else 8.0
+        vid_id = re.search(r'id="(\w+)"', vid).group(1)
+        if ms + du > hi:
+            new_ms = max(lo, hi - du)
+            rows.append(f"  .. {vid_id}: slot {du:.2f}s -> in-point moved {ms:.2f} -> {new_ms:.2f}")
+            if new_ms + du > hi + 1e-6:
+                rows.append(f"  !! {vid_id} needs {du:.2f}s but usable window is {hi - lo:.2f}s ({lo}-{hi}); slot will run past the good footage")
+            vid = re.sub(r'data-media-start="[\d.]+"', f'data-media-start="{new_ms:.2f}"', vid, 1)
+        return vid
+    s = re.sub(r'<video[^>]*>', fit_media, s, flags=re.S)
+    open(HTML, "w", encoding="utf-8").write(s)
 
     print(f"{'line':6} {'base@':>6} {'final@':>7} {'dur':>5}  source")
     for v in tim["vo"]:

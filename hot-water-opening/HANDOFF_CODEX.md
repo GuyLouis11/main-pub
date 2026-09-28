@@ -55,7 +55,7 @@ Current timings use **estimated** lengths (about 2.6–2.9 words/s): the opening
 - **Audio:** SFX only. No music, no voices/speech, no captions/text/logos.
 
 ### `assets/flow/FLOW_01_kitchen_hot_mix.mp4`
-- **Placed at:** 13.70–16.80 s in the opening, using clip time 0.6–3.7 s. It plays under VO_05 ("In 1963, a schoolboy named Erasto Mpemba…").
+- **RECEIVED.** Placed at 13.70–16.80 s in the opening using clip time **2.20–5.30 s** (steam, reach, placement, clink). It plays under VO_05. See `FLOW_REVIEW.md`.
 - **Key action window:** the cup goes into the freezer between 1.5 and 3.5 s of the clip.
 ```
 Stylized cinematic 2D animation, painterly textures, soft film grain, warm tungsten and daylight,
@@ -70,7 +70,7 @@ hum. No music. No dialogue or voices. No on-screen text, captions, subtitles or 
 ```
 
 ### `assets/flow/FLOW_02_freezer_reveal.mp4`
-- **Placed at:** 16.80–19.60 s, using clip time 0.8–3.6 s, under the end of VO_05 and "…and it froze first" in the notebook.
+- **RECEIVED.** Placed at 16.80–19.60 s using clip time **2.50–5.30 s** (reach, lift, frozen vs pouring). The first 1.46 s has a burned-in filename caption and is never used. See `FLOW_REVIEW.md`.
 - **Key action window:** the two cups must read clearly (ice vs liquid) between 1.0 and 3.0 s.
 ```
 Same style, same boy, same kitchen. Camera inside the small freezer compartment looking out: the
