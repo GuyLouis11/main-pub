@@ -1,9 +1,8 @@
 # Guy Wonders Why: "The Boy Who Froze Hot Water" (opening, v1)
 
-A 30-second, 1920×1080 cold open built as an editable **HyperFrames (HTML + GSAP)** project.
+A ~33-second, 1920×1080 cold open (milestone 1 of the full film; see FILM_MANIFEST.md) built as an editable **HyperFrames (HTML + GSAP)** project.
 
-**Watch first:** `renders/opening_v1_review_small.mp4` (with yellow-tagged SCRATCH VO subtitles standing in for the voiceover).
-Clean picture without subtitles: `renders/opening_v1_clean_small.mp4`.
+**Review cuts:** `renders/opening_v1_*_small.mp4` are the **v1** (30 s) cuts, rendered before the v2 accuracy and timing pass. The v2 picture is shown in `review/opening_v2_contact_sheet.jpg`. No v2 MP4 has been rendered on purpose: it would be placeholder-only. The next render happens when real VO and Flow arrive.
 
 | Read | Why |
 |---|---|
@@ -21,7 +20,8 @@ assets/audio/score_*.wav   original synthesized score + SFX stems (tools/make_au
 assets/audio/vo/VO_0N.wav  SILENT placeholders → replace with ElevenLabs takes
 assets/flow/FLOW_0N_*.mp4  PLACEHOLDER cards → replace with Google Flow shots
 assets/vendor/gsap.min.js  GSAP 3.15 (vendored for deterministic renders)
-tools/make_audio.py        score/SFX synthesis + automatic ducking under real VO
+tools/retime.py            fits the edit around real VO lengths (single timing block in index.html)
+tools/make_audio.py        score/SFX synthesis on the same time map + automatic ducking under real VO
 tools/make_small.sh        small shareable encodes of *_hq renders
 renders/                   review MP4s
 ```
@@ -30,7 +30,8 @@ renders/                   review MP4s
 ```bash
 npm install                      # hyperframes CLI + gsap
 npx hyperframes browser ensure   # once: headless Chrome for rendering (needs ffmpeg on PATH)
-npm run audio                    # rebuild score (after VO is dropped in, this ducks the music)
+python3 tools/retime.py          # fit the edit around the VO takes (writes timings into index.html)
+npm run audio                    # rebuild score on the same time map (+ ducks music under real VO)
 npm run lint && npm run check    # static + browser audits
 npm run preview                  # live Studio preview
 npm run render:review            # with SCRATCH VO subtitles

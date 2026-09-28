@@ -1,6 +1,15 @@
-# Opening storyboard: 30.0 s, 1920×1080, 30 fps
+# Opening storyboard: about 33 s (fits the real VO), 1920×1080, 30 fps
 
-Timecodes are locked across `index.html`, `tools/make_audio.py` (the `C` cue dict and the `VO` dict) and this file. On-screen text is deliberately **not** the VO text: no duplicate captions.
+**v2 timing model.** Times below are **base** times (the 30 s skeleton). `index.html`'s `<script id="timing">` block lists each VO line's base start, its deadline and the breathing point after it. `tools/retime.py` measures the real takes and opens holds only where speech needs room, and the picture, clips and score follow the same map. With estimated takes the cut is **33.35 s**, with holds of +0.85 s (after the freeze), +0.95 s ("must pass here"), +0.5 s (teacher), +0.95 s (Aristotle) and a +1.4 s slower slot machine. It also has two fixed trims: quote hold −0.3 s and title −1.0 s.
+
+**v2 accuracy changes.**
+- The VO says "**Sometimes**… the hot one freezes first" and asks "So how can it ever win?" instead of asserting it.
+- The race HUD reads "ILLUSTRATION · RESULTS VARY".
+- The finish line is "0°C · ICE FORMS", not "FROZEN", and the pills read "ICE FIRST" / "NO ICE YET".
+- The graph is tagged "ILLUSTRATIVE CURVES · NOT MEASURED DATA", and the invented "COLD · STILL 5°C" figure is removed.
+- The last line no longer implies the water question is settled.
+
+On-screen text is deliberately **not** the VO text: no duplicate captions. *The VO column below shows v1 wording; the current lines are in `HANDOFF_CODEX.md` and the timing block.*
 
 | Time | Picture | On-screen type | VO (ElevenLabs) | Sound |
 |---|---|---|---|---|

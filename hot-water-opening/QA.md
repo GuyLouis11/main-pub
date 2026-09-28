@@ -40,3 +40,23 @@
 - Not tested in Docker/deterministic mode (Docker isn't running here). Local render used software GL and system fonts were bypassed with local webfonts.
 - Final loudness target for YouTube (about −14 LUFS integrated for the whole film) should be applied at the full-film master, not this opening.
 - Pending fact checks for the full film (not used in the opening): Osborne visit year, 1969 paper title, 2012 RSC competition entry count, Mpemba's later career and date of death.
+
+---
+## v2 pass (accuracy + VO-driven timing), 2026-09-28
+- **Accuracy fixes:**
+  - The race and graph are explicitly labelled illustrative ("ILLUSTRATION · RESULTS VARY", "ILLUSTRATIVE CURVES · NOT MEASURED DATA").
+  - "FROZEN" at 0°C becomes "ICE FORMS" / "ICE FIRST" (reaching 0°C ≠ frozen solid).
+  - The invented "5°C" is removed.
+  - The VO is now conditional ("Sometimes…") and asks the paradox as a question.
+  - The closing line no longer implies the water debate is settled.
+- **Timing:** `tools/retime.py` fits the edit to real VO lengths. It was verified with estimated lengths: 33.35 s total, all 8 lines placed, no line over its deadline, Flow clips need ≤ 3.7 s of source (the clips are 8 s).
+- **Checks run:**
+  - `hyperframes lint`: 0 errors.
+  - `hyperframes check --samples 15` including contrast: **passed, 0 errors** (warnings are the known single-file structure notes plus minor motion or transition notes).
+  - A 19-frame snapshot sweep of the retimed composition (`review/opening_v2_contact_sheet.jpg`).
+  - Score rebuilt on the new time map: −20.3 LUFS integrated (bed, no VO), −1.4 dBTP.
+- **Deliberately not done:** no v2 MP4 render, because it would be placeholder-only. The next render happens when real VO and Flow arrive. Until then the opening is **not finished**: the 8 VO files are silent placeholders and the 2 Flow slots are placeholder cards.
+- **Access blockers (concrete):**
+  - No Google Flow session in this container.
+  - ElevenLabs host `api.elevenlabs.io` is blocked by the environment network policy, and there's no API credential.
+  - GitHub push returns 403 (the Claude GitHub App has no access to `GuyLouis11/main-pub`).

@@ -13,9 +13,23 @@ import numpy as np
 import soundfile as sf
 from scipy.signal import butter, sosfilt, fftconvolve
 
+import json
+import re
+
 SR = 48000
-DUR = 30.0
-N = int(SR * DUR)
+_HTML = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "index.html"), encoding="utf-8").read()
+TIM = json.loads(re.search(r'<script id="timing" type="application/json">\n(.*?)\n</script>', _HTML, re.S).group(1))
+_SHIFTS = [(at, TIM["gaps"].get(k, 0)) for k, at in TIM["inserts"].items()] + [tuple(c) for c in TIM["cuts"]]
+_SHIFTS = [(a, g) for a, g in _SHIFTS if g]
+
+
+def M(t):
+    """Base time -> final time (same map as the GSAP timeline and tools/retime.py)."""
+    return t + sum(g for a, g in _SHIFTS if t >= a)
+
+
+DUR = round(M(TIM["baseDuration"]), 3)
+N = int(round(SR * DUR))
 rng = np.random.default_rng(1963)
 OUT = os.path.join(os.path.dirname(__file__), "..", "assets", "audio")
 os.makedirs(OUT, exist_ok=True)
@@ -30,8 +44,11 @@ C = dict(
     lower_third=12.6, name=13.6, flow_cut=15.0, notes2=15.3,
     duck=17.0, tapestop=17.9, pen1=18.2, pen2=19.2, circle=20.2,
     rip=21.2, slam1=22.0, slam2=22.9, fwd=23.55, slot=24.0,
-    title_hit=26.45, frost=26.9, end=30.0,
+    title_hit=26.45, frost=26.9, end=30.0, note1=13.4,
 )
+C = {k: M(v) for k, v in C.items()}
+C["end"] = DUR
+SLOT_STEP = 0.36 + TIM["gaps"].get("slot", 0) / 5
 
 
 def t2i(t):
@@ -389,7 +406,7 @@ def scribble(sec, rate=11, gain=1.0):
     return bp(noise(sec), 2500, 7000) * am * adsr(n, 0.02, 0.05) * gain
 
 fx.add(C["write_head"], scribble(0.9, 9), 0.10, pan=-0.3)
-fx.add(13.4, scribble(0.8, 10), 0.07, pan=-0.4)
+fx.add(C["note1"], scribble(0.8, 10), 0.07, pan=-0.4)
 fx.add(C["notes2"], scribble(0.7, 12), 0.07, pan=-0.4)
 fx.add(C["lower_third"], bp(noise(0.12), 2000, 6000) * env_exp(int(round(0.12 * SR)), 0.03), 0.1)
 # room tone under the quote (so the silence is not digital black)
@@ -415,7 +432,7 @@ for s in (C["slam1"], C["slam2"]):
 fx.add(C["fwd"], whoosh(0.5, 400, 7000), 0.28)
 # slot machine: one tick per word change
 for k in range(6):
-    tt = C["slot"] + 0.12 + k * 0.36
+    tt = C["slot"] + 0.12 + k * SLOT_STEP
     fx.add(tt, tick(1500, 0.01), 0.14, pan=-0.2 + 0.08 * k)
     fx.add(tt, woodblock(1200), 0.084, pan=-0.2 + 0.08 * k)
 fx.add(C["title_hit"] - 0.55, filtered_sweep_noise(0.55, 6000, 400, 0.5) * np.linspace(0, 1, int(round(0.55 * SR))) ** 3, 0.0)
@@ -436,7 +453,7 @@ def fade_tail(x, sec=0.6):
 music = fade_tail(mus.stereo())
 
 # ---- duck the music under real VO (no-op while VO files are silent placeholders)
-VO = {"VO_01": 0.35, "VO_02": 4.35, "VO_03": 6.4, "VO_04": 12.2, "VO_05": 17.05, "VO_06": 21.35, "VO_07": 24.05}
+VO = {v["id"]: M(v["start"]) for v in TIM["vo"]}
 duck_env = np.ones(N)
 vo_dir = os.path.join(OUT, "vo")
 for name, start in VO.items():
