@@ -3,3 +3,4 @@ snapshots/
 .hyperframes/
 renders/*_hq.mp4
 renders/parts/
+renders/*.log
