@@ -1,5 +1,7 @@
 # Production manifest: full film (v1)
 
+> **Current batch:** see `NEXT_SHOTS.md` (F04, F07, F10, F13) for the exact prompts, ingredients and handles. Room geometry there supersedes this file where they differ.
+
 Companion to `FILM_SCRIPT.md`. Target runtime **about 7½ min** (from natural VO delivery plus meaningful visual beats; see `FILM_SCRIPT.md`). The opening (0:00–0:33) is milestone 1 and is specified in `HANDOFF_CODEX.md`.
 
 ## A. Division of labour
