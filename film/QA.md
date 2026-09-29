@@ -35,6 +35,20 @@
 - Scores: EBU R128 measured per chapter after normalisation.
 - Assembled review render: see the section at the end (filled in after the render finishes).
 
+## Density pass (2026-09-29): "no long pauses"
+Guy flagged a long pause at about 54 s. Every quiet stretch is now filled with purposeful motion, and three checks, which work differently, all enforce it:
+- **Timeline beat audit** (`node tools/beat_audit.mjs`): lists every stretch where no non-ambient tween or video is active. Result: **0 gaps over 1.5 s in all six chapters.** Before: ch3 had 2, ch4 had 9 (31.8 s in total), ch5 had 2, ch6 had 2.
+- **HyperFrames motion assertion** (`index.motion.json`: keepsMoving, maxStaticSec 1.5) inside `hyperframes check`: all six chapters and the opening **pass**.
+  - This is a DOM check, so it can't see video pixels. Windows where only real Flow footage moves were flagged at first. They now carry a slow push-in, with the hold stills scale-matched so the handover doesn't jump.
+- **Pixel stillness audit** (`python3 tools/stillness.py renders/parts/*.mp4`): runs on the rendered frames, so it catches what people actually perceive. Results are at the end.
+
+Fixes found along the way:
+- The notebook page had only 50–60 px of bleed, so camera pans revealed its edge. It now has 200 px on every side.
+- "mistaken?" overlapped "wrong" on the balance, so it was moved.
+- The 1963 stamp was hidden under the photo; it now clears first.
+- A map note sat at 4.46:1 contrast; it's now darkened to pass.
+- The faded envelope pile read as a grey smudge; it now fades out.
+
 ## Not verified / not possible here
 - **Listening.** I can't hear the mix. Levels, sync and ducking were measured; musical taste needs Guy's ears.
 - **Real VO timing and pronunciation.** Placeholders are estimates. After the takes arrive, `retime_chapters.py` re-lays everything out, and a fresh render plus QA is required.
