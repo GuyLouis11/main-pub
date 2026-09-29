@@ -311,6 +311,7 @@ FILM_INIT();
   $$('#fqIce .ic').forEach((c, i) => { c.id = 'ic' + i; FILM.draw('#ic' + i, P('C4_06', .45) + .5 + i * .3, .5, 'power2.out'); });   // frost grows from the "?"
   tl.to('#fq', { rotation: -4, scale: 1.04, transformOrigin: '50% 60%', duration: 1.2, yoyo: true, repeat: 1, ease: 'sine.inOut' }, P('C4_06', .45) + .6);
   tl.to('#fqIce', { opacity: .55, duration: .25, yoyo: true, repeat: 1 }, E('doubt') - 1.3);
+  FILM.pan('#dcam', E('doubt') - 3.0, 2.8, -170, -55);                                                    // drift in toward the frosted "?" to the fade
 
   FILM.finish('ch4');
 })();

@@ -392,6 +392,10 @@ FILM_INIT();
   FILM.sceneFade('sametemp', .5, .45);
   FILM.drift('#tcam', 'sametemp', 1.03, 1.0);
   FILM.up('#bigRead', S('sametemp') + .4, .6, 20);
+  // the single number settles: the readout counts up to 40.0°, then pulses ("one number")
+  const rd = { v: 18 }, rdEl = $('#bigRead .readout');
+  tl.to(rd, { v: 40, duration: 2.4, ease: 'power2.out', onUpdate: () => { rdEl.textContent = rd.v.toFixed(1) + '°'; } }, S('sametemp') + .6);
+  tl.to(rdEl, { scale: 1.07, transformOrigin: '50% 50%', duration: .4, yoyo: true, repeat: 1, ease: 'sine.inOut' }, S('sametemp') + 3.1);
   const partsA = [], partsB = [];
   for (let i = 0; i < 70; i++) {                         // A: evenly spread
     const gx = i % 10, gy = Math.floor(i / 10);
