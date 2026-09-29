@@ -12,13 +12,21 @@ import { createType3D } from './type3d.js';
 import { createShow } from './show.js';
 
 const params = new URLSearchParams(location.search);
+// A host page may set window.SIZZLE_CONFIG before this module runs (e.g. to use
+// hosted fonts or the pure-JS Draco decoder where WebAssembly is unavailable).
+const CONFIG = { fonts: 'local', dracoType: 'wasm', ...(window.SIZZLE_CONFIG || {}) };
 const RENDER = params.has('render');
-const W = Number(params.get('w')) || 1920;
-const H = Number(params.get('h')) || 1080;
+const W = Number(params.get('w')) || CONFIG.width || 1920;
+const H = Number(params.get('h')) || CONFIG.height || Math.round(W * 9 / 16);
 const $ = (id) => document.getElementById(id);
 const status = (msg) => { const el = $('status'); if (el) el.textContent = msg; };
 
 async function loadFonts() {
+  if (CONFIG.fonts === 'hosted') {
+    await Promise.all(['800 40px Manrope', '500 40px Manrope', '400 20px "JetBrains Mono"', '700 20px "JetBrains Mono"']
+      .map((f) => document.fonts.load(f)));
+    return;
+  }
   const faces = [
     new FontFace('Manrope', 'url(./assets/fonts/manrope-latin-800-normal.woff2)', { weight: '800' }),
     new FontFace('Manrope', 'url(./assets/fonts/manrope-latin-500-normal.woff2)', { weight: '500' }),
@@ -36,9 +44,17 @@ async function boot() {
   const stage = createStage({ width: W, height: H, canvas });
 
   status('Loading the 458…');
+  // Hosts that can't serve .glb may ship the model as base64 text (CONFIG.modelBase64).
+  let modelData;
+  if (CONFIG.modelBase64) {
+    const b64 = (await (await fetch(CONFIG.modelBase64)).text()).trim();
+    modelData = Uint8Array.from(atob(b64), (c) => c.charCodeAt(0)).buffer;
+  }
   const assembly = await loadAssembly({
     modelUrl: './assets/source/models/ferrari.glb',
+    modelData,
     dracoPath: './assets/source/draco/gltf/',
+    dracoType: CONFIG.dracoType,
     clipSolid: clip.solid, clipFx: clip.fx,
     onProgress: (k) => status(`Loading the 458 · ${Math.round(k * 100)}%`),
   });

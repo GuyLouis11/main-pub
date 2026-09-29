@@ -293,11 +293,11 @@ function fxMaterial(style, clipPlane) {
 }
 
 // ------------------------------------------------------------ assembly
-export async function loadAssembly({ modelUrl, dracoPath, clipSolid, clipFx, onProgress }) {
-  const draco = new DRACOLoader().setDecoderPath(dracoPath);
-  const gltf = await new GLTFLoader().setDRACOLoader(draco).loadAsync(modelUrl, (e) => {
-    if (e.total) onProgress?.(e.loaded / e.total);
-  });
+export async function loadAssembly({ modelUrl, modelData, dracoPath, dracoType = 'wasm', clipSolid, clipFx, onProgress }) {
+  const draco = new DRACOLoader().setDecoderPath(dracoPath).setDecoderConfig({ type: dracoType });
+  const loader = new GLTFLoader().setDRACOLoader(draco);
+  const gltf = modelData ? await loader.parseAsync(modelData, '')
+    : await loader.loadAsync(modelUrl, (e) => { if (e.total) onProgress?.(e.loaded / e.total); });
   draco.dispose();
 
   const parts = [];
