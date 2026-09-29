@@ -45,7 +45,7 @@ Guy flagged a long pause at about 54 s. Every quiet stretch is now filled with p
   - `tools/stillness_local.py` counts a moment as moving if **any** 16×16 region of a blurred 320×180 frame changed by more than 2 grey levels versus 0.4 s earlier. The blur removes grain.
   - First full render: 0 windows in the opening and ch1, ch2, ch4 and ch6, but 3 in ch3 and ch5 (69.5 s, 35.9 s, 99.1 s). The glints there were too faint to see.
   - Fix: a ridge-surveying frost point, start pulses and a marching route in ch5, and an earlier frost squash in ch3.
-  - Re-render: see below.
+  - Re-render: **0 still windows over 1.5 s in the opening and all six chapters** (8:06 total, −24.4 LUFS integrated with silent VO). Review cut: `renders/film_v2_review_720p.mp4`, not in git because of its size.
 
 Fixes found along the way:
 - The notebook page had only 50–60 px of bleed, so camera pans revealed its edge. It now has 200 px on every side.
