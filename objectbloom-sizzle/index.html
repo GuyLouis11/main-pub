@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>object bloom. — 458 sizzle</title>
+  <meta name="theme-color" content="#171c20">
+  <link rel="icon" href="./assets/source/favicon.svg">
+  <style>
+    @font-face { font-family: Manrope; src: url('./assets/fonts/manrope-latin-800-normal.woff2') format('woff2'); font-weight: 800; }
+    @font-face { font-family: Manrope; src: url('./assets/fonts/manrope-latin-500-normal.woff2') format('woff2'); font-weight: 500; }
+    html, body { margin: 0; height: 100%; background: #0b0f12; color: #f4f4ef; font-family: Manrope, sans-serif; overflow: hidden; }
+    #stage { position: fixed; inset: 0; width: 100vw; height: 100vh; object-fit: contain; display: block; background: #000; }
+    #overlay { position: fixed; inset: 0; display: grid; place-items: center; background: rgba(11, 15, 18, 0.7); transition: opacity .4s; }
+    #overlay.hidden { opacity: 0; pointer-events: none; }
+    .card { text-align: center; }
+    .mark { font-weight: 800; font-size: clamp(34px, 6vw, 72px); letter-spacing: -0.02em; }
+    .mark span { color: #b9ffe5; }
+    #status { font: 500 14px/1.6 Manrope, sans-serif; opacity: .75; min-height: 1.6em; margin: 12px 0 20px; }
+    #play { font: 800 16px Manrope, sans-serif; padding: 14px 28px; border-radius: 9px; border: 0; background: #26483e; color: #f4f4ef; cursor: pointer; min-height: 44px; opacity: .35; pointer-events: none; }
+    #overlay.ready #play { opacity: 1; pointer-events: auto; }
+    #play:focus-visible { outline: 3px solid #178378; outline-offset: 3px; }
+    .hint { font: 500 12px Manrope, sans-serif; opacity: .5; margin-top: 14px; }
+  </style>
+  <script type="importmap">
+    { "imports": { "three": "./vendor/three/build/three.module.js", "three/addons/": "./vendor/three/examples/jsm/" } }
+  </script>
+  <script type="module" src="./src/main.js"></script>
+</head>
+<body>
+  <canvas id="stage" width="1920" height="1080"></canvas>
+  <div id="overlay">
+    <div class="card">
+      <div class="mark">object bloom<span>.</span></div>
+      <p id="status">Loading…</p>
+      <button id="play" type="button">Play with sound</button>
+      <p class="hint">Space play/pause · ← → one bar · R restart · F fullscreen</p>
+    </div>
+  </div>
+</body>
+</html>

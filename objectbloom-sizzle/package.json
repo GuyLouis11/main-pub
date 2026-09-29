@@ -1,0 +1,21 @@
+{
+  "name": "objectbloom-sizzle",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "ObjectBloom sizzle reel: a beat-synced, procedurally animated supercar teardown (Three.js + WebAudio), exportable to MP4.",
+  "scripts": {
+    "postinstall": "node scripts/vendor.mjs",
+    "dev": "node scripts/serve.mjs",
+    "render": "node scripts/render.mjs",
+    "render:preview": "node scripts/render.mjs --width 960 --height 540 --fps 30 --out out/objectbloom-sizzle-preview.mp4",
+    "stills": "node scripts/render.mjs --stills"
+  },
+  "dependencies": {
+    "three": "0.180.0"
+  },
+  "devDependencies": {
+    "ffmpeg-static": "^5.3.0",
+    "playwright-core": "^1.55.0"
+  }
+}
