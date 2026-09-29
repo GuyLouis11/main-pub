@@ -31,7 +31,7 @@ const ffmpeg = (argv, stdin = 'ignore') => spawn(ffmpegPath, ['-hide_banner', '-
 const done = (proc) => new Promise((resolve, reject) => proc.on('close', (c) => (c === 0 ? resolve() : reject(new Error('ffmpeg exited ' + c)))));
 
 const server = await startServer(0);
-const url = `http://127.0.0.1:${server.address().port}/index.html?render=1&w=${width}&h=${height}`;
+const url = `http://127.0.0.1:${server.address().port}/index.html?render=1&w=${width}&h=${height}${args.clean ? '&clean=1' : ''}`;
 
 async function openPage() {
   const browser = await launch();

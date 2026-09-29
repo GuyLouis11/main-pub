@@ -27,7 +27,8 @@ function distanceAt(t) {
   return d;
 }
 
-export function createShow({ stage, assembly, hud, type3d }) {
+// clean: no HUD typography, no flash/invert/glitch (for background loops behind page copy).
+export function createShow({ stage, assembly, hud, type3d, clean = false }) {
   const { parts, solidBatches, solidMaterials, xray, holo, wheelCenters } = assembly;
   const { scene, camera, composer, final, bloom, floor, dust, streaks, scanSheet, lights } = stage;
   const ctx = { wheelCenters, roll: 0 };
@@ -228,7 +229,8 @@ export function createShow({ stage, assembly, hud, type3d }) {
       floor: project(new THREE.Vector3(ext.max.x + 0.4, 0, ext.min.z + 0.4)), roof: project(new THREE.Vector3(ext.max.x + 0.4, ext.max.y, ext.min.z + 0.4)),
       length: ext.max.z - ext.min.z, wheelbase: wr.z - wf.z, height: ext.max.y,
     };
-    hud.draw(t, {
+    if (clean) { if (!hud.cleared) { hud.canvas.getContext('2d').clearRect(0, 0, hud.canvas.width, hud.canvas.height); hud.texture.needsUpdate = true; hud.cleared = true; } }
+    else hud.draw(t, {
       total: parts.length, visibleCount, tickerNames, scan, callouts, detachList, landList, assemblies, dims,
       assembledPct: b >= 28 ? landed / parts.length : 0,
       paintHistory: [PAINTS[1], PAINTS[2], PAINTS[3], PAINTS[4]],
@@ -246,9 +248,10 @@ export function createShow({ stage, assembly, hud, type3d }) {
     if (t >= at(3, 2) && t < bar(4)) glitch = lerp(0.25, 1, range(t, at(3, 2), bar(4)));
     for (const g0 of [at(0, 1), at(0, 2), at(19, 3), at(23, 3)]) if (t >= g0 && t < g0 + (g0 > bar(10) ? BEAT : 0.12)) glitch = Math.max(glitch, 0.75);
     if (t >= bar(24) && t < bar(24) + 0.2) glitch = 0.6;
+    if (clean) { glitch = 0; u.uFlash.value *= 0.25; }
     u.uGlitch.value = glitch;
     u.uHudChroma.value = glitch * 0.004 + imp * 0.002;
-    u.uInvert.value = (t >= bar(16) && t < bar(16) + 0.07) || (t >= bar(20) && t < bar(20) + 0.06) ? 1 : 0;
+    u.uInvert.value = !clean && ((t >= bar(16) && t < bar(16) + 0.07) || (t >= bar(20) && t < bar(20) + 0.06)) ? 1 : 0;
     u.uLetterbox.value = b < 4 ? 0.128 : 0.128 * (1 - ease.outExpo(range(t, bar(4), bar(4) + 0.3)));
     u.uSceneFade.value = range(t, 0, 0.5) * (1 - range(t, at(32, 0), at(32, 2)) * 0.85);
     u.uFade.value = 1 - range(t, DURATION - 0.35, DURATION);

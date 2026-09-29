@@ -64,7 +64,7 @@ async function boot() {
 
   const hud = createHud(W, H);
   const type3d = createType3D(stage.scene);
-  const show = createShow({ stage, assembly, hud, type3d });
+  const show = createShow({ stage, assembly, hud, type3d, clean: params.has('clean') });
 
   status('Composing the soundtrack…');
   const audio = await renderSoundtrack(48000, (k) => status(`Composing the soundtrack · ${Math.round(k * 100)}%`));
