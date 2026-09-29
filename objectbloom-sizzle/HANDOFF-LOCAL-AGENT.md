@@ -9,6 +9,7 @@ You're Claude running locally on Guy's Mac (Claude Code, optionally with Claude 
 - **Keep the repos separate:** `GuyLouis11/objectbloom-site` (the website) and `GuyLouis11/main-pub`, folder `objectbloom-sizzle/` (the reel pipeline).
 
 ## 1. Launch the website (do this first)
+- **Status first:** Guy may already have asked ChatGPT to publish this PR. Check whether PR #1 is merged and whether objectbloom.com shows the new design. If it's live, skip to the live-site checks in step 4.
 - **Where it is:** PR https://github.com/GuyLouis11/objectbloom-site/pull/1 (`redesign/launch-kit` → `main`). `main` is exactly the live site (Sites project `appgprj_6a9b5d40cdf48191856ea6974374dcd4`, published version 115).
 - **Read first:** `LAUNCH-KIT-RELEASE.md`, `PRODUCT.md`, `PURCHASE-WORKFLOW.md`, `inquiry-workflow.md`, `README.md`.
 - **Steps:**
@@ -68,14 +69,29 @@ You're Claude running locally on Guy's Mac (Claude Code, optionally with Claude 
 - **When outreach traffic converts on `/launch-kit`:** a small Meta or LinkedIn test with the reel, aimed at hardware founders, plus retargeting of site visitors.
 - **Guardrails:** cap budgets at what Guy approves, and don't enable campaigns without his confirmation. The site already has a consent-gated Google Ads conversion tag (AW-16881198150); check it fires only on a successful enquiry.
 
-## 6. New flagship (Blender)
-- **Plan:** an original, unbranded pair of **wireless earbuds with a charging case**. Guy has a separate Blender prompt.
-- **Model conventions:**
-  - one object per part, named `assembly__part` (e.g. `case__lid`, `bud-left-internals__driver`)
-  - real scale in meters, with each part's origin at its center and transforms applied
-  - materials named by role (`shell_gloss`, `metal_brushed`, `pcb_green`…)
-  - about 200–400k triangles, exported as GLB plus a `parts.json`
-- **Then** extend `objectbloom-sizzle/src/parts.js` with a generic loader that reads `assembly__part` names, instead of the 458-specific classifier. Render a new reel, explorer and site assets, and replace the 458 as the lead proof once it's ready.
+## 6. New flagship (Blender): check it, then build with it
+- **Where it is:** `/Users/guy/objectbloom-flagship/` on Guy's Mac: an original, unbranded pair of **wireless earbuds with a charging case**, with `renders/turntable.mp4`. A copy started uploading to Google Drive (My Drive → objectbloom-flagship), but only the empty folders arrived, so use the local folder.
+- **First, check it and report back plainly:**
+  1. List every file with its size: .blend, GLB, `parts.json`, `renders/`, `textures/`, `lib/`, `tools/`, `reference/`.
+  2. Inspect `renders/turntable.mp4`: length, resolution, frame rate, and whether it plays.
+  3. Open the GLB (or the .blend in Blender background mode) and report:
+     - the number of parts (separate objects) and total triangles
+     - whether each part is named `assembly__part` (e.g. `case__lid`, `bud-left__driver`); list the ones that aren't
+     - whether origins are at each part's center, scale is real-world meters, and transforms are applied
+     - material names, and whether they're named by role (`shell_gloss`, `metal_brushed`, `pcb_green`…)
+     - any empty, duplicate, overlapping or unmaterialed parts
+  4. Check that `parts.json` matches the model (same count, same names).
+  5. Verdict: ready, or the exact list of fixes. Fix the naming, origin and transform issues yourself in Blender if Guy agrees.
+- **Target model:** about 200–400k triangles, exported as GLB plus `parts.json`.
+- **Then build with it**, in `GuyLouis11/main-pub`, folder `objectbloom-sizzle/`:
+  1. Add a generic loader to `src/parts.js` that reads the `assembly__part` names and groups instead of the 458-specific classifier. Keep the 458 path working.
+  2. Plan a new 30–45 s reel for the earbuds on the same 128 BPM system: case opens, buds lift out, x-ray, explode into formation, rebuild, and the Object Bloom end card. Render the 16:9 master, a 9:16 cut and a `--clean` hero loop.
+  3. Build an earbuds part explorer page, like `/samples/458/`.
+  4. Make stills and a poster.
+  5. Once Guy approves, make the earbuds the lead proof on objectbloom.com: homepage hero, Launch Kit page and Work section. Keep the 458 as a second study.
+- **Rules:**
+  - The earbuds are an original concept: never present them as a client or a real brand.
+  - Keep the flagship in its own folder or repo, separate from the site and the 458 assets.
 
 ## Report back to Guy
 After each step, say what you did, what you checked, and anything that failed. Be plain and honest.
