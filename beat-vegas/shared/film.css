@@ -1,0 +1,107 @@
+/* Guy Wonders Why: "He Beat Vegas". Casino Noir design system (all chapters). */
+@import url('fonts/fonts.css');
+
+:root{
+  --ink:#07080a; --ink2:#0e1013; --felt:#0f3b2e; --felt2:#16503f; --red:#b3261a; --red2:#e0473a;
+  --gold:#e0b04a; --gold2:#ffd98a; --cream:#f1e6cf; --paper:#efe4cc; --cyan:#8fe3ff; --cyan2:#d9f6ff;
+  --dim:#9c9486; --line:#3a352c;
+  --display:'Big Shoulders Display', Impact, sans-serif;
+  --serif:'Instrument Serif', Georgia, serif;
+  --mono:'JetBrains Mono', ui-monospace, monospace;
+  --hand:'Caveat', cursive;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:var(--ink)}
+#root{position:relative;width:1920px;height:1080px;overflow:hidden;background:var(--ink);color:var(--cream)}
+.scene{position:absolute;inset:0;overflow:hidden}
+.cam{position:absolute;inset:0;transform-origin:50% 50%}
+.abs{position:absolute}
+svg{overflow:visible}
+.full{position:absolute;left:0;top:0;width:1920px;height:1080px}
+
+/* type */
+.mono{font-family:var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.disp{font-family:var(--display);font-weight:900;line-height:.92;letter-spacing:.01em;text-transform:uppercase}
+.serif{font-family:var(--serif)}
+.serif.i{font-style:italic}
+.hand{font-family:var(--hand);font-weight:700;white-space:nowrap}
+.tag{font-family:var(--mono);font-weight:600;font-size:22px;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap}
+.lab{font-family:var(--mono);font-size:21px;letter-spacing:.14em;color:var(--dim);text-transform:uppercase;white-space:nowrap}
+.note{font-family:var(--mono);font-size:17px;letter-spacing:.16em;color:#8d8577;text-transform:uppercase;white-space:nowrap}
+.gold{color:var(--gold)} .red{color:var(--red2)} .cyan{color:var(--cyan)} .cream{color:var(--cream)}
+.foil{background:linear-gradient(180deg,#fff1c4 0%,#f1c664 38%,#b8801f 62%,#ffe39a 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.nowrap{white-space:nowrap}
+
+/* worlds */
+.noir{background:url(img/smoke.jpg) center/cover, var(--ink)}
+.feltw{background:url(img/felt.jpg) center/cover, var(--felt)}
+.feltw::after,.noir::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(1200px 760px at 50% 46%, rgba(0,0,0,0) 35%, rgba(0,0,0,.62) 100%)}
+.spot{position:absolute;inset:0;pointer-events:none;background:radial-gradient(760px 520px at 50% 44%, rgba(255,214,140,.16), rgba(0,0,0,0) 70%)}
+.bpgrid{position:absolute;inset:-40px;background-image:linear-gradient(rgba(143,227,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(143,227,255,.08) 1px,transparent 1px);background-size:48px 48px}
+.blueprint{background:radial-gradient(1300px 800px at 50% 45%, #0b1d2a 0%, #05090e 75%)}
+.page{position:absolute;left:-200px;top:-160px;width:2320px;height:1400px;background:url(img/paper.jpg) center/cover, var(--paper)}
+
+/* footage: graded to the palette, framed like a lit card on the table */
+.vid{position:absolute;inset:0;width:1920px;height:1080px;object-fit:cover;background:#0a0a0a;filter:contrast(1.08) saturate(.86) sepia(.14) brightness(.96)}
+.grade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(20,10,0,.18),rgba(0,0,0,0) 30%,rgba(0,0,0,0) 70%,rgba(10,20,15,.28));mix-blend-mode:multiply}
+.lbox::before,.lbox::after{content:"";position:absolute;left:0;right:0;height:70px;background:#000;z-index:5}
+.lbox::before{top:0}.lbox::after{bottom:0}
+.frame{position:absolute;overflow:hidden;box-shadow:0 40px 90px rgba(0,0,0,.65),0 0 0 2px rgba(224,176,74,.55),0 0 0 10px rgba(12,10,8,.9),0 0 0 12px rgba(224,176,74,.35)}
+.frame video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:contrast(1.08) saturate(.86) sepia(.14)}
+
+/* playing card */
+.pcard{position:absolute;width:250px;height:350px;transform-style:preserve-3d}
+.pcard .face,.pcard .back{position:absolute;inset:0;border-radius:18px;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 18px 40px rgba(0,0,0,.55)}
+.pcard .face{background:linear-gradient(160deg,#fbf6ea,#eadfc6);border:1px solid #cbbd9c}
+.pcard .back{transform:rotateY(180deg);background:repeating-linear-gradient(45deg,#7c1a12 0 10px,#9a241a 10px 20px);border:10px solid #f3ead6}
+.pcard .back::after{content:"";position:absolute;inset:14px;border:2px solid rgba(243,234,214,.6);border-radius:8px}
+.pcard .ix{position:absolute;font-family:var(--display);font-weight:900;font-size:52px;line-height:.9;text-align:center}
+.pcard .ix.tl{left:18px;top:14px}.pcard .ix.br{right:18px;bottom:14px;transform:rotate(180deg)}
+.pcard .ix small{display:block;font-size:40px}
+.pcard .pip{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:150px}
+.pcard.red .ix,.pcard.red .pip{color:#b3261a}.pcard.blk .ix,.pcard.blk .pip{color:#141414}
+
+/* casino chip */
+.chip{position:absolute;width:120px;height:120px;border-radius:50%;
+  background:radial-gradient(circle at 50% 50%, var(--c) 0 36%, #f3ead6 36% 39%, var(--c) 39% 62%, transparent 62%),
+             repeating-conic-gradient(#f3ead6 0 12deg, var(--c) 12deg 45deg);
+  box-shadow:0 6px 0 rgba(0,0,0,.45), inset 0 0 0 3px rgba(0,0,0,.18), 0 10px 20px rgba(0,0,0,.4)}
+.chip b{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:900;font-size:34px;color:#f3ead6}
+
+/* stamp */
+.stamp{position:absolute;font-family:var(--display);font-weight:900;text-transform:uppercase;letter-spacing:.06em;color:var(--red2);border:10px solid currentColor;padding:6px 28px 2px;border-radius:14px;white-space:nowrap;
+  -webkit-mask:url(img/grain.png) center/420px;mask:url(img/grain.png) center/420px;mix-blend-mode:screen}
+
+/* HUD: the edge meter (the film's running scoreboard) */
+#odds{position:absolute;z-index:18;right:56px;top:46px;width:300px;padding:14px 18px 16px;background:rgba(8,8,8,.72);border:1px solid rgba(224,176,74,.55);border-radius:10px;opacity:0}
+#odds .l{font-family:var(--mono);font-weight:600;font-size:15px;letter-spacing:.24em;color:var(--dim)}
+#odds .v{font-family:var(--display);font-weight:900;font-size:58px;line-height:.95;color:var(--gold);margin-top:6px}
+#odds .who{font-family:var(--mono);font-size:14px;letter-spacing:.2em;color:var(--dim);margin-top:2px}
+#odds .bar{position:relative;height:10px;margin-top:10px;background:#231f19;border-radius:5px;overflow:hidden}
+#odds .bar i{position:absolute;left:50%;top:0;bottom:0;width:0;background:var(--gold)}
+#odds .bar::after{content:"";position:absolute;left:50%;top:-2px;bottom:-2px;width:2px;background:#f3ead6;opacity:.6}
+
+/* chapter card: a playing card deals in and flips */
+.chcard{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:90px;perspective:1600px}
+.chcard .ctext{display:flex;flex-direction:column;gap:18px}
+.chcard .num{font-family:var(--mono);font-weight:600;font-size:26px;letter-spacing:.5em;color:var(--gold)}
+.chcard .title{font-family:var(--display);font-weight:900;font-size:150px;letter-spacing:.02em;line-height:.88;color:var(--cream);text-transform:uppercase;white-space:nowrap}
+.chcard .rule{width:520px;height:4px;background:linear-gradient(90deg,var(--red),var(--gold))}
+
+/* lower third */
+.lower{position:absolute;left:110px;bottom:120px}
+.lower .name{font-family:var(--serif);font-style:italic;font-size:66px;line-height:1;color:var(--cream);text-shadow:0 4px 20px rgba(0,0,0,.8)}
+.lower .strip{margin-top:14px;display:inline-block;white-space:nowrap;background:var(--red);color:#fbf1dc;font-family:var(--mono);font-weight:600;font-size:21px;letter-spacing:.22em;padding:10px 20px 10px 22px;text-transform:uppercase}
+
+/* kinetic caption slams */
+.slam{position:absolute;font-family:var(--display);font-weight:900;text-transform:uppercase;line-height:.9;white-space:nowrap;text-shadow:0 10px 40px rgba(0,0,0,.7)}
+.recon{position:absolute;z-index:17;left:40px;top:36px;font-family:var(--mono);font-size:15px;letter-spacing:.2em;color:rgba(241,230,207,.75);background:rgba(0,0,0,.45);padding:6px 12px;text-transform:uppercase;opacity:0}
+
+/* global finishing */
+#flash{position:absolute;inset:0;z-index:20;background:#fff6dd;opacity:0;pointer-events:none}
+#vignette{position:absolute;inset:0;z-index:20;background:radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0) 52%, rgba(0,0,0,.5) 100%);pointer-events:none}
+#grain{position:absolute;inset:-64px;z-index:20;background:url(img/grain.png);opacity:.09;mix-blend-mode:overlay;pointer-events:none}
+#black{position:absolute;inset:0;z-index:21;background:#000;opacity:0;pointer-events:none}
+#scratch{position:absolute;z-index:22;left:50%;bottom:26px;transform:translateX(-50%);display:none;align-items:center;gap:14px;background:rgba(0,0,0,.72);padding:10px 22px;border-radius:6px;white-space:nowrap}
+#scratch .tagx{font-family:var(--mono);font-weight:600;font-size:16px;letter-spacing:.2em;color:#ffcf3a;border:1px solid #ffcf3a;padding:3px 8px}
+#scratch .txt{font-family:var(--mono);font-size:22px;color:#fff;max-width:1500px;overflow:hidden;text-overflow:ellipsis}

@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en" data-composition-variables='[{"id":"scratchVO","type":"boolean","label":"Show SCRATCH VO subtitles (review only)","default":false}]'>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1920, height=1080" />
+<title>The Test</title>
+<link rel="stylesheet" href="shared/film.css" />
+<script src="shared/vendor/gsap.min.js"></script>
+<script id="timing" type="application/json">
+{
+  "chapter": 2,
+  "title": "The Test",
+  "seed": 1963,
+  "defaults": {
+    "lead": 0.35,
+    "gap": 0.3,
+    "tail": 0.45
+  },
+  "scenes": [
+    {
+      "id": "card",
+      "min": 2.2,
+      "xin": 0
+    },
+    {
+      "id": "vegas",
+      "min": 3.0,
+      "xin": 0.35,
+      "vo": [
+        "N2_01"
+      ]
+    },
+    {
+      "id": "wire",
+      "min": 3.0,
+      "xin": 0.35,
+      "vo": [
+        "N2_02",
+        "N2_03"
+      ]
+    },
+    {
+      "id": "fail",
+      "min": 3.0,
+      "xin": 0.35,
+      "vo": [
+        "N2_04"
+      ]
+    }
+  ],
+  "vo": {
+    "N2_01": {
+      "text": "In the summer of 1961, the Thorps and the Shannons went to Las Vegas. Claude stood by the wheel, timing it, and jotting down numbers like any hopeful gambler. The predictions came in, just like in the lab.",
+      "estimate": 14.37,
+      "source": "take",
+      "dur": 10.306
+    },
+    "N2_02": {
+      "text": "And then the flaw showed up. The wires to the earpiece were as thin as a hair, painted to match skin, so no one would see them. And they kept breaking.",
+      "estimate": 11.78,
+      "source": "take",
+      "dur": 7.421
+    },
+    "N2_03": {
+      "text": "A computer in 1961 couldn't be both invisible and tough. They never bet big.",
+      "estimate": 5.49,
+      "source": "take",
+      "dur": 4.639
+    },
+    "N2_04": {
+      "text": "The machine failed. But the math didn't. And Thorp had a second weapon.",
+      "estimate": 5.11,
+      "source": "take",
+      "dur": 3.841
+    }
+  }
+}
+</script>
+<style>
+  .kicker{position:absolute;font-family:var(--mono);font-weight:600;font-size:24px;letter-spacing:.34em;color:var(--gold);white-space:nowrap}
+  .big{font-family:var(--display);font-weight:900;line-height:.85;white-space:nowrap}
+  .blab{position:absolute;font-family:var(--mono);font-weight:600;font-size:22px;letter-spacing:.18em;color:var(--cyan);white-space:nowrap;text-transform:uppercase}
+  .neonT{position:absolute;font-family:var(--display);font-weight:900;white-space:nowrap;color:#fff6e8}
+  .sky{position:absolute;inset:0;background:linear-gradient(180deg,#05060d 0%,#16102a 55%,#3a1a2a 78%,#130b10 100%)}
+  .streak{position:absolute;height:5px;border-radius:3px}
+  .pad{position:absolute;left:1180px;top:170px;width:560px;height:700px;background:#f4ecd8;border-radius:6px;box-shadow:0 30px 70px rgba(0,0,0,.6);transform:rotate(3deg)}
+  .pad::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent 0 58px,rgba(80,120,160,.35) 58px 60px);border-radius:6px}
+  .pad .ln{position:absolute;left:44px;font-family:var(--hand);font-weight:700;font-size:54px;color:#1d2b4a;white-space:nowrap}
+  .row{position:absolute;left:180px;font-family:var(--mono);font-weight:600;font-size:34px;letter-spacing:.12em;color:var(--cream);white-space:nowrap}
+  .row b{color:var(--gold)} .row i{font-style:normal;color:#7ee08a}
+  .toggle{position:absolute;width:520px;padding:26px 34px;border-radius:16px;border:3px solid;font-family:var(--display);font-weight:900;font-size:72px;white-space:nowrap}
+  .eq{position:absolute;font-family:var(--serif);font-style:italic;font-size:64px;color:var(--gold2);white-space:nowrap;text-shadow:0 0 24px rgba(224,176,74,.6)}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="ch2" data-start="0" data-duration="30.057" data-width="1920" data-height="1080">
+
+  <div class="scene clip noir" data-scene="card" data-start="0.000" data-duration="2.200" data-track-index="1"><div class="chcard"></div></div>
+
+  <!-- ───────── 1 · Las Vegas, summer 1961 ───────── -->
+  <div class="scene clip" data-scene="vegas" data-start="1.850" data-duration="11.106" data-track-index="2">
+    <div class="cam" id="vcam">
+      <div class="sky"></div>
+      <svg class="full" id="strip" viewBox="0 0 1920 1080">
+        <path d="M0,760 L220,640 L380,700 L560,600 L760,690 L960,620 L1180,700 L1380,610 L1600,690 L1920,630 L1920,1080 L0,1080 Z" fill="#0a0710"/>
+        <rect x="0" y="800" width="1920" height="280" fill="#08060a"/>
+      </svg>
+      <div class="abs" id="neonBox" style="inset:0"></div>
+      <div class="abs" id="streaks" style="inset:0"></div>
+      <div class="kicker" id="kSum" style="left:110px;top:92px;opacity:0">SUMMER · 1961</div>
+    </div>
+    <div class="abs feltw" id="table" style="inset:0;opacity:0">
+      <div class="spot"></div>
+      <svg class="full" id="tWheel" viewBox="0 0 1920 1080"></svg>
+      <div class="pad" id="pad"><div class="ln" id="pl1" style="top:60px"></div><div class="ln" id="pl2" style="top:180px"></div><div class="ln" id="pl3" style="top:300px"></div><div class="ln" id="pl4" style="top:420px"></div><div class="ln" id="pl5" style="top:540px"></div></div>
+      <div class="kicker" id="kClaude" style="left:110px;top:92px;opacity:0">CLAUDE TIMES THE WHEEL · POSING AS A SYSTEM PLAYER</div>
+    </div>
+    <div class="abs noir" id="hits" style="inset:0;opacity:0">
+      <div class="kicker" style="left:180px;top:220px">PREDICTION ▸ RESULT</div>
+      <div class="row" id="r1" style="top:300px">SPIN 1 · PREDICTED <b>SLICE 3</b> ▸ LANDED <b>SLICE 3</b> <i>✓</i></div>
+      <div class="row" id="r2" style="top:380px">SPIN 2 · PREDICTED <b>SLICE 7</b> ▸ LANDED <b>SLICE 7</b> <i>✓</i></div>
+      <div class="row" id="r3" style="top:460px">SPIN 3 · PREDICTED <b>SLICE 2</b> ▸ LANDED <b>SLICE 1</b> <span class="red">✗</span></div>
+      <div class="row" id="r4" style="top:540px">SPIN 4 · PREDICTED <b>SLICE 5</b> ▸ LANDED <b>SLICE 5</b> <i>✓</i></div>
+      <div class="abs big foil" id="labLike" style="left:180px;top:660px;font-size:120px">JUST LIKE IN THE LAB.</div>
+      <div class="note abs" style="left:180px;top:820px">Illustrative spins · the edge is an average over many bets</div>
+    </div>
+  </div>
+
+  <!-- ───────── 2 · the flaw shows up ───────── -->
+  <div class="scene clip noir" data-scene="wire" data-start="12.606" data-duration="13.160" data-track-index="3">
+    <div class="abs" id="earWrap" style="inset:0"><div class="grade" style="z-index:1"></div><video class="vid" id="vEar2" src="assets/flow/V23_wire_break.mp4" muted playsinline data-scene="wire" data-at="0.05" data-len="4.6" data-start="12.656" data-duration="4.600" data-media-start="3.35" data-usable-in="0" data-usable-out="8" data-track-index="10"></video></div>
+    <div class="abs blueprint" id="macro" style="inset:0;opacity:0">
+      <div class="bpgrid" data-drift="1"></div>
+      <svg class="full" viewBox="0 0 1920 1080">
+        <path id="wireL" d="M-20,560 C300,540 600,600 900,560" fill="none" stroke="#e8c9a8" stroke-width="5"/>
+        <path id="wireR" d="M1020,560 C1300,520 1600,590 1940,560" fill="none" stroke="#e8c9a8" stroke-width="5"/>
+        <path id="wireJoin" d="M900,560 L1020,560" fill="none" stroke="#e8c9a8" stroke-width="5"/>
+        <g id="spark" opacity="0" stroke="#fff4c8" stroke-width="4" stroke-linecap="round"><path d="M960,560 l-60,-50 M960,560 l70,-40 M960,560 l-40,70 M960,560 l60,60 M960,560 l0,-90"/></g>
+        <circle id="hairR" cx="960" cy="560" r="160" fill="none" stroke="#8fe3ff" stroke-width="2" stroke-dasharray="8 8"/>
+      </svg>
+      <div class="blab" id="hairLab" style="left:1140px;top:380px;opacity:0">AS THIN AS A HAIR</div>
+      <div class="abs" id="swatch" style="left:1140px;top:430px;opacity:0;display:flex;gap:14px"><i style="width:60px;height:60px;border-radius:50%;background:#e8c9a8"></i><i style="width:60px;height:60px;border-radius:50%;background:#c99a78"></i><i style="width:60px;height:60px;border-radius:50%;background:#8a5a3c"></i><i style="width:60px;height:60px;border-radius:50%;background:#2a1c14"></i></div>
+      <div class="blab" id="paintLab" style="left:1140px;top:510px;opacity:0">PAINTED TO MATCH SKIN &amp; HAIR</div>
+      <div class="abs big" id="snaps" style="left:160px;top:760px;font-size:120px;color:var(--red2);opacity:0">SNAP <span id="snapN">×1</span></div>
+    </div>
+    <div class="abs noir" id="trade" style="inset:0;opacity:0">
+      <div class="toggle" id="tgI" style="left:300px;top:300px;border-color:#7ee08a;color:#7ee08a">INVISIBLE ✓</div>
+      <div class="toggle" id="tgT" style="left:1100px;top:300px;border-color:#e0473a;color:#e0473a">TOUGH ✗</div>
+      <div class="kicker" id="kPick" style="left:0;right:0;top:220px;text-align:center">A 1961 COMPUTER COULD BE ONE — NOT BOTH</div>
+      <div class="abs" id="betBox" style="left:0;right:0;top:560px;height:300px"></div>
+      <div class="abs big" id="never" style="left:0;right:0;top:880px;text-align:center;font-size:90px;color:var(--cream);opacity:0">THEY NEVER BET BIG.</div>
+    </div>
+  </div>
+
+  <!-- ───────── 3 · the machine failed, the math didn't ───────── -->
+  <div class="scene clip blueprint" data-scene="fail" data-start="25.416" data-duration="4.641" data-track-index="4">
+    <div class="bpgrid" data-drift="1"></div>
+    <div class="cam" id="fcam">
+      <div class="abs" id="deadBox" style="left:810px;top:300px;width:300px;height:420px;border:4px solid var(--cyan);border-radius:14px;box-shadow:0 0 70px rgba(143,227,255,.7);background:rgba(143,227,255,.08)"><div class="blab" style="position:absolute;left:0;right:0;top:180px;text-align:center">COMPUTER</div></div>
+      <div class="abs big" id="failed" style="left:0;right:0;top:120px;text-align:center;font-size:130px;color:var(--red2);opacity:0">THE MACHINE FAILED.</div>
+      <div class="eq" id="eq1" style="left:200px;top:320px;opacity:0">v(t) = v₀ − kt</div>
+      <div class="eq" id="eq2" style="left:1250px;top:360px;opacity:0">θ(t) = θ₀ + v₀t − ½kt²</div>
+      <div class="eq" id="eq3" style="left:340px;top:700px;opacity:0">E = +44%</div>
+      <div class="eq" id="eq4" style="left:1200px;top:760px;opacity:0">8 slices · 1 favoured</div>
+      <div class="abs big foil" id="mathDid" style="left:0;right:0;top:120px;text-align:center;font-size:130px;opacity:0">BUT THE MATH DIDN'T.</div>
+      <div class="abs" id="aceHost" style="left:835px;top:360px;width:250px;height:350px;perspective:1600px"></div>
+      <div class="kicker" id="kWeapon" style="left:0;right:0;top:760px;text-align:center;opacity:0">A SECOND WEAPON</div>
+    </div>
+  </div>
+
+  <audio id="music" src="assets/audio/music.wav" data-start="0" data-duration="30.057" data-volume="1" data-track-index="20"></audio>
+  <audio id="sfx" src="assets/audio/sfx.wav" data-start="0" data-duration="30.057" data-volume="1" data-track-index="21"></audio>
+  <!-- VO:BEGIN (generated by tools/retime_chapters.py) -->
+  <audio id="vo_n2_01" src="assets/vo/N2_01.wav" data-start="2.200" data-duration="10.306" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_n2_02" src="assets/vo/N2_02.wav" data-start="12.956" data-duration="7.421" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_n2_03" src="assets/vo/N2_03.wav" data-start="20.677" data-duration="4.639" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_n2_04" src="assets/vo/N2_04.wav" data-start="25.766" data-duration="3.841" data-volume="1" data-track-index="22"></audio>
+  <!-- VO:END -->
+  <div id="odds"><div class="l">EDGE</div><div class="v">0%</div><div class="who">EVEN</div><div class="bar"><i></i></div></div>
+  <div id="recon" class="recon">Dramatised reconstruction</div>
+  <div id="flash"></div><div id="vignette"></div><div id="grain" data-layout-ignore></div><div id="black"></div>
+  <div id="scratch" data-layout-allow-caption-zone><span class="tagx">SCRATCH VO</span><span class="txt" id="scratchTxt"></span></div>
+</div>
+<script src="shared/film.js"></script>
+<script src="shared/noir.js"></script>
+<script>
+window.__timelines = window.__timelines || {};
+FILM_INIT();
+(function () {
+  const F = FILM, N = NOIR(FILM);
+  const { tl, S, E, D, V, VE, P, rnd, $, $$, el, div } = F;
+
+  F.sceneFade('card', .3, .3); N.chapter('card', 2, 'THE TEST', '♥');
+
+  // ═════════ 1 · Vegas ═════════
+  F.sceneFade('vegas', .3, .25);
+  tl.fromTo('#vcam', { scale: 1.12 }, { scale: 1, duration: 4.5, ease: 'power2.out', immediateRender: false }, S('vegas'));
+  F.show('#kSum', V('N2_01') + .1, .3);
+  // neon signs (no real names): a starburst, an arrow, a script "Vegas", CASINO letters
+  const nb = $('#neonBox');
+  const sign = (html, x, y, size, color, t) => { const d = div('neonT', nb, html); d.style.left = x + 'px'; d.style.top = y + 'px'; d.style.fontSize = size + 'px';
+    d.style.textShadow = `0 0 6px #fff, 0 0 18px ${color}, 0 0 40px ${color}, 0 0 80px ${color}`; tl.set(d, { opacity: 0 }, 0);
+    [0, .07, .12, .2, .26, .4].forEach((dt, i) => tl.set(d, { opacity: i % 2 ? .2 : 1 }, t + dt)); return d; };
+  sign('LAS VEGAS', 610, 250, 170, '#ff3b6b', V('N2_01') + .3);
+  sign('✦', 330, 170, 160, '#ffd23f', V('N2_01') + .7);
+  sign('✦', 1480, 330, 120, '#4fd6ff', V('N2_01') + .9);
+  sign('CASINO', 1300, 520, 90, '#4fd6ff', V('N2_01') + 1.2);
+  sign('➤', 200, 520, 130, '#ff8a2b', V('N2_01') + 1.4);
+  sign('OPEN 24 HOURS', 360, 660, 50, '#9dff6a', V('N2_01') + 1.7);
+  const st = $('#streaks');
+  for (let i = 0; i < 22; i++) {
+    const s = div('streak', st); const red = i % 2; s.style.cssText += `top:${860 + (i % 6) * 26}px;width:${120 + rnd() * 220}px;background:${red ? 'linear-gradient(90deg,transparent,#ff3b3b)' : 'linear-gradient(90deg,#fff6d8,transparent)'};left:0`;
+    tl.fromTo(s, { x: red ? -400 : 2200 }, { x: red ? 2200 : -400, duration: 1.6 + rnd(), ease: 'none', immediateRender: false }, S('vegas') + rnd() * 4);
+  }
+  // Claude at the wheel, notebook
+  tl.to('#table', { opacity: 1, duration: .3 }, P('N2_01', .4));
+  const TW = N.wheel($('#tWheel'), 620, 560, 400, { rot: 0, ball: 0 }); TW.race(P('N2_01', .4), E('vegas') - P('N2_01', .4), 480, 32);
+  F.show('#kClaude', P('N2_01', .42), .3);
+  tl.fromTo('#pad', { x: 300, rotation: 12, opacity: 0 }, { x: 0, rotation: 3, opacity: 1, duration: .5, ease: 'power3.out', immediateRender: false }, P('N2_01', .44));
+  ['17 · 32 · 5', '22 · 34 · 15', '3 · 24 · 36', '13 · 1 · 00', '27 · 10 · 25'].forEach((t, i) => N.type($('#pl' + (i + 1)), t, P('N2_01', .47) + i * .5, 22));
+  // predictions came in
+  tl.to('#hits', { opacity: 1, duration: .3 }, P('N2_01', .72));
+  ['#r1', '#r2', '#r3', '#r4'].forEach((r, i) => tl.fromTo(r, { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: .25, ease: 'power3.out', immediateRender: false }, P('N2_01', .74) + i * .3));
+  N.odds.set(S('vegas'), 44, 'PLAYER', .01); N.odds.show(P('N2_01', .74));
+  tl.fromTo('#labLike', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: .35, ease: 'power3.out', immediateRender: false }, P('N2_01', .74) + 1.3);
+
+  // ═════════ 2 · wire ═════════
+  F.sceneFade('wire', .2, .25);
+  N.recon(S('wire') + .1, 4.4);
+  N.push('#earWrap', S('wire'), 4.6, 1.0, 1.14, { x1: 40 });
+  tl.to('#macro', { opacity: 1, duration: .3 }, S('wire') + 4.6);
+  F.draw('#wireL', S('wire') + 4.6, .5); F.draw('#wireR', S('wire') + 4.7, .5); F.draw('#wireJoin', S('wire') + 4.9, .2);
+  F.show('#hairLab', S('wire') + 4.9, .3); F.draw('#hairR', S('wire') + 4.9, .5);
+  tl.to('#swatch', { opacity: 1, duration: .3 }, S('wire') + 5.3); F.show('#paintLab', S('wire') + 5.4, .3);
+  const snapT = P('N2_02', .82);
+  [0, .55, 1.1].forEach((dt, i) => {
+    tl.set('#wireJoin', { opacity: 0 }, snapT + dt); tl.set('#spark', { opacity: 1 }, snapT + dt); tl.set('#spark', { opacity: 0 }, snapT + dt + .12);
+    tl.fromTo('#wireL', { x: 0 }, { x: -30, duration: .25, ease: 'power3.out', immediateRender: false }, snapT + dt);
+    tl.fromTo('#wireR', { x: 0 }, { x: 30, duration: .25, ease: 'power3.out', immediateRender: false }, snapT + dt);
+    if (i < 2) { tl.set('#wireJoin', { opacity: 1 }, snapT + dt + .4); tl.set('#wireL, #wireR', { x: 0 }, snapT + dt + .4); }
+    tl.set('#snapN', { textContent: '×' + (i + 1) }, snapT + dt);
+    N.shake(snapT + dt, 10, .2);
+  });
+  tl.set('#snaps', { opacity: 1 }, snapT);
+  // N2_03: invisible or tough; they never bet big
+  tl.to('#trade', { opacity: 1, duration: .3 }, V('N2_03') - .1);
+  F.show('#kPick', V('N2_03'), .3);
+  tl.fromTo('#tgI', { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: .3, ease: 'back.out(2)', immediateRender: false }, P('N2_03', .15));
+  tl.fromTo('#tgT', { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: .3, ease: 'back.out(2)', immediateRender: false }, P('N2_03', .3));
+  tl.to('#tgT', { x: 14, duration: .06, repeat: 5, yoyo: true }, P('N2_03', .4));
+  const bb = $('#betBox');
+  const bigS = N.stack(bb, 1200, 200, 14, '#e0b04a', '$'); tl.set(bigS, { opacity: .18 }, 0);
+  const small = N.stack(bb, 640, 200, 1, '#b3261a', '$1'); N.dropStack(small, P('N2_03', .66));
+  tl.fromTo('#never', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: .3, immediateRender: false }, P('N2_03', .66));
+  N.stamp(bb, 'NEVER', 1080, 120, 110, -10).id = 'nevStamp'; N.slam($('#nevStamp'), P('N2_03', .72), true);
+
+  // ═════════ 3 · fail ═════════
+  F.sceneFade('fail', .2, 0);
+  N.slam($('#failed'), V('N2_04') + .05, false);
+  [0, .08, .15, .3, .36, .5].forEach((dt, i) => tl.set('#deadBox', { opacity: i % 2 ? .2 : 1 }, V('N2_04') + .2 + dt));
+  tl.to('#deadBox', { opacity: .15, boxShadow: '0 0 0 rgba(0,0,0,0)', borderColor: '#3a4a58', duration: .3 }, V('N2_04') + .75);
+  N.odds.set(V('N2_04') + .3, 0, 'EVEN', .8); N.odds.hide(V('N2_04') + 1.2);
+  tl.to('#failed', { opacity: 0, duration: .2 }, P('N2_04', .42));
+  tl.fromTo('#mathDid', { opacity: 0, scale: 1.2 }, { opacity: 1, scale: 1, duration: .3, ease: 'power3.out', immediateRender: false }, P('N2_04', .44));
+  ['#eq1', '#eq2', '#eq3', '#eq4'].forEach((e, i) => tl.fromTo(e, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: .3, immediateRender: false }, P('N2_04', .46) + i * .12));
+  const ace = N.card($('#aceHost'), 'A', '♠', 0, 0, { scale: 1.1 });
+  N.deal(ace, P('N2_04', .74), { fx: 0, fy: 700, rot: 0, d: .4 });
+  tl.to('#deadBox, #eq1, #eq2, #eq3, #eq4', { opacity: 0, duration: .25 }, P('N2_04', .74));
+  F.show('#kWeapon', P('N2_04', .8), .3);
+  tl.to(ace, { scale: 1.25, duration: 1.2, ease: 'sine.out' }, P('N2_04', .85));
+
+  F.finish('ch2');
+})();
+</script>
+</body>
+</html>

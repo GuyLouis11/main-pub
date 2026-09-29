@@ -1,0 +1,9 @@
+node_modules/
+snapshots/
+.hyperframes/
+renders/parts/
+renders/*.log
+__pycache__/
+renders/film_*.mp4
+ch*/shared/
+ch*/assets/flow/

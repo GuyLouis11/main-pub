@@ -1,0 +1,240 @@
+<style>
+  #wheelSvg{position:absolute;left:0;top:0;width:1920px;height:1080px}
+  .kicker{position:absolute;font-family:var(--mono);font-weight:600;font-size:26px;letter-spacing:.34em;color:var(--gold);white-space:nowrap}
+  .big{font-family:var(--display);font-weight:900;line-height:.85;white-space:nowrap}
+  .blab{position:absolute;font-family:var(--mono);font-weight:600;font-size:22px;letter-spacing:.2em;color:var(--cyan);white-space:nowrap;text-transform:uppercase}
+  .bulb{position:absolute;width:16px;height:16px;border-radius:50%;background:#ffe6a8;box-shadow:0 0 10px 3px rgba(255,200,90,.85)}
+  #marq{position:absolute;left:260px;top:250px;width:1400px;height:470px;border-radius:26px;background:linear-gradient(180deg,#2a0d0a,#150605);border:6px solid #e0b04a;box-shadow:0 0 0 14px #120c06,0 0 0 18px rgba(224,176,74,.4),0 40px 120px rgba(0,0,0,.8)}
+  #marq .t1{position:absolute;left:0;right:0;top:66px;text-align:center;font-family:var(--display);font-weight:900;font-size:230px;line-height:.9;letter-spacing:.03em;color:#fff5de;text-shadow:0 0 18px rgba(255,170,80,.9),0 0 50px rgba(224,71,58,.7)}
+  #marq .t2{position:absolute;left:0;right:0;top:300px;text-align:center;font-family:var(--mono);font-weight:600;font-size:34px;letter-spacing:.34em;color:var(--gold)}
+  #marq .t3{position:absolute;left:0;right:0;top:380px;text-align:center;font-family:var(--serif);font-style:italic;font-size:40px;color:#e9d9b8;opacity:.9}
+</style>
+<!--STYLE-->
+  <!-- ───────── 1 · the wheel: the ball is still spinning ───────── -->
+  <div class="scene clip feltw" data-scene="wheel" data-start="0" data-duration="1" data-track-index="1">
+    <div class="spot"></div>
+    <div class="cam" id="wcam"><svg id="wheelSvg" viewBox="0 0 1920 1080"></svg></div>
+    <div class="kicker" id="k61" style="left:110px;top:92px">LAS VEGAS · 1961</div>
+    <div class="blab" id="predLab" style="left:1330px;top:250px;opacity:0">▸ PREDICTED LANDING ZONE</div>
+    <div class="abs" id="earWrap" style="inset:0;opacity:0"><video class="vid" id="vEar" src="assets/flow/V23_wire_break.mp4" muted playsinline data-scene="wheel" data-at="N0_01|3.55" data-len="1.7" data-start="0" data-duration="1" data-media-start="2.3" data-usable-in="0" data-usable-out="8" data-track-index="10"></video><div class="grade"></div></div>
+  </div>
+
+  <!-- ───────── 2 · not luck: he's wired to a computer ───────── -->
+  <div class="scene clip blueprint" data-scene="computer" data-start="0" data-duration="1" data-track-index="2">
+    <div class="bpgrid" data-drift="1"></div>
+    <div class="cam" id="ccam">
+      <svg class="full" id="bp" viewBox="0 0 1920 1080">
+        <g id="man" fill="none" stroke="#8fe3ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity=".95">
+          <path class="bd" d="M700,122 C700,78 740,56 770,56 C804,56 836,80 836,124 C836,168 806,196 770,196 C734,196 700,168 700,122 Z"/>
+          <path class="bd" d="M745,196 L740,232 M795,196 L800,232"/>
+          <path class="bd" d="M640,262 C680,236 720,230 770,232 C820,230 862,236 900,262 L930,520 L886,528 L864,330 L850,560 L690,560 L676,330 L654,528 L610,520 Z"/>
+          <path class="bd" d="M690,560 L680,930 L740,930 L770,610 L800,930 L860,930 L850,560"/>
+          <path class="bd" d="M640,930 L744,930 L744,968 L630,968 C616,968 616,944 640,930 Z"/>
+          <path class="bd" d="M796,930 L900,930 C924,944 924,968 910,968 L796,968 Z"/>
+          <path class="bd" d="M770,232 L752,300 L770,330 L788,300 Z"/>
+          <path class="bd" d="M700,112 C712,70 760,52 800,62 C826,70 838,92 836,112 C818,96 790,88 760,92 C736,95 716,104 700,112 Z"/>
+          <path class="bd" d="M716,128 L760,128 L760,146 C760,152 752,156 740,156 C724,156 716,150 716,142 Z M780,128 L824,128 L824,142 C824,150 816,156 802,156 C788,156 780,152 780,146 Z M760,134 L780,134"/>
+          <path class="bd" d="M724,240 L770,330 L816,240 M770,330 L770,556 M745,380 l0,0 M770,400 l0,0"/>
+          <path class="bd" d="M700,470 L748,470 M792,470 L840,470 M800,300 L842,300 L842,318 L800,318 Z"/>
+          <path class="bd" d="M720,620 L730,900 M820,620 L810,900 M654,528 L660,548 M886,528 L880,548"/>
+          <path class="bd" d="M660,944 L700,944 M820,944 L870,944"/>
+        </g>
+        <g id="man2" fill="rgba(143,227,255,.07)" stroke="none"><path d="M640,262 C680,236 720,230 770,232 C820,230 862,236 900,262 L930,520 L886,528 L864,330 L850,560 L860,930 L900,930 C924,944 924,968 910,968 L630,968 C616,968 616,944 640,930 L680,930 L690,560 L676,330 L654,528 L610,520 Z M700,122 C700,78 740,56 770,56 C804,56 836,80 836,124 C836,168 806,196 770,196 C734,196 700,168 700,122 Z"/></g>
+        <g id="callouts" fill="none" stroke="#8fe3ff" stroke-width="1.5" opacity=".9">
+          <path class="co" d="M842,424 L1010,424"/><path class="co" d="M668,968 L560,1010"/><path class="co" d="M846,128 L960,86"/>
+          <path class="co" d="M560,56 L560,968 M548,56 L572,56 M548,968 L572,968"/>
+        </g>
+        <g id="bpWheel" fill="none" stroke="#8fe3ff" stroke-width="3" opacity="0"><circle cx="1480" cy="640" r="250"/><circle cx="1480" cy="640" r="190"/><circle cx="1480" cy="640" r="70"/>
+          <path d="M1480,390 L1480,890 M1230,640 L1730,640 M1303,463 L1657,817 M1657,463 L1303,817"/></g>
+        <path id="bpX" d="M1250,410 L1710,870 M1710,410 L1250,870" fill="none" stroke="#e0473a" stroke-width="16" stroke-linecap="round"/>
+        <rect id="box" x="788" y="382" width="54" height="84" rx="6" fill="rgba(143,227,255,.12)" stroke="#d9f6ff" stroke-width="3" opacity="0"/>
+        <path id="wLeg" d="M815,466 C818,560 790,700 760,820 C748,870 700,900 666,950" fill="none" stroke="#e0b04a" stroke-width="3" stroke-dasharray="1 1"/>
+        <path id="wEar" d="M815,382 C822,320 836,260 826,214 C822,190 812,160 836,132" fill="none" stroke="#e0b04a" stroke-width="3" stroke-dasharray="1 1"/>
+        <circle id="pLeg" r="9" fill="#fff4c8" opacity="0"/><circle id="pEar" r="9" fill="#fff4c8" opacity="0"/>
+        <g id="toeRing" opacity="0"><circle cx="668" cy="950" r="30" fill="none" stroke="#fff4c8" stroke-width="3"/><circle id="toeRing2" cx="668" cy="950" r="30" fill="none" stroke="#e0b04a" stroke-width="2"/></g>
+        <g id="earRing" opacity="0"><circle cx="838" cy="130" r="26" fill="none" stroke="#fff4c8" stroke-width="3"/><path id="earWaves" d="M880,100 q18,30 0,60 M905,84 q28,46 0,92" fill="none" stroke="#e0b04a" stroke-width="3" stroke-linecap="round"/></g>
+      </svg>
+      <div class="blab" id="lbBox" style="left:1024px;top:474px;opacity:0">① COMPUTER</div>
+      <div class="note abs" id="figT" style="left:110px;top:990px;color:#8fe3ff;opacity:0">FIG. 1 · WEARABLE ROULETTE COMPUTER · 1961 · (ILLUSTRATIVE)</div>
+      <div class="blab" id="lbToe" style="left:400px;top:1000px;opacity:0">② TOE SWITCH</div>
+      <div class="blab" id="lbEar" style="left:970px;top:70px;opacity:0">③ SPEAKER IN THE EAR</div>
+      <div class="frame" id="circFrame" style="left:1180px;top:500px;width:600px;height:338px;opacity:0"><video id="vCirc" src="assets/flow/V16_circuit.mp4" muted playsinline data-scene="computer" data-at="N0_02|3.1" data-len="4.2" data-start="0" data-duration="1" data-media-start="1.2" data-usable-in="0" data-usable-out="8" data-track-index="11"></video></div>
+      <div class="blab" id="lbPack" style="left:1180px;top:858px;opacity:0">≈ THE SIZE OF A CIGARETTE PACK</div>
+      <div class="abs big" id="n12" style="left:1180px;top:250px;font-size:210px;color:var(--cyan2);opacity:0">12</div>
+      <div class="blab" id="n12l" style="left:1420px;top:350px;opacity:0;font-size:30px">TRANSISTORS</div>
+    </div>
+    <div class="slam" id="nl1" style="left:120px;top:120px;font-size:150px;color:var(--cream);opacity:0">NOT LUCK.</div>
+    <div class="slam" id="nl2" style="left:120px;top:270px;font-size:110px;color:var(--cream);opacity:0">NOT A RIGGED WHEEL.</div>
+    <div class="abs" id="nl2x" style="left:112px;top:318px;width:0;height:12px;background:var(--red2)"></div>
+  </div>
+
+  <!-- ───────── 3 · five versus forty-four ───────── -->
+  <div class="scene clip feltw" data-scene="edge" data-start="0" data-duration="1" data-track-index="3">
+    <div class="spot"></div>
+    <div class="cam" id="ecam">
+      <div class="abs" id="chipRain" style="inset:0"></div>
+      <div class="kicker" id="kHouse" style="left:260px;top:250px;color:var(--red2);opacity:0">THE HOUSE</div>
+      <div class="abs big" id="n5" style="left:240px;top:300px;font-size:330px;color:var(--red2);opacity:0">5%</div>
+      <div class="kicker" id="kHim" style="left:1010px;top:250px;opacity:0">HIS MACHINE</div>
+      <div class="abs big foil" id="n44" style="left:980px;top:270px;font-size:430px;opacity:0">44%</div>
+      <div class="note abs" id="edgeNote" style="left:260px;top:860px;opacity:0">House edge on an American wheel ≈ 5.3% · machine: +44% expected gain on the favoured eighth (lab estimate)</div>
+    </div>
+  </div>
+
+  <!-- ───────── 4 · banned, and worse ───────── -->
+  <div class="scene clip noir" data-scene="danger" data-start="0" data-duration="1" data-track-index="4">
+    <div class="cam" id="dcam">
+      <div class="frame" id="disgFrame" style="left:250px;top:170px;width:880px;height:495px"><div class="grade"></div><video id="vDisg" src="assets/flow/V33_disguise.mp4" muted playsinline data-scene="danger" data-at="0.1" data-len="3.3" data-start="0" data-duration="1" data-media-start="4.5" data-usable-in="0" data-usable-out="8" data-track-index="12"></video></div>
+      <div class="kicker" id="kBan" style="left:1230px;top:300px;opacity:0">WITHIN A FEW YEARS</div>
+      <div class="abs big" id="banTx" style="left:1224px;top:350px;font-size:120px;color:var(--cream);opacity:0">CASINOS<br>BANNED HIM</div>
+    </div>
+    <div class="abs" id="roadWrap" style="inset:0;opacity:0"><video class="vid" id="vRoad" src="assets/flow/V09_mountain_road.mp4" muted playsinline data-scene="danger" data-at="N0_04|2.3" data-len="3.4" data-start="0" data-duration="1" data-media-start="0.4" data-usable-in="0" data-usable-out="4.6" data-track-index="13"></video><div class="grade"></div><div class="abs" id="redWash" style="inset:0;background:radial-gradient(ellipse at 50% 60%, rgba(224,71,58,0) 30%, rgba(160,20,10,.55) 100%);opacity:0"></div></div>
+    <div class="slam" id="forGood" style="left:960px;top:760px;font-size:96px;color:var(--cream);opacity:0;transform:translateX(-50%)">…TO STOP HIM <span class="red">FOR GOOD</span></div>
+  </div>
+
+  <!-- ───────── 5 · a bigger table, and thirty years later ───────── -->
+  <div class="scene clip noir" data-scene="bigger" data-start="0" data-duration="1" data-track-index="5">
+    <div class="abs" id="tickWrap" style="inset:0;opacity:0"><div class="grade" style="z-index:1"></div><video class="vid" id="vTick" src="assets/flow/V39_stock_ticker.mp4" muted playsinline data-scene="bigger" data-at="N0_05|0.9" data-len="2.2" data-start="0" data-duration="1" data-media-start="2.2" data-usable-in="0" data-usable-out="8" data-track-index="14"></video><div class="grade"></div></div>
+    <div class="abs" id="floorWrap" style="inset:0;opacity:0"><video class="vid" id="vFloor" src="assets/flow/V38_trading_floor.mp4" muted playsinline data-scene="bigger" data-at="N0_05|2.3" data-len="1.9" data-start="0" data-duration="1" data-media-start="1.0" data-usable-in="0" data-usable-out="8" data-track-index="15"></video><div class="grade"></div></div>
+    <div class="abs" id="yearBox" style="left:0;right:0;top:330px;text-align:center;opacity:0"><div class="kicker" style="position:static">THIRTY YEARS LATER</div><div class="big" id="yearN" style="font-size:300px;color:var(--cream);margin-top:10px">1961</div></div>
+    <div class="abs" id="bindWrap" style="inset:0;opacity:0"><video class="vid" id="vBind" src="assets/flow/V10_trade_binder.mp4" muted playsinline data-scene="bigger" data-at="N0_05|6.0" data-len="4.6" data-start="0" data-duration="1" data-media-start="0.5" data-usable-in="0" data-usable-out="8" data-track-index="16"></video><div class="grade"></div></div>
+    <div class="slam" id="trusted" style="left:110px;top:130px;font-size:78px;color:var(--cream);opacity:0">THE MOST <span class="foil">TRUSTED</span> INVESTOR IN AMERICA</div>
+    <div class="abs" id="seventeen" style="left:110px;top:760px;opacity:0"><div class="kicker" style="position:static;color:var(--red2)">WHAT NO REGULATOR WOULD SEE FOR</div><div class="big" style="font-size:150px;color:var(--cream)"><span id="n17">0</span> MORE YEARS</div></div>
+  </div>
+
+  <!-- ───────── 6 · title marquee ───────── -->
+  <div class="scene clip noir" data-scene="title" data-start="0" data-duration="1" data-track-index="6">
+    <div class="cam" id="tcam">
+      <svg class="full" id="titleWheel" viewBox="0 0 1920 1080" style="opacity:.28;filter:blur(3px)"></svg>
+      <div id="marq"><div class="t1">HE BEAT VEGAS</div><div class="t2">WITH A COMPUTER IN HIS SHOE</div><div class="t3">Guy Wonders Why</div></div>
+      <div class="abs" id="bulbs" style="inset:0"></div>
+    </div>
+  </div>
+<!--SCRIPT-->
+  // ═════════ 1 · wheel ═════════
+  F.sceneFade('wheel', .01, .25);
+  const W = N.wheel($('#wheelSvg'), 960, 600, 520, { rot: 10, ball: 60 });
+  W.race(S('wheel'), D('wheel') + .1, 560, 38);
+  gsap.set('#wcam', { transformOrigin: '960px 90px' });
+  tl.fromTo('#wcam', { scale: 2.6 }, { scale: 1.15, duration: D('wheel') - .2, ease: 'power2.inOut', immediateRender: false }, S('wheel'));
+  N.type($('#k61'), 'LAS VEGAS · 1961', V('N0_01') + .05, 24);
+  W.octant(5, P('N0_01', .55), 2.2);
+  F.show('#predLab', P('N0_01', .56), .3); tl.to('#predLab', { opacity: 0, duration: .3 }, P('N0_01', .56) + 2.1);
+  tl.set('#earWrap', { opacity: 1 }, P('N0_01', 0) + 3.55); tl.set('#earWrap', { opacity: 0 }, P('N0_01', 0) + 5.2);
+  N.push('#earWrap', V('N0_01') + 3.55, 1.7, 1.0, 1.12, { x1: -40 });
+
+  // ═════════ 2 · computer ═════════
+  F.sceneFade('computer', .15, .3);
+  N.slam($('#nl1'), V('N0_02') + .05, true);
+  N.slam($('#nl2'), P('N0_02', .09), false);
+  tl.to('#nl2x', { width: 1060, duration: .25, ease: 'power3.out' }, P('N0_02', .17));
+  tl.to('#nl1, #nl2, #nl2x', { opacity: 0, x: -60, duration: .3, ease: 'power2.in' }, P('N0_02', .27));
+  F.draw('#man .bd', P('N0_02', .24), 1.1, 'power2.out');
+  F.show('#man2', P('N0_02', .3), .6); F.draw('#callouts .co', P('N0_02', .36), .6); F.show('#figT', P('N0_02', .3), .4);
+  F.draw('#bpWheel circle, #bpWheel path', V('N0_02') + .15, .5); tl.set('#bpWheel', { opacity: 1 }, V('N0_02') + .15);
+  tl.fromTo('#bpWheel', { rotation: 0, svgOrigin: '1480 640' }, { rotation: 40, svgOrigin: '1480 640', duration: 1.4, ease: 'none', immediateRender: false }, V('N0_02') + .15);
+  F.draw('#bpX', P('N0_02', .17), .25, 'power3.out');
+  tl.to('#bpWheel, #bpX', { opacity: 0, duration: .25 }, P('N0_02', .27));
+  tl.to('#box', { opacity: 1, duration: .3 }, P('N0_02', .34));
+  tl.fromTo('#box', { scale: 1.8, transformOrigin: '815px 424px' }, { scale: 1, duration: .35, ease: 'back.out(2)', immediateRender: false }, P('N0_02', .34));
+  F.show('#lbBox', P('N0_02', .36), .3);
+  F.draw('#wLeg', P('N0_02', .4), .6); F.draw('#wEar', P('N0_02', .42), .5);
+  // the "12" counter and the circuit footage
+  tl.to('#n12, #n12l', { opacity: 1, duration: .2 }, P('N0_02', .38));
+  N.count($('#n12'), 0, 12, P('N0_02', .38), .9, v => Math.round(v));
+  tl.fromTo('#circFrame', { opacity: 0, y: 40, rotation: 3 }, { opacity: 1, y: 0, rotation: -1.5, duration: .45, ease: 'power3.out', immediateRender: false }, P('N0_02', .38));
+  F.show('#lbPack', P('N0_02', .55), .3);
+  N.push('#circFrame video', P('N0_02', .38), 4.2, 1.0, 1.15);
+  // signal pulses along the wires
+  const along = (pathSel, dotSel, t, d, rev) => {
+    const p = $(pathSel), L = p.getTotalLength(), pr = { u: 0 }, dot = $(dotSel);
+    tl.set(dotSel, { opacity: 1 }, t);
+    tl.fromTo(pr, { u: 0 }, { u: 1, duration: d, ease: 'power1.inOut', immediateRender: false, onUpdate: () => { const q = p.getPointAtLength(L * (rev ? 1 - pr.u : pr.u)); dot.setAttribute('cx', q.x); dot.setAttribute('cy', q.y); } }, t);
+    tl.set(dotSel, { opacity: 0 }, t + d);
+  };
+  // "A switch in a shoe" → camera to the toe; "a speaker in his ear" → camera to the ear
+  gsap.set('#ccam', { transformOrigin: '700px 560px' });
+  tl.to('#ccam', { scale: 1.9, x: 180, y: -520, duration: .6, ease: 'power3.inOut' }, P('N0_02', .7));
+  tl.to('#circFrame, #lbPack, #n12, #n12l', { opacity: 0, duration: .2 }, P('N0_02', .69));
+  tl.to('#toeRing', { opacity: 1, duration: .1 }, P('N0_02', .76));
+  tl.fromTo('#toeRing2', { attr: { r: 30 }, opacity: 1 }, { attr: { r: 90 }, opacity: 0, duration: .6, repeat: 1, ease: 'power2.out', immediateRender: false }, P('N0_02', .76));
+  F.show('#lbToe', P('N0_02', .77), .2);
+  along('#wLeg', '#pLeg', P('N0_02', .8), .5, true);
+  tl.to('#ccam', { scale: 1.9, x: 0, y: 560, duration: .55, ease: 'power3.inOut' }, P('N0_02', .87));
+  tl.to('#earRing', { opacity: 1, duration: .1 }, P('N0_02', .92));
+  tl.fromTo('#earWaves', { scale: .6, opacity: 0, transformOrigin: '880px 130px' }, { scale: 1.2, opacity: 1, duration: .35, repeat: 2, yoyo: true, immediateRender: false }, P('N0_02', .92));
+  along('#wEar', '#pEar', P('N0_02', .86), .4);
+  F.show('#lbEar', P('N0_02', .93), .2);
+  tl.to('#ccam', { scale: 1, x: 0, y: 0, duration: .45, ease: 'power3.in' }, E('computer') - .45);
+
+  // ═════════ 3 · 5% vs 44% ═════════
+  F.sceneFade('edge', .15, .3);
+  tl.fromTo('#ecam', { scale: 1.1 }, { scale: 1, duration: D('edge'), ease: 'power1.out', immediateRender: false, data: 'drift' }, S('edge'));
+  F.show('#kHouse', V('N0_03') + .1, .2); N.slam($('#n5'), V('N0_03') + .2, false);
+  N.odds.set(S('edge') - .01, -5.3, 'HOUSE', .01); N.odds.show(V('N0_03') + .3);
+  tl.to('#n5', { scale: 1.06, textShadow: '0 0 60px rgba(224,71,58,.8)', transformOrigin: '0 50%', duration: .45, yoyo: true, repeat: 1, ease: 'sine.inOut' }, V('N0_03') + .7);
+  tl.to('#n5', { opacity: .35, scale: .8, transformOrigin: '0 50%', duration: .4 }, P('N0_03', .62));
+  F.show('#kHim', P('N0_03', .64), .2); N.slam($('#n44'), P('N0_03', .7), true); N.flash(P('N0_03', .7) + .2, .45, .4);
+  N.odds.set(P('N0_03', .7) + .2, 44, 'PLAYER', .9);
+  F.show('#edgeNote', P('N0_03', .8), .4);
+  const setBase = $('#ecam');
+  [[160, 760, 7, '#b3261a'], [300, 790, 5, '#1c1c1c'], [1560, 770, 8, '#e0b04a'], [1700, 800, 4, '#f3ead6']].forEach(([x, y, n, c], i) => N.dropStack(N.stack(setBase, x, y, n, c, '$'), S('edge') + .02 + i * .08, .03));
+  // chips rain
+  const rain = $('#chipRain');
+  for (let i = 0; i < 26; i++) {
+    const c = N.stack(rain, (rnd() * 1800) | 0, -320, 1, ['#b3261a', '#e0b04a', '#1c1c1c', '#f3ead6'][i % 4], i % 3 ? '' : '$')[0];
+    tl.fromTo(c, { y: 0, rotation: rnd() * 360, opacity: 1 }, { y: 1400, rotation: '+=' + (200 + rnd() * 400), duration: 1.3 + rnd() * .6, ease: 'power1.in', immediateRender: false }, P('N0_03', .72) + rnd() * .9);
+    tl.set(c, { opacity: 0 }, 0);
+  }
+  N.odds.hide(E('edge') - .2);
+
+  // ═════════ 4 · danger ═════════
+  F.sceneFade('danger', .15, 0);
+  N.recon(S('danger') + .1, 3.1);
+  tl.fromTo('#disgFrame', { rotation: -2, scale: .96 }, { rotation: 1, scale: 1.02, duration: 3.4, ease: 'sine.inOut', immediateRender: false }, S('danger'));
+  F.show('#kBan', V('N0_04') + .1, .2);
+  tl.fromTo('#banTx', { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: .35, ease: 'power3.out', immediateRender: false }, V('N0_04') + .25);
+  const banned = N.stamp($('#dcam'), 'BARRED', 380, 330, 170, -12);
+  N.slam(banned, P('N0_04', .3));
+  tl.set('#roadWrap', { opacity: 1 }, V('N0_04') + 2.3);
+  N.push('#roadWrap', V('N0_04') + 2.3, 3.4, 1.0, 1.1);
+  tl.to('#redWash', { opacity: 1, duration: .6, repeat: 3, yoyo: true, ease: 'sine.inOut' }, V('N0_04') + 2.4);
+  tl.fromTo('#forGood', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: .3, ease: 'power3.out', immediateRender: false }, P('N0_04', .72));
+  tl.to('#forGood', { opacity: 0, duration: .25 }, E('danger') - .3);
+
+  // ═════════ 5 · bigger table ═════════
+  F.sceneFade('bigger', .1, .2);
+  tl.set('#tickWrap', { opacity: 1 }, V('N0_05') + .9); tl.set('#tickWrap', { opacity: 0 }, V('N0_05') + 2.3);
+  N.push('#tickWrap', V('N0_05') + .9, 1.4, 1.05, 1.2);
+  tl.set('#floorWrap', { opacity: 1 }, V('N0_05') + 2.3); tl.set('#floorWrap', { opacity: 0 }, V('N0_05') + 4.2);
+  N.push('#floorWrap', V('N0_05') + 2.3, 1.9, 1.15, 1.0);
+  N.words($('[data-scene="bigger"]'), 'A BIGGER TABLE', 960, 430, 150, V('N0_05') + .05, { color: 'var(--gold)', center: true }).id = 'bigT2';
+  tl.to('#bigT2', { opacity: 0, duration: .2 }, V('N0_05') + .85);
+  // 1961 → 1991
+  tl.to('#yearBox', { opacity: 1, duration: .2 }, V('N0_05') + 4.2);
+  N.count($('#yearN'), 1961, 1991, V('N0_05') + 4.3, 1.2, v => Math.round(v), 'power2.inOut');
+  tl.to('#yearBox', { opacity: 0, scale: 1.3, duration: .3, ease: 'power2.in' }, V('N0_05') + 5.8);
+  tl.set('#bindWrap', { opacity: 1 }, V('N0_05') + 6.0);
+  N.push('#bindWrap', V('N0_05') + 6.0, 4.6, 1.0, 1.14, { y1: -30 });
+  tl.fromTo('#trusted', { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: .4, ease: 'power3.out', immediateRender: false }, V('N0_05') + 6.1);
+  tl.to('#seventeen', { opacity: 1, duration: .25 }, P('N0_05', .84));
+  N.count($('#n17'), 0, 17, P('N0_05', .84), 1.1, v => Math.round(v), 'power3.out');
+  N.glitch('[data-scene="bigger"]', E('bigger') - .45, .4);
+
+  // ═════════ 6 · title ═════════
+  F.sceneFade('title', .01, 0);
+  const TW = N.wheel($('#titleWheel'), 960, 560, 700, { rot: 0, ball: 0 });
+  TW.race(S('title'), D('title'), 300, 25);
+  N.flash(S('title'), .9, .6);
+  tl.fromTo('#marq', { scale: 1.25, opacity: 0 }, { scale: 1, opacity: 1, duration: .5, ease: 'power4.out', immediateRender: false }, S('title') + .05);
+  tl.fromTo('#tcam', { scale: 1 }, { scale: 1.06, duration: D('title'), ease: 'none', immediateRender: false }, S('title'));
+  const bulbs = $('#bulbs'), B = [];
+  const bx0 = 240, by0 = 230, bw = 1440, bh = 510, per = 2 * (bw + bh), nb = 64;
+  for (let i = 0; i < nb; i++) {
+    let s = i / nb * per, x, y;
+    if (s < bw) { x = bx0 + s; y = by0; } else if ((s -= bw) < bh) { x = bx0 + bw; y = by0 + s; } else if ((s -= bh) < bw) { x = bx0 + bw - s; y = by0 + bh; } else { s -= bw; x = bx0; y = by0 + bh - s; }
+    const b = div('bulb', bulbs); b.style.left = (x - 8) + 'px'; b.style.top = (y - 8) + 'px'; B.push(b);
+  }
+  tl.set(B, { opacity: 0 }, 0);
+  tl.to(B, { opacity: 1, duration: .05, stagger: .012 }, S('title') + .1);
+  for (let t = S('title') + 1.0; t < E('title') - .3; t += .18) { const k = Math.round((t - S('title')) / .18) % 3; tl.set(B, { opacity: (i) => (i % 3 === k ? .2 : 1) }, t); }

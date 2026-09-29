@@ -1,0 +1,217 @@
+<style>
+  .kicker{position:absolute;font-family:var(--mono);font-weight:600;font-size:24px;letter-spacing:.34em;color:var(--gold);white-space:nowrap}
+  .big{font-family:var(--display);font-weight:900;line-height:.85;white-space:nowrap}
+  .blab{position:absolute;font-family:var(--mono);font-weight:600;font-size:22px;letter-spacing:.18em;color:var(--cyan);white-space:nowrap;text-transform:uppercase}
+  .hud{position:absolute;font-family:var(--mono);font-weight:600;color:var(--cyan2);white-space:nowrap}
+  .hud b{display:block;font-family:var(--display);font-weight:900;font-size:86px;line-height:.95;color:#fff}
+  .icon{position:absolute;width:150px;height:150px;border:3px solid var(--gold);border-radius:24px;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:900;font-size:40px;color:var(--gold);background:rgba(10,8,6,.6)}
+  .bit{position:absolute;font-family:var(--mono);font-weight:600;font-size:26px;color:rgba(143,227,255,.75)}
+  .bill{position:absolute;width:360px;height:154px;border-radius:6px;background:linear-gradient(135deg,#c9d8b4,#9fb58a);border:3px solid #56704a;box-shadow:0 10px 26px rgba(0,0,0,.45)}
+  .bill::before{content:"";position:absolute;left:128px;top:18px;width:104px;height:118px;border-radius:50%;border:3px solid #56704a;background:radial-gradient(circle,#b8c9a0,#8ea67a)}
+  .bill::after{content:"100";position:absolute;left:16px;top:8px;font-family:var(--display);font-weight:900;font-size:42px;color:#3e5636}
+  .bill i{position:absolute;right:16px;bottom:6px;font-family:var(--display);font-weight:900;font-size:42px;color:#3e5636;font-style:normal}
+  .strip{position:absolute;height:170px;display:flex;gap:18px;padding:18px;background:#0b0b0b;border-top:8px dashed #2a2a2a;border-bottom:8px dashed #2a2a2a}
+  .strip div{width:210px;height:118px;background:radial-gradient(circle at 50% 50%,#6e3816 0 30%,#2a1407 31% 44%,#141414 45% 60%,#0f3b2e 61%);border:2px solid #333;position:relative}
+  .strip div span{position:absolute;left:8px;bottom:4px;font-family:var(--mono);font-size:14px;color:#e0b04a}
+  #note8 span{display:inline-block;width:64px;height:64px;margin:0 10px;border-radius:50%;border:3px solid #8fe3ff;font-family:var(--display);font-weight:900;font-size:34px;line-height:58px;text-align:center;color:#8fe3ff}
+</style>
+<!--STYLE-->
+  <div class="scene clip noir" data-scene="card" data-start="0" data-duration="1" data-track-index="1"><div class="chcard"></div></div>
+
+  <!-- ───────── 1 · Edward Thorp, a physics student ───────── -->
+  <div class="scene clip noir" data-scene="ucla" data-start="0" data-duration="1" data-track-index="2">
+    <div class="abs" id="uniWrap" style="inset:0"><div class="grade" style="z-index:1"></div><video class="vid" id="vUni" src="assets/flow/V13_university.mp4" muted playsinline data-scene="ucla" data-at="0" data-len="8" data-start="0" data-duration="1" data-media-start="0" data-usable-in="0" data-usable-out="8" data-track-index="10"></video></div>
+    <div class="abs feltw" id="qWorld" style="inset:0;opacity:0">
+      <div class="spot"></div>
+      <div class="frame feltw" id="wheelFrame" style="left:560px;top:130px;width:800px;height:450px"><svg id="frameWheel" viewBox="0 0 800 450" style="position:absolute;inset:0;width:800px;height:450px"></svg><div class="grade"></div><video id="vWheel" src="assets/flow/V12_overhead_wheel.mp4" muted playsinline data-scene="ucla" data-at="N1_01|5.0" data-len="2.75" data-start="0" data-duration="1" data-media-start="0" data-usable-in="0" data-usable-out="2.75" data-track-index="11"></video></div>
+      <div class="abs big" id="qText" style="left:0;right:0;top:660px;text-align:center;font-size:150px;color:var(--cream);opacity:0">IS ROULETTE REALLY <span class="gold">RANDOM?</span></div>
+    </div>
+  </div>
+
+  <!-- ───────── 2 · same laws as a planet ───────── -->
+  <div class="scene clip blueprint" data-scene="physics" data-start="0" data-duration="1" data-track-index="3">
+    <div class="bpgrid" data-drift="1"></div>
+    <div class="cam" id="pcam">
+      <svg class="full" id="orbitSvg" viewBox="0 0 1920 1080">
+        <g id="solar"><circle id="sun" cx="700" cy="540" r="70" fill="#e0b04a" opacity=".95"/><circle cx="700" cy="540" r="110" fill="none" stroke="#e0b04a" stroke-opacity=".25" stroke-width="30"/>
+          <ellipse id="orb" cx="700" cy="540" rx="360" ry="250" fill="none" stroke="#8fe3ff" stroke-width="3" stroke-dasharray="10 10"/>
+          <circle id="planet" cx="1060" cy="540" r="30" fill="#8fe3ff"/>
+          <line id="gArrow" x1="1060" y1="540" x2="960" y2="540" stroke="#fff4c8" stroke-width="4" marker-end="url(#ah)"/></g>
+        <defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fff4c8"/></marker></defs>
+        <g id="wheelSpot" opacity="0"></g>
+        <path id="decay" d="M1180,300 C1280,310 1360,380 1430,470 C1500,560 1560,640 1700,690" fill="none" stroke="#e0b04a" stroke-width="5"/>
+        <path id="decayAx" d="M1180,260 L1180,700 L1720,700" fill="none" stroke="#8fe3ff" stroke-width="2"/>
+      </svg>
+      <div class="blab" id="lawLab" style="left:520px;top:130px;opacity:0">SAME LAWS · SAME MATH</div>
+      <div class="hud" id="hudV" style="left:1200px;top:180px;opacity:0">BALL SPEED<b id="vNum">2.40</b>REV / SEC</div>
+      <div class="hud" id="hudA" style="left:1560px;top:180px;opacity:0">POSITION<b id="aNum">212°</b>FROM THE MARK</div>
+      <div class="blab" id="decLab" style="left:1180px;top:720px;opacity:0">SPEED ▸ TIME · IT SLOWS PREDICTABLY</div>
+      <div class="blab" id="zoneLab" style="left:250px;top:930px;opacity:0">▸ WHERE IT SLOWS DOWN = WHERE TO LOOK</div>
+    </div>
+  </div>
+
+  <!-- ───────── 3 · Claude Shannon ───────── -->
+  <div class="scene clip noir" data-scene="shannon" data-start="0" data-duration="1" data-track-index="4">
+    <div class="abs" id="offWrap" style="inset:0"><div class="grade" style="z-index:1"></div><video class="vid" id="vOff" src="assets/flow/V14_office_meeting.mp4" muted playsinline data-scene="shannon" data-at="0.05" data-len="8" data-start="0" data-duration="1" data-media-start="0" data-usable-in="0" data-usable-out="8" data-track-index="12"></video></div>
+    <div class="abs" id="bits" style="inset:0;opacity:0;background:radial-gradient(1200px 700px at 50% 50%, #0b1d2a 0%, #05090e 75%)">
+      <div class="abs" id="bitCols" style="inset:0"></div>
+      <div class="icon" id="ic1" style="left:560px;top:440px">TEXT</div><div class="icon" id="ic2" style="left:885px;top:440px">CALL</div><div class="icon" id="ic3" style="left:1210px;top:440px">FILE</div>
+      <div class="kicker" id="itKick" style="left:0;right:0;top:270px;text-align:center;color:var(--cyan)">INFORMATION THEORY · 1948</div>
+      <div class="abs serif i" id="paperT" style="left:0;right:0;top:330px;text-align:center;font-size:48px;color:var(--cream)"></div>
+      <div class="note abs" id="itNote" style="left:0;right:0;top:680px;text-align:center">The math of sending any message as bits</div>
+    </div>
+  </div>
+
+  <!-- ───────── 4 · the basement lab ───────── -->
+  <div class="scene clip noir" data-scene="basement" data-start="0" data-duration="1" data-track-index="5">
+    <div class="cam" id="bcam">
+      <div class="abs" id="lamp" style="left:560px;top:-80px;width:800px;height:900px;background:radial-gradient(ellipse at 50% 10%, rgba(255,214,140,.35), rgba(0,0,0,0) 65%)"></div>
+      <div class="abs" style="left:460px;top:330px;width:1000px;height:640px;perspective:1400px"><div id="tableTilt" style="position:absolute;inset:0;transform:rotateX(58deg);transform-origin:50% 60%"><svg id="labWheel" viewBox="0 0 1000 1000" style="position:absolute;left:0;top:-180px;width:1000px;height:1000px"></svg></div></div>
+      <div class="strip" id="filmStrip" style="left:0;top:40px;width:3200px"></div>
+      <div class="hud" id="watch" style="left:1500px;top:780px;opacity:0">STOPWATCH<b id="watchN">00.00</b>SEC</div>
+      <div class="kicker" id="kBase" style="left:110px;top:780px;opacity:0">SHANNON'S BASEMENT · 1960</div>
+    </div>
+    <div class="abs" id="solderWrap" style="inset:0;opacity:0"><div class="grade" style="z-index:1"></div><video class="vid" id="vSolder" src="assets/flow/V16_circuit.mp4" muted playsinline data-scene="basement" data-at="N1_04|4.35" data-len="2.2" data-start="0" data-duration="1" data-media-start="3.9" data-usable-in="0" data-usable-out="8" data-track-index="13"></video></div>
+  </div>
+
+  <!-- ───────── 5 · how it works ───────── -->
+  <div class="scene clip blueprint" data-scene="device" data-start="0" data-duration="1" data-track-index="6">
+    <div class="bpgrid" data-drift="1"></div>
+    <div class="cam" id="dvcam">
+      <svg class="full" id="devSvg" viewBox="0 0 1920 1080">
+        <line id="mark" x1="640" y1="70" x2="640" y2="190" stroke="#8fe3ff" stroke-width="5"/>
+        <path id="flow1" d="M1010,300 C1150,300 1180,420 1300,420" fill="none" stroke="#e0b04a" stroke-width="4" stroke-dasharray="1 1"/>
+      </svg>
+      <div class="blab" id="markLab" style="left:668px;top:84px;opacity:0">REFERENCE MARK</div>
+      <div class="hud" id="clk1" style="left:1060px;top:170px;opacity:0">CLICK 1<b>▾</b></div>
+      <div class="hud" id="clk2" style="left:1250px;top:170px;opacity:0">CLICK 2<b>▾</b></div>
+      <div class="hud" id="lapT" style="left:1060px;top:330px;opacity:0">ONE LAP<b id="lapN">0.00 s</b></div>
+      <div class="icon" id="cpu" style="left:1300px;top:350px;width:200px;height:140px;border-color:var(--cyan);color:var(--cyan)">COMPUTER</div>
+      <div class="hud" id="predict" style="left:1060px;top:560px;opacity:0">PREDICTION<b>SLICE 5 OF 8</b></div>
+      <div class="abs" id="note8" style="left:1040px;top:800px;opacity:0"></div>
+      <div class="blab" id="toneLab" style="left:1060px;top:900px;opacity:0">8 TONES · ONE PER EIGHTH OF THE WHEEL</div>
+      <div class="abs big" id="noNum" style="left:1100px;top:560px;font-size:96px;color:var(--cream);opacity:0">NOT THE <span class="red">NUMBER.</span></div>
+      <div class="abs big foil" id="eighth" style="left:1100px;top:680px;font-size:96px;opacity:0">JUST THE RIGHT EIGHTH.</div>
+    </div>
+  </div>
+
+  <!-- ───────── 6 · a license to print money, but one flaw ───────── -->
+  <div class="scene clip feltw" data-scene="flaw" data-start="0" data-duration="1" data-track-index="7">
+    <div class="spot"></div>
+    <div class="abs" id="bills" style="inset:0"></div>
+    <div class="abs big" id="lic" style="left:0;right:0;top:250px;text-align:center;font-size:140px;color:var(--cream);opacity:0">A LICENSE TO <span class="foil">PRINT MONEY</span></div>
+    <div class="abs" id="flawBox" style="inset:0;opacity:0;background:radial-gradient(1200px 700px at 50% 50%, #200606 0%, #050202 80%)">
+      <svg class="full" viewBox="0 0 1920 1080"><path id="flawWire" d="M300,620 C600,600 800,700 960,640 C1120,580 1300,660 1620,620" fill="none" stroke="#e0b04a" stroke-width="6"/>
+        <circle id="flawRing" cx="960" cy="640" r="90" fill="none" stroke="#e0473a" stroke-width="8"/></svg>
+      <div class="abs big" id="oneFlaw" style="left:0;right:0;top:300px;text-align:center;font-size:170px;color:var(--red2)">ONE FLAW.</div>
+    </div>
+  </div>
+<!--SCRIPT-->
+  // ═════════ card ═════════
+  F.sceneFade('card', .3, .3); N.chapter('card', 1, 'THE QUESTION', '♠');
+
+  // ═════════ 1 · ucla ═════════
+  F.sceneFade('ucla', .3, .25);
+  N.push('#uniWrap', S('ucla'), 5.2, 1.0, 1.12, { y1: 20 });
+  N.lower($('[data-scene="ucla"]'), 'Edward O. Thorp', 'PHYSICS STUDENT · LOS ANGELES · 1950s', V('N1_01') + .4, 3.6);
+  tl.to('#qWorld', { opacity: 1, duration: .25 }, V('N1_01') + 4.95);
+  N.push('#wheelFrame', V('N1_01') + 4.95, 4.2, .9, 1.04);
+  const FW = N.wheel($('#frameWheel'), 400, 225, 150, { rot: 0, ball: 0 }); FW.race(V('N1_01') + 4.9, E('ucla') - V('N1_01') - 4.9, 420, 30);
+  N.type($('#qText'), 'IS ROULETTE REALLY RANDOM?', P('N1_01', .76), 30); tl.set('#qText', { opacity: 1 }, P('N1_01', .76));
+  tl.to('#qText', { scale: 1.06, duration: .5, yoyo: true, repeat: 1, ease: 'sine.inOut' }, P('N1_01', .76) + 1.0);
+
+  // ═════════ 2 · physics ═════════
+  F.sceneFade('physics', .2, .25);
+  const orb = { a: 0 };
+  const drawOrb = () => { const a = orb.a, x = 700 + 360 * Math.cos(a), y = 540 + 250 * Math.sin(a);
+    $('#planet').setAttribute('cx', x); $('#planet').setAttribute('cy', y);
+    const dx = 700 - x, dy = 540 - y, L = Math.hypot(dx, dy); $('#gArrow').setAttribute('x1', x); $('#gArrow').setAttribute('y1', y);
+    $('#gArrow').setAttribute('x2', x + dx / L * 110); $('#gArrow').setAttribute('y2', y + dy / L * 110); };
+  tl.fromTo(orb, { a: 0 }, { a: Math.PI * 2.4, duration: P('N1_02', .4) - S('physics'), ease: 'none', onUpdate: drawOrb, immediateRender: false }, S('physics'));
+  drawOrb();
+  F.show('#lawLab', P('N1_02', .15), .3);
+  // morph: orbit → wheel
+  const PW = N.wheel($('#wheelSpot'), 700, 540, 330, { rot: 0, ball: 0 });
+  tl.to('#solar', { opacity: 0, scale: .9, svgOrigin: '700 540', duration: .5 }, P('N1_02', .4));
+  tl.to('#wheelSpot', { opacity: 1, duration: .5 }, P('N1_02', .4));
+  PW.race(P('N1_02', .4), E('physics') - P('N1_02', .4), 480, 30);
+  tl.to('#lawLab', { opacity: 0, duration: .2 }, P('N1_02', .4));
+  F.show('#hudV', P('N1_02', .5), .25); N.count($('#vNum'), 2.4, 1.1, P('N1_02', .5), 3, v => v.toFixed(2), 'power1.out');
+  F.show('#hudA', P('N1_02', .62), .25); N.count($('#aNum'), 212, 348, P('N1_02', .62), 2.5, v => Math.round(v) + '°', 'none');
+  F.draw('#decayAx', P('N1_02', .7), .4); F.draw('#decay', P('N1_02', .74), .9); F.show('#decLab', P('N1_02', .74), .3);
+  PW.octant(5, P('N1_02', .86), 1.4); F.show('#zoneLab', P('N1_02', .86), .3);
+
+  // ═════════ 3 · Shannon ═════════
+  F.sceneFade('shannon', .2, .3);
+  N.recon(S('shannon') + .2, 7.5);
+  N.push('#offWrap', S('shannon'), 8, 1.0, 1.08);
+  N.lower($('[data-scene="shannon"]'), 'Ed Thorp', 'MATH INSTRUCTOR · MIT · 1960', V('N1_03') + .3, 2.8);
+  N.lower($('[data-scene="shannon"]'), 'Claude Shannon', 'INVENTOR OF INFORMATION THEORY', V('N1_03') + 4.6, 3.2);
+  tl.to('#bits', { opacity: 1, duration: .3 }, S('shannon') + 8.0);
+  const cols = $('#bitCols');
+  for (let c = 0; c < 26; c++) {
+    const col = div('bit', cols, Array.from({ length: 30 }, () => (rnd() > .5 ? 1 : 0)).join('<br>'));
+    col.style.left = (40 + c * 72) + 'px'; col.style.top = '-900px'; col.style.lineHeight = '32px'; col.dataset.drift = '1';
+    tl.fromTo(col, { y: 0 }, { y: 1900, duration: 3 + rnd() * 2, ease: 'none', immediateRender: false, data: 'ambient' }, S('shannon') + 7.9 + rnd() * .5);
+  }
+  ['#ic1', '#ic2', '#ic3'].forEach((s, i) => tl.fromTo(s, { opacity: 0, scale: .6 }, { opacity: 1, scale: 1, duration: .3, ease: 'back.out(2)', immediateRender: false }, P('N1_03', .8) + i * .22));
+  F.show('#itKick', S('shannon') + 8.1, .3); N.type($('#paperT'), '“A Mathematical Theory of Communication”', S('shannon') + 8.3, 22); F.show('#itNote', P('N1_03', .82), .3);
+  tl.to('#ic1, #ic2, #ic3', { borderColor: '#8fe3ff', color: '#8fe3ff', duration: .2, stagger: .15 }, P('N1_03', .93));
+
+  // ═════════ 4 · basement ═════════
+  F.sceneFade('basement', .2, .25);
+  const LW = N.wheel($('#labWheel'), 500, 500, 420, { rot: 0, ball: 0 });
+  LW.race(S('basement'), D('basement'), 520, 40);
+  F.show('#kBase', V('N1_04') + .1, .3);
+  tl.fromTo('#bcam', { scale: 1.12 }, { scale: 1, duration: D('basement'), ease: 'sine.out', immediateRender: false, data: 'drift' }, S('basement'));
+  // strobe + film strip ("they filmed it") + stopwatch ("timed it")
+  for (let k = 0; k < 6; k++) N.flash(P('N1_04', .28) + k * .16, .28, .08);
+  const strip = $('#filmStrip');
+  for (let i = 0; i < 14; i++) div('', strip, `<span>FRAME ${String(i + 1).padStart(3, '0')}</span>`);
+  tl.fromTo('#filmStrip', { x: 200, opacity: 0 }, { x: -1400, opacity: 1, duration: 3.2, ease: 'none', immediateRender: false }, P('N1_04', .3));
+  tl.to('#filmStrip', { opacity: 0, duration: .3 }, P('N1_04', .3) + 2.9);
+  F.show('#watch', P('N1_04', .52), .2); N.count($('#watchN'), 0, 3.47, P('N1_04', .52), 1.6, v => v.toFixed(2).padStart(5, '0'), 'none');
+  tl.set('#solderWrap', { opacity: 1 }, V('N1_04') + 4.35); N.push('#solderWrap', V('N1_04') + 4.35, 2.2, 1.05, 1.18);
+
+  // ═════════ 5 · device ═════════
+  F.sceneFade('device', .2, .25);
+  const DW = N.wheel($('#devSvg'), 640, 540, 400, { rot: 0, ball: 300 });
+  // ball laps; clicks land when the ball passes the mark (top, angle 0)
+  const lap = 1.45, t0 = V('N1_05') + .15;
+  const pr = { t: 0 };
+  tl.fromTo(pr, { t: 0 }, { t: E('device') - t0, duration: E('device') - t0, ease: 'none', immediateRender: false,
+    onUpdate: () => { DW.rotor.setAttribute('transform', `rotate(${(pr.t * 22).toFixed(2)})`); const a = -300 - pr.t * (360 / lap);
+      DW.ball.setAttribute('cx', Math.sin(a / 57.2958) * 400 * .905); DW.ball.setAttribute('cy', -Math.cos(a / 57.2958) * 400 * .905); } }, t0);
+  F.show('#markLab', V('N1_05') + .1, .3);
+  const click = (sel, t) => { tl.fromTo(sel, { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: .18, ease: 'back.out(3)', immediateRender: false }, t);
+    tl.fromTo('#mark', { attr: { stroke: '#ffffff', 'stroke-width': 14 } }, { attr: { stroke: '#8fe3ff', 'stroke-width': 5 }, duration: .4, immediateRender: false }, t); };
+  let c1 = t0 + lap / 6; while (c1 < P('N1_05', .04)) c1 += lap;   // the ball passes the mark (angle 0) at t0 + lap/6 + k·lap
+  const c2 = c1 + lap;
+  click('#clk1', c1); click('#clk2', c2);
+  tl.to('#lapT', { opacity: 1, duration: .15 }, c1); N.count($('#lapN'), 0, lap, c1, lap, v => v.toFixed(2) + ' s', 'none');
+  F.draw('#flow1', P('N1_05', .42), .5); tl.fromTo('#cpu', { boxShadow: '0 0 0 rgba(143,227,255,0)' }, { boxShadow: '0 0 60px rgba(143,227,255,.9)', duration: .3, yoyo: true, repeat: 3, immediateRender: false }, P('N1_05', .45));
+  tl.fromTo('#predict', { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: .3, immediateRender: false }, P('N1_05', .5));
+  // eight tones
+  const n8 = $('#note8');
+  n8.innerHTML = Array.from({ length: 8 }, (_, i) => `<span>${'CDEFGABC'[i]}</span>`).join('');
+  tl.to('#note8', { opacity: 1, duration: .2 }, P('N1_05', .62)); F.show('#toneLab', P('N1_05', .64), .3);
+  $$('#note8 span').forEach((s, i) => { tl.fromTo(s, { background: 'rgba(143,227,255,0)', color: '#8fe3ff' }, { background: 'rgba(143,227,255,1)', color: '#05090e', duration: .08, yoyo: true, repeat: 1, immediateRender: false }, P('N1_05', .66) + i * .22); DW.octant(i, P('N1_05', .66) + i * .22, .2); });
+  // N1_06: not the number, the eighth → 44%
+  tl.to('#predict, #clk1, #clk2, #lapT', { opacity: 0, duration: .25 }, V('N1_06'));
+  N.slam($('#noNum'), V('N1_06') + .1, false);
+  DW.octant(4, P('N1_06', .35), 3); tl.fromTo('#eighth', { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: .3, immediateRender: false }, P('N1_06', .35));
+  N.odds.set(S('device'), 0, 'EVEN', .01); N.odds.show(P('N1_06', .62)); N.odds.set(P('N1_06', .66), 44, 'PLAYER', 1);
+  N.odds.hide(E('device') - .1);
+
+  // ═════════ 6 · flaw ═════════
+  F.sceneFade('flaw', .15, 0);
+  const bills = $('#bills');
+  for (let i = 0; i < 14; i++) {
+    const b = div('bill', bills, '<i>100</i>'); b.style.left = (200 + (i % 7) * 230) + 'px'; b.style.top = (560 + Math.floor(i / 7) * 120) + 'px';
+    tl.fromTo(b, { y: -900, rotation: (rnd() - .5) * 60, opacity: 0 }, { y: 0, rotation: (rnd() - .5) * 16, opacity: 1, duration: .5, ease: 'power3.out', immediateRender: false }, V('N1_07') + i * .06);
+    tl.set(b, { opacity: 0 }, 0);
+  }
+  tl.fromTo('#lic', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: .3, ease: 'power3.out', immediateRender: false }, V('N1_07') + .05);
+  tl.set('#flawBox', { opacity: 1 }, P('N1_07', .58)); N.flash(P('N1_07', .58), .5, .25); N.shake(P('N1_07', .58), 12, .3);
+  F.draw('#flawWire', P('N1_07', .58), .3); F.draw('#flawRing', P('N1_07', .66), .35);
+  N.glitch('#flawWire', P('N1_07', .8), .5);
