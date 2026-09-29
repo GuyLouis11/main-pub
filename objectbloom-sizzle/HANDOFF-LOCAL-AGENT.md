@@ -8,7 +8,7 @@ You're Claude running locally on Guy's Mac (Claude Code, optionally with Claude 
 - **No invented** clients, testimonials, logos or results.
 - **Keep the repos separate:** `GuyLouis11/objectbloom-site` (the website) and `GuyLouis11/main-pub`, folder `objectbloom-sizzle/` (the reel pipeline).
 
-## 1. Launch the website (do this first)
+## 1. Launch the website (DONE: Guy published it; keep this section only for reference and rollback)
 - **Status first:** Guy may already have asked ChatGPT to publish this PR. Check whether PR #1 is merged and whether objectbloom.com shows the new design. If it's live, skip to the live-site checks in step 4.
 - **Where it is:** PR https://github.com/GuyLouis11/objectbloom-site/pull/1 (`redesign/launch-kit` → `main`). `main` is exactly the live site (Sites project `appgprj_6a9b5d40cdf48191856ea6974374dcd4`, published version 115).
 - **Read first:** `LAUNCH-KIT-RELEASE.md`, `PRODUCT.md`, `PURCHASE-WORKFLOW.md`, `inquiry-workflow.md`, `README.md`.
