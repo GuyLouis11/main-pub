@@ -463,6 +463,13 @@ FILM_INIT();
   place('#mC', mC); place('#mH', mH);
   tl.fromTo('#lcam', { scale: 1.12, x: -120 }, { scale: 1.0, x: 0, duration: 3.2, ease: 'power2.out', immediateRender: false }, S('landscape'));
   tl.to('#lcam', { scale: 1.04, duration: Math.max(1, D('landscape') - 3.2), ease: 'sine.inOut' }, S('landscape') + 3.2);
+  // a frost point surveys the ridge line from left to right as the camera settles
+  const scan = el('circle', { r: 8, fill: '#e3f8ff', opacity: 0 }, $('#contours').parentNode), sc = { x: 40 };
+  const placeScan = () => { scan.setAttribute('cx', sc.x); scan.setAttribute('cy', LY(sc.x) - 10); };
+  placeScan();
+  tl.to(scan, { opacity: 1, duration: .2 }, S('landscape') + 2.2);
+  tl.to(sc, { x: 1880, duration: 2.4, ease: 'power1.inOut', onUpdate: placeScan }, S('landscape') + 2.2);
+  tl.to(scan, { opacity: 0, duration: .3 }, S('landscape') + 4.4);
   FILM.show('#lLow', P('C5_03', .35), .5);
   tl.to('#deepGlow', { opacity: 1, duration: .8 }, P('C5_03', .35));
   // cold start: drops into the wrong valley and stays there
@@ -559,6 +566,11 @@ FILM_INIT();
   const drawP = () => { const [nx, ny] = along(ptsN, pr.n), [fx, fy] = along(ptsF, pr.f); $('#pNearDot').setAttribute('cx', nx); $('#pNearDot').setAttribute('cy', ny); $('#pFarDot').setAttribute('cx', fx); $('#pFarDot').setAttribute('cy', fy); pf.setAttribute('stroke-dashoffset', Lf * (1 - pr.f)); };
   drawP();
   const PR = P('C5_09', .35);
+  // before the race: the flag, then each start, announce themselves; the winding route marches
+  tl.fromTo('#flagPing', { attr: { r: 34 }, opacity: .8 }, { attr: { r: 80 }, opacity: 0, duration: .7, ease: 'power2.out', immediateRender: false }, S('principle') + .8);
+  tl.to('#pNearDot', { attr: { r: 24 }, duration: .35, yoyo: true, repeat: 1, ease: 'sine.inOut' }, S('principle') + 1.5);
+  tl.to('#pFarDot', { attr: { r: 26 }, duration: .35, yoyo: true, repeat: 1, ease: 'sine.inOut' }, S('principle') + 2.2);
+  tl.fromTo('#pNear', { attr: { 'stroke-dashoffset': 0 } }, { attr: { 'stroke-dashoffset': -140 }, duration: Math.max(1, PR - S('principle') - .6), ease: 'none', immediateRender: false }, S('principle') + .6);
   tl.to(pr, { n: .62, duration: 3.2, ease: 'none', onUpdate: drawP }, PR);
   tl.to(pr, { f: 1, duration: 2.4, ease: 'power2.inOut', onUpdate: drawP }, PR + .2);
   tl.fromTo('#flagPing', { attr: { r: 34 }, opacity: 1 }, { attr: { r: 110 }, opacity: 0, duration: .9, ease: 'power2.out', immediateRender: false }, PR + 2.6);

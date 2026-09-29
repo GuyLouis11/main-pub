@@ -40,7 +40,12 @@ Guy flagged a long pause at about 54 s. Every quiet stretch is now filled with p
 - **Timeline beat audit** (`node tools/beat_audit.mjs`): lists every stretch where no non-ambient tween or video is active. Result: **0 gaps over 1.5 s in all six chapters.** Before: ch3 had 2, ch4 had 9 (31.8 s in total), ch5 had 2, ch6 had 2.
 - **HyperFrames motion assertion** (`index.motion.json`: keepsMoving, maxStaticSec 1.5) inside `hyperframes check`: all six chapters and the opening **pass**.
   - This is a DOM check, so it can't see video pixels. Windows where only real Flow footage moves were flagged at first. They now carry a slow push-in, with the hold stills scale-matched so the handover doesn't jump.
-- **Pixel stillness audit** (`python3 tools/stillness.py renders/parts/*.mp4`): runs on the rendered frames, so it catches what people actually perceive. Results are at the end.
+- **Pixel stillness audits on the rendered frames.** These catch what people actually perceive.
+  - `tools/stillness.py` measures whole-frame mean change. It turned out to be too blunt: a travelling dot or a line being drawn is a tiny share of the frame, so it flagged stretches that are visibly moving, such as the ch5 dot race.
+  - `tools/stillness_local.py` counts a moment as moving if **any** 16×16 region of a blurred 320×180 frame changed by more than 2 grey levels versus 0.4 s earlier. The blur removes grain.
+  - First full render: 0 windows in the opening and ch1, ch2, ch4 and ch6, but 3 in ch3 and ch5 (69.5 s, 35.9 s, 99.1 s). The glints there were too faint to see.
+  - Fix: a ridge-surveying frost point, start pulses and a marching route in ch5, and an earlier frost squash in ch3.
+  - Re-render: see below.
 
 Fixes found along the way:
 - The notebook page had only 50–60 px of bleed, so camera pans revealed its edge. It now has 200 px on every side.
