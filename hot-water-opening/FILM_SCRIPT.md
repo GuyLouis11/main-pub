@@ -30,7 +30,7 @@ Lines `VO_01`–`VO_08` are in `HANDOFF_CODEX.md`. It ends on the title card.
 > When the freezer is opened, his mix — the one that went in hot — has frozen. The one that went in cool hasn't.
 
 **C1_05**
-> He asks why. By his own account, the answer he got was the one we've already read.
+> He asks why. By his own account, the answer he got was the one we've already heard.
 
 **C1_06**
 > It became a joke at his expense. As he remembered it, the idea was dismissed as "Mpemba's physics".
@@ -58,7 +58,7 @@ Lines `VO_01`–`VO_08` are in `HANDOFF_CODEX.md`. It ends on the title card.
 > But he doesn't dismiss it. He isn't sure the student is right, and he isn't sure he's wrong.
 
 **C2_05**
-> Back in Dar es Salaam, he has it tested. The hot water freezes first.
+> Back in Dar es Salaam, he has it tested. Two beakers, one hot, one cold, into the same freezer. And the hot one freezes first.
 
 **C2_06**
 > In 1969 the student and the physicist publish together in the journal *Physics Education*. The title is one word, with a question mark: "Cool?"

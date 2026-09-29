@@ -42,7 +42,7 @@ C = dict(
     graph_in=6.0, must_pass=7.6, real_line=8.8, finish=10.5,
     crack=11.25, shatter=11.45, paper_in=12.0, write_head=12.3,
     lower_third=12.6, name=13.6, flow_cut=15.0, notes2=15.3,
-    duck=17.0, tapestop=17.9, pen1=18.2, pen2=19.2, circle=20.2,
+    duck=17.0, tapestop=17.9, pen1=18.65, pen2=20.2, circle=20.6,
     rip=21.2, slam1=22.0, slam2=22.9, fwd=23.55, slot=24.0,
     title_hit=26.45, frost=26.9, end=30.0, note1=13.4,
 )
@@ -413,8 +413,8 @@ fx.add(C["lower_third"], bp(noise(0.12), 2000, 6000) * env_exp(int(round(0.12 * 
 rt_len = C["rip"] - C["tapestop"]
 fx.add(C["tapestop"], lp(noise(rt_len), 300) * adsr(int(round(rt_len * SR)), 0.3, 0.2), 0.02)
 # red pen: two lines + circle
-fx.add(C["pen1"], scribble(0.95, 13), 0.16, pan=-0.15)
-fx.add(C["pen2"], scribble(0.9, 13), 0.16, pan=0.1)
+fx.add(C["pen1"], scribble(1.5, 13), 0.16, pan=-0.15)
+fx.add(C["pen2"], scribble(1.3, 13), 0.16, pan=0.1)
 fx.add(C["circle"], scribble(0.35, 6), 0.2, pan=0.15)
 fx.add(C["circle"] + 0.4, sub(110, 70, 0.3, 0.05), 0.25)
 # rip + rewind

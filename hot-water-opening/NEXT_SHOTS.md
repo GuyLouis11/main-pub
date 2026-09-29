@@ -43,7 +43,7 @@ distant birds, faint fridge hum.
 - **Overlays:** none over the action. Lower-third-free.
 
 ## Shot 2: `FLOW_07_lab_test_1968.mp4` (Chapter 2 · process, hands only)
-- **Narration anchor:** C2_05 "Back in Dar es Salaam, he has it tested. The hot water freezes first." (about 5 s of use).
+- **Narration anchor:** C2_05 "Back in Dar es Salaam, he has it tested. Two beakers, one hot, one cold, into the same freezer. And the hot one freezes first." (about 5 s of use).
 - **Ingredients:** `refs/STYLE_F01_kitchen_3.0s.png`. No character reference; the hands are generic.
 - **Timing:**
   - 0–3 s: pour and place.

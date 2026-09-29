@@ -18,7 +18,7 @@ See `hot-water-opening/HANDOFF_CODEX.md` (VO_01 … VO_08).
 | ch1 | `C1_02.wav` | 9.0s | But the freezer is small, and space is scarce. If Erasto waits for his mix to cool, he could lose his place. |
 | ch1 | `C1_03.wav` | 1.7s | So he doesn't wait. |
 | ch1 | `C1_04.wav` | 9.0s | When the freezer is opened, his mix — the one that went in hot — has frozen. The one that went in cool hasn't. |
-| ch1 | `C1_05.wav` | 7.0s | He asks why. By his own account, the answer he got was the one we've already read. |
+| ch1 | `C1_05.wav` | 7.0s | He asks why. By his own account, the answer he got was the one we've already heard. |
 | ch1 | `C1_06.wav` | 7.4s | It became a joke at his expense. As he remembered it, the idea was dismissed as "Mpemba's physics". |
 | ch1 | `C1_07.wav` | 6.6s | Most thirteen-year-olds would let that go. Erasto doesn't. The question stays with him. |
 | ch1 | `C1_08.wav` | 8.6s | Because if you really saw something that "cannot happen", that isn't a reason to stop. It's a reason to look closer. |
@@ -26,7 +26,7 @@ See `hot-water-opening/HANDOFF_CODEX.md` (VO_01 … VO_08).
 | ch2 | `C2_02.wav` | 14.9s | When the questions start, Erasto asks his. Two similar containers, equal volumes of water, one at thirty-five degrees, one at a hundred. Put both in a freezer, and the hundred-degree one freezes first. Why? |
 | ch2 | `C2_03.wav` | 4.0s | Osborne's first thought is that the student must be mistaken. |
 | ch2 | `C2_04.wav` | 7.4s | But he doesn't dismiss it. He isn't sure the student is right, and he isn't sure he's wrong. |
-| ch2 | `C2_05.wav` | 5.9s | Back in Dar es Salaam, he has it tested. The hot water freezes first. |
+| ch2 | `C2_05.wav` | 5.9s | Back in Dar es Salaam, he has it tested. Two beakers, one hot, one cold, into the same freezer. And the hot one freezes first. |
 | ch2 | `C2_06.wav` | 9.4s | In 1969 the student and the physicist publish together in the journal Physics Education. The title is one word, with a question mark: "Cool?" |
 | ch3 | `C3_01.wav` | 12.3s | So what's so impossible about it? Temperature is just how hard the molecules are jiggling. Put water in a freezer and the jiggling drains away, fast at first, then slower. |
 | ch3 | `C3_02.wav` | 17.4s | To reach freezing, hot water has to drain through every temperature on the way down, including the one the cold water started at. At that moment it's exactly where the cold cup was at the start, and the cold cup is already further along. |
