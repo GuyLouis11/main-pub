@@ -14,6 +14,7 @@
   "baseDuration": 30,
   "pad": 0.2,
   "inserts": {
+    "raceHold": 4.12,
     "freezeHold": 5.2,
     "mustPass": 8.7,
     "winHold": 10.8,
@@ -37,10 +38,10 @@
       "id": "VO_01",
       "start": 0.35,
       "deadline": 4.1,
-      "insert": null,
+      "insert": "raceHold",
       "estimate": 3.5,
       "text": "Two cups of water. One hot, one cold. Same freezer.",
-      "dur": 3.647,
+      "dur": 3.976,
       "source": "take"
     },
     {
@@ -50,7 +51,7 @@
       "insert": "freezeHold",
       "estimate": 2.3,
       "text": "Sometimes… the hot one freezes first.",
-      "dur": 2.548,
+      "dur": 4.337,
       "source": "take"
     },
     {
@@ -60,17 +61,18 @@
       "insert": "mustPass",
       "estimate": 3.4,
       "text": "But to freeze, it has to cool past the cold one's starting point.",
-      "dur": 4.33,
+      "dur": 4.761,
       "source": "take"
     },
     {
       "id": "VO_04",
+      "pad": 0.5,
       "start": 8.85,
       "deadline": 11.2,
       "insert": "winHold",
       "estimate": 1.7,
       "text": "So how can it ever win?",
-      "dur": 2.261,
+      "dur": 2.446,
       "source": "take"
     },
     {
@@ -80,7 +82,7 @@
       "insert": "notebook",
       "estimate": 3.9,
       "text": "In 1963, a schoolboy named Erasto Mpemba saw it happen.",
-      "dur": 3.785,
+      "dur": 3.944,
       "source": "take"
     },
     {
@@ -90,7 +92,7 @@
       "insert": "teacher",
       "estimate": 1.6,
       "text": "His teacher had an answer. \"The answer I can give is… that you were confused.\"",
-      "dur": 5.207,
+      "dur": 4.901,
       "source": "take"
     },
     {
@@ -100,7 +102,7 @@
       "insert": "ancients",
       "estimate": 3.0,
       "text": "He wasn't the first. Aristotle described it too.",
-      "dur": 3.363,
+      "dur": 3.298,
       "source": "take"
     },
     {
@@ -110,17 +112,18 @@
       "insert": "slot",
       "estimate": 4.2,
       "text": "The water is still debated. What physicists found instead is stranger.",
-      "dur": 4.615,
+      "dur": 5.95,
       "source": "take"
     }
   ],
   "gaps": {
-    "freezeHold": 1.098,
-    "mustPass": 1.88,
-    "winHold": 0.111,
-    "teacher": 1.657,
-    "ancients": 1.313,
-    "slot": 1.815
+    "raceHold": 0.426,
+    "freezeHold": 2.887,
+    "mustPass": 2.311,
+    "winHold": 0.596,
+    "teacher": 1.351,
+    "ancients": 1.248,
+    "slot": 3.15
   }
 }
 </script>
@@ -223,10 +226,10 @@
 </style>
 </head>
 <body>
-<div id="root" data-composition-id="main" data-start="0" data-duration="36.574" data-width="1920" data-height="1080">
+<div id="root" data-composition-id="main" data-start="0" data-duration="40.669" data-width="1920" data-height="1080">
 
   <!-- ================= S1  THE RACE  (0 – 6.1) ================= -->
-  <div id="s1" class="scene clip" data-start="0.000" data-base-start="0" data-base-duration="6.6" data-duration="7.698" data-track-index="1">
+  <div id="s1" class="scene clip" data-start="0.000" data-base-start="0" data-base-duration="6.6" data-duration="9.913" data-track-index="1">
     <div class="cam" id="s1cam">
       <div class="abs mono hud" style="left:80px">Freezer &nbsp;<span style="color:var(--frost)">−18°C</span></div>
       <div class="abs mono hud" id="illusTag" style="left:0;right:0;text-align:center;font-size:18px;color:#8093a8">Illustration · results vary</div>
@@ -301,7 +304,7 @@
   </div>
 
   <!-- the race track: lives across S1 → S2 and becomes the graph's temperature axis -->
-  <div id="trackLayer" class="scene clip" data-start="0.000" data-base-start="0" data-base-duration="12.0" data-duration="15.089" data-track-index="2" style="pointer-events:none;z-index:3">
+  <div id="trackLayer" class="scene clip" data-start="0.000" data-base-start="0" data-base-duration="12.0" data-duration="18.220" data-track-index="2" style="pointer-events:none;z-index:3">
     <div class="cam" id="trackCam">
       <svg class="abs" style="left:0;top:0" width="1920" height="1080" viewBox="0 0 1920 1080">
         <g id="rig">
@@ -320,7 +323,7 @@
   </div>
 
   <!-- ================= S2  IT STARTS BEHIND  (5.9 – 11.9) ================= -->
-  <div id="s2" class="scene clip" data-start="6.998" data-base-start="5.9" data-base-duration="6.1" data-duration="8.091" data-track-index="3" style="z-index:2">
+  <div id="s2" class="scene clip" data-start="9.213" data-base-start="5.9" data-base-duration="6.1" data-duration="9.007" data-track-index="3" style="z-index:2">
     <div class="cam" id="s2cam">
       <svg class="abs" style="left:0;top:0" width="1920" height="1080" viewBox="0 0 1920 1080">
         <defs>
@@ -364,12 +367,12 @@
   </div>
 
   <!-- shatter shards: the dark frame breaks away to reveal 1963 -->
-  <div id="shardLayer" class="scene clip" data-start="14.489" data-base-start="11.4" data-base-duration="0.9" data-duration="0.900" data-track-index="4" style="pointer-events:none;z-index:4">
+  <div id="shardLayer" class="scene clip" data-start="17.620" data-base-start="11.4" data-base-duration="0.9" data-duration="0.900" data-track-index="4" style="pointer-events:none;z-index:4">
     <svg class="abs" style="left:0;top:0" width="1920" height="1080" viewBox="0 0 1920 1080"><g id="shards"></g></svg>
   </div>
 
   <!-- ================= S3  1963  (11.4 – 21.6) ================= -->
-  <div id="s3" class="scene clip" data-start="14.489" data-base-start="11.4" data-base-duration="10.2" data-duration="11.557" data-track-index="0">
+  <div id="s3" class="scene clip" data-start="17.620" data-base-start="11.4" data-base-duration="10.2" data-duration="11.251" data-track-index="0">
     <div class="cam" id="s3cam">
       <div id="page"><div id="rules"></div><div id="margin"></div></div>
 
@@ -382,10 +385,10 @@
       <div id="photo">
         <div id="photoCard"></div>
         <video id="flow1" src="assets/flow/FLOW_01_kitchen_hot_mix.mp4" playsinline data-has-audio="true" data-volume="0.55"
-               data-start="14.989" data-base-start="11.9" data-base-duration="3.1" data-duration="3.100" data-media-start="2.2"
+               data-start="18.120" data-base-start="11.9" data-base-duration="3.1" data-duration="3.100" data-media-start="2.2"
                data-usable-in="1.6" data-usable-out="6.3" data-track-index="10"></video>
         <video id="flow2" src="assets/flow/FLOW_02_freezer_reveal.mp4" playsinline data-has-audio="true" data-volume="0.5"
-               data-start="18.089" data-base-start="15.0" data-base-duration="2.8" data-duration="2.800" data-media-start="2.5"
+               data-start="21.220" data-base-start="15.0" data-base-duration="2.8" data-duration="2.800" data-media-start="2.5"
                data-usable-in="1.6" data-usable-out="5.5" data-track-index="11"></video>
         <div class="tape" style="left:-60px;top:-26px;transform:rotate(-24deg)"></div>
         <div class="tape" style="right:-60px;bottom:-24px;transform:rotate(-20deg)"></div>
@@ -406,7 +409,7 @@
   </div>
 
   <!-- ================= S4  NOT THE FIRST  (21.2 – 26.6) ================= -->
-  <div id="s4" class="scene clip" data-start="25.646" data-base-start="21.2" data-base-duration="5.4" data-duration="8.528" data-track-index="5">
+  <div id="s4" class="scene clip" data-start="28.471" data-base-start="21.2" data-base-duration="5.4" data-duration="9.798" data-track-index="5">
     <div class="cam" id="s4cam">
       <svg class="abs" style="left:0;top:0" width="1920" height="1080" viewBox="0 0 1920 1080">
         <g id="dial" transform="translate(960 520)" fill="none" stroke="#8fe3ff">
@@ -431,7 +434,7 @@
   </div>
 
   <!-- ================= S5  TITLE  (26.4 – 30) ================= -->
-  <div id="s5" class="scene clip" data-start="33.974" data-base-start="26.4" data-base-duration="3.6" data-duration="2.600" data-track-index="6">
+  <div id="s5" class="scene clip" data-start="38.069" data-base-start="26.4" data-base-duration="3.6" data-duration="2.600" data-track-index="6">
     <div class="cam" id="s5cam">
       <div id="flakes"></div>
       <div id="titleWrap" class="abs">
@@ -444,17 +447,17 @@
 
   <!-- ================= AUDIO ================= -->
   <!-- Score + SFX: original, synthesized by tools/make_audio.py (final-candidate, not placeholder) -->
-  <audio id="music" src="assets/audio/score_music.wav" data-start="0.000" data-base-start="0" data-base-duration="30" data-duration="36.574" data-volume="1" data-track-index="20"></audio>
-  <audio id="sfx" src="assets/audio/score_sfx.wav" data-start="0.000" data-base-start="0" data-base-duration="30" data-duration="36.574" data-volume="1" data-track-index="21"></audio>
+  <audio id="music" src="assets/audio/score_music.wav" data-start="0.000" data-base-start="0" data-base-duration="30" data-duration="40.669" data-volume="1" data-track-index="20"></audio>
+  <audio id="sfx" src="assets/audio/score_sfx.wav" data-start="0.000" data-base-start="0" data-base-duration="30" data-duration="40.669" data-volume="1" data-track-index="21"></audio>
   <!-- VO:BEGIN (generated by tools/retime.py) -->
-  <audio id="vo_01" src="assets/audio/vo/VO_01.wav" data-start="0.350" data-duration="3.697" data-volume="1" data-track-index="22"></audio>
-  <audio id="vo_02" src="assets/audio/vo/VO_02.wav" data-start="4.350" data-duration="2.598" data-volume="1" data-track-index="22"></audio>
-  <audio id="vo_03" src="assets/audio/vo/VO_03.wav" data-start="7.198" data-duration="4.380" data-volume="1" data-track-index="22"></audio>
-  <audio id="vo_04" src="assets/audio/vo/VO_04.wav" data-start="11.828" data-duration="2.311" data-volume="1" data-track-index="22"></audio>
-  <audio id="vo_05" src="assets/audio/vo/VO_05.wav" data-start="15.289" data-duration="3.835" data-volume="1" data-track-index="22"></audio>
-  <audio id="vo_06" src="assets/audio/vo/VO_06.wav" data-start="20.139" data-duration="5.257" data-volume="1" data-track-index="22"></audio>
-  <audio id="vo_07" src="assets/audio/vo/VO_07.wav" data-start="25.746" data-duration="3.413" data-volume="1" data-track-index="22"></audio>
-  <audio id="vo_08" src="assets/audio/vo/VO_08.wav" data-start="29.409" data-duration="4.665" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_01" src="assets/audio/vo/VO_01.wav" data-start="0.350" data-duration="4.026" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_02" src="assets/audio/vo/VO_02.wav" data-start="4.776" data-duration="4.387" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_03" src="assets/audio/vo/VO_03.wav" data-start="9.413" data-duration="4.811" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_04" src="assets/audio/vo/VO_04.wav" data-start="14.474" data-duration="2.496" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_05" src="assets/audio/vo/VO_05.wav" data-start="18.420" data-duration="3.994" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_06" src="assets/audio/vo/VO_06.wav" data-start="23.270" data-duration="4.951" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_07" src="assets/audio/vo/VO_07.wav" data-start="28.571" data-duration="3.348" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_08" src="assets/audio/vo/VO_08.wav" data-start="32.169" data-duration="6.000" data-volume="1" data-track-index="22"></audio>
   <!-- VO:END -->
 
   <!-- ================= GLOBAL FINISHING ================= -->

@@ -478,6 +478,8 @@ for name, start in VO.items():
     duck_env = np.minimum(duck_env, 1 - seg * (1 - 10 ** (-7 / 20)))  # up to -7 dB
 music = music * duck_env[:, None]
 sfx = fade_tail(fx.stereo())
+# effects dip too (up to -6 dB) while the narrator speaks, so a crack or slam never buries the end of a word
+sfx = sfx * (1 - (1 - duck_env) * (1 - 10 ** (-6 / 20)) / (1 - 10 ** (-7 / 20)))[:, None]
 mix = music * 0.9 + sfx
 peak = np.abs(mix).max()
 target = 10 ** (-1.5 / 20)  # -1.5 dBFS sample peak ceiling (true-peak checked with ffmpeg)

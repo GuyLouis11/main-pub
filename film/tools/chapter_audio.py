@@ -96,6 +96,8 @@ class Ch:
             seg = np.clip(np.convolve(seg, kk, "same") * 1.6, 0, 1)
             duck = np.minimum(duck, 1 - seg * (1 - 10 ** (-8 / 20)))
         mus = mus * duck[:, None]
+        # effects dip too (up to -6 dB) while the narrator speaks, so no hit buries the end of a word
+        fx = fx * (1 - (1 - duck) * (1 - 10 ** (-6 / 20)) / (1 - 10 ** (-8 / 20)))[:, None]
         for x in (mus, fx):   # edge fades so chapters butt-join cleanly
             n0, n1 = int(.4 * SR), int(.8 * SR)
             x[:n0] *= np.linspace(0, 1, n0)[:, None]

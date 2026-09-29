@@ -62,7 +62,7 @@ def main():
         dur = real if real is not None else v["estimate"]
         v["dur"] = round(dur, 3)
         v["source"] = "take" if real is not None else "ESTIMATE (silent placeholder)"
-        over = v["start"] + dur + pad - v["deadline"]
+        over = v["start"] + dur + v.get("pad", pad) - v["deadline"]   # per-line pad = clear air before the next hit
         gap = 0.0
         if over > 0:
             if v["insert"]:
