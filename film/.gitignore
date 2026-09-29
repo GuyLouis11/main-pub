@@ -4,4 +4,4 @@ snapshots/
 renders/*_hq.mp4
 renders/parts/
 renders/*.log
-renders/film_v1_*.mp4
+renders/film_v*.mp4
