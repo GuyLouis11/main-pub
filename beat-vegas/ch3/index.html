@@ -155,7 +155,7 @@
 </script>
 <style>
   .kicker{position:absolute;font-family:var(--mono);font-weight:600;font-size:24px;letter-spacing:.34em;color:var(--gold);white-space:nowrap}
-  .big{font-family:var(--display);font-weight:900;line-height:.85;white-space:nowrap}
+  .big{font-family:var(--display);font-weight:900;line-height:1;white-space:nowrap}
   .blab{position:absolute;font-family:var(--mono);font-weight:600;font-size:22px;letter-spacing:.18em;color:var(--cyan);white-space:nowrap;text-transform:uppercase}
   .mini{position:absolute;width:44px;height:62px;border-radius:5px;background:#f4ecd8;font-family:var(--display);font-weight:900;font-size:26px;line-height:62px;text-align:center;box-shadow:0 2px 6px rgba(0,0,0,.4)}
   .mini.r{color:#b3261a}.mini.k{color:#141414}
@@ -186,13 +186,13 @@
     <div class="cam" id="bjcam">
       <div class="arc"></div>
       <div class="abs" style="left:0;right:0;top:470px;text-align:center;font-family:var(--serif);font-style:italic;font-size:40px;color:rgba(224,176,74,.7)">Blackjack pays 3 to 2 · Dealer must stand on 17</div>
-      <div class="abs" id="hands" style="inset:0"></div>
+      <div class="abs" id="hands" style="inset:0" data-layout-ignore></div>
       <div class="abs" id="tray" style="left:1560px;top:120px;width:200px;height:120px;border:3px solid rgba(224,176,74,.6);border-radius:10px"></div>
     </div>
     <div class="abs big" id="bjT" style="left:110px;top:90px;font-size:130px;color:var(--cream);opacity:0">BLACKJACK.</div>
     <div class="abs noir" id="memory" style="inset:0;opacity:0">
       <div class="kicker" id="kMem" style="left:230px;top:120px">THE DECK REMEMBERS</div>
-      <div class="abs" id="grid" style="left:230px;top:190px;width:900px;height:440px"></div>
+      <div class="abs" id="grid" style="left:230px;top:190px;width:900px;height:440px" data-layout-ignore></div>
       <div class="abs big" id="chanceT" style="left:1240px;top:220px;font-size:110px;color:var(--cream)">PURE CHANCE?</div>
       <div class="abs big" id="gone" style="left:1240px;top:380px;font-size:74px;color:var(--gold);opacity:0">DEALT = GONE<br>UNTIL THE SHUFFLE</div>
       <div class="blab" id="lowLab" style="left:230px;top:660px;opacity:0">SMALL CARDS (2–6) LEAVING THE DECK ▸</div>
@@ -227,14 +227,15 @@
     <div class="cam" id="rcam">
       <div class="abs" id="snow" style="inset:0"></div>
       <div class="abs" id="manny" style="left:180px;top:250px;width:420px;height:560px;opacity:0">
-        <svg viewBox="0 0 420 560" style="width:420px;height:560px"><path d="M110,150 L310,150 L290,120 C280,80 140,80 130,120 Z M60,150 L360,150 L360,170 L60,170 Z" fill="#1a1512"/><circle cx="210" cy="230" r="70" fill="#1a1512"/>
+        <div class="abs" style="left:-160px;top:-120px;width:740px;height:780px;background:radial-gradient(ellipse at 50% 42%, rgba(224,176,74,.38), rgba(0,0,0,0) 62%)"></div>
+        <svg viewBox="0 0 420 560" style="position:relative;width:420px;height:560px;filter:drop-shadow(0 0 2px #e0b04a) drop-shadow(0 0 14px rgba(224,176,74,.5))"><path d="M110,150 L310,150 L290,120 C280,80 140,80 130,120 Z M60,150 L360,150 L360,170 L60,170 Z" fill="#1a1512"/><circle cx="210" cy="230" r="70" fill="#1a1512"/>
           <path d="M60,560 C60,380 120,320 210,310 C300,320 360,380 360,560 Z" fill="#1a1512"/><circle cx="262" cy="258" r="6" fill="#e0b04a"/><path d="M260,262 L330,250" stroke="#e0b04a" stroke-width="5"/></svg>
         <div class="blab" style="left:0;top:580px;color:var(--gold)">MANNY KIMMEL · PROFESSIONAL GAMBLER</div>
       </div>
       <div class="abs" id="env" style="left:760px;top:360px;width:420px;height:260px;opacity:0;background:linear-gradient(160deg,#e9dcc0,#cbb892);border-radius:6px;box-shadow:0 30px 60px rgba(0,0,0,.6)"><div style="position:absolute;inset:0;background:linear-gradient(20deg,transparent 49%,rgba(0,0,0,.18) 50%,transparent 51%),linear-gradient(-20deg,transparent 49%,rgba(0,0,0,.18) 50%,transparent 51%)"></div></div>
       <div class="abs big" id="money" style="left:760px;top:180px;font-size:170px;color:var(--cream);opacity:0">$<span id="moneyN">10,000</span></div>
-      <div class="abs" id="renoSign" style="left:1320px;top:120px;opacity:0;font-family:var(--display);font-weight:900;font-size:180px;color:#fff6e8;text-shadow:0 0 8px #fff,0 0 24px #ff3b6b,0 0 60px #ff3b6b">RENO</div>
-      <div class="abs" id="cal" style="left:1340px;top:420px;display:flex;gap:18px;opacity:0"><div class="kicker" id="dSat" style="position:static;border:3px solid var(--gold);padding:16px 22px">SAT</div><div class="kicker" id="dSun" style="position:static;border:3px solid var(--gold);padding:16px 22px;opacity:.25">SUN</div></div>
+      <div class="abs" id="renoSign" style="left:1330px;top:420px;opacity:0;font-family:var(--display);font-weight:900;font-size:180px;color:#fff6e8;text-shadow:0 0 8px #fff,0 0 24px #ff3b6b,0 0 60px #ff3b6b">RENO</div>
+      <div class="abs" id="cal" style="left:1350px;top:650px;display:flex;gap:18px;opacity:0"><div class="kicker" id="dSat" style="position:static;border:3px solid var(--gold);padding:16px 22px">SAT</div><div class="kicker" id="dSun" style="position:static;border:3px solid var(--gold);padding:16px 22px;opacity:.25">SUN</div></div>
       <div class="abs" id="renoChips" style="inset:0"></div>
       <div class="kicker" id="kWeek" style="left:760px;top:660px;opacity:0">ONE WEEKEND</div>
     </div>
@@ -263,9 +264,9 @@
       <div class="note abs" style="left:60px;top:590px;color:#7a6a55">Illustrative house rules</div>
       <div class="hand" id="changed" style="position:absolute;left:520px;top:430px;font-size:80px;color:#b3261a;transform:rotate(-6deg);clip-path:inset(-20% 100% -20% 0)">changed!</div>
     </div>
-    <div class="abs" id="decks" style="inset:0"></div>
+    <div class="abs" id="decks" style="inset:0" data-layout-ignore></div>
     <div class="abs" id="polaroid" style="left:720px;top:210px;width:480px;height:560px;background:#f4ecd8;box-shadow:0 30px 70px rgba(0,0,0,.6);opacity:0"><div class="frame" style="left:24px;top:24px;width:432px;height:420px"><video id="vPol" src="assets/flow/V33_disguise.mp4" muted playsinline data-scene="fight" data-at="N3_07|3.7" data-len="3.0" data-start="51.295" data-duration="2.934" data-media-start="0.2" data-usable-in="0" data-usable-out="8" data-track-index="11"></video></div><div class="hand" style="position:absolute;left:30px;top:460px;font-size:52px;color:#1d2b4a">E. Thorp</div></div>
-    <div class="abs" id="disWrap" style="inset:0;opacity:0"><div class="grade" style="z-index:1"></div><video class="vid" id="vDis" src="assets/flow/V33_disguise.mp4" muted playsinline data-scene="fight" data-at="N3_07|4.8" data-len="3.2" data-start="52.395" data-duration="1.834" data-media-start="3.4" data-usable-in="0" data-usable-out="8" data-track-index="12"></video></div>
+    <div class="abs" id="disWrap" style="inset:0;opacity:0"><div class="grade" style="z-index:1"></div><video class="vid" id="vDis" src="assets/flow/V33_disguise.mp4" muted playsinline data-scene="fight" data-at="N3_07|4.3" data-len="3.2" data-start="51.895" data-duration="2.334" data-media-start="3.4" data-usable-in="0" data-usable-out="8" data-track-index="12"></video></div>
     <div class="abs big" id="disT" style="left:110px;top:840px;font-size:90px;color:var(--cream);opacity:0">SO HE WORE <span class="gold">DISGUISES</span></div>
   </div>
 
@@ -283,9 +284,9 @@
           <path d="M1040,560 C1140,400 1540,400 1640,560 C1540,720 1140,720 1040,560 Z" fill="none" stroke="#1a1512" stroke-width="14"/></g>
       </svg>
       <div class="blab" id="lStrange" style="left:480px;top:900px;color:var(--gold);opacity:0">THE COFFEE TASTED STRANGE</div>
-      <div class="blab" id="lPupil" style="left:1140px;top:780px;color:var(--gold);opacity:0">PUPILS DILATED</div>
-      <div class="abs" id="scram" style="inset:0"></div>
-      <div class="abs big" id="cant" style="left:0;right:0;top:420px;text-align:center;font-size:150px;color:var(--red2);opacity:0">HE COULDN'T COUNT.</div>
+      <div class="blab" id="lPupil" style="left:1140px;top:760px;z-index:2;color:var(--gold);opacity:0">PUPILS DILATED</div>
+      <div class="abs" id="scram" style="inset:0" data-layout-ignore></div>
+      <div class="abs big" id="cant" style="left:0;right:0;top:420px;text-align:center;font-size:150px;color:var(--red2);opacity:0;text-shadow:0 0 30px #000,0 0 60px #000">HE COULDN'T COUNT.</div>
     </div>
   </div>
 
@@ -359,7 +360,7 @@ FILM_INIT();
   deal.forEach(([r, s], i) => { const [x, y] = spots[i % 5]; const c = N.card(hands, r, s, x + (i > 4 ? 60 : 0), y - (i > 4 ? 30 : 0), { scale: .55 }); N.deal(c, V('N3_01') + .25 + i * .16, { fx: 1560 - x, fy: 120 - y, rot: (rnd() - .5) * 12, d: .3 }); });
   tl.fromTo('#bjcam', { scale: 1.08 }, { scale: 1, duration: 2.6, ease: 'power2.out', immediateRender: false }, S('blackjack'));
   // the memory grid
-  tl.to('#memory', { opacity: 1, duration: .3 }, P('N3_01', .28));
+  tl.to('#memory', { opacity: 1, duration: .3 }, P('N3_01', .28)); tl.to('#bjT, #bjcam', { opacity: 0, duration: .01 }, P('N3_01', .28) + .3);
   const ranks = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'], suits = ['♠', '♥', '♦', '♣'];
   const grid = $('#grid'), cells = [];
   suits.forEach((s, si) => ranks.forEach((r, ri) => { const m = div('mini ' + (si % 3 ? 'r' : 'k'), grid, r); m.style.left = (ri * 66) + 'px'; m.style.top = (si * 100) + 'px'; m.style.fontSize = r === '10' ? '22px' : '26px'; cells.push({ m, r, ri }); }));
@@ -399,9 +400,10 @@ FILM_INIT();
   // ═════════ 3 · Reno ═════════
   F.sceneFade('reno', .2, .25);
   N.particles($('#snow'), 70, S('reno'), D('reno'), { fromTop: true, color: '#e9eef5', size: 7, op: .7, blur: 1 });
+  N.push('#rcam', S('reno'), D('reno'), 1.0, 1.07, { x1: -30 });
   tl.fromTo('#manny', { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: .45, ease: 'power3.out', immediateRender: false }, V('N3_05') + .1);
-  tl.fromTo('#env', { opacity: 0, x: -300, rotation: -12 }, { opacity: 1, x: 0, rotation: -3, duration: .5, ease: 'power3.out', immediateRender: false }, P('N3_05', .28));
-  tl.fromTo('#money', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: .3, immediateRender: false }, P('N3_05', .32));
+  tl.fromTo('#env', { opacity: 0, x: -300, rotation: -12 }, { opacity: 1, x: 0, rotation: -3, duration: .5, ease: 'power3.out', immediateRender: false }, P('N3_05', .2));
+  tl.fromTo('#money', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: .3, immediateRender: false }, P('N3_05', .24));
   N.flicker(F.$('#renoSign'), P('N3_05', .5)); tl.set('#renoSign', { opacity: 1 }, P('N3_05', .5) + .4);
   F.show('#cal', P('N3_05', .55), .2); tl.to('#dSun', { opacity: 1, duration: .2 }, P('N3_05', .68)); tl.to('#dSat', { opacity: .25, duration: .2 }, P('N3_05', .68));
   F.show('#kWeek', P('N3_05', .58), .3);
@@ -416,7 +418,7 @@ FILM_INIT();
   tl.fromTo('#cover', { opacity: 0, y: 80, rotation: 8, scale: .8 }, { opacity: 1, y: 0, rotation: -3, scale: 1, duration: .5, ease: 'back.out(1.6)', immediateRender: false }, P('N3_06', .22));
   tl.to('#bsWrap', { filter: 'blur(8px) brightness(.5)', duration: .4 }, P('N3_06', .22));
   tl.fromTo('#bestR', { opacity: 0, x: 60, rotation: 8 }, { opacity: 1, x: 0, rotation: 8, duration: .3, ease: 'back.out(2)', immediateRender: false }, P('N3_06', .45));
-  tl.to('#crowd', { opacity: 1, duration: .3 }, P('N3_06', .66));
+  tl.to('#crowd', { opacity: 1, duration: .3 }, P('N3_06', .66)); tl.set('#cover, #bestR', { opacity: 0 }, P('N3_06', .66) + .32);
   const figs = $('#figs');
   for (let r = 0; r < 5; r++) for (let q = 0; q < 22; q++) {
     const f = div('fig', figs); f.style.left = (60 + q * 84 + (r % 2) * 40) + 'px'; f.style.top = (380 + r * 120) + 'px';
@@ -438,8 +440,8 @@ FILM_INIT();
   N.words(dk, 'MORE DECKS', 960, 820, 110, P('N3_07', .46), { color: 'var(--cream)', center: true }).id = 'moreD'; tl.to('#moreD', { opacity: 0, duration: .2 }, P('N3_07', .6));
   tl.fromTo('#polaroid', { opacity: 0, rotation: -10, scale: .8 }, { opacity: 1, rotation: -3, scale: 1, duration: .3, ease: 'back.out(1.6)', immediateRender: false }, P('N3_07', .6));
   N.stamp($('#polaroid'), 'BARRED', 40, 220, 110, -14).id = 'bar2'; N.slam($('#bar2'), P('N3_07', .64), true);
-  tl.set('#disWrap', { opacity: 1 }, V('N3_07') + 4.8); N.push('#disWrap', V('N3_07') + 4.8, 3.2, 1.0, 1.12);
-  tl.fromTo('#disT', { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: .3, immediateRender: false }, V('N3_07') + 5.0);
+  tl.set('#disWrap', { opacity: 1 }, V('N3_07') + 4.3); N.push('#disWrap', V('N3_07') + 4.3, 3.2, 1.0, 1.12);
+  tl.fromTo('#disT', { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: .3, immediateRender: false }, V('N3_07') + 4.5);
 
   // ═════════ 6 · coffee ═════════
   F.sceneFade('coffee', .3, .25);
@@ -452,6 +454,7 @@ FILM_INIT();
   tl.to('#pupil', { attr: { r: 120 }, duration: 1.2, ease: 'power2.inOut' }, P('N3_08', .6)); F.show('#lPupil', P('N3_08', .62), .3);
   const sc = $('#scram');
   for (let i = 0; i < 24; i++) { const b = div('bubble', sc, ['+1', '−1', '0', '+2', '?'][i % 5]); b.style.left = (200 + rnd() * 1500) + 'px'; b.style.top = (200 + rnd() * 700) + 'px'; b.style.fontSize = (40 + rnd() * 50) + 'px';
+    tl.set(b, { opacity: 0 }, 0);
     tl.fromTo(b, { opacity: 0, rotation: 0 }, { opacity: .8, rotation: (rnd() - .5) * 90, x: (rnd() - .5) * 200, duration: 1, ease: 'sine.inOut', immediateRender: false }, P('N3_08', .78) + rnd() * .5); }
   tl.to('#cfcam', { filter: 'brightness(.8) blur(6px)', duration: .8 }, P('N3_08', .78));
   tl.fromTo('#cant', { opacity: 0, scale: 1.2 }, { opacity: 1, scale: 1, duration: .3, immediateRender: false }, P('N3_08', .8));
@@ -472,6 +475,7 @@ FILM_INIT();
   // ═════════ 8 · small ═════════
   F.sceneFade('small', .2, 0);
   tl.fromTo('#proven', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: .4, immediateRender: false }, V('N3_10') + .05);
+  N.push('#proven', V('N3_10') + .3, P('N3_10', .66) - V('N3_10') - .3, 1.0, 1.08);
   N.type($('#q'), '“This is what happened to me.”', P('N3_10', .42), 24);
   tl.to('#proven, #q', { opacity: 0, duration: .3 }, P('N3_10', .66));
   tl.to('#miniTable', { opacity: 1, duration: .3 }, P('N3_10', .66));

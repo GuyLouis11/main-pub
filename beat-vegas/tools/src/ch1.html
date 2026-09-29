@@ -1,6 +1,6 @@
 <style>
   .kicker{position:absolute;font-family:var(--mono);font-weight:600;font-size:24px;letter-spacing:.34em;color:var(--gold);white-space:nowrap}
-  .big{font-family:var(--display);font-weight:900;line-height:.85;white-space:nowrap}
+  .big{font-family:var(--display);font-weight:900;line-height:1;white-space:nowrap}
   .blab{position:absolute;font-family:var(--mono);font-weight:600;font-size:22px;letter-spacing:.18em;color:var(--cyan);white-space:nowrap;text-transform:uppercase}
   .hud{position:absolute;font-family:var(--mono);font-weight:600;color:var(--cyan2);white-space:nowrap}
   .hud b{display:block;font-family:var(--display);font-weight:900;font-size:86px;line-height:.95;color:#fff}
@@ -8,8 +8,8 @@
   .bit{position:absolute;font-family:var(--mono);font-weight:600;font-size:26px;color:rgba(143,227,255,.75)}
   .bill{position:absolute;width:360px;height:154px;border-radius:6px;background:linear-gradient(135deg,#c9d8b4,#9fb58a);border:3px solid #56704a;box-shadow:0 10px 26px rgba(0,0,0,.45)}
   .bill::before{content:"";position:absolute;left:128px;top:18px;width:104px;height:118px;border-radius:50%;border:3px solid #56704a;background:radial-gradient(circle,#b8c9a0,#8ea67a)}
-  .bill::after{content:"100";position:absolute;left:16px;top:8px;font-family:var(--display);font-weight:900;font-size:42px;color:#3e5636}
-  .bill i{position:absolute;right:16px;bottom:6px;font-family:var(--display);font-weight:900;font-size:42px;color:#3e5636;font-style:normal}
+  .bill::after{content:"100";position:absolute;left:16px;top:8px;font-family:var(--display);font-weight:900;font-size:42px;color:#1f2d19}
+  .bill i{position:absolute;right:16px;bottom:6px;font-family:var(--display);font-weight:900;font-size:42px;color:#1f2d19;font-style:normal}
   .strip{position:absolute;height:170px;display:flex;gap:18px;padding:18px;background:#0b0b0b;border-top:8px dashed #2a2a2a;border-bottom:8px dashed #2a2a2a}
   .strip div{width:210px;height:118px;background:radial-gradient(circle at 50% 50%,#6e3816 0 30%,#2a1407 31% 44%,#141414 45% 60%,#0f3b2e 61%);border:2px solid #333;position:relative}
   .strip div span{position:absolute;left:8px;bottom:4px;font-family:var(--mono);font-size:14px;color:#e0b04a}
@@ -54,7 +54,7 @@
   <div class="scene clip noir" data-scene="shannon" data-start="0" data-duration="1" data-track-index="4">
     <div class="abs" id="offWrap" style="inset:0"><div class="grade" style="z-index:1"></div><video class="vid" id="vOff" src="assets/flow/V14_office_meeting.mp4" muted playsinline data-scene="shannon" data-at="0.05" data-len="8" data-start="0" data-duration="1" data-media-start="0" data-usable-in="0" data-usable-out="8" data-track-index="12"></video></div>
     <div class="abs" id="bits" style="inset:0;opacity:0;background:radial-gradient(1200px 700px at 50% 50%, #0b1d2a 0%, #05090e 75%)">
-      <div class="abs" id="bitCols" style="inset:0"></div>
+      <div class="abs" id="bitCols" style="inset:0" data-layout-ignore></div>
       <div class="icon" id="ic1" style="left:560px;top:440px">TEXT</div><div class="icon" id="ic2" style="left:885px;top:440px">CALL</div><div class="icon" id="ic3" style="left:1210px;top:440px">FILE</div>
       <div class="kicker" id="itKick" style="left:0;right:0;top:270px;text-align:center;color:var(--cyan)">INFORMATION THEORY · 1948</div>
       <div class="abs serif i" id="paperT" style="left:0;right:0;top:330px;text-align:center;font-size:48px;color:var(--cream)"></div>
@@ -98,7 +98,7 @@
   <!-- ───────── 6 · a license to print money, but one flaw ───────── -->
   <div class="scene clip feltw" data-scene="flaw" data-start="0" data-duration="1" data-track-index="7">
     <div class="spot"></div>
-    <div class="abs" id="bills" style="inset:0"></div>
+    <div class="abs" id="bills" style="inset:0" data-layout-ignore></div>
     <div class="abs big" id="lic" style="left:0;right:0;top:250px;text-align:center;font-size:140px;color:var(--cream);opacity:0">A LICENSE TO <span class="foil">PRINT MONEY</span></div>
     <div class="abs" id="flawBox" style="inset:0;opacity:0;background:radial-gradient(1200px 700px at 50% 50%, #200606 0%, #050202 80%)">
       <svg class="full" viewBox="0 0 1920 1080"><path id="flawWire" d="M300,620 C600,600 800,700 960,640 C1120,580 1300,660 1620,620" fill="none" stroke="#e0b04a" stroke-width="6"/>
@@ -212,6 +212,6 @@
     tl.set(b, { opacity: 0 }, 0);
   }
   tl.fromTo('#lic', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: .3, ease: 'power3.out', immediateRender: false }, V('N1_07') + .05);
-  tl.set('#flawBox', { opacity: 1 }, P('N1_07', .58)); N.flash(P('N1_07', .58), .5, .25); N.shake(P('N1_07', .58), 12, .3);
+  tl.set('#flawBox', { opacity: 1 }, P('N1_07', .58)); tl.set('#lic, #bills', { opacity: 0 }, P('N1_07', .58) + .02); N.flash(P('N1_07', .58), .5, .25); N.shake(P('N1_07', .58), 12, .3);
   F.draw('#flawWire', P('N1_07', .58), .3); F.draw('#flawRing', P('N1_07', .66), .35);
   N.glitch('#flawWire', P('N1_07', .8), .5);

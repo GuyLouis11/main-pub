@@ -58,7 +58,7 @@ TEXT = {
  "N5_08": "Everyone remembers Ed Thorp as the man who beat the odds. But that isn't really his secret. His secret is simpler, and harder. When the numbers look too good to be true, check them.",
  "N5_09": "The ball always stops somewhere. The question is whether you bothered to do the math.",
 }
-MIN = {"card": 2.2, "title": 4.6}
+MIN = {"card": 2.2, "title": 4.6, "ticker": 7.2, "ball": 11.0}   # ch5 "name" scene also has tail 1.3 (set in its timing block)
 
 
 def timing(ch, title, scenes, seed):

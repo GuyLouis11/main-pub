@@ -1,7 +1,7 @@
 <style>
   #wheelSvg{position:absolute;left:0;top:0;width:1920px;height:1080px}
   .kicker{position:absolute;font-family:var(--mono);font-weight:600;font-size:26px;letter-spacing:.34em;color:var(--gold);white-space:nowrap}
-  .big{font-family:var(--display);font-weight:900;line-height:.85;white-space:nowrap}
+  .big{font-family:var(--display);font-weight:900;line-height:1;white-space:nowrap}
   .blab{position:absolute;font-family:var(--mono);font-weight:600;font-size:22px;letter-spacing:.2em;color:var(--cyan);white-space:nowrap;text-transform:uppercase}
   .bulb{position:absolute;width:16px;height:16px;border-radius:50%;background:#ffe6a8;box-shadow:0 0 10px 3px rgba(255,200,90,.85)}
   #marq{position:absolute;left:260px;top:250px;width:1400px;height:470px;border-radius:26px;background:linear-gradient(180deg,#2a0d0a,#150605);border:6px solid #e0b04a;box-shadow:0 0 0 14px #120c06,0 0 0 18px rgba(224,176,74,.4),0 40px 120px rgba(0,0,0,.8)}
@@ -55,7 +55,7 @@
         <g id="earRing" opacity="0"><circle cx="838" cy="130" r="26" fill="none" stroke="#fff4c8" stroke-width="3"/><path id="earWaves" d="M880,100 q18,30 0,60 M905,84 q28,46 0,92" fill="none" stroke="#e0b04a" stroke-width="3" stroke-linecap="round"/></g>
       </svg>
       <div class="blab" id="lbBox" style="left:1024px;top:474px;opacity:0">① COMPUTER</div>
-      <div class="note abs" id="figT" style="left:110px;top:990px;color:#8fe3ff;opacity:0">FIG. 1 · WEARABLE ROULETTE COMPUTER · 1961 · (ILLUSTRATIVE)</div>
+      <div class="note abs" id="figT" style="left:1180px;top:960px;color:#8fe3ff;opacity:0">FIG. 1 · WEARABLE ROULETTE COMPUTER · 1961 · (ILLUSTRATIVE)</div>
       <div class="blab" id="lbToe" style="left:400px;top:1000px;opacity:0">② TOE SWITCH</div>
       <div class="blab" id="lbEar" style="left:970px;top:70px;opacity:0">③ SPEAKER IN THE EAR</div>
       <div class="frame" id="circFrame" style="left:1180px;top:500px;width:600px;height:338px;opacity:0"><video id="vCirc" src="assets/flow/V16_circuit.mp4" muted playsinline data-scene="computer" data-at="N0_02|3.1" data-len="4.2" data-start="0" data-duration="1" data-media-start="1.2" data-usable-in="0" data-usable-out="8" data-track-index="11"></video></div>
@@ -73,9 +73,9 @@
     <div class="spot"></div>
     <div class="cam" id="ecam">
       <div class="abs" id="chipRain" style="inset:0"></div>
-      <div class="kicker" id="kHouse" style="left:260px;top:250px;color:var(--red2);opacity:0">THE HOUSE</div>
+      <div class="kicker" id="kHouse" style="left:260px;top:190px;color:var(--red2);opacity:0">THE HOUSE</div>
       <div class="abs big" id="n5" style="left:240px;top:300px;font-size:330px;color:var(--red2);opacity:0">5%</div>
-      <div class="kicker" id="kHim" style="left:1010px;top:250px;opacity:0">HIS MACHINE</div>
+      <div class="kicker" id="kHim" style="left:1010px;top:190px;opacity:0">HIS MACHINE</div>
       <div class="abs big foil" id="n44" style="left:980px;top:270px;font-size:430px;opacity:0">44%</div>
       <div class="note abs" id="edgeNote" style="left:260px;top:860px;opacity:0">House edge on an American wheel ≈ 5.3% · machine: +44% expected gain on the favoured eighth (lab estimate)</div>
     </div>
@@ -96,16 +96,16 @@
   <div class="scene clip noir" data-scene="bigger" data-start="0" data-duration="1" data-track-index="5">
     <div class="abs" id="tickWrap" style="inset:0;opacity:0"><div class="grade" style="z-index:1"></div><video class="vid" id="vTick" src="assets/flow/V39_stock_ticker.mp4" muted playsinline data-scene="bigger" data-at="N0_05|0.9" data-len="2.2" data-start="0" data-duration="1" data-media-start="2.2" data-usable-in="0" data-usable-out="8" data-track-index="14"></video><div class="grade"></div></div>
     <div class="abs" id="floorWrap" style="inset:0;opacity:0"><video class="vid" id="vFloor" src="assets/flow/V38_trading_floor.mp4" muted playsinline data-scene="bigger" data-at="N0_05|2.3" data-len="1.9" data-start="0" data-duration="1" data-media-start="1.0" data-usable-in="0" data-usable-out="8" data-track-index="15"></video><div class="grade"></div></div>
-    <div class="abs" id="yearBox" style="left:0;right:0;top:330px;text-align:center;opacity:0"><div class="kicker" style="position:static">THIRTY YEARS LATER</div><div class="big" id="yearN" style="font-size:300px;color:var(--cream);margin-top:10px">1961</div></div>
+    <div class="abs" id="yearBox" style="left:0;right:0;top:330px;text-align:center;opacity:0"><div class="kicker" style="position:static">THIRTY YEARS LATER</div><div class="big" id="yearN" style="font-size:300px;color:var(--cream);margin-top:40px">1961</div></div>
     <div class="abs" id="bindWrap" style="inset:0;opacity:0"><video class="vid" id="vBind" src="assets/flow/V10_trade_binder.mp4" muted playsinline data-scene="bigger" data-at="N0_05|6.0" data-len="4.6" data-start="0" data-duration="1" data-media-start="0.5" data-usable-in="0" data-usable-out="8" data-track-index="16"></video><div class="grade"></div></div>
     <div class="slam" id="trusted" style="left:110px;top:130px;font-size:78px;color:var(--cream);opacity:0">THE MOST <span class="foil">TRUSTED</span> INVESTOR IN AMERICA</div>
-    <div class="abs" id="seventeen" style="left:110px;top:760px;opacity:0"><div class="kicker" style="position:static;color:var(--red2)">WHAT NO REGULATOR WOULD SEE FOR</div><div class="big" style="font-size:150px;color:var(--cream)"><span id="n17">0</span> MORE YEARS</div></div>
+    <div class="abs" id="seventeen" style="left:110px;top:760px;opacity:0"><div class="kicker" style="position:static;color:var(--red2)">WHAT NO REGULATOR WOULD SEE FOR</div><div class="big" style="font-size:150px;color:var(--cream);margin-top:24px"><span id="n17">0</span> MORE YEARS</div></div>
   </div>
 
   <!-- ───────── 6 · title marquee ───────── -->
   <div class="scene clip noir" data-scene="title" data-start="0" data-duration="1" data-track-index="6">
     <div class="cam" id="tcam">
-      <svg class="full" id="titleWheel" viewBox="0 0 1920 1080" style="opacity:.28;filter:blur(3px)"></svg>
+      <svg class="full" id="titleWheel" viewBox="0 0 1920 1080" style="opacity:.28;filter:blur(3px)" data-layout-ignore></svg>
       <div id="marq"><div class="t1">HE BEAT VEGAS</div><div class="t2">WITH A COMPUTER IN HIS SHOE</div><div class="t3">Guy Wonders Why</div></div>
       <div class="abs" id="bulbs" style="inset:0"></div>
     </div>

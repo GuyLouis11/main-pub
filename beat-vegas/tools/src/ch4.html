@@ -1,0 +1,165 @@
+<style>
+  .kicker{position:absolute;font-family:var(--mono);font-weight:600;font-size:24px;letter-spacing:.34em;color:var(--gold);white-space:nowrap}
+  .big{font-family:var(--display);font-weight:900;line-height:1;white-space:nowrap}
+  .blab{position:absolute;font-family:var(--mono);font-weight:600;font-size:22px;letter-spacing:.18em;color:var(--cyan);white-space:nowrap;text-transform:uppercase}
+  .cert{position:absolute;left:460px;top:190px;width:1000px;height:640px;background:linear-gradient(160deg,#efe4c6,#d9c9a0);border-radius:10px;box-shadow:0 40px 90px rgba(0,0,0,.7);border:14px double #6b5a2e}
+  .cert .h{position:absolute;left:0;right:0;top:60px;text-align:center;font-family:var(--serif);font-style:italic;font-size:76px;color:#3a2f14}
+  .cert .s{position:absolute;left:0;right:0;top:170px;text-align:center;font-family:var(--mono);font-weight:600;font-size:22px;letter-spacing:.3em;color:#6b5a2e}
+  .cert .seal{position:absolute;right:80px;bottom:60px;width:150px;height:150px;border-radius:50%;background:radial-gradient(circle,#c9483a,#7a1a12);box-shadow:0 0 0 8px rgba(122,26,18,.3)}
+  .cert .n{position:absolute;left:80px;bottom:80px;font-family:var(--display);font-weight:900;font-size:90px;color:#3a2f14}
+  .tile{position:absolute;width:560px;height:330px;border-radius:18px;background:rgba(10,10,10,.8);border:3px solid}
+  .tile .nm{position:absolute;left:34px;top:26px;font-family:var(--mono);font-weight:600;font-size:24px;letter-spacing:.2em;color:var(--dim)}
+  .tile .px{position:absolute;left:34px;top:70px;font-family:var(--display);font-weight:900;font-size:120px;color:var(--cream)}
+  .tile .fv{position:absolute;left:34px;top:210px;font-family:var(--mono);font-weight:600;font-size:26px;letter-spacing:.1em;color:var(--dim)}
+  .tile .vd{position:absolute;right:34px;top:34px;font-family:var(--display);font-weight:900;font-size:44px}
+  .cover2{position:absolute;width:340px;height:500px;border-radius:6px 14px 14px 6px;background:linear-gradient(135deg,#1f4a3a,#0e2a20);box-shadow:0 40px 80px rgba(0,0,0,.7),inset 12px 0 0 rgba(0,0,0,.25);color:#f3ead6}
+  .cover2 .t{position:absolute;left:28px;right:20px;top:60px;font-family:var(--display);font-weight:900;font-size:86px;line-height:.86}
+  .cover2 .a{position:absolute;left:28px;right:20px;bottom:36px;font-family:var(--mono);font-weight:600;font-size:18px;letter-spacing:.14em;line-height:1.5}
+  .tick{position:absolute;top:640px;width:4px;height:60px;background:var(--gold)}
+  .yr{position:absolute;top:720px;font-family:var(--display);font-weight:900;font-size:80px;color:var(--cream);white-space:nowrap}
+  .yl{position:absolute;top:810px;font-family:var(--mono);font-weight:600;font-size:22px;letter-spacing:.14em;color:var(--dim);white-space:nowrap}
+  .bar{position:absolute;bottom:230px;width:56px;background:linear-gradient(180deg,#ffd98a,#b8801f);border-radius:4px 4px 0 0;transform-origin:50% 100%}
+  .troph{position:absolute;top:360px;width:300px;height:300px;border-radius:30px;border:4px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:150px;color:var(--gold);background:rgba(10,8,6,.6)}
+  .troph i{position:absolute;right:-26px;top:-26px;width:70px;height:70px;border-radius:50%;background:#2f8a4a;color:#fff;font-style:normal;font-size:46px;line-height:70px;text-align:center;font-family:var(--display);font-weight:900}
+</style>
+<!--STYLE-->
+  <div class="scene clip noir" data-scene="card" data-start="0" data-duration="1" data-track-index="1"><div class="chcard"></div></div>
+
+  <!-- ───────── 1 · the biggest casino has a ticker ───────── -->
+  <div class="scene clip feltw" data-scene="ticker" data-start="0" data-duration="1" data-track-index="2">
+    <div class="spot"></div>
+    <div class="cam" id="tkcam"><svg class="full" id="tkWheel" viewBox="0 0 1920 1080"></svg>
+      <div class="abs" style="inset:0;perspective:1800px"><div class="cert" id="cert" style="opacity:0"><div class="h">Certificate of Stock</div><div class="s">ONE HUNDRED SHARES · COMMON</div><div class="n">100</div><div class="seal"></div></div></div></div>
+    <div class="abs big" id="bigCas" style="left:0;right:0;top:90px;text-align:center;font-size:96px;color:var(--cream);opacity:0">THE BIGGEST CASINO IN THE WORLD</div>
+    <div class="abs" id="tkWrap" style="inset:0;opacity:0"><div class="grade" style="z-index:1"></div><video class="vid" id="vTk" src="assets/flow/V39_stock_ticker.mp4" muted playsinline data-scene="ticker" data-at="N4_01|2.25" data-len="1.6" data-start="0" data-duration="1" data-media-start="4.2" data-usable-in="0" data-usable-out="8" data-track-index="10"></video></div>
+    <div class="abs" id="flWrap" style="inset:0;opacity:0"><div class="grade" style="z-index:1"></div><video class="vid" id="vFl" src="assets/flow/V38_trading_floor.mp4" muted playsinline data-scene="ticker" data-at="N4_01|3.85" data-len="2.6" data-start="0" data-duration="1" data-media-start="4.0" data-usable-in="0" data-usable-out="8" data-track-index="11"></video></div>
+    <div class="abs big foil" id="hasT" style="left:0;right:0;top:820px;text-align:center;font-size:130px;opacity:0">IT HAS A TICKER.</div>
+  </div>
+
+  <!-- ───────── 2 · mispriced: buy cheap, sell dear, hedge ───────── -->
+  <div class="scene clip noir" data-scene="hedge" data-start="0" data-duration="1" data-track-index="3">
+    <div class="cam" id="hgcam">
+      <div class="kicker" id="kMis" style="left:0;right:0;top:100px;text-align:center;opacity:0">PRICE ≠ VALUE</div>
+      <div class="tile" id="tA" style="left:300px;top:190px;border-color:#2f8a4a;opacity:0"><div class="nm">STOCK</div><div class="px">$20</div><div class="fv">WORTH ABOUT $24</div><div class="vd" style="color:#7ee08a">TOO CHEAP</div></div>
+      <div class="tile" id="tB" style="left:1060px;top:190px;border-color:#e0473a;opacity:0"><div class="nm">WARRANT</div><div class="px">$9</div><div class="fv">WORTH ABOUT $6</div><div class="vd" style="color:#e0473a">TOO EXPENSIVE</div></div>
+      <div class="abs" id="miniDeck" style="left:890px;top:300px;opacity:0"></div>
+      <svg class="full" viewBox="0 0 1920 1080"><path id="chain" d="M860,355 L1060,355" stroke="#e0b04a" stroke-width="10" stroke-dasharray="26 12" fill="none"/>
+        <g id="plot" opacity="0"><path d="M300,1000 L1620,1000" stroke="#3a352c" stroke-width="2"/><path id="zero" d="M300,860 L1620,860" stroke="#9c9486" stroke-width="2" stroke-dasharray="8 8"/>
+          <path id="mkt" d="M300,860 L420,760 L540,880 L660,700 L780,940 L900,800 L1020,980 L1140,760 L1260,900 L1380,720 L1500,940 L1620,800" stroke="#8fe3ff" stroke-width="5" fill="none"/>
+          <path id="pnl" d="M300,860 L420,845 L540,838 L660,826 L780,818 L900,806 L1020,797 L1140,784 L1260,776 L1380,764 L1500,756 L1620,744" stroke="#e0b04a" stroke-width="8" fill="none"/></g></svg>
+      <div class="blab" id="lMkt" style="left:1640px;top:785px;opacity:0">MARKET</div>
+      <div class="blab" id="lPnl" style="left:1640px;top:725px;color:var(--gold);opacity:0">THORP</div>
+      <div class="abs big" id="ahead" style="left:0;right:0;top:560px;text-align:center;font-size:84px;color:var(--cream);opacity:0">UP OR DOWN: <span class="gold">STILL AHEAD</span></div>
+      <div class="note abs" id="hgNote" style="left:300px;top:1020px;opacity:0">Illustrative prices · the hedge: long the stock, short the overpriced warrant</div>
+    </div>
+  </div>
+
+  <!-- ───────── 3 · Beat the Market, before Black–Scholes ───────── -->
+  <div class="scene clip noir" data-scene="market" data-start="0" data-duration="1" data-track-index="4">
+    <div class="abs" id="stWrap" style="inset:0"><div class="grade" style="z-index:1"></div><video class="vid" id="vSt" src="assets/flow/V40_study.mp4" muted playsinline data-scene="market" data-at="0.05" data-len="5.2" data-start="0" data-duration="1" data-media-start="0.8" data-usable-in="0" data-usable-out="8" data-track-index="10"></video></div>
+    <div class="cover2" id="cov2" style="left:1380px;top:200px;opacity:0"><div class="t">BEAT THE MARKET</div><div class="a">EDWARD O. THORP<br>SHEEN T. KASSOUF · 1967</div></div>
+    <div class="abs noir" id="tline" style="inset:0;opacity:0">
+      <div class="abs" id="tl0" style="left:260px;right:260px;top:668px;height:4px;background:#3a352c"></div>
+      <div class="tick" style="left:360px"></div><div class="yr" style="left:300px">1967</div><div class="yl" style="left:300px">THORP &amp; KASSOUF</div>
+      <div class="tick" id="tk73" style="left:960px;opacity:0"></div><div class="yr" id="y73" style="left:900px;opacity:0">1973</div><div class="yl" id="l73" style="left:900px;opacity:0">BLACK–SCHOLES FORMULA</div>
+      <div class="tick" id="tk97" style="left:1560px;opacity:0"></div><div class="yr" id="y97" style="left:1500px;opacity:0">1997</div><div class="yl" id="l97" style="left:1500px;opacity:0">NOBEL PRIZE (SCHOLES, MERTON)</div>
+      <div class="abs" id="sixBr" style="left:362px;top:600px;width:0;height:4px;background:var(--gold)"></div>
+      <div class="abs big foil" id="sixT" style="left:520px;top:450px;font-size:120px;opacity:0">6 YEARS EARLIER</div>
+      <div class="abs" id="medal" style="left:1640px;top:420px;width:150px;height:150px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff0b8,#e0b04a 45%,#7a5314);box-shadow:0 0 40px rgba(224,176,74,.5);opacity:0"></div>
+      <div class="note abs" style="left:260px;top:900px">Thorp &amp; Kassouf's 1967 option-pricing work: hedge ratios &amp; hedging that Black–Scholes later formalised</div>
+    </div>
+  </div>
+
+  <!-- ───────── 4 · the fund ───────── -->
+  <div class="scene clip noir" data-scene="fund" data-start="0" data-duration="1" data-track-index="5">
+    <div class="cam" id="fdcam">
+      <div class="abs" id="plate" style="left:560px;top:120px;width:800px;padding:26px 30px;border-radius:10px;background:linear-gradient(160deg,#fff0b8,#c99a3a);color:#2a1e08;text-align:center;opacity:0;box-shadow:0 20px 50px rgba(0,0,0,.6)">
+        <div style="font-family:var(--display);font-weight:900;font-size:58px;line-height:1">PRINCETON / NEWPORT PARTNERS</div><div style="font-family:var(--mono);font-weight:600;font-size:20px;letter-spacing:.3em;margin-top:8px">ONE OF THE FIRST QUANT HEDGE FUNDS · 1969</div></div>
+      <div class="abs" id="bars" style="inset:0"></div>
+      <div class="abs" style="left:300px;right:300px;top:850px;height:3px;background:#9c9486"></div>
+      <div class="abs big" id="yrs" style="left:300px;top:890px;font-size:70px;color:var(--cream);opacity:0"><span id="yrsN">0</span> YEARS</div>
+      <div class="abs big" id="pct" style="left:1420px;top:110px;font-size:150px;opacity:0;color:var(--gold2);text-shadow:0 0 30px rgba(224,176,74,.5)">≈<span id="pctN">0</span>%</div>
+      <div class="kicker" id="kPct" style="left:1430px;top:260px;opacity:0;line-height:1.6">A YEAR, ON AVERAGE<br>(AS REPORTED)</div>
+    </div>
+  </div>
+
+  <!-- ───────── 5 · the pivot ───────── -->
+  <div class="scene clip noir" data-scene="pivot" data-start="0" data-duration="1" data-track-index="6">
+    <div class="troph" id="tr1" style="left:300px;opacity:0">◎<i>✓</i></div>
+    <div class="troph" id="tr2" style="left:810px;opacity:0">♠<i>✓</i></div>
+    <div class="troph" id="tr3" style="left:1320px;opacity:0">↗<i>✓</i></div>
+    <div class="blab" style="left:330px;top:690px;color:var(--gold)" id="n1">ROULETTE</div><div class="blab" style="left:840px;top:690px;color:var(--gold)" id="n2">BLACKJACK</div><div class="blab" style="left:1350px;top:690px;color:var(--gold)" id="n3">WALL STREET</div>
+    <svg class="full" id="glass" viewBox="0 0 1920 1080" style="opacity:0"><circle cx="960" cy="500" r="190" fill="rgba(143,227,255,.06)" stroke="#e0b04a" stroke-width="18"/><path d="M1094,634 L1260,800" stroke="#e0b04a" stroke-width="36" stroke-linecap="round"/></svg>
+    <div class="abs big" id="notWin" style="left:0;right:0;top:830px;text-align:center;font-size:90px;color:var(--cream);opacity:0">NOTHING TO DO WITH <span class="gold">WINNING</span></div>
+  </div>
+<!--SCRIPT-->
+  F.sceneFade('card', .3, .3); N.chapter('card', 4, 'THE BIGGER TABLE', '♦');
+
+  // ═════════ 1 · ticker ═════════
+  F.sceneFade('ticker', .2, .25);
+  const W4 = N.wheel($('#tkWheel'), 960, 540, 380, { rot: 0, ball: 0 }); W4.race(S('ticker'), 1.6, 420, 30);
+  tl.fromTo('#bigCas', { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: .3, immediateRender: false }, V('N4_01') + .05);
+  tl.to('#tkWheel', { rotationY: 90, transformPerspective: 1600, duration: .3, ease: 'power2.in' }, V('N4_01') + 1.2);
+  tl.fromTo('#cert', { opacity: 1, rotationY: -90 }, { rotationY: 0, duration: .35, ease: 'power2.out', immediateRender: false }, V('N4_01') + 1.5);
+  tl.set('#cert', { opacity: 0 }, 0);
+  tl.set('#tkWrap', { opacity: 1 }, V('N4_01') + 2.25); N.push('#tkWrap', V('N4_01') + 2.25, 1.6, 1.0, 1.15);
+  tl.fromTo('#hasT', { opacity: 0, scale: 1.2 }, { opacity: 1, scale: 1, duration: .3, immediateRender: false }, V('N4_01') + 2.3);
+  tl.set('#flWrap', { opacity: 1 }, V('N4_01') + 3.85); N.push('#flWrap', V('N4_01') + 3.85, 2.6, 1.12, 1.0, { x0: 60 });
+  tl.to('#hasT, #bigCas', { opacity: 0, duration: .2 }, V('N4_01') + 3.85);
+
+  // ═════════ 2 · hedge ═════════
+  F.sceneFade('hedge', .2, .25);
+  F.show('#kMis', V('N4_02') + .1, .3);
+  tl.fromTo('#tA', { opacity: 0, x: -80 }, { opacity: 1, x: 0, duration: .35, ease: 'power3.out', immediateRender: false }, P('N4_02', .08));
+  tl.fromTo('#tB', { opacity: 0, x: 80 }, { opacity: 1, x: 0, duration: .35, ease: 'power3.out', immediateRender: false }, P('N4_02', .14));
+  tl.to('#tA .vd, #tB .vd', { scale: 1.18, transformOrigin: '100% 50%', duration: .3, yoyo: true, repeat: 1, stagger: .25, ease: 'sine.inOut' }, P('N4_02', .2));
+  tl.to('#tA, #tB', { y: -10, duration: .4, yoyo: true, repeat: 1, stagger: .2, ease: 'sine.inOut' }, P('N4_02', .22));
+  const md = N.card($('#miniDeck'), 'A', '♠', 0, 0, { scale: .45, faceUp: true });
+  tl.fromTo('#miniDeck', { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: .3, immediateRender: false }, P('N4_02', .3));
+  tl.to('#miniDeck', { opacity: 0, duration: .2 }, P('N4_02', .45));
+  const buy = N.stamp($('#hgcam'), 'BUY', 400, 560, 110, -8, '#7ee08a'); N.slam(buy, P('N4_02', .47));
+  const sell = N.stamp($('#hgcam'), 'SELL', 1160, 560, 110, 6, '#e0473a'); N.slam(sell, P('N4_02', .6));
+  F.draw('#chain', P('N4_02', .7), .4);
+  tl.to('#tA, #tB, #chain', { y: -140, scale: .7, duration: .5, ease: 'power2.inOut' }, P('N4_02', .78));
+  tl.to([buy, sell, '#kMis'], { opacity: 0, duration: .2 }, P('N4_02', .76));
+  tl.to('#plot', { opacity: 1, duration: .2 }, P('N4_02', .78));
+  F.draw('#mkt', P('N4_02', .79), 1.6, 'none'); F.draw('#pnl', P('N4_02', .8), 1.6, 'none');
+  F.show('#lMkt', P('N4_02', .8) + 1.5, .2); F.show('#lPnl', P('N4_02', .8) + 1.5, .2);
+  tl.fromTo('#ahead', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: .3, immediateRender: false }, P('N4_02', .86)); F.show('#hgNote', P('N4_02', .86), .3);
+
+  // ═════════ 3 · market ═════════
+  F.sceneFade('market', .2, .25);
+  N.recon(S('market') + .1, 5);
+  N.push('#stWrap', S('market'), 5.2, 1.0, 1.1);
+  N.lower($('[data-scene="market"]'), 'Thorp &amp; Sheen Kassouf', 'ECONOMIST · CO-AUTHOR', V('N4_03') + .5, 2.6);
+  tl.fromTo('#cov2', { opacity: 0, y: 60, rotation: 8 }, { opacity: 1, y: 0, rotation: -3, duration: .45, ease: 'back.out(1.6)', immediateRender: false }, P('N4_03', .3));
+  tl.to('#tline', { opacity: 1, duration: .3 }, S('market') + 5.2);
+  N.push('#tline', S('market') + 5.2, E('market') - S('market') - 5.2, 1.0, 1.06, { x1: -30 });
+  tl.to('#sixBr', { width: 600, duration: .8, ease: 'power2.inOut' }, S('market') + 5.4);
+  ['#tk73', '#y73', '#l73'].forEach(s => tl.to(s, { opacity: 1, duration: .25 }, S('market') + 6.1));
+  tl.fromTo('#sixT', { opacity: 0, scale: 1.2 }, { opacity: 1, scale: 1, duration: .3, immediateRender: false }, S('market') + 6.2);
+  ['#tk97', '#y97', '#l97'].forEach(s => tl.to(s, { opacity: 1, duration: .25 }, P('N4_03', .82)));
+  tl.fromTo('#medal', { opacity: 0, scale: .3, rotation: -90 }, { opacity: 1, scale: 1, rotation: 0, duration: .5, ease: 'back.out(2)', immediateRender: false }, P('N4_03', .84));
+
+  // ═════════ 4 · fund ═════════
+  F.sceneFade('fund', .2, .25);
+  tl.fromTo('#plate', { opacity: 0, y: -40 }, { opacity: 1, y: 0, duration: .4, ease: 'power3.out', immediateRender: false }, V('N4_04') + .1);
+  const bars = $('#bars');
+  const hs = [70, 110, 150, 175, 215, 240, 290, 320, 355, 380, 420, 450, 470, 500, 520, 540, 560, 580, 600];
+  hs.forEach((h, i) => { const b = div('bar', bars); b.style.left = (320 + i * 66) + 'px'; b.style.height = (h * .82) + 'px';
+    tl.fromTo(b, { scaleY: 0 }, { scaleY: 1, duration: .3, ease: 'back.out(1.6)', immediateRender: false }, P('N4_04', .25) + i * .07); tl.set(b, { scaleY: 0 }, 0); });
+  tl.to('#yrs', { opacity: 1, duration: .2 }, P('N4_04', .25)); N.count($('#yrsN'), 0, 19, P('N4_04', .25), 19 * .07, v => Math.round(v), 'none');
+  tl.to('#pct, #kPct', { opacity: 1, duration: .25 }, P('N4_04', .45)); N.count($('#pctN'), 0, 20, P('N4_04', .45), 1.2, v => Math.round(v));
+  N.stamp($('#fdcam'), '0 LOSING YEARS', 900, 890, 80, -4, '#7ee08a').id = 'zeroL'; N.slam($('#zeroL'), P('N4_04', .74), true);
+  tl.fromTo('#fdcam', { scale: 1 }, { scale: 1.06, duration: D('fund'), ease: 'none', immediateRender: false }, S('fund'));
+
+  // ═════════ 5 · pivot ═════════
+  F.sceneFade('pivot', .2, .3);
+  ['#tr1', '#tr2', '#tr3'].forEach((s, i) => { tl.fromTo(s, { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: .35, ease: 'back.out(1.8)', immediateRender: false }, V('N4_05') + .1 + i * .45);
+    tl.fromTo(s + ' i', { scale: 0 }, { scale: 1, duration: .25, ease: 'back.out(3)', immediateRender: false }, V('N4_05') + .35 + i * .45); });
+  tl.to('#tr1, #tr2, #tr3', { boxShadow: '0 0 50px rgba(224,176,74,.8)', duration: .35, yoyo: true, repeat: 3, stagger: .2 }, V('N4_05') + 1.5);
+  tl.set('#n1, #n2, #n3', { opacity: 0 }, 0); tl.to('#n1, #n2, #n3', { opacity: 1, duration: .2, stagger: .45 }, V('N4_05') + .2);
+  tl.to('#tr1, #tr2, #tr3, #n1, #n2, #n3', { opacity: .12, scale: .9, duration: .5 }, P('N4_05', .55));
+  tl.fromTo('#glass', { opacity: 0, scale: .6, transformOrigin: '960px 500px' }, { opacity: 1, scale: 1, duration: .5, ease: 'back.out(1.8)', immediateRender: false }, P('N4_05', .6));
+  tl.to('#glass', { x: 30, y: -10, duration: .8, yoyo: true, repeat: 2, ease: 'sine.inOut' }, P('N4_05', .7));
+  tl.fromTo('#notWin', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: .3, immediateRender: false }, P('N4_05', .7));

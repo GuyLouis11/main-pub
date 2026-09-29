@@ -1,6 +1,6 @@
 <style>
   .kicker{position:absolute;font-family:var(--mono);font-weight:600;font-size:24px;letter-spacing:.34em;color:var(--gold);white-space:nowrap}
-  .big{font-family:var(--display);font-weight:900;line-height:.85;white-space:nowrap}
+  .big{font-family:var(--display);font-weight:900;line-height:1;white-space:nowrap}
   .blab{position:absolute;font-family:var(--mono);font-weight:600;font-size:22px;letter-spacing:.18em;color:var(--cyan);white-space:nowrap;text-transform:uppercase}
   .neonT{position:absolute;font-family:var(--display);font-weight:900;white-space:nowrap;color:#fff6e8}
   .sky{position:absolute;inset:0;background:linear-gradient(180deg,#05060d 0%,#16102a 55%,#3a1a2a 78%,#130b10 100%)}
@@ -110,13 +110,13 @@
     tl.fromTo(s, { x: red ? -400 : 2200 }, { x: red ? 2200 : -400, duration: 1.6 + rnd(), ease: 'none', immediateRender: false }, S('vegas') + rnd() * 4);
   }
   // Claude at the wheel, notebook
-  tl.to('#table', { opacity: 1, duration: .3 }, P('N2_01', .4));
+  tl.to('#table', { opacity: 1, duration: .3 }, P('N2_01', .4)); tl.to('#vcam', { opacity: 0, duration: .01 }, P('N2_01', .4) + .3);
   const TW = N.wheel($('#tWheel'), 620, 560, 400, { rot: 0, ball: 0 }); TW.race(P('N2_01', .4), E('vegas') - P('N2_01', .4), 480, 32);
   F.show('#kClaude', P('N2_01', .42), .3);
   tl.fromTo('#pad', { x: 300, rotation: 12, opacity: 0 }, { x: 0, rotation: 3, opacity: 1, duration: .5, ease: 'power3.out', immediateRender: false }, P('N2_01', .44));
   ['17 · 32 · 5', '22 · 34 · 15', '3 · 24 · 36', '13 · 1 · 00', '27 · 10 · 25'].forEach((t, i) => N.type($('#pl' + (i + 1)), t, P('N2_01', .47) + i * .5, 22));
   // predictions came in
-  tl.to('#hits', { opacity: 1, duration: .3 }, P('N2_01', .72));
+  tl.to('#hits', { opacity: 1, duration: .3 }, P('N2_01', .72)); tl.set('#table', { opacity: 0 }, P('N2_01', .72) + .32);
   ['#r1', '#r2', '#r3', '#r4'].forEach((r, i) => tl.fromTo(r, { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: .25, ease: 'power3.out', immediateRender: false }, P('N2_01', .74) + i * .3));
   N.odds.set(S('vegas'), 44, 'PLAYER', .01); N.odds.show(P('N2_01', .74));
   tl.fromTo('#labLike', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: .35, ease: 'power3.out', immediateRender: false }, P('N2_01', .74) + 1.3);
@@ -140,7 +140,7 @@
   });
   tl.set('#snaps', { opacity: 1 }, snapT);
   // N2_03: invisible or tough; they never bet big
-  tl.to('#trade', { opacity: 1, duration: .3 }, V('N2_03') - .1);
+  tl.to('#trade', { opacity: 1, duration: .3 }, V('N2_03') - .1); tl.set('#macro', { opacity: 0 }, V('N2_03') + .22);
   F.show('#kPick', V('N2_03'), .3);
   tl.fromTo('#tgI', { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: .3, ease: 'back.out(2)', immediateRender: false }, P('N2_03', .15));
   tl.fromTo('#tgT', { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: .3, ease: 'back.out(2)', immediateRender: false }, P('N2_03', .3));

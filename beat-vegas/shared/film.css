@@ -75,7 +75,7 @@ svg{overflow:visible}
 /* HUD: the edge meter (the film's running scoreboard) */
 #odds{position:absolute;z-index:18;right:56px;top:46px;width:300px;padding:14px 18px 16px;background:rgba(8,8,8,.72);border:1px solid rgba(224,176,74,.55);border-radius:10px;opacity:0}
 #odds .l{font-family:var(--mono);font-weight:600;font-size:15px;letter-spacing:.24em;color:var(--dim)}
-#odds .v{font-family:var(--display);font-weight:900;font-size:58px;line-height:.95;color:var(--gold);margin-top:6px}
+#odds .v{font-family:var(--display);font-weight:900;font-size:58px;line-height:1.1;color:var(--gold);margin-top:6px}
 #odds .who{font-family:var(--mono);font-size:14px;letter-spacing:.2em;color:var(--dim);margin-top:2px}
 #odds .bar{position:relative;height:10px;margin-top:10px;background:#231f19;border-radius:5px;overflow:hidden}
 #odds .bar i{position:absolute;left:50%;top:0;bottom:0;width:0;background:var(--gold)}
@@ -94,7 +94,7 @@ svg{overflow:visible}
 .lower .strip{margin-top:14px;display:inline-block;white-space:nowrap;background:var(--red);color:#fbf1dc;font-family:var(--mono);font-weight:600;font-size:21px;letter-spacing:.22em;padding:10px 20px 10px 22px;text-transform:uppercase}
 
 /* kinetic caption slams */
-.slam{position:absolute;font-family:var(--display);font-weight:900;text-transform:uppercase;line-height:.9;white-space:nowrap;text-shadow:0 10px 40px rgba(0,0,0,.7)}
+.slam{position:absolute;font-family:var(--display);font-weight:900;text-transform:uppercase;line-height:1;white-space:nowrap;text-shadow:0 10px 40px rgba(0,0,0,.7)}
 .recon{position:absolute;z-index:17;left:40px;top:36px;font-family:var(--mono);font-size:15px;letter-spacing:.2em;color:rgba(241,230,207,.75);background:rgba(0,0,0,.45);padding:6px 12px;text-transform:uppercase;opacity:0}
 
 /* global finishing */

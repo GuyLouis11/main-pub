@@ -401,7 +401,221 @@ def ch2(c):
     c.mus.add(c.P("N2_04", .74) + .35, K.crash(2.5), .12)
 
 
-CUES = {"ch0": ch0, "ch1": ch1, "ch2": ch2}
+def ch3(c):
+    K = c.k
+    c.card()
+    # blackjack: the band, the deal, the memory
+    c.groove(c.S("blackjack"), c.P("N3_01", .28), 104, .8)
+    for i in range(10):
+        c.fx.add(c.V("N3_01") + .25 + i * .16, K.card(), .28, -.6 + (i % 5) * .3)
+    for i in range(52):
+        c.fx.add(c.P("N3_01", .3) + i * .008, K.tick(4200, .003), .03, .4)
+    c.hit(c.P("N3_01", .36) + .2, .7)
+    for i in range(10):
+        c.fx.add(c.P("N3_01", .68) + i * .12, K.whoosh(.15, 1500, 5000), .06, .5)
+    c.drone(c.P("N3_01", .28), c.E("blackjack"), .07)
+    for i in range(14):
+        c.fx.add(c.V("N3_02") + .1 + i * .05, K.tick(1800, .004), .08, -.3)
+    c.stab(c.P("N3_02", .55), .26, ("C", "E", "G", "B"))
+    c.mus.add(c.P("N3_02", .55), K.vibe(note("B", 5), 2.2), .05)
+    # kelly: mainframe, pages, the formula, three bankrolls
+    t = c.S("kelly")
+    c.fx.add(t, K.hum(4.6, 60) * .6, .05)
+    for i in range(40):
+        c.fx.add(t + K.rng.uniform(0, 4.5), K.tick(K.rng.uniform(600, 1400), .005), .06, K.rng.uniform(-.6, .6))
+    c.fx.add(t, K.lp(K.noise(4.6), 900) * (.5 + .5 * np.sin(np.arange(K.n(4.6)) / SR * 2 * np.pi * 7)), .03)
+    c.fx.add(c.V("N3_03") + 4.3, K.paper(.5), .2)
+    c.groove(c.S("kelly") + .5, c.V("N3_03") + 7.4, 96, .55, piano=False)
+    c.mus.add(c.V("N3_03") + 7.6, K.vibe(note("G", 5), 2.5), .07)
+    c.stab(c.V("N3_03") + 7.6, .2, ("G", "B", "D", "F"))
+    c.drone(c.V("N3_03") + 7.4, c.E("kelly"), .07)
+    c.fx.add(c.V("N3_04") + .1, K.sweep(300, 360, 1.4) * K.env(K.n(1.4), .8), .04)
+    tb = c.P("N3_04", .42)
+    c.fx.add(tb, K.sweep(400, 900, 1.0, .5) * K.adsr(K.n(1.0), .02, .1), .05)
+    c.hit(tb + 1.1, .8)
+    c.mus.add(tb + 1.2, K.horn([note("G", 3), note("C#", 4)], 1.2, 1200), .15)
+    for i, n in enumerate(["C", "D#", "G", "A#", "D", "G"]):
+        c.mus.add(c.P("N3_04", .6) + i * .2, K.vibe(note(n, 5 if i < 4 else 6), 1.2), .06)
+    # Reno: snow, neon, the money
+    c.fx.add(c.S("reno"), K.wind(c.D("reno")), .12)
+    c.groove(c.S("reno") + .2, c.E("reno"), 108, .75)
+    c.fx.add(c.P("N3_05", .2), K.paper(.4), .25)
+    for dt in (0, .06, .1, .19, .23, .34):
+        c.fx.add(c.P("N3_05", .5) + dt, K.tick(6000, .003), .08, .6)
+    c.fx.add(c.P("N3_05", .68), K.card(), .15, .6)
+    for i in range(24):
+        c.fx.add(c.P("N3_05", .78) + (i / 24) ** 1.3 * 1.4, K.tick(2600, .006), .12)
+    for i, n in enumerate([6, 9, 12, 15]):
+        for j in range(n):
+            c.fx.add(c.P("N3_05", .8) + i * .2 + j * .03, K.chip(), .06, -.2 + i * .15)
+    c.mus.add(c.P("N3_05", .78) + 1.4, K.bell(note("E", 6), 1.6, .5), .12)
+    c.stab(c.P("N3_05", .78) + 1.4, .3, ("C", "E", "G", "B"))
+    # book: the release, the craze
+    c.fx.add(c.S("book"), K.murmur(3.4) * .7, .08)
+    c.fx.add(c.P("N3_06", .22), K.whoosh(.5, 400, 3000), .15)
+    c.stab(c.P("N3_06", .45), .26, ("F", "A", "C", "E"))
+    c.groove(c.P("N3_06", .45), c.E("book"), 112, .8)
+    c.fx.add(c.P("N3_06", .66), K.murmur(c.E("book") - c.P("N3_06", .66)) * 1.6, .1)
+    for i in range(20):
+        c.fx.add(c.P("N3_06", .72) + K.rng.uniform(0, 1), K.blip(K.rng.uniform(900, 1600), .05), .05, K.rng.uniform(-.8, .8))
+    # fight: alarms, strikes, decks, BARRED
+    for i in range(4):
+        c.mus.add(c.V("N3_07") + i * .5, K.horn([note("C", 4), note("F#", 4)], .4, 2600), .16)
+    c.hit(c.V("N3_07") + .25, .9)
+    c.fx.add(c.P("N3_07", .25), K.scribble(.25, 20), .25)
+    c.fx.add(c.P("N3_07", .3), K.scribble(.25, 20), .25)
+    for i in range(6):
+        c.fx.add(c.P("N3_07", .44) + i * .07, K.card(), .25, -.4 + i * .15)
+    c.hit(c.P("N3_07", .64) + .2, 1.0)
+    c.drone(c.V("N3_07"), c.E("fight"), .09)
+    # coffee: it gets darker
+    c.drone(c.S("coffee"), c.E("coffee"), .15, "C")
+    c.mus.add(c.P("N3_08", .3), K.bell(note("E", 7), .9, .2), .08)
+    t = c.P("N3_08", .5)
+    while t < c.E("coffee"):
+        c.mus.add(t, K.heartbeat(), .45)
+        t += .9
+    c.fx.add(c.P("N3_08", .6), K.sweep(200, 90, 1.4, .6) * K.adsr(K.n(1.4), .3, .3), .08)
+    c.fx.add(c.P("N3_08", .8), K.glitch(.8), .12)
+    # road: engine, screech, the stop, the linkage
+    tr = c.S("road")
+    n = K.n(3.9)
+    eng = K.lp(K.saw(55, 3.9, .01) * (1 + .3 * np.linspace(0, 1, n)), 400) * np.linspace(.4, 1, n)
+    c.fx.add(tr, eng, .25)
+    t = tr + .3
+    while t < c.V("N3_09") + 3.9:
+        c.mus.add(t, K.heartbeat(), .5)
+        t += .6
+    c.fx.add(c.V("N3_09") + 3.9, K.screech(1.6), .3)
+    c.fx.add(c.V("N3_09") + 5.3, K.lp(K.noise(1.2), 600) * K.env(K.n(1.2), .3), .3)
+    c.fx.add(c.P("N3_09", .78), K.hum(1.5, 50), .04)
+    c.hit(c.P("N3_09", .84) + .3, .7)
+    c.drone(c.P("N3_09", .78), c.E("road"), .1)
+    # small: quiet, then the city (the band returns for the bigger table)
+    for i, nn in enumerate(["C", "G", "D#"]):
+        c.mus.add(c.V("N3_10") + .3 + i * 1.2, K.piano(note(nn, 4), 2.4), .08)
+    c.fx.add(c.P("N3_10", .66), K.whoosh(1.6, 200, 2000), .15)
+    c.groove(c.P("N3_10", .72), c.E("small"), 104, .8)
+
+
+def ch4(c):
+    K = c.k
+    c.card()
+    # the biggest casino has a ticker
+    c.fx.add(c.S("ticker"), K.ball_roll(1.6, .8), .12)
+    c.fx.add(c.V("N4_01") + 1.2, K.whoosh(.5, 400, 4000), .18)
+    c.fx.add(c.V("N4_01") + 1.55, K.card(), .3)
+    for i in range(int(1.6 / .04)):
+        c.fx.add(c.V("N4_01") + 2.25 + i * .04, K.typewriter(), .1, .3)
+    c.stab(c.V("N4_01") + 2.3, .3, ("C", "E", "G", "B"))
+    c.fx.add(c.V("N4_01") + 3.85, K.murmur(2.6) * 2.2, .16)
+    # hedge
+    c.groove(c.S("hedge"), c.E("hedge"), 100, .7)
+    for i, t in enumerate((c.P("N4_02", .08), c.P("N4_02", .14))):
+        c.fx.add(t, K.blip(700 + 400 * i, .12), .15, -.5 + i)
+    c.fx.add(c.P("N4_02", .3), K.card(), .2)
+    c.hit(c.P("N4_02", .47) + .2, .6)
+    c.hit(c.P("N4_02", .6) + .2, .6)
+    for i in range(6):
+        c.fx.add(c.P("N4_02", .7) + i * .06, K.tick(3800, .004), .12)
+    for i, n in enumerate(["C", "E", "G", "B", "D", "E"]):
+        c.mus.add(c.P("N4_02", .8) + i * .27, K.vibe(note(n, 5 if i < 4 else 6), 1.3), .05)
+    c.stab(c.P("N4_02", .86), .26, ("F", "A", "C", "E"))
+    # Beat the Market, 1967 → 1973 → 1997
+    c.groove(c.S("market"), c.E("market"), 96, .55, ride=False)
+    c.fx.add(c.P("N4_03", .3), K.whoosh(.4, 500, 3500), .12)
+    c.fx.add(c.S("market") + 5.2, K.whoosh(.8, 200, 2500), .12)
+    c.mus.add(c.S("market") + 6.2, K.vibe(note("G", 5), 1.8), .06)
+    c.mus.add(c.P("N4_03", .84), K.bell(note("C", 6), 2.2, .7), .1)
+    # the fund: 19 rising bars
+    c.groove(c.S("fund"), c.P("N4_04", .25), 104, .6, piano=False)
+    for i in range(19):
+        c.mus.add(c.P("N4_04", .25) + i * .07, K.bass(midi(36 + [0, 3, 5, 7, 10, 12, 15, 17, 19, 22, 24, 27, 29, 31, 34, 36, 39, 41, 43][i]) , .4), .25)
+        c.fx.add(c.P("N4_04", .25) + i * .07, K.tick(2000 + i * 60, .005), .06)
+    c.stab(c.P("N4_04", .74) + .2, .38, ("C", "E", "G", "D"))
+    c.mus.add(c.P("N4_04", .74) + .2, K.crash(2.6), .14)
+    # pivot: three wins, then something else
+    for i in range(3):
+        c.mus.add(c.V("N4_05") + .35 + i * .45, K.bell(note(["C", "E", "G"][i], 6), 1.4, .5), .09)
+    c.drone(c.P("N4_05", .55), c.E("pivot"), .09)
+    c.fx.add(c.P("N4_05", .6), K.whoosh(.5, 300, 2000), .12)
+    c.mus.add(c.P("N4_05", .7), K.piano(note("D#", 4), 2.2), .08)
+
+
+def ch5(c):
+    K = c.k
+    c.card()
+    # 1991: a statement, a line too smooth, a trusted man
+    c.groove(c.S("client"), c.P("N5_01", .8), 92, .55, piano=False)
+    c.fx.add(c.V("N5_01") + .2, K.paper(.5), .25)
+    for i in range(5):
+        c.fx.add(c.V("N5_01") + .55 + i * .3, K.typewriter(), .15, -.4)
+    c.fx.add(c.P("N5_01", .3), K.scribble(.4, 9), .18)
+    for i in range(36):
+        c.fx.add(c.P("N5_01", .62) + i * .025, K.tick(3000, .003), .05, .4)
+    c.mus.add(c.P("N5_01", .8), K.vibe(note("E", 6), 2.5), .07)
+    c.drone(c.P("N5_01", .8), c.E("client"), .1)
+    c.fx.add(c.V("N5_02") - .2, K.scribble(3.0, 7), .06)
+    # 160 trades, half never happened
+    c.drone(c.S("audit"), c.E("audit"), .12)
+    for i in range(160):
+        c.fx.add(c.V("N5_03") + .1 + i * .012, K.tick(3800, .002), .025, .3)
+    for i in range(80):
+        c.fx.add(c.P("N5_03", .5) + i * .03, K.tick(900, .01), .12, K.rng.uniform(-.6, .6))
+    t = c.P("N5_03", .45)
+    while t < c.E("audit"):
+        c.mus.add(t, K.heartbeat(), .38)
+        t += .8
+    c.fx.add(c.P("N5_04", .4), K.riser(1.4, 200, 5000), .12)
+    c.hit(c.P("N5_04", .4) + 1.4, 1.0)
+    # the call
+    c.hit(c.V("N5_05") + .22, 1.1)
+    c.fx.add(c.V("N5_05") + 1.1, K.bell(note("E", 6), .4, .15) * (np.sin(np.arange(K.n(.4)) / SR * 2 * np.pi * 22) > 0), .08)
+    c.fx.add(c.V("N5_05") + 1.5, K.tick(700, .02), .2)
+    # the name: near silence, a low swell, one hit on the last letter
+    tn = c.P("N5_06", .45)
+    c.mus.add(c.V("N5_06"), K.pad([note("C", 1), note("F#", 1), note("C", 2)], c.E("name") - c.V("N5_06") + .6, 120, 500, .8, .5), .2)
+    for i, ch in enumerate("BERNIE MADOFF"):
+        if ch != " ":
+            c.fx.add(tn + i * .09, K.typewriter(), .22, (i - 6) / 8)
+    c.mus.add(tn + 12 * .09 + .05, K.boom(1.6), .5)
+    c.mus.add(tn + 12 * .09 + .05, K.horn([note("C", 3), note("F#", 3), note("C", 4)], 1.8, 1400), .2)
+    # 2008
+    for i in range(18):
+        c.fx.add(c.V("N5_07") + .1 + (i / 18) ** 1.5 * 1.6, K.tick(1600, .01), .18)
+    c.fx.add(c.V("N5_07") + 2.4, K.lp(K.noise(2.6), 700) * K.adsr(K.n(2.6), .2, .3), .1)
+    for i in range(10):
+        c.fx.add(c.V("N5_07") + 2.5 + i * .25, K.wood(140), .15, (-1) ** i * .3)
+    c.fx.add(c.V("N5_07") + 5.0, K.paper(.35), .3)
+    c.fx.add(c.V("N5_07") + 5.3, K.paper(.35), .3)
+    c.hit(c.V("N5_07") + 5.6, .8)
+    for i in range(3):
+        c.fx.add(c.P("N5_07", .77) + i * .2, K.blip(500, .1), .12)
+    c.drone(c.V("N5_07") + 2.4, c.E("collapse"), .1)
+    # the secret: recap, then the line
+    c.groove(c.S("secret"), c.P("N5_08", .33), 104, .6)
+    c.fx.add(c.V("N5_08") + .4, K.card(), .3)
+    c.fx.add(c.P("N5_08", .33), K.whoosh(.6, 200, 2000), .15)
+    for i in range(3):
+        c.mus.add(c.P("N5_08", .44) + i * .2, K.piano(note(["C", "D#", "G"][i], 4), 1.6), .1)
+    c.fx.add(c.P("N5_08", .66), K.whoosh(.8, 300, 3000), .12)
+    c.fx.add(c.P("N5_08", .7), K.glitch(.3), .12)
+    c.stab(c.P("N5_08", .84), .4, ("C", "E", "G", "B"))
+    c.mus.add(c.P("N5_08", .84), K.crash(3), .16)
+    # the ball stops: the one full spin of the film, then the band plays out
+    run_d = max(4.2, c.VE("N5_09") - c.S("ball") - .2)
+    c.fx.add(c.S("ball"), K.ball_roll(run_d * .6, .5), .22)
+    drop = c.S("ball") + run_d * .55
+    for i in range(7):
+        c.fx.add(drop + .15 + i * (.1 + i * .05), K.tick(K.rng.uniform(2500, 4200), .006), .35 * (1 - i / 9), K.rng.uniform(-.3, .3))
+    c.mus.add(c.S("ball") + run_d, K.ear_tone(note("G", 5)), .2)
+    c.mus.add(c.S("ball") + run_d + .05, K.vibe(note("G", 5), 2.5), .07)
+    c.groove(c.S("ball") + run_d + .3, c.E("ball"), 108, .9, bar0=4)
+    c.stab(c.E("ball") - 3.2, .35, ("C", "D#", "G", "A#"))
+    c.mus.add(c.E("ball") - 3.2, K.crash(3), .12)
+
+
+CUES = {"ch0": ch0, "ch1": ch1, "ch2": ch2, "ch3": ch3, "ch4": ch4, "ch5": ch5}
 
 
 def main(argv):

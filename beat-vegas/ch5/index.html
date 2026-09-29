@@ -1,5 +1,11 @@
 <!doctype html>
-<html><head>
+<html lang="en" data-composition-variables='[{"id":"scratchVO","type":"boolean","label":"Show SCRATCH VO subtitles (review only)","default":false}]'>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1920, height=1080" />
+<title>The Check</title>
+<link rel="stylesheet" href="shared/film.css" />
+<script src="shared/vendor/gsap.min.js"></script>
 <script id="timing" type="application/json">
 {
   "chapter": 5,
@@ -48,7 +54,8 @@
       "xin": 0.35,
       "vo": [
         "N5_06"
-      ]
+      ],
+      "tail": 1.3
     },
     {
       "id": "collapse",
@@ -68,7 +75,7 @@
     },
     {
       "id": "ball",
-      "min": 3.0,
+      "min": 11.0,
       "xin": 0.35,
       "vo": [
         "N5_09"
@@ -79,49 +86,311 @@
     "N5_01": {
       "text": "In 1991, a client asked him to look over their investments. One manager stood out. Steady profits, month after month. Never a bad year. Everyone trusted him.",
       "estimate": 10.3,
-      "source": "estimate"
+      "source": "take",
+      "dur": 8.854
     },
     "N5_02": {
       "text": "Thorp did what he always did. He checked the numbers.",
       "estimate": 4.0,
-      "source": "estimate"
+      "source": "take",
+      "dur": 2.83
     },
     "N5_03": {
       "text": "He pulled about a hundred and sixty of the manager's options trades. For half of them, no such trade happened on the exchange that day.",
       "estimate": 9.56,
-      "source": "estimate"
+      "source": "take",
+      "dur": 6.308
     },
     "N5_04": {
       "text": "For many of the rest, the manager claimed more trades for this one client than the entire market had traded.",
       "estimate": 7.71,
-      "source": "estimate"
+      "source": "take",
+      "dur": 5.65
     },
     "N5_05": {
       "text": "The trades weren't real. Thorp told his client to get out. And they did.",
       "estimate": 5.49,
-      "source": "estimate"
+      "source": "take",
+      "dur": 3.528
     },
     "N5_06": {
       "text": "The manager's name was Bernie Madoff.",
       "estimate": 2.52,
-      "source": "estimate"
+      "source": "take",
+      "dur": 2.503
     },
     "N5_07": {
       "text": "Seventeen years later, in 2008, it all collapsed. The largest Ponzi scheme in history. Regulators, banks and thousands of investors had every chance to check.",
       "estimate": 9.56,
-      "source": "estimate"
+      "source": "take",
+      "dur": 8.648
     },
     "N5_08": {
       "text": "Everyone remembers Ed Thorp as the man who beat the odds. But that isn't really his secret. His secret is simpler, and harder. When the numbers look too good to be true, check them.",
       "estimate": 12.89,
-      "source": "estimate"
+      "source": "take",
+      "dur": 8.781
     },
     "N5_09": {
       "text": "The ball always stops somewhere. The question is whether you bothered to do the math.",
       "estimate": 5.86,
-      "source": "estimate"
+      "source": "take",
+      "dur": 4.41
     }
   }
 }
 </script>
-</head><body></body></html>
+<style>
+  .kicker{position:absolute;font-family:var(--mono);font-weight:600;font-size:24px;letter-spacing:.34em;color:var(--gold);white-space:nowrap}
+  .big{font-family:var(--display);font-weight:900;line-height:1;white-space:nowrap}
+  .blab{position:absolute;font-family:var(--mono);font-weight:600;font-size:22px;letter-spacing:.18em;color:var(--cyan);white-space:nowrap;text-transform:uppercase}
+  .stmt{position:absolute;left:170px;top:150px;width:760px;height:780px;background:#f1e6cf;box-shadow:0 40px 90px rgba(0,0,0,.6);transform:rotate(-1.5deg)}
+  .stmt .hd{position:absolute;left:44px;top:36px;font-family:var(--mono);font-weight:600;font-size:22px;letter-spacing:.24em;color:#6b5a2e}
+  .stmt .rw{position:absolute;left:44px;right:44px;height:58px;border-bottom:2px solid rgba(60,50,30,.2);font-family:var(--mono);font-weight:600;font-size:24px;color:#2a2418;line-height:58px;white-space:nowrap}
+  .stmt .rw b{position:absolute;right:0;font-weight:600}
+  .months{position:absolute;display:grid;grid-template-columns:repeat(12,34px);gap:8px}
+  .months i{width:34px;height:34px;border-radius:5px;background:#2f8a4a}
+  .tkt{position:absolute;width:56px;height:62px;border-radius:4px;background:#f4ecd8;box-shadow:0 2px 5px rgba(0,0,0,.4)}
+  .tkt::before{content:"";position:absolute;left:7px;right:7px;top:12px;height:4px;background:#b9ad97;box-shadow:0 12px 0 #b9ad97,0 24px 0 #cfc5ae}
+  .tkt .x{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:900;font-size:44px;color:#e0473a;opacity:0}
+  .vbar{position:absolute;bottom:170px;width:240px;border-radius:6px 6px 0 0;transform-origin:50% 100%}
+  .paper{position:absolute;width:560px;height:360px;background:#ece3cf;box-shadow:0 30px 70px rgba(0,0,0,.6);padding:26px 30px;color:#1a1612}
+  .paper .mast{font-family:var(--serif);font-size:44px;border-bottom:3px double #1a1612;padding-bottom:8px;text-align:center}
+  .paper .hl{font-family:var(--display);font-weight:900;font-size:62px;line-height:1.02;margin-top:18px;text-transform:uppercase}
+  .paper .dt{font-family:var(--mono);font-size:16px;letter-spacing:.2em;margin-top:22px;color:#5a4f3e}
+  .ico{position:absolute;top:640px;width:220px;height:170px;border:3px solid var(--dim);border-radius:16px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-weight:600;font-size:22px;letter-spacing:.16em;color:var(--dim)}
+  .ico i{position:absolute;right:-18px;top:-18px;width:52px;height:52px;border:4px solid var(--gold);border-radius:8px;background:#0b0b0b}
+  #nameT{position:absolute;left:0;right:0;top:420px;text-align:center;font-family:var(--display);font-weight:900;font-size:230px;letter-spacing:.04em;color:#f3ead6;white-space:nowrap;text-shadow:0 0 40px rgba(224,71,58,.35)}
+  #endCard .gww{font-family:var(--mono);font-weight:600;font-size:30px;letter-spacing:.5em;color:var(--gold)}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="ch5" data-start="0" data-duration="64.102" data-width="1920" data-height="1080">
+
+  <div class="scene clip noir" data-scene="card" data-start="0.000" data-duration="2.200" data-track-index="1"><div class="chcard"></div></div>
+
+  <!-- ───────── 1 · 1991: a manager who never loses ───────── -->
+  <div class="scene clip noir" data-scene="client" data-start="1.850" data-duration="12.784" data-track-index="2">
+    <div class="cam" id="clcam">
+      <div class="kicker" id="k91" style="left:170px;top:84px;opacity:0">1991 · A CLIENT'S PORTFOLIO</div>
+      <div class="stmt" id="stmt" style="opacity:0"><div class="hd">STATEMENT OF ACCOUNTS</div>
+        <div class="rw" style="top:100px">MANAGER A <b>+6.2%</b></div><div class="rw" style="top:158px">MANAGER B <b>−3.9%</b></div>
+        <div class="rw" id="rwX" style="top:216px">MANAGER X <b>+1% EVERY MONTH</b></div><div class="rw" style="top:274px">MANAGER C <b>+11.4%</b></div>
+        <div class="rw" style="top:332px">MANAGER D <b>−8.1%</b></div>
+        <div class="abs" id="hlX" style="left:30px;right:30px;top:210px;height:64px;background:rgba(224,176,74,.45);transform-origin:0 50%;mix-blend-mode:multiply"></div></div>
+      <svg class="full" viewBox="0 0 1920 1080"><path id="mktL" d="M1060,700 L1130,640 L1200,720 L1270,600 L1340,690 L1410,560 L1480,720 L1550,610 L1620,660 L1690,540 L1760,640" fill="none" stroke="#9c9486" stroke-width="4"/>
+        <path id="smooth" d="M1060,700 L1130,684 L1200,668 L1270,652 L1340,636 L1410,620 L1480,604 L1550,588 L1620,572 L1690,556 L1760,540" fill="none" stroke="#e0b04a" stroke-width="7"/></svg>
+      <div class="blab" id="lM" style="left:1780px;top:628px;color:#9c9486;opacity:0">MARKET</div><div class="blab" id="lX" style="left:1780px;top:526px;color:var(--gold);opacity:0">X</div>
+      <div class="kicker" id="kSteady" style="left:1060px;top:420px;opacity:0">STEADY. SMOOTH. EVERY MONTH.</div>
+      <div class="months" id="months" style="left:1060px;top:790px"></div>
+      <div class="blab" id="lNever" style="left:1060px;top:930px;color:#7ee08a;opacity:0">NEVER A BAD YEAR</div>
+    </div>
+    <div class="abs" id="trust" style="inset:0;opacity:0;background:radial-gradient(1000px 700px at 50% 40%, #1a1f2a, #050608 75%)">
+      <svg class="full" viewBox="0 0 1920 1080"><rect x="560" y="120" width="800" height="760" fill="#0c1422" stroke="#3a352c" stroke-width="8"/>
+        <path d="M960,880 L960,520 C900,520 860,470 860,420 C860,360 905,320 960,320 C1015,320 1060,360 1060,420 C1060,470 1020,520 960,520 M830,880 C830,620 880,560 960,560 C1040,560 1090,620 1090,880 Z" fill="#050608"/>
+        <path d="M960,300 m-150,0 a150,40 0 1,0 300,0 a150,40 0 1,0 -300,0" fill="none" stroke="#e0b04a" stroke-width="6" id="halo" opacity=".85"/></svg>
+      <div class="abs" id="cityLights" style="left:570px;top:130px;width:780px;height:740px;overflow:hidden"></div>
+      <div class="abs big foil" id="trustT" style="left:0;right:0;top:920px;text-align:center;font-size:90px">EVERYONE TRUSTED HIM</div>
+    </div>
+    <div class="abs" id="audWrap" style="inset:0;opacity:0"><div class="grade" style="z-index:1"></div><video class="vid" id="vAud" src="assets/flow/V43_binder_audit.mp4" muted playsinline data-scene="client" data-at="N5_02|-0.2" data-len="3.6" data-start="11.154" data-duration="3.480" data-media-start="2.0" data-usable-in="0" data-usable-out="8" data-track-index="10"></video></div>
+    <div class="abs big" id="checked" style="left:110px;top:860px;font-size:100px;color:var(--cream);opacity:0">HE CHECKED <span class="gold">THE NUMBERS</span></div>
+  </div>
+
+  <!-- ───────── 2 · 160 trades ───────── -->
+  <div class="scene clip noir" data-scene="audit" data-start="14.284" data-duration="13.058" data-track-index="3">
+    <div class="cam" id="aucam">
+      <div class="abs" id="tix" style="left:150px;top:170px;width:1060px;height:720px"></div>
+      <div class="abs big" id="n160" style="left:1320px;top:190px;font-size:220px;color:var(--cream);opacity:0"><span id="n160N">0</span></div>
+      <div class="kicker" id="k160" style="left:1330px;top:430px;opacity:0">OPTIONS TRADES PULLED</div>
+      <div class="abs big" id="nNo" style="left:1320px;top:520px;font-size:150px;color:var(--red2);opacity:0"><span id="nNoN">0</span></div>
+      <div class="kicker" id="kNo" style="left:1330px;top:680px;color:var(--red2);opacity:0;line-height:1.6">NO SUCH TRADE ON<br>THE EXCHANGE THAT DAY</div>
+      <svg class="full" id="scan" viewBox="0 0 1920 1080" style="opacity:0"><circle id="lens" cx="300" cy="300" r="110" fill="rgba(143,227,255,.08)" stroke="#e0b04a" stroke-width="10"/><path id="lensH" d="M378,378 L470,470" stroke="#e0b04a" stroke-width="22" stroke-linecap="round"/></svg>
+    </div>
+    <div class="abs noir" id="vol" style="inset:0;opacity:0">
+      <div class="vbar" id="vbMkt" style="left:560px;height:420px;background:#3a4a58"></div>
+      <div class="vbar" id="vbCli" style="left:1120px;height:1200px;background:linear-gradient(180deg,#ff6a5a,#b3261a)"></div>
+      <div class="blab" style="left:520px;top:930px;color:var(--dim)">THE ENTIRE MARKET, THAT DAY</div>
+      <div class="blab" style="left:1060px;top:930px;color:var(--red2)">CLAIMED FOR ONE CLIENT</div>
+      <div class="abs" style="left:300px;right:300px;top:910px;height:3px;background:#9c9486"></div>
+      <div class="abs big" id="impT" style="left:110px;top:90px;font-size:100px;color:var(--cream);opacity:0">MORE THAN <span class="red">THE WHOLE MARKET</span></div>
+    </div>
+  </div>
+
+  <!-- ───────── 3 · get out ───────── -->
+  <div class="scene clip noir" data-scene="call" data-start="26.992" data-duration="4.328" data-track-index="4">
+    <div class="abs big" id="notReal" style="left:0;right:0;top:420px;text-align:center;font-size:200px;color:var(--red2);opacity:0">NOT REAL.</div>
+    <div class="abs" id="phWrap" style="inset:0;opacity:0"><div class="grade" style="z-index:1"></div><video class="vid" id="vPh" src="assets/flow/V45_phone.mp4" muted playsinline data-scene="call" data-at="N5_05|1.1" data-len="3.6" data-start="28.442" data-duration="2.878" data-media-start="2.3" data-usable-in="0" data-usable-out="8" data-track-index="10"></video></div>
+    <div class="abs big foil" id="getOut" style="left:110px;top:860px;font-size:110px;opacity:0">"GET OUT."</div>
+  </div>
+
+  <!-- ───────── 4 · the name ───────── -->
+  <div class="scene clip" data-scene="name" data-start="30.970" data-duration="4.153" data-track-index="5" style="background:#030303">
+    <div class="kicker" id="kMgr" style="left:0;right:0;top:330px;text-align:center;color:var(--dim);opacity:0">THE MANAGER'S NAME</div>
+    <div id="nameT"></div>
+  </div>
+
+  <!-- ───────── 5 · 2008 ───────── -->
+  <div class="scene clip noir" data-scene="collapse" data-start="34.773" data-duration="9.448" data-track-index="6">
+    <div class="abs" id="yrRoll" style="left:0;right:0;top:300px;text-align:center"><div class="kicker" style="position:static">SEVENTEEN YEARS LATER</div><div class="big" id="yr" style="font-size:300px;color:var(--cream);margin-top:40px">1991</div></div>
+    <div class="abs" id="agWrap" style="inset:0;opacity:0"><div class="grade" style="z-index:1"></div><video class="vid" id="vAg" src="assets/flow/V46_agents.mp4" muted playsinline data-scene="collapse" data-at="N5_07|2.4" data-len="2.6" data-start="37.523" data-duration="2.600" data-media-start="1.0" data-usable-in="0" data-usable-out="8" data-track-index="10"></video></div>
+    <div class="abs noir" id="papers" style="inset:0;opacity:0">
+      <div class="paper" id="pp1" style="left:180px;top:170px;transform:rotate(-4deg)"><div class="mast">The Evening Ledger</div><div class="hl">Madoff arrested</div><div class="dt">DECEMBER 11, 2008</div></div>
+      <div class="paper" id="pp2" style="left:760px;top:260px;transform:rotate(3deg)"><div class="mast">Financial Daily</div><div class="hl" style="font-size:50px">Largest Ponzi scheme in history</div><div class="dt">DECEMBER 2008</div></div>
+      <div class="abs big foil" id="b65" style="left:1300px;top:120px;font-size:130px;opacity:0">$65 BILLION</div>
+      <div class="kicker" id="k65" style="left:1310px;top:250px;opacity:0">IN FAKE ACCOUNT BALANCES (REPORTED)</div>
+      <div class="note abs" style="left:180px;top:620px">Illustrative front pages · facts: arrest Dec. 11, 2008 · widely described as the largest Ponzi scheme in history</div>
+      <div class="ico" id="ic1" style="left:420px;opacity:0">REGULATORS<i></i></div><div class="ico" id="ic2" style="left:850px;opacity:0">BANKS<i></i></div><div class="ico" id="ic3" style="left:1280px;opacity:0">INVESTORS<i></i></div>
+      <div class="abs big" id="chance" style="left:0;right:0;top:860px;text-align:center;font-size:80px;color:var(--cream);opacity:0">EVERY CHANCE TO <span class="gold">CHECK</span></div>
+    </div>
+  </div>
+
+  <!-- ───────── 6 · the secret ───────── -->
+  <div class="scene clip noir" data-scene="secret" data-start="43.871" data-duration="9.581" data-track-index="7">
+    <div class="cam" id="secam">
+      <div class="abs" id="mont" style="inset:0"></div>
+      <svg class="full" id="monWheel" viewBox="0 0 1920 1080"></svg>
+      <div class="abs big" id="beat" style="left:0;right:0;top:120px;text-align:center;font-size:110px;color:var(--cream);opacity:0">THE MAN WHO BEAT THE ODDS?</div>
+      <div class="abs big" id="notSecret" style="left:0;right:0;top:120px;text-align:center;font-size:110px;color:var(--dim);opacity:0">THAT ISN'T HIS SECRET.</div>
+      <svg class="full" id="tooGood" viewBox="0 0 1920 1080" style="opacity:0"><path id="tg" d="M360,760 L1560,420" fill="none" stroke="#e0b04a" stroke-width="10"/>
+        <circle id="tgL" cx="960" cy="590" r="150" fill="rgba(143,227,255,.08)" stroke="#8fe3ff" stroke-width="10"/>
+        <path id="tgJ" d="M830,640 L860,560 L890,680 L920,540 L950,700 L980,520 L1010,660 L1040,560 L1070,640" fill="none" stroke="#e0473a" stroke-width="7" opacity="0"/></svg>
+      <div class="abs big" id="tooT" style="left:0;right:0;top:120px;text-align:center;font-size:90px;color:var(--cream);opacity:0">WHEN THE NUMBERS LOOK TOO GOOD TO BE TRUE,</div>
+      <div class="abs big foil" id="checkT" style="left:0;right:0;top:830px;text-align:center;font-size:190px;opacity:0">CHECK THEM.</div>
+    </div>
+  </div>
+
+  <!-- ───────── 7 · the ball stops ───────── -->
+  <div class="scene clip feltw" data-scene="ball" data-start="53.102" data-duration="11.000" data-track-index="8">
+    <div class="spot"></div>
+    <div class="cam" id="bcam"><svg class="full" id="finWheel" viewBox="0 0 1920 1080" data-layout-ignore></svg></div>
+    <div class="abs big" id="stops" style="left:0;right:0;top:60px;text-align:center;font-size:96px;color:var(--cream);opacity:0">THE BALL ALWAYS STOPS SOMEWHERE.</div>
+    <div class="abs big foil" id="math" style="left:0;right:0;top:950px;text-align:center;font-size:84px;opacity:0">DID YOU DO THE MATH?</div>
+    <div class="abs" id="endCard" style="inset:0;opacity:0;background:#050505;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px">
+      <div class="gww">GUY WONDERS WHY</div><div class="big" style="font-size:120px;color:var(--cream)">HE BEAT VEGAS</div><div class="note">Sources in the description</div></div>
+  </div>
+
+  <audio id="music" src="assets/audio/music.wav" data-start="0" data-duration="64.102" data-volume="1" data-track-index="20"></audio>
+  <audio id="sfx" src="assets/audio/sfx.wav" data-start="0" data-duration="64.102" data-volume="1" data-track-index="21"></audio>
+  <!-- VO:BEGIN (generated by tools/retime_chapters.py) -->
+  <audio id="vo_n5_01" src="assets/vo/N5_01.wav" data-start="2.200" data-duration="8.854" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_n5_02" src="assets/vo/N5_02.wav" data-start="11.354" data-duration="2.830" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_n5_03" src="assets/vo/N5_03.wav" data-start="14.634" data-duration="6.308" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_n5_04" src="assets/vo/N5_04.wav" data-start="21.242" data-duration="5.650" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_n5_05" src="assets/vo/N5_05.wav" data-start="27.342" data-duration="3.528" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_n5_06" src="assets/vo/N5_06.wav" data-start="31.320" data-duration="2.503" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_n5_07" src="assets/vo/N5_07.wav" data-start="35.123" data-duration="8.648" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_n5_08" src="assets/vo/N5_08.wav" data-start="44.221" data-duration="8.781" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_n5_09" src="assets/vo/N5_09.wav" data-start="53.452" data-duration="4.410" data-volume="1" data-track-index="22"></audio>
+  <!-- VO:END -->
+  <div id="odds"><div class="l">EDGE</div><div class="v">0%</div><div class="who">EVEN</div><div class="bar"><i></i></div></div>
+  <div id="recon" class="recon">Dramatised reconstruction</div>
+  <div id="flash"></div><div id="vignette"></div><div id="grain" data-layout-ignore></div><div id="black"></div>
+  <div id="scratch" data-layout-allow-caption-zone><span class="tagx">SCRATCH VO</span><span class="txt" id="scratchTxt"></span></div>
+</div>
+<script src="shared/film.js"></script>
+<script src="shared/noir.js"></script>
+<script>
+window.__timelines = window.__timelines || {};
+FILM_INIT();
+(function () {
+  const F = FILM, N = NOIR(FILM);
+  const { tl, S, E, D, V, VE, P, rnd, $, $$, el, div } = F;
+
+  F.sceneFade('card', .3, .3); N.chapter('card', 5, 'THE CHECK', '♠');
+
+  // ═════════ 1 · client ═════════
+  F.sceneFade('client', .2, .25);
+  F.show('#k91', V('N5_01') + .05, .3);
+  tl.fromTo('#stmt', { opacity: 0, y: 80, rotation: 4 }, { opacity: 1, y: 0, rotation: -1.5, duration: .45, ease: 'power3.out', immediateRender: false }, V('N5_01') + .2);
+  tl.set('#stmt .rw', { opacity: 0, x: -20 }, 0); tl.to('#stmt .rw', { opacity: 1, x: 0, duration: .25, stagger: .3, ease: 'power3.out' }, V('N5_01') + .55);
+  tl.fromTo('#hlX', { scaleX: 0 }, { scaleX: 1, duration: .4, ease: 'power2.out', immediateRender: false }, P('N5_01', .3)); tl.set('#hlX', { scaleX: 0 }, 0);
+  F.draw('#mktL', P('N5_01', .42), 1.0, 'none'); F.show('#lM', P('N5_01', .42) + .9, .2);
+  F.draw('#smooth', P('N5_01', .46), 1.0, 'none'); F.show('#lX', P('N5_01', .46) + .9, .2); F.show('#kSteady', P('N5_01', .46), .3);
+  const mo = $('#months'); mo.innerHTML = '<i></i>'.repeat(36);
+  tl.set('#months i', { scale: 0 }, 0); tl.to('#months i', { scale: 1, duration: .12, stagger: .025, ease: 'back.out(3)' }, P('N5_01', .62));
+  F.show('#lNever', P('N5_01', .66), .3);
+  tl.to('#trust', { opacity: 1, duration: .3 }, P('N5_01', .8));
+  const cl = $('#cityLights'); for (let i = 0; i < 90; i++) { const d = div('', cl); d.style.cssText = `position:absolute;left:${(rnd() * 780) | 0}px;top:${(380 + rnd() * 360) | 0}px;width:${3 + rnd() * 5}px;height:${3 + rnd() * 5}px;background:#ffd98a;opacity:${(.3 + rnd() * .6).toFixed(2)}`; }
+  N.push('#trust', P('N5_01', .8), VE('N5_01') - P('N5_01', .8) + .6, 1.0, 1.06);
+  tl.fromTo('#halo', { opacity: 0 }, { opacity: .85, duration: .5, immediateRender: false }, P('N5_01', .84));
+  tl.set('#audWrap', { opacity: 1 }, V('N5_02') - .2); N.push('#audWrap', V('N5_02') - .2, 3.6, 1.0, 1.12);
+  tl.fromTo('#checked', { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: .3, immediateRender: false }, P('N5_02', .5));
+
+  // ═════════ 2 · audit ═════════
+  F.sceneFade('audit', .2, .25);
+  const tix = $('#tix'), T = [];
+  for (let i = 0; i < 160; i++) { const t = div('tkt', tix, '<div class="x">✗</div>'); t.style.left = ((i % 16) * 66) + 'px'; t.style.top = (Math.floor(i / 16) * 72) + 'px'; T.push(t); }
+  tl.set(T, { opacity: 0, scale: .5 }, 0);
+  tl.to(T, { opacity: 1, scale: 1, duration: .15, stagger: .012 }, V('N5_03') + .1);
+  tl.to('#n160', { opacity: 1, duration: .2 }, V('N5_03') + .1); N.count($('#n160N'), 0, 160, V('N5_03') + .1, 1.9, v => Math.round(v), 'none'); F.show('#k160', V('N5_03') + .4, .3);
+  tl.to('#scan', { opacity: 1, duration: .2 }, P('N5_03', .45));
+  tl.fromTo('#scan', { x: 0, y: 0 }, { x: 800, y: 480, duration: 2.6, ease: 'sine.inOut', immediateRender: false }, P('N5_03', .45));
+  const order = T.map((_, i) => i).sort(() => rnd() - .5).slice(0, 80);
+  order.forEach((k, i) => { tl.to(T[k].querySelector('.x'), { opacity: 1, duration: .05 }, P('N5_03', .5) + i * .03); tl.to(T[k], { background: '#3a1612', duration: .05 }, P('N5_03', .5) + i * .03); });
+  tl.to('#nNo, #kNo', { opacity: 1, duration: .2 }, P('N5_03', .5)); N.count($('#nNoN'), 0, 80, P('N5_03', .5), 80 * .03, v => Math.round(v), 'none');
+  tl.to('#scan', { opacity: 0, duration: .2 }, VE('N5_03') - .2);
+  tl.to('#vol', { opacity: 1, duration: .3 }, V('N5_04') - .1); tl.to('#aucam', { opacity: 0, duration: .01 }, V('N5_04') + .25);
+  tl.fromTo('#vbMkt', { scaleY: 0 }, { scaleY: 1, duration: .6, ease: 'power3.out', immediateRender: false }, V('N5_04') + .2);
+  tl.fromTo('#vbCli', { scaleY: 0 }, { scaleY: 1, duration: 1.4, ease: 'power2.in', immediateRender: false }, P('N5_04', .4));
+  tl.fromTo('#impT', { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: .3, immediateRender: false }, P('N5_04', .7)); N.shake(P('N5_04', .4) + 1.4, 12, .35);
+
+  // ═════════ 3 · call ═════════
+  F.sceneFade('call', .1, .25);
+  N.slam($('#notReal'), V('N5_05') + .02, true);
+  tl.set('#phWrap', { opacity: 1 }, V('N5_05') + 1.1); N.push('#phWrap', V('N5_05') + 1.1, 3.6, 1.0, 1.1);
+  N.recon(V('N5_05') + 1.2, 3);
+  tl.fromTo('#getOut', { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: .3, immediateRender: false }, V('N5_05') + 1.8);
+
+  // ═════════ 4 · name ═════════
+  F.sceneFade('name', .05, .1);
+  F.show('#kMgr', V('N5_06') + .05, .5);
+  const nm = 'BERNIE MADOFF', nmEl = $('#nameT'); nmEl.innerHTML = nm.split('').map(ch => `<span>${ch === ' ' ? '&nbsp;' : ch}</span>`).join('');
+  tl.set('#nameT span', { opacity: 0 }, 0);
+  tl.to('#nameT span', { opacity: 1, duration: .05, stagger: .09 }, P('N5_06', .45));
+  tl.fromTo('#nameT', { scale: 1.02 }, { scale: 1.08, duration: 2.2, ease: 'none', immediateRender: false }, P('N5_06', .45));
+
+  // ═════════ 5 · collapse ═════════
+  F.sceneFade('collapse', .1, .25);
+  N.count($('#yr'), 1991, 2008, V('N5_07') + .1, 1.6, v => Math.round(v), 'power2.inOut');
+  tl.set('#agWrap', { opacity: 1 }, V('N5_07') + 2.4); tl.set('#yrRoll', { opacity: 0 }, V('N5_07') + 2.45); N.push('#agWrap', V('N5_07') + 2.4, 2.6, 1.0, 1.12);
+  tl.to('#papers', { opacity: 1, duration: .2 }, V('N5_07') + 5.0);
+  tl.fromTo('#pp1', { opacity: 0, scale: 1.6, rotation: -20 }, { opacity: 1, scale: 1, rotation: -4, duration: .35, ease: 'power3.out', immediateRender: false }, V('N5_07') + 5.0);
+  tl.fromTo('#pp2', { opacity: 0, scale: 1.6, rotation: 20 }, { opacity: 1, scale: 1, rotation: 3, duration: .35, ease: 'power3.out', immediateRender: false }, V('N5_07') + 5.3);
+  tl.fromTo('#b65', { opacity: 0, scale: 1.3 }, { opacity: 1, scale: 1, duration: .3, immediateRender: false }, V('N5_07') + 5.6); F.show('#k65', V('N5_07') + 5.8, .3);
+  tl.to('#pp1, #pp2, #b65, #k65', { y: -120, scale: .8, opacity: .35, duration: .4 }, P('N5_07', .76));
+  ['#ic1', '#ic2', '#ic3'].forEach((s, i) => tl.fromTo(s, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: .3, immediateRender: false }, P('N5_07', .77) + i * .2));
+  tl.fromTo('#chance', { opacity: 0 }, { opacity: 1, duration: .3, immediateRender: false }, P('N5_07', .82));
+
+  // ═════════ 6 · secret ═════════
+  F.sceneFade('secret', .2, .25);
+  const MW = N.wheel($('#monWheel'), 480, 560, 230, { rot: 0, ball: 0 }); MW.race(S('secret'), 3.2, 420, 30); tl.set('#monWheel', { opacity: 0 }, 0); tl.to('#monWheel', { opacity: 1, duration: .3 }, V('N5_08') + .1);
+  const mace = N.card($('#mont'), 'A', '♠', 860, 380, { scale: .9 }); N.deal(mace, V('N5_08') + .4, { fx: 0, fy: 600 });
+  const g44 = div('big foil', $('#mont'), '44%'); g44.style.cssText += 'position:absolute;left:1260px;top:420px;font-size:200px;opacity:0'; tl.to(g44, { opacity: 1, duration: .3 }, V('N5_08') + .7);
+  tl.fromTo('#beat', { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: .3, immediateRender: false }, V('N5_08') + .2);
+  tl.to(['#monWheel', mace, g44, '#beat'], { opacity: 0, y: 200, duration: .5, ease: 'power2.in', stagger: .06 }, P('N5_08', .33));
+  tl.fromTo('#notSecret', { opacity: 0 }, { opacity: 1, duration: .3, immediateRender: false }, P('N5_08', .36));
+  N.words($('#secam'), 'SIMPLER. AND HARDER.', 960, 520, 130, P('N5_08', .44), { color: 'var(--gold)', center: true, stagger: .2 }).id = 'simpler';
+  tl.to('#notSecret, #simpler', { opacity: 0, duration: .25 }, P('N5_08', .58));
+  tl.to('#tooGood', { opacity: 1, duration: .3 }, P('N5_08', .58)); F.draw('#tg', P('N5_08', .58), .6);
+  tl.fromTo('#tgL', { x: -600 }, { x: 0, duration: .8, ease: 'power3.out', immediateRender: false }, P('N5_08', .66));
+  tl.to('#tgJ', { opacity: 1, duration: .3 }, P('N5_08', .7));
+  tl.fromTo('#tooT', { opacity: 0 }, { opacity: 1, duration: .3, immediateRender: false }, P('N5_08', .6));
+  tl.fromTo('#checkT', { opacity: 0, scale: 1.4 }, { opacity: 1, scale: 1, duration: .35, ease: 'power4.out', immediateRender: false }, P('N5_08', .84)); N.flash(P('N5_08', .84) + .1, .3, .3);
+
+  // ═════════ 7 · the ball stops ═════════
+  F.sceneFade('ball', .2, 0);
+  const FW = N.wheel($('#finWheel'), 960, 565, 355, { rot: 0, ball: 40 });
+  const run = FW.run(S('ball'), Math.max(4.2, VE('N5_09') - S('ball') - .2), { rotorSpeed: 60, ballSpeed: 760, drop: .55, land: 17 });
+  tl.fromTo('#bcam', { scale: 1.25 }, { scale: 1.0, duration: run.end - S('ball'), ease: 'power2.inOut', immediateRender: false }, S('ball'));
+  tl.fromTo('#stops', { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: .3, immediateRender: false }, V('N5_09') + .05);
+  FW.idle(run.end, E('ball') - run.end, 16, 17);
+  tl.fromTo('#math', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: .3, immediateRender: false }, P('N5_09', .5));
+  N.flash(run.end, .25, .4);
+  tl.to('#endCard', { opacity: 1, duration: .6 }, E('ball') - 3.2); tl.set('#bcam, #stops, #math', { opacity: 0 }, E('ball') - 2.55);
+  tl.fromTo('#endCard .big', { scale: 1.08 }, { scale: 1, duration: 3, ease: 'power2.out', immediateRender: false }, E('ball') - 3.2);
+
+  F.finish('ch5');
+})();
+</script>
+</body>
+</html>
