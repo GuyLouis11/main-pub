@@ -59,3 +59,10 @@ Fixes found along the way:
 - **Pronunciation.** "Mpemba", "Usambara", "Mkwawa", "Bechhoefer" and similar names haven't been checked by ear. I can't listen, and an automatic transcription check wasn't possible here. Any line can be regenerated individually: `XI_KEY=… python3 tools/elevenlabs_vo.py --force C5_05`, then retime and re-render.
 - Full-resolution review of every frame of every Flow clip beyond the sampled frames and crops.
 - Primary-source confirmation of the two qualified quotes (network policy blocks the journal sites). The wording in the script is already qualified to match.
+
+## Final render (2026-09-29, real narration)
+- `renders/film_v1_clean_small.mp4` (1080p) and `renders/film_final_720p.mp4` (share copy). Neither is in git because of size.
+- **Length:** 6:19 (opening 0:31 + chapters 1–6).
+- **Loudness:** −15.3 LUFS integrated, LRA 5.2 LU.
+- **Local-motion stillness audit:** 0 windows over 1.5 s in the opening and ch1, ch2, ch3, ch5 and ch6. Ch4 has one 1.6 s window (42.3–43.9 s): the frosted "?" holding just before the fade into ch5. It's kept as a deliberate end-of-chapter beat.
+- `hyperframes check` passes on everything. The remaining warnings are contrast readings on the chapter card and the "?" taken mid-fade.
