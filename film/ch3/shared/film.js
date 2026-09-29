@@ -68,8 +68,24 @@ window.FILM_INIT = function () {
       tl.to(sel, { attr: { 'stroke-dashoffset': 0 }, duration: d, ease }, t);
     },
     drift(sel, id, from = 1.05, to = 1.0, extra = {}) {
-      tl.fromTo(sel, { scale: from, ...(extra.from || {}) }, { scale: to, ...(extra.to || {}), duration: D(id), ease: 'sine.out', immediateRender: false }, S(id));
+      tl.fromTo(sel, { scale: from, ...(extra.from || {}) }, { scale: to, ...(extra.to || {}), duration: D(id), ease: 'sine.out', immediateRender: false, data: 'drift' }, S(id));
     },
+    // ambient life: slow drifting motes (paper: warm dust in lamplight · dark: frost motes). Never counts as a "beat".
+    ambient(id, kind = 'dark', n = 34) {
+      const host = document.querySelector('[data-scene="' + id + '"]'); if (!host) return;
+      const layer = div('abs', host); layer.style.cssText += 'inset:0;pointer-events:none;z-index:2'; layer.dataset.drift = '1';
+      for (let i = 0; i < n; i++) {
+        const m = div('', layer), sz = 2 + rnd() * (kind === 'paper' ? 3 : 4);
+        m.style.cssText = `position:absolute;left:${(rnd() * 1920).toFixed(0)}px;top:${(rnd() * 1080).toFixed(0)}px;width:${sz}px;height:${sz}px;border-radius:50%;` +
+          (kind === 'paper' ? `background:rgba(255,236,200,${(.25 + rnd() * .35).toFixed(2)});filter:blur(.6px)` : `background:rgba(200,240,255,${(.18 + rnd() * .35).toFixed(2)})`);
+        m.dataset.drift = '1';
+        const dx = (rnd() - .5) * 160, dy = kind === 'paper' ? (rnd() - .5) * 120 : -(40 + rnd() * 140);
+        tl.fromTo(m, { x: 0, y: 0, opacity: 0 }, { x: dx, y: dy, opacity: 1, duration: D(id), ease: 'none', immediateRender: false, data: 'ambient' }, S(id));
+        tl.set(m, { opacity: 0 }, 0);
+      }
+    },
+    // a purposeful camera pan (counts as a beat). Uses x/y only, so it never fights a scene's scale drift.
+    pan(sel, t, d, x, y, ease = 'power2.inOut') { tl.to(sel, { x, y, duration: d, ease }, t); },
     flash(t, a = .5, d = .45) { tl.to('#flash', { opacity: a, duration: .04 }, t).to('#flash', { opacity: 0, duration: d, ease: 'power2.out' }, t + .04); },
     sceneFade(id, din = .5, dout = .5) {
       const s = '[data-scene="' + id + '"]';
@@ -102,6 +118,26 @@ window.FILM_INIT = function () {
       }
       window.__timelines = window.__timelines || {};
       window.__timelines[compId] = tl;
+      // beat audit (tools/beat_audit.mjs): intervals where a visible change is happening.
+      // Ignored: grain jitter, whole-scene camera drifts (marked data-drift) and scene fades.
+      window.__beats = () => {
+        const iv = [];
+        tl.getChildren(true, true, false).forEach(tw => {
+          const tg = (tw.targets && tw.targets()) || [];
+          if (!tg.length || tw.duration() === 0 && !tw.vars.textContent && !tw.vars.attr) return;
+          if (tw.data === 'drift' || tw.data === 'ambient') return;
+          if (tg.some(t => t && t.nodeType && (t.id === 'grain' || t.id === 'black' || t.id === 'scratch' || t.id === 'scratchTxt' || (t.dataset && t.dataset.drift)))) return;
+          if (tg.every(t => !t || !t.nodeType)) { if (!tw.vars.onUpdate) return; }   // proxy objects count only if they draw
+          const st = tw.startTime(), en = st + Math.max(tw.totalDuration(), .15);
+          iv.push([st, en]);
+        });
+        document.querySelectorAll('video[data-start]').forEach(v => { const st = +v.dataset.start, d = +v.dataset.duration; if (d > 0) iv.push([st, st + d]); });
+        iv.sort((a, b) => a[0] - b[0]);
+        const gaps = []; let cur = 0;
+        iv.forEach(([a, b]) => { if (a > cur + 1e-3) gaps.push([cur, a]); cur = Math.max(cur, b); });
+        if (TOTAL > cur) gaps.push([cur, TOTAL]);
+        return { total: TOTAL, gaps: gaps.filter(g => g[1] - g[0] > 1.5).map(g => [+g[0].toFixed(2), +g[1].toFixed(2), +(g[1] - g[0]).toFixed(2)]) };
+      };
       tl.seek(0);
     },
   };

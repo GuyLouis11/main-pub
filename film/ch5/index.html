@@ -411,7 +411,12 @@ FILM_INIT();
   FILM.sceneFade('shortcut', .5, .45);
   FILM.drift('#scam', 'shortcut', 1.03, 1.0);
   FILM.up('#cite', S('shortcut') + .3, .6, 16);
-  FILM.show('#nHot, #nCold, #nGoal', P('C5_02', .3), .4);
+  FILM.up('#nGoal', P('C5_02', .08), .4, 10); FILM.up('#nHot', P('C5_02', .14), .4, 10); FILM.up('#nCold', P('C5_02', .2), .4, 10);
+  // each start and the goal announce themselves with a pulse
+  tl.fromTo('#goalPing', { attr: { r: 30 }, opacity: .8 }, { attr: { r: 70 }, opacity: 0, duration: .7, ease: 'power2.out', immediateRender: false }, P('C5_02', .1));
+  tl.to('#dotHot', { attr: { r: 24 }, duration: .35, yoyo: true, repeat: 1, ease: 'sine.inOut' }, P('C5_02', .16));
+  tl.to('#dotCold', { attr: { r: 24 }, duration: .35, yoyo: true, repeat: 1, ease: 'sine.inOut' }, P('C5_02', .22));
+  FILM.pan('#scam', P('C5_02', .26), 1.6, -30, 0);
   const rc = $('#routeCold'), rhP = $('#routeHot');
   const Lc = rc.getTotalLength(), Lh = rhP.getTotalLength();
   const ptsC = [], ptsH = [];
@@ -558,6 +563,11 @@ FILM_INIT();
   tl.to(pr, { f: 1, duration: 2.4, ease: 'power2.inOut', onUpdate: drawP }, PR + .2);
   tl.fromTo('#flagPing', { attr: { r: 34 }, opacity: 1 }, { attr: { r: 110 }, opacity: 0, duration: .9, ease: 'power2.out', immediateRender: false }, PR + 2.6);
   FILM.flash(PR + 2.6, .15, .4);
+  // the far start has arrived (it turns to frost); the near start finishes its winding route later
+  tl.to('#pFarDot', { attr: { fill: '#e3f8ff' }, duration: .5 }, PR + 3.0);
+  tl.to(pr, { n: 1, duration: 2.2, ease: 'power1.inOut', onUpdate: drawP }, PR + 3.3);
+  tl.fromTo('#flagPing', { attr: { r: 34 }, opacity: .6 }, { attr: { r: 70 }, opacity: 0, duration: .7, ease: 'power2.out', immediateRender: false }, PR + 5.5);
+  FILM.pan('#pcam', PR + 5.4, 2.4, 0, 40);
   tl.to('#dusk', { opacity: .85, duration: 1.4, ease: 'power1.in' }, E('principle') - 1.5);
 
   FILM.finish('ch5');

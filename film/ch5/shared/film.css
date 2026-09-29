@@ -36,9 +36,9 @@ svg{overflow:visible}
 /* worlds */
 .dark{background:radial-gradient(1300px 780px at 50% 48%, var(--panel) 0%, var(--ink) 72%)}
 .paperworld{background:#e9e0cb}
-.page{position:absolute;left:-60px;top:-50px;width:2040px;height:1180px;background:url(img/paper.jpg) center/cover, var(--paper)}
-.page .rules{position:absolute;inset:0;background:repeating-linear-gradient(to bottom, transparent 0 55px, rgba(80,120,160,.28) 55px 57px);-webkit-mask:linear-gradient(to bottom, transparent 0 130px, #000 150px)}
-.page .margin{position:absolute;left:250px;top:0;bottom:0;width:3px;background:rgba(200,70,60,.45)}
+.page{position:absolute;left:-200px;top:-160px;width:2320px;height:1400px;background:url(img/paper.jpg) center/cover, var(--paper)}
+.page .rules{position:absolute;inset:0;background:repeating-linear-gradient(to bottom, transparent 0 55px, rgba(80,120,160,.28) 55px 57px);-webkit-mask:linear-gradient(to bottom, transparent 0 240px, #000 260px)}
+.page .margin{position:absolute;left:390px;top:0;bottom:0;width:3px;background:rgba(200,70,60,.45)}
 .lamp{position:absolute;inset:0;background:radial-gradient(1100px 700px at 45% 45%, rgba(0,0,0,0) 30%, rgba(20,12,4,.55) 100%);opacity:0}
 
 /* taped photograph that hosts Flow footage */

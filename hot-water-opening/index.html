@@ -623,6 +623,11 @@
   tl.to('#passMark', { opacity: 1, duration: .2 }, 7.6);
   tl.fromTo('#passPulse', { attr: { r: 16 }, opacity: 1 }, { attr: { r: 60 }, opacity: 0, duration: .8, repeat: 2 + Math.ceil(G('mustPass') / .8), ease: 'power2.out' }, 7.6);
   tl.fromTo('#mustPass', { opacity: 0, x: -14 }, { opacity: 1, x: 0, duration: .3, ease: 'power3.out' }, 7.65);
+  // keep the hold alive: the "cold started here" line marches toward the pass point, the claim breathes
+  tl.fromTo('#band20 line', { attr: { 'stroke-dashoffset': 0 } }, { attr: { 'stroke-dashoffset': -160 }, duration: 2.2 + G('mustPass'), ease: 'none', immediateRender: false }, 7.3);
+  tl.to('#mustPass', { scale: 1.06, transformOrigin: '0% 50%', duration: .45, yoyo: true, repeat: 1, ease: 'sine.inOut' }, 8.1);
+  tl.to('#s2cam', { y: -18, duration: 1.0 + G('mustPass'), ease: 'sine.inOut' }, 7.9);
+  tl.to('#s2cam', { y: 0, duration: .5, ease: 'power2.inOut' }, 9.4);
   tl.to('#mustPass, #expLab', { opacity: 0, duration: .3 }, 9.3);
   tl.to('#expLine', { opacity: .28, duration: .4 }, 8.7);
   tl.to('#coldLine', { opacity: .55, duration: .4 }, 8.7);

@@ -198,11 +198,15 @@
           <circle id="rcoldDot" cx="1000" cy="0" r="12" fill="#e3f8ff" opacity="0"/>
           <circle id="rhotDot" cx="1000" cy="756.7" r="14" fill="none" stroke="#ffd9c2" stroke-width="4" opacity="0"/>
           <path id="rbracket" fill="none" stroke="#8fe3ff" stroke-width="4" stroke-linecap="round"/>
+          <circle id="coldRun" r="11" fill="#e3f8ff" opacity="0"/>
+          <g id="okMark" opacity="0" transform="translate(1640 930)"><circle r="26" fill="#8fe3ff"/><path d="M-12,0 L-3,10 L13,-10" stroke="#06080c" stroke-width="6" fill="none" stroke-linecap="round"/></g>
+          <g id="noMark" opacity="0" transform="translate(1700 880)"><circle r="24" fill="none" stroke="#ff6a2b" stroke-width="4"/><path d="M-9,-9 L9,9 M9,-9 L-9,9" stroke="#ff6a2b" stroke-width="5" stroke-linecap="round"/></g>
         </g>
         <g id="eq" opacity="0">
           <g id="dropH" transform="translate(700 560)"><path d="M0,-150 C60,-60 110,0 110,60 C110,125 60,165 0,165 C-60,165 -110,125 -110,60 C-110,0 -60,-60 0,-150 Z" fill="rgba(255,106,43,.14)" stroke="#ff6a2b" stroke-width="7" id="dropHPath"/></g>
           <g id="dropC" transform="translate(1220 560)"><path d="M0,-150 C60,-60 110,0 110,60 C110,125 60,165 0,165 C-60,165 -110,125 -110,60 C-110,0 -60,-60 0,-150 Z" fill="rgba(143,227,255,.14)" stroke="#8fe3ff" stroke-width="7"/></g>
           <g id="eqSign" stroke="#efe7d5" stroke-width="12" stroke-linecap="round"><line x1="915" y1="535" x2="1005" y2="535"/><line x1="915" y1="585" x2="1005" y2="585"/></g>
+          <g id="molsH"></g><g id="molsC"></g>
           <line id="eqStrike" x1="985" y1="490" x2="935" y2="630" stroke="#ff6a2b" stroke-width="12" stroke-linecap="round" opacity="0"/>
         </g>
       </svg>
@@ -251,6 +255,8 @@
           <g id="coldArrows" stroke="#8fe3ff" stroke-width="6" stroke-linecap="round" fill="none" opacity="0">
             <path d="M-50,360 L-50,300 M-62,314 L-50,298 L-38,314"/><path d="M0,370 L0,300 M-12,314 L0,298 L12,314"/><path d="M50,360 L50,300 M38,314 L50,298 L62,314"/>
           </g>
+          <g id="thermo2" opacity="0" transform="translate(200 40)"><rect x="-10" y="0" width="20" height="220" rx="10" fill="#0d141e" stroke="#8ea2b8" stroke-width="3"/><rect id="th2" x="-5" y="60" width="10" height="150" rx="5" fill="#8fe3ff"/><line x1="-18" y1="150" x2="18" y2="150" stroke="#efe7d5" stroke-width="2"/><circle cx="0" cy="236" r="18" fill="#8fe3ff"/></g>
+          <g id="snapIce" opacity="0" stroke="#ffffff" stroke-width="3" fill="none"><path d="M-80,90 L80,90 M-78,140 L78,140 M-76,190 L76,190 M-74,240 L74,240 M-60,70 L20,270 M30,70 L70,200 M-90,160 L-10,270"/></g>
           <g id="dice" opacity="0" transform="translate(310 170)">
             <g id="die1"><rect x="-44" y="-44" width="88" height="88" rx="14" fill="#efe7d5"/><g class="pips" fill="#06080c"></g></g>
             <g id="die2" transform="translate(120 20)"><rect x="-44" y="-44" width="88" height="88" rx="14" fill="#efe7d5"/><g class="pips" fill="#06080c"></g></g>
@@ -487,15 +493,54 @@ FILM_INIT();   // shared/film.js: lays out scenes from the timing block (must ru
   $$('.scard .trials i').forEach((sq, j) => {
     const win = rnd() < .5;
     sq.style.background = win ? '#ff6a2b' : '#33475c';
-    tl.to(sq, { opacity: 1, duration: .12 }, Z + .3 + (j % 8) * .09 + Math.floor(j / 8) * .05);
+    tl.to(sq, { opacity: 1, duration: .12 }, Z + .3 + (j % 8) * .42 + Math.floor(j / 8) * .08);
   });
   tl.set(hk, { lo: 1.35, hi: 2.45, band: 0 }, 0);
   tl.to(hk, { band: 1, duration: .01, onUpdate: drawMini }, P('C3_09', .45));
   FILM.show('#miniBand', P('C3_09', .45), .4);
-  tl.to(hk, { k: 1.45, duration: .7, yoyo: true, repeat: 3, ease: 'sine.inOut', onUpdate: drawMini }, P('C3_09', .45));
+  tl.to(hk, { k: 1.45, duration: .7, yoyo: true, repeat: Math.max(3, Math.floor((E('lineup') - P('C3_09', .45) - 1.3) / .7)), ease: 'sine.inOut', onUpdate: drawMini }, P('C3_09', .45));
   tl.fromTo('#stamp', { opacity: 0, scale: 1.5 }, { opacity: 1, scale: 1, duration: .3, ease: 'back.out(2.5)', immediateRender: false }, P('C3_09', .55));
   tl.set('#stamp', { opacity: 0 }, 0);
   tl.to('.scard', { y: 80, opacity: 0, duration: .6, stagger: .06, ease: 'power2.in' }, E('lineup') - 1.2);
+
+  // ═════════ density pass ═════════
+  FILM.ambient('molecules', 'dark', 26); FILM.ambient('race', 'dark', 26); FILM.ambient('lineup', 'dark', 22);
+  // race: the cold cup's dot keeps going while hot is still at 20 °C; checkmarks settle who "should" win
+  const coldRunPts = []; for (let x = 1000; x <= 1150; x += 5) coldRunPts.push([x, GY(coldT(x))]);
+  const cr = { u: 0 }, drawCR = () => { const k = cr.u * (coldRunPts.length - 1), i = Math.floor(k), f = k - i, a = coldRunPts[i], b = coldRunPts[Math.min(coldRunPts.length - 1, i + 1)]; $('#coldRun').setAttribute('cx', a[0] + (b[0] - a[0]) * f); $('#coldRun').setAttribute('cy', a[1] + (b[1] - a[1]) * f); };
+  drawCR();
+  tl.set('#coldRun', { attr: { opacity: 1 } }, P('C3_02', .6) + .9);
+  tl.to(cr, { u: 1, duration: 1.8, ease: 'power1.inOut', onUpdate: drawCR }, P('C3_02', .6) + .9);
+  FILM.pan('#rcam', P('C3_02', .62), 1.6, -40, -30);
+  FILM.pop('#okMark', P('C3_02', .8) + 1.7, .35);
+  FILM.pop('#noMark', P('C3_02', .8) + 2.3, .35);
+  // C3_03: molecules jiggle inside both drops; some escape the hot drop as it "changes"
+  const mk = (g, cx, col, n) => Array.from({ length: n }, () => { const a = rnd() * 6.28, r = Math.sqrt(rnd()) * 70; return { x: cx + Math.cos(a) * r * .9, y: 590 + Math.sin(a) * r, w: 5 + rnd() * 7, p: rnd() * 6, e: el('circle', { r: 6, fill: col, cx: 0, cy: 0 }, $(g)) }; });
+  const mH = mk('#molsH', 700, '#ffb27a', 22), mC = mk('#molsC', 1220, '#bfefff', 22);
+  const eqc = { t: 0, esc: 0 };
+  const drawEq = () => { [[mH, 7], [mC, 3]].forEach(([arr, amp]) => arr.forEach((m, i) => { const lift = (arr === mH && i < 7) ? eqc.esc * (160 + i * 30) : 0; m.e.setAttribute('cx', (m.x + amp * Math.sin(m.w * eqc.t + m.p)).toFixed(1)); m.e.setAttribute('cy', (m.y + amp * Math.cos(m.w * eqc.t + m.p) - lift).toFixed(1)); m.e.setAttribute('opacity', lift ? Math.max(0, 1 - eqc.esc * 1.2) : 1); })); };
+  drawEq();
+  tl.to(eqc, { t: E('race') - V('C3_03'), duration: E('race') - V('C3_03'), ease: 'none', onUpdate: drawEq }, V('C3_03'));
+  tl.to(eqc, { esc: 1, duration: 1.8, ease: 'power1.in', onUpdate: drawEq }, P('C3_03', .74));
+  tl.fromTo('#eqSign', { scale: 1 }, { scale: 1.15, transformOrigin: '50% 50%', duration: .35, yoyo: true, repeat: 1, immediateRender: false }, P('C3_03', .2));
+  FILM.pan('#rcam', P('C3_03', .3), 1.5, 0, -20);
+  // hand-off: the equation rises to become the lineup's heading
+  tl.to('#eq', { y: -300, scale: .45, transformOrigin: '960px 560px', duration: .9, ease: 'power3.in' }, E('race') - 1.4);
+  // lineup extras
+  tl.to('#lcup', { y: 6, duration: .6 }, V('C3_07') + .3);
+  FILM.show('#thermo2', V('C3_08') + .5, .4);
+  tl.to('#th2', { attr: { y: 160, height: 50 }, duration: 1.6, ease: 'power2.inOut' }, V('C3_08') + .7);
+  // supercooled water snaps to ice when the dice land
+  tl.to('#snapIce', { opacity: 1, duration: .15 }, P('C3_08', .4) + 1.6 + .6);
+  tl.to('#lwaterRect', { attr: { fill: 'rgba(230,248,255,.7)' }, duration: .15 }, P('C3_08', .4) + 1.6 + .6);
+  FILM.flash(P('C3_08', .4) + 1.6 + .6, .2, .35);
+  // freezing releases heat: the supercooled reading jumps back up to 0 °C
+  tl.to('#th2', { attr: { y: 150, height: 60 }, duration: .5, ease: 'back.out(2)' }, P('C3_08', .4) + 1.6 + .9);
+  tl.fromTo('#snapIce', { scale: 1 }, { scale: 1.04, transformOrigin: '50% 50%', duration: .45, yoyo: true, repeat: 1, ease: 'sine.inOut', immediateRender: false }, P('C3_08', .4) + 1.6 + 1.3);
+  // the frost on the shelf glints while the cup sits on it
+  tl.fromTo('#frostPad', { opacity: .85 }, { opacity: 1, duration: .45, yoyo: true, repeat: 1, ease: 'sine.inOut', immediateRender: false }, V('C3_07') + 1.0);
+  tl.to('#snapIce, #thermo2', { opacity: 0, duration: .4 }, VE('C3_08') + .2);
+  FILM.pan('#lcam', P('C3_09', .7), 2.0, -40, -20);
 
   FILM.finish('ch3');
 })();

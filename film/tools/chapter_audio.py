@@ -245,7 +245,7 @@ def ch4(c):
         t += .14 - .1 * u
     c.pad(c.S("contest"), c.V("C4_02"), [note("E", 2), note("B", 2), note("G", 3)], .08, 300, 1200)
     c.fx.add(c.V("C4_02"), k.lp(k.noise(.6), 1500) * k.env(k.n(.6), .2), .1)
-    c.mus.add(c.P("C4_02", .4), k.bell(note("E", 5), 3.0, 1.0), .07)
+    c.mus.add(c.P("C4_02", .15), k.bell(note("E", 5), 3.0, 1.0), .07)
     c.pad(c.V("C4_02"), c.E("contest"), [note("C", 3), note("E", 3), note("G", 3), note("B", 3)], .09, 600, 1200)
     # measure: clinical blips, a false swell, resolved
     t = c.S("measure") + .5
@@ -253,14 +253,25 @@ def ch4(c):
         c.mus.add(t, k.blip(1760, .1), .04, .5)
         t += .9
     c.pad(c.S("measure"), c.E("measure"), [note("A", 2), note("E", 3)], .07, 300, 800)
+    c.fx.add(c.S("measure") + .6, k.whoosh(1.0, 400, 1800), .05)                 # probe lowers into the vial
+    T0 = c.P("C4_03", .45) + 1.3
+    TD = max(2.4, c.V("C4_04") + .3 - T0)
+    c.mus.add(T0 + .28 * TD, k.bell(note("E", 6), 1.2, .4), .04, -.3)          # cold reaches 0 °C
+    c.mus.add(T0 + .59 * TD, k.bell(note("B", 5), 1.2, .4), .04, .3)           # then hot
     m1 = c.P("C4_04", .55)
+    for j in range(6):
+        c.fx.add(m1 + 1.6 + .12 * j, k.tick(2400, .01), .05, .5)               # "apparent effect" glitch
     c.fx.add(m1, k.whoosh(.6, 600, 1500), .08)
     c.mus.add(m1 + .2, k.pad([note("A", 3), note("A#", 3), note("E", 4)], 2.2, 400, 1600, .8, .8), .08)
     c.mus.add(max(m1 + 2.4, c.VE("C4_04") - .2) + .1, k.bell(note("A", 5), 2.0, .5), .05)
     # doubt: near silence, the circle almost closes, a cold ? chime
     c.fx.add(c.S("doubt"), k.lp(k.noise(c.D("doubt")), 300) * k.adsr(k.n(c.D("doubt")), .3, .3), .02)
+    c.fx.add(c.S("doubt") + .4, k.scribble(1.3, 11), .08)                        # the quote is written out
+    c.fx.add(c.S("doubt") + 1.8, k.scribble(1.4, 12), .08)
     c.fx.add(c.P("C4_05", .5), k.scribble(1.1, 5), .12)
     c.mus.add(c.P("C4_06", .45), k.bell(note("D", 6), 2.6, .8), .05)
+    for j, f in enumerate([note("A", 6), note("E", 6), note("D", 7), note("F#", 6), note("B", 6)]):
+        c.mus.add(c.P("C4_06", .45) + .5 + .3 * j, k.bell(f, .9, .3), .025, (j - 2) * .3)   # frost grows from the "?"
     c.pad(c.V("C4_06"), c.E("doubt"), [note("D", 3), note("A", 3), note("E", 4)], .05, 800, 1800)
 
 
@@ -330,6 +341,8 @@ def ch6(c):
     c.pad(c.S("legacy"), c.E("legacy"), [note("D", 3), note("A", 3), note("F#", 4)], .08, 600, 1800)
     # quote: room tone only
     c.fx.add(c.S("quote"), k.lp(k.noise(c.D("quote")), 300) * k.adsr(k.n(c.D("quote")), .3, .3), .02)
+    c.fx.add(c.S("quote") + .3, k.scribble(1.4, 12), .07)                        # the quote is written out
+    c.fx.add(c.P("C6_04", .6), k.scribble(.7, 3), .1)                            # red circle round "confused"
     # return: FLOW_13 carries birds + frost crackle; cold drone under it; the replay pulse + hit
     c.pad(c.S("return"), c.E("return"), [note("D", 2), note("A", 2), note("E", 3)], .07, 300, 900)
     rp = max(c.S("return") + .2 + 7.6, c.E("return") - 3.8)

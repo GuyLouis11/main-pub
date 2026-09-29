@@ -116,7 +116,7 @@
         <defs><radialGradient id="spotG"><stop offset="0" stop-color="#fff4dc" stop-opacity=".22"/><stop offset="1" stop-color="#fff4dc" stop-opacity="0"/></radialGradient></defs></svg>
       <div class="abs" id="cnt" style="left:1060px;top:300px"><div id="counter">0</div><div class="lab" style="margin-top:6px">Entries · Royal Society of Chemistry · 2012</div></div>
       <div class="abs tag" id="jan" style="left:0;right:0;top:420px;text-align:center;color:#c9d6e2;opacity:0">January 2013</div>
-      <div class="tent" id="tent" style="opacity:0"><div class="rs">RESERVED</div><div class="nm">E. B. Mpemba</div></div>
+      <div class="tent" id="tent" style="opacity:0"><div class="rs">RESERVED</div><div class="nm">E. B. Mpemba</div><div id="tentUl" style="position:absolute;left:90px;right:90px;top:150px;height:4px;background:var(--pen);transform-origin:0 50%"></div></div>
     </div>
   </div>
 
@@ -127,18 +127,27 @@
         <rect x="260" y="560" width="400" height="360" rx="16" fill="rgba(143,227,255,.10)" stroke="#3b5268" stroke-width="3"/>
         <path d="M400,380 L400,860 Q400,890 430,890 L490,890 Q520,890 520,860 L520,380" fill="rgba(220,240,255,.06)" stroke="#dff3ff" stroke-opacity=".7" stroke-width="4"/>
         <rect x="404" y="470" width="112" height="390" fill="rgba(143,227,255,.16)"/>
-        <g id="probe"><line x1="460" y1="250" x2="460" y2="640" stroke="#efe7d5" stroke-width="4"/><circle cx="460" cy="640" r="9" fill="#ff6a2b"/></g>
+        <g id="probeWrap"><g id="probe"><line x1="460" y1="250" x2="460" y2="640" stroke="#efe7d5" stroke-width="4"/><circle cx="460" cy="640" r="9" fill="#ff6a2b"/><circle id="probeRing" cx="460" cy="640" r="28" fill="none" stroke="#ffb27a" stroke-width="3"/></g></g>
+        <g id="ruler" stroke="#8ea2b8" stroke-width="2"><line x1="372" y1="520" x2="388" y2="520"/><line x1="378" y1="550" x2="388" y2="550"/><line x1="372" y1="580" x2="388" y2="580"/><line x1="378" y1="610" x2="388" y2="610"/><line x1="372" y1="640" x2="388" y2="640"/><line x1="378" y1="670" x2="388" y2="670"/><line x1="372" y1="700" x2="388" y2="700"/><line x1="378" y1="730" x2="388" y2="730"/><line x1="372" y1="760" x2="388" y2="760"/><line x1="378" y1="790" x2="388" y2="790"/><line x1="372" y1="820" x2="388" y2="820"/></g>
         <g id="cmMark" opacity="0" stroke="#ffb27a" stroke-width="3"><line x1="560" y1="640" x2="560" y2="700"/><line x1="548" y1="640" x2="572" y2="640"/><line x1="548" y1="700" x2="572" y2="700"/></g>
         <g id="plot">
-          <line x1="1000" y1="240" x2="1000" y2="820" stroke="#3b5268" stroke-width="3"/><line x1="1000" y1="820" x2="1800" y2="820" stroke="#3b5268" stroke-width="3"/>
+          <path id="axY" d="M1000,820 L1000,240" stroke="#3b5268" stroke-width="3"/><path id="axX" d="M1000,820 L1800,820" stroke="#3b5268" stroke-width="3"/>
+          <g id="runs" fill="none" stroke-width="2" opacity=".55"><path class="run" stroke="#8fe3ff"/><path class="run" stroke="#ff9a6b"/><path class="run" stroke="#8fe3ff"/><path class="run" stroke="#ff9a6b"/><path class="run" stroke="#8fe3ff"/><path class="run" stroke="#ff9a6b"/></g>
+          <path id="ghostH" fill="none" stroke="#ff9a6b" stroke-width="3" stroke-dasharray="10 10" opacity="0"/>
           <path id="bandC" fill="rgba(143,227,255,.16)"/><path id="bandH" fill="rgba(255,106,43,.16)"/>
           <path id="curC" fill="none" stroke="#8fe3ff" stroke-width="6"/><path id="curH" fill="none" stroke="#ff6a2b" stroke-width="6"/>
           <line id="zeroL" x1="1000" y1="820" x2="1800" y2="820" stroke="#8fe3ff" stroke-width="2"/>
+          <line id="tcur" x1="1000" y1="240" x2="1000" y2="820" stroke="#efe7d5" stroke-opacity=".55" stroke-width="2" stroke-dasharray="6 8" opacity="0"/>
+          <circle id="zc" cx="1225" cy="820" r="12" fill="#8fe3ff" opacity="0"/><circle id="zh" cx="1472" cy="820" r="12" fill="#ff6a2b" opacity="0"/>
         </g>
       </svg>
       <div class="abs tag" id="cmLab" style="left:586px;top:652px;color:var(--ember2);opacity:0">1 cm</div>
       <div class="abs lab" style="left:1000px;top:200px">Temperature</div>
       <div class="abs lab" style="left:1650px;top:840px">Time →</div>
+      <div class="abs lab" id="zcLab" style="left:1170px;top:760px;color:var(--frost);opacity:0">Cold · 0 °C</div>
+      <div class="abs lab" id="zhLab" style="left:1420px;top:760px;color:var(--ember2);opacity:0">Hot · 0 °C</div>
+      <div class="abs lab" id="runsLab" style="left:1400px;top:250px;color:#c9d6e2;opacity:0">Repeated runs</div>
+      <div class="abs lab" id="probeLab" style="left:200px;top:590px;color:var(--ember2);opacity:0">Probe height</div>
       <div class="abs tag" id="fake" style="left:1340px;top:560px;color:var(--ember2);opacity:0">Apparent effect</div>
       <div class="abs tag" id="real" style="left:1340px;top:560px;color:var(--frost);opacity:0">Same height: no effect</div>
       <div class="abs note" style="left:1000px;top:900px">Illustrative · after the paper's point, not its data</div>
@@ -150,10 +159,17 @@
       <div class="page"><div class="rules"></div><div class="margin"></div></div>
       <div class="lamp" style="opacity:.7"></div>
       <div class="abs" id="quote" style="left:320px;top:320px">
-        <div class="q">“The answer I can give is</div>
-        <div class="q">that you were <span style="position:relative;display:inline-block">confused.”<svg viewBox="0 0 100 100" preserveAspectRatio="none" style="position:absolute;left:-7%;top:-12%;width:114%;height:128%"><path id="circ" d="M8,52 C6,20 50,6 80,14 C100,20 98,70 72,86 C44,100 4,86 6,52 C8,34 30,22 52,20" fill="none" stroke="#b3261a" stroke-width="3.2" stroke-linecap="round" vector-effect="non-scaling-stroke" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1"/></svg></span></div>
+        <div class="q" id="q1">“The answer I can give is</div>
+        <div class="q" id="q2">that you were <span style="position:relative;display:inline-block">confused.”<svg viewBox="0 0 100 100" preserveAspectRatio="none" style="position:absolute;left:-7%;top:-12%;width:114%;height:128%"><path id="circ" d="M8,52 C6,20 50,6 80,14 C100,20 98,70 72,86 C44,100 4,86 6,52 C8,34 30,22 52,20" fill="none" stroke="#b3261a" stroke-width="3.2" stroke-linecap="round" vector-effect="non-scaling-stroke" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1"/></svg></span></div>
       </div>
       <div class="abs hand" id="fq" style="left:1500px;top:360px;font-size:200px;color:#3aa6d8;opacity:0">?</div>
+      <svg id="fqIce" class="abs" style="left:1420px;top:330px;width:320px;height:340px;overflow:visible" viewBox="0 0 320 340" fill="none" stroke="#3aa6d8" stroke-width="3" stroke-linecap="round">
+        <path class="ic" d="M60,70 l-26,-26 M60,70 l-34,4 M60,70 l6,-34 M44,54 l-12,4 M44,54 l2,-12"/>
+        <path class="ic" d="M262,90 l30,-22 M262,90 l34,10 M262,90 l-2,-36 M280,76 l12,4 M280,76 l0,-12"/>
+        <path class="ic" d="M70,280 l-30,18 M70,280 l-32,-10 M70,280 l2,34 M52,291 l-10,-6 M52,291 l0,12"/>
+        <path class="ic" d="M250,300 l28,22 M250,300 l34,-6 M250,300 l-6,34 M266,312 l10,-4 M266,312 l-2,12"/>
+        <path class="ic" d="M160,20 l0,-26 M160,20 l-20,-14 M160,20 l20,-14"/>
+      </svg>
     </div>
   </div>
 
@@ -200,7 +216,14 @@ FILM_INIT();
   tl.to('#cnt', { opacity: 0, duration: .5 }, V('C4_02') - .2);
   tl.to('#spot', { opacity: 1, duration: .8 }, V('C4_02'));
   FILM.up('#jan', V('C4_02') + .1, .5, 10);
-  tl.fromTo('#tent', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: .7, ease: 'power3.out', immediateRender: false }, P('C4_02', .4));
+  tl.fromTo('#tent', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: .7, ease: 'power3.out', immediateRender: false }, P('C4_02', .15));
+  tl.set('#tentUl', { scaleX: 0 }, 0);
+  tl.to('#tentUl', { scaleX: 1, duration: .6, ease: 'expo.out' }, P('C4_02', .3));
+  FILM.pan('#ccam', P('C4_02', .35), 2.4, 0, -70);                                                      // push toward the seat
+  tl.to('#envs', { opacity: 0, duration: .8 }, P('C4_02', .35));
+  tl.to('#spot', { attr: { r: 470 }, duration: .8, yoyo: true, repeat: 1, ease: 'sine.inOut' }, P('C4_02', .6));
+  tl.to('#tent', { y: -24, opacity: 0, duration: .7, ease: 'power2.in' }, E('contest') - 1.3);        // clears for the lab
+  tl.to('#jan', { opacity: 0, duration: .5 }, E('contest') - 1.3);
 
   // ═════════ measure ═════════
   FILM.sceneFade('measure', .5, .45);
@@ -214,29 +237,74 @@ FILM_INIT();
   const st = { off: 0 };
   const draw = () => { const c = pts(20, 1.3, 0), h = pts(90, 1.3, st.off); $('#curC').setAttribute('d', d(c)); $('#curH').setAttribute('d', d(h)); $('#bandC').setAttribute('d', band(c, 10)); $('#bandH').setAttribute('d', band(h, 10)); };
   draw();
+  // the rig assembles: axes draw, the probe lowers into the vial, a ruler ticks down its side
+  FILM.draw('#axY', S('measure') + .4, .7, 'power2.out'); FILM.draw('#axX', S('measure') + .8, .8, 'power2.out');
+  tl.fromTo('#probeWrap', { y: -260, opacity: 0 }, { y: 0, opacity: 1, duration: 1.1, ease: 'power3.out', immediateRender: false }, S('measure') + .6);
+  tl.set('#probeWrap', { opacity: 0 }, 0);
+  tl.set('#ruler line', { opacity: 0 }, 0);
+  tl.to('#ruler line', { opacity: 1, duration: .12, stagger: .07 }, S('measure') + 1.5);
   FILM.wipeIn('#curC, #bandC', P('C4_03', .3), 1.2, 'left'); FILM.wipeIn('#curH, #bandH', P('C4_03', .45), 1.5, 'left');
+  // a time cursor sweeps the plot: cold reaches 0 °C first, then hot
+  const T0 = P('C4_03', .45) + 1.3, TD = Math.max(2.4, V('C4_04') + .3 - T0);
+  FILM.show('#tcur', T0, .2);
+  tl.fromTo('#tcur', { attr: { x1: 1000, x2: 1000 } }, { attr: { x1: 1800, x2: 1800 }, duration: TD, ease: 'none', immediateRender: false }, T0);
+  FILM.pop('#zc', T0 + .28 * TD); FILM.show('#zcLab', T0 + .28 * TD, .25);
+  FILM.pop('#zh', T0 + .59 * TD); FILM.show('#zhLab', T0 + .59 * TD, .25);
+  tl.to('#tcur', { opacity: 0, duration: .3 }, T0 + TD);
+  // careful, repeatable: several runs overlay the same curves
+  const runs = $$('#runs .run');
+  runs.forEach((r, i) => { const k = 1.3 * (1 + (rnd() - .5) * .06), p = i % 2 ? pts(90, k, 0) : pts(20, k, 0); r.setAttribute('d', d(p.map(q => [q[0], q[1] + (rnd() - .5) * 8]))); });
+  FILM.draw('#runs .run', P('C4_04', .06), .9);
+  tl.set('#runs', { opacity: 0 }, 0); tl.to('#runs', { opacity: .55, duration: .3 }, P('C4_04', .06));
+  FILM.show('#runsLab', P('C4_04', .08), .3);
+  tl.to('#runs, #runsLab', { opacity: 0, duration: .5 }, P('C4_04', .4));
+  // the probe's height matters
+  tl.set('#probeRing', { opacity: 0 }, 0);
+  tl.fromTo('#probeRing', { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, transformOrigin: '50% 50%', duration: .4, ease: 'back.out(2)', immediateRender: false }, P('C4_04', .16));
+  FILM.show('#probeLab', P('C4_04', .18), .3);
+  tl.to('#probeRing', { scale: 1.25, duration: .5, yoyo: true, repeat: 3, ease: 'sine.inOut' }, P('C4_04', .24));
+  FILM.pan('#mcam', P('C4_04', .3), 2.2, 60, -20);                                                     // lean in on the vial
+  tl.to('#zc, #zh, #zcLab, #zhLab', { opacity: 0, duration: .4 }, P('C4_04', .5));
   // probe moved one centimetre, and a false win appears
   const M1 = P('C4_04', .55);
   tl.to('#probe', { y: 60, duration: .6, ease: 'power2.inOut' }, M1);
   FILM.show('#cmMark, #cmLab', M1 + .3, .3);
   tl.to(st, { off: 1.4, duration: 1.0, ease: 'power2.inOut', onUpdate: draw }, M1 + .2);
   FILM.show('#fake', M1 + .8, .3);
+  FILM.pan('#mcam', M1 + .9, 1.8, 0, 0);                                                                // back to the plot
+  tl.to('#fake', { scale: 1.08, x: 6, transformOrigin: '0% 50%', duration: .12, yoyo: true, repeat: 5, ease: 'steps(2)' }, M1 + 1.6);
+  // where the hot curve would be at the same height (dashed ghost)
+  $('#ghostH').setAttribute('d', d(pts(90, 1.3, 0)));
+  FILM.draw('#ghostH', M1 + 2.6, 1.0); tl.to('#ghostH', { opacity: .6, duration: .3 }, M1 + 2.6);
+  tl.to('#cmLab', { scale: 1.2, transformOrigin: '0% 50%', duration: .35, yoyo: true, repeat: 3, ease: 'sine.inOut' }, M1 + 3.4);
+  tl.to('#fake', { opacity: .3, duration: .08, yoyo: true, repeat: 5 }, M1 + 4.6);
+  tl.to('#probeRing', { opacity: .3, scale: 1.3, transformOrigin: '50% 50%', duration: .3, yoyo: true, repeat: 3, ease: 'sine.inOut' }, M1 + 5.2);   // the probe is the culprit
   // back to the same height: the effect disappears
   const M2 = Math.max(M1 + 2.4, VE('C4_04') - .2);
   tl.to('#probe', { y: 0, duration: .6, ease: 'power2.inOut' }, M2);
   tl.to('#cmMark, #cmLab, #fake', { opacity: 0, duration: .3 }, M2);
   tl.to(st, { off: 0, duration: 1.0, ease: 'power2.inOut', onUpdate: draw }, M2 + .1);
+  tl.to('#ghostH', { opacity: 0, duration: .5 }, M2 + .6);
   FILM.show('#real', M2 + .8, .3);
 
   // ═════════ doubt ═════════
   FILM.sceneFade('doubt', .5, 0);
   FILM.drift('#dcam', 'doubt', 1.04, 1.0);
   FILM.up('#quote', S('doubt') + .3, .6, 16);
+  FILM.write('#q1', S('doubt') + .4, 1.3); FILM.write('#q2', S('doubt') + 1.8, 1.4);
+  FILM.ambient('contest', 'dark', 22); FILM.ambient('measure', 'dark', 18); FILM.ambient('doubt', 'paper', 26);
   tl.set('#circ', { attr: { 'stroke-dashoffset': 1 } }, 0);
   tl.to('#circ', { attr: { 'stroke-dashoffset': .16 }, duration: 1.2, ease: 'power1.inOut' }, P('C4_05', .5));   // almost closes…
+  FILM.pan('#dcam', VE('C4_05') - 1.2, 2.6, -70, -30);                                                  // lean in on "confused"
+  tl.to('#circ', { attr: { 'stroke-dashoffset': .11 }, duration: .45, yoyo: true, repeat: 1, ease: 'sine.inOut' }, P('C4_05', .5) + 2.0);   // tries to close…
+  tl.to('#circ', { attr: { 'stroke-width': 4.6 }, duration: .4, yoyo: true, repeat: 1, ease: 'sine.inOut' }, P('C4_05', .5) + 3.0);
+  tl.to('#dcam .lamp', { opacity: .45, duration: .08, yoyo: true, repeat: 3, ease: 'steps(1)' }, VE('C4_05') + .1);
   tl.to('#quote', { opacity: .45, duration: .6 }, V('C4_06'));                                                // …and stops
   tl.fromTo('#fq', { opacity: 0, scale: .6 }, { opacity: 1, scale: 1, duration: .5, ease: 'back.out(2)', immediateRender: false }, P('C4_06', .45));
   tl.set('#fq', { opacity: 0 }, 0);
+  $$('#fqIce .ic').forEach((c, i) => { c.id = 'ic' + i; FILM.draw('#ic' + i, P('C4_06', .45) + .5 + i * .3, .5, 'power2.out'); });   // frost grows from the "?"
+  tl.to('#fq', { rotation: -4, scale: 1.04, transformOrigin: '50% 60%', duration: 1.2, yoyo: true, repeat: 1, ease: 'sine.inOut' }, P('C4_06', .45) + .6);
+  tl.to('#fqIce', { opacity: .55, duration: .25, yoyo: true, repeat: 1 }, E('doubt') - 1.3);
 
   FILM.finish('ch4');
 })();

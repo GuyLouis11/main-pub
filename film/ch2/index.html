@@ -148,6 +148,7 @@
         <path id="coast" d="M1440,300 C1470,380 1480,470 1500,560 C1512,610 1520,650 1522,700 C1530,780 1550,860 1570,960" fill="none" stroke="#1d2b4a" stroke-width="4" stroke-dasharray="2 10" stroke-linecap="round"/>
         <path id="pathE" d="M1265,348 C1060,470 820,620 602,812" fill="none" stroke="#c9463a" stroke-width="6" stroke-dasharray="14 12" stroke-linecap="round"/>
         <path id="pathO" d="M1496,660 C1250,690 900,760 602,812" fill="none" stroke="#1d2b4a" stroke-width="5" stroke-dasharray="4 12" stroke-linecap="round"/>
+        <circle id="walkE" r="10" fill="#c9463a" opacity="0"/><circle id="walkO" r="9" fill="#1d2b4a" opacity="0"/><circle id="meet" cx="602" cy="812" r="18" fill="none" stroke="#b3261a" stroke-width="4" opacity="0"/>
         <g id="pins" fill="#b3261a"><circle id="pM" cx="1265" cy="348" r="14"/><circle id="pI" cx="602" cy="812" r="18"/><circle id="pD" cx="1496" cy="660" r="14" fill="#1d2b4a"/></g>
       </svg>
       <div class="pinlab" id="lM" style="left:1290px;top:300px">Magamba</div><div class="pinsub" id="sM" style="left:1290px;top:334px">Usambara Mountains</div>
@@ -155,7 +156,7 @@
       <div class="pinlab" id="lD" style="left:1520px;top:612px">University College</div><div class="pinsub" id="sD" style="left:1520px;top:646px">Dar es Salaam</div>
       <div class="pinsub" id="ocean" style="left:1640px;top:820px;color:#434d5e">Indian Ocean</div>
       <div class="hand" id="later" style="position:absolute;left:320px;top:120px;font-size:70px;clip-path:inset(-20% 100% -20% 0)">a few years later…</div>
-      <div class="abs note" style="left:320px;top:1010px;color:#3f4756">Approximate positions</div>
+      <div class="abs note" style="left:320px;top:1010px;color:#343b48">Approximate positions</div>
     </div>
   </div>
 
@@ -173,6 +174,8 @@
       </svg>
       <div class="abs tag" id="tA" style="left:430px;top:780px;width:140px;text-align:center;color:#2b6f94">35 °C</div>
       <div class="abs tag" id="tB" style="left:710px;top:780px;width:140px;text-align:center;color:#b3261a">100 °C</div>
+      <svg class="full" viewBox="0 0 1920 1080" id="handSvg"><g fill="none" stroke="#1d2b4a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"><path class="hd" d="M420,520 L420,380 C420,360 450,360 450,380 L450,470 M450,420 C450,400 480,400 480,420 L480,470 M480,430 C480,410 510,410 510,430 L510,480 C510,560 470,600 430,600 L400,600 C380,580 360,540 350,500 C345,480 370,470 385,490 L420,520"/></g></svg>
+      <div class="abs hand" id="askTxt" style="left:560px;top:420px;font-size:64px;clip-path:inset(-20% 100% -20% 0)">"Why does the hot one freeze first?"</div>
       <div class="abs hand" id="why" style="left:1700px;top:470px;font-size:190px;color:#b3261a;opacity:0">?</div>
       <div class="abs note" style="left:320px;top:1010px;color:#3f4756">His question, as quoted in the 1969 paper</div>
     </div>
@@ -188,6 +191,9 @@
           <circle cx="960" cy="330" r="16" fill="#eef3ea"/>
         </g>
       </svg>
+      <div class="abs chalk" id="mist" style="left:1400px;top:840px;font-size:54px;clip-path:inset(-20% 100% -20% 0)">mistaken?</div>
+      <div class="abs chalk" id="qC" style="left:920px;top:150px;font-size:120px;opacity:0">?</div>
+      <div class="abs chalk" id="testIt" style="left:800px;top:930px;font-size:64px;clip-path:inset(-20% 100% -20% 0)">let's test it</div>
       <div class="abs chalk" id="lR" style="left:520px;top:640px;width:160px;text-align:center;font-size:60px">right</div>
       <div class="abs chalk" id="lW" style="left:1240px;top:640px;width:160px;text-align:center;font-size:60px">wrong</div>
     </div>
@@ -258,8 +264,8 @@ FILM_INIT();
   // ═════════ ask ═════════
   FILM.sceneFade('ask', .5, .45);
   FILM.drift('#acam', 'ask', 1.04, 1.0);
-  FILM.up('#bA, #tA', P('C2_02', .3), .5, 20);
-  FILM.up('#bB, #tB', P('C2_02', .36), .5, 20);
+  FILM.up('#bA, #tA', P('C2_02', .24), .5, 20);
+  FILM.up('#bB, #tB', P('C2_02', .3), .5, 20);
   tl.fromTo('#bSteam', { y: 6, opacity: .2 }, { y: -12, opacity: .9, duration: .9, repeat: 5, yoyo: true, ease: 'sine.inOut', immediateRender: false }, P('C2_02', .36));
   FILM.draw('#freezer rect, #freezer line', P('C2_02', .52), .8);
   FILM.draw('#arrow', P('C2_02', .56), .5);
@@ -295,6 +301,8 @@ FILM_INIT();
   FILM.show('#labTag', L0 + .4, .5);
   tl.to('#labTag', { opacity: 0, duration: .4 }, lt(4.8));
   tl.to('#f07hold', { opacity: 1, duration: .01 }, lt(7.9));
+  tl.fromTo('#f07wrap', { scale: 1 }, { scale: 1.025, transformOrigin: '50% 50%', duration: lt(7.9) - lt(0.1), ease: 'sine.inOut', immediateRender: false }, lt(0.1));   // slow push-in on the footage
+  tl.set('#f07hold', { scale: 1.025, transformOrigin: '50% 50%' }, 0);                                  // hold still matches the pushed video
   // frost hand-off: Flow's frost keeps growing as drawn crystals, then washes to paper white
   const cg = $('#crystals');
   const br = (x, y, a, len, dep) => { if (dep <= 0) return; const x2 = x + Math.cos(a) * len, y2 = y + Math.sin(a) * len; el('path', { d: `M${x.toFixed(0)},${y.toFixed(0)} L${x2.toFixed(0)},${y2.toFixed(0)}`, class: 'cr', 'data-d': dep }, cg); br(x2, y2, a - .55, len * .62, dep - 1); br(x2, y2, a + .55, len * .62, dep - 1); };
@@ -314,6 +322,30 @@ FILM_INIT();
   tl.to('#jcam', { scale: 7, transformOrigin: '1185px 470px', duration: 1.1, ease: 'power3.in' }, E('paper') - 1.1);
   tl.to('#toBlack', { opacity: 1, duration: .4 }, E('paper') - .45);
 
+  // ═════════ density pass ═════════
+  FILM.ambient('route', 'paper', 22); FILM.ambient('ask', 'paper', 20); FILM.ambient('scale', 'dark', 24); FILM.ambient('paper', 'dark', 20);
+  // route: Erasto's journey travels the map; the visitor's route follows; they meet at Iringa
+  const walk = (pathSel, dotSel, t, d) => { const p = $(pathSel), L = p.getTotalLength(), pts = []; for (let i = 0; i <= 100; i++) { const q = p.getPointAtLength(L * i / 100); pts.push([q.x, q.y]); }
+    const o = { u: 0 }, draw = () => { const k = o.u * 100, i = Math.floor(k), f = k - i, a = pts[i], b = pts[Math.min(100, i + 1)]; $(dotSel).setAttribute('cx', a[0] + (b[0] - a[0]) * f); $(dotSel).setAttribute('cy', a[1] + (b[1] - a[1]) * f); }; draw();
+    tl.set(dotSel, { attr: { opacity: 1 } }, t); tl.to(o, { u: 1, duration: d, ease: 'power1.inOut', onUpdate: draw }, t); tl.set(dotSel, { attr: { opacity: 0 } }, t + d + .3); };
+  walk('#pathE', '#walkE', P('C2_01', .3), 2.6);
+  FILM.pan('#mcam', P('C2_01', .38), 2.2, 120, -80);
+  walk('#pathO', '#walkO', P('C2_01', .76), 1.8);
+  tl.fromTo('#meet', { attr: { r: 18, opacity: 1 } }, { attr: { r: 70, opacity: 0 }, duration: .9, ease: 'power2.out', immediateRender: false }, P('C2_01', .76) + 1.8);
+  // ask: a raised hand and his question, written, before the diagram
+  FILM.draw('#handSvg .hd', V('C2_02') + .2, 1.1);
+  FILM.write('#askTxt', V('C2_02') + .9, 1.6);
+  tl.to('#handSvg, #askTxt', { opacity: 0, y: -30, duration: .5 }, P('C2_02', .2));
+  FILM.pan('#acam', P('C2_02', .5), 2.0, -60, 20);
+  // scale: chalk annotations carry the thought
+  FILM.write('#mist', P('C2_03', .55), .9);
+  FILM.pan('#scam', P('C2_03', .6), 1.6, -50, -20);
+  tl.to('#mist', { opacity: 0, duration: .4 }, P('C2_04', .2));
+  tl.fromTo('#qC', { opacity: 0, scale: .6 }, { opacity: .95, scale: 1, duration: .4, ease: 'back.out(2)', immediateRender: false }, P('C2_04', .55));
+  FILM.write('#testIt', P('C2_04', .78), 1.0);
+  FILM.pan('#scam', P('C2_04', .6), 1.6, 0, 40);
+
+  for (let i = 0; i < 10; i++) { const d = el('circle', { cx: 1320 + (rnd() - .5) * 120, cy: 600 + (rnd() - .5) * 40, r: 3 + rnd() * 4, fill: '#eef3ea', opacity: 0 }, document.querySelector('#sc-scale svg')); tl.fromTo(d, { attr: { opacity: .7 } }, { attr: { opacity: 0, cy: '-=60' }, x: (rnd() - .5) * 60, duration: 1.2, ease: 'power1.out', immediateRender: false }, P('C2_04', .1) + i * .05); }
   FILM.finish('ch2');
 })();
 </script>

@@ -172,9 +172,12 @@
       <div class="page"><div class="rules"></div><div class="margin"></div></div>
       <svg class="full" viewBox="0 0 1920 1080">
         <g id="ridges" fill="none" stroke="#1d2b4a" stroke-linecap="round" stroke-linejoin="round"></g>
+        <g id="wash" opacity="0"></g>
         <g id="pin" opacity="0"><line x1="1060" y1="250" x2="1060" y2="372" stroke="#b3261a" stroke-width="4"/><circle cx="1060" cy="244" r="16" fill="#b3261a"/><circle cx="1060" cy="244" r="6" fill="#fbf8f0"/></g>
       </svg>
       <div class="abs tag" id="pinLab" style="left:1096px;top:212px;color:#1d2b4a;opacity:0">Magamba Secondary School</div>
+      <div class="abs hand" id="yr63" style="left:1100px;top:300px;font-size:64px;color:#b3261a;opacity:0;transform:rotate(-6deg)">1963</div>
+      <div class="abs hand" id="noRoom" style="left:1000px;top:890px;font-size:52px;clip-path:inset(-20% 100% -20% 0)">freezer: no room to wait</div>
       <div class="abs note" id="rangeLab" style="left:1096px;top:252px;color:#4a5670;opacity:0">Usambara Mountains · north-eastern Tanganyika</div>
       <div class="icard" id="recipe" style="left:300px;top:560px;width:640px;height:400px;transform:rotate(-2deg)">
         <div class="h">Ice cream</div>
@@ -186,7 +189,7 @@
       </div>
       <div class="photo" id="photo1" style="left:1000px;top:420px;width:800px;height:450px;opacity:0">
         <div class="card"></div>
-        <img class="fill" src="assets/flow/F01_hold_3.4s.jpg" alt="">
+        <img class="fill" src="assets/flow/F01_hold_6.2s.jpg" alt="">
         <video id="f01a" src="assets/flow/FLOW_01_kitchen_hot_mix.mp4" muted playsinline data-scene="place" data-at="C1_02|0.2" data-len="3.2" data-start="15.900" data-duration="3.200" data-media-start="0.2" data-usable-in="0.2" data-usable-out="3.4" data-track-index="10"></video>
         <video id="f01b" src="assets/flow/FLOW_01_kitchen_hot_mix.mp4" playsinline data-has-audio="true" data-volume="0.4" data-scene="place" data-at="C1_03|-0.2" data-len="1.5" data-start="25.100" data-duration="1.500" data-media-start="6.2" data-usable-in="6.2" data-usable-out="7.7" data-track-index="11"></video>
         <div class="tape" style="left:-60px;top:-26px;transform:rotate(-24deg)"></div><div class="tape" style="right:-60px;bottom:-24px;transform:rotate(-20deg)"></div>
@@ -210,6 +213,7 @@
           <path class="sk liq" d="M1236,610 C1270,590 1300,630 1330,610 C1360,590 1390,630 1412,610" stroke="#3aa6d8" stroke-width="5"/>
         </g>
       </svg>
+      <svg class="full" viewBox="0 0 1920 1080" id="sparkles"></svg>
       <div class="abs hand write" id="laterTxt" style="left:360px;top:620px;font-size:72px">later…</div>
       <div class="abs hand write" id="iceTxt" style="left:900px;top:790px;font-size:52px">ice</div>
       <div class="abs hand write" id="liqTxt" style="left:1210px;top:790px;font-size:52px">still liquid</div>
@@ -236,6 +240,7 @@
         <g fill="none" stroke="#1d2b4a" stroke-width="5" stroke-linecap="round"><path d="M1180,560 L1200,800 L1360,800 L1380,560"/><path d="M1196,640 L1364,640 M1200,690 L1360,690" stroke="#3aa6d8" stroke-width="4"/></g>
         <path id="xa" d="M1130,540 C1250,650 1340,760 1440,850" stroke="#b3261a" stroke-width="12" fill="none" stroke-linecap="round"/>
         <path id="xb" d="M1440,540 C1330,640 1250,740 1130,850" stroke="#b3261a" stroke-width="12" fill="none" stroke-linecap="round"/>
+        <path id="xu" d="M1120,900 C1220,890 1330,912 1450,896" stroke="#b3261a" stroke-width="8" fill="none" stroke-linecap="round"/>
       </svg>
     </div>
   </div>
@@ -303,6 +308,7 @@ FILM_INIT();
   // skip: photo of FLOW_01; the cool step gets struck through on "So he doesn't wait."
   tl.to('#recipe', { x: -90, y: 40, rotation: -4, scale: .9, duration: .6, ease: 'power2.inOut' }, SKIP);
   tl.to('#ridges, #pin, #pinLab, #rangeLab', { opacity: .25, duration: .6 }, SKIP);
+  tl.to('#yr63', { opacity: 0, duration: .4 }, SKIP);                                   // the stamp clears before the photo lands on it
   tl.set('#photo1', { opacity: 0, y: -60, rotation: 6 }, 0);
   tl.to('#photo1', { opacity: 1, y: 0, rotation: 1.5, duration: .6, ease: 'back.out(1.4)' }, SKIP + .1);
   FILM.draw('#strike', V('C1_03') + .15, .35, 'power2.out');
@@ -325,11 +331,11 @@ FILM_INIT();
   // ═════════ teacher ═════════
   FILM.sceneFade('teacher', .5, .4);
   FILM.drift('#tcam', 'teacher', 1.03, 1.0);
-  FILM.up('#quote', S('teacher') + .3, .6, 16);
   FILM.draw('#circ', P('C1_05', .55), .5);
   tl.to('#quote', { y: -120, scale: .72, transformOrigin: '0% 0%', opacity: .55, duration: .6, ease: 'power2.inOut' }, V('C1_06') - .2);
-  FILM.show('#xsvg', V('C1_06') + .2, .4);
-  FILM.draw('#xa', P('C1_06', .45), .3, 'power2.out'); FILM.draw('#xb', P('C1_06', .45) + .3, .3, 'power2.out');
+  tl.set('#xsvg', { opacity: 0 }, 0); tl.set('#xsvg', { opacity: 1 }, V('C1_06') + .2);
+  FILM.draw('#xa', P('C1_06', .26), .3, 'power2.out'); FILM.draw('#xb', P('C1_06', .26) + .3, .3, 'power2.out');
+  tl.fromTo('#xsvg', { x: 0 }, { x: 8, duration: .08, yoyo: true, repeat: 5, immediateRender: false }, P('C1_06', .26) + .6);
 
   // ═════════ question: built around the real FLOW_04 ═════════
   // clip map (reviewed): 0.35–1.2 walks in · 1.25–2.8 sits, opens book · 3.0–5.4 sketches ·
@@ -339,7 +345,8 @@ FILM_INIT();
   tl.set('#photo4', { opacity: 0, y: -60, rotation: 6 }, 0);
   tl.to('#photo4', { opacity: 1, y: 0, rotation: 1.5, duration: .6, ease: 'back.out(1.4)' }, S('question') + .05);
   // push through the photograph while he sketches, so Flow's own move to the page plays full frame
-  tl.to('#photo4', { left: 0, top: 0, width: 1920, height: 1080, rotation: 0, duration: 1.3, ease: 'power3.inOut' }, qt(3.2));
+  tl.to('#photo4', { y: -14, rotation: .6, duration: qt(3.2) - S('question') - .65, ease: 'sine.inOut' }, S('question') + .65);   // the taped photo settles while he walks in
+  tl.to('#photo4', { left: 0, top: 0, width: 1920, height: 1080, rotation: 0, y: 0, duration: 1.3, ease: 'power3.inOut' }, qt(3.2));
   tl.to('#photo4 .card, #photo4 .tape', { opacity: 0, duration: .5 }, qt(3.2));
   // hold the page (still of the last frame) for the rest of the narration
   tl.to('#f04hold', { opacity: 1, duration: .01 }, qt(7.9));
@@ -352,6 +359,34 @@ FILM_INIT();
   tl.to('#iris', { clipPath: 'circle(0% at 1296px 638px)', duration: 1.0, ease: 'power3.in' }, E('question') - 1.1);
   tl.set('#iris', { clipPath: 'circle(150% at 1296px 638px)' }, 0);
 
+  // ═════════ density pass: a visible beat at least every ~1.5 s ═════════
+  FILM.ambient('place', 'paper', 26); FILM.ambient('later', 'paper', 22); FILM.ambient('teacher', 'paper', 20); FILM.ambient('question', 'paper', 16);
+  // place: ink wash fills the ridges, a 1963 stamp, and the camera travels toward the pin, then down to the recipe
+  for (let r = 0; r < 3; r++) { let d = 'M300,1100'; for (let x = 300; x <= 1820; x += 14) d += ' L' + x + ',' + (360 + r * 48 + 60 * Math.sin(x / (170 - r * 18) + r * 1.7) + 26 * Math.sin(x / 61 + r)).toFixed(1); d += ' L1820,1100 Z'; el('path', { d, fill: '#1d2b4a', opacity: .05 + r * .02 }, $('#wash')); }
+  FILM.show('#wash', P('C1_01', .22), 1.4);
+  tl.fromTo('#yr63', { opacity: 0, scale: 1.6 }, { opacity: .9, scale: 1, duration: .35, ease: 'back.out(2.5)', immediateRender: false }, P('C1_01', .3));
+  FILM.pan('#pcam', P('C1_01', .24), 1.8, -120, 60);
+  FILM.pan('#pcam', P('C1_01', .44), 1.6, 60, -60);
+  FILM.pan('#pcam', V('C1_02'), 1.6, -60, -20);
+  // skip: the photo pushes in while FLOW_01 plays; a pencil note says why he can't wait
+  tl.to('#photo1', { scale: 1.08, duration: 5.5, ease: 'sine.inOut' }, V('C1_02') + 1.0);
+  FILM.write('#noRoom', P('C1_02', .55), 1.0);
+  FILM.pan('#pcam', P('C1_02', .8), 1.4, -140, -40);
+  // later: the liquid keeps sloshing, the ice glints, the camera leans in
+  tl.fromTo('#sketch .liq', { y: 0 }, { y: -6, duration: .5, yoyo: true, repeat: 9, ease: 'sine.inOut', immediateRender: false }, P('C1_04', .7));
+  for (let i = 0; i < 8; i++) { const sp = el('circle', { cx: 910 + rnd() * 140, cy: 600 + rnd() * 150, r: 3, fill: '#8fe3ff', opacity: 0 }, $('#sparkles')); tl.to(sp, { attr: { opacity: 1 }, duration: .2, yoyo: true, repeat: 1 }, P('C1_04', .55) + i * .35); }
+  FILM.pan('#lcam', P('C1_04', .6), 2.2, -80, -30);
+  // teacher: the quote is written, not faded; the lamp breathes; the page is shoved aside after the ✗
+  tl.set('#quote', { opacity: 1, y: 0 }, S('teacher'));
+  ['#quote .q:nth-child(1)', '#quote .q:nth-child(2)'].forEach((q, i) => FILM.write(q, S('teacher') + .4 + i * 1.2, 1.1));
+  FILM.up('#quote .who', S('teacher') + 3.0, .4, 6);
+  FILM.pan('#tcam', P('C1_05', .75), 1.8, 60, 30);
+  tl.fromTo('#lamp', { opacity: .8 }, { opacity: .95, duration: .9, yoyo: true, repeat: 3, ease: 'sine.inOut', immediateRender: false }, P('C1_05', .8));
+  FILM.draw('#xsvg g path', V('C1_06') + .2, 1.0);
+  tl.to('#tcam', { rotation: -3, x: -60, duration: 1.4, ease: 'power2.inOut' }, P('C1_06', .72));
+
+  FILM.draw('#xu', P('C1_06', .5), .5, 'power2.out');
+  FILM.pan('#tcam', P('C1_06', .55), 1.2, 20, -10);
   FILM.finish('ch1');
 })();
 </script>

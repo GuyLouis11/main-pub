@@ -178,6 +178,7 @@
     <div class="cam" id="gcam">
       <div class="abs mono" id="gh" style="left:0;right:0;top:170px;text-align:center;font-size:26px;font-weight:600;letter-spacing:.3em;color:#a9bccf">Where the name turns up now</div>
       <div id="fields"></div>
+      <div class="abs serif i" id="gname" style="left:0;right:0;top:760px;text-align:center;font-size:44px;color:var(--paper)"><span id="gnameT" style="display:inline-block">Named for a schoolboy’s question in Tanzania</span></div>
       <div class="abs note" style="left:0;right:0;top:960px;text-align:center">Classical and quantum systems studied under the Mpemba name · examples</div>
     </div>
   </div>
@@ -186,7 +187,7 @@
     <div class="cam" id="qcam">
       <div class="page"><div class="rules"></div><div class="margin"></div></div>
       <div class="lamp" style="opacity:.85"></div>
-      <div class="abs" id="quote" style="left:380px;top:360px"><div class="q">“…that you were confused.”</div><div class="mono" style="font-size:20px;font-weight:600;color:#3a3f4a;margin-top:26px">— his teacher, as Mpemba recalled it</div></div>
+      <div class="abs" id="quote" style="left:380px;top:360px"><div class="q" id="qline">“…that you were <span style="position:relative;display:inline-block">confused.”<svg viewBox="0 0 100 100" preserveAspectRatio="none" style="position:absolute;left:-7%;top:-12%;width:114%;height:128%;overflow:visible"><path id="qcirc" d="M8,52 C6,20 50,6 80,14 C100,20 98,70 72,86 C44,100 4,86 6,52 C8,34 30,22 52,20" fill="none" stroke="#b3261a" stroke-width="3.2" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></span></div><div class="mono" id="qattr" style="font-size:20px;font-weight:600;color:#3a3f4a;margin-top:26px">— his teacher, as Mpemba recalled it</div></div>
     </div>
   </div>
 
@@ -290,12 +291,21 @@ FILM_INIT();
     const c = div('fcard', $('#fields'), `<div class="f">${f}</div><div class="m">Mpemba effect</div>`); c.style.left = (140 + i * 420) + 'px';
     FILM.up(c, P('C6_03', .1 + i * .12), .45, 24);
     tl.to(c, { borderColor: '#8fe3ff', duration: .3 }, P('C6_03', .1 + i * .12) + .3);
+    tl.to(c.querySelector('.m'), { color: '#e3f8ff', textShadow: '0 0 14px rgba(143,227,255,.9)', duration: .3, yoyo: true, repeat: 1, ease: 'sine.inOut' }, P('C6_03', .52) + i * .35);   // the name lights up across fields
   });
+  FILM.pan('#gcam', P('C6_03', .6), 2.4, 0, -40);
+  FILM.write('#gnameT', P('C6_03', .8), 1.0);
+  FILM.ambient('legacy', 'dark', 24);
 
   // ═════════ quote ═════════
   FILM.sceneFade('quote', .5, .4);
   FILM.drift('#qcam', 'quote', 1.05, 1.0);
   FILM.up('#quote', S('quote') + .2, .6, 14);
+  FILM.write('#qline', S('quote') + .3, 1.4);
+  FILM.up('#qattr', S('quote') + 1.8, .5, 8);
+  FILM.draw('#qcirc', P('C6_04', .6), .7);
+  FILM.pan('#qcam', P('C6_04', .6) + .4, 2.2, -60, -20);
+  FILM.ambient('quote', 'paper', 22);
 
   // ═════════ return: built around the real FLOW_13 ═════════
   // clip map (reviewed): 0.3–3.0 wide empty room at dusk, freezer ajar (cyan), cup on table · slow push ·
@@ -304,6 +314,8 @@ FILM_INIT();
   tl.set('#retOver', { opacity: 1 }, S('return')); tl.set('#retOver', { opacity: 0 }, E('return'));
   const R0 = S('return') + .2, rt = c => R0 + (c - .3);
   tl.to('#f13hold', { opacity: 1, duration: .01 }, rt(7.9));
+  tl.fromTo('#f13wrap', { scale: 1 }, { scale: 1.025, transformOrigin: '50% 50%', duration: rt(7.9) - S('return'), ease: 'sine.inOut', immediateRender: false }, S('return'));   // a breath of push under Flow's own
+  tl.set('#f13hold', { scale: 1.065 * 1.025, transformOrigin: '50% 50%' }, 0);                                   // hold still matches the pushed video
   FILM.show('#meta', rt(4.1), .5);                       // the steam→frost is labelled as a metaphor
   tl.to('#meta', { opacity: 0, duration: .4 }, rt(7.6));
   // then the opening's race, replayed with the shortcut
@@ -320,7 +332,7 @@ FILM_INIT();
 
   // ═════════ end card ═════════
   FILM.sceneFade('end', .5, 0);
-  tl.fromTo('#ecam', { scale: 1.06 }, { scale: 1.0, duration: D('end'), ease: 'expo.out', immediateRender: false }, S('end'));
+  tl.fromTo('#ecam', { scale: 1.06 }, { scale: 1.0, duration: D('end'), ease: 'power1.out', immediateRender: false }, S('end'));
   FILM.up('#endS', S('end') + .3, .5, 10); FILM.up('#endT1', S('end') + .4, .6, 20); FILM.up('#endT2', S('end') + .5, .6, 26);
   // frost melts off HOT and it glows ember again
   const fg = $('#frostE');
@@ -331,6 +343,7 @@ FILM_INIT();
   tl.to('#hotW', { color: '#ff6a2b', textShadow: '0 0 40px rgba(255,106,43,.55)', duration: 1.4, ease: 'power1.inOut' }, MELT + .3);
   tl.to('#dot', { backgroundColor: '#ff6a2b', duration: 1.0 }, MELT + .5);
   FILM.up('#honest', S('end') + 2.6, .6, 10);
+  tl.to('#hotW', { textShadow: '0 0 64px rgba(255,106,43,.8)', duration: 1.1, yoyo: true, repeat: 1, ease: 'sine.inOut' }, MELT + 2.0);   // HOT keeps glowing to the fade
 
   FILM.finish('ch6');
 })();
