@@ -7,7 +7,7 @@
 | Flow F01, F02, F04, F07, F10, F13 | **Real clips**, reviewed (see `FLOW_REVIEW_BATCH2.md`, `../hot-water-opening/FLOW_REVIEW.md`). Built around their actual action |
 | B-tier slots F08 (steam), F11 (ion), F12 (savanna) | **Not generated, by design.** Motion-design versions are the final plan (steam curls, ion-trap schematic, drawn savanna) |
 | Chapter score + SFX | **Final candidate.** Original synthesis, −24 LUFS bed (ch4 and ch5 −26, peak-limited) |
-| **Narration (43 chapter lines + 8 opening)** | **SILENT PLACEHOLDERS.** Timings use estimates (about 2.6 words/s). **The film is not finished until these are recorded.** |
+| **Narration (43 chapter lines + 8 opening)** | **Real ElevenLabs takes** (voice apOzcbHULxCnvWfHPd41, eleven_multilingual_v2, speed 1.0), generated 2026-09-29, levelled to −17 LUFS per line. The whole film was re-timed to the real delivery: 8:06 estimated → about 6:50 actual. |
 | SCRATCH VO subtitles in the review cut | Review aid only (`scratchVO` variable); never in the final |
 
 ## Checks actually performed
@@ -56,6 +56,6 @@ Fixes found along the way:
 
 ## Not verified / not possible here
 - **Listening.** I can't hear the mix. Levels, sync and ducking were measured; musical taste needs Guy's ears.
-- **Real VO timing and pronunciation.** Placeholders are estimates. After the takes arrive, `retime_chapters.py` re-lays everything out, and a fresh render plus QA is required.
+- **Pronunciation.** "Mpemba", "Usambara", "Mkwawa", "Bechhoefer" and similar names haven't been checked by ear. I can't listen, and an automatic transcription check wasn't possible here. Any line can be regenerated individually: `XI_KEY=… python3 tools/elevenlabs_vo.py --force C5_05`, then retime and re-render.
 - Full-resolution review of every frame of every Flow clip beyond the sampled frames and crops.
 - Primary-source confirmation of the two qualified quotes (network policy blocks the journal sites). The wording in the script is already qualified to match.
