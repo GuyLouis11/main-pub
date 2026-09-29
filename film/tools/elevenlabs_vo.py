@@ -29,7 +29,7 @@ import numpy as np
 import soundfile as sf
 
 VOICE = "apOzcbHULxCnvWfHPd41"
-MODEL = os.environ.get("XI_MODEL", "eleven_multilingual_v2")
+MODEL = os.environ.get("XI_MODEL", "eleven_v3")   # chosen by Guy from the A/B test (sample D)
 # v3: calm and stable (v2's stability .38 / style .35 plus break tags produced ~50% more glitches than v1)
 SETTINGS = {"stability": 0.5, "similarity_boost": 0.75, "style": 0.0, "use_speaker_boost": True, "speed": 1.04}
 FMT = "mp3_44100_192"
@@ -183,6 +183,46 @@ def write(y, path):
     sf.write(path, y, SR, subtype="PCM_16")
 
 
+V3_SETTINGS = {"stability": 0.5, "similarity_boost": 0.75}
+
+
+def v3_line(text, key):
+    """Sample-D method: the whole line in one eleven_v3 call, no tags, no context. Up to 3 tries for a clean ending."""
+    words = len(re.findall(r"[A-Za-z0-9']+", speak(text)))
+    best = None
+    for attempt in range(int(os.environ.get("XI_TRIES", 3))):
+        body = {"text": speak(text), "model_id": MODEL, "voice_settings": V3_SETTINGS}
+        req = urllib.request.Request(f"https://api.elevenlabs.io/v1/text-to-speech/{VOICE}?output_format={FMT}",
+                                     data=json.dumps(body).encode(), method="POST",
+                                     headers={"xi-api-key": key, "Content-Type": "application/json"})
+        for k in range(4):
+            try:
+                with urllib.request.urlopen(req, timeout=180) as r:
+                    mp3 = r.read()
+                break
+            except urllib.error.HTTPError as e:
+                if e.code in (429, 500, 502, 503) and k < 3:
+                    time.sleep(2 ** (k + 1)); continue
+                raise SystemExit(f"ElevenLabs HTTP {e.code}: {e.read()[:300].decode(errors='replace')}")
+        x = decode(mp3)
+        a = assess(x, words)
+        # v3 ends words crisply (the approved sample D tails decay over 60-220 ms), so only a stop within
+        # 40 ms of full-level speech counts as clipped
+        hop = int(SR * .02)
+        db = 20 * np.log10(np.array([np.sqrt(np.mean(x[i:i + hop] ** 2)) for i in range(0, len(x) - hop + 1, hop)]) + 1e-9)
+        loud = np.nonzero(db > -35)[0]
+        a["clipped"] = not (len(loud) and (len(db) - 1 - loud[-1]) >= 3)
+        a["bad"] = 10 * a["clipped"]
+        if best is None or a["bad"] < best[1]["bad"]:
+            best = (x, a)
+        if not a["clipped"]:
+            break
+    x, a = best
+    fade = int(SR * .01)
+    x = x.copy(); x[:fade] *= np.linspace(0, 1, fade); x[-fade:] *= np.linspace(1, 0, fade)
+    return x, [f"{'clean' if not a['clipped'] else 'CLIPPED'}/{attempt + 1}"]
+
+
 def main(argv):
     key = os.environ.get("XI_KEY")
     if not key:
@@ -196,7 +236,10 @@ def main(argv):
         if not force and is_real(path):
             print(f"skip {vid} (take exists)")
             continue
-        y, rep = build_line(text, key, L[i - 1][1] if i else None, TUNE.get(vid))
+        if MODEL == "eleven_v3":
+            y, rep = v3_line(text, key)
+        else:
+            y, rep = build_line(text, key, L[i - 1][1] if i else None, TUNE.get(vid))
         write(y, path)
         print(f"{vid:6} {len(y) / SR:5.2f}s  sentences(badness/tries): {' '.join(rep)}")
 
