@@ -100,7 +100,12 @@ window.RT_INIT = function () {
       Object.keys(vo).forEach(id => {
         const ws = words(id); if (!ws.length) return;
         const chunks = []; let cur = [];
-        ws.forEach((w, i) => { cur.push([w, i]); if (cur.length === 3 || /[.,?!:]$/.test(w[0]) || w[0].length > 11) { chunks.push(cur); cur = []; } });
+        const len = c => c.reduce((n, [w]) => n + w[0].length + 1, 0);
+        ws.forEach((w, i) => {
+          if (cur.length && len(cur) + w[0].length > 17) { chunks.push(cur); cur = []; }   // one line, always
+          cur.push([w, i]);
+          if (cur.length === 3 || /[.,?!:]$/.test(w[0])) { chunks.push(cur); cur = []; }
+        });
         if (cur.length) chunks.push(cur);
         chunks.forEach((ch, ci) => {
           const box = div('cap', host); box.dataset.cap = '1';

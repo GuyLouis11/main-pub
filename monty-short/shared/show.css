@@ -3,6 +3,7 @@
 @font-face { font-family: 'Anton'; src: url(fonts/Anton-ext.woff2) format('woff2'); unicode-range: U+0100-02BA; font-display: block; }
 @font-face { font-family: 'Bungee'; src: url(fonts/Bungee-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+2000-206F, U+2212; font-display: block; }
 @font-face { font-family: 'Bungee'; src: url(fonts/Bungee-ext.woff2) format('woff2'); unicode-range: U+0100-02BA; font-display: block; }
+@font-face { font-family: 'Noto Color Emoji'; src: local('Noto Color Emoji'); }
 @font-face { font-family: 'Bungee Shade'; src: url(fonts/BungeeShade-latin.woff2) format('woff2'); font-display: block; }
 
 :root {
@@ -11,7 +12,7 @@
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--bg0); }
-body { font-family: 'Anton', Impact, sans-serif; color: var(--white); }
+body { font-family: 'Anton', sans-serif; color: var(--white); }
 #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: var(--bg0); }
 .abs { position: absolute; }
 .scene { position: absolute; inset: 0; }
@@ -84,8 +85,8 @@ body { font-family: 'Anton', Impact, sans-serif; color: var(--white); }
 
 /* ---------- captions ---------- */
 #caps { position: absolute; left: 0; top: 1188px; width: 1080px; height: 220px; z-index: 50; pointer-events: none; }
-.cap { position: absolute; left: 90px; right: 90px; top: 0; text-align: center; line-height: 1.02; }
-.cap .w { display: inline-block; margin: 0 12px; font: 400 104px/1.02 'Anton', sans-serif; text-transform: uppercase; color: #fff;
+.cap { position: absolute; left: 90px; right: 90px; top: 0; text-align: center; line-height: 1.14; }
+.cap .w { display: inline-block; margin: 0 20px; font: 400 104px/1.14 'Anton', sans-serif; text-transform: uppercase; color: #fff;
   -webkit-text-stroke: 12px #0a0118; paint-order: stroke fill; text-shadow: 0 8px 0 #0a0118, 0 0 30px rgba(0,0,0,.6); }
 .cap .w.hi { color: #ffe23a; }
 
