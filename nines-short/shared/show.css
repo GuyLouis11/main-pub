@@ -1,0 +1,70 @@
+/* "Infinite" — vertical 1080×1920 design system for the 0.999… = 1 Short */
+@font-face { font-family: 'Anton'; src: url(fonts/Anton-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+2000-206F, U+2212; font-display: block; }
+@font-face { font-family: 'Anton'; src: url(fonts/Anton-ext.woff2) format('woff2'); unicode-range: U+0100-02BA; font-display: block; }
+@font-face { font-family: 'Unbounded'; src: url(fonts/Unbounded-var.woff2) format('woff2'); font-weight: 200 900; font-display: block; }
+@font-face { font-family: 'Space Grotesk'; src: url(fonts/SpaceGrotesk-var.woff2) format('woff2'); font-weight: 300 700; font-display: block; }
+@font-face { font-family: 'JetBrains Mono'; src: url(fonts/JetBrainsMono-var.woff2) format('woff2'); font-weight: 100 800; font-display: block; }
+@font-face { font-family: 'Noto Color Emoji'; src: local('Noto Color Emoji'); }
+
+:root {
+  --void: #03040a; --deep: #0b1233; --cyan: #5cf2ff; --violet: #8b5cff; --mag: #ff4fd8; --gold: #ffcf5a;
+  --red: #ff3b5c; --white: #f4f7ff; --dim: #8f9bd6; --glass: rgba(160, 190, 255, .08);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--void); }
+body { font-family: 'Space Grotesk', sans-serif; color: var(--white); }
+#root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: var(--void); }
+.abs { position: absolute; }
+.scene { position: absolute; inset: 0; }
+.full { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+/* ---------- world ---------- */
+#bg { position: absolute; inset: 0; background:
+  radial-gradient(ellipse 70% 40% at 50% 40%, #16205a 0%, #0a0f2e 45%, #05071a 70%, #020309 100%); }
+#neb { position: absolute; inset: -200px; opacity: .55; mix-blend-mode: screen;
+  background: radial-gradient(circle at 20% 30%, rgba(139,92,255,.35), transparent 40%), radial-gradient(circle at 80% 65%, rgba(255,79,216,.22), transparent 45%), radial-gradient(circle at 50% 90%, rgba(92,242,255,.18), transparent 40%); }
+#stars { position: absolute; left: 0; top: 0; }
+.hud { position: absolute; width: 70px; height: 70px; border-color: rgba(92,242,255,.55); border-style: solid; border-width: 0; }
+.hud.tl { left: 36px; top: 36px; border-left-width: 4px; border-top-width: 4px; border-radius: 14px 0 0 0; }
+.hud.tr { right: 36px; top: 36px; border-right-width: 4px; border-top-width: 4px; border-radius: 0 14px 0 0; }
+.hud.bl { left: 36px; bottom: 36px; border-left-width: 4px; border-bottom-width: 4px; border-radius: 0 0 0 14px; }
+.hud.br { right: 36px; bottom: 36px; border-right-width: 4px; border-bottom-width: 4px; border-radius: 0 0 14px 0; }
+#ticker { position: absolute; left: 0; width: 1080px; bottom: 58px; text-align: center; font: 600 26px/1 'JetBrains Mono', monospace; letter-spacing: 3px; color: rgba(143,155,214,.6); }
+
+/* ---------- type ---------- */
+.mono { font-family: 'JetBrains Mono', monospace; font-weight: 800; line-height: 1; white-space: nowrap; }
+.big { font-family: 'Unbounded', sans-serif; font-weight: 900; line-height: 1; white-space: nowrap; }
+.head { position: absolute; left: 0; width: 1080px; text-align: center; }
+.kick { position: absolute; left: 0; width: 1080px; text-align: center; font: 700 38px/1 'Space Grotesk', sans-serif; letter-spacing: 8px; color: var(--dim); text-transform: uppercase; }
+.glowc { color: #eafcff; text-shadow: 0 0 10px rgba(92,242,255,.9), 0 0 40px rgba(92,242,255,.55), 0 0 90px rgba(92,242,255,.35); }
+.glowg { color: #fff6d8; text-shadow: 0 0 12px rgba(255,207,90,.95), 0 0 44px rgba(255,180,40,.6), 0 0 100px rgba(255,160,20,.4); }
+.glowm { color: #ffe6fa; text-shadow: 0 0 10px rgba(255,79,216,.9), 0 0 40px rgba(255,79,216,.5), 0 0 90px rgba(255,79,216,.3); }
+.glowr { color: #ffe3e8; text-shadow: 0 0 10px rgba(255,59,92,.95), 0 0 40px rgba(255,59,92,.55); }
+.glowv { color: #efe8ff; text-shadow: 0 0 10px rgba(139,92,255,.95), 0 0 40px rgba(139,92,255,.55); }
+
+.glass { position: absolute; border-radius: 34px; background: linear-gradient(160deg, rgba(180,200,255,.13), rgba(120,140,255,.04));
+  border: 2px solid rgba(190,210,255,.28); box-shadow: 0 30px 80px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.25); }
+.pill { position: absolute; padding: 14px 30px 12px; border-radius: 60px; font: 800 40px/1 'Unbounded', sans-serif; white-space: nowrap; }
+.strike { position: absolute; height: 12px; border-radius: 6px; background: var(--red); box-shadow: 0 0 20px var(--red); transform-origin: 0 50%; }
+.frac { display: inline-flex; flex-direction: column; align-items: center; vertical-align: middle; line-height: 1; }
+.frac .bar { width: 100%; height: 12px; border-radius: 6px; background: currentColor; margin: 10px 0; }
+.bubble { position: absolute; padding: 22px 30px; border-radius: 30px 30px 30px 8px; background: rgba(20,26,60,.92); border: 2px solid rgba(143,155,214,.45);
+  font: 700 42px/1.15 'Space Grotesk', sans-serif; color: #e8ecff; white-space: nowrap; box-shadow: 0 16px 40px rgba(0,0,0,.5); }
+.bubble .av { display: inline-block; width: 44px; height: 44px; border-radius: 50%; vertical-align: middle; margin-right: 16px; }
+.bubble .re { font-family: 'Noto Color Emoji', sans-serif; margin-left: 12px; }
+.emoji { font-family: 'Noto Color Emoji', sans-serif; line-height: 1; }
+.stampx { position: absolute; font: 900 120px/1 'Unbounded', sans-serif; color: var(--gold); border: 12px solid var(--gold); border-radius: 26px; padding: 22px 44px 18px;
+  box-shadow: 0 0 40px rgba(255,207,90,.6), inset 0 0 30px rgba(255,207,90,.4); text-shadow: 0 0 20px rgba(255,207,90,.8); white-space: nowrap; }
+
+/* ---------- captions ---------- */
+#caps { position: absolute; left: 0; top: 1188px; width: 1080px; height: 220px; z-index: 50; pointer-events: none; }
+.cap { position: absolute; left: 90px; right: 90px; top: 0; text-align: center; line-height: 1.14; }
+.cap .w { display: inline-block; margin: 0 20px; font: 400 104px/1.14 'Anton', sans-serif; text-transform: uppercase; color: #fff;
+  -webkit-text-stroke: 12px #03040a; paint-order: stroke fill; text-shadow: 0 8px 0 #03040a, 0 0 30px rgba(0,0,0,.6); }
+.cap .w.hi { color: var(--gold); }
+
+/* ---------- overlays ---------- */
+#flash { position: absolute; inset: 0; background: #fff; opacity: 0; z-index: 70; pointer-events: none; }
+#vig { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse 80% 62% at 50% 45%, transparent 55%, rgba(0,0,0,.65) 100%); }
+#grainv { position: absolute; inset: 0; z-index: 66; pointer-events: none; opacity: .05; background: repeating-linear-gradient(0deg, rgba(255,255,255,.5) 0 1px, transparent 1px 4px); }
+#black { position: absolute; inset: 0; background: #000; opacity: 0; z-index: 80; }

@@ -1,0 +1,1642 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<title>0.999… = 1</title>
+<link rel="stylesheet" href="shared/show.css" />
+<script src="shared/vendor/gsap.min.js"></script>
+<script src="shared/rt.js"></script>
+<script id="timing" type="application/json">
+{
+ "title": "0.999… = 1",
+ "seed": 999,
+ "defaults": {
+  "lead": 0.12,
+  "gap": 0.2,
+  "tail": 0.18
+ },
+ "scenes": [
+  {
+   "id": "hook",
+   "min": 0,
+   "xin": 0,
+   "vo": [
+    "N01"
+   ],
+   "lead": 0.25
+  },
+  {
+   "id": "exact",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "N02"
+   ]
+  },
+  {
+   "id": "fight",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "N03"
+   ]
+  },
+  {
+   "id": "proof1",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "N04",
+    "N05"
+   ],
+   "tail": 0.3
+  },
+  {
+   "id": "proof2",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "N06",
+    "N07"
+   ],
+   "tail": 0.35
+  },
+  {
+   "id": "killer",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "N08"
+   ]
+  },
+  {
+   "id": "between",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "N09"
+   ],
+   "tail": 0.3
+  },
+  {
+   "id": "gap",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "N10"
+   ],
+   "tail": 0.35
+  },
+  {
+   "id": "settled",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "N11"
+   ]
+  },
+  {
+   "id": "cta",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "N12"
+   ],
+   "tail": 1.0
+  }
+ ],
+ "vo": {
+  "N01": {
+   "text": "*0.999,* repeating forever, is *exactly* *1.*",
+   "estimate": 3.6,
+   "dur": 4.337,
+   "words": [
+    [
+     "0.999,",
+     0.0,
+     1.68,
+     true
+    ],
+    [
+     "repeating",
+     1.736,
+     2.24,
+     false
+    ],
+    [
+     "forever,",
+     2.31,
+     2.96,
+     false
+    ],
+    [
+     "is",
+     3.013,
+     3.12,
+     false
+    ],
+    [
+     "exactly",
+     3.19,
+     3.68,
+     true
+    ],
+    [
+     "1.",
+     3.8,
+     4.32,
+     true
+    ]
+   ]
+  },
+  "N02": {
+   "text": "Not close to 1. Not *almost* 1. *Exactly* 1.",
+   "estimate": 3.0,
+   "dur": 3.84,
+   "words": [
+    [
+     "Not",
+     0.0,
+     0.24,
+     false
+    ],
+    [
+     "close",
+     0.293,
+     0.56,
+     false
+    ],
+    [
+     "to",
+     0.587,
+     0.64,
+     false
+    ],
+    [
+     "1.",
+     0.74,
+     1.24,
+     false
+    ],
+    [
+     "Not",
+     1.29,
+     1.44,
+     false
+    ],
+    [
+     "almost",
+     1.509,
+     1.92,
+     true
+    ],
+    [
+     "1.",
+     2.02,
+     2.76,
+     false
+    ],
+    [
+     "Exactly",
+     2.815,
+     3.2,
+     true
+    ],
+    [
+     "1.",
+     3.3,
+     3.84,
+     false
+    ]
+   ]
+  },
+  "N03": {
+   "text": "Sounds wrong? Most people think so. The internet has been fighting about this for *decades.*",
+   "estimate": 4.6,
+   "dur": 4.416,
+   "words": [
+    [
+     "Sounds",
+     0.0,
+     0.32,
+     false
+    ],
+    [
+     "wrong?",
+     0.373,
+     0.72,
+     false
+    ],
+    [
+     "Most",
+     0.784,
+     1.04,
+     false
+    ],
+    [
+     "people",
+     1.086,
+     1.36,
+     false
+    ],
+    [
+     "think",
+     1.387,
+     1.52,
+     false
+    ],
+    [
+     "so.",
+     1.627,
+     1.84,
+     false
+    ],
+    [
+     "The",
+     1.9,
+     2.08,
+     false
+    ],
+    [
+     "internet",
+     2.116,
+     2.4,
+     false
+    ],
+    [
+     "has",
+     2.42,
+     2.48,
+     false
+    ],
+    [
+     "been",
+     2.512,
+     2.64,
+     false
+    ],
+    [
+     "fighting",
+     2.684,
+     3.04,
+     false
+    ],
+    [
+     "about",
+     3.08,
+     3.28,
+     false
+    ],
+    [
+     "this",
+     3.312,
+     3.44,
+     false
+    ],
+    [
+     "for",
+     3.46,
+     3.52,
+     false
+    ],
+    [
+     "decades.",
+     3.61,
+     4.4,
+     true
+    ]
+   ]
+  },
+  "N04": {
+   "text": "Proof one. *1/3* is *0.333…* forever.",
+   "estimate": 3.0,
+   "dur": 3.546,
+   "words": [
+    [
+     "Proof",
+     0.0,
+     0.26,
+     false
+    ],
+    [
+     "one.",
+     0.34,
+     0.74,
+     false
+    ],
+    [
+     "1/3",
+     0.78,
+     1.3,
+     true
+    ],
+    [
+     "is",
+     1.327,
+     1.38,
+     false
+    ],
+    [
+     "0.333…",
+     1.428,
+     2.82,
+     true
+    ],
+    [
+     "forever.",
+     2.89,
+     3.54,
+     false
+    ]
+   ]
+  },
+  "N05": {
+   "text": "Multiply both by 3. 3/3 is *1.* And 0.333… times 3 is *0.999…*",
+   "estimate": 5.0,
+   "dur": 6.652,
+   "words": [
+    [
+     "Multiply",
+     0.0,
+     0.39,
+     false
+    ],
+    [
+     "both",
+     0.454,
+     0.71,
+     false
+    ],
+    [
+     "by",
+     0.763,
+     0.87,
+     false
+    ],
+    [
+     "3.",
+     0.95,
+     1.51,
+     false
+    ],
+    [
+     "3/3",
+     1.537,
+     2.07,
+     false
+    ],
+    [
+     "is",
+     2.123,
+     2.23,
+     false
+    ],
+    [
+     "1.",
+     2.33,
+     2.75,
+     true
+    ],
+    [
+     "And",
+     2.78,
+     2.87,
+     false
+    ],
+    [
+     "0.333…",
+     2.918,
+     3.99,
+     false
+    ],
+    [
+     "times",
+     4.07,
+     4.47,
+     false
+    ],
+    [
+     "3",
+     4.51,
+     4.71,
+     false
+    ],
+    [
+     "is",
+     4.817,
+     5.03,
+     false
+    ],
+    [
+     "0.999…",
+     5.078,
+     6.63,
+     true
+    ]
+   ]
+  },
+  "N06": {
+   "text": "Proof two. Call it *x.* Then *10x* is *9.999…*",
+   "estimate": 3.4,
+   "dur": 3.974,
+   "words": [
+    [
+     "Proof",
+     0.0,
+     0.19,
+     false
+    ],
+    [
+     "two.",
+     0.29,
+     0.75,
+     false
+    ],
+    [
+     "Call",
+     0.782,
+     0.91,
+     false
+    ],
+    [
+     "it",
+     0.963,
+     1.07,
+     false
+    ],
+    [
+     "x.",
+     1.27,
+     1.55,
+     true
+    ],
+    [
+     "Then",
+     1.598,
+     1.79,
+     false
+    ],
+    [
+     "10x",
+     1.87,
+     2.35,
+     true
+    ],
+    [
+     "is",
+     2.377,
+     2.43,
+     false
+    ],
+    [
+     "9.999…",
+     2.478,
+     3.95,
+     true
+    ]
+   ]
+  },
+  "N07": {
+   "text": "Subtract *x.* The endless nines *cancel.* *9x* is 9, so x is *1.*",
+   "estimate": 4.4,
+   "dur": 4.866,
+   "words": [
+    [
+     "Subtract",
+     0.0,
+     0.46,
+     false
+    ],
+    [
+     "x.",
+     0.66,
+     0.98,
+     true
+    ],
+    [
+     "The",
+     1.01,
+     1.1,
+     false
+    ],
+    [
+     "endless",
+     1.14,
+     1.42,
+     false
+    ],
+    [
+     "nines",
+     1.5,
+     1.82,
+     false
+    ],
+    [
+     "cancel.",
+     1.889,
+     2.46,
+     true
+    ],
+    [
+     "9x",
+     2.492,
+     2.94,
+     true
+    ],
+    [
+     "is",
+     2.993,
+     3.1,
+     false
+    ],
+    [
+     "9,",
+     3.18,
+     3.58,
+     false
+    ],
+    [
+     "so",
+     3.633,
+     3.74,
+     false
+    ],
+    [
+     "x",
+     3.86,
+     3.98,
+     false
+    ],
+    [
+     "is",
+     4.033,
+     4.14,
+     false
+    ],
+    [
+     "1.",
+     4.22,
+     4.86,
+     true
+    ]
+   ]
+  },
+  "N08": {
+   "text": "Still not buying it? Here's the killer. Between any two *different* numbers, there's always another one.",
+   "estimate": 5.4,
+   "dur": 4.964,
+   "words": [
+    [
+     "Still",
+     0.0,
+     0.24,
+     false
+    ],
+    [
+     "not",
+     0.3,
+     0.48,
+     false
+    ],
+    [
+     "buying",
+     0.514,
+     0.72,
+     false
+    ],
+    [
+     "it?",
+     0.773,
+     1.04,
+     false
+    ],
+    [
+     "Here's",
+     1.072,
+     1.28,
+     false
+    ],
+    [
+     "the",
+     1.3,
+     1.36,
+     false
+    ],
+    [
+     "killer.",
+     1.417,
+     1.84,
+     false
+    ],
+    [
+     "Between",
+     1.88,
+     2.16,
+     false
+    ],
+    [
+     "any",
+     2.24,
+     2.48,
+     false
+    ],
+    [
+     "two",
+     2.52,
+     2.64,
+     false
+    ],
+    [
+     "different",
+     2.68,
+     3.04,
+     true
+    ],
+    [
+     "numbers,",
+     3.09,
+     3.52,
+     false
+    ],
+    [
+     "there's",
+     3.533,
+     3.68,
+     false
+    ],
+    [
+     "always",
+     3.749,
+     4.16,
+     false
+    ],
+    [
+     "another",
+     4.2,
+     4.48,
+     false
+    ],
+    [
+     "one.",
+     4.54,
+     4.96,
+     false
+    ]
+   ]
+  },
+  "N09": {
+   "text": "Between 1 and 2, there's 1.5. Between 0.999… and 1, there's… *nothing.*",
+   "estimate": 5.0,
+   "dur": 7.15,
+   "words": [
+    [
+     "Between",
+     0.0,
+     0.33,
+     false
+    ],
+    [
+     "1",
+     0.37,
+     0.49,
+     false
+    ],
+    [
+     "and",
+     0.55,
+     0.73,
+     false
+    ],
+    [
+     "2,",
+     0.83,
+     1.29,
+     false
+    ],
+    [
+     "there's",
+     1.317,
+     1.53,
+     false
+    ],
+    [
+     "1.5.",
+     1.57,
+     2.81,
+     false
+    ],
+    [
+     "Between",
+     2.85,
+     3.13,
+     false
+    ],
+    [
+     "0.999…",
+     3.21,
+     4.57,
+     false
+    ],
+    [
+     "and",
+     4.61,
+     4.73,
+     false
+    ],
+    [
+     "1,",
+     4.83,
+     5.37,
+     false
+    ],
+    [
+     "there's…",
+     5.437,
+     6.41,
+     false
+    ],
+    [
+     "nothing.",
+     6.47,
+     7.15,
+     true
+    ]
+   ]
+  },
+  "N10": {
+   "text": "Every extra nine shrinks the gap ten times, *forever.* The gap isn't tiny. It's *zero.*",
+   "estimate": 5.2,
+   "dur": 5.37,
+   "words": [
+    [
+     "Every",
+     0.0,
+     0.22,
+     false
+    ],
+    [
+     "extra",
+     0.273,
+     0.54,
+     false
+    ],
+    [
+     "nine",
+     0.62,
+     0.94,
+     false
+    ],
+    [
+     "shrinks",
+     0.98,
+     1.26,
+     false
+    ],
+    [
+     "the",
+     1.28,
+     1.34,
+     false
+    ],
+    [
+     "gap",
+     1.44,
+     1.74,
+     false
+    ],
+    [
+     "ten",
+     1.78,
+     1.9,
+     false
+    ],
+    [
+     "times,",
+     1.993,
+     2.62,
+     false
+    ],
+    [
+     "forever.",
+     2.68,
+     3.26,
+     true
+    ],
+    [
+     "The",
+     3.28,
+     3.34,
+     false
+    ],
+    [
+     "gap",
+     3.4,
+     3.58,
+     false
+    ],
+    [
+     "isn't",
+     3.64,
+     3.9,
+     false
+    ],
+    [
+     "tiny.",
+     3.98,
+     4.46,
+     false
+    ],
+    [
+     "It's",
+     4.513,
+     4.7,
+     false
+    ],
+    [
+     "zero.",
+     4.78,
+     5.37,
+     true
+    ]
+   ]
+  },
+  "N11": {
+   "text": "Mathematicians settled this long ago. The *internet* never will.",
+   "estimate": 3.6,
+   "dur": 3.4,
+   "words": [
+    [
+     "Mathematicians",
+     0.0,
+     0.72,
+     false
+    ],
+    [
+     "settled",
+     0.75,
+     0.96,
+     false
+    ],
+    [
+     "this",
+     1.008,
+     1.2,
+     false
+    ],
+    [
+     "long",
+     1.248,
+     1.44,
+     false
+    ],
+    [
+     "ago.",
+     1.54,
+     1.84,
+     false
+    ],
+    [
+     "The",
+     1.9,
+     2.08,
+     false
+    ],
+    [
+     "internet",
+     2.133,
+     2.56,
+     true
+    ],
+    [
+     "never",
+     2.6,
+     2.8,
+     false
+    ],
+    [
+     "will.",
+     2.864,
+     3.4,
+     false
+    ]
+   ]
+  },
+  "N12": {
+   "text": "Think they're different? Name *one* number between them in the *comments.*",
+   "estimate": 3.8,
+   "dur": 3.361,
+   "words": [
+    [
+     "Think",
+     0.0,
+     0.23,
+     false
+    ],
+    [
+     "they're",
+     0.246,
+     0.39,
+     false
+    ],
+    [
+     "different?",
+     0.43,
+     0.87,
+     false
+    ],
+    [
+     "Name",
+     0.95,
+     1.27,
+     false
+    ],
+    [
+     "one",
+     1.31,
+     1.43,
+     true
+    ],
+    [
+     "number",
+     1.476,
+     1.75,
+     false
+    ],
+    [
+     "between",
+     1.8,
+     2.15,
+     false
+    ],
+    [
+     "them",
+     2.182,
+     2.31,
+     false
+    ],
+    [
+     "in",
+     2.337,
+     2.39,
+     false
+    ],
+    [
+     "the",
+     2.43,
+     2.55,
+     false
+    ],
+    [
+     "comments.",
+     2.603,
+     3.35,
+     true
+    ]
+   ]
+  }
+ },
+ "total": 59.456
+}
+</script>
+</head>
+<body>
+<div id="root" data-composition-id="nines" data-start="0" data-duration="59.456" data-width="1080" data-height="1920">
+  <audio id="music" src="assets/audio/music.wav" data-start="0" data-duration="59.456" data-volume="0.75" data-track-index="20"></audio>
+  <audio id="sfx" src="assets/audio/sfx.wav" data-start="0" data-duration="59.456" data-volume="0.85" data-track-index="21"></audio>
+  <!-- VO:BEGIN (generated by tools/bake.py) -->
+  <audio id="vo_n01" src="assets/vo/N01.wav" data-start="0.250" data-duration="4.337" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_n02" src="assets/vo/N02.wav" data-start="4.737" data-duration="3.840" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_n03" src="assets/vo/N03.wav" data-start="8.727" data-duration="4.416" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_n04" src="assets/vo/N04.wav" data-start="13.293" data-duration="3.546" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_n05" src="assets/vo/N05.wav" data-start="17.039" data-duration="6.652" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_n06" src="assets/vo/N06.wav" data-start="23.961" data-duration="3.974" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_n07" src="assets/vo/N07.wav" data-start="28.135" data-duration="4.866" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_n08" src="assets/vo/N08.wav" data-start="33.321" data-duration="4.964" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_n09" src="assets/vo/N09.wav" data-start="38.435" data-duration="7.150" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_n10" src="assets/vo/N10.wav" data-start="45.855" data-duration="5.370" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_n11" src="assets/vo/N11.wav" data-start="51.545" data-duration="3.400" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_n12" src="assets/vo/N12.wav" data-start="55.095" data-duration="3.361" data-volume="1" data-track-index="22"></audio>
+  <!-- VO:END -->
+
+  <!-- world: a warp field of stars and drifting nines (decoration, never a beat) -->
+  <div id="bg"></div>
+  <div id="neb" data-drift="1"></div>
+  <canvas id="stars" width="1080" height="1920" data-drift="1"></canvas>
+  <div class="hud tl"></div><div class="hud tr"></div><div class="hud bl"></div><div class="hud br"></div>
+  <div id="ticker" data-drift="1" data-layout-ignore>NINES SO FAR: 0</div>
+
+  <div id="vig" data-layout-ignore></div>
+  <div id="stage" class="abs" style="inset:0">
+    <!-- the loop cursor: frame 0 and the last frame -->
+    <div id="cursor" class="abs" style="left:92px;top:586px;width:22px;height:150px;border-radius:4px;background:#5cf2ff;box-shadow:0 0 20px #5cf2ff"></div>
+
+    <!-- 1 · hook -->
+    <div id="sc-hook" class="scene clip" data-scene="hook" data-start="0.000" data-duration="4.767" data-track-index="1">
+      <div id="nk" class="kick" style="top:250px">This is not a trick</div>
+      <div id="row0" class="abs" style="left:0;top:560px;width:1080px;height:220px;-webkit-mask:linear-gradient(90deg,#000 78%,transparent 99%);mask:linear-gradient(90deg,#000 78%,transparent 99%)"></div>
+      <div id="eq1" class="big glowg head" style="top:800px;font-size:300px">= 1</div>
+      <div id="ring" class="abs" style="left:540px;top:950px;width:200px;height:200px;margin:-100px 0 0 -100px;border-radius:50%;border:10px solid #ffcf5a;box-shadow:0 0 40px #ffcf5a"></div>
+    </div>
+
+    <!-- 2 · not close, not almost: exactly -->
+    <div id="sc-exact" class="scene clip" data-scene="exact" data-start="4.617" data-duration="4.140" data-track-index="2">
+      <div id="cA" class="glass" style="left:120px;top:330px;width:840px;height:210px"><div class="kick" style="top:26px;width:840px;font-size:30px">close to</div><div class="big head" style="top:74px;width:840px;font-size:112px;color:#dfe5ff">≈ 1</div></div>
+      <div class="strike" id="sA" style="left:160px;top:430px;width:760px"></div>
+      <div id="cB" class="glass" style="left:120px;top:580px;width:840px;height:210px"><div class="kick" style="top:26px;width:840px;font-size:30px">almost</div><div class="big head" style="top:74px;width:840px;font-size:112px;color:#dfe5ff">0.99 ≈ 1</div></div>
+      <div class="strike" id="sB" style="left:160px;top:680px;width:760px"></div>
+      <div id="cC" class="glass" style="left:90px;top:830px;width:900px;height:260px;border-color:rgba(255,207,90,.8);box-shadow:0 0 50px rgba(255,207,90,.35),inset 0 0 40px rgba(255,207,90,.15)"><div class="kick" style="top:26px;width:900px;font-size:32px;color:#ffe3a0">exactly</div><div class="big glowg head" style="top:80px;width:900px;font-size:150px">= 1 ✓</div></div>
+    </div>
+
+    <!-- 3 · the fight -->
+    <div id="sc-fight" class="scene clip" data-scene="fight" data-start="8.607" data-duration="4.716" data-track-index="3">
+      <div id="qm" class="big glowm head" style="top:380px;font-size:520px">?</div>
+      <div id="gut" class="abs" style="left:110px;top:250px;width:860px;height:170px">
+        <div class="kick" style="top:0;width:860px;font-size:32px">your gut says</div>
+        <div class="abs" style="left:0;top:64px;width:860px;height:40px;border-radius:20px;background:linear-gradient(90deg,#ffcf5a,#6b6f9a 50%,#ff3b5c)"></div>
+        <div class="big glowg abs" style="left:0;top:120px;font-size:44px">= 1</div>
+        <div class="big glowr abs" style="right:0;top:120px;font-size:44px">≠ 1</div>
+        <div id="needle" class="abs" style="left:418px;top:48px;width:24px;height:72px;border-radius:12px;background:#fff;box-shadow:0 0 20px #fff"></div>
+      </div>
+      <div id="bubbles" class="abs" style="inset:0"></div>
+      <div id="yrs" class="mono glowv head" style="top:300px;font-size:64px;letter-spacing:4px">1995 → 2025</div>
+    </div>
+
+    <!-- 4 · proof 1: thirds -->
+    <div id="sc-proof1" class="scene clip" data-scene="proof1" data-start="13.173" data-duration="10.818" data-track-index="4">
+      <div id="p1" class="pill" style="left:540px;top:210px;background:#5cf2ff;color:#03040a">PROOF 1</div>
+      <svg id="pie" class="abs" viewBox="0 0 300 300" style="left:400px;top:320px;width:280px;height:280px;overflow:visible">
+        <circle cx="150" cy="150" r="130" fill="none" stroke="rgba(190,210,255,.35)" stroke-width="6"/>
+        <path id="sl1" d="M150,150 L150,20 A130,130 0 0 1 262.6,215 Z" fill="#5cf2ff"/>
+        <path id="sl2" d="M150,150 L262.6,215 A130,130 0 0 1 37.4,215 Z" fill="#5cf2ff"/>
+        <path id="sl3" d="M150,150 L37.4,215 A130,130 0 0 1 150,20 Z" fill="#5cf2ff"/>
+        <path d="M150,150 L150,20 M150,150 L262.6,215 M150,150 L37.4,215" stroke="#03040a" stroke-width="8"/>
+      </svg>
+      <div id="x3a" class="pill" style="left:160px;top:640px;background:#ffcf5a;color:#03040a">×3</div>
+      <div id="x3b" class="pill" style="left:680px;top:640px;background:#ffcf5a;color:#03040a">×3</div>
+      <div id="L1" class="big glowc abs" style="left:90px;top:760px;width:300px;text-align:center;font-size:120px;line-height:1">
+        <span id="L1f" class="frac"><span id="L1n">1</span><span class="bar"></span><span>3</span></span>
+      </div>
+      <div id="L1one" class="big glowg abs" style="left:90px;top:810px;width:300px;text-align:center;font-size:200px">1</div>
+      <div id="eqA" class="big abs" style="left:380px;top:832px;width:110px;text-align:center;font-size:110px;color:#dfe5ff">=</div>
+      <div id="R1" class="abs" style="left:490px;top:824px;width:560px;height:150px"></div>
+      <div id="qed1" class="kick" style="top:1080px;color:#ffe3a0">1 = 0.999…  ✓</div>
+    </div>
+
+    <!-- 5 · proof 2: algebra -->
+    <div id="sc-proof2" class="scene clip" data-scene="proof2" data-start="23.841" data-duration="9.510" data-track-index="5">
+      <div id="p2" class="pill" style="left:540px;top:210px;background:#8b5cff;color:#fff">PROOF 2</div>
+      <div id="x10" class="pill" style="left:60px;top:330px;background:#ffcf5a;color:#03040a;font-size:34px">×10</div>
+      <div id="rTen" class="abs" style="left:0;top:410px;width:1080px;height:140px"></div>
+      <div id="rX" class="abs" style="left:0;top:580px;width:1080px;height:140px"></div>
+      <div id="minus" class="big glowr abs" style="left:70px;top:584px;font-size:110px">−</div>
+      <div id="rule" class="abs" style="left:80px;top:744px;width:900px;height:10px;border-radius:5px;background:#dfe5ff;box-shadow:0 0 16px #8b5cff;transform-origin:0 50%"></div>
+      <div id="res" class="mono glowc abs" style="left:0;top:780px;width:1080px;text-align:center;font-size:130px">9x = 9</div>
+      <div id="div9" class="pill" style="left:840px;top:800px;background:#8b5cff;color:#fff;font-size:44px">÷9</div>
+      <div id="res2" class="mono glowg abs" style="left:0;top:770px;width:1080px;text-align:center;font-size:170px">x = 1</div>
+      <div id="dust" class="abs" style="inset:0"></div>
+    </div>
+
+    <!-- 6 · the killer -->
+    <div id="sc-killer" class="scene clip" data-scene="killer" data-start="33.201" data-duration="5.264" data-track-index="6">
+      <div id="nc" class="big glowm head" style="top:250px;font-size:74px">NOT CONVINCED?</div>
+      <div id="kgrp" class="abs" style="inset:0">
+        <svg id="xhair" class="abs" viewBox="0 0 400 400" style="left:340px;top:380px;width:400px;height:400px;overflow:visible">
+          <circle cx="200" cy="200" r="150" fill="none" stroke="#ff3b5c" stroke-width="8" stroke-dasharray="60 24"/>
+          <circle cx="200" cy="200" r="90" fill="none" stroke="#ff3b5c" stroke-width="5"/>
+          <path d="M200,20 L200,120 M200,280 L200,380 M20,200 L120,200 M280,200 L380,200" stroke="#ff3b5c" stroke-width="8" stroke-linecap="round"/>
+        </svg>
+        <div id="killT" class="big glowr head" style="top:540px;font-size:86px">THE KILLER</div>
+      </div>
+      <div id="lawC" class="glass" style="left:190px;top:650px;width:700px;height:180px"><div id="law" class="mono glowc head" style="top:44px;width:700px;font-size:92px">a &lt; <span id="lawQ" style="color:#ffcf5a">?</span> &lt; b</div></div>
+      <div id="dline" class="abs" style="left:120px;top:960px;width:840px;height:8px;border-radius:4px;background:#8f9bd6;transform-origin:0 50%"></div>
+      <div id="dots" class="abs" style="inset:0"></div>
+      <div id="dA" class="big glowc abs" style="left:90px;top:1010px;width:60px;text-align:center;font-size:44px">a</div>
+      <div id="dB" class="big glowc abs" style="left:930px;top:1010px;width:60px;text-align:center;font-size:44px">b</div>
+    </div>
+
+    <!-- 7 · between 1 and 2 … between 0.999… and 1 -->
+    <div id="sc-between" class="scene clip" data-scene="between" data-start="38.315" data-duration="7.570" data-track-index="7">
+      <div id="lawC2" class="glass" style="left:140px;top:430px;width:800px;height:170px"><div id="law2" class="mono glowc head" style="top:40px;width:800px;font-size:84px">1 &lt; <span id="law2q" style="color:#ffcf5a;display:inline-block">?</span> &lt; 2</div></div>
+      <div id="nothing" class="big glowm head" style="top:330px;font-size:130px">NOTHING.</div>
+      <div id="bline" class="abs" style="left:100px;top:800px;width:880px;height:8px;border-radius:4px;background:#8f9bd6;transform-origin:0 50%"></div>
+      <div id="bdA" class="abs" style="left:190px;top:784px;width:40px;height:40px;border-radius:50%;background:#5cf2ff;box-shadow:0 0 20px #5cf2ff"></div>
+      <div id="bdB" class="abs" style="left:850px;top:784px;width:40px;height:40px;border-radius:50%;background:#5cf2ff;box-shadow:0 0 20px #5cf2ff"></div>
+      <div id="bdM" class="abs" style="left:520px;top:784px;width:40px;height:40px;border-radius:50%;background:#ffcf5a;box-shadow:0 0 24px #ffcf5a"></div>
+      <div id="blA" class="big glowc abs" style="left:110px;top:860px;width:200px;text-align:center;font-size:80px">1</div>
+      <div id="blA2" class="mono glowc abs" style="left:60px;top:866px;width:300px;text-align:center;font-size:76px">0.999…</div>
+      <div id="blB" class="big glowc abs" style="left:770px;top:860px;width:200px;text-align:center;font-size:80px">2</div>
+      <div id="blB2" class="big glowc abs" style="left:770px;top:860px;width:200px;text-align:center;font-size:80px">1</div>
+      <div id="blM" class="big glowg abs" style="left:440px;top:650px;width:200px;text-align:center;font-size:80px">1.5</div>
+      <div id="mag" class="emoji abs" style="left:470px;top:616px;font-size:140px">🔍</div>
+      <div id="beamB" class="abs" style="left:500px;top:700px;width:80px;height:210px;opacity:0;background:linear-gradient(180deg,transparent,rgba(92,242,255,.5),transparent);filter:blur(4px)"></div>
+    </div>
+
+    <!-- 8 · the gap: infinite zoom -->
+    <div id="sc-gap" class="scene clip" data-scene="gap" data-start="45.735" data-duration="5.840" data-track-index="8">
+      <div id="zk" class="kick" style="top:230px">zoom</div>
+      <div id="zoomN" class="mono glowv head" style="top:282px;font-size:92px">×10</div>
+      <div id="rulerWrap" class="abs" style="left:0;top:620px;width:1080px;height:220px;overflow:hidden">
+        <svg id="ruler" viewBox="0 0 1080 220" style="position:absolute;left:0;top:0;width:1080px;height:220px;overflow:visible"></svg>
+      </div>
+      <div id="gL" class="mono glowc abs" style="left:40px;top:860px;width:460px;font-size:62px">0.9</div>
+      <div id="gR" class="big glowg abs" style="left:900px;top:856px;width:120px;text-align:center;font-size:70px">1</div>
+      <div id="gapLab" class="kick" style="top:962px;color:#ffe3a0">gap</div>
+      <div id="gapV" class="mono glowg head" style="top:1040px;font-size:84px">0.1</div>
+      <div id="gap0" class="big glowg head" style="top:430px;font-size:170px">GAP = 0</div>
+    </div>
+
+    <!-- 9 · settled vs the internet -->
+    <div id="sc-settled" class="scene clip" data-scene="settled" data-start="51.425" data-duration="3.700" data-track-index="9">
+      <div id="mPanel" class="glass" style="left:90px;top:230px;width:900px;height:380px">
+        <div class="kick" style="top:34px;width:900px;font-size:32px">mathematicians</div>
+        <div class="mono glowg head" style="top:110px;width:900px;font-size:120px">0.999… = 1</div>
+      </div>
+      <div id="qed" class="stampx" style="left:540px;top:500px;font-size:84px">SETTLED ✓</div>
+      <div id="iPanel" class="abs" style="left:60px;top:650px;width:960px;height:500px;overflow:hidden;border-radius:30px;border:2px solid rgba(255,59,92,.45);background:rgba(40,6,20,.35)">
+        <div id="iLab" class="kick" style="top:24px;width:960px;font-size:32px;color:#ff9aac">the internet</div>
+        <div id="chaos" class="abs" style="inset:0"></div>
+      </div>
+    </div>
+
+    <!-- 10 · name one number -->
+    <div id="sc-cta" class="scene clip" data-scene="cta" data-start="54.975" data-duration="4.481" data-track-index="10">
+      <div id="t1" class="big glowc head" style="top:230px;font-size:76px">THINK THEY'RE</div>
+      <div id="t2" class="big glowm head" style="top:330px;font-size:104px">DIFFERENT?</div>
+      <div id="askL" class="kick" style="top:520px;font-size:34px;letter-spacing:3px">name one number between 0.999… and 1</div>
+      <div id="box" class="glass" style="left:100px;top:580px;width:880px;height:190px;border-color:rgba(92,242,255,.7)">
+        <div id="typed" class="mono glowc abs" style="left:50px;top:36px;font-size:100px"></div>
+        <div id="caret" class="abs" style="left:50px;top:40px;width:14px;height:110px;border-radius:3px;background:#5cf2ff"></div>
+      </div>
+      <div id="nope" class="big glowr abs" style="left:800px;top:600px;font-size:130px">✗</div>
+      <div id="cmt" data-layout-allow-overlap class="emoji abs" style="left:800px;top:950px;font-size:150px">💬</div>
+      <div id="arr" data-layout-allow-overlap class="emoji abs" style="left:900px;top:1080px;font-size:110px">👇</div>
+    </div>
+  </div>
+
+  <div id="caps"></div>
+  <div id="grainv" data-layout-ignore></div>
+  <div id="flash"></div>
+  <div id="black"></div>
+</div>
+
+<script>
+const R = RT_INIT();
+const { tl, S, E, D, V, VE, W, WE, rnd, $, $$, el, div, cue, TOTAL } = R;
+const MONO = .6;   // JetBrains Mono advance (em)
+
+/* ---------- helpers ---------- */
+// monospaced digits placed cell by cell (so single digits can roll, flip, shatter)
+const cells = (host, str, size, x, y, cls = 'mono glowc') => str.split('').map((ch, i) => div(cls + ' abs', host, ch, `left:${x + i * size * MONO}px;top:${y}px;font-size:${size}px;width:${size * MONO}px;text-align:center`));
+const chroma = (t, a = 10, d = .25) => {
+  tl.set('#stage', { filter: `drop-shadow(${a}px 0 0 rgba(255,40,120,.75)) drop-shadow(${-a}px 0 0 rgba(40,230,255,.75))` }, t);
+  tl.set('#stage', { filter: `drop-shadow(${a / 2}px 0 0 rgba(255,40,120,.5)) drop-shadow(${-a / 2}px 0 0 rgba(40,230,255,.5))` }, t + d / 2);
+  tl.set('#stage', { filter: 'none' }, t + d);
+};
+const roll = (elm, to, t, d = .22) => {       // odometer flip of one character
+  tl.to(elm, { y: -40, opacity: 0, duration: d / 2, ease: 'power2.in' }, t);
+  tl.set(elm, { textContent: to, y: 40 }, t + d / 2);
+  tl.to(elm, { y: 0, opacity: 1, duration: d / 2, ease: 'power2.out' }, t + d / 2);
+};
+// every scene enters and leaves with the same "zoom-through"
+const through = (id, first = false, last = false) => {
+  const s = `[data-scene="${id}"]`;
+  if (!first) { tl.set(s, { opacity: 0, scale: .9 }, 0); tl.to(s, { opacity: 1, scale: 1, duration: .32, ease: 'power3.out' }, S(id)); cue(S(id), 'whoosh', .6); }
+  if (!last) tl.to(s, { opacity: 0, scale: 1.14, duration: .26, ease: 'power2.in' }, E(id) - .26);
+};
+
+/* ================= world: warp stars + drifting nines ================= */
+(() => {
+  const cv = $('#stars'), cx = cv.getContext('2d');
+  const N = 240, st = [];
+  for (let i = 0; i < N; i++) st.push({ x: (rnd() - .5) * 2200, y: (rnd() - .5) * 3600, z: rnd(), nine: i % 8 === 0, hue: rnd() });
+  // warp speed profile (integrated so every frame is deterministic)
+  const bumps = [];   // [t, width, height] filled below by the scenes
+  window.__warp = (t, w, h) => bumps.push([t, w, h]);
+  const vAt = t => 1 + bumps.reduce((a, [c, w, h]) => a + h * Math.exp(-(((t - c) / w) ** 2)), 0);
+  let prefix = null;
+  const build = () => { prefix = [0]; for (let i = 1; i <= Math.ceil(TOTAL * 60) + 2; i++) prefix.push(prefix[i - 1] + vAt(i / 60) / 60); };
+  const dist = t => { const k = t * 60, i = Math.floor(k); return prefix[i] + (prefix[i + 1] - prefix[i]) * (k - i); };
+  const draw = t => {
+    if (!prefix) build();
+    const d = dist(Math.max(0, Math.min(TOTAL, t))) * .085, v = vAt(t);
+    cx.clearRect(0, 0, 1080, 1920);
+    // tunnel rings
+    for (let k = 0; k < 7; k++) {
+      const p = ((k / 7) + d * .6) % 1, r = 60 + p * p * 1500;
+      cx.strokeStyle = `rgba(92,242,255,${(.10 * (1 - p)).toFixed(3)})`; cx.lineWidth = 2 + p * 6;
+      cx.beginPath(); cx.arc(540, 820, r, 0, 6.2832); cx.stroke();
+    }
+    for (const s of st) {
+      let z = (s.z - d) % 1; if (z <= 0) z += 1;
+      const f = 1 / (z * 2.2 + .08), X = 540 + s.x * f * .25, Y = 820 + s.y * f * .25;
+      if (X < -40 || X > 1120 || Y < -40 || Y > 1960) continue;
+      const a = Math.min(1, (1 - z) * 1.4);
+      if (s.nine) {
+        cx.fillStyle = `rgba(143,160,255,${(a * .45).toFixed(3)})`; cx.font = `800 ${Math.round(14 + f * 10)}px "JetBrains Mono"`; cx.fillText('9', X, Y);
+      } else {
+        const len = Math.min(90, 2 + (v - 1) * 10 * f);
+        const ux = (X - 540), uy = (Y - 820), n = Math.hypot(ux, uy) || 1;
+        cx.strokeStyle = s.hue < .2 ? `rgba(255,120,230,${a.toFixed(3)})` : `rgba(220,235,255,${a.toFixed(3)})`;
+        cx.lineWidth = Math.min(4, .6 + f * .9);
+        cx.beginPath(); cx.moveTo(X, Y); cx.lineTo(X - ux / n * len, Y - uy / n * len); cx.stroke();
+        if (len < 4) { cx.fillStyle = cx.strokeStyle; cx.fillRect(X - 1, Y - 1, 2.4, 2.4); }
+      }
+    }
+  };
+  const prox = { t: 0 };
+  tl.fromTo(prox, { t: 0 }, { t: TOTAL, duration: TOTAL, ease: 'none', data: 'drift', onUpdate: () => draw(prox.t) }, 0);
+  tl.fromTo('#neb', { rotation: 0, scale: 1 }, { rotation: 25, scale: 1.15, duration: TOTAL, ease: 'none', data: 'drift' }, 0);
+  const tk = { v: 0 };
+  tl.fromTo(tk, { v: 0 }, { v: 1, duration: TOTAL, ease: 'none', data: 'drift', onUpdate: () => { $('#ticker').textContent = 'NINES SO FAR: ' + Math.floor(Math.pow(tk.v, 2.2) * 9e9 + tk.v * 4000).toLocaleString('en-US') + '…'; } }, 0);
+})();
+
+/* ---------- 1 · HOOK: 0.999… = 1 ---------- */
+{
+  const t0 = V('N01'), tr = W('N01', 1), tf = W('N01', 2), ti = W('N01', 3), tx = W('N01', 4), t1 = W('N01', 5);
+  // the loop cursor blinks, then becomes the first digit
+  for (let t = 0; t < t0 + .05; t += .5) { tl.set('#cursor', { opacity: 1 }, t); tl.set('#cursor', { opacity: .15 }, t + .25); }
+  tl.set('#cursor', { opacity: 0 }, t0 + .05);
+  const F = 170, row = $('#row0');
+  const head = cells(row, '0.999', F, 90, 0);
+  head.forEach((c, i) => { const t = t0 + i * (tr - t0 - .15) / 5; tl.set(c, { opacity: 0, scale: 1.6, filter: 'blur(8px)' }, 0); tl.to(c, { opacity: 1, scale: 1, filter: 'blur(0px)', duration: .16, ease: 'power3.out' }, t); cue(t, 'key', .8, -.5 + i * .2, { f: 900 + i * 90 }); });
+  // repeating forever: nines receding into infinity
+  let x = 90 + 5 * F * MONO, s = 1;
+  for (let k = 0; k < 26; k++) {
+    s *= .84; const sz = F * s;
+    const c = div('mono glowc abs', row, '9', `left:${x}px;top:${F - sz}px;font-size:${sz}px;width:${sz * MONO}px;text-align:center`);
+    x += sz * MONO;
+    const t = tr + (tf - tr + .55) * Math.pow(k / 25, .6);
+    tl.set(c, { opacity: 0, y: -30 }, 0); tl.to(c, { opacity: 1, y: 0, duration: .1 }, t);
+    if (k < 12 && k % 2 === 0) cue(t, 'key', .45 - k * .02, .3 + k * .05, { f: 1200 + k * 60 });
+  }
+  cue(tr, 'riser', .6, 0, { dur: t1 - tr });
+  tl.to('#row0', { x: -40, duration: t1 - tr, ease: 'sine.inOut' }, tr);
+  // is exactly…
+  R.up('#nk', tx - .1, .35, 20);
+  tl.to('#row0', { y: -150, scale: .9, transformOrigin: '10% 50%', duration: .4, ease: 'power3.inOut' }, ti - .05);
+  // = 1
+  R.slam('#eq1', t1 - .14, 2.6, .18); cue(t1 + .04, 'impact', 1); R.shake(t1 + .04, 24, .35); R.flash(t1 + .04, .55, .45, '#fff6d8'); chroma(t1 + .04, 14, .3);
+  tl.set('#ring', { opacity: 0, scale: .3 }, 0);
+  tl.to('#ring', { opacity: 1, duration: .02 }, t1 + .04).to('#ring', { scale: 6, opacity: 0, duration: .7, ease: 'power2.out' }, t1 + .05);
+  window.__warp(t1 + .1, .35, 7);
+  tl.to('#eq1', { scale: 1.06, duration: .25, yoyo: true, repeat: 1, ease: 'sine.inOut' }, t1 + .35);
+  through('hook', true);
+}
+
+/* ---------- 2 · not close, not almost: exactly ---------- */
+{
+  through('exact');
+  const a = W('N02', 0), a1 = W('N02', 3), b = W('N02', 4), b1 = W('N02', 6), c = W('N02', 7), c1 = W('N02', 8);
+  tl.set('#cA', { x: -1100 }, 0); tl.to('#cA', { x: 0, duration: .32, ease: 'power3.out' }, a - .08); cue(a - .08, 'swoosh', .6, -.4);
+  tl.set('#sA, #sB', { scaleX: 0 }, 0);
+  tl.to('#sA', { scaleX: 1, duration: .2, ease: 'power2.out' }, a1 + .12); cue(a1 + .12, 'slash', .8, -.2);
+  tl.set('#cB', { x: 1100 }, 0); tl.to('#cB', { x: 0, duration: .32, ease: 'power3.out' }, b - .08); cue(b - .08, 'swoosh', .6, .4);
+  tl.to('#sB', { scaleX: 1, duration: .2, ease: 'power2.out' }, b1 + .12); cue(b1 + .12, 'slash', .8, .2);
+  tl.to('#cA, #cB, #sA, #sB', { opacity: .35, duration: .3 }, c - .1);
+  R.slam('#cC', c - .12, 1.8, .2); cue(c + .08, 'impact', .8); R.shake(c + .08, 14, .25); chroma(c + .08, 8, .2);
+  tl.to('#cC', { scale: 1.05, duration: .2, yoyo: true, repeat: 1 }, c1);
+  cue(c1 + .02, 'chime', .7);
+}
+
+/* ---------- 3 · the fight ---------- */
+{
+  through('fight');
+  const t0 = W('N03', 0), tm = W('N03', 2), ti = W('N03', 7), td = W('N03', 13);
+  R.pop('#qm', t0 - .05, .35, .3); cue(t0 - .05, 'boing', .8);
+  tl.to('#qm', { rotation: 12, duration: .12, yoyo: true, repeat: 3, ease: 'sine.inOut' }, t0 + .3);
+  R.glitch('#qm', tm - .15, .2);
+  tl.to('#qm', { scale: 0, opacity: 0, duration: .2, ease: 'back.in(2)' }, tm - .05);
+  R.up('#gut', tm - .05, .35, 30);
+  tl.to('#needle', { x: 380, duration: .6, ease: 'back.out(1.6)' }, tm + .25); cue(tm + .25, 'swoosh', .5, .4); cue(tm + .8, 'buzz', .45, .4);
+  tl.to('#needle', { x: 366, duration: .08, yoyo: true, repeat: 5 }, tm + .85);
+  const txt = [['0.999… ≠ 1. END OF STORY.', '😤'], ['it gets closer but NEVER reaches 1', '🤔'], ['infinitely close ≠ equal', '🙄'], ['math teachers lied to us', '😡'],
+               ["that's not how numbers work", '🤨'], ["it's 1 minus a tiny bit!!", '🔥'], ['my calculator says otherwise', '🧮'], ['source: trust me bro', '😂']];
+  const cols = ['#ff4fd8', '#5cf2ff', '#ffcf5a', '#8b5cff', '#ff3b5c', '#7dffb0'];
+  txt.forEach(([s, e], i) => {
+    const b = div('bubble', $('#bubbles'), `<span class="av" style="background:${cols[i % 6]}"></span>${s}<span class="re">${e}</span>`, `left:${i % 2 ? 1000 : 80}px;top:${450 + i * 84}px`);
+    const t = ti - .1 + i * .13;
+    tl.set(b, { opacity: 0, scale: .4, xPercent: i % 2 ? -100 : 0 }, 0);
+    tl.to(b, { opacity: 1, scale: 1, duration: .22, ease: 'back.out(2)', transformOrigin: i % 2 ? '100% 100%' : '0% 100%' }, t);
+    cue(t, 'bloop', .5, i % 2 ? .5 : -.5, { f: 500 + i * 70 });
+    tl.to(b, { y: -18, duration: 1.4, ease: 'sine.inOut' }, t + .25);
+  });
+  R.out('#gut', td - .3, .2, { y: -30 });
+  R.pop('#yrs', td - .1, .3, .5); R.count('#yrs', td - .05, .7, 1995, 2025, v => '1995 → ' + Math.round(v), 'power2.out'); cue(td - .05, 'counter', .5, 0, { dur: .7 });
+}
+
+/* ---------- 4 · proof 1: 1/3 = 0.333… → 1 = 0.999… ---------- */
+{
+  through('proof1');
+  const t0 = V('N04'), tf = W('N04', 2), td = W('N04', 4), tm = W('N05', 0), tb = W('N05', 3), t33 = W('N05', 4), t1 = W('N05', 6), tt = W('N05', 9), t9 = W('N05', 12);
+  tl.set('#p1', { xPercent: -50 }, 0);
+  R.pop('#p1', t0 - .1, .35, .3); cue(t0 - .1, 'pop', .8);
+  tl.set('#sl1, #sl2, #sl3', { opacity: 0 }, 0);
+  R.pop('#pie', t0 + .05, .4, .5);
+  tl.fromTo('#pie', { rotation: -30 }, { rotation: 0, duration: 1, ease: 'power3.out', immediateRender: false }, t0 + .05);
+  // 1/3
+  R.slam('#L1', tf - .08, 2, .18); cue(tf + .1, 'thud', .8, -.4);
+  tl.to('#sl1', { opacity: 1, duration: .2 }, tf); cue(tf, 'blip', .5, 0, { f: 880 });
+  R.pop('#eqA', tf + .25, .25, .4);
+  // 0.333… typing out forever
+  const r = cells($('#R1'), '0.33333', 110, 0, 12);
+  r.forEach((c, i) => { const t = td - .05 + i * .1; tl.set(c, { opacity: 0, x: 30 }, 0); tl.to(c, { opacity: i > 4 ? .9 - (i - 4) * .25 : 1, x: 0, duration: .12 }, t); cue(t, 'key', .5, .3, { f: 1000 + i * 40 }); });
+  const dots = div('mono glowc abs', $('#R1'), '…', `left:${7 * 66}px;top:12px;font-size:110px`); tl.set(dots, { opacity: 0 }, 0); tl.to(dots, { opacity: 1, duration: .2 }, td + .8);
+  tl.set(r.slice(6), { display: 'none' }, tt - .2);
+  tl.to(dots, { x: -66, duration: .2 }, tt - .2);
+  // "forever": threes keep streaming off to infinity
+  const tfv = W('N04', 5);
+  for (let i = 0; i < 10; i++) {
+    const d = div('mono glowc abs', $('#R1'), '3', `left:${7 * 66}px;top:12px;font-size:110px`); d.setAttribute('data-layout-ignore', '');
+    tl.set(d, { opacity: 0 }, 0);
+    tl.fromTo(d, { opacity: .8, x: 0, scale: 1 }, { opacity: 0, x: 260 + i * 10, scale: .3, duration: .7, ease: 'power2.in', immediateRender: false }, tfv - .1 + i * .11);
+  }
+  tl.to(dots, { scale: 1.3, duration: .18, yoyo: true, repeat: 3 }, tfv);
+  tl.to('#sl1', { scale: 1.06, transformOrigin: '150px 150px', duration: .2, yoyo: true, repeat: 3 }, tfv + .2);
+  cue(tfv - .1, 'stream', .5, .5, { dur: 1.2 });
+  // ×3 on both sides
+  tl.set('#x3a, #x3b', { opacity: 0, scale: .2 }, 0);
+  tl.to('#x3a', { opacity: 1, scale: 1, duration: .3, ease: 'back.out(2.5)' }, tm + .3); cue(tm + .3, 'pop', .7, -.4);
+  tl.to('#x3b', { opacity: 1, scale: 1, duration: .3, ease: 'back.out(2.5)' }, tb - .1); cue(tb - .1, 'pop', .7, .4);
+  tl.to('#sl2, #sl3', { opacity: 1, duration: .25, stagger: .12 }, tb + .05); cue(tb + .05, 'blip', .5, 0, { f: 1175 });
+  tl.to('#x3a', { x: 30, y: 150, scale: .3, opacity: 0, duration: .3, ease: 'power2.in' }, t33 - .3);
+  roll('#L1n', '3', t33 - .05); cue(t33, 'tick', .7, -.4);
+  // → 1
+  tl.to('#L1', { opacity: 0, scale: .6, duration: .15 }, t1 - .12);
+  R.slam('#L1one', t1 - .1, 1.8, .16); cue(t1 + .06, 'thud', .9, -.4);
+  tl.to('#sl1, #sl2, #sl3', { fill: '#ffcf5a', duration: .2 }, t1);
+  tl.to('#pie', { scale: 1.1, duration: .15, yoyo: true, repeat: 1 }, t1);
+  tl.to('#R1', { scale: 1.08, duration: .2, yoyo: true, repeat: 1, transformOrigin: '0% 50%' }, W('N05', 8) - .05);
+  tl.to('#pie', { rotation: 120, duration: .9, ease: 'power2.inOut' }, W('N05', 7));
+  tl.to('#eqA', { scale: 1.25, duration: .15, yoyo: true, repeat: 1 }, W('N05', 7) + .5);
+  // 0.333… × 3 → 0.999…
+  tl.to('#x3b', { x: -20, y: 150, scale: .3, opacity: 0, duration: .3, ease: 'power2.in' }, tt);
+  r.slice(2, 6).forEach((c, i) => { roll(c, '9', tt + .35 + i * .14, .2); cue(tt + .35 + i * .14, 'tick', .6, .3 + i * .1, { f: 2200 + i * 200 }); });
+  tl.to(r.slice(0, 6).concat([dots]), { color: '#fff6d8', textShadow: '0 0 12px rgba(255,207,90,.95),0 0 44px rgba(255,180,40,.6)', duration: .2 }, t9);
+  R.flash(t9 + .02, .35, .35, '#fff6d8'); cue(t9 + .02, 'impact', .8); chroma(t9 + .02, 8, .2); R.shake(t9 + .02, 12, .2);
+  R.up('#qed1', t9 + .15, .3, 20); cue(t9 + .25, 'chime', .6);
+  tl.to('#L1one, #R1, #eqA', { scale: 1.08, duration: 1.3, ease: 'sine.inOut' }, t9 + .3);
+  tl.to('#pie', { rotation: 240, scale: 1.08, duration: 1.3, ease: 'sine.inOut' }, t9 + .3);
+  for (let i = 0; i < 18; i++) {
+    const d = div('abs', $('#sc-proof1'), null, 'left:0;top:0;width:12px;height:12px;border-radius:50%;background:#ffcf5a;box-shadow:0 0 12px #ffcf5a');
+    const a0 = rnd() * 6.28, r0 = 180 + rnd() * 260, t = t9 + .2 + rnd() * .9;
+    tl.set(d, { x: 540, y: 890, opacity: 0 }, 0);
+    tl.to(d, { x: 540 + Math.cos(a0) * r0, y: 890 + Math.sin(a0) * r0 * .6, opacity: 1, duration: .5, ease: 'power2.out' }, t).to(d, { opacity: 0, duration: .3 }, t + .5);
+  }
+}
+
+/* ---------- 5 · proof 2: x = 0.999… ---------- */
+{
+  through('proof2');
+  const t0 = V('N06'), tx = W('N06', 4), t10 = W('N06', 6), t99 = W('N06', 8);
+  const ts = W('N07', 0), te = W('N07', 3), tc = W('N07', 5), t9x = W('N07', 6), t1 = W('N07', 12);
+  tl.set('#p2', { xPercent: -50 }, 0);
+  R.pop('#p2', t0 - .1, .35, .3); cue(t0 - .1, 'pop', .8);
+  const Fz = 104, cw = Fz * MONO, EQ = 470;         // "=" column
+  // row x:  "x = 0.999…"
+  const X0r = EQ + cw + 40, pos = k => X0r + (k === 0 ? 0 : k + 1) * cw;
+  const drow = (host, str) => {
+    const ds = str.split('').map((ch, k) => div('mono glowc abs', host, ch, `left:${pos(k)}px;top:0;font-size:${Fz}px;width:${cw}px;text-align:center`));
+    const pt = div('mono glowc abs', host, '.', `left:${X0r + cw}px;top:0;font-size:${Fz}px;width:${cw}px;text-align:center`);
+    return [ds, pt];
+  };
+  const lx = cells($('#rX'), 'x', Fz, EQ - 60 - cw, 0), eqx = cells($('#rX'), '=', Fz, EQ, 0, 'mono abs');
+  const [rx, ptx] = drow($('#rX'), '09999…');
+  eqx[0].style.color = '#dfe5ff';
+  R.up([...lx, ...eqx, ...rx, ptx], tx - .1, .3, 30, .03); cue(tx - .1, 'swoosh', .6);
+  // row 10x: every digit moves one place left (the first nine hops over the point)
+  const lt = cells($('#rTen'), '10x', Fz, EQ - 60 - 3 * cw, 0), eqt = cells($('#rTen'), '=', Fz, EQ, 0, 'mono abs');
+  eqt[0].style.color = '#dfe5ff';
+  const [strip, pt] = drow($('#rTen'), '09999…');
+  R.up([...lt, ...eqt, ...strip, pt], t10 - .12, .3, -30, .02); cue(t10 - .12, 'swoosh', .6);
+  R.pop('#x10', t10 - .15, .3, .3); tl.to('#x10', { x: 60, duration: .5, ease: 'power2.inOut' }, t10);
+  strip.forEach((c, k) => {
+    const dx = (k === 0 ? -cw : pos(k - 1) - pos(k));
+    tl.to(c, { x: dx, duration: .4, ease: 'power3.inOut' }, t10 + .3 + (k === 1 ? 0 : .04));
+    if (k === 1) tl.to(c, { y: -46, duration: .2, yoyo: true, repeat: 1, ease: 'power1.out' }, t10 + .3);
+  });
+  tl.to(strip[0], { opacity: 0, duration: .2 }, t10 + .3);
+  tl.to(pt, { scale: 1.5, duration: .12, yoyo: true, repeat: 1 }, t10 + .45);
+  cue(t10 + .3, 'slide', .7);
+  tl.to('#x10', { opacity: 0, duration: .2 }, t99 + .3);
+  tl.to('#rTen', { scale: 1.06, duration: .25, yoyo: true, repeat: 1, transformOrigin: '50% 50%' }, t99 + .45);
+  tl.to('#rX', { scale: 1.06, duration: .25, yoyo: true, repeat: 1, transformOrigin: '50% 50%' }, t99 + .95);
+  tl.to([...strip.slice(2), ...rx.slice(1)], { y: -12, duration: .12, yoyo: true, repeat: 1, stagger: .04 }, t99 + 1.3);
+  cue(t99 + .45, 'blip', .4, -.2, { f: 700 }); cue(t99 + .95, 'blip', .4, .2, { f: 900 });
+  // subtract x
+  tl.set('#minus', { opacity: 0, x: -60 }, 0); tl.to('#minus', { opacity: 1, x: 0, duration: .25, ease: 'back.out(2)' }, ts - .05); cue(ts - .05, 'pop', .7, -.5);
+  tl.set('#rule', { scaleX: 0 }, 0); tl.to('#rule', { scaleX: 1, duration: .35, ease: 'power3.out' }, ts + .25); cue(ts + .25, 'swoosh', .5);
+  // the endless nines cancel: tails glow red, then shatter
+  const tailsT = strip.slice(2), tailsX = rx.slice(1);
+  tl.to([...tailsT, ...tailsX], { color: '#ffe3e8', textShadow: '0 0 10px rgba(255,59,92,.95),0 0 40px rgba(255,59,92,.55)', duration: .15 }, te - .05);
+  cue(te - .05, 'zap', .6);
+  [...tailsT, ...tailsX].forEach((c, i) => {
+    const t = tc - .05 + (i % 5) * .04;
+    tl.to(c, { scale: 1.6, opacity: 0, filter: 'blur(10px)', y: (rnd() - .5) * 120, rotation: (rnd() - .5) * 90, duration: .3, ease: 'power2.out' }, t);
+  });
+  const dust = $('#dust');
+  for (let i = 0; i < 40; i++) {
+    const d = div('abs', dust, null, 'left:0;top:0;width:10px;height:10px;border-radius:50%;background:#ff3b5c;box-shadow:0 0 10px #ff3b5c');
+    const x0 = X0r + 2 * cw + rnd() * 4 * cw, y0 = (rnd() < .5 ? 470 : 640) + rnd() * 50;
+    tl.set(d, { x: x0, y: y0, opacity: 0 }, 0); tl.set(d, { opacity: 1 }, tc);
+    tl.to(d, { x: x0 + (rnd() - .5) * 400, y: y0 + (rnd() - .5) * 400, opacity: 0, duration: .6 + rnd() * .3, ease: 'power2.out' }, tc);
+  }
+  cue(tc, 'shatter', .9); R.shake(tc, 10, .25);
+  // 9x = 9  →  x = 1
+  R.slam('#res', t9x - .1, 2, .16); cue(t9x + .06, 'thud', .9);
+  tl.to('#rTen, #rX, #minus, #rule, #dust', { opacity: .3, duration: .3 }, t9x + .1);
+  R.pop('#div9', W('N07', 9) - .15, .3, .3); cue(W('N07', 9) - .15, 'pop', .7, .5);
+  tl.to('#res', { scale: 1.08, duration: .18, yoyo: true, repeat: 1 }, W('N07', 9) + .15);
+  tl.to('#div9', { x: -300, opacity: 0, scale: .5, duration: .3, ease: 'power2.in' }, t1 - .35);
+  tl.to('#res', { opacity: 0, y: -40, duration: .15 }, t1 - .15);
+  R.slam('#res2', t1 - .12, 1.8, .16); cue(t1 + .04, 'impact', 1); R.flash(t1 + .04, .45, .4, '#fff6d8'); chroma(t1 + .04, 12, .25); R.shake(t1 + .04, 18, .3);
+  window.__warp(t1 + .1, .3, 5);
+  tl.to('#res2', { scale: 1.07, duration: .2, yoyo: true, repeat: 1 }, t1 + .35);
+}
+
+/* ---------- 6 · the killer ---------- */
+{
+  through('killer');
+  const t0 = V('N08'), th = W('N08', 4), tk = W('N08', 6), tb = W('N08', 7), ta = W('N08', 14);
+  R.flicker('#nc', t0 - .05, 4); R.glitch('#nc', t0 + .3, .25); cue(t0 - .05, 'glitch', .6);
+  tl.set('#xhair', { opacity: 0, scale: 2.4, rotation: -120 }, 0);
+  tl.to('#xhair', { opacity: 1, scale: 1, rotation: 0, duration: .5, ease: 'power3.out' }, th - .1); cue(th - .1, 'lock', .9);
+  tl.to('#xhair', { rotation: 90, duration: 2.5, ease: 'none' }, th + .4);
+  R.slam('#killT', tk - .1, 2.2, .16); cue(tk + .06, 'impact', .9); R.shake(tk + .06, 16, .25); chroma(tk + .06, 8, .2);
+  tl.to('#nc', { opacity: 0, duration: .2 }, tk);
+  // between any two different numbers…
+  tl.to('#kgrp', { y: -170, scale: .7, transformOrigin: '50% 30%', duration: .4, ease: 'power3.inOut' }, tb - .1);
+  tl.set('#dline', { scaleX: 0 }, 0); tl.to('#dline', { scaleX: 1, duration: .4, ease: 'power3.out' }, tb); cue(tb, 'swoosh', .5);
+  const host = $('#dots');
+  const dot = (x, c = '#5cf2ff', sz = 34) => div('abs', host, null, `left:${x - sz / 2}px;top:${964 - sz / 2}px;width:${sz}px;height:${sz}px;border-radius:50%;background:${c};box-shadow:0 0 16px ${c}`);
+  R.up('#lawC', tb + .1, .35, 30); cue(tb + .1, 'pop', .6);
+  const A = dot(120), B = dot(960);
+  R.pop([A, B], W('N08', 9) - .05, .25, .2); R.up('#dA, #dB', W('N08', 9), .25, 16); cue(W('N08', 9), 'blip', .6, 0, { f: 700 });
+  // …there's always another one (and another, and another)
+  tl.to('#lawQ', { scale: 1.5, duration: .15, yoyo: true, repeat: 3, display: 'inline-block' }, ta - .1);
+  let xs = [120, 960], t = ta - .1, k = 0;
+  for (let lev = 0; lev < 4; lev++) {
+    const nx = []; for (let i = 0; i < xs.length - 1; i++) nx.push((xs[i] + xs[i + 1]) / 2);
+    nx.forEach((x, i) => { const d = dot(x, lev ? '#ffcf5a' : '#ffcf5a', 30 - lev * 5); R.pop(d, t + i * (.12 / (lev + 1)), .2, .1); });
+    cue(t, 'blip', .5, 0, { f: 900 + lev * 250 });
+    xs = [...xs, ...nx].sort((a, b) => a - b); t += .22 - lev * .03; k++;
+  }
+}
+
+/* ---------- 7 · between 1 and 2 … between 0.999… and 1: nothing ---------- */
+{
+  through('between');
+  const t0 = V('N09'), t1 = W('N09', 1), t2 = W('N09', 3), tm = W('N09', 5), tB = W('N09', 6), t9 = W('N09', 7), tOne = W('N09', 9), tt = W('N09', 10), tn = W('N09', 11);
+  tl.set('#bline', { scaleX: 0 }, 0); tl.to('#bline', { scaleX: 1, duration: .4, ease: 'power3.out' }, t0 - .05);
+  R.pop('#bdA, #blA', t1 - .05, .3, .2); cue(t1 - .05, 'blip', .6, -.5, { f: 660 });
+  R.pop('#bdB, #blB', t2 - .05, .3, .2); cue(t2 - .05, 'blip', .6, .5, { f: 880 });
+  R.up('#lawC2', t1 - .1, .35, 30);
+  tl.set('#law2q', { textContent: '?' }, 0);
+  roll('#law2q', '1.5', tm - .05); cue(tm - .05, 'tick', .5);
+  R.pop('#bdM', tm - .05, .3, .2); R.slam('#blM', tm - .05, 2, .16); cue(tm + .1, 'chime', .7);
+  tl.to('#bdM', { y: -16, duration: .15, yoyo: true, repeat: 3 }, tm + .2);
+  // now: 0.999… and 1
+  tl.to('#bdM, #blM', { opacity: 0, scale: .5, duration: .2 }, tB - .1);
+  R.hide('#blA2, #blB2, #mag, #nothing');
+  tl.to('#blA, #blB', { opacity: 0, y: 30, duration: .15 }, tB);
+  tl.to('#bdA', { x: 140, duration: .5, ease: 'power3.inOut' }, tB);
+  tl.to('#bdB', { x: -140, duration: .5, ease: 'power3.inOut' }, tB);
+  tl.set('#blA2', { x: 140, y: -30 }, 0); tl.to('#blA2', { opacity: 1, y: 0, duration: .25 }, t9 - .05); cue(t9 - .05, 'swoosh', .5, -.4);
+  tl.set('#blB2', { x: -140, y: -30 }, 0); tl.to('#blB2', { opacity: 1, y: 0, duration: .25 }, tOne - .05); cue(tOne - .05, 'swoosh', .5, .4);
+  tl.to('#lawC2', { opacity: 0, y: -20, duration: .15 }, tB - .1);
+  tl.set('#law2', { innerHTML: '0.999… &lt; <span id="law2q2" style="color:#ff6680;display:inline-block">?</span> &lt; 1' }, tB + .1);
+  tl.to('#lawC2', { opacity: 1, y: 0, duration: .25 }, tB + .1);
+  tl.to('#lawC2', { opacity: 0, scale: .8, duration: .15 }, tn - .2);
+  // the search: nothing in between
+  tl.set('#mag', { x: -140, scale: .6 }, 0);
+  tl.to('#mag', { opacity: 1, scale: 1, duration: .25, ease: 'back.out(2)' }, t9 + .3);
+  for (let i = 0; i < 4; i++) tl.to('#mag', { x: i % 2 ? -150 : 150, duration: .4, ease: 'sine.inOut' }, t9 + .45 + i * .4);
+  tl.to('#beamB', { opacity: 1, duration: .1 }, t9 + .45);
+  for (let i = 0; i < 4; i++) tl.to('#beamB', { x: i % 2 ? -150 : 150, duration: .4, ease: 'sine.inOut' }, t9 + .45 + i * .4);
+  cue(t9 + .45, 'scan', .6, 0, { dur: 1.6 });
+  tl.to('#mag, #beamB', { x: 0, duration: .3 }, tt - .1);
+  cue(tt, 'heartbeat', .9); tl.to('#sc-between', { scale: 1.06, duration: tn - tt, ease: 'power1.in' }, tt);
+  tl.to('#mag', { opacity: 0, scale: 1.4, duration: .2 }, tn - .15); tl.to('#beamB', { opacity: 0, duration: .1 }, tn - .15);
+  // the two points become one
+  tl.to('#bdA', { x: 330, duration: .22, ease: 'power3.in' }, tn - .1);
+  tl.to('#bdB', { x: -330, duration: .22, ease: 'power3.in' }, tn - .1);
+  tl.to('#bdA, #bdB', { background: '#ffcf5a', boxShadow: '0 0 40px #ffcf5a', scale: 1.8, duration: .15 }, tn + .12);
+  tl.to('#blA2', { x: 330 - 60, opacity: .0, duration: .22, ease: 'power3.in' }, tn - .1);
+  tl.to('#blB2', { x: -330 + 60, duration: .22, ease: 'power3.in' }, tn - .1);
+  R.slam('#nothing', tn - .1, 2.4, .18); cue(tn + .1, 'impact', 1); R.flash(tn + .1, .4, .4, '#ffe6fa'); chroma(tn + .1, 12, .3); R.shake(tn + .1, 20, .3);
+  window.__warp(tn + .2, .3, 5);
+}
+
+/* ---------- 8 · the gap: ×10, ×10, ×10… zero ---------- */
+{
+  through('gap');
+  const t0 = V('N10'), tg = W('N10', 8), tT = W('N10', 9), ti = W('N10', 12), tz = W('N10', 14);
+  // ruler: 0.9 (x=120) … 1 (x=960), ten ticks; zooming ×10 about the right end is self-similar
+  const svg = $('#ruler'), X0 = 120, X1 = 960, L = X1 - X0;
+  el('line', { x1: 0, y1: 110, x2: X1, y2: 110, stroke: '#8f9bd6', 'stroke-width': 6 }, svg);
+  el('line', { x1: X1, y1: 110, x2: 1080, y2: 110, stroke: '#ffcf5a', 'stroke-width': 6 }, svg);
+  // two tick levels (tenths of the gap, hundredths of the gap): zooming ×10 about "1" maps level 1 onto level 0
+  const ticks = [];
+  for (let lev = 0; lev < 2; lev++) for (let j = 1; j <= 10; j++)
+    ticks.push({ lev, d: L * j / Math.pow(10, lev + 1), e: el('line', { y1: j === 10 ? 50 : 80, y2: j === 10 ? 170 : 140, stroke: '#c9d2ff', 'stroke-width': j === 10 ? 7 : 4 }, svg) });
+  const m0 = el('circle', { cy: 110, r: 16, fill: '#5cf2ff', style: 'filter:drop-shadow(0 0 12px #5cf2ff)' }, svg);
+  const m1 = el('circle', { cy: 110, r: 16, fill: '#5cf2ff', style: 'filter:drop-shadow(0 0 12px #5cf2ff)' }, svg);
+  el('circle', { cx: X1, cy: 110, r: 18, fill: '#ffcf5a', style: 'filter:drop-shadow(0 0 14px #ffcf5a)' }, svg);
+  const setZ = z => {
+    ticks.forEach(k => { const x = X1 - k.d * z; k.e.setAttribute('x1', x); k.e.setAttribute('x2', x); k.e.setAttribute('opacity', k.lev ? Math.min(1, (z - 1) / 5).toFixed(3) : 1); });
+    m0.setAttribute('cx', X1 - L * z); m1.setAttribute('cx', X1 - L / 10 * z);
+  };
+  setZ(1);
+  const steps = 8, span = tg + .3 - t0;
+  let t = t0;
+  const durs = []; for (let i = 0; i < steps; i++) durs.push(Math.pow(.84, i)); const sum = durs.reduce((a, b) => a + b, 0);
+  for (let i = 0; i < steps; i++) {
+    const d = span * durs[i] / sum, zp = { p: 0 };
+    tl.fromTo(zp, { p: 0 }, { p: 1, duration: d * .92, ease: 'power2.inOut', immediateRender: false, onUpdate: () => setZ(Math.pow(10, zp.p)) }, t);
+    const n = i + 2;
+    tl.set('#gL', { textContent: '0.' + '9'.repeat(n) }, t + d * .92);
+    tl.set('#gapV', { textContent: '0.' + '0'.repeat(n - 1) + '1' }, t + d * .92);
+    tl.set('#zoomN', { textContent: '×10' + ['', '', '²', '³', '⁴', '⁵', '⁶', '⁷', '⁸', '⁹'][Math.min(9, i + 2)] }, t + d * .92);
+    tl.fromTo('#gapV', { scale: 1.25 }, { scale: 1, duration: .15, immediateRender: false }, t + d * .92);
+    cue(t, 'zoom', .5 + i * .05, 0, { dur: d * .92, f: 300 + i * 90 });
+    t += d;
+  }
+  window.__warp(t0 + span / 2, span / 2, 5);
+  tl.set('#gL', { textContent: '0.9' }, 0); tl.set('#gapV', { textContent: '0.1' }, 0);
+  R.up('#rulerWrap, #gL, #gR, #gapLab, #gapV, #zk, #zoomN', S('gap') + .1, .3, 30, .03);
+  // the gap isn't tiny: it's zero
+  tl.set('#gL', { fontSize: '62px' }, 0);
+  tl.to('#gL', { fontSize: '44px', duration: .3 }, tT);
+  const zeros = { n: 0 };
+  tl.to(zeros, { n: 14, duration: ti - tT + .3, ease: 'power1.in', onUpdate: () => { $('#gapV').textContent = '0.' + '0'.repeat(9 + Math.round(zeros.n)) + '…'; } }, tT);
+  tl.to('#gapV', { fontSize: '60px', duration: .3 }, tT);
+  cue(tT, 'type', .5, 0, { dur: ti - tT + .3 });
+  tl.to('#rulerWrap, #gL, #zk, #zoomN', { opacity: .25, duration: .25 }, tz - .15);
+  tl.to('#gapV', { opacity: 0, duration: .1 }, tz - .1);
+  R.slam('#gap0', tz - .12, 2.2, .18); cue(tz + .06, 'impact', 1); R.flash(tz + .06, .45, .4, '#fff6d8'); chroma(tz + .06, 14, .3); R.shake(tz + .06, 20, .3);
+  tl.to('#gap0', { scale: 1.06, duration: .2, yoyo: true, repeat: 1 }, tz + .35);
+}
+
+/* ---------- 9 · settled vs the internet ---------- */
+{
+  through('settled');
+  const t0 = V('N11'), ts = W('N11', 1), ti = W('N11', 5), tn = W('N11', 7);
+  R.up('#mPanel', t0 - .1, .35, 40);
+  tl.set('#qed', { xPercent: -50, opacity: 0, scale: 2.6, rotation: -12 }, 0);
+  tl.to('#qed', { opacity: 1, scale: 1, rotation: -6, duration: .16, ease: 'power4.in' }, ts - .05); cue(ts + .11, 'stamp', 1); R.shake(ts + .11, 10, .2);
+  R.up('#iPanel', ti - .25, .3, 40);
+  const host = $('#chaos'), lines = ['NO IT ISN\'T', '≠ ≠ ≠', 'ALMOST ≠ EQUAL', 'wake up people', '0.999… < 1', 'this is fake math', 'it never ends so it never gets there', 'LOL no'];
+  for (let i = 0; i < 16; i++) {
+    const b = div('bubble', host, lines[i % 8] + `<span class="re">${['😡', '🔥', '🤯', '😤'][i % 4]}</span>`, `left:${Math.round(20 + rnd() * 460)}px;top:${Math.round(80 + rnd() * 330)}px;font-size:${30 + Math.round(rnd() * 12)}px;transform:rotate(${Math.round((rnd() - .5) * 16)}deg)`);
+    b.setAttribute('data-layout-ignore', '');
+    const t = ti - .1 + i * .07;
+    tl.set(b, { opacity: 0, scale: .3 }, 0); tl.to(b, { opacity: 1, scale: 1, duration: .15, ease: 'back.out(2.5)' }, t);
+    if (i % 3 === 0) cue(t, 'bloop', .4, (rnd() - .5), { f: 400 + i * 50 });
+  }
+  for (let i = 0; i < 10; i++) {
+    const e = div('emoji abs', host, ['😡', '🔥', '🤯'][i % 3], `left:${Math.round(rnd() * 880)}px;top:${Math.round(100 + rnd() * 340)}px;font-size:${60 + Math.round(rnd() * 40)}px`);
+    const t = tn - .2 + i * .06;
+    tl.set(e, { opacity: 0, scale: 0 }, 0); tl.to(e, { opacity: 1, scale: 1.2, duration: .12 }, t).to(e, { y: -80, opacity: 0, duration: .6 }, t + .3);
+  }
+  tl.to('#iPanel', { borderColor: 'rgba(255,59,92,1)', boxShadow: '0 0 40px rgba(255,59,92,.6)', duration: .1, yoyo: true, repeat: 5 }, tn - .1);
+  R.shake(tn, 18, .5, '#iPanel'); cue(tn - .1, 'riot', .8, 0, { dur: 1.1 });
+}
+
+/* ---------- 10 · name one number (…then back to the blinking cursor) ---------- */
+{
+  through('cta', false, true);
+  const t0 = V('N12'), tn = W('N12', 3), tc = W('N12', 8), end = VE('N12');
+  R.flicker('#t1', t0 - .05, 4); cue(t0 - .05, 'glitch', .5);
+  R.slam('#t2', W('N12', 2) - .08, 2.2, .16); cue(W('N12', 2) + .08, 'impact', .8); R.shake(W('N12', 2) + .08, 12, .2);
+  R.up('#askL, #box', tn - .1, .3, 30, .05); cue(tn - .1, 'swoosh', .5);
+  // someone tries…
+  const tries = '0.9999…5';
+  tl.set('#typed', { textContent: '' }, 0);
+  for (let i = 1; i <= tries.length; i++) { const t = tn + .25 + i * .09; tl.set('#typed', { textContent: tries.slice(0, i) }, t); tl.set('#caret', { x: i * 60 }, t); cue(t, 'key', .4, .2, { f: 1400 }); }
+  const tx = tn + .25 + tries.length * .09 + .15;
+  tl.set('#nope', { opacity: 0, scale: 2.4 }, 0); tl.to('#nope', { opacity: 1, scale: 1, duration: .14, ease: 'power4.in' }, tx); cue(tx + .14, 'buzz', .8, .4);
+  R.shake(tx + .14, 16, .3, '#box'); tl.to('#box', { borderColor: 'rgba(255,59,92,.9)', duration: .1 }, tx + .14);
+  tl.to('#typed', { color: '#ff9aac', duration: .1 }, tx + .14);
+  // (that's just a number below 0.999…, not between)
+  tl.set('#typed', { textContent: '' }, tx + .6); tl.set('#caret', { x: 0 }, tx + .6); tl.set('#typed', { color: '' }, tx + .6);
+  tl.to('#nope', { opacity: 0, duration: .15 }, tx + .55); tl.to('#box', { borderColor: 'rgba(92,242,255,.7)', duration: .2 }, tx + .6);
+  for (let t = tx + .6; t < end + .5; t += .5) { tl.set('#caret', { opacity: 1 }, t); tl.set('#caret', { opacity: .1 }, t + .25); }
+  // comments
+  R.pop('#cmt', tc - .1, .35, .2); cue(tc - .1, 'pop', .9, .6);
+  R.pop('#arr', tc + .05, .3, .2);
+  tl.to('#arr', { y: 26, duration: .22, yoyo: true, repeat: 3, ease: 'sine.inOut' }, tc + .35);
+  tl.to('#cmt', { rotation: -10, duration: .12, yoyo: true, repeat: 3 }, tc + .3);
+  // reset: everything collapses into the cursor the video starts from
+  const tr = end + .35;
+  tl.to('#sc-cta', { scale: .1, opacity: 0, duration: .4, ease: 'power3.in', transformOrigin: '10% 34%' }, tr);
+  cue(tr, 'suck', .8);
+  for (let t = tr + .35; t < TOTAL; t += .5) { tl.set('#cursor', { opacity: 1 }, t); tl.set('#cursor', { opacity: .15 }, Math.min(TOTAL - .01, t + .25)); }
+}
+
+tl.set('#cursor', { opacity: 1 }, 0);
+R.captions($('#caps'));
+R.finish('nines');
+window.__timelines = window.__timelines || {}; window.__timelines['nines'] = tl;
+</script>
+</body>
+</html>
