@@ -1,0 +1,1884 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<title>Should You Switch Doors?</title>
+<link rel="stylesheet" href="shared/show.css" />
+<script src="shared/vendor/gsap.min.js"></script>
+<script src="shared/rt.js"></script>
+<script id="timing" type="application/json">
+{
+ "title": "Should You Switch Doors?",
+ "seed": 1990,
+ "defaults": {
+  "lead": 0.12,
+  "gap": 0.15,
+  "tail": 0.18
+ },
+ "scenes": [
+  {
+   "id": "hook",
+   "min": 0,
+   "xin": 0,
+   "vo": [
+    "M01"
+   ],
+   "lead": 0.2
+  },
+  {
+   "id": "reveal",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "M02"
+   ],
+   "tail": 0.3
+  },
+  {
+   "id": "switch",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "M03"
+   ]
+  },
+  {
+   "id": "wrong",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "M04"
+   ],
+   "tail": 0.35
+  },
+  {
+   "id": "marilyn",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "M05"
+   ]
+  },
+  {
+   "id": "letters",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "M06"
+   ]
+  },
+  {
+   "id": "erdos",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "M07"
+   ]
+  },
+  {
+   "id": "hundred",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "M08",
+    "M09"
+   ]
+  },
+  {
+   "id": "math",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "M10"
+   ],
+   "tail": 0.8
+  },
+  {
+   "id": "sim",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "M11"
+   ],
+   "tail": 0.55
+  },
+  {
+   "id": "cta",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "M12"
+   ],
+   "tail": 1.05
+  }
+ ],
+ "vo": {
+  "M01": {
+   "text": "Three doors. *One* car. *Two* goats. You pick door number *one.*",
+   "estimate": 4.2,
+   "dur": 4.102,
+   "words": [
+    [
+     "Three",
+     0.0,
+     0.24,
+     false
+    ],
+    [
+     "doors.",
+     0.333,
+     1.0,
+     false
+    ],
+    [
+     "One",
+     1.05,
+     1.2,
+     true
+    ],
+    [
+     "car.",
+     1.32,
+     1.84,
+     false
+    ],
+    [
+     "Two",
+     1.88,
+     2.0,
+     true
+    ],
+    [
+     "goats.",
+     2.093,
+     2.68,
+     false
+    ],
+    [
+     "You",
+     2.71,
+     2.8,
+     false
+    ],
+    [
+     "pick",
+     2.848,
+     3.04,
+     false
+    ],
+    [
+     "door",
+     3.088,
+     3.28,
+     false
+    ],
+    [
+     "number",
+     3.314,
+     3.52,
+     false
+    ],
+    [
+     "one.",
+     3.62,
+     4.08,
+     true
+    ]
+   ]
+  },
+  "M02": {
+   "text": "The host, who *knows* where the car is, opens door three. *Goat.*",
+   "estimate": 4.0,
+   "dur": 3.606,
+   "words": [
+    [
+     "The",
+     0.0,
+     0.08,
+     false
+    ],
+    [
+     "host,",
+     0.176,
+     0.64,
+     false
+    ],
+    [
+     "who",
+     0.68,
+     0.8,
+     false
+    ],
+    [
+     "knows",
+     0.84,
+     1.04,
+     true
+    ],
+    [
+     "where",
+     1.053,
+     1.12,
+     false
+    ],
+    [
+     "the",
+     1.14,
+     1.2,
+     false
+    ],
+    [
+     "car",
+     1.28,
+     1.52,
+     false
+    ],
+    [
+     "is,",
+     1.627,
+     1.92,
+     false
+    ],
+    [
+     "opens",
+     1.973,
+     2.24,
+     false
+    ],
+    [
+     "door",
+     2.288,
+     2.48,
+     false
+    ],
+    [
+     "three.",
+     2.547,
+     3.16,
+     false
+    ],
+    [
+     "Goat.",
+     3.216,
+     3.6,
+     true
+    ]
+   ]
+  },
+  "M03": {
+   "text": "Now: do you *switch?* Almost everyone says it doesn't matter. *50/50.*",
+   "estimate": 4.6,
+   "dur": 4.102,
+   "words": [
+    [
+     "Now:",
+     0.0,
+     0.4,
+     false
+    ],
+    [
+     "do",
+     0.453,
+     0.56,
+     false
+    ],
+    [
+     "you",
+     0.58,
+     0.64,
+     false
+    ],
+    [
+     "switch?",
+     0.709,
+     1.4,
+     true
+    ],
+    [
+     "Almost",
+     1.44,
+     1.68,
+     false
+    ],
+    [
+     "everyone",
+     1.716,
+     2.0,
+     false
+    ],
+    [
+     "says",
+     2.048,
+     2.24,
+     false
+    ],
+    [
+     "it",
+     2.293,
+     2.4,
+     false
+    ],
+    [
+     "doesn't",
+     2.44,
+     2.84,
+     false
+    ],
+    [
+     "matter.",
+     2.869,
+     3.24,
+     false
+    ],
+    [
+     "50/50.",
+     3.273,
+     4.08,
+     true
+    ]
+   ]
+  },
+  "M04": {
+   "text": "They're *wrong.* You should *always* switch.",
+   "estimate": 2.6,
+   "dur": 2.099,
+   "words": [
+    [
+     "They're",
+     0.0,
+     0.25,
+     false
+    ],
+    [
+     "wrong.",
+     0.317,
+     0.73,
+     true
+    ],
+    [
+     "You",
+     0.75,
+     0.81,
+     false
+    ],
+    [
+     "should",
+     0.844,
+     1.05,
+     false
+    ],
+    [
+     "always",
+     1.107,
+     1.45,
+     true
+    ],
+    [
+     "switch.",
+     1.507,
+     2.09,
+     false
+    ]
+   ]
+  },
+  "M05": {
+   "text": "In 1990, Marilyn vos Savant, once listed by Guinness for the *highest* *IQ,* said exactly that.",
+   "estimate": 5.2,
+   "dur": 5.744,
+   "words": [
+    [
+     "In",
+     0.0,
+     0.05,
+     false
+    ],
+    [
+     "1990,",
+     0.094,
+     0.93,
+     false
+    ],
+    [
+     "Marilyn",
+     0.98,
+     1.33,
+     false
+    ],
+    [
+     "vos",
+     1.39,
+     1.57,
+     false
+    ],
+    [
+     "Savant,",
+     1.65,
+     2.21,
+     false
+    ],
+    [
+     "once",
+     2.258,
+     2.45,
+     false
+    ],
+    [
+     "listed",
+     2.496,
+     2.77,
+     false
+    ],
+    [
+     "by",
+     2.823,
+     2.93,
+     false
+    ],
+    [
+     "Guinness",
+     2.966,
+     3.25,
+     false
+    ],
+    [
+     "for",
+     3.29,
+     3.41,
+     false
+    ],
+    [
+     "the",
+     3.43,
+     3.49,
+     false
+    ],
+    [
+     "highest",
+     3.54,
+     3.89,
+     true
+    ],
+    [
+     "IQ,",
+     4.05,
+     4.45,
+     true
+    ],
+    [
+     "said",
+     4.498,
+     4.69,
+     false
+    ],
+    [
+     "exactly",
+     4.75,
+     5.17,
+     false
+    ],
+    [
+     "that.",
+     5.25,
+     5.73,
+     false
+    ]
+   ]
+  },
+  "M06": {
+   "text": "About *ten* *thousand* people wrote in to tell her she was *wrong.* Nearly a thousand had *PhDs.*",
+   "estimate": 5.6,
+   "dur": 5.003,
+   "words": [
+    [
+     "About",
+     0.0,
+     0.28,
+     false
+    ],
+    [
+     "ten",
+     0.34,
+     0.52,
+     true
+    ],
+    [
+     "thousand",
+     0.556,
+     0.84,
+     true
+    ],
+    [
+     "people",
+     0.897,
+     1.24,
+     false
+    ],
+    [
+     "wrote",
+     1.28,
+     1.48,
+     false
+    ],
+    [
+     "in",
+     1.533,
+     1.64,
+     false
+    ],
+    [
+     "to",
+     1.693,
+     1.8,
+     false
+    ],
+    [
+     "tell",
+     1.832,
+     1.96,
+     false
+    ],
+    [
+     "her",
+     1.98,
+     2.04,
+     false
+    ],
+    [
+     "she",
+     2.08,
+     2.2,
+     false
+    ],
+    [
+     "was",
+     2.24,
+     2.36,
+     false
+    ],
+    [
+     "wrong.",
+     2.427,
+     2.84,
+     true
+    ],
+    [
+     "Nearly",
+     2.886,
+     3.16,
+     false
+    ],
+    [
+     "a",
+     3.24,
+     3.32,
+     false
+    ],
+    [
+     "thousand",
+     3.364,
+     3.72,
+     false
+    ],
+    [
+     "had",
+     3.78,
+     3.96,
+     false
+    ],
+    [
+     "PhDs.",
+     4.0,
+     5.0,
+     true
+    ]
+   ]
+  },
+  "M07": {
+   "text": "Even Paul Erdős, one of history's *greatest* mathematicians, refused to believe it until he watched a *computer* *simulation.*",
+   "estimate": 6.4,
+   "dur": 5.949,
+   "words": [
+    [
+     "Even",
+     0.0,
+     0.18,
+     false
+    ],
+    [
+     "Paul",
+     0.244,
+     0.5,
+     false
+    ],
+    [
+     "Erdős,",
+     0.54,
+     1.06,
+     false
+    ],
+    [
+     "one",
+     1.08,
+     1.14,
+     false
+    ],
+    [
+     "of",
+     1.193,
+     1.3,
+     false
+    ],
+    [
+     "history's",
+     1.34,
+     1.78,
+     false
+    ],
+    [
+     "greatest",
+     1.816,
+     2.1,
+     true
+    ],
+    [
+     "mathematicians,",
+     2.151,
+     2.9,
+     false
+    ],
+    [
+     "refused",
+     2.95,
+     3.3,
+     false
+    ],
+    [
+     "to",
+     3.327,
+     3.38,
+     false
+    ],
+    [
+     "believe",
+     3.42,
+     3.7,
+     false
+    ],
+    [
+     "it",
+     3.727,
+     3.78,
+     false
+    ],
+    [
+     "until",
+     3.833,
+     4.1,
+     false
+    ],
+    [
+     "he",
+     4.127,
+     4.18,
+     false
+    ],
+    [
+     "watched",
+     4.23,
+     4.58,
+     false
+    ],
+    [
+     "a",
+     4.7,
+     4.82,
+     false
+    ],
+    [
+     "computer",
+     4.847,
+     5.06,
+     true
+    ],
+    [
+     "simulation.",
+     5.118,
+     5.94,
+     true
+    ]
+   ]
+  },
+  "M08": {
+   "text": "Here's the trick. Imagine a *hundred* doors. You pick one. The host opens *ninety-eight* goats.",
+   "estimate": 5.6,
+   "dur": 5.362,
+   "words": [
+    [
+     "Here's",
+     0.0,
+     0.14,
+     false
+    ],
+    [
+     "the",
+     0.18,
+     0.3,
+     false
+    ],
+    [
+     "trick.",
+     0.353,
+     0.7,
+     false
+    ],
+    [
+     "Imagine",
+     0.76,
+     1.18,
+     false
+    ],
+    [
+     "a",
+     1.22,
+     1.26,
+     false
+    ],
+    [
+     "hundred",
+     1.3,
+     1.58,
+     true
+    ],
+    [
+     "doors.",
+     1.673,
+     2.3,
+     false
+    ],
+    [
+     "You",
+     2.32,
+     2.38,
+     false
+    ],
+    [
+     "pick",
+     2.444,
+     2.7,
+     false
+    ],
+    [
+     "one.",
+     2.78,
+     3.1,
+     false
+    ],
+    [
+     "The",
+     3.12,
+     3.18,
+     false
+    ],
+    [
+     "host",
+     3.26,
+     3.58,
+     false
+    ],
+    [
+     "opens",
+     3.647,
+     3.98,
+     false
+    ],
+    [
+     "ninety-eight",
+     4.037,
+     4.54,
+     true
+    ],
+    [
+     "goats.",
+     4.647,
+     5.34,
+     false
+    ]
+   ]
+  },
+  "M09": {
+   "text": "Keep your *one-in-a-hundred* guess? Or take the *one* door he skipped?",
+   "estimate": 4.2,
+   "dur": 3.243,
+   "words": [
+    [
+     "Keep",
+     0.0,
+     0.11,
+     false
+    ],
+    [
+     "your",
+     0.158,
+     0.35,
+     false
+    ],
+    [
+     "one-in-a-hundred",
+     0.37,
+     0.99,
+     true
+    ],
+    [
+     "guess?",
+     1.057,
+     1.47,
+     false
+    ],
+    [
+     "Or",
+     1.497,
+     1.55,
+     false
+    ],
+    [
+     "take",
+     1.598,
+     1.79,
+     false
+    ],
+    [
+     "the",
+     1.81,
+     1.87,
+     false
+    ],
+    [
+     "one",
+     1.93,
+     2.11,
+     true
+    ],
+    [
+     "door",
+     2.158,
+     2.35,
+     false
+    ],
+    [
+     "he",
+     2.403,
+     2.51,
+     false
+    ],
+    [
+     "skipped?",
+     2.58,
+     3.23,
+     false
+    ]
+   ]
+  },
+  "M10": {
+   "text": "Three doors work the same way. Your pick stays *one* *in* *three.* The other *two-thirds* land on the last door.",
+   "estimate": 6.4,
+   "dur": 5.043,
+   "words": [
+    [
+     "Three",
+     0.0,
+     0.16,
+     false
+    ],
+    [
+     "doors",
+     0.213,
+     0.48,
+     false
+    ],
+    [
+     "work",
+     0.528,
+     0.72,
+     false
+    ],
+    [
+     "the",
+     0.74,
+     0.8,
+     false
+    ],
+    [
+     "same",
+     0.848,
+     1.04,
+     false
+    ],
+    [
+     "way.",
+     1.1,
+     1.36,
+     false
+    ],
+    [
+     "Your",
+     1.408,
+     1.6,
+     false
+    ],
+    [
+     "pick",
+     1.648,
+     1.84,
+     false
+    ],
+    [
+     "stays",
+     1.893,
+     2.16,
+     false
+    ],
+    [
+     "one",
+     2.2,
+     2.32,
+     true
+    ],
+    [
+     "in",
+     2.4,
+     2.56,
+     true
+    ],
+    [
+     "three.",
+     2.6,
+     2.88,
+     true
+    ],
+    [
+     "The",
+     2.9,
+     2.96,
+     false
+    ],
+    [
+     "other",
+     3.0,
+     3.2,
+     false
+    ],
+    [
+     "two-thirds",
+     3.24,
+     3.68,
+     true
+    ],
+    [
+     "land",
+     3.728,
+     3.92,
+     false
+    ],
+    [
+     "on",
+     3.947,
+     4.0,
+     false
+    ],
+    [
+     "the",
+     4.02,
+     4.08,
+     false
+    ],
+    [
+     "last",
+     4.144,
+     4.4,
+     false
+    ],
+    [
+     "door.",
+     4.464,
+     5.04,
+     false
+    ]
+   ]
+  },
+  "M11": {
+   "text": "Run it a *thousand* times. Staying wins a *third.* Switching wins *two-thirds.*",
+   "estimate": 4.8,
+   "dur": 4.572,
+   "words": [
+    [
+     "Run",
+     0.0,
+     0.16,
+     false
+    ],
+    [
+     "it",
+     0.187,
+     0.24,
+     false
+    ],
+    [
+     "a",
+     0.28,
+     0.32,
+     false
+    ],
+    [
+     "thousand",
+     0.364,
+     0.72,
+     true
+    ],
+    [
+     "times.",
+     0.813,
+     1.52,
+     false
+    ],
+    [
+     "Staying",
+     1.6,
+     1.92,
+     false
+    ],
+    [
+     "wins",
+     1.968,
+     2.16,
+     false
+    ],
+    [
+     "a",
+     2.2,
+     2.24,
+     false
+    ],
+    [
+     "third.",
+     2.32,
+     3.0,
+     true
+    ],
+    [
+     "Switching",
+     3.04,
+     3.36,
+     false
+    ],
+    [
+     "wins",
+     3.424,
+     3.68,
+     false
+    ],
+    [
+     "two-thirds.",
+     3.72,
+     4.56,
+     true
+    ]
+   ]
+  },
+  "M12": {
+   "text": "Still think it's *50/50?* Tell me why in the *comments.*",
+   "estimate": 3.4,
+   "dur": 3.15,
+   "words": [
+    [
+     "Still",
+     0.0,
+     0.19,
+     false
+    ],
+    [
+     "think",
+     0.23,
+     0.43,
+     false
+    ],
+    [
+     "it's",
+     0.457,
+     0.59,
+     false
+    ],
+    [
+     "50/50?",
+     0.63,
+     1.47,
+     true
+    ],
+    [
+     "Tell",
+     1.502,
+     1.63,
+     false
+    ],
+    [
+     "me",
+     1.683,
+     1.79,
+     false
+    ],
+    [
+     "why",
+     1.85,
+     2.03,
+     false
+    ],
+    [
+     "in",
+     2.057,
+     2.11,
+     false
+    ],
+    [
+     "the",
+     2.15,
+     2.27,
+     false
+    ],
+    [
+     "comments.",
+     2.341,
+     3.15,
+     true
+    ]
+   ]
+  }
+ },
+ "total": 56.155
+}
+</script>
+</head>
+<body>
+<div id="root" data-composition-id="monty" data-start="0" data-duration="56.155" data-width="1080" data-height="1920">
+  <audio id="music" src="assets/audio/music.wav" data-start="0" data-duration="56.155" data-volume="1" data-track-index="20"></audio>
+  <audio id="sfx" src="assets/audio/sfx.wav" data-start="0" data-duration="56.155" data-volume="1" data-track-index="21"></audio>
+  <!-- VO:BEGIN (generated by tools/bake.py) -->
+  <audio id="vo_m01" src="assets/vo/M01.wav" data-start="0.200" data-duration="4.102" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_m02" src="assets/vo/M02.wav" data-start="4.452" data-duration="3.606" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_m03" src="assets/vo/M03.wav" data-start="8.328" data-duration="4.102" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_m04" src="assets/vo/M04.wav" data-start="12.580" data-duration="2.099" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_m05" src="assets/vo/M05.wav" data-start="14.999" data-duration="5.744" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_m06" src="assets/vo/M06.wav" data-start="20.893" data-duration="5.003" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_m07" src="assets/vo/M07.wav" data-start="26.046" data-duration="5.949" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_m08" src="assets/vo/M08.wav" data-start="32.145" data-duration="5.362" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_m09" src="assets/vo/M09.wav" data-start="37.657" data-duration="3.243" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_m10" src="assets/vo/M10.wav" data-start="41.050" data-duration="5.043" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_m11" src="assets/vo/M11.wav" data-start="46.863" data-duration="4.572" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_m12" src="assets/vo/M12.wav" data-start="51.955" data-duration="3.150" data-volume="1" data-track-index="22"></audio>
+  <!-- VO:END -->
+
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <symbol id="goat" viewBox="0 0 200 200">
+        <g stroke="#2a1606" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+          <path d="M80,60 C70,28 46,12 26,18 C44,26 56,42 64,66 Z" fill="#dcc79c"/>
+          <path d="M120,60 C130,28 154,12 174,18 C156,26 144,42 136,66 Z" fill="#dcc79c"/>
+          <path d="M74,80 C52,68 28,74 14,92 C34,102 58,100 78,92 Z" fill="#fbf7ef"/>
+          <path d="M126,80 C148,68 172,74 186,92 C166,102 142,100 122,92 Z" fill="#fbf7ef"/>
+          <path d="M28,90 C44,84 58,86 70,88" fill="none" stroke="#f3a3b5" stroke-width="6"/>
+          <path d="M172,90 C156,84 142,86 130,88" fill="none" stroke="#f3a3b5" stroke-width="6"/>
+          <path d="M90,166 C92,184 98,196 102,198 C104,188 108,178 110,166 Z" fill="#fbf7ef"/>
+          <path d="M66,72 C66,46 134,46 134,72 C134,100 128,126 121,146 C114,164 108,172 100,172 C92,172 86,164 79,146 C72,126 66,100 66,72 Z" fill="#fbf7ef"/>
+          <ellipse cx="100" cy="150" rx="23" ry="18" fill="#efdfca"/>
+          <ellipse cx="85" cy="97" rx="11" ry="9" fill="#ffd35a"/>
+          <ellipse cx="115" cy="97" rx="11" ry="9" fill="#ffd35a"/>
+          <rect x="78" y="94" width="14" height="6" rx="3" fill="#2a1606" stroke="none"/>
+          <rect x="108" y="94" width="14" height="6" rx="3" fill="#2a1606" stroke="none"/>
+          <path d="M86,56 C94,46 106,46 114,56 C106,60 94,60 86,56 Z" fill="#fbf7ef"/>
+          <path d="M92,160 Q100,166 108,160" fill="none"/>
+        </g>
+        <ellipse cx="93" cy="147" rx="3.5" ry="2.5" fill="#2a1606"/><ellipse cx="107" cy="147" rx="3.5" ry="2.5" fill="#2a1606"/>
+      </symbol>
+      <symbol id="car" viewBox="0 0 300 150">
+        <ellipse cx="152" cy="134" rx="134" ry="9" fill="rgba(0,0,0,.35)"/>
+        <g stroke="#2a0508" stroke-width="5" stroke-linejoin="round">
+          <path d="M18,106 C18,90 28,84 48,82 L92,76 C112,52 138,40 172,40 C204,40 226,52 248,74 L272,78 C286,80 292,90 292,102 L292,112 C292,116 288,118 284,118 L26,118 C20,118 18,114 18,110 Z" fill="#ff2d4a"/>
+          <path d="M110,76 C126,58 144,50 168,50 L170,76 Z" fill="#a8ecff"/>
+          <path d="M182,76 L180,50 C204,52 220,60 236,76 Z" fill="#a8ecff"/>
+          <circle cx="82" cy="116" r="22" fill="#1b1b24"/><circle cx="236" cy="116" r="22" fill="#1b1b24"/>
+          <circle cx="82" cy="116" r="9" fill="#d9e0ee"/><circle cx="236" cy="116" r="9" fill="#d9e0ee"/>
+          <path d="M276,88 L289,92 L287,99 L274,97 Z" fill="#fff6b0"/>
+        </g>
+        <path d="M44,98 L272,98" stroke="#fff" stroke-width="5" opacity=".8"/>
+        <path d="M120,58 L132,52" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".8"/>
+      </symbol>
+      <symbol id="person" viewBox="0 0 60 70">
+        <circle cx="30" cy="18" r="13"/><path d="M6,70 C6,46 16,36 30,36 C44,36 54,46 54,70 Z"/>
+      </symbol>
+      <symbol id="woman" viewBox="0 0 400 380">
+        <g fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M126,196 C104,120 140,48 204,46 C270,44 304,112 286,192 C282,214 292,236 306,248 C280,256 262,246 254,232"/>
+          <path d="M126,196 C120,222 108,240 94,250 C120,256 142,246 150,232"/>
+          <path d="M150,150 C150,100 176,82 204,82 C236,82 256,104 256,150 C256,196 234,232 204,232 C174,232 150,196 150,150 Z"/>
+          <path d="M152,128 C176,122 204,100 222,84 C236,108 250,120 258,124"/>
+          <path d="M184,232 L180,262 M224,232 L228,262"/>
+          <path d="M60,380 C66,310 110,276 180,262 C196,276 214,276 228,262 C298,276 340,310 346,380"/>
+          <circle cx="204" cy="300" r="7"/><path d="M160,272 C176,300 232,300 250,272"/>
+        </g>
+      </symbol>
+      <symbol id="man" viewBox="0 0 400 380">
+        <g fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M140,150 C140,90 170,58 204,58 C240,58 266,90 266,150 C266,200 240,238 204,238 C168,238 140,200 140,150 Z"/>
+          <path d="M140,140 C128,130 126,106 138,92 M266,140 C278,130 280,106 268,92"/>
+          <path d="M150,160 C136,156 132,170 144,184 M256,160 C270,156 274,170 262,184"/>
+          <rect x="158" y="136" width="36" height="28" rx="10"/><rect x="214" y="136" width="36" height="28" rx="10"/><path d="M194,146 L214,146"/>
+          <path d="M186,238 L184,262 M222,238 L224,262"/>
+          <path d="M60,380 C66,310 112,276 184,262 L204,300 L224,262 C296,276 340,310 346,380"/>
+          <path d="M204,300 L204,380"/>
+        </g>
+      </symbol>
+      <symbol id="eye" viewBox="0 0 240 130">
+        <path d="M10,65 C60,5 180,5 230,65 C180,125 60,125 10,65 Z" fill="rgba(46,240,255,.12)" stroke="#2ef0ff" stroke-width="8"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- world: always alive (decoration never counts as a beat) -->
+  <div id="bg"></div>
+  <div id="rays" data-drift="1"></div>
+  <div id="floor"><div id="grid" data-drift="1"></div></div>
+  <div id="horizon"></div>
+  <div class="spot" id="spotL" data-drift="1"></div><div class="spot" id="spotR" data-drift="1"></div>
+
+  <div id="stage" class="abs" style="inset:0">
+    <!-- the three doors: live across the story, slide out for the history beats -->
+    <div id="doors3">
+      <div id="burst3" class="abs" style="left:560px;top:480px;width:600px;height:600px;border-radius:50%;opacity:0;background:repeating-conic-gradient(rgba(255,230,140,.55) 0 8deg,transparent 8deg 22deg);-webkit-mask:radial-gradient(circle,#000 20%,transparent 68%);mask:radial-gradient(circle,#000 20%,transparent 68%)"></div>
+      <div id="burst2" class="abs" style="left:190px;top:420px;width:700px;height:700px;border-radius:50%;opacity:0;background:repeating-conic-gradient(rgba(255,210,63,.6) 0 8deg,transparent 8deg 22deg);-webkit-mask:radial-gradient(circle,#000 20%,transparent 68%);mask:radial-gradient(circle,#000 20%,transparent 68%)"></div>
+      <div id="doorRow"></div>
+      <div id="ring1" class="abs" style="left:59px;top:574px;width:322px;height:492px;border:8px solid #fff;border-bottom:none;border-radius:161px 161px 0 0;box-shadow:0 0 24px #ffd23f,0 0 60px #ffb300,inset 0 0 20px #ffd23f"></div>
+      <div id="you1" class="pill" style="left:128px;top:476px">YOU</div>
+      <div id="beam" class="abs" style="left:0;top:560px;width:110px;height:500px;opacity:0;mix-blend-mode:screen;background:linear-gradient(90deg,transparent,rgba(46,240,255,.75),transparent);filter:blur(6px)"></div>
+      <svg class="full" viewBox="0 0 1080 1920" style="overflow:visible">
+        <path id="arrow" d="M292,556 C330,432 420,432 462,548" fill="none" stroke="#ffd23f" stroke-width="12" stroke-linecap="round" style="filter:drop-shadow(0 0 10px #ffb300)"/>
+        <path id="arrowHd" d="M436,540 L464,560 L478,526" fill="none" stroke="#ffd23f" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" style="filter:drop-shadow(0 0 10px #ffb300)"/>
+        <polyline id="brace" points="405,570 405,530 995,530 995,570" fill="none" stroke="#ffd23f" stroke-width="10" stroke-linejoin="round" style="filter:drop-shadow(0 0 10px #ffb300)"/>
+      </svg>
+      <div id="braceLab" class="neon y abs" style="left:560px;top:420px;width:280px;font-size:88px">2/3</div>
+      <div id="b1" class="badge abs" style="left:85px;top:872px"><span class="bt">50%</span></div>
+      <div id="b2" class="badge abs" style="left:405px;top:872px"><span class="bt">50%</span></div>
+      <div id="baa" class="neon g abs" style="left:700px;top:520px;font-size:76px;transform:rotate(12deg)">BAAA!</div>
+      <div id="wrong" class="stamp" style="left:540px;top:660px">WRONG</div>
+      <div id="sparks"></div>
+      <div id="confetti"></div>
+    </div>
+
+    <!-- 1 · hook -->
+    <div class="scene clip" data-scene="hook" data-start="0.000" data-duration="4.482" data-track-index="1">
+      <div id="hcar" class="card abs" style="--c:var(--yel);left:96px;top:228px;width:420px;height:290px"></div>
+      <div id="hgoat" class="card abs" style="--c:var(--lime);left:564px;top:228px;width:420px;height:290px"></div>
+      <div id="xcar" class="neon y abs" style="left:380px;top:250px;width:120px;font-size:64px">×1</div>
+      <div id="xgoat" class="neon g abs" style="left:846px;top:250px;width:120px;font-size:64px">×2</div>
+      <svg id="fcar" class="abs" viewBox="0 0 300 150" style="left:136px;top:320px;width:340px;height:170px"><use href="#car"/></svg>
+      <svg id="fg1" class="abs" viewBox="0 0 200 200" style="left:586px;top:300px;width:190px;height:190px"><use href="#goat"/></svg>
+      <svg id="fg2" class="abs" viewBox="0 0 200 200" style="left:772px;top:300px;width:190px;height:190px"><use href="#goat"/></svg>
+      <div id="hand" class="emoji abs" style="left:150px;top:1010px;font-size:170px">👆</div>
+    </div>
+
+    <!-- 2 · reveal -->
+    <div class="scene clip" data-scene="reveal" data-start="4.332" data-duration="4.026" data-track-index="2">
+      <svg id="eye" class="abs" viewBox="0 0 240 130" style="left:420px;top:236px;width:240px;height:130px"><use href="#eye"/><circle id="iris" cx="120" cy="65" r="30" fill="#2ef0ff" style="filter:drop-shadow(0 0 12px #2ef0ff)"/><circle id="pupil" cx="120" cy="65" r="12" fill="#06011a"/></svg>
+      <div id="hostT" class="neon c head" style="top:392px;font-size:74px">THE HOST KNOWS</div>
+    </div>
+
+    <!-- 3 · switch? -->
+    <div class="scene clip" data-scene="switch" data-start="8.208" data-duration="4.402" data-track-index="3">
+      <div id="sw" class="neon p shade head" style="top:238px;font-size:150px">SWITCH?</div>
+      <div id="crowd" class="abs" style="left:100px;top:420px;width:880px;height:80px"></div>
+    </div>
+
+    <!-- 4 · wrong -->
+    <div class="scene clip" data-scene="wrong" data-start="12.460" data-duration="2.569" data-track-index="4">
+      <div id="always" class="neon y head" style="top:250px;font-size:112px">ALWAYS SWITCH</div>
+    </div>
+
+    <!-- 5 · Marilyn vos Savant, 1990 -->
+    <div class="scene clip" data-scene="marilyn" data-start="14.879" data-duration="6.044" data-track-index="5">
+      <div id="mk" class="kick" style="top:222px">A MAGAZINE COLUMN · SEPT</div>
+      <div id="yr" class="neon p head" style="top:270px;font-size:176px">1990</div>
+      <div id="mgrp" class="abs" style="inset:0">
+        <div id="iqwrap" class="abs" style="left:118px;top:500px;width:74px;height:420px;border:4px solid #d9c8ff;border-radius:40px;overflow:hidden">
+          <div id="iqfill" class="abs" style="left:0;bottom:0;width:100%;height:100%;transform-origin:50% 100%;background:linear-gradient(0deg,#2ef0ff,#ff3ddb 60%,#ff2e4d)"></div>
+        </div>
+        <div id="iqlab" class="neon c abs" style="left:96px;top:936px;width:120px;font-size:46px">IQ</div>
+        <div id="iqmax" class="neon r abs" style="left:86px;top:444px;width:140px;font-size:40px">MAX</div>
+        <div id="mport" class="card abs" style="--c:var(--pink);left:300px;top:490px;width:480px;height:440px;overflow:hidden">
+          <svg viewBox="0 0 400 380" style="position:absolute;left:30px;top:40px;width:420px;height:400px;color:#ff9cf0;filter:drop-shadow(0 0 10px #ff3ddb)"><use href="#woman"/></svg>
+        </div>
+        <div id="mname" class="tag" style="left:540px;top:950px;background:var(--pink);color:#fff">MARILYN VOS SAVANT</div>
+        <div id="seal" class="abs" style="left:716px;top:446px;width:250px;height:250px;border-radius:50%;background:radial-gradient(circle,#ffe79a,#ffc233 60%,#c98a00);box-shadow:0 0 34px #ffb300;border:6px dashed #fff3c4;text-align:center;color:#2a1600;font:400 30px/1.12 'Bungee',sans-serif;padding-top:62px">LISTED BY<br>GUINNESS<br><span style="font-size:36px">HIGHEST IQ</span></div>
+      </div>
+      <div id="clipP" class="paper" style="left:100px;top:560px;width:880px;height:560px;padding:40px 48px;transform:rotate(-2.5deg)">
+        <div style="font:400 46px/1 'Bungee',sans-serif;letter-spacing:2px;border-bottom:5px solid #1d1508;padding-bottom:16px">ASK MARILYN</div>
+        <div style="font:italic 400 38px/1.3 Georgia,serif;margin-top:26px;color:#3a2c14">“Suppose you're on a game show, and you're given the choice of three doors… Is it to your advantage to switch?”</div>
+        <div style="position:relative;display:inline-block;margin-top:34px;font:700 70px/1.1 Georgia,serif"><span id="hl" style="position:absolute;left:-12px;right:-12px;top:10px;bottom:0;background:#ffe23a;transform-origin:0 50%"></span><span style="position:relative">Yes; you should switch.</span></div>
+      </div>
+    </div>
+
+    <!-- 6 · the letters -->
+    <div class="scene clip" data-scene="letters" data-start="20.773" data-duration="5.303" data-track-index="6">
+      <div id="pile" class="abs" style="inset:0"></div>
+      <div id="lk" class="kick" style="top:222px">LETTERS SENT IN · ABOUT</div>
+      <div id="lc" class="neon y head" style="top:270px;font-size:176px">0</div>
+      <div id="phdc" class="tag" style="left:540px;top:458px;background:var(--red);color:#fff;font-size:52px">NEARLY 1,000 PH.D.s</div>
+      <div id="q1" class="quote" style="left:90px;top:560px;width:900px;transform:rotate(-3deg)">“You blew it, and you blew it big!”<small>— A READER WITH A PH.D., 1990</small></div>
+      <div id="q2" class="quote" style="left:170px;top:810px;width:740px;transform:rotate(2.5deg)">“You are the goat!”<small>— ANOTHER READER, 1990</small></div>
+    </div>
+
+    <!-- 7 · Erdős -->
+    <div class="scene clip" data-scene="erdos" data-start="25.926" data-duration="6.249" data-track-index="7">
+      <div id="eqs" class="abs" style="inset:0"></div>
+      <div id="egrp" class="abs" style="inset:0">
+        <div id="eport" class="card abs" style="--c:var(--cyan);left:300px;top:260px;width:480px;height:440px;overflow:hidden">
+          <svg viewBox="0 0 400 380" style="position:absolute;left:30px;top:40px;width:420px;height:400px;color:#9ff7ff;filter:drop-shadow(0 0 10px #2ef0ff)"><use href="#man"/></svg>
+        </div>
+        <div id="ename" class="tag" style="left:540px;top:722px;background:var(--cyan)">PAUL ERDŐS</div>
+        <div id="epap" class="neon c head" style="top:812px;font-size:64px">0 PAPERS</div>
+      </div>
+      <div id="nope" class="stamp" style="left:540px;top:420px;font-size:96px">NOT CONVINCED</div>
+      <div id="crt" class="crt" style="left:110px;top:540px;width:860px;height:600px">
+        <div class="screen"><div id="term" class="txt"></div>
+          <div id="conv" class="neon g abs" style="left:0;top:210px;width:800px;font-size:92px">CONVINCED ✓</div></div>
+      </div>
+    </div>
+
+    <!-- 8 · 100 doors (and: stick or switch?) -->
+    <div class="scene clip" data-scene="hundred" data-start="32.025" data-duration="9.055" data-track-index="8">
+      <div id="trick" class="neon y head" style="top:212px;font-size:92px">THE TRICK</div>
+      <div id="opened" class="neon p head" style="top:212px;font-size:84px">OPENED <span id="opn">0</span>/98</div>
+      <div id="stick" class="neon c head" style="top:212px;font-size:84px">STICK OR SWITCH?</div>
+      <div id="grid100" class="abs" style="inset:0"></div>
+      <div id="youRing" class="abs" style="left:0;top:0;width:86px;height:92px;border:5px solid #fff;border-radius:43px 43px 6px 6px;box-shadow:0 0 16px #2ef0ff,0 0 30px #2ef0ff"></div>
+      <div id="youTag" class="tag" style="left:0;top:0;background:var(--cyan);font-size:30px;padding:8px 14px 6px">YOU</div>
+      <div id="pA" class="abs" style="left:110px;top:900px;width:380px;text-align:center"><div class="neon c" style="font-size:110px">1%</div><div class="neon c" style="font-size:44px;margin-top:10px">1 IN 100</div></div>
+      <div id="pB" class="abs" style="left:590px;top:900px;width:380px;text-align:center"><div class="neon y" style="font-size:110px">99%</div><div class="neon y" style="font-size:44px;margin-top:10px">99 IN 100</div></div>
+    </div>
+
+    <!-- 9 · same logic, 3 doors -->
+    <div class="scene clip" data-scene="math" data-start="40.930" data-duration="5.963" data-track-index="9">
+      <div id="same" class="neon c head" style="top:250px;font-size:100px">SAME LOGIC</div>
+      <div id="winT" class="neon y shade head" style="top:230px;font-size:140px">SWITCH!</div>
+    </div>
+
+    <!-- 10 · 1,000 games -->
+    <div class="scene clip" data-scene="sim" data-start="46.743" data-duration="5.242" data-track-index="10">
+      <div id="gk" class="kick" style="top:216px">SIMULATION</div>
+      <div id="games" class="neon y head" style="top:258px;font-size:88px">GAME 0</div>
+      <canvas id="simc" width="840" height="525" style="position:absolute;left:120px;top:380px"></canvas>
+      <div id="cStay" class="card abs" style="--c:var(--cyan);left:70px;top:936px;width:450px;height:216px">
+        <div class="neon c" style="margin-top:22px;font-size:46px">STAY</div>
+        <div id="pStay" class="neon c" style="margin-top:14px;font-size:96px">0%</div>
+      </div>
+      <div id="cSw" class="card abs" style="--c:var(--yel);left:560px;top:936px;width:450px;height:216px">
+        <div class="neon y" style="margin-top:22px;font-size:46px">SWITCH</div>
+        <div id="pSw" class="neon y" style="margin-top:14px;font-size:96px">0%</div>
+      </div>
+      <div id="crown" class="emoji abs" style="left:725px;top:830px;font-size:120px">👑</div>
+    </div>
+
+    <!-- 11 · comments + loop reset -->
+    <div class="scene clip" data-scene="cta" data-start="51.835" data-duration="4.320" data-track-index="11">
+      <div id="cta1" class="neon c head" style="top:236px;font-size:92px">STILL THINK</div>
+      <div id="cta2" class="neon p shade head" style="top:348px;font-size:150px">IT'S 50/50?</div>
+      <div id="bub" class="abs" style="left:820px;top:1000px;width:190px;height:150px">
+        <svg viewBox="0 0 190 150" style="width:190px;height:150px;filter:drop-shadow(0 0 14px #fff)"><path d="M20,10 L170,10 C180,10 186,16 186,26 L186,96 C186,106 180,112 170,112 L80,112 L44,144 L50,112 L20,112 C10,112 4,106 4,96 L4,26 C4,16 10,10 20,10 Z" fill="#fff"/></svg>
+        <div class="abs" style="left:0;top:40px;width:190px;text-align:center"><span class="dot3" style="display:inline-block;width:22px;height:22px;border-radius:50%;background:#12042a;margin:0 7px"></span><span class="dot3" style="display:inline-block;width:22px;height:22px;border-radius:50%;background:#12042a;margin:0 7px"></span><span class="dot3" style="display:inline-block;width:22px;height:22px;border-radius:50%;background:#12042a;margin:0 7px"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="caps"></div>
+  <div id="bulbs"><div id="bulbrail"></div></div>
+  <div id="vig"></div>
+  <div id="scan"></div>
+  <div id="flash"></div>
+  <div id="black"></div>
+</div>
+
+<script>
+const R = RT_INIT();
+const { tl, S, E, D, V, VE, W, WE, rnd, $, $$, el, div, cue, TOTAL } = R;
+const DX = [85, 405, 725], CX = DX.map(x => x + 135), DY = 600;
+
+/* ================= world ================= */
+tl.fromTo('#rays', { rotation: 0 }, { rotation: 55, duration: TOTAL, ease: 'none', data: 'drift' }, 0);
+tl.fromTo('#grid', { backgroundPositionY: '0px' }, { backgroundPositionY: `${Math.round(TOTAL / .9) * 120}px`, duration: TOTAL, ease: 'none', data: 'drift' }, 0);
+for (let t = 0, k = 0; t < TOTAL; t += 3.4, k++) {
+  tl.to('#spotL', { rotation: k % 2 ? -16 : 20, duration: 3.4, ease: 'sine.inOut', data: 'drift' }, t);
+  tl.to('#spotR', { rotation: k % 2 ? 18 : -20, duration: 3.4, ease: 'sine.inOut', data: 'drift' }, t);
+}
+// marquee bulbs, chasing in three phases
+(() => {
+  const host = $('#bulbs'), pts = [], x0 = 30, y0 = 30, x1 = 1050, y1 = 1890, step = 42;
+  const edge = (ax, ay, bx, by) => { const L = Math.hypot(bx - ax, by - ay), n = Math.round(L / step); for (let i = 0; i < n; i++) pts.push([ax + (bx - ax) * i / n, ay + (by - ay) * i / n]); };
+  edge(x0, y0, x1, y0); edge(x1, y0, x1, y1); edge(x1, y1, x0, y1); edge(x0, y1, x0, y0);
+  pts.forEach(([x, y], i) => { const b = div('bulb g' + (i % 3), host, null, `left:${x}px;top:${y}px`); b.dataset.drift = '1';
+    const l = div('bulb on', b, null, 'margin:0;left:0;top:0;opacity:0'); l.classList.add('lit', 'l' + (i % 3)); l.dataset.drift = '1'; });
+  for (let t = 0, k = 0; t < TOTAL; t += .12, k++) for (let g = 0; g < 3; g++) tl.set('.l' + g, { opacity: g === k % 3 ? 1 : .08 }, t);
+})();
+const allBulbs = (t, d = .3) => { tl.set('.lit', { opacity: 1 }, t); };
+
+/* ================= the three doors ================= */
+const PRIZE = ['goat', 'car', 'goat'];
+[1, 2, 3].forEach(i => {
+  const d = div(`door c${i}`, $('#doorRow'), null, `left:${DX[i - 1]}px`); d.id = 'd' + i;
+  const p = PRIZE[i - 1], vb = p === 'car' ? '0 0 300 150' : '0 0 200 200';
+  d.innerHTML = `<div class="dglow"></div><div class="dback"><svg class="prize ${p}" viewBox="${vb}"><use href="#${p}"/></svg></div>` +
+    `<div class="dpanel"><div class="dinset a"></div><div class="dinset b"></div><div class="dnum">${i}</div><div class="knob"></div></div><div class="dframe"></div>`;
+});
+const panel = i => `#d${i} .dpanel`, prize = i => `#d${i} .prize`, glow = i => `#d${i} .dglow`;
+R.hide('#ring1, #you1, #beam, #arrow, #arrowHd, #brace, #braceLab, #b1, #b2, #baa, #wrong, #burst3, #burst2');
+tl.set('#wrong', { xPercent: -50, rotation: -10 }, 0);
+const openDoor = (i, t, d = .55) => {
+  tl.to(panel(i), { rotationY: -104, duration: d, ease: 'power3.out' }, t);
+  tl.to(glow(i), { opacity: 1, duration: .12 }, t).to(glow(i), { opacity: .55, duration: .6 }, t + .2);
+  cue(t, 'door', 1);
+};
+const badge = (id, txt, t, color) => { tl.set(id + ' .bt', { textContent: txt }, t); if (color) tl.set(id, { color }, t); };
+
+/* ---------- 1 · HOOK: three doors, one car, two goats ---------- */
+{
+  const t0 = W('M01', 0);
+  [1, 2, 3].forEach((i, k) => {
+    const t = t0 - .16 + k * .11;
+    R.slam('#d' + i, t, 1.9, .24);
+    cue(t + .24, 'slam', 1, [-.5, 0, .5][k]);
+    R.shake(t + .24, 10 + k * 5, .22);
+    R.flicker(`#d${i} .dnum`, t + .3, 4);
+  });
+  R.flash(t0 + .22 + .22, .45, .35);
+  allBulbs(t0 + .1);
+  // one car ... two goats
+  const tc = W('M01', 2), tg = W('M01', 4);
+  R.pop('#hcar', tc - .06, .38, .3); R.pop('#fcar', tc - .02, .45, .2); R.slam('#xcar', tc + .12, 2, .2);
+  cue(tc - .04, 'pop', 1, -.4); cue(tc + .3, 'ding', .7, -.4);
+  tl.fromTo('#fcar', { x: -30 }, { x: 10, duration: .9, ease: 'sine.inOut', immediateRender: false }, tc + .3);
+  R.pop('#hgoat', tg - .06, .38, .3); R.pop('#fg1', tg - .02, .45, .2); R.pop('#fg2', tg + .08, .45, .2); R.slam('#xgoat', tg + .2, 2, .2);
+  cue(tg - .04, 'pop', 1, .4); cue(tg + .12, 'bleat', .55, .4);
+  tl.to('#fg1, #fg2', { rotation: 8, duration: .12, yoyo: true, repeat: 3, ease: 'sine.inOut' }, tg + .3);
+  // the prizes dive behind the doors (car → door 2)
+  const tf = W('M01', 6) - .1;
+  const fly = (sel, cx, cy, w, h, dx, dy) => {
+    tl.to(sel, { x: dx - cx, duration: .42, ease: 'power1.in' }, tf);
+    tl.to(sel, { y: dy - cy, scale: .18, rotation: 360, duration: .42, ease: 'back.in(1.4)' }, tf);
+    tl.to(sel, { opacity: 0, duration: .06 }, tf + .38);
+  };
+  fly('#fcar', 136 + 170, 320 + 85, 340, 170, CX[1], 820);
+  fly('#fg1', 586 + 95, 300 + 95, 190, 190, CX[0], 820);
+  fly('#fg2', 772 + 95, 300 + 95, 190, 190, CX[2], 820);
+  R.out('#hcar, #hgoat, #xcar, #xgoat', tf, .25, { scale: .8 });
+  cue(tf, 'whoosh', .8);
+  [1, 2, 3].forEach((i, k) => { tl.to('#d' + i, { scaleY: .95, scaleX: 1.04, duration: .06, transformOrigin: '50% 100%' }, tf + .42 + k * .02).to('#d' + i, { scaleY: 1, scaleX: 1, duration: .25, ease: 'elastic.out(1,.4)' }, tf + .48 + k * .02); cue(tf + .42 + k * .02, 'thunk', .7, [-.5, 0, .5][k]); });
+  // you pick door number one
+  const tp = W('M01', 10);
+  tl.set('#hand', { opacity: 0, x: 420, y: 380, rotation: -30 }, 0);
+  tl.to('#hand', { opacity: 1, x: 0, y: 0, rotation: 0, duration: .38, ease: 'power3.out' }, tp - .45);
+  tl.to('#hand', { scale: .82, y: -18, duration: .07 }, tp - .04).to('#hand', { scale: 1, y: 0, duration: .18 }, tp + .04);
+  cue(tp - .02, 'tap', 1, -.5); cue(tp + .02, 'select', .9, -.5);
+  R.pop('#ring1', tp, .3, 1.3, 'power3.out'); R.pop('#you1', tp + .05, .35, .3);
+  tl.to('#d1', { y: -14, duration: .3, ease: 'power2.out' }, tp);
+  tl.to('#d2 .dpanel, #d3 .dpanel', { filter: 'brightness(.62)', duration: .3 }, tp);
+  tl.to('#hand', { opacity: 0, y: 160, duration: .3, ease: 'power2.in' }, E('hook') - .3);
+  // idle life under the narration: door numbers breathe
+  tl.to('.dnum', { scale: 1.06, duration: .5, yoyo: true, repeat: 3, ease: 'sine.inOut', stagger: .12 }, tc + .1);
+}
+
+/* ---------- 2 · the host opens door 3: goat ---------- */
+{
+  R.sceneIn('reveal', .2); R.sceneOut('reveal', .2);
+  const th = W('M02', 1), tk = W('M02', 3), to = W('M02', 8), t3 = W('M02', 10), tg = W('M02', 11);
+  tl.to('#d2 .dpanel, #d3 .dpanel', { filter: 'brightness(1)', duration: .3 }, th - .2);
+  tl.set('#eye', { scaleY: .05, transformOrigin: '50% 50%' }, 0);
+  R.pop('#eye', th - .1, .3, .6); R.flicker('#hostT', th - .05, 4); cue(th - .05, 'neon', .8);
+  tl.to('#eye', { scaleY: 1, duration: .22, ease: 'back.out(3)' }, tk - .05); cue(tk - .05, 'blip', .6);
+  tl.to('#iris, #pupil', { attr: { cx: 80 }, duration: .25, ease: 'power2.inOut' }, tk + .2).to('#iris, #pupil', { attr: { cx: 162 }, duration: .4, ease: 'power2.inOut' }, tk + .5).to('#iris, #pupil', { attr: { cx: 120 }, duration: .25 }, tk + .95);
+  // x-ray scan across the two doors the host may open
+  tl.set('#beam', { x: 380 }, 0);
+  tl.to('#beam', { opacity: 1, duration: .1 }, tk + .1).to('#beam', { x: 990, duration: .7, ease: 'sine.inOut' }, tk + .1).to('#beam', { x: 380, duration: .5, ease: 'sine.inOut' }, tk + .8).to('#beam', { opacity: 0, duration: .15 }, tk + 1.2);
+  cue(tk + .1, 'scan', .7, .3);
+  // tension: light leaks out of door 3, drum roll
+  tl.to(glow(3), { opacity: .45, duration: t3 - to, ease: 'power1.in' }, to);
+  for (let t = to, k = 0; t < t3 - .05; t += .04, k++) tl.set('#d3', { x: (k % 2 ? 1 : -1) * (1 + 3 * (t - to) / (t3 - to)) }, t);
+  tl.set('#d3', { x: 0 }, t3);
+  cue(to - .05, 'drumroll', .9, .4, { dur: t3 - to + .05 });
+  openDoor(3, t3);
+  tl.to('#burst3', { opacity: 1, duration: .2 }, t3).fromTo('#burst3', { rotation: 0 }, { rotation: 70, duration: 3.2, ease: 'none', immediateRender: false }, t3).to('#burst3', { opacity: .35, duration: .8 }, t3 + .6);
+  R.flash(t3 + .02, .4, .35, '#fff2c0'); allBulbs(t3); R.shake(t3 + .02, 12, .25);
+  cue(t3 + .02, 'reveal', 1, .4);
+  tl.fromTo(prize(3), { y: 90, scale: .6 }, { y: 0, scale: 1, duration: .5, ease: 'back.out(2.2)', immediateRender: false }, t3 + .08);
+  tl.to(prize(3), { y: -24, duration: .12, yoyo: true, repeat: 3, ease: 'power1.out' }, tg - .05);
+  R.pop('#baa', tg - .02, .3, .2); cue(tg - .02, 'bleat', 1, .5);
+  tl.to('#baa', { rotation: 18, duration: .1, yoyo: true, repeat: 5 }, tg + .25);
+  R.out('#baa', E('reveal') + .4, .2);
+}
+
+/* ---------- 3 · do you switch?  everyone says 50/50 ---------- */
+{
+  R.sceneIn('switch', .15); R.sceneOut('switch', .15);
+  const ts = W('M03', 3), ta = W('M03', 4), tf = W('M03', 10);
+  R.flicker('#sw', ts - .08, 6); cue(ts - .08, 'neon', 1); cue(W('M03', 0), 'riser', .6, 0, { dur: ts - W('M03', 0) });
+  R.draw('#arrow', ts + .05, .35); R.draw('#arrowHd', ts + .35, .15); cue(ts + .05, 'swoosh', .7, -.2);
+  for (let k = 0; k < 4; k++) tl.to('#arrow, #arrowHd', { y: -14, duration: .18, yoyo: true, repeat: 1, ease: 'sine.inOut' }, ts + .6 + k * .5);
+  tl.to('#sw', { y: -50, scale: .72, duration: .35, ease: 'power3.inOut' }, ta - .1);
+  // the crowd: almost everyone
+  const crowd = $('#crowd');
+  for (let i = 0; i < 12; i++) {
+    const s = el('svg', { viewBox: '0 0 60 70', width: 60, height: 70 }); s.style.cssText = `position:absolute;left:${i * 74 + 6}px;top:0;fill:#b9a7ff`;
+    el('use', { href: '#person' }, s); crowd.appendChild(s);
+    R.pop(s, ta + i * .05, .25, .2); if (i % 3 === 0) cue(ta + i * .05, 'blip', .35, (i - 6) / 8, { f: 700 + i * 60 });
+    tl.to(s, { fill: '#ff3ddb', duration: .1 }, tf - .1 + i * .02);
+    tl.to(s, { y: -12, duration: .1, yoyo: true, repeat: 1 }, tf - .1 + i * .02);
+  }
+  // 50 / 50
+  badge('#b1', '50%', 0); badge('#b2', '50%', 0);
+  R.slam('#b1', tf - .02, 2.4, .2); R.slam('#b2', tf + .16, 2.4, .2);
+  cue(tf + .18, 'slam', .8, -.4); cue(tf + .36, 'slam', .8, 0);
+  tl.to('#b1, #b2', { scale: 1.08, duration: .2, yoyo: true, repeat: 1 }, tf + .5);
+}
+
+/* ---------- 4 · WRONG. always switch ---------- */
+{
+  R.sceneIn('wrong', .1);
+  const tw = W('M04', 1), ty = W('M04', 2), tA = W('M04', 4);
+  tl.set('#stage', { filter: 'none' }, 0);
+  tl.set('#wrong', { opacity: 0, scale: 3.2 }, 0);
+  tl.to('#wrong', { opacity: 1, scale: 1, duration: .16, ease: 'power4.in' }, tw - .12);
+  cue(tw + .04, 'stamp', 1); cue(tw + .04, 'buzzer', .9);
+  R.shake(tw + .04, 30, .4); R.flash(tw + .04, .5, .4, '#ff2e4d'); R.glitch('#b1, #b2', tw + .04, .32);
+  tl.to('#crowd svg', { fill: '#ff2e4d', duration: .05 }, tw + .04);
+  R.out('#crowd', tw + .5, .2);
+  tl.to('#wrong', { scale: 1.4, opacity: 0, duration: .22, ease: 'power2.in' }, ty - .05);
+  // the odds re-form: 33% · 67%
+  const o = { a: 50, b: 50 };
+  tl.to(o, { a: 33, b: 67, duration: .5, ease: 'power2.out', onUpdate: () => { $('#b1 .bt').textContent = Math.round(o.a) + '%'; $('#b2 .bt').textContent = Math.round(o.b) + '%'; } }, ty);
+  cue(ty, 'counter', .5, 0, { dur: .5 });
+  tl.to('#b1', { color: '#2ef0ff', scale: .9, duration: .3 }, ty);
+  tl.to('#b2', { color: '#ffd23f', scale: 1.22, duration: .3, ease: 'back.out(3)' }, ty + .1);
+  tl.to('#b2', { textShadow: '0 0 12px #fff,0 0 40px #ffb300,0 0 80px #ff9d00', duration: .2 }, ty + .1);
+  cue(ty + .52, 'ding', .9, 0);
+  tl.to('#arrow, #arrowHd', { attr: { 'stroke-width': 18 }, duration: .2 }, tA);
+  R.flicker('#always', tA - .05, 5); cue(tA - .05, 'neon', 1);
+  tl.to('#always', { scale: 1.06, duration: .25, yoyo: true, repeat: 1, ease: 'sine.inOut' }, tA + .4);
+  // whip out of the game: doors slide left
+  const tx = E('wrong') - .3;
+  tl.to('#doors3', { x: -1150, duration: .38, ease: 'power3.in' }, tx);
+  tl.to('[data-scene="wrong"]', { x: -1150, duration: .38, ease: 'power3.in' }, tx);
+  cue(tx + .05, 'whoosh', 1, -.3);
+}
+
+/* ---------- 5 · Marilyn vos Savant, 1990 ---------- */
+{
+  const sc = '[data-scene="marilyn"]';
+  tl.fromTo(sc, { x: 1150 }, { x: 0, duration: .38, ease: 'power3.out', immediateRender: false }, S('marilyn'));
+  tl.set(sc, { x: 1150 }, 0);
+  R.sceneOut('marilyn', .15);
+  const t0 = V('M05'), tm = W('M05', 2), tv = W('M05', 3), tG = W('M05', 8), tH = W('M05', 11), tS = W('M05', 13), tX = W('M05', 14);
+  // the year rolls back
+  R.count('#yr', t0 - .05, tm - t0 - .15, 2025, 1990, v => String(Math.round(v)), 'power3.out');
+  cue(t0 - .05, 'counter', .6, 0, { dur: tm - t0 - .15 }); cue(tm - .2, 'ding', .8);
+  R.up('#mk', t0 - .1, .35, 20);
+  tl.fromTo('#yr', { scale: 1.3 }, { scale: 1, duration: tm - t0, ease: 'power3.out', immediateRender: false }, t0 - .05);
+  // the person
+  R.pop('#mport', tm - .08, .45, .5); cue(tm - .08, 'pop', 1);
+  tl.set('#mname', { xPercent: -50, clipPath: 'inset(0 100% 0 0)' }, 0);
+  tl.to('#mname', { clipPath: 'inset(0 0% 0 0)', duration: .45, ease: 'power2.out' }, tv - .1); cue(tv - .1, 'type', .6, 0, { dur: .45 });
+  tl.fromTo('#mport svg', { y: 20 }, { y: -10, duration: 3, ease: 'sine.inOut', immediateRender: false }, tm);
+  // Guinness · highest IQ
+  tl.set('#seal', { opacity: 0, scale: 0, rotation: -200 }, 0);
+  tl.to('#seal', { opacity: 1, scale: 1, rotation: -10, duration: .5, ease: 'back.out(1.8)' }, tG - .05); cue(tG - .05, 'stamp', .6, .4); cue(tG + .3, 'ding', .6, .4);
+  tl.to('#seal', { rotation: 6, duration: 1.8, ease: 'sine.inOut' }, tG + .5);
+  R.up('#iqwrap, #iqlab', tm + .3, .35, 30);
+  tl.set('#iqfill', { scaleY: .05 }, 0);
+  tl.to('#iqfill', { scaleY: 1, duration: .55, ease: 'power2.in' }, tH - .15); cue(tH - .15, 'riser', .7, -.4, { dur: .55 });
+  R.slam('#iqmax', tH + .42, 2, .16); cue(tH + .58, 'hit', .8, -.4);
+  tl.to('#iqwrap', { boxShadow: '0 0 30px #ff2e4d', borderColor: '#ff2e4d', duration: .1 }, tH + .45);
+  // her column: "Yes; you should switch."
+  tl.to('#mgrp', { y: -250, scale: .78, opacity: .35, duration: .4, ease: 'power3.inOut', transformOrigin: '50% 0%' }, tS - .15);
+  R.out('#mk, #yr', tS - .15, .25, { y: -40 });
+  tl.set('#clipP', { y: 1300, rotation: 8 }, 0);
+  tl.to('#clipP', { y: 0, rotation: -2.5, duration: .45, ease: 'power3.out' }, tS - .2); cue(tS - .2, 'paper', 1);
+  tl.set('#hl', { scaleX: 0 }, 0);
+  tl.to('#hl', { scaleX: 1, duration: .45, ease: 'power2.inOut' }, tX); cue(tX, 'marker', .9);
+  tl.to('#clipP', { scale: 1.04, duration: 1.2, ease: 'sine.out' }, tX);
+}
+
+/* ---------- 6 · 10,000 letters, nearly 1,000 PhDs ---------- */
+{
+  R.sceneIn('letters', .15); R.sceneOut('letters', .2);
+  const t0 = V('M06'), tp = W('M06', 3), tw = W('M06', 11), tn = W('M06', 12), tT = W('M06', 14), tP = W('M06', 16);
+  R.up('#lk', t0 - .1, .3, 20);
+  R.count('#lc', t0 + .05, tp + .35 - t0, 0, 10000, v => Math.round(v).toLocaleString('en-US'), 'power2.out');
+  cue(t0 + .05, 'counter', .8, 0, { dur: tp + .35 - t0 }); cue(tp + .4, 'ding', .9);
+  tl.fromTo('#lc', { scale: 1.2 }, { scale: 1, duration: .8, ease: 'power3.out', immediateRender: false }, t0);
+  // mail flood
+  const pile = $('#pile'), envs = [];
+  for (let i = 0; i < 64; i++) {
+    const e = div('env', pile, null, `left:${Math.round(40 + rnd() * 860)}px;top:${Math.round(470 + rnd() * 640)}px`);
+    if (rnd() < .45) div('scr', e, ['WRONG!', 'NO!!', 'WRONG', '50/50!', 'SHAME'][i % 5]);
+    envs.push(e);
+    const t = t0 + .05 + (i / 64) * (tw - t0 + .2) + rnd() * .1, r0 = (rnd() - .5) * 80, r1 = (rnd() - .5) * 50;
+    tl.set(e, { opacity: 0 }, 0);
+    tl.fromTo(e, { opacity: 1, y: -1000 - rnd() * 300, rotation: r0 }, { y: 0, rotation: r1, duration: .45, ease: 'power2.in', immediateRender: false }, t);
+    tl.to(e, { y: -14, duration: .07, yoyo: true, repeat: 1, ease: 'power1.out' }, t + .45);
+    if (i % 5 === 0) cue(t + .45, 'paper', .35, (rnd() - .5) * 1.2, { short: 1 });
+  }
+  cue(t0, 'flutter', .7, 0, { dur: tw - t0 + .6 });
+  // what they wrote
+  tl.set('#q1, #q2', { opacity: 0, scale: .3 }, 0);
+  tl.to('#q1', { opacity: 1, scale: 1, duration: .3, ease: 'back.out(1.8)' }, tw - .08); cue(tw - .08, 'whoosh', .6, -.3); cue(tw + .15, 'hit', .6);
+  tl.to('#q2', { opacity: 1, scale: 1, duration: .3, ease: 'back.out(1.8)' }, tn - .12); cue(tn - .12, 'whoosh', .6, .3); cue(tn + .1, 'bleat', .45, .4);
+  tl.to('#q1', { x: -1200, rotation: -20, duration: .3, ease: 'power2.in' }, tT - .1);
+  tl.to('#q2', { x: 1200, rotation: 20, duration: .3, ease: 'power2.in' }, tT - .05);
+  cue(tT - .1, 'swoosh', .6);
+  // Ph.D. stamps
+  const picks = envs.filter((_, i) => i % 4 === 1).slice(0, 14);
+  picks.forEach((e, k) => { const s = div('phd', e, 'PH.D.'); tl.set(s, { opacity: 0, scale: 2.4 }, 0); const t = tT + .12 + k * .055; tl.to(s, { opacity: 1, scale: 1, duration: .1, ease: 'power4.in' }, t); if (k % 2 === 0) cue(t + .1, 'stamp', .45, (rnd() - .5)); });
+  tl.set('#phdc', { xPercent: -50 }, 0);
+  R.slam('#phdc', tP - .1, 2.2, .18); cue(tP + .08, 'hit', .9); R.shake(tP + .08, 14, .25);
+  tl.to('#pile', { scale: 1.05, duration: 1.2, ease: 'sine.inOut', transformOrigin: '50% 80%' }, tn);
+}
+
+/* ---------- 7 · even Erdős ---------- */
+{
+  R.sceneIn('erdos', .2); R.sceneOut('erdos', .2);
+  const tpl = W('M07', 1), tG = W('M07', 6), tr = W('M07', 8), tc = W('M07', 16);
+  // floating chalk maths (decoration)
+  ['P(stay) = 1/3', 'P(switch) = 2/3', '1/3 + 2/3 = 1', 'n → ∞', 'P(A|B)', 'e^iπ + 1 = 0', '∑ 1/n²', '3 doors'].forEach((s, i) => {
+    const d = div('neon c abs', $('#eqs'), s, `left:${[60, 640, 80, 760, 120, 600, 700, 70][i]}px;top:${[260, 300, 1000, 1040, 640, 700, 900, 820][i]}px;font-size:${34 + (i % 3) * 8}px;opacity:.22`);
+    d.dataset.drift = '1';
+    tl.fromTo(d, { y: 0 }, { y: -60 - i * 6, duration: D('erdos') + .4, ease: 'none', immediateRender: false, data: 'drift' }, S('erdos'));
+  });
+  R.pop('#eport', tpl - .12, .42, .5); cue(tpl - .12, 'pop', 1);
+  tl.set('#ename', { xPercent: -50, clipPath: 'inset(0 100% 0 0)' }, 0);
+  tl.to('#ename', { clipPath: 'inset(0 0% 0 0)', duration: .4 }, tpl + .15); cue(tpl + .15, 'type', .6, 0, { dur: .4 });
+  R.up('#epap', tG - .3, .3, 20);
+  R.count('#epap', tG - .25, .9, 0, 1500, v => (v >= 1499.5 ? '1,500+' : Math.round(v).toLocaleString('en-US')) + ' PAPERS', 'power2.out');
+  cue(tG - .25, 'counter', .6, 0, { dur: .9 });
+  tl.fromTo('#eport svg', { y: 16 }, { y: -8, duration: 3, ease: 'sine.inOut', immediateRender: false }, tpl);
+  // refused to believe it
+  tl.set('#nope', { xPercent: -50, rotation: 8, opacity: 0, scale: 3 }, 0);
+  tl.to('#nope', { opacity: 1, scale: 1, duration: .15, ease: 'power4.in' }, tr - .05); cue(tr + .1, 'stamp', 1); cue(tr + .1, 'buzzer', .5);
+  R.shake(tr + .1, 22, .3); R.glitch('#eport', tr + .1, .3);
+  tl.to('#eport', { '--c': '#ff2e4d', duration: .1 }, tr + .1);
+  // ... until a computer simulation
+  tl.to('#egrp', { x: -300, y: -150, scale: .5, duration: .4, ease: 'power3.inOut', transformOrigin: '50% 0%' }, tc - .45);
+  tl.to('#nope', { x: 170, y: -210, scale: .5, duration: .4, ease: 'power3.inOut' }, tc - .45);
+  tl.set('#crt', { opacity: 0, scale: .3, y: 200 }, 0);
+  tl.to('#crt', { opacity: 1, scale: 1, y: 0, duration: .4, ease: 'back.out(1.6)' }, tc - .4); cue(tc - .4, 'crt', 1);
+  // deterministic Monty Hall games for the terminal
+  let s = 7, win = 0; const r3 = () => { s = (s * 48271) % 2147483647; return s % 3; };
+  const lines = ['> RUN MONTY_HALL.BAS', ''];
+  for (let g = 1; g <= 30; g++) { const car = r3(), pick = r3(); const sw = car !== pick; win += sw; lines.push(`GAME ${String(g).padStart(4, '0')}  SWITCH ${sw ? 'WINS ' : 'LOSES'}  ${(100 * win / g).toFixed(1)}%`); }
+  $('#term').textContent = lines.join('\n');
+  const tt = tc - .05, te = E('erdos') + .15;
+  tl.fromTo('#term', { y: 0 }, { y: -(lines.length - 11) * 39.6, duration: te - tt, ease: 'power1.in', immediateRender: false }, tt);
+  tl.set('#term', { clipPath: 'inset(0 0 100% 0)' }, 0); tl.to('#term', { clipPath: 'inset(0 0 0% 0)', duration: .5, ease: 'none' }, tt);
+  cue(tt, 'compute', .6, 0, { dur: te - tt });
+  tl.set('#conv', { opacity: 0, scale: 2 }, 0);
+  tl.to('#conv', { opacity: 1, scale: 1, duration: .16, ease: 'power4.in' }, E('erdos') - .42); cue(E('erdos') - .26, 'ding', 1); cue(E('erdos') - .26, 'hit', .6);
+  tl.to('#term', { opacity: .25, duration: .1 }, E('erdos') - .42);
+}
+
+/* ---------- 8 · 100 doors ---------- */
+{
+  R.sceneIn('hundred', .15); R.sceneOut('hundred', .2);
+  const tT = V('M08'), th = W('M08', 5), tp = W('M08', 8), to = W('M08', 12), tg = W('M08', 14);
+  R.flicker('#trick', tT - .05, 5); cue(tT - .05, 'neon', .9);
+  R.hide('#opened, #stick');
+  const host = $('#grid100'), cols = ['var(--cyan)', 'var(--pink)', 'var(--yel)'], mds = [];
+  const YOU = 36, OTHER = 82;
+  const gx = c => 147 + c * 80, gy = r => 330 + r * 83;
+  for (let i = 0; i < 100; i++) {
+    const r = Math.floor(i / 10), c = i % 10;
+    const m = div('mdoor', host, `<div class="mb"><svg viewBox="0 0 200 200"><use href="#${i === OTHER ? 'car' : 'goat'}"/></svg></div><div class="mp">${i + 1}</div>`, `left:${gx(c)}px;top:${gy(r)}px;--c:${cols[(r + c) % 3]}`);
+    if (i === OTHER) m.querySelector('svg').setAttribute('viewBox', '0 0 300 150');
+    mds.push(m);
+    const dist = Math.hypot(r - 4.5, c - 4.5);
+    tl.set(m, { opacity: 0, scale: 0 }, 0);
+    tl.to(m, { opacity: 1, scale: 1, duration: .28, ease: 'back.out(2.5)' }, th - .15 + dist * .045 + rnd() * .05);
+  }
+  R.out('#trick', th - .1, .2);
+  cue(th - .15, 'cascade', .8, 0, { dur: .45 });
+  // your pick
+  tl.set('#youRing', { x: gx(YOU % 10) - 10, y: gy(Math.floor(YOU / 10)) - 10 }, 0);
+  tl.set('#youTag', { x: gx(YOU % 10) - 8, y: gy(Math.floor(YOU / 10)) - 58 }, 0);
+  R.pop('#youRing', tp - .05, .3, 1.8, 'power3.out'); R.pop('#youTag', tp, .3, .3);
+  cue(tp - .05, 'select', 1, -.1);
+  tl.to(mds[YOU], { scale: 1.12, duration: .2, yoyo: true, repeat: 1 }, tp);
+  // the host opens 98 goats
+  R.flicker('#opened', to - .1, 3);
+  const order = [...Array(100).keys()].filter(i => i !== YOU && i !== OTHER);
+  for (let i = order.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [order[i], order[j]] = [order[j], order[i]]; }
+  const span = tg + .5 - to;
+  order.forEach((i, k) => {
+    const t = to + .05 + span * Math.pow(k / 97, .75);
+    tl.to(mds[i].querySelector('.mp'), { rotationY: -110, duration: .16, ease: 'power2.out' }, t);
+    if (k % 3 === 0) cue(t, 'flip', .5, ((i % 10) - 4.5) / 6);
+  });
+  const oc = { v: 0 };
+  tl.to(oc, { v: 98, duration: span + .1, ease: 'power1.in', onUpdate: () => { $('#opn').textContent = Math.round(oc.v); } }, to + .05);
+  tl.set('#opn', { textContent: '0' }, 0);
+  const tEnd = to + .05 + span + .1;
+  cue(tEnd, 'hit', .8);
+  tl.to(mds[OTHER], { boxShadow: '0 0 30px #ffd23f', duration: .2 }, tEnd);
+  tl.to(mds[OTHER], { scale: 1.2, duration: .18, yoyo: true, repeat: 1 }, tEnd);
+
+  // STICK OR SWITCH?  1 in 100 vs 99 in 100
+  const t9 = V('M09'), t1 = W('M09', 2), tk = W('M09', 5);
+  R.out('#opened', t9 - .15, .15); R.flicker('#stick', t9 - .05, 4); cue(t9 - .05, 'neon', .8);
+  order.forEach(i => tl.to(mds[i], { opacity: .1, duration: .3 }, t9 - .1));
+  R.out('#youRing, #youTag', t9 - .1, .15);
+  const big = (i, cx, cy, t) => {
+    const r = Math.floor(i / 10), c = i % 10;
+    tl.to(mds[i], { x: cx - (gx(c) + 33), y: cy - (gy(r) + 36), scale: 4.1, duration: .45, ease: 'power3.inOut', zIndex: 5 }, t);
+  };
+  big(YOU, 300, 640, t9 - .1); big(OTHER, 780, 640, t9 - .05); cue(t9 - .1, 'whoosh', .9);
+  R.slam('#pA', t1 - .05, 2, .18); cue(t1 + .13, 'slam', .8, -.4);
+  tl.to(mds[YOU], { opacity: .55, duration: .3 }, tk);
+  tl.to('#pA', { opacity: .45, duration: .3 }, tk);
+  R.slam('#pB', tk - .05, 2, .18); cue(tk + .13, 'slam', .9, .4); cue(tk + .3, 'ding', .8, .4);
+  tl.to(mds[OTHER], { filter: 'drop-shadow(0 0 16px #ffd23f)', duration: .2 }, tk + .1);
+  tl.to('#pB', { scale: 1.1, duration: .25, yoyo: true, repeat: 3, ease: 'sine.inOut' }, tk + .35);
+  tl.to(mds[OTHER], { rotation: 3, duration: .08, yoyo: true, repeat: 5 }, tk + .3);
+}
+
+/* ---------- 9 · same logic with 3 doors → door 2: the car ---------- */
+{
+  R.sceneIn('math', .15); R.sceneOut('math', .2);
+  const t0 = V('M10'), ty = W('M10', 6), ts = W('M10', 8), to = W('M10', 13), tl2 = W('M10', 15), td = W('M10', 19);
+  // doors come back (door 3 still open on its goat)
+  tl.set('#b1, #b2, #arrow, #arrowHd', { opacity: 0 }, S('math') - .05);
+  tl.set('#b1', { scale: 1, color: '#2ef0ff' }, S('math') - .05);
+  tl.set('#doors3', { x: 1150 }, S('math') - .02);
+  tl.to('#doors3', { x: 0, duration: .4, ease: 'power3.out' }, S('math')); cue(S('math'), 'whoosh', .9, .3);
+  R.flicker('#same', t0, 5); cue(t0, 'neon', .8);
+  badge('#b1', '1/3', S('math'));
+  tl.set('#b1', { scale: 2.2 }, S('math') - .04);
+  tl.to('#b1', { opacity: 1, scale: 1, duration: .2, ease: 'power4.in' }, ty - .05); cue(ty + .15, 'slam', .8, -.4);
+  tl.to('#b1', { scale: 1.15, duration: .15, yoyo: true, repeat: 3 }, ts);
+  // the other two-thirds
+  R.out('#same', to - .15, .15);
+  R.draw('#brace', to - .05, .35); cue(to - .05, 'swoosh', .7, .3);
+  R.pop('#braceLab', to + .15, .3, .3); cue(to + .2, 'ding', .7, .4);
+  // ...land on the last door
+  tl.to('#brace', { attr: { points: '405,570 405,530 675,530 675,570' }, duration: .45, ease: 'power3.inOut' }, tl2);
+  tl.to('#braceLab', { x: -160, duration: .45, ease: 'power3.inOut' }, tl2);
+  const sp = $('#sparks');
+  for (let i = 0; i < 16; i++) {
+    const d = div('abs', sp, null, 'left:0;top:0;width:18px;height:18px;border-radius:50%;background:#ffe27a;box-shadow:0 0 14px #ffc233');
+    const t = tl2 + i * .025, y0 = 700 + rnd() * 240;
+    tl.set(d, { opacity: 0, x: 850 + rnd() * 30, y: y0 }, 0);
+    tl.set(d, { opacity: 1 }, t);
+    tl.to(d, { x: 530 + rnd() * 30, duration: .4, ease: 'power1.inOut' }, t);
+    tl.to(d, { y: y0 - 160, duration: .2, ease: 'power1.out' }, t).to(d, { y: 760 + rnd() * 80, duration: .2, ease: 'power1.in' }, t + .2);
+    tl.to(d, { opacity: 0, duration: .05 }, t + .4);
+  }
+  cue(tl2, 'sparkle', .8, 0, { dur: .8 });
+  // door 2 opens: the car
+  tl.to('#brace, #braceLab', { opacity: 0, duration: .2 }, td - .1);
+  openDoor(2, td);
+  tl.to('#burst2', { opacity: 1, duration: .2 }, td).fromTo('#burst2', { rotation: 0 }, { rotation: 60, duration: 2.5, ease: 'none', immediateRender: false }, td);
+  R.flash(td + .02, .55, .45, '#fff2c0'); allBulbs(td); R.shake(td + .02, 16, .3);
+  cue(td + .02, 'fanfare', 1); cue(td + .02, 'reveal', .8);
+  tl.fromTo(prize(2), { y: 80, scale: .5 }, { y: 0, scale: 1.08, duration: .55, ease: 'back.out(2.4)', immediateRender: false }, td + .06);
+  R.flicker('#winT', td + .05, 5);
+  tl.to('#winT', { scale: 1.08, duration: .2, yoyo: true, repeat: 3 }, td + .4);
+  const cf = $('#confetti'), cc = ['#ff3ddb', '#2ef0ff', '#ffd23f', '#8cff5a', '#fff'];
+  for (let i = 0; i < 90; i++) {
+    const d = div('confetti', cf, null, `left:540px;top:760px;background:${cc[i % 5]}`);
+    const a = -Math.PI / 2 + (rnd() - .5) * 2.6, v = 400 + rnd() * 600, t = td + .04;
+    tl.set(d, { opacity: 0 }, 0); tl.set(d, { opacity: 1 }, t);
+    tl.to(d, { x: Math.cos(a) * v, rotation: rnd() * 720, duration: 1.3, ease: 'power2.out' }, t);
+    tl.to(d, { y: Math.sin(a) * v * .8, duration: .5, ease: 'power2.out' }, t).to(d, { y: Math.sin(a) * v * .8 + 700, duration: .9, ease: 'power2.in' }, t + .5);
+    tl.to(d, { opacity: 0, duration: .2 }, t + 1.2);
+  }
+  cue(td + .04, 'confetti', .7);
+  // out: doors slide away for the simulation
+  tl.to('#doors3', { x: -1150, duration: .35, ease: 'power3.in' }, E('math') - .3); cue(E('math') - .25, 'whoosh', .8, -.3);
+}
+
+/* ---------- 10 · 1,000 games ---------- */
+{
+  R.sceneIn('sim', .15); R.sceneOut('sim', .2);
+  const t0 = V('M11'), tr = W('M11', 3), tS = W('M11', 5), tW = W('M11', 9), tthird = W('M11', 8);
+  R.up('#gk', S('sim') + .05, .3, 16); R.flicker('#games', S('sim') + .1, 4);
+  R.up('#cStay, #cSw', S('sim') + .15, .35, 40, .08);
+  // play 1,000 games (seeded)
+  let s = 1990; const r3 = () => { s = (s * 16807) % 2147483647; return s % 3; };
+  const res = []; for (let g = 0; g < 1000; g++) { const car = r3(), pick = r3(); res.push(car !== pick); }
+  const cvs = $('#simc'), cx = cvs.getContext('2d');
+  const draw = n => {
+    cx.clearRect(0, 0, 840, 525);
+    let sw = 0;
+    for (let i = 0; i < 1000; i++) {
+      const x = 10.5 + (i % 40) * 21, y = 10.5 + Math.floor(i / 40) * 21;
+      cx.beginPath(); cx.arc(x, y, 7.5, 0, 6.2832);
+      if (i < n) { cx.fillStyle = res[i] ? '#ffd23f' : '#2ef0ff'; if (res[i]) sw++; } else cx.fillStyle = 'rgba(185,167,255,.16)';
+      cx.fill();
+    }
+    const k = Math.max(1, Math.floor(n));
+    $('#games').textContent = 'GAME ' + Math.floor(n).toLocaleString('en-US');
+    $('#pStay').textContent = n < 1 ? '0%' : (100 * (Math.floor(n) - sw) / k).toFixed(1) + '%';
+    $('#pSw').textContent = n < 1 ? '0%' : (100 * sw / k).toFixed(1) + '%';
+  };
+  draw(0);
+  const sim = { n: 0 };
+  tl.to(sim, { n: 1000, duration: tthird + .1 - (t0 + .1), ease: 'power2.in', onUpdate: () => draw(sim.n) }, t0 + .1);
+  cue(t0 + .1, 'simrun', .8, 0, { dur: tthird + .1 - (t0 + .1) });
+  cue(tthird + .12, 'hit', .8);
+  tl.to('#simc', { scale: 1.03, duration: .15, yoyo: true, repeat: 1 }, tthird + .12);
+  // staying wins a third · switching wins two-thirds
+  tl.to('#cStay', { scale: 1.07, duration: .2, yoyo: true, repeat: 1 }, tS); cue(tS, 'blip', .6, -.4, { f: 520 });
+  tl.to('#cStay', { opacity: .55, duration: .3 }, tW - .1);
+  tl.to('#cSw', { scale: 1.1, duration: .25, ease: 'back.out(3)' }, tW - .05);
+  tl.to('#cSw', { boxShadow: '0 0 40px #ffd23f, 0 0 90px #ffb300', duration: .2 }, tW - .05);
+  R.pop('#crown', tW + .05, .35, .2); tl.to('#crown', { rotation: 10, duration: .15, yoyo: true, repeat: 5 }, tW + .4);
+  cue(tW - .05, 'win', 1, .4); R.flash(tW, .3, .35, '#ffe9a0'); allBulbs(tW);
+}
+
+/* ---------- 11 · still think it's 50/50?  → reset for the loop ---------- */
+{
+  R.sceneIn('cta', .15);
+  const t0 = V('M12'), tf = W('M12', 3), tt = W('M12', 4), end = VE('M12');
+  // doors come back closed, as at the start
+  tl.set('#d2 .dpanel, #d3 .dpanel', { rotationY: 0 }, S('cta') - .05);
+  tl.set(glow(2) + ',' + glow(3), { opacity: 0 }, S('cta') - .05);
+  tl.set('#burst2, #burst3, #b1, #b2, #ring1, #you1, #confetti, #sparks', { opacity: 0 }, S('cta') - .05);
+  tl.set('#d1', { y: 0 }, S('cta') - .05);
+  tl.set('#doors3', { x: 1150 }, S('cta') - .03);
+  tl.to('#doors3', { x: 0, duration: .38, ease: 'power3.out' }, S('cta')); cue(S('cta'), 'whoosh', .8, .3);
+  R.flicker('#cta1', t0 - .05, 4); cue(t0 - .05, 'neon', .8);
+  R.slam('#cta2', tf - .1, 2.2, .2); cue(tf + .1, 'slam', 1); R.shake(tf + .1, 16, .25);
+  tl.to('#cta2', { rotation: -3, duration: .12, yoyo: true, repeat: 5, ease: 'sine.inOut' }, tf + .3);
+  badge('#b1', '50%', S('cta')); badge('#b2', '50%', S('cta'));
+  tl.set('#b1, #b2', { color: '#fff', scale: 1, textShadow: '0 0 12px rgba(255,255,255,.7)' }, S('cta') - .04);
+  tl.set('#b1, #b2', { opacity: 0, scale: 2 }, S('cta') - .03);
+  tl.to('#b1, #b2', { opacity: 1, scale: 1, duration: .18, ease: 'power4.in', stagger: .08 }, tf + .05);
+  tl.to('#b1 .bt, #b2 .bt', { opacity: .3, duration: .06, yoyo: true, repeat: 7 }, tf + .4);
+  // comment bubble
+  R.pop('#bub', tt - .05, .35, .2); cue(tt - .05, 'pop', 1, .6);
+  $$('.dot3').forEach((d, i) => { for (let k = 0; k < 4; k++) tl.to(d, { y: -14, duration: .14, yoyo: true, repeat: 1, ease: 'sine.inOut' }, tt + .25 + i * .1 + k * .45); });
+  tl.to('#bub', { y: 30, duration: .3, yoyo: true, repeat: 2, ease: 'sine.inOut' }, tt + .3);
+  // the reset: everything falls away so the loop restarts on the door slam
+  const tr = end + .3;
+  R.out('#cta1, #cta2, #bub', tr, .2, { y: -60 });
+  tl.to('#b1, #b2', { opacity: 0, duration: .15 }, tr);
+  [1, 2, 3].forEach((i, k) => tl.to('#d' + i, { y: 1300, rotation: (k - 1) * 8, duration: .42, ease: 'power3.in' }, tr + .05 + k * .06));
+  cue(tr, 'fall', 1);
+}
+
+R.captions($('#caps'));
+tl.set('#black', { opacity: 0 }, 0);
+R.finish('monty');
+</script>
+</body>
+</html>
