@@ -1,749 +1,750 @@
 1
-00:00:00,500 --> 00:00:04,470
+00:00:00,534 --> 00:00:05,474
 Every Monday morning, at exactly six
 a.m., Daniel Hale got an email from
 
 2
-00:00:04,490 --> 00:00:06,080
+00:00:05,494 --> 00:00:07,201
 someone he'd never met.
 
 3
-00:00:06,304 --> 00:00:10,194
+00:00:07,481 --> 00:00:12,421
 It was always one sentence. What
 the stock market would do that week.
 
 4
-00:00:10,400 --> 00:00:13,470
+00:00:12,991 --> 00:00:16,571
 Up. Down. Down. Up.
 
 5
-00:00:13,670 --> 00:00:16,090
+00:00:16,771 --> 00:00:20,261
 The sender was never wrong. Not once.
 
 6
-00:00:16,110 --> 00:00:17,650
+00:00:20,281 --> 00:00:22,241
 Ten weeks in a row.
 
 7
-00:00:17,850 --> 00:00:21,420
+00:00:22,491 --> 00:00:26,561
 The odds of guessing that are one
 in one thousand and twenty-four.
 
 8
-00:00:21,632 --> 00:00:25,782
+00:00:26,771 --> 00:00:32,162
 On the eleventh Monday, the email
 asked for fifty thousand dollars.
 
 9
-00:00:25,983 --> 00:00:29,293
+00:00:32,442 --> 00:00:36,822
 Daniel had a wife, a mortgage, and
 a daughter about to start college.
 
 10
-00:00:29,313 --> 00:00:32,503
+00:00:36,842 --> 00:00:40,312
 And ten perfect predictions
 sitting in his inbox.
 
 11
-00:00:32,847 --> 00:00:34,617
+00:00:40,672 --> 00:00:42,982
 Nobody knows who sent those emails.
 
 12
-00:00:34,637 --> 00:00:37,847
+00:00:43,152 --> 00:00:46,713
 But by the end of this, you'll
 know exactly how it worked.
 
 13
-00:00:43,706 --> 00:00:46,326
+00:00:52,633 --> 00:00:55,743
 The first one arrived
 on a Monday in March.
 
 14
-00:00:46,526 --> 00:00:51,026
+00:00:56,093 --> 00:01:02,633
 No logo. No link. No name. Just a
 subject line that said: Week one.
 
 15
-00:00:51,046 --> 00:00:52,796
+00:01:02,653 --> 00:01:04,380
 And a single sentence.
 
 16
-00:00:53,007 --> 00:00:55,177
+00:01:04,670 --> 00:01:06,930
 The market will go down this week.
 
 17
-00:00:55,393 --> 00:00:57,901
+00:01:07,250 --> 00:01:11,150
 Daniel read it twice. He
 always reads things twice.
 
 18
-00:00:57,921 --> 00:00:59,343
+00:01:11,170 --> 00:01:12,561
 Then he deleted it.
 
 19
-00:00:59,549 --> 00:01:01,879
+00:01:12,831 --> 00:01:15,731
 That Friday, the market closed down.
 
 20
-00:01:02,091 --> 00:01:03,678
+00:01:16,051 --> 00:01:18,498
 He didn't notice. Why would he?
 
 21
-00:01:03,698 --> 00:01:05,941
+00:01:18,518 --> 00:01:21,121
 It was a coin flip, and the coin landed.
 
 22
-00:01:06,149 --> 00:01:08,749
+00:01:21,381 --> 00:01:24,961
 The next Monday, at six
 a.m., the phone lit up again.
 
 23
-00:01:08,769 --> 00:01:11,039
+00:01:24,981 --> 00:01:27,761
 Week two. The market will go up.
 
 24
-00:01:11,250 --> 00:01:12,400
+00:01:28,041 --> 00:01:29,391
 It went up.
 
 25
-00:01:12,600 --> 00:01:15,270
+00:01:29,641 --> 00:01:33,281
 Week three. Down. It went down.
 
 26
-00:01:15,616 --> 00:01:18,516
+00:01:33,641 --> 00:01:37,671
 By week four, Daniel had
 stopped deleting them.
 
 27
-00:01:20,442 --> 00:01:23,682
+00:01:39,601 --> 00:01:43,861
 To understand what happened next,
 you have to understand Daniel.
 
 28
-00:01:24,041 --> 00:01:27,292
+00:01:44,201 --> 00:01:48,181
 Forty-four years old. He scheduled
 trucks for a freight company outside
 
 29
-00:01:27,312 --> 00:01:30,391
+00:01:48,201 --> 00:01:51,602
 Columbus. Same desk for twenty-two years.
 
 30
-00:01:30,600 --> 00:01:32,608
+00:01:51,802 --> 00:01:54,892
 His wife, Maya, worked nights as a nurse.
 
 31
-00:01:32,628 --> 00:01:36,130
+00:01:54,912 --> 00:01:58,622
 They traded off the car, the
 dishes, and the worrying.
 
 32
-00:01:36,356 --> 00:01:39,304
+00:01:58,822 --> 00:02:02,962
 And their daughter, Lily, had just
 been accepted to an engineering program
 
 33
-00:01:39,324 --> 00:01:41,036
+00:02:02,982 --> 00:02:04,762
 four hundred miles away.
 
 34
-00:01:41,236 --> 00:01:44,386
+00:02:05,002 --> 00:02:08,992
 The tuition letter came the
 same week as email number four.
 
 35
-00:01:44,608 --> 00:01:46,398
+00:02:09,272 --> 00:02:11,892
 Daniel had a spreadsheet for everything.
 
 36
-00:01:46,418 --> 00:01:49,598
+00:02:11,912 --> 00:02:16,292
 The mortgage. The car.
 And one tab called Lily.
 
 37
-00:01:49,618 --> 00:01:53,598
+00:02:16,312 --> 00:02:20,692
 Fifty-two thousand dollars, saved
 one paycheck at a time, since the day
 
 38
-00:01:53,618 --> 00:01:54,808
+00:02:20,712 --> 00:02:21,872
 she was born.
 
 39
-00:01:55,016 --> 00:01:57,206
+00:02:22,262 --> 00:02:25,442
 So he did what anyone with
 a spreadsheet would do.
 
 40
-00:01:57,226 --> 00:01:59,256
+00:02:25,462 --> 00:02:27,702
 He started tracking the emails.
 
 41
-00:01:59,480 --> 00:02:03,510
+00:02:27,952 --> 00:02:32,682
 Week four said up. It
 went up. Four for four.
 
 42
-00:02:03,713 --> 00:02:05,883
+00:02:32,882 --> 00:02:35,862
 On week five, the email said down.
 
 43
-00:02:05,903 --> 00:02:09,333
+00:02:35,912 --> 00:02:40,152
 And for the first time in his life,
 Daniel bet against the market.
 
 44
-00:02:09,555 --> 00:02:12,735
+00:02:40,592 --> 00:02:44,519
 Five hundred dollars. If
 the market fell, he'd win.
 
 45
-00:02:12,755 --> 00:02:15,025
+00:02:44,539 --> 00:02:47,025
 If it rose, he'd lose all of it.
 
 46
-00:02:15,226 --> 00:02:19,666
+00:02:47,225 --> 00:02:54,695
 On Friday, the market fell. Daniel made
 eleven hundred dollars before lunch.
 
 47
-00:02:19,866 --> 00:02:23,396
+00:02:55,095 --> 00:03:00,485
 Five for five. And that's when
 the emails started using his name.
 
 48
-00:02:25,310 --> 00:02:27,423
+00:03:02,515 --> 00:03:05,375
 Week six. Good morning, Daniel.
 
 49
-00:02:27,443 --> 00:02:28,220
+00:03:05,395 --> 00:03:06,145
 Up.
 
 50
-00:02:28,421 --> 00:02:31,201
+00:03:06,478 --> 00:03:09,125
 He bet two thousand dollars. It went up.
 
 51
-00:02:31,544 --> 00:02:34,181
+00:03:09,405 --> 00:03:12,345
 Week seven. Down. He bet four thousand.
 
 52
-00:02:34,201 --> 00:02:35,404
+00:03:12,365 --> 00:03:13,505
 It went down.
 
 53
-00:02:35,612 --> 00:02:37,741
+00:03:13,785 --> 00:03:16,615
 He told his best friend,
 Marcus, over a beer.
 
 54
-00:02:37,761 --> 00:02:40,600
+00:03:17,145 --> 00:03:20,725
 Marcus laughed. Then Marcus
 asked to see the emails.
 
 55
-00:02:40,620 --> 00:02:42,682
+00:03:20,745 --> 00:03:22,825
 Then Marcus stopped laughing.
 
 56
-00:02:42,903 --> 00:02:44,593
+00:03:23,135 --> 00:03:25,435
 Here's what was going on in Daniel's head.
 
 57
-00:02:44,613 --> 00:02:47,187
+00:03:25,455 --> 00:03:28,795
 And honestly, it's what
 would be going on in yours.
 
 58
-00:02:47,387 --> 00:02:50,178
+00:03:29,075 --> 00:03:32,863
 One right guess is luck.
 Two is a coincidence.
 
 59
-00:02:50,198 --> 00:02:53,008
+00:03:32,883 --> 00:03:36,396
 But every week, the streak
 got harder to explain.
 
 60
-00:02:53,231 --> 00:02:55,438
+00:03:36,746 --> 00:03:39,926
 Five in a row: one in thirty-two.
 
 61
-00:02:55,458 --> 00:02:57,491
+00:03:39,946 --> 00:03:42,806
 Seven: one in a hundred and twenty-eight.
 
 62
-00:02:57,511 --> 00:03:00,221
+00:03:42,826 --> 00:03:46,158
 Eight: one in two hundred and fifty-six.
 
 63
-00:03:00,443 --> 00:03:03,403
+00:03:46,438 --> 00:03:50,708
 Week eight said up. Daniel
 bet ten thousand dollars.
 
 64
-00:03:03,423 --> 00:03:05,673
+00:03:50,891 --> 00:03:53,548
 The most he had ever risked on anything.
 
 65
-00:03:05,879 --> 00:03:07,859
+00:03:54,488 --> 00:03:57,174
 It went up. Eight for eight.
 
 66
-00:03:08,059 --> 00:03:10,089
+00:03:57,812 --> 00:04:00,234
 Week nine almost broke him.
 
 67
-00:03:12,008 --> 00:03:13,628
+00:04:02,194 --> 00:04:04,034
 Week nine said up.
 
 68
-00:03:13,829 --> 00:03:16,656
+00:04:04,244 --> 00:04:09,152
 On Monday, the market dropped.
 Tuesday, it dropped again.
 
 69
-00:03:16,676 --> 00:03:19,479
+00:04:09,172 --> 00:04:12,594
 By Thursday, it had its
 worst day in months.
 
 70
-00:03:19,701 --> 00:03:22,888
+00:04:12,854 --> 00:04:16,802
 Daniel stopped sleeping. He refreshed
 the chart in the bathroom at work.
 
 71
-00:03:22,908 --> 00:03:25,631
+00:04:16,822 --> 00:04:20,014
 He had twelve thousand
 dollars riding on this one.
 
 72
-00:03:25,848 --> 00:03:28,281
+00:04:20,614 --> 00:04:24,274
 Friday. Three p.m. One hour left.
 
 73
-00:03:28,301 --> 00:03:29,478
+00:04:24,294 --> 00:04:25,634
 Still down.
 
 74
-00:03:29,690 --> 00:03:32,650
+00:04:25,884 --> 00:04:29,624
 And then, in the last forty
 minutes, the market turned.
 
 75
-00:03:32,670 --> 00:03:36,660
+00:04:29,644 --> 00:04:34,454
 A speech, a rumor, a rate.
 Nobody could really explain it.
 
 76
-00:03:36,860 --> 00:03:38,797
+00:04:34,654 --> 00:04:37,504
 At four o'clock, the market closed up.
 
 77
-00:03:38,817 --> 00:03:40,610
+00:04:37,914 --> 00:04:40,094
 By less than half a percent.
 
 78
-00:03:40,810 --> 00:03:42,300
+00:04:40,494 --> 00:04:42,464
 Nine for nine.
 
 79
-00:03:42,503 --> 00:03:44,373
+00:04:42,744 --> 00:04:45,444
 That night, Daniel didn't celebrate.
 
 80
-00:03:44,393 --> 00:03:47,293
+00:04:45,464 --> 00:04:48,890
 He sat in his car in the
 driveway, and he said it out loud.
 
 81
-00:03:47,313 --> 00:03:48,883
+00:04:49,512 --> 00:04:50,584
 Who are you?
 
 82
-00:03:50,783 --> 00:03:54,033
+00:04:52,544 --> 00:04:56,824
 Week ten. Down. Of course it went down.
 
 83
-00:03:54,233 --> 00:03:57,503
+00:04:57,094 --> 00:05:02,194
 Ten for ten. One in one
 thousand and twenty-four.
 
 84
-00:03:57,722 --> 00:04:01,452
+00:05:02,394 --> 00:05:07,304
 And on the eleventh Monday, at
 six a.m., there was no prediction.
 
 85
-00:04:01,661 --> 00:04:02,951
+00:05:07,744 --> 00:05:09,554
 There was an offer.
 
 86
-00:04:03,159 --> 00:04:06,329
+00:05:09,844 --> 00:05:13,851
 You've seen what I can do.
 Fifty-two more weeks of predictions.
 
 87
-00:04:06,349 --> 00:04:08,139
+00:05:13,871 --> 00:05:16,272
 The fee is fifty thousand dollars.
 
 88
-00:04:08,159 --> 00:04:09,669
+00:05:16,292 --> 00:05:17,784
 You have until Friday.
 
 89
-00:04:10,015 --> 00:04:14,125
+00:05:18,304 --> 00:05:23,014
 Fifty thousand. Almost exactly
 the number on the tab called Lily.
 
 90
-00:04:14,328 --> 00:04:17,814
+00:05:23,585 --> 00:05:27,354
 Daniel ran the numbers. If the predictions
 kept coming, fifty thousand could
 
 91
-00:04:17,834 --> 00:04:20,128
+00:05:27,374 --> 00:05:30,044
 become half a million
 by the end of the year.
 
 92
-00:04:20,148 --> 00:04:22,058
+00:05:30,401 --> 00:05:32,594
 College, ten times over.
 
 93
-00:04:22,264 --> 00:04:24,664
+00:05:33,034 --> 00:05:36,024
 Maya found the spreadsheet
 on Thursday night.
 
 94
-00:04:24,864 --> 00:04:27,934
+00:05:36,294 --> 00:05:40,604
 She asked him one question.
 How do you know he's real?
 
 95
-00:04:28,155 --> 00:04:30,185
+00:05:40,854 --> 00:05:44,204
 And Daniel said the
 only thing he could say.
 
 96
-00:04:30,205 --> 00:04:32,195
+00:05:45,307 --> 00:05:47,534
 Because he's never been wrong.
 
 97
-00:04:32,398 --> 00:04:34,878
+00:05:47,764 --> 00:05:51,034
 On Friday morning, he wired the money.
 
 98
-00:04:35,087 --> 00:04:37,607
+00:05:51,267 --> 00:05:54,687
 But Daniel never asked the
 one question that mattered.
 
 99
-00:04:37,627 --> 00:04:41,517
+00:05:54,707 --> 00:06:00,414
 Not, how was he right? But, how
 many people did he start with?
 
 100
-00:04:43,425 --> 00:04:46,115
+00:06:02,374 --> 00:06:05,394
 Let's go back to the very first Monday.
 
 101
-00:04:46,315 --> 00:04:48,648
+00:06:05,704 --> 00:06:09,124
 That morning, the email
 didn't go to just Daniel.
 
 102
-00:04:48,668 --> 00:04:51,925
+00:06:09,144 --> 00:06:12,864
 It went to ten thousand, two
 hundred and forty people.
 
 103
-00:04:52,149 --> 00:04:54,159
+00:06:13,134 --> 00:06:15,674
 Half of them were told
 the market would go up.
 
 104
-00:04:54,179 --> 00:04:56,379
+00:06:15,694 --> 00:06:18,114
 The other half were told it would go down.
 
 105
-00:04:56,605 --> 00:04:58,275
+00:06:18,314 --> 00:06:21,164
 On Friday, one group was right.
 
 106
-00:04:58,295 --> 00:05:00,945
+00:06:21,184 --> 00:06:24,113
 The other group never heard
 from the prophet again.
 
 107
-00:05:01,169 --> 00:05:04,282
-Week one. Five thousand, one
-hundred and twenty people left.
+00:06:24,393 --> 00:06:28,613
+After week one, five thousand, one
+hundred and twenty people were left.
 
 108
-00:05:04,302 --> 00:05:07,189
+00:06:28,633 --> 00:06:31,703
 Split them in half again. Up. Down.
 
 109
-00:05:07,389 --> 00:05:10,107
-Week two: two thousand,
+00:06:31,943 --> 00:06:35,603
+After week two: two thousand,
 five hundred and sixty.
 
 110
-00:05:10,127 --> 00:05:12,034
+00:06:35,623 --> 00:06:38,003
 Week three: twelve hundred and eighty.
 
 111
-00:05:12,054 --> 00:05:14,305
+00:06:38,023 --> 00:06:40,553
 Week four: six hundred and forty.
 
 112
-00:05:14,527 --> 00:05:16,767
+00:06:40,993 --> 00:06:44,653
 Every single week, half
 the believers vanished.
 
 113
-00:05:16,787 --> 00:05:19,437
+00:06:44,673 --> 00:06:48,133
 And the ones who were
 left saw a perfect record.
 
 114
-00:05:19,649 --> 00:05:22,829
-Week eight: forty. Week nine: twenty.
+00:06:48,333 --> 00:06:53,513
+After week eight: forty.
+Week nine: twenty.
 
 115
-00:05:22,849 --> 00:05:24,119
+00:06:54,195 --> 00:06:55,383
 Week ten…
 
 116
-00:05:24,319 --> 00:05:28,166
+00:06:55,663 --> 00:07:00,483
 Ten people. Ten people who had watched
 someone predict the market ten times
 
 117
-00:05:28,186 --> 00:05:29,949
+00:07:00,503 --> 00:07:02,903
 in a row. Perfectly.
 
 118
-00:05:30,173 --> 00:05:32,327
+00:07:03,263 --> 00:07:06,336
 Daniel wasn't chosen. He survived.
 
 119
-00:05:32,347 --> 00:05:36,311
+00:07:06,356 --> 00:07:10,603
 Like a coin that lands heads ten times
 in a row, because ten thousand coins
 
 120
-00:05:36,331 --> 00:05:37,513
+00:07:10,623 --> 00:07:11,709
 were flipped.
 
 121
-00:05:37,723 --> 00:05:40,223
+00:07:11,996 --> 00:07:14,559
 The prophet didn't know
 anything about the market.
 
 122
-00:05:40,243 --> 00:05:44,496
+00:07:14,579 --> 00:07:19,679
 Not one thing. Every prediction was a
 guess, split so that someone was always
 
 123
-00:05:44,516 --> 00:05:45,293
+00:07:19,699 --> 00:07:20,599
 right.
 
 124
-00:05:45,502 --> 00:05:47,695
+00:07:20,879 --> 00:07:23,739
 This trick is real,
 and it even has a name.
 
 125
-00:05:47,715 --> 00:05:51,130
+00:07:23,759 --> 00:07:27,779
 In Jordan Ellenberg's book, How Not
 to Be Wrong, it's the parable of the
 
 126
-00:05:51,150 --> 00:05:54,882
+00:07:27,799 --> 00:07:32,139
 Baltimore stockbroker. Ten thousand,
 two hundred and forty letters.
 
 127
-00:05:54,902 --> 00:05:56,732
+00:07:32,159 --> 00:07:34,211
 Ten perfect records.
 
 128
-00:05:57,086 --> 00:06:00,306
+00:07:34,548 --> 00:07:38,301
 In two thousand eight, the magician
 Derren Brown did a version of it on
 
 129
-00:06:00,326 --> 00:06:02,329
+00:07:38,321 --> 00:07:40,781
 British television, with horse races.
 
 130
-00:06:02,349 --> 00:06:05,024
+00:07:40,801 --> 00:07:43,981
 Seven thousand, seven hundred
 and seventy-six people.
 
 131
-00:06:05,044 --> 00:06:08,706
+00:07:44,001 --> 00:07:48,651
 Five races. One woman left,
 convinced she'd found a system.
 
 132
-00:06:08,912 --> 00:06:11,482
+00:07:48,911 --> 00:07:52,651
 And it costs almost
 nothing. An email is free.
 
 133
-00:06:11,502 --> 00:06:15,592
+00:07:52,671 --> 00:07:57,251
 Out of ten perfect records, the
 prophet only needs a few to say yes.
 
 134
-00:06:15,792 --> 00:06:19,745
+00:07:57,681 --> 00:08:03,101
 Seven of the ten paid. Three hundred
 and fifty thousand dollars, for ten
 
 135
-00:06:19,765 --> 00:06:21,422
+00:08:03,121 --> 00:08:04,851
 weeks of coin flips.
 
 136
-00:06:23,486 --> 00:06:26,946
+00:08:06,751 --> 00:08:11,391
 Week twelve's email said up.
 The market fell three percent.
 
 137
-00:06:27,162 --> 00:06:30,172
+00:08:11,741 --> 00:08:15,271
 Week thirteen, there was no email at all.
 
 138
-00:06:30,396 --> 00:06:32,426
+00:08:15,521 --> 00:08:18,541
 Daniel wrote back. The address bounced.
 
 139
-00:06:32,446 --> 00:06:34,856
+00:08:18,561 --> 00:08:21,841
 The account was gone. So was the money.
 
 140
-00:06:35,077 --> 00:06:37,340
+00:08:22,071 --> 00:08:24,851
 He told Maya in the kitchen, at six a.m.
 
 141
-00:06:37,360 --> 00:06:40,377
+00:08:24,871 --> 00:08:28,441
 on a Monday. The same time
 the emails used to come.
 
 142
-00:06:40,581 --> 00:06:44,542
+00:08:28,671 --> 00:08:33,211
 Lily still went to college. Two years
 at a community college first, working
 
 143
-00:06:44,562 --> 00:06:46,451
+00:08:33,231 --> 00:08:35,861
 weekends. She's an engineer now.
 
 144
-00:06:46,471 --> 00:06:48,521
+00:08:35,924 --> 00:08:37,881
 She doesn't talk about that spring.
 
 145
-00:06:48,864 --> 00:06:51,534
+00:08:38,141 --> 00:08:42,281
 And Daniel? He still wakes
 up every Monday at six.
 
 146
-00:06:51,554 --> 00:06:54,474
+00:08:42,301 --> 00:08:46,012
 Not because he believes.
 Because he can't stop.
 
 147
-00:06:54,698 --> 00:06:56,848
+00:08:46,292 --> 00:08:48,672
 Here's the part that isn't fiction.
 
 148
-00:06:57,062 --> 00:07:01,042
+00:08:48,902 --> 00:08:53,282
 In twenty twenty-four, Americans
 reported losing five point seven billion
 
 149
-00:07:01,062 --> 00:07:04,999
+00:08:53,302 --> 00:08:57,402
 dollars to investment scams. More than
 any other kind of fraud, according
 
 150
-00:07:05,019 --> 00:07:06,702
+00:08:57,422 --> 00:08:59,256
 to the Federal Trade Commission.
 
 151
-00:07:07,061 --> 00:07:08,731
+00:08:59,486 --> 00:09:02,266
 Today, the prophet doesn't need email.
 
 152
-00:07:08,751 --> 00:07:10,998
+00:09:02,286 --> 00:09:05,146
 He runs a trading group.
 A signals channel.
 
 153
-00:07:11,018 --> 00:07:13,767
+00:09:05,166 --> 00:09:08,516
 An account with screenshots
 of a perfect record.
 
 154
-00:07:13,967 --> 00:07:17,187
+00:09:08,856 --> 00:09:13,316
 So if a perfect record ever finds
 you, don't ask how they were right.
 
 155
-00:07:17,207 --> 00:07:19,317
+00:09:13,336 --> 00:09:15,787
 Ask how many people they started with.
 
 156
-00:07:20,096 --> 00:07:23,890
+00:09:16,147 --> 00:09:20,147
 Because you never see the
 people who got the other email.
 
 157
-00:07:25,843 --> 00:07:29,641
+00:09:22,069 --> 00:09:26,277
 At the start, I told you nobody
 knows who sent those emails.
 
 158
-00:07:30,299 --> 00:07:32,029
+00:09:26,917 --> 00:09:29,307
 That isn't quite true.
 
 159
-00:07:32,586 --> 00:07:35,767
+00:09:29,857 --> 00:09:33,357
 How do you think I know
 Daniel reads everything twice?
 
 160
-00:07:35,787 --> 00:07:38,807
+00:09:33,377 --> 00:09:37,327
 That he sat in his car in the
 driveway, asking who I was?
 
 161
-00:07:38,827 --> 00:07:41,513
+00:09:37,361 --> 00:09:40,017
 That exactly seven of the ten paid?
 
 162
-00:07:42,819 --> 00:07:45,059
+00:09:41,420 --> 00:09:44,617
 Because I wrote them. Every single one.
 
 163
-00:07:45,079 --> 00:07:47,629
+00:09:44,637 --> 00:09:47,847
 All ten thousand, two hundred and forty.
 
 164
-00:07:48,293 --> 00:07:51,303
+00:09:48,337 --> 00:09:51,807
 Daniel was number four
 thousand and ninety-one.
 
 165
-00:07:51,503 --> 00:07:54,553
+00:09:52,107 --> 00:09:56,243
 And next Monday, at six
 a.m., I start again.
 
 166
-00:07:55,427 --> 00:07:56,807
+00:09:57,013 --> 00:09:58,703
 Check your inbox.

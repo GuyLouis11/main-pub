@@ -118,8 +118,8 @@ S = [
 
 EST = 2.55   # words per second for estimates
 # per-scene pacing overrides (dramatic pauses in the confession)
-PACE = {"ask": {"gap": .8}, "turn": {"gap": 1.0}, "how": {"lead": .5, "tail": .9},
-        "sender": {"lead": 1.0, "gap": 1.0}, "again": {"gap": 1.2, "tail": 2.6}}
+PACE = {"turn": {"gap": .8}, "how": {"lead": .5, "tail": .9},
+        "sender": {"lead": .8, "gap": .8}, "again": {"gap": 1.0, "tail": 2.6}}
 
 
 def main():

@@ -1,6 +1,6 @@
 # Upload package — THE PROPHET (long-form)
 
-**File:** `deliveries/The_Prophet_1080p.mp4` · 1920×1080 · 8:15 · mid-roll eligible (over 8 min)
+**File:** `deliveries/The_Prophet_1080p.mp4` · 1920×1080 · 10:17 · mid-roll eligible (over 8 min)
 **Captions:** `prophet/captions/The_Prophet.en.srt` (upload as English subtitles)
 **Thumbnails:** `prophet/thumbnails/thumb_A.png` (main) · `thumb_B.png` · `thumb_C.png` (use YouTube "Test & compare" with all three)
 **Visibility:** Private (Guy publishes manually) · **Made for kids:** No · **Category:** Education
@@ -18,14 +18,14 @@ Every Monday at 6 a.m., Daniel got an email from a stranger predicting what the 
 This is a fictional story built on a very real scam. Watch to the end.
 
 00:00 The emails
-00:41 Week One
-01:18 Daniel
-02:23 The Believer
-03:10 Week Nine
-03:48 The Offer
-04:41 10,240
-06:21 Monday
-07:23 The Sender
+00:50 Week One
+01:37 Daniel
+03:00 The Believer
+04:00 Week Nine
+04:50 The Offer
+06:00 10,240
+08:04 Monday
+09:20 The Sender
 
 Daniel is fictional. The math, and the scam, are real.
 Sources: Jordan Ellenberg, *How Not to Be Wrong* (2014), "the Baltimore stockbroker" · Derren Brown: *The System* (Channel 4, 2008) · Federal Trade Commission, Consumer Sentinel data (2024): $5.7B reported lost to investment scams.

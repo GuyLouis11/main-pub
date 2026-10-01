@@ -22,7 +22,10 @@ node tools/thumbs.mjs              # thumbnails/thumb_A|B|C.png
 ```
 
 ## Status
-Fully narrated. The ending (P86–P93) uses eleven_v3 delivery tags (`DIRECT` in `tools/vo.py`) for a slower, quieter
-confession, and per-scene pauses (`PACE` in `tools/script.py`).
-Fallback if narration is ever unavailable: `tools/typed.py` writes silent, reading-paced takes with word timings and
-`*.PLACEHOLDER` markers. Lines with a marker appear as a typed confession on screen (`confess()` in `scenes/c6.js`).
+Fully narrated with **Eleven v4** in a theatrical read. `tools/direction.py` holds every line with inline audio tags
+(emotion, character voices for quoted lines, whispers), and `vo.py` maps the alignment back to the script words.
+Excited directions pushed this voice 7–11 semitones high, so those lines are anchored with "low, steady". After
+retakes, every line sits within about ±3 semitones of the narrator's median. Per-scene pauses live in `PACE` in
+`tools/script.py`.
+To regenerate one line: `XI_KEY=... python3 tools/vo.py --force P26`, or stage takes first with `VO_DIR=...`.
+Fallback if narration is ever unavailable: `tools/typed.py` (typed on-screen confession for `*.PLACEHOLDER` lines).
