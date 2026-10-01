@@ -23,14 +23,17 @@ import numpy as np
 import soundfile as sf
 
 VOICE = "apOzcbHULxCnvWfHPd41"
-MODEL = "eleven_v3"
+MODEL = os.environ.get("XI_MODEL", "eleven_v4")   # eleven_v4 reads the theatrical script in tools/direction.py
 SETTINGS = {"stability": 0.5, "similarity_boost": 0.75}
 FMT = "mp3_44100_192"
 SR = 48000
 LUFS = -17.0
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
+VO_DIR = os.environ.get("VO_DIR", os.path.join(ROOT, "assets", "vo"))   # stage takes elsewhere with VO_DIR=...
 # spoken form of display tokens (captions keep the display form); trailing .,?!: are carried over
 SAY = {}
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from direction import PERF   # noqa: E402
 # eleven_v3 delivery tags (not spoken); lines listed here keep the slowest clean take of `tries`
 DIRECT = {"P86": "[slowly]", "P87": "[quietly, slowly]", "P89": "[slowly, knowing]"}
 
@@ -79,10 +82,31 @@ def frames_db(x, hop):
     return 20 * np.log10(np.sqrt((x[:n * hop].reshape(n, hop) ** 2).mean(1)) + 1e-9)
 
 
-def take(text, key, tries=3, tag=""):
+def performance(toks, perf):
+    """interleave inline [tags] from a performance line with the display tokens; returns spoken text and each
+    token's character offset in it"""
+    pieces = [p.strip() for p in re.split(r"(\[[^\]]*\])", perf) if p.strip()]
+    words = [w for p in pieces if not p.startswith("[") for w in p.split()]
+    assert [w.replace("*", "") for w in words] == [t[0] for t in toks], f"performance text differs from the script: {perf}"
+    out, offs, k = [], [], 0
+    for p in pieces:
+        if p.startswith("["):
+            out.append(p); continue
+        for _ in p.split():
+            offs.append(len(" ".join(out)) + (1 if out else 0)); out.append(toks[k][1]); k += 1
+    return " ".join(out), offs
+
+
+def take(text, key, tries=3, tag="", perf=None):
     toks = tokens(text)
-    pre = tag + " " if tag else ""
-    spoken = pre + " ".join(t[1] for t in toks)
+    if perf:
+        spoken, offs = performance(toks, perf)
+    else:
+        pre = tag + " " if tag else ""
+        spoken = pre + " ".join(t[1] for t in toks)
+        offs, q = [], len(pre)
+        for t in toks:
+            offs.append(q); q += len(t[1]) + 1
     best = None
     for attempt in range(tries):
         r = call(spoken, key)
@@ -108,11 +132,10 @@ def take(text, key, tries=3, tag=""):
     # map characters of the spoken string back to display tokens
     chars, st, en = al["characters"], al["character_start_times_seconds"], al["character_end_times_seconds"]
     assert "".join(chars) == spoken, "alignment text mismatch"
-    words, pos = [], len(pre)
-    for disp, sp, hi in toks:
-        i0, i1 = pos, pos + len(sp) - 1
+    words = []
+    for (disp, sp, hi), i0 in zip(toks, offs):
+        i1 = i0 + len(sp) - 1
         words.append([disp, round(max(0.0, st[i0] - off), 3), round(min(len(y) / SR, en[i1] - off), 3), hi])
-        pos += len(sp) + 1
     return y, words, f"{'clean' if not clipped else 'CLIPPED'}/{n}"
 
 
@@ -126,11 +149,14 @@ def main(argv):
     for vid, v in timing()["vo"].items():
         if only and vid not in only:
             continue
-        wav = os.path.join(ROOT, "assets", "vo", vid + ".wav")
+        os.makedirs(VO_DIR, exist_ok=True)
+        wav = os.path.join(VO_DIR, vid + ".wav")
         if os.path.exists(wav) and not force:
             print("skip", vid); continue
-        y, words, rep = take(v["text"], key, tag=DIRECT.get(vid, ""))
-        y = pyln.normalize.loudness(y, pyln.Meter(SR).integrated_loudness(y), LUFS)
+        perf = PERF.get(vid) if MODEL.startswith("eleven_v4") else None
+        y, words, rep = take(v["text"], key, tag="" if perf else DIRECT.get(vid, ""), perf=perf)
+        quiet = bool(perf) and perf.count("[") == 1 and "whisper" in perf.split("]")[0]   # a fully whispered line sits lower
+        y = pyln.normalize.loudness(y, pyln.Meter(SR).integrated_loudness(y), LUFS - (2.5 if quiet else 0))
         if np.abs(y).max() > .89:
             y *= .89 / np.abs(y).max()
         sf.write(wav, y, SR, subtype="PCM_16")
