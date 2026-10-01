@@ -123,7 +123,11 @@ python3 tools/srt.py && cp renders/*.srt captions/
   - Save the lift for the hook, the twist and the closing line. `vault-short/` and `banks-short/` are the reference.
   - `[low, steady]` alone can overshoot low (about −3.5 st). `[steady, conversational]` sits near the middle.
   - `brisk` pushes pitch up 4–5 st unless it's anchored with `low, steady`.
-  - `tools/voqa.py` (in the Shorts) prints F0, semitone offset and words/s per take.
+  - **No whispers on the opening or closing lines.** Whispers are OK only mid-story (a twist, a confession).
+    Openings should be clear, confident and informative with a touch of intrigue. Tags like `a secret`, `quiet`,
+    `softly` and `a knowing smile` make v4 breathy. Use `[clear, confident storyteller, a touch of intrigue]`.
+  - `tools/voqa.py` (in the Shorts) prints F0, semitone offset, words/s and **voiced share** per take. A share below
+    0.55 means a whispered or breathy read; a clear read is about 0.7+.
 - **Keep sound effects out of the narration.** The score and SFX bus handle them, so they can be ducked and timed.
 - **Pitch anchoring (important):** this voice's library profile is "an ecstatic, happy young man". Tags like
   *excited, proud, glowing, impressed, thrilled* push v4 **7–11 semitones high**, and it stops sounding like the

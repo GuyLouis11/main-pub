@@ -2,7 +2,8 @@
 Strip the tags and the words must equal the line's text in index.html (vo.py asserts this).
 
 Owner's note after The Prophet: v4 was a little too theatrical. Here most lines carry a light, grounded tag (or none)
-and the lift is saved for the hook, the twist and the button. Energy lines stay anchored low (pitch QA, CLAUDE.md §4)."""
+and the lift is saved for the hook, the twist and the button. No whispers on the opening or closing lines:
+the owner wants those clear, confident and informative (voqa.py flags breathy takes). Energy lines stay anchored low (pitch QA, CLAUDE.md §4)."""
 
 # spoken form of display tokens (captions show the display form; trailing .,?!: carry over)
 SAY = {
@@ -11,7 +12,7 @@ SAY = {
 }
 
 PERF = {
-    "V01": "[low, intrigued, a secret] 80 feet under a street in Manhattan sits more gold than Fort Knox.",
+    "V01": "[clear, confident storyteller, a touch of intrigue] 80 feet under a street in Manhattan sits more gold than Fort Knox.",
     "V02": "[steady, brisk] Over 6,300 tons. Half a million bars. Worth over $800 billion.",
     "V03": "[a small beat, low] And almost none of it belongs to America.",
     "V04": "[low, steady, conversational] There's no front door. You walk in through a 90-ton steel cylinder that turns to seal it shut.",
@@ -22,5 +23,5 @@ PERF = {
     "V09": "[matter-of-fact] A worker loads the bars onto a cart, and wheels them to the cage next door.",
     "V10": "[low, steady, quietly amazed] Billions change countries, and the gold never leaves the room.",
     "V11": "[low, steady, conversational] The Fed charges no rent. And when a country wants its gold back, it gets the exact same bars.",
-    "V12": "[quiet, knowing] So next time you walk down Liberty Street… [softly] look down.",
+    "V12": "[clear, confident, conversational, low and steady] So next time you walk down Liberty Street… [steady, clear] look down.",
 }

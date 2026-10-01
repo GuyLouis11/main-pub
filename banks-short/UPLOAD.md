@@ -1,6 +1,6 @@
 # Upload package — "Banks Don't Lend Your Money" (YouTube Short)
 
-**File:** `deliveries/Banks_Dont_Lend_Your_Money_1080x1920.mp4` (vertical 1080×1920, 57.1 s, loops cleanly: the last frame is frame 0)
+**File:** `deliveries/Banks_Dont_Lend_Your_Money_1080x1920.mp4` (vertical 1080×1920, 57.0 s, loops cleanly: the last frame is frame 0)
 **Captions:** `banks-short/captions/Banks_Dont_Lend_Your_Money.en.srt` (upload as English subtitles)
 **Visibility:** Private (Guy publishes manually) · **Made for kids:** No · **Category:** Education
 

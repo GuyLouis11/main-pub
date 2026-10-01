@@ -1,6 +1,6 @@
 # Upload package — "The Richest Room on Earth" (YouTube Short)
 
-**File:** `deliveries/The_Richest_Room_on_Earth_1080x1920.mp4` (vertical 1080×1920, 59.2 s, loops cleanly: the last frame is frame 0)
+**File:** `deliveries/The_Richest_Room_on_Earth_1080x1920.mp4` (vertical 1080×1920, 59.4 s, loops cleanly: the last frame is frame 0)
 **Captions:** `vault-short/captions/The_Richest_Room_on_Earth.en.srt` (upload as English subtitles)
 **Visibility:** Private (Guy publishes manually) · **Made for kids:** No · **Category:** Education
 

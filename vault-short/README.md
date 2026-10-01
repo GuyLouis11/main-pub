@@ -1,6 +1,6 @@
 # The Richest Room on Earth — gold vault Short
 
-Vertical 1080×1920 YouTube Short, 59.2 s, "Bullion Noir" motion design (HyperFrames + GSAP). There is no footage: every
+Vertical 1080×1920 YouTube Short, 59.4 s, "Bullion Noir" motion design (HyperFrames + GSAP). There is no footage: every
 frame is code. Narration is Eleven v4 (voice apOzcbHULxCnvWfHPd41) with a calmer direction than The Prophet: light
 tags, with the lift saved for the hook, the twist and the closing line. The score and sound design are synthesized in
 `tools/score.py`. It loops: the last frame is frame 0, the street at "0 FT".
@@ -63,5 +63,5 @@ python3 tools/srt.py The_Richest_Room_on_Earth && node tools/thumbs.mjs
 | Beat audit | 0 gaps over 1 s |
 | Flicker | 0 frames |
 | Stillness | 0 runs over 1.5 s |
-| Voice | 12/12 lines within ±3 st (set median 125 Hz), all takes clean |
-| Master | −14.0 LUFS, true peak −1.27 dBTP |
+| Voice | 12/12 lines within ±3 st and none whispered (voiced ≥ 0.55), all takes clean |
+| Master | −14.0 LUFS, true peak −1.36 dBTP |
