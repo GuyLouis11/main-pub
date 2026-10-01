@@ -1,0 +1,46 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../shared/show.css">
+<style>
+  html, body { width: 1080px; height: 1920px; }
+  .wall { position: absolute; inset: 0; background:
+    linear-gradient(180deg, rgba(7,7,10,.15), rgba(7,7,10,.85) 75%),
+    repeating-linear-gradient(0deg, #120d06 0 6px, transparent 6px 90px),
+    repeating-linear-gradient(90deg, #120d06 0 6px, transparent 6px 180px),
+    linear-gradient(180deg, #ffe08a, #d99a22 45%, #8a5a06); }
+  .glow { position: absolute; inset: 0; background: radial-gradient(ellipse 60% 40% at 50% 45%, rgba(255,214,120,.35), transparent 70%); }
+  .v { display: none; position: absolute; inset: 0; }
+  .v.on { display: block; }
+  .huge { position: absolute; left: 0; width: 1080px; text-align: center; font: 900 330px/1 'Unbounded'; }
+  .line { position: absolute; left: 0; width: 1080px; text-align: center; font: 400 150px/1 'Anton'; text-transform: uppercase; color: #fff;
+    -webkit-text-stroke: 14px #060504; paint-order: stroke fill; text-shadow: 0 10px 0 #060504; }
+</style></head>
+<body><div id="root" style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#07070a">
+  <!-- A: the money -->
+  <div class="v" id="A">
+    <div class="wall"></div><div class="glow"></div>
+    <div class="line" style="top:330px">UNDER NYC</div>
+    <div class="huge goldtx" style="top:680px;font-size:205px">$800B</div>
+    <div class="line" style="top:1080px;color:#ffc640;font-size:120px">80 FT DOWN</div>
+  </div>
+  <!-- B: the owner -->
+  <div class="v" id="B">
+    <div class="wall" style="filter:saturate(.8) brightness(.8)"></div>
+    <div class="huge goldtx" style="top:440px;font-size:180px">6,331 T</div>
+    <div class="stamp red" style="left:540px;top:820px;transform:translateX(-50%) rotate(-6deg);font-size:86px;background:rgba(7,7,10,.85)">NOT AMERICA'S</div>
+    <div class="line" style="top:1150px;font-size:110px">WHOSE GOLD?</div>
+  </div>
+  <!-- C: the twist -->
+  <div class="v" id="C">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 45%,#2a2112,#07070a)"></div>
+    <div style="position:absolute;left:110px;top:520px;width:340px;height:460px;border-radius:16px;border:8px solid #8fa3b8;background:repeating-linear-gradient(45deg,rgba(143,163,184,.3) 0 4px,transparent 4px 34px),repeating-linear-gradient(-45deg,rgba(143,163,184,.3) 0 4px,transparent 4px 34px)"></div>
+    <div style="position:absolute;left:630px;top:520px;width:340px;height:460px;border-radius:16px;border:8px solid #ffc640;box-shadow:0 0 60px rgba(255,198,64,.6);background:repeating-linear-gradient(45deg,rgba(255,198,64,.3) 0 4px,transparent 4px 34px),repeating-linear-gradient(-45deg,rgba(255,198,64,.3) 0 4px,transparent 4px 34px)"></div>
+    <div style="position:absolute;left:660px;top:770px;width:280px;height:180px;background:repeating-linear-gradient(0deg,#120d06 0 5px,transparent 5px 60px),linear-gradient(180deg,#ffe08a,#c4850f)"></div>
+    <div class="anton" style="position:absolute;left:380px;top:690px;width:320px;text-align:center;font-size:150px;color:#ffc640;text-shadow:0 0 30px rgba(255,198,64,.8)">→</div>
+    <div class="line" style="top:240px">PAID IN</div>
+    <div class="line" style="top:390px;color:#ffc640">GOLD</div>
+    <div class="huge goldtx" style="top:1080px;font-size:160px">0 MILES</div>
+  </div>
+</div>
+<script>const t = new URLSearchParams(location.search).get('t') || 'A'; document.getElementById(t).classList.add('on');</script>
+</body></html>

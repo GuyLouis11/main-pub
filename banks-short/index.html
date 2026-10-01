@@ -1,0 +1,1249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<title>Banks Don't Lend Your Money</title>
+<link rel="stylesheet" href="shared/show.css" />
+<script src="shared/vendor/gsap.min.js"></script>
+<script src="shared/rt.js"></script>
+<script id="timing" type="application/json">
+{
+ "title": "Banks Don't Lend Your Money",
+ "seed": 2014,
+ "defaults": {
+  "lead": 0.12,
+  "gap": 0.2,
+  "tail": 0.18
+ },
+ "scenes": [
+  {
+   "id": "hook",
+   "min": 0,
+   "xin": 0,
+   "vo": [
+    "B01"
+   ],
+   "lead": 0.45
+  },
+  {
+   "id": "type",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "B02"
+   ]
+  },
+  {
+   "id": "myth",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "B03",
+    "B04"
+   ],
+   "tail": 0.3
+  },
+  {
+   "id": "quote",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "B05"
+   ]
+  },
+  {
+   "id": "zero",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "B06"
+   ]
+  },
+  {
+   "id": "isnew",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "B07"
+   ]
+  },
+  {
+   "id": "pct",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "B08"
+   ]
+  },
+  {
+   "id": "destroy",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "B09"
+   ],
+   "tail": 0.35
+  },
+  {
+   "id": "limits",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "B10"
+   ]
+  },
+  {
+   "id": "owes",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "B11"
+   ],
+   "tail": 1.0
+  }
+ ],
+ "vo": {
+  "B01": {
+   "text": "When a bank gives you a loan, it doesn't lend you *anyone's* money.",
+   "estimate": 4.81,
+   "dur": 4.13,
+   "words": [
+    [
+     "When",
+     0.15,
+     0.23,
+     false
+    ],
+    [
+     "a",
+     0.31,
+     0.39,
+     false
+    ],
+    [
+     "bank",
+     0.51,
+     0.63,
+     false
+    ],
+    [
+     "gives",
+     0.71,
+     0.95,
+     false
+    ],
+    [
+     "you",
+     0.99,
+     1.03,
+     false
+    ],
+    [
+     "a",
+     1.11,
+     1.15,
+     false
+    ],
+    [
+     "loan,",
+     1.19,
+     1.79,
+     false
+    ],
+    [
+     "it",
+     1.99,
+     2.15,
+     false
+    ],
+    [
+     "doesn't",
+     2.27,
+     2.47,
+     false
+    ],
+    [
+     "lend",
+     2.55,
+     2.71,
+     false
+    ],
+    [
+     "you",
+     2.79,
+     3.03,
+     false
+    ],
+    [
+     "anyone's",
+     3.11,
+     3.59,
+     true
+    ],
+    [
+     "money.",
+     3.67,
+     4.13,
+     false
+    ]
+   ]
+  },
+  "B02": {
+   "text": "It *types* a number into your account. And that money just… *exists.*",
+   "estimate": 4.44,
+   "dur": 4.944,
+   "words": [
+    [
+     "It",
+     0.12,
+     0.14,
+     false
+    ],
+    [
+     "types",
+     0.3,
+     0.46,
+     true
+    ],
+    [
+     "a",
+     0.5,
+     0.54,
+     false
+    ],
+    [
+     "number",
+     0.62,
+     0.94,
+     false
+    ],
+    [
+     "into",
+     1.06,
+     1.18,
+     false
+    ],
+    [
+     "your",
+     1.22,
+     1.26,
+     false
+    ],
+    [
+     "account.",
+     1.34,
+     1.86,
+     false
+    ],
+    [
+     "And",
+     2.38,
+     2.54,
+     false
+    ],
+    [
+     "that",
+     2.66,
+     2.78,
+     false
+    ],
+    [
+     "money",
+     2.94,
+     3.1,
+     false
+    ],
+    [
+     "just…",
+     3.18,
+     3.82,
+     false
+    ],
+    [
+     "exists.",
+     4.06,
+     4.944,
+     true
+    ]
+   ]
+  },
+  "B03": {
+   "text": "You've probably heard the other version. You deposit *$10,000,* the bank keeps *10%,* and lends out the rest.",
+   "estimate": 6.67,
+   "dur": 7.13,
+   "words": [
+    [
+     "You've",
+     0.0,
+     0.24,
+     false
+    ],
+    [
+     "probably",
+     0.48,
+     0.72,
+     false
+    ],
+    [
+     "heard",
+     0.84,
+     0.96,
+     false
+    ],
+    [
+     "the",
+     1.0,
+     1.04,
+     false
+    ],
+    [
+     "other",
+     1.12,
+     1.28,
+     false
+    ],
+    [
+     "version.",
+     1.36,
+     2.0,
+     false
+    ],
+    [
+     "You",
+     2.16,
+     2.24,
+     false
+    ],
+    [
+     "deposit",
+     2.48,
+     2.72,
+     false
+    ],
+    [
+     "$10,000,",
+     2.8,
+     4.08,
+     true
+    ],
+    [
+     "the",
+     4.12,
+     4.16,
+     false
+    ],
+    [
+     "bank",
+     4.24,
+     4.48,
+     false
+    ],
+    [
+     "keeps",
+     4.52,
+     4.8,
+     false
+    ],
+    [
+     "10%,",
+     4.88,
+     5.68,
+     true
+    ],
+    [
+     "and",
+     5.76,
+     5.92,
+     false
+    ],
+    [
+     "lends",
+     6.0,
+     6.16,
+     false
+    ],
+    [
+     "out",
+     6.24,
+     6.4,
+     false
+    ],
+    [
+     "the",
+     6.44,
+     6.48,
+     false
+    ],
+    [
+     "rest.",
+     6.72,
+     7.13,
+     false
+    ]
+   ]
+  },
+  "B04": {
+   "text": "The *Bank of England* calls that a *misconception.*",
+   "estimate": 2.96,
+   "dur": 2.89,
+   "words": [
+    [
+     "The",
+     0.08,
+     0.16,
+     false
+    ],
+    [
+     "Bank",
+     0.28,
+     0.4,
+     true
+    ],
+    [
+     "of",
+     0.44,
+     0.48,
+     false
+    ],
+    [
+     "England",
+     0.64,
+     1.12,
+     true
+    ],
+    [
+     "calls",
+     1.28,
+     1.44,
+     false
+    ],
+    [
+     "that",
+     1.56,
+     1.68,
+     false
+    ],
+    [
+     "a",
+     1.72,
+     1.76,
+     false
+    ],
+    [
+     "misconception.",
+     1.84,
+     2.89,
+     true
+    ]
+   ]
+  },
+  "B05": {
+   "text": "In their words: whenever a bank makes a loan, it *creates* a matching *deposit.*",
+   "estimate": 5.19,
+   "dur": 5.02,
+   "words": [
+    [
+     "In",
+     0.06,
+     0.14,
+     false
+    ],
+    [
+     "their",
+     0.26,
+     0.38,
+     false
+    ],
+    [
+     "words:",
+     0.46,
+     1.26,
+     false
+    ],
+    [
+     "whenever",
+     1.34,
+     1.66,
+     false
+    ],
+    [
+     "a",
+     1.74,
+     1.82,
+     false
+    ],
+    [
+     "bank",
+     1.94,
+     2.06,
+     false
+    ],
+    [
+     "makes",
+     2.14,
+     2.3,
+     false
+    ],
+    [
+     "a",
+     2.38,
+     2.46,
+     false
+    ],
+    [
+     "loan,",
+     2.54,
+     2.98,
+     false
+    ],
+    [
+     "it",
+     3.02,
+     3.18,
+     false
+    ],
+    [
+     "creates",
+     3.38,
+     3.58,
+     true
+    ],
+    [
+     "a",
+     3.74,
+     3.78,
+     false
+    ],
+    [
+     "matching",
+     3.82,
+     4.14,
+     false
+    ],
+    [
+     "deposit.",
+     4.46,
+     5.02,
+     true
+    ]
+   ]
+  },
+  "B06": {
+   "text": "And that *10%* rule? In America, the reserve requirement has been *zero* since *2020.*",
+   "estimate": 5.19,
+   "dur": 5.607,
+   "words": [
+    [
+     "And",
+     0.139,
+     0.15,
+     false
+    ],
+    [
+     "that",
+     0.23,
+     0.31,
+     false
+    ],
+    [
+     "10%",
+     0.39,
+     0.87,
+     true
+    ],
+    [
+     "rule?",
+     0.95,
+     1.43,
+     false
+    ],
+    [
+     "In",
+     1.67,
+     1.75,
+     false
+    ],
+    [
+     "America,",
+     2.03,
+     2.43,
+     false
+    ],
+    [
+     "the",
+     2.55,
+     2.63,
+     false
+    ],
+    [
+     "reserve",
+     2.83,
+     3.03,
+     false
+    ],
+    [
+     "requirement",
+     3.23,
+     3.59,
+     false
+    ],
+    [
+     "has",
+     3.67,
+     3.75,
+     false
+    ],
+    [
+     "been",
+     3.87,
+     3.99,
+     false
+    ],
+    [
+     "zero",
+     4.07,
+     4.47,
+     true
+    ],
+    [
+     "since",
+     4.55,
+     4.79,
+     false
+    ],
+    [
+     "2020.",
+     4.95,
+     5.607,
+     true
+    ]
+   ]
+  },
+  "B07": {
+   "text": "So your loan doesn't come from savers. Your loan *is* the *new money.*",
+   "estimate": 4.81,
+   "dur": 4.86,
+   "words": [
+    [
+     "So",
+     0.16,
+     0.32,
+     false
+    ],
+    [
+     "your",
+     0.4,
+     0.56,
+     false
+    ],
+    [
+     "loan",
+     0.76,
+     0.96,
+     false
+    ],
+    [
+     "doesn't",
+     1.04,
+     1.36,
+     false
+    ],
+    [
+     "come",
+     1.44,
+     1.68,
+     false
+    ],
+    [
+     "from",
+     1.8,
+     1.92,
+     false
+    ],
+    [
+     "savers.",
+     1.96,
+     2.96,
+     false
+    ],
+    [
+     "Your",
+     3.04,
+     3.2,
+     false
+    ],
+    [
+     "loan",
+     3.28,
+     3.68,
+     false
+    ],
+    [
+     "is",
+     3.76,
+     4.0,
+     true
+    ],
+    [
+     "the",
+     4.08,
+     4.12,
+     false
+    ],
+    [
+     "new",
+     4.16,
+     4.32,
+     true
+    ],
+    [
+     "money.",
+     4.4,
+     4.86,
+     true
+    ]
+   ]
+  },
+  "B08": {
+   "text": "That's why *97%* of Britain's money isn't cash. It's *numbers* in bank accounts.",
+   "estimate": 4.81,
+   "dur": 5.74,
+   "words": [
+    [
+     "That's",
+     0.0,
+     0.28,
+     false
+    ],
+    [
+     "why",
+     0.32,
+     0.48,
+     false
+    ],
+    [
+     "97%",
+     0.56,
+     1.6,
+     true
+    ],
+    [
+     "of",
+     1.68,
+     1.76,
+     false
+    ],
+    [
+     "Britain's",
+     1.84,
+     2.16,
+     false
+    ],
+    [
+     "money",
+     2.24,
+     2.56,
+     false
+    ],
+    [
+     "isn't",
+     2.64,
+     2.88,
+     false
+    ],
+    [
+     "cash.",
+     2.96,
+     3.68,
+     false
+    ],
+    [
+     "It's",
+     3.84,
+     4.0,
+     false
+    ],
+    [
+     "numbers",
+     4.08,
+     4.48,
+     true
+    ],
+    [
+     "in",
+     4.56,
+     4.64,
+     false
+    ],
+    [
+     "bank",
+     4.72,
+     4.96,
+     false
+    ],
+    [
+     "accounts.",
+     5.24,
+     5.74,
+     false
+    ]
+   ]
+  },
+  "B09": {
+   "text": "And here's the strangest part. When you pay the loan back… the money is *destroyed.*",
+   "estimate": 5.56,
+   "dur": 6.184,
+   "words": [
+    [
+     "And",
+     0.02,
+     0.18,
+     false
+    ],
+    [
+     "here's",
+     0.26,
+     0.58,
+     false
+    ],
+    [
+     "the",
+     0.66,
+     0.74,
+     false
+    ],
+    [
+     "strangest",
+     0.82,
+     1.38,
+     false
+    ],
+    [
+     "part.",
+     1.46,
+     2.06,
+     false
+    ],
+    [
+     "When",
+     2.34,
+     2.42,
+     false
+    ],
+    [
+     "you",
+     2.5,
+     2.58,
+     false
+    ],
+    [
+     "pay",
+     2.66,
+     2.82,
+     false
+    ],
+    [
+     "the",
+     2.86,
+     2.9,
+     false
+    ],
+    [
+     "loan",
+     2.98,
+     3.22,
+     false
+    ],
+    [
+     "back…",
+     3.42,
+     3.66,
+     false
+    ],
+    [
+     "the",
+     4.34,
+     4.42,
+     false
+    ],
+    [
+     "money",
+     4.5,
+     5.06,
+     false
+    ],
+    [
+     "is",
+     5.14,
+     5.22,
+     false
+    ],
+    [
+     "destroyed.",
+     5.3,
+     6.184,
+     true
+    ]
+   ]
+  },
+  "B10": {
+   "text": "It's not *unlimited.* Interest rates and regulators keep it in check.",
+   "estimate": 4.07,
+   "dur": 4.17,
+   "words": [
+    [
+     "It's",
+     0.13,
+     0.23,
+     false
+    ],
+    [
+     "not",
+     0.31,
+     0.47,
+     false
+    ],
+    [
+     "unlimited.",
+     0.55,
+     1.43,
+     true
+    ],
+    [
+     "Interest",
+     1.59,
+     1.99,
+     false
+    ],
+    [
+     "rates",
+     2.15,
+     2.31,
+     false
+    ],
+    [
+     "and",
+     2.35,
+     2.39,
+     false
+    ],
+    [
+     "regulators",
+     2.47,
+     3.11,
+     false
+    ],
+    [
+     "keep",
+     3.19,
+     3.27,
+     false
+    ],
+    [
+     "it",
+     3.35,
+     3.43,
+     false
+    ],
+    [
+     "in",
+     3.51,
+     3.59,
+     false
+    ],
+    [
+     "check.",
+     3.79,
+     4.17,
+     false
+    ]
+   ]
+  },
+  "B11": {
+   "text": "But that money in your account? *Someone owes it.*",
+   "estimate": 3.33,
+   "dur": 3.12,
+   "words": [
+    [
+     "But",
+     0.0,
+     0.15,
+     false
+    ],
+    [
+     "that",
+     0.23,
+     0.31,
+     false
+    ],
+    [
+     "money",
+     0.39,
+     0.63,
+     false
+    ],
+    [
+     "in",
+     0.67,
+     0.71,
+     false
+    ],
+    [
+     "your",
+     0.79,
+     0.87,
+     false
+    ],
+    [
+     "account?",
+     1.11,
+     1.67,
+     false
+    ],
+    [
+     "Someone",
+     2.15,
+     2.47,
+     true
+    ],
+    [
+     "owes",
+     2.55,
+     2.79,
+     false
+    ],
+    [
+     "it.",
+     2.87,
+     3.12,
+     true
+    ]
+   ]
+  }
+ },
+ "total": 57.085
+}
+</script>
+</head>
+<body>
+<div id="root" data-composition-id="banks" data-start="0" data-duration="57.085" data-width="1080" data-height="1920">
+  <audio id="music" src="assets/audio/music.wav" data-start="0" data-duration="57.085" data-volume="0.75" data-track-index="20"></audio>
+  <audio id="sfx" src="assets/audio/sfx.wav" data-start="0" data-duration="57.085" data-volume="0.85" data-track-index="21"></audio>
+  <!-- VO:BEGIN (generated by tools/bake.py) -->
+  <audio id="vo_b01" src="assets/vo/B01.wav" data-start="0.450" data-duration="4.130" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_b02" src="assets/vo/B02.wav" data-start="4.730" data-duration="4.944" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_b03" src="assets/vo/B03.wav" data-start="9.824" data-duration="7.130" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_b04" src="assets/vo/B04.wav" data-start="17.154" data-duration="2.890" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_b05" src="assets/vo/B05.wav" data-start="20.314" data-duration="5.020" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_b06" src="assets/vo/B06.wav" data-start="25.484" data-duration="5.607" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_b07" src="assets/vo/B07.wav" data-start="31.241" data-duration="4.860" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_b08" src="assets/vo/B08.wav" data-start="36.251" data-duration="5.740" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_b09" src="assets/vo/B09.wav" data-start="42.141" data-duration="6.184" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_b10" src="assets/vo/B10.wav" data-start="48.645" data-duration="4.170" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_b11" src="assets/vo/B11.wav" data-start="52.965" data-duration="3.120" data-volume="1" data-track-index="22"></audio>
+  <!-- VO:END -->
+
+  <!-- world (decoration, never a beat) -->
+  <div id="bg"></div>
+  <div id="grid" data-drift="1"></div>
+  <canvas id="digits" width="1080" height="1920" data-drift="1"></canvas>
+
+  <div id="stage" class="abs" style="inset:0">
+    <!-- ============ frame 0 == last frame: the closed vault door + an empty balance ============ -->
+    <div id="f0" class="abs" style="inset:0">
+      <div id="vint" class="abs" style="left:250px;top:250px;width:580px;height:580px;border-radius:50%;overflow:hidden;background:radial-gradient(circle at 50% 45%,#0f241c,#050d0a 75%);box-shadow:inset 0 0 80px rgba(0,0,0,.9)">
+        <div class="abs" style="left:60px;top:200px;width:460px;height:10px;background:#1c3a2e"></div>
+        <div class="abs" style="left:60px;top:330px;width:460px;height:10px;background:#1c3a2e"></div>
+        <div class="abs" style="left:60px;top:460px;width:460px;height:10px;background:#1c3a2e"></div>
+        <div id="emptyT" class="anton abs" style="left:0;top:248px;width:580px;text-align:center;font-size:70px;color:rgba(184,255,217,.75);letter-spacing:10px">EMPTY</div>
+        <div id="savers" class="abs" style="inset:0"></div>
+      </div>
+      <svg id="vdoor" class="abs" viewBox="0 0 640 640" style="left:220px;top:220px;width:640px;height:640px;overflow:visible">
+        <defs><radialGradient id="dg" cx=".38" cy=".32" r=".75"><stop offset="0" stop-color="#e6efe9"/><stop offset=".55" stop-color="#8fa79b"/><stop offset="1" stop-color="#34463e"/></radialGradient></defs>
+        <circle cx="320" cy="320" r="318" fill="#1b2a24"/>
+        <circle cx="320" cy="320" r="284" fill="url(#dg)"/>
+        <circle cx="320" cy="320" r="210" fill="none" stroke="#5a7268" stroke-width="12"/>
+        <g id="wheel" stroke="#22322b" stroke-width="24" stroke-linecap="round"><path d="M320,176 L320,464 M176,320 L464,320 M218,218 L422,422 M422,218 L218,422"/></g>
+        <circle cx="320" cy="320" r="52" fill="#22322b"/><circle cx="320" cy="320" r="18" fill="#3dff9a" opacity=".8"/>
+        <g id="dbolts" fill="#d6e4dc"></g>
+      </svg>
+      <div id="balPill" class="pill" style="left:540px;top:930px;background:rgba(4,14,10,.92);border:3px solid rgba(61,255,154,.6);color:#eafff3;font-size:40px">BALANCE <span class="mono" style="color:#3dff9a">$0.00</span></div>
+    </div>
+
+    <!-- 1 · hook: not anyone's money -->
+    <div id="sc-hook" class="scene clip" data-scene="hook" data-start="0.000" data-duration="4.760" data-track-index="1">
+      <div id="loanCard" class="paper" style="left:540px;top:960px;width:440px;height:190px;padding:26px 30px">
+        <div class="mono" style="font-size:24px;color:#5b6b63;letter-spacing:3px">LOAN APPROVED</div>
+        <div class="big" style="font-size:60px;margin-top:22px;color:#0c7a45">$300,000</div>
+      </div>
+    </div>
+
+    <!-- 2 · type: it types a number; the money exists -->
+    <div id="sc-type" class="scene clip" data-scene="type" data-start="4.610" data-duration="5.244" data-track-index="2">
+      <div id="phone" class="abs" style="left:190px;top:180px;width:700px;height:640px;border-radius:56px;background:linear-gradient(170deg,#0d241b,#06130e);border:4px solid rgba(184,255,217,.35);box-shadow:0 40px 100px rgba(0,0,0,.7)">
+        <div class="mono" style="position:absolute;left:56px;top:56px;font-size:28px;color:#7f9a8d;letter-spacing:4px">CHECKING ••4821</div>
+        <div class="kick" style="left:0;top:150px;width:700px;font-size:28px;color:#b8ffd9">available balance</div>
+        <div id="balBig" class="mono head greentx" style="top:220px;width:700px;font-size:100px">$0.00</div>
+        <div id="txRow" class="abs" style="left:56px;top:430px;width:588px;height:120px;border-radius:20px;background:rgba(61,255,154,.08);border:2px solid rgba(61,255,154,.3)">
+          <div style="position:absolute;left:28px;top:24px;font:700 32px/1 'Space Grotesk';color:#eafff3">Loan deposit</div>
+          <div style="position:absolute;left:28px;top:70px;font:600 24px/1 'JetBrains Mono';color:#7f9a8d">just now</div>
+          <div style="position:absolute;right:28px;top:36px;font:800 38px/1 'JetBrains Mono';color:#3dff9a">+$300,000.00</div>
+        </div>
+      </div>
+      <div id="keys" class="abs" style="left:105px;top:880px;width:870px;height:150px"></div>
+      <div id="newMoney" class="stamp green" style="left:540px;top:880px;font-size:84px">NEW MONEY</div>
+      <div id="spark" class="abs" style="inset:0"></div>
+    </div>
+
+    <!-- 3 · myth: the textbook version … a misconception -->
+    <div id="sc-myth" class="scene clip" data-scene="myth" data-start="9.704" data-duration="10.640" data-track-index="3">
+      <div id="mythK" class="kick" style="top:170px;color:#b8ffd9">the version you've heard</div>
+      <div id="casc" class="abs" style="left:0;top:220px;width:1080px;height:960px">
+        <div id="bDep" class="box" style="left:290px;top:20px;width:500px;height:150px"><div class="kick" style="position:relative;width:auto;top:22px;font-size:26px">you deposit</div><div class="big greentx" style="margin-top:36px;font-size:72px">$10,000</div></div>
+        <svg class="abs" viewBox="0 0 80 120" style="left:500px;top:176px;width:80px;height:110px"><path id="aDown" d="M40,6 L40,96 M14,72 L40,102 L66,72" stroke="#3dff9a" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+        <div id="bBank" class="box" style="left:340px;top:290px;width:400px;height:170px">
+          <svg viewBox="0 0 200 120" style="width:170px;height:100px;margin-top:20px"><path d="M10,40 L100,6 L190,40 Z" fill="#3dff9a"/><g fill="#b8ffd9"><rect x="26" y="48" width="18" height="52"/><rect x="66" y="48" width="18" height="52"/><rect x="116" y="48" width="18" height="52"/><rect x="156" y="48" width="18" height="52"/></g><rect x="10" y="104" width="180" height="12" fill="#3dff9a"/></svg>
+        </div>
+        <div id="bKeep" class="box" style="left:40px;top:520px;width:430px;height:160px;border-color:rgba(255,198,64,.7)"><div class="kick" style="position:relative;width:auto;top:22px;font-size:26px;color:#ffe7a3">keeps 10%</div><div class="big ambertx" style="margin-top:34px;font-size:64px">$1,000</div></div>
+        <div id="bLend" class="box" style="left:610px;top:520px;width:430px;height:160px"><div class="kick" style="position:relative;width:auto;top:22px;font-size:26px">lends out</div><div class="big greentx" style="margin-top:34px;font-size:64px">$9,000</div></div>
+        <div id="chain" class="abs" style="left:40px;top:730px;width:1000px;height:90px"></div>
+        <div id="totRow" class="abs" style="left:0;top:850px;width:1080px;text-align:center">
+          <span class="kick" style="position:relative;width:auto;font-size:30px">system total</span>
+          <span id="totN" class="mono greentx" style="font-size:80px;margin-left:24px">$10,000</span>
+        </div>
+        <div id="crackL" class="abs" style="inset:0"></div>
+      </div>
+      <div id="boe" class="abs" style="left:730px;top:150px;width:360px;height:250px;transform-origin:0 0;scale:.88">
+        <div class="paper" style="left:0;top:0;width:360px;height:250px"></div>
+        <svg viewBox="0 0 300 150" style="position:absolute;left:30px;top:22px;width:300px;height:140px"><path d="M10,46 L150,8 L290,46 Z" fill="#101418"/><g fill="#101418"><rect x="34" y="56" width="20" height="70"/><rect x="84" y="56" width="20" height="70"/><rect x="134" y="56" width="20" height="70"/><rect x="184" y="56" width="20" height="70"/><rect x="234" y="56" width="20" height="70"/></g><rect x="10" y="130" width="280" height="14" fill="#101418"/></svg>
+        <div style="position:absolute;left:0;top:172px;width:360px;text-align:center;font:800 30px/1.1 'Space Grotesk';color:#101418">Bank of England</div>
+        <div style="position:absolute;left:0;top:210px;width:360px;text-align:center;font:600 22px/1 'JetBrains Mono';color:#5b6b63">Quarterly Bulletin · 2014</div>
+      </div>
+      <div id="misc" class="stamp red" style="left:540px;top:520px;font-size:78px">MISCONCEPTION</div>
+    </div>
+
+    <!-- 4 · quote: a loan creates a matching deposit -->
+    <div id="sc-quote" class="scene clip" data-scene="quote" data-start="20.194" data-duration="5.320" data-track-index="4">
+      <div id="qCard" class="paper" style="left:90px;top:200px;width:900px;height:560px;padding:60px 64px">
+        <div class="serif" style="position:absolute;left:40px;top:-30px;font-size:220px;color:#0c7a45;line-height:1">“</div>
+        <div id="qText" class="serif" style="position:relative;font-size:70px;line-height:1.14;color:#101418;margin-top:40px"></div>
+        <div id="qAttr" style="position:absolute;left:64px;bottom:44px;font:700 28px/1 'JetBrains Mono';color:#5b6b63">— Bank of England, 2014</div>
+      </div>
+      <div id="tAcc" class="abs" style="left:90px;top:800px;width:900px;height:360px">
+        <div class="abs" style="left:0;top:0;width:900px;height:6px;background:#b8ffd9"></div>
+        <div class="abs" style="left:447px;top:0;width:6px;height:340px;background:#b8ffd9"></div>
+        <div class="kick" style="left:0;top:28px;width:450px;font-size:26px">bank's assets</div>
+        <div class="kick" style="left:450px;top:28px;width:450px;font-size:26px">bank owes you</div>
+        <div id="tL" class="abs" style="left:0;top:96px;width:450px;text-align:center"><div class="anton" style="font-size:52px;color:#eafff3">YOUR LOAN</div><div class="mono greentx" style="font-size:66px;margin-top:20px">+$300,000</div></div>
+        <div id="tR" class="abs" style="left:450px;top:96px;width:450px;text-align:center"><div class="anton" style="font-size:52px;color:#eafff3">YOUR DEPOSIT</div><div class="mono greentx" style="font-size:66px;margin-top:20px">+$300,000</div></div>
+        <div id="tEq" class="big abs ambertx" style="left:410px;top:150px;width:80px;text-align:center;font-size:70px">=</div>
+      </div>
+    </div>
+
+    <!-- 5 · zero: the 10% rule is 0% since 2020 -->
+    <div id="sc-zero" class="scene clip" data-scene="zero" data-start="25.364" data-duration="5.907" data-track-index="5">
+      <div class="kick" style="top:190px;color:#b8ffd9">u.s. reserve requirement</div>
+      <svg id="dial" class="abs" viewBox="0 0 800 460" style="left:140px;top:250px;width:800px;height:460px;overflow:visible">
+        <path d="M60,420 A340,340 0 0 1 740,420" stroke="rgba(184,255,217,.15)" stroke-width="60" fill="none"/>
+        <path id="dialArc" d="M60,420 A340,340 0 0 1 740,420" stroke="#3dff9a" stroke-width="60" fill="none" opacity=".25"/>
+        <g id="dialTicks"></g>
+        <g id="needle"><path d="M400,420 L400,250" stroke="#ffc640" stroke-width="16" stroke-linecap="round"/><circle cx="400" cy="420" r="34" fill="#ffc640"/></g>
+      </svg>
+      <div id="pctBig" class="big head ambertx" style="top:720px;font-size:170px">10%</div>
+      <div id="cal" class="paper" style="left:380px;top:930px;width:320px;height:230px;overflow:hidden">
+        <div style="height:66px;background:#ff4a3d;color:#fff;font:800 34px/66px 'Space Grotesk';text-align:center;letter-spacing:4px">MARCH</div>
+        <div id="calD" class="big" style="text-align:center;font-size:90px;color:#101418;margin-top:16px">26</div>
+        <div class="mono" style="position:absolute;left:0;bottom:16px;width:320px;text-align:center;font-size:30px;color:#5b6b63">2020</div>
+      </div>
+      <div id="fedNote" class="mono abs" style="left:0;top:1176px;width:1080px;text-align:center;font-size:22px;color:#7f9a8d;letter-spacing:2px">Federal Reserve: reserve requirement ratios reduced to 0%</div>
+    </div>
+
+    <!-- 6 · isnew: not from savers — the loan IS the new money -->
+    <div id="sc-isnew" class="scene clip" data-scene="isnew" data-start="31.121" data-duration="5.160" data-track-index="6">
+      <div id="pigs" class="abs" style="left:0;top:220px;width:1080px;height:240px"></div>
+      <svg id="pipes" class="abs" viewBox="0 0 1080 300" style="left:0;top:420px;width:1080px;height:300px;overflow:visible">
+        <path id="p1" d="M210,30 C210,160 540,120 540,270" stroke="#b8ffd9" stroke-width="8" stroke-dasharray="16 14" fill="none"/>
+        <path id="p2" d="M540,30 L540,270" stroke="#b8ffd9" stroke-width="8" stroke-dasharray="16 14" fill="none"/>
+        <path id="p3" d="M870,30 C870,160 540,120 540,270" stroke="#b8ffd9" stroke-width="8" stroke-dasharray="16 14" fill="none"/>
+      </svg>
+      <div id="cutX" class="anton head redtx" style="top:520px;font-size:84px">✂ NOT FROM SAVERS</div>
+      <div id="docWrap" class="abs" style="left:290px;top:720px;width:500px;height:420px;perspective:1400px">
+        <div id="doc" class="abs" style="inset:0;transform-style:preserve-3d">
+          <div class="paper" style="inset:0;padding:40px;backface-visibility:hidden">
+            <div class="anton" style="font-size:60px">YOUR LOAN</div>
+            <div class="abs" style="left:40px;top:130px;width:420px;height:14px;background:#cfcabd;border-radius:7px"></div>
+            <div class="abs" style="left:40px;top:170px;width:360px;height:14px;background:#cfcabd;border-radius:7px"></div>
+            <div class="abs" style="left:40px;top:210px;width:400px;height:14px;background:#cfcabd;border-radius:7px"></div>
+            <div class="mono abs" style="left:40px;top:290px;font-size:56px;color:#0c7a45">$300,000</div>
+          </div>
+          <div class="abs" style="inset:0;border-radius:18px;transform:rotateY(180deg);backface-visibility:hidden;background:linear-gradient(150deg,#d8f5e2,#6fd39b 50%,#2a8a57);border:6px solid #eafff3;box-shadow:0 0 70px rgba(61,255,154,.6)">
+            <div class="big" style="position:absolute;left:0;top:80px;width:100%;text-align:center;font-size:150px;color:#0a3d24">$</div>
+            <div class="anton" style="position:absolute;left:0;top:280px;width:100%;text-align:center;font-size:62px;color:#0a3d24">NEW MONEY</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7 · pct: 97% of money is just numbers -->
+    <div id="sc-pct" class="scene clip" data-scene="pct" data-start="36.131" data-duration="6.040" data-track-index="7">
+      <div id="pctHead" class="abs" style="left:0;top:160px;width:1080px;text-align:center"><span id="pctN" class="big greentx" style="font-size:150px">0%</span></div>
+      <div id="sq" class="abs" style="left:165px;top:340px;width:750px;height:750px"></div>
+      <div id="labDep" class="tag" style="left:165px;top:1110px;font-size:30px">■ BANK DEPOSITS 97%</div>
+      <div id="labCash" class="tag" style="left:640px;top:1110px;font-size:30px;border-color:#f2efe6;color:#f2efe6">■ CASH 3%</div>
+      <div id="ukNote" class="mono abs" style="left:0;top:1180px;width:1080px;text-align:center;font-size:22px;color:#7f9a8d;letter-spacing:2px">UK broad money · Bank of England, 2014</div>
+    </div>
+
+    <!-- 8 · destroy: paying it back destroys the money -->
+    <div id="sc-destroy" class="scene clip" data-scene="destroy" data-start="42.021" data-duration="6.654" data-track-index="8">
+      <div id="strangeT" class="serif head" style="top:220px;font-size:110px;color:#eafff3">the strangest part</div>
+      <div id="dCard" class="card" style="left:140px;top:420px;width:800px;height:300px">
+        <div class="kick" style="top:40px;width:800px;font-size:28px;color:#b8ffd9">loan balance</div>
+        <div id="dBal" class="mono head greentx" style="top:110px;width:800px;font-size:110px">$300,000</div>
+        <div id="dParts" class="abs" style="inset:0"></div>
+      </div>
+      <div id="payArrow" class="pill" style="left:540px;top:770px;background:#3dff9a;color:#03140c;font-size:40px">PAYMENT →</div>
+      <div id="destroyed" class="stamp red" style="left:540px;top:900px;font-size:100px">DESTROYED</div>
+    </div>
+
+    <!-- 9 · limits: not unlimited -->
+    <div id="sc-limits" class="scene clip" data-scene="limits" data-start="48.525" data-duration="4.470" data-track-index="9">
+      <div id="infT" class="abs" style="left:0;top:200px;width:1080px;text-align:center">
+        <span class="big greentx" style="font-size:200px">∞</span>
+        <div id="infX" class="strike" style="left:340px;top:110px;width:400px;transform:rotate(-20deg)"></div>
+      </div>
+      <div id="pipe" class="abs" style="left:0;top:640px;width:1080px;height:120px;background:linear-gradient(180deg,#2a4a3d,#14261f);border-top:4px solid #5a7268;border-bottom:4px solid #0a1410"></div>
+      <div id="flow" class="abs" style="left:0;top:648px;width:1080px;height:104px;overflow:hidden"><div id="flowIn" class="mono" style="position:absolute;left:0;top:28px;font-size:46px;color:#3dff9a;white-space:nowrap;text-shadow:0 0 12px #3dff9a"></div></div>
+      <div id="clampA" class="abs" style="left:250px;top:560px;width:160px;height:280px;border-radius:20px;background:linear-gradient(90deg,#8fa79b,#e6efe9,#8fa79b);box-shadow:0 20px 50px rgba(0,0,0,.6)"></div>
+      <div id="clampB" class="abs" style="left:670px;top:560px;width:160px;height:280px;border-radius:20px;background:linear-gradient(90deg,#8fa79b,#e6efe9,#8fa79b);box-shadow:0 20px 50px rgba(0,0,0,.6)"></div>
+      <div id="labA" class="tag" style="left:330px;top:880px;font-size:32px">INTEREST RATES</div>
+      <div id="labB" class="tag" style="left:750px;top:880px;font-size:32px">REGULATORS</div>
+      <div id="inCheck" class="stamp green" style="left:540px;top:1000px;font-size:80px">IN CHECK ✓</div>
+    </div>
+
+    <!-- 10 · owes: someone owes it (the door swings shut: back to frame 0) -->
+    <div id="sc-owes" class="scene clip" data-scene="owes" data-start="52.845" data-duration="4.240" data-track-index="10">
+      <div id="oCard" class="card" style="left:140px;top:300px;width:800px;height:300px">
+        <div class="kick" style="top:40px;width:800px;font-size:28px;color:#b8ffd9">your account</div>
+        <div class="mono head greentx" style="top:110px;width:800px;font-size:110px">$300,000</div>
+      </div>
+      <div id="iou1" class="paper" style="left:120px;top:680px;width:400px;height:200px;padding:30px;transform:rotate(-4deg)">
+        <div class="big" style="font-size:64px;color:#0c7a45">IOU</div><div style="font:700 30px/1.2 'Space Grotesk';margin-top:16px">your bank owes you</div>
+      </div>
+      <div id="iou2" class="paper" style="left:560px;top:700px;width:400px;height:200px;padding:30px;transform:rotate(3deg)">
+        <div class="big" style="font-size:64px;color:#c2361f">IOU</div><div style="font:700 30px/1.2 'Space Grotesk';margin-top:16px">a borrower owes the bank</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="vig" data-layout-ignore></div>
+  <div id="dim" data-layout-ignore style="position:absolute;inset:0;background:#000;opacity:0;z-index:45;pointer-events:none"></div>
+  <div id="caps"></div>
+  <div id="grain" data-layout-ignore></div>
+  <div id="flash"></div>
+  <div id="black"></div>
+</div>
+<script src="scenes/banks.js"></script>
+<script>window.__timelines = window.__timelines || {}; window.__timelines['banks'] = R.tl;</script>
+</body>
+</html>

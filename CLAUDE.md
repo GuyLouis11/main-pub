@@ -43,6 +43,8 @@ The goal of every video is **views, retention and monetization**:
 |---|---|---|
 | `prophet/` | **The Prophet**: 10:17 fictional scam thriller with two twists. Eleven v4 theatrical narration. | Done, delivered |
 | `beat-vegas/` | **He Beat Vegas With a Computer in His Shoe** (long-form, noir jazz score) | Done |
+| `vault-short/` | **The Richest Room on Earth**: NY Fed gold vault Short, 59 s, finance niche, Eleven v4 (calmer read). Best template for new Shorts. | Done, delivered |
+| `banks-short/` | **Banks Don't Lend Your Money**: money-creation myth-bust Short, 57 s, finance niche, Eleven v4 (calmer read) | Done, delivered |
 | `monty-short/` | **Should You Switch Doors?** Monty Hall Short, 1080×1920 | Done |
 | `nines-short/` | **0.999… = 1** Short, 1080×1920 | Done |
 | `film/`, `hot-water-opening/` | **The Boy Who Froze Hot Water**: earlier film with generated video shots ("Flow" slots) | Done |
@@ -116,6 +118,12 @@ python3 tools/srt.py && cp renders/*.srt captions/
   - Use character voices for quoted lines: `[as Maya, worried but firm]`, `[shaken, whispering, as Daniel]`.
   - Use non-verbals: `[chuckles]`, `[exhales]`, `[whispers]`.
   - A line whispered all the way through is mixed 2.5 dB lower on purpose.
+- **Owner feedback (Oct 2026): The Prophet's read was a little too theatrical.**
+  - Keep the ups and downs, but most lines get a light, grounded tag (`[conversational]`, `[steady]`) or none.
+  - Save the lift for the hook, the twist and the closing line. `vault-short/` and `banks-short/` are the reference.
+  - `[low, steady]` alone can overshoot low (about −3.5 st). `[steady, conversational]` sits near the middle.
+  - `brisk` pushes pitch up 4–5 st unless it's anchored with `low, steady`.
+  - `tools/voqa.py` (in the Shorts) prints F0, semitone offset and words/s per take.
 - **Keep sound effects out of the narration.** The score and SFX bus handle them, so they can be ducked and timed.
 - **Pitch anchoring (important):** this voice's library profile is "an ecstatic, happy young man". Tags like
   *excited, proud, glowing, impressed, thrilled* push v4 **7–11 semitones high**, and it stops sounding like the
@@ -241,3 +249,12 @@ and a loop-back ending.
 - **Topic selection:** true or true-adjacent stories with a mechanism twist (scams, heists, gambling edges,
   probability paradoxes). They match what already worked (Vegas shoe computer, Monty Hall, 0.999…).
 - **Shorts from every long-form:** cut a 45 s vertical teaser from the strongest 10%: the hook plus Twist 1.
+- **Pick Shorts topics from proof:** search YouTube for the topic and look at real view counts before scripting. Then
+  pull the top video's transcript and beat it: contradiction hook, twist, human detail, primary sources, loop ending.
+  Finance Shorts pay roughly 5–10× entertainment Shorts per view.
+- **Runtime gotchas (fixed in `vault-short/` and `banks-short/`, port them to older projects when touched):**
+  - `tl.seek(0)` on a fresh timeline is a no-op, so time-0 `set`s never render and frame 0 shows the raw DOM. The
+    fix is `finish()` calling `tl.seek(0.001); tl.seek(0)`.
+  - `tools/cues.mjs` had a duplicate `import fs` (a SyntaxError on Node 24). It's fixed in all projects.
+  - A dimmer above the captions dims the captions too. Use a dimmer below `#caps` (z 45), not `#black`.
+  - Lint requires an inline `window.__timelines[...]` registration when the scenes live in an external JS file.

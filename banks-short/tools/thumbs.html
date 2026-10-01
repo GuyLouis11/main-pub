@@ -1,0 +1,42 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../shared/show.css">
+<style>
+  html, body { width: 1080px; height: 1920px; }
+  .bgx { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 50% at 50% 42%, #0f3326 0%, #06150f 60%, #020806 100%); }
+  .gridx { position: absolute; inset: 0; background: repeating-linear-gradient(0deg, rgba(61,255,154,.07) 0 2px, transparent 2px 90px), repeating-linear-gradient(90deg, rgba(61,255,154,.07) 0 2px, transparent 2px 90px); }
+  .v { display: none; position: absolute; inset: 0; }
+  .v.on { display: block; }
+  .huge { position: absolute; left: 0; width: 1080px; text-align: center; font: 900 300px/1 'Unbounded'; }
+  .line { position: absolute; left: 0; width: 1080px; text-align: center; font: 400 150px/1 'Anton'; text-transform: uppercase; color: #fff;
+    -webkit-text-stroke: 14px #020806; paint-order: stroke fill; text-shadow: 0 10px 0 #020806; }
+</style></head>
+<body><div id="root" style="width:1080px;height:1920px;position:relative;overflow:hidden;background:#030c09">
+  <!-- A: the typed number -->
+  <div class="v" id="A">
+    <div class="bgx"></div><div class="gridx"></div>
+    <div class="line" style="top:300px">BANKS DON'T</div>
+    <div class="line" style="top:450px;color:#3dff9a">LEND IT</div>
+    <div style="position:absolute;left:110px;top:720px;width:860px;height:330px;border-radius:50px;background:linear-gradient(170deg,#0d241b,#06130e);border:5px solid rgba(184,255,217,.45);box-shadow:0 0 90px rgba(61,255,154,.35)">
+      <div class="mono greentx" style="position:absolute;left:0;top:105px;width:860px;text-align:center;font-size:120px">$300,000</div>
+    </div>
+    <div class="line" style="top:1110px;font-size:120px">THEY TYPE IT</div>
+  </div>
+  <!-- B: the myth -->
+  <div class="v" id="B">
+    <div class="bgx"></div><div class="gridx"></div>
+    <div class="huge greentx" style="top:400px;font-size:290px">10%</div>
+    <div class="stamp red" style="left:540px;top:790px;transform:translateX(-50%) rotate(-8deg);font-size:120px;background:rgba(3,12,9,.85)">MYTH</div>
+    <div class="line" style="top:1080px;font-size:120px">IT'S 0% NOW</div>
+  </div>
+  <!-- C: the twist -->
+  <div class="v" id="C">
+    <div class="bgx"></div><div class="gridx"></div>
+    <div class="line" style="top:280px">PAY IT BACK</div>
+    <div class="mono greentx" style="position:absolute;left:0;top:640px;width:1080px;text-align:center;font-size:170px;filter:blur(2px);opacity:.75">$300,000</div>
+    <div class="stamp red" style="left:540px;top:820px;transform:translateX(-50%) rotate(-5deg);font-size:100px;background:rgba(3,12,9,.85)">DESTROYED</div>
+    <div class="line" style="top:1120px;font-size:120px;color:#3dff9a">IT VANISHES</div>
+  </div>
+</div>
+<script>const t = new URLSearchParams(location.search).get('t') || 'A'; document.getElementById(t).classList.add('on');</script>
+</body></html>
