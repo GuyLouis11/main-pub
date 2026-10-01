@@ -43,6 +43,7 @@ def main():
         if os.path.exists(wav):
             v["dur"] = round(sf.info(wav).duration, 3)
             v["words"] = json.load(open(wav[:-4] + ".words.json", encoding="utf-8"))
+            v["typed"] = os.path.exists(wav[:-4] + ".PLACEHOLDER")   # unvoiced: shown as the typed confession
     scenes, vo, total = layout(tim)
     tim["total"] = round(total, 3)
 

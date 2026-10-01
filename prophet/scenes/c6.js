@@ -265,3 +265,48 @@ SCX.ask = (R, K, h, id) => {
   tl.to(card, { y: -20, duration: 1.2, ease: 'sine.inOut' }, V('P85') + .4);
   tl.to(card, { opacity: .2, duration: .3 }, WT(R, 'P85', 9) - .2);
 };
+
+/* ---------- the typed confession: unvoiced ending lines appear word by word, as if the sender is typing ---------- */
+const CONFESS = { P87: { upto: 6, suffix: ' —' }, P93: { center: true } };
+const confess = (R, K, vid) => {
+  const { tl, cue, V, VE } = R, v = R.tim.vo[vid], o = CONFESS[vid] || {};
+  if (!v || !v.typed || !(v.words || []).length) return;
+  const ws = v.words.slice(0, o.upto || v.words.length);
+  // split into sentences; each sentence replaces the last
+  const sents = [[]];
+  ws.forEach((w, i) => { sents[sents.length - 1].push(w); if (/[.?!]$/.test(w[0]) && i < ws.length - 1) sents.push([]); });
+  const root = R.$('#root'), end = VE(vid) - .2;
+  const shade = K.text(root, '', 'left:0;top:780px;width:1920px;height:300px;background:linear-gradient(180deg,transparent,rgba(3,5,11,.82) 70%);pointer-events:none');
+  shade.dataset.layoutIgnore = 1;
+  tl.set(shade, { opacity: 0 }, 0); tl.to(shade, { opacity: 1, duration: .4 }, V(vid) - .1); tl.to(shade, { opacity: 0, duration: .35 }, end);
+  sents.forEach((sw, si) => {
+    const txt = sw.map((w, i) => w[0] + (si === sents.length - 1 && i === sw.length - 1 && o.suffix ? o.suffix : ''));
+    const css = o.center
+      ? 'left:0;width:1920px;top:760px;text-align:center;font:italic 400 88px/1.1 Instrument Serif;color:#f4f6ff;text-shadow:0 0 40px rgba(155,123,255,.55)'
+      : 'left:190px;width:1540px;bottom:74px;font:italic 400 60px/1.12 Instrument Serif;color:#eef2ff;text-shadow:0 2px 24px rgba(0,0,0,.9);white-space:normal';
+    const b = K.text(root, txt.map(w => `<span class="cw">${w}</span>`).join(' ') + '<span class="ck"></span>', css);
+    b.dataset.layoutIgnore = 1;
+    const spans = [...b.querySelectorAll('.cw')], ck = b.querySelector('.ck');
+    Object.assign(ck.style, { display: 'inline-block', width: '4px', height: '.8em', marginLeft: '10px', verticalAlign: '-0.08em', background: '#9b7bff', boxShadow: '0 0 14px #9b7bff' });
+    const t0 = V(vid) + sw[0][1], t1 = si < sents.length - 1 ? V(vid) + sents[si + 1][0][1] - .12 : end;
+    spans.forEach((s, i) => {
+      const t = V(vid) + sw[i][1];
+      s.style.display = 'inline-block';
+      if (o.center) { tl.set(s, { opacity: 0, y: 20, filter: 'blur(10px)' }, 0); tl.to(s, { opacity: 1, y: 0, filter: 'blur(0px)', duration: .35, ease: 'power3.out' }, t); }
+      else { tl.set(s, { display: 'none' }, 0); tl.set(s, { display: 'inline-block', opacity: 0, y: 10 }, t); tl.to(s, { opacity: 1, y: 0, duration: .22, ease: 'power2.out' }, t); }
+    });
+    if (o.center) ck.style.display = 'none';
+    tl.set(b, { opacity: 0 }, 0); tl.set(b, { opacity: 1 }, t0 - .02);
+    tl.to(b, { opacity: 0, duration: .25, ease: 'power1.in' }, t1 - .25);
+    // caret: solid while typing, blinking while it waits
+    const tw = V(vid) + sw[sw.length - 1][2];
+    const blinks = Math.max(0, Math.floor((t1 - .3 - tw) / .45));
+    if (!o.center && blinks) tl.to(ck, { opacity: 0, duration: .45, ease: 'steps(1)', repeat: blinks, yoyo: true }, tw + .1);
+    cue(t0, 'type', o.center ? .2 : .32, 0, { dur: tw - t0 });
+  });
+};
+const _ends = { ask: ['P86'], turn: ['P87'], how: ['P89'], sender: ['P90', 'P91'], again: ['P92', 'P93'] };
+Object.entries(_ends).forEach(([id, vids]) => {
+  const prev = SCX[id];
+  SCX[id] = (R, K, h, sid) => { if (prev) prev(R, K, h, sid); vids.forEach(v => confess(R, K, v)); };
+});

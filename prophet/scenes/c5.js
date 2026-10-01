@@ -166,7 +166,7 @@ SC.turn = (R, K, h, id) => {
 SC.how = (R, K, h, id) => {
   const { tl, cue, S, V, VE } = R;
   K.weather(S(id), { rain: 0, drops: .3, bokeh: .1 }, .5);
-  const cards = [['READS EVERYTHING TWICE', 'daniel', WT(R, 'P89', 7)], ['ALONE IN HIS CAR, ASKING WHO I WAS', 'daniel', WT(R, 'P89', 15)], ['EXACTLY SEVEN OF THE TEN PAID', '7', WT(R, 'P89', 25)]];
+  const cards = [['READS EVERYTHING TWICE', 'daniel', WT(R, 'P89', 7)], ['IN HIS CAR, ASKING WHO I WAS', 'daniel', WT(R, 'P89', 15)], ['EXACTLY SEVEN OF THE TEN PAID', '7', WT(R, 'P89', 25)]];
   cards.forEach(([txt, kind, t], i) => {
     const c = K.text(h, '', `left:${140 + i * 560}px;top:280px;width:520px;height:520px;overflow:hidden`, 'glass');
     if (kind === 'daniel') { const p = K.person(c, 'daniel', 130, 70, 300, { rim: i === 1 ? '#ffb347' : '#9fb7ff' }); }
@@ -177,8 +177,9 @@ SC.how = (R, K, h, id) => {
   });
   const hq = K.text(h, '', 'top:150px;font:italic 400 56px Instrument Serif;color:#e8eefc', 'center');
   K.type(hq, 'How do you think I know…', V('P89'), 22);
-  const hw = K.text(h, 'HOW WOULD I KNOW?', 'top:860px;font-size:70px', 'center kin violet');
-  R.up(hw, VE('P89') - .5, .35, 16);
+  const hw = K.text(h, 'HOW WOULD I KNOW?', 'top:140px;font-size:80px', 'center kin violet');
+  tl.to(hq, { opacity: 0, duration: .25 }, VE('P89') - .8);
+  R.up(hw, VE('P89') - .5, .35, 16); cue(VE('P89') - .5, 'hit', .5);
 };
 
 SC.sender = (R, K, h, id) => {

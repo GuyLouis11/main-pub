@@ -1,7 +1,7 @@
 # Upload package — THE PROPHET (long-form)
 
 **File:** `deliveries/The_Prophet_1080p.mp4` · 1920×1080 · about 8:22 · mid-roll eligible (over 8 min)
-**Captions:** `prophet/renders/The_Prophet.en.srt` (upload as English subtitles)
+**Captions:** `prophet/captions/The_Prophet.en.srt` (upload as English subtitles)
 **Thumbnails:** `prophet/thumbnails/thumb_A.png` (main) · `thumb_B.png` · `thumb_C.png` (use YouTube "Test & compare" with all three)
 **Visibility:** Private (Guy publishes manually) · **Made for kids:** No · **Category:** Education
 
@@ -25,7 +25,7 @@ This is a fictional story built on a very real scam. Watch to the end.
 03:48 The Offer
 04:41 10,240
 06:21 Monday
-07:24 The Sender
+07:26 The Sender
 
 Daniel is fictional. The math, and the scam, are real.
 Sources: Jordan Ellenberg, *How Not to Be Wrong* (2014), "the Baltimore stockbroker" · Derren Brown: *The System* (Channel 4, 2008) · Federal Trade Commission, Consumer Sentinel data (2024): $5.7B reported lost to investment scams.
