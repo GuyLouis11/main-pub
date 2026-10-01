@@ -1,6 +1,6 @@
 # Upload package — THE PROPHET (long-form)
 
-**File:** `deliveries/The_Prophet_1080p.mp4` · 1920×1080 · about 8:22 · mid-roll eligible (over 8 min)
+**File:** `deliveries/The_Prophet_1080p.mp4` · 1920×1080 · 8:15 · mid-roll eligible (over 8 min)
 **Captions:** `prophet/captions/The_Prophet.en.srt` (upload as English subtitles)
 **Thumbnails:** `prophet/thumbnails/thumb_A.png` (main) · `thumb_B.png` · `thumb_C.png` (use YouTube "Test & compare" with all three)
 **Visibility:** Private (Guy publishes manually) · **Made for kids:** No · **Category:** Education
