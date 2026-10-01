@@ -209,3 +209,59 @@ SCX.lily = (R, K, h, id) => {
   cue(t, 'sparkle', .4, .6, { dur: .6 });
   tl.to(cap, { opacity: 0, duration: .3 }, R.V('P81') - .3);
 };
+
+/* ---------- fill the remaining quiet starts with story motion ---------- */
+SCX.bet5 = (R, K, h, id) => {
+  const { tl, cue, S, V } = R;
+  const m = K.mail(h, 1180, 120, 560, { subj: 'Week 5' });
+  m.style.transform = 'scale(.8)'; m.style.transformOrigin = '100% 0';
+  R.up(m, V('P27') - .1, .45, 30); cue(V('P27'), 'notif', .5, .6);
+  K.type(m.bd, 'Down.', WT(R, 'P27', 6), 12);
+  tl.to(m, { opacity: .35, duration: .4 }, WT(R, 'P27', 13));
+};
+SCX.head = (R, K, h, id) => {
+  const { tl, cue, S, V } = R;
+  const p = K.person(h, 'daniel', 1380, 330, 520, { rim: '#9fb7ff' });
+  R.up(p, V('P35') - .2, .5, 20);
+  const bub = [];
+  [[1330, 300, 22], [1290, 250, 32], [1220, 180, 48]].forEach(([x, y, r], i) => { const b = K.text(h, '', `left:${x}px;top:${y}px;width:${r * 2}px;height:${r * 2}px;border-radius:50%;border:3px solid rgba(159,183,255,.7)`); R.pop(b, V('P35') + .2 + i * .18, .3, .3); bub.push(b); });
+  const cloud = K.text(h, '<span class="mono amber" style="font-size:46px">?</span><span class="mono" style="font-size:30px;color:#cfd8f5">&nbsp;1/2 · 1/4 · 1/8 …</span>', 'left:860px;top:70px;padding:22px 34px;border-radius:60px;border:3px solid rgba(159,183,255,.7);background:rgba(10,16,32,.7)');
+  R.pop(cloud, V('P35') + .75, .35, .5); cue(V('P35') + .75, 'soft', .4, .5);
+  tl.to([p, ...bub, cloud], { opacity: .25, duration: .5 }, R.V('P37') - .2);
+};
+SCX.split = (R, K, h, id) => {
+  const { tl, cue } = R;
+  const tf = WT(R, 'P64', 2);
+  const g = K.text(h, '−5,120', 'left:1500px;top:40px;font-size:60px', 'mono red');
+  R.up(g, tf + .5, .35, 10); tl.to(g, { y: -14, opacity: 0, duration: .8, ease: 'power1.in' }, tf + 1.6);
+  tl.fromTo(DOTS.layer, { scale: 1 }, { scale: 1.035, duration: 2.2, ease: 'sine.inOut', immediateRender: false }, tf + .8);
+  tl.to(DOTS.layer, { scale: 1, duration: 1.2, ease: 'sine.inOut' }, tf + 3.0);
+};
+SCX.parable = (R, K, h, id) => {
+  const { tl, cue, V } = R;
+  const card = h.querySelector('.glass');
+  const ul = K.text(card, '', 'left:60px;top:330px;width:560px;height:5px;border-radius:3px;background:linear-gradient(90deg,#ffb347,transparent);transform-origin:0 50%');
+  tl.set(ul, { scaleX: 0 }, 0); tl.to(ul, { scaleX: 1, duration: 1.2, ease: 'power3.out' }, WT(R, 'P72', 5));
+  const bk = K.text(h, '📖', 'left:820px;top:150px;font-size:80px', 'emoji');
+  R.pop(bk, WT(R, 'P72', 12), .35, .4); tl.to(bk, { rotation: -8, y: -10, duration: .6, yoyo: true, repeat: 3, ease: 'sine.inOut' }, WT(R, 'P72', 12) + .4);
+};
+SCX.today = (R, K, h, id) => {
+  const { tl } = R;
+  const env = h.querySelector('div[style*="font-size: 200px"]');
+  if (env) tl.fromTo(env, { x: -500, rotation: -25 }, { x: 0, rotation: 0, duration: .7, ease: 'power3.out', immediateRender: false }, R.V('P84') - .1);
+};
+SCX.halving = (R, K, h, id) => {
+  const { tl, cue, V } = R;
+  const chip = K.text(h, 'WEEK 2 · NEW GUESSES', 'left:1440px;top:150px;background:rgba(10,16,32,.85);border:1px solid rgba(170,190,240,.35);color:#cfd8f5', 'chip');
+  R.up(chip, V('P65') + .1, .35, 10); cue(V('P65') + .1, 'tick', .35, .6, { f: 1200 });
+  tl.to(chip, { opacity: 0, duration: .3 }, WT(R, 'P66', 0) - .2);
+  tl.fromTo(DOTS.layer, { scale: 1 }, { scale: 1.03, duration: 2.0, ease: 'sine.inOut', immediateRender: false }, V('P65'));
+  tl.to(DOTS.layer, { scale: 1, duration: .8, ease: 'sine.inOut' }, V('P65') + 2.0);
+};
+SCX.ask = (R, K, h, id) => {
+  const { tl, cue, V } = R;
+  const card = K.text(h, '<div class="label" style="font-size:18px">A PERFECT RECORD</div><div style="margin-top:16px;font:900 34px/1 Space Grotesk;color:#3dff9a;letter-spacing:6px">✓✓✓✓✓✓✓✓✓✓</div>', 'left:710px;top:150px;width:500px;padding:26px 30px', 'glass');
+  R.up(card, V('P85') - .1, .45, 30); cue(V('P85'), 'check', .4);
+  tl.to(card, { y: -20, duration: 1.2, ease: 'sine.inOut' }, V('P85') + .4);
+  tl.to(card, { opacity: .2, duration: .3 }, WT(R, 'P85', 9) - .2);
+};

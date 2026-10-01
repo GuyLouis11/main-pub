@@ -8921,14 +8921,16 @@ R.tim.scenes.forEach(sc => {
   if (TOTAL > c) gaps.push([c, TOTAL]);
   // one slow, steady camera move per quiet stretch (fixed pivot, no in-out pumping)
   let k = 0;
-  gaps.filter(g => g[1] - g[0] > .95).forEach(([a, b]) => {
+  const G = gaps.filter(g => g[1] - g[0] > .95);
+  G.forEach(([a, b], gi) => {
     const sc = R.tim.scenes.find(s => S(s.id) <= (a + b) / 2 && (a + b) / 2 < E(s.id) && s.id !== 'end');
     if (!sc) return;
     const el = R.$(`[data-scene="${sc.id}"]`);
     if (!el.dataset.pushed) { el.dataset.pushed = 1; tl.set(el, { transformOrigin: '50% 45%' }, 0); }
     const z = 1 + .012 + .006 * (k % 3), dx = ((k % 4) - 1.5) * 8; k++;
     tl.to(el, { scale: z, x: dx, duration: b - a, ease: 'sine.inOut' }, a);
-    tl.to(el, { scale: 1, x: 0, duration: .9, ease: 'sine.inOut' }, b);
+    const nxt = gi + 1 < G.length ? G[gi + 1][0] : 1e9, back = Math.min(.9, nxt - b - .05);
+    if (back > .2) tl.to(el, { scale: 1, x: 0, duration: back, ease: 'sine.inOut' }, b);
   });
 })();
 R.tim.scenes.forEach((sc, j) => R.$$(`[data-scene="${sc.id}"] svg.person`).forEach((p, i) => {

@@ -44,6 +44,8 @@ def main(src, dst):
     wav = os.path.join(ROOT, "renders", "master.wav")
     sf.write(wav, mix.astype(np.float32), SR, subtype="PCM_24")
     print(f"master {m.integrated_loudness(mix):.1f} LUFS, peak {20 * np.log10(np.abs(mix).max()):.2f} dBFS")
+    if dst == "-":
+        return
     kbps = int(os.environ.get("VKBPS", "0"))
     if kbps:   # two-pass to a size budget (GitHub keeps files < 100 MB)
         log = os.path.join(ROOT, "renders", "mpass")
