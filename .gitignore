@@ -1,3 +1,6 @@
 # downloadable package built from hot-water-opening/ (not source)
 deliveries/
 hot-water-opening-project.zip
+# local secrets (never commit)
+.env
+*.env

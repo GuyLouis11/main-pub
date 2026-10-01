@@ -1,8 +1,11 @@
 // Lists stretches > 1.5 s with no visible animation beat, per chapter (reads the GSAP timeline in a headless browser).
 import { chromium } from 'playwright';
+import fs from 'fs';
+// cloud box ships Chromium here; elsewhere set CHROME_PATH or run `npx playwright install chromium`
+const CHROME = process.env.CHROME_PATH || ['/opt/pw-browsers/chromium-1194/chrome-linux/chrome'].find(p => fs.existsSync(p));
 import path from 'path';
 const chs = process.argv.slice(2).length ? process.argv.slice(2) : ['ch1', 'ch2', 'ch3', 'ch4', 'ch5', 'ch6'];
-const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome' });
+const browser = await chromium.launch(CHROME ? { executablePath: CHROME } : {});
 for (const ch of chs) {
   const page = await browser.newPage();
   const errs = []; page.on('pageerror', e => errs.push(e.message));

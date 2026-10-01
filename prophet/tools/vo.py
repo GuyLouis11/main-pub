@@ -139,8 +139,23 @@ def take(text, key, tries=3, tag="", perf=None):
     return y, words, f"{'clean' if not clipped else 'CLIPPED'}/{n}"
 
 
+def env_key():
+    """XI_KEY from the environment, else from a gitignored .env (KEY=value lines) in the project or repo root."""
+    if os.environ.get("XI_KEY"):
+        return os.environ["XI_KEY"]
+    here = os.path.dirname(os.path.abspath(__file__))
+    for d in (os.path.join(here, ".."), os.path.join(here, "..", "..")):
+        f = os.path.join(d, ".env")
+        if os.path.exists(f):
+            for line in open(f, encoding="utf-8"):
+                k, _, v = line.strip().partition("=")
+                if k.strip() == "XI_KEY" and v.strip():
+                    return v.strip().strip('"\'')
+    return None
+
+
 def main(argv):
-    key = os.environ.get("XI_KEY")
+    key = env_key()
     if not key:
         raise SystemExit("set XI_KEY")
     import pyloudnorm as pyln
