@@ -211,7 +211,9 @@ and a loop-back ending.
 1. `npx hyperframes lint`: zero errors. The roughly 57 "nested_structure" warnings are expected.
 2. `node tools/beat_audit.mjs`: no gaps over 1 s except deliberate holds.
 3. `node tools/snap.mjs <out> t1 t2 …`: screenshot every scene and look at them (overlaps, clipped text, wrapping
-   labels).
+   labels). Also run `node tools/overflow.mjs` (in the Shorts): it flags any text spilling out of its card or the
+   frame across the whole timeline. Then review the render at 1 fps for empty or half-empty frames: fill the
+   area above the captions, and never leave a beat on a near-blank screen.
 4. **Flicker scan on the render:** downscale to gray. Flag frames that differ from both neighbours while the
    neighbours match each other. A designed white flash is fine; confirm by checking for a brightness ramp and decay.
 5. **Stillness scan:** flag runs over 1.5 s with a per-frame difference below 0.15. Confirm that slow pushes are

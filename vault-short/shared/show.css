@@ -22,7 +22,7 @@ body { font-family: 'Space Grotesk', sans-serif; color: var(--white); }
 #dust { position: absolute; left: 0; top: 0; }
 #vig { position: absolute; inset: 0; pointer-events: none; z-index: 40; background: radial-gradient(ellipse 85% 65% at 50% 42%, transparent 55%, rgba(0,0,0,.7) 100%); }
 #grain { position: absolute; inset: 0; z-index: 66; pointer-events: none; opacity: .045; background: repeating-linear-gradient(0deg, rgba(255,255,255,.5) 0 1px, transparent 1px 4px); }
-#hudTop { position: absolute; left: 0; top: 92px; width: 1080px; text-align: center; z-index: 45; font: 600 26px/1 'JetBrains Mono', monospace; letter-spacing: 5px; color: rgba(255,214,120,.55); }
+#hudTopOld { position: absolute; left: 0; top: 92px; width: 1080px; text-align: center; z-index: 45; font: 600 26px/1 'JetBrains Mono', monospace; letter-spacing: 5px; color: rgba(255,214,120,.55); }
 
 /* the shaft: street → bedrock → vault (hook and outro) */
 #shaft { position: absolute; left: 0; top: 0; width: 1080px; height: 4200px; }
@@ -70,3 +70,14 @@ body { font-family: 'Space Grotesk', sans-serif; color: var(--white); }
 /* ---------- overlays ---------- */
 #flash { position: absolute; inset: 0; background: #fff; opacity: 0; z-index: 70; pointer-events: none; }
 #black { position: absolute; inset: 0; background: #000; opacity: 0; z-index: 80; }
+
+/* chapter chip + vault backdrop (polish pass) */
+#chips { position: absolute; left: 0; top: 64px; width: 1080px; height: 70px; z-index: 46; pointer-events: none; }
+.chip { position: absolute; left: 540px; top: 0; display: flex; align-items: center; gap: 16px; padding: 10px 26px 10px 12px; border-radius: 40px; white-space: nowrap;
+  background: rgba(10,8,4,.82); border: 2px solid rgba(255,214,120,.5); box-shadow: 0 10px 30px rgba(0,0,0,.5);
+  font: 700 28px/1 'JetBrains Mono', monospace; letter-spacing: 5px; color: var(--gold2); }
+.chip b { font-weight: 800; background: var(--gold); color: #120d04; border-radius: 30px; padding: 6px 14px 5px; letter-spacing: 1px; }
+#backdrop { position: absolute; inset: -80px; filter: blur(6px); background:
+  repeating-linear-gradient(0deg, #120d06 0 5px, transparent 5px 76px),
+  repeating-linear-gradient(90deg, #120d06 0 5px, transparent 5px 152px),
+  linear-gradient(180deg, #b98a2a, #6b4a0e); }

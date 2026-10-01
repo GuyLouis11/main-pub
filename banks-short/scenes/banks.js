@@ -273,21 +273,31 @@ const savers = [0, 1, 2].map(i => div('saver', $('#savers'), saverSVG(['#b8ffd9'
   const tStr = W('B09', 3), tPart = W('B09', 4), tWhen = W('B09', 5), tPay = W('B09', 7), tBack = W('B09', 10), tMon = W('B09', 12), tDes = W('B09', 14);
   tl.to('#dim', { opacity: .5, duration: .3 }, S('destroy')); tl.to('#dim', { opacity: 0, duration: .4 }, tWhen - .2);
   cue(S('destroy') + .1, 'heartbeat', .9); cue(S('destroy') + 1.0, 'heartbeat', .7);
-  R.up('#strangeT', tStr - .1, .45, 30);
-  tl.set('#dCard', { opacity: 0, y: 60 }, 0); tl.to('#dCard', { opacity: 1, y: 0, duration: .35, ease: 'power3.out' }, tWhen - .1);
+  [S('destroy') + .1, S('destroy') + 1.0].forEach((t, i) => {
+    const ring = div('', $('[data-scene="destroy"]'), null, 'position:absolute;left:540px;top:560px;width:220px;height:220px;margin:-110px 0 0 -110px;border-radius:50%;border:8px solid rgba(61,255,154,.7)');
+    tl.set(ring, { opacity: 0, scale: .3 }, 0);
+    tl.to(ring, { opacity: .9, duration: .02 }, t).to(ring, { scale: 4, opacity: 0, duration: .8, ease: 'power2.out' }, t + .02);
+  });
+  R.up('#strangeT', S('destroy') + .1, .5, 30);
+  tl.to('#strangeT', { scale: 1.06, duration: tWhen - S('destroy'), ease: 'sine.inOut' }, S('destroy') + .5);
+  tl.set('#dCard', { opacity: 0, x: -120 }, 0); tl.to('#dCard', { opacity: 1, x: 0, duration: .35, ease: 'power3.out' }, tWhen - .1);
+  tl.set('#lCard', { opacity: 0, x: 120 }, 0); tl.to('#lCard', { opacity: 1, x: 0, duration: .35, ease: 'power3.out' }, tWhen + .05); cue(tWhen + .05, 'swoosh', .4, .4);
+  R.up('#cancelT', tPay + .35, .3, 15);
   center('#payArrow'); R.pop('#payArrow', tPay - .05, .3, .4); cue(tPay - .05, 'swoosh', .5);
   tl.to('#payArrow', { x: 40, duration: .3, yoyo: true, repeat: 3, ease: 'sine.inOut' }, tPay + .3);
-  R.count('#dBal', tPay + .1, tDes - tPay - .2, 300000, 0, usd, 'power2.in'); cue(tPay + .1, 'counter', .5, 0, { dur: tDes - tPay - .2 });
+  R.count('#dBal', tPay + .1, tDes - tPay - .2, 300000, 0, usd, 'power2.in'); R.count('#lBal', tPay + .1, tDes - tPay - .2, 300000, 0, usd, 'power2.in');
+  cue(tPay + .1, 'counter', .5, 0, { dur: tDes - tPay - .2 });
   tl.to('#strangeT', { opacity: .35, duration: .3 }, tPay);
   // the digits disintegrate
-  const parts = $('#dParts');
-  for (let i = 0; i < 70; i++) {
-    const b = div('bit', parts, String(Math.floor(rnd() * 10)), `left:${200 + rnd() * 400}px;top:${120 + rnd() * 90}px;font-size:${24 + rnd() * 30}px`);
+  for (let i = 0; i < 80; i++) {
+    const parts = i % 2 ? $('#lParts') : $('#dParts');
+    const b = div('bit', parts, String(Math.floor(rnd() * 10)), `left:${80 + rnd() * 300}px;top:${140 + rnd() * 80}px;font-size:${22 + rnd() * 28}px;${i % 2 ? 'color:#ff8a7d;text-shadow:0 0 12px #ff4a3d' : ''}`);
     const t = tDes - .1 + rnd() * .25;
     tl.set(b, { opacity: 0 }, 0); tl.set(b, { opacity: 1 }, t);
     tl.to(b, { x: (rnd() - .5) * 700, y: -200 - rnd() * 500, rotation: (rnd() - .5) * 540, opacity: 0, duration: .9 + rnd() * .5, ease: 'power2.out' }, t);
   }
-  tl.to('#dBal', { opacity: 0, scale: 1.3, filter: 'blur(10px)', duration: .3 }, tDes - .1); cue(tDes - .1, 'dissolve', .9);
+  tl.to('#dBal, #lBal', { opacity: 0, scale: 1.3, filter: 'blur(10px)', duration: .3 }, tDes - .1);
+  tl.to('#cancelT', { opacity: 0, duration: .2 }, tDes); cue(tDes - .1, 'dissolve', .9);
   center('#destroyed'); R.slam('#destroyed', tDes + .1, 2.4, .2); cue(tDes + .3, 'impact', 1); R.shake(tDes + .3, 22, .4);
   tl.to('#payArrow', { opacity: 0, duration: .2 }, tDes);
 }
@@ -302,10 +312,11 @@ const savers = [0, 1, 2].map(i => div('saver', $('#savers'), saverSVG(['#b8ffd9'
   tl.to(flow, { x: -300, duration: E('limits') - tKeep, ease: 'power3.out' }, tKeep);       // the flow slows once it's clamped
   tl.set('#infT', { opacity: 0, scale: .6 }, 0); tl.to('#infT', { opacity: 1, scale: 1, duration: .3, ease: 'back.out(2)' }, tNot - .2);
   tl.set('#infX', { scaleX: 0 }, 0); tl.to('#infX', { scaleX: 1, duration: .16, ease: 'power2.out' }, tUnl + .1); cue(tUnl + .1, 'slash', .7);
-  tl.set('#clampA', { y: -500 }, 0); tl.to('#clampA', { y: 0, duration: .3, ease: 'power3.in' }, tInt - .2); cue(tInt + .1, 'clunk', .8, -.3); R.shake(tInt + .1, 10, .2);
-  tl.set('#clampB', { y: -500 }, 0); tl.to('#clampB', { y: 0, duration: .3, ease: 'power3.in' }, tReg - .2); cue(tReg + .1, 'clunk', .8, .3); R.shake(tReg + .1, 10, .2);
+  tl.set('#clampA', { y: -900 }, 0); tl.to('#clampA', { y: 0, duration: .3, ease: 'power3.in' }, tInt - .2); cue(tInt + .1, 'clunk', .8, -.3); R.shake(tInt + .1, 10, .2);
+  tl.set('#clampB', { y: -900 }, 0); tl.to('#clampB', { y: 0, duration: .3, ease: 'power3.in' }, tReg - .2); cue(tReg + .1, 'clunk', .8, .3); R.shake(tReg + .1, 10, .2);
   center('#labA'); center('#labB'); R.up('#labA', tInt + .1, .25, 20); R.up('#labB', tReg + .1, .25, 20);
   tl.to('#flow', { scaleY: .45, duration: .4, ease: 'power2.out' }, tKeep);
+  center('#pipeL'); R.up('#pipeL', S('limits') + .1, .3, 20);
   center('#inCheck'); R.slam('#inCheck', tChk - .1, 2, .2); cue(tChk + .1, 'stamp', .8);
 }
 
@@ -330,6 +341,55 @@ const savers = [0, 1, 2].map(i => div('saver', $('#savers'), saverSVG(['#b8ffd9'
   tl.to('#wheel', { rotation: 360, duration: Math.max(.3, TOTAL - tShut - .3), ease: 'power2.out', svgOrigin: '320 320' }, tShut + .25);
   R.shake(tShut + .25, 16, .3);
 }
+
+/* ================= polish pass: chapters + extra layers ================= */
+{
+  const lab = { hook: 'THE LOAN', type: 'THE KEYSTROKE', myth: 'THE MYTH', quote: 'THE SOURCE', zero: 'THE 10% RULE', isnew: 'THE TRUTH',
+    pct: 'THE 97%', destroy: 'THE TWIST', limits: 'THE LIMITS', owes: 'THE IOU' };
+  const ids = Object.keys(lab);
+  ids.forEach((id, i) => {
+    const c = div('chip', $('#chips'), `<b>${String(i + 1).padStart(2, '0')}</b>${lab[id]}`);
+    const tin = i ? S(id) + .1 : .35, tout = i < ids.length - 1 ? E(id) - .15 : W('B11', 8) + .3;
+    tl.set(c, { opacity: 0, y: -24, xPercent: -50 }, 0);
+    tl.to(c, { opacity: 1, y: 0, duration: .25, ease: 'back.out(2)' }, tin);
+    tl.to(c, { opacity: 0, y: -24, duration: .15, ease: 'power2.in' }, tout);
+  });
+}
+/* type: the vault-cash meter never moves while the balance appears */
+{
+  const tAcct = W('B02', 6), tEx = W('B02', 11);
+  tl.set('#cashM', { opacity: 0, y: 40 }, 0); tl.to('#cashM', { opacity: 1, y: 0, duration: .3, ease: 'back.out(1.6)' }, W('B02', 1));
+  tl.to('#cashV', { color: '#ffc640', scale: 1.2, duration: .15, yoyo: true, repeat: 3, ease: 'sine.inOut', transformOrigin: '0% 50%' }, tAcct + .15);
+  cue(tAcct + .2, 'buzz', .35, -.3);
+  tl.to('#cashM', { opacity: 0, y: 40, duration: .25 }, tEx - .3);
+}
+/* myth: the textbook title card fills the setup, then hands off to the cascade */
+{
+  const tYou = W('B03', 6);
+  tl.set('#tbook', { opacity: 0, scale: .8, rotation: -3 }, 0);
+  tl.to('#tbook', { opacity: 1, scale: 1, rotation: 0, duration: .4, ease: 'back.out(1.6)' }, S('myth') + .05); cue(S('myth') + .05, 'paper', .6);
+  tl.to('#tbook', { scale: 1.04, duration: tYou - S('myth') - .5, ease: 'sine.inOut' }, S('myth') + .45);
+  tl.to('#tbook', { opacity: 0, y: -260, scale: .4, duration: .3, ease: 'power2.in' }, tYou - .2);
+}
+/* isnew: coins drip from the piggy banks down the pipes… until the pipes are cut */
+{
+  const tLoan = W('B07', 2), tSav = W('B07', 6);
+  const bz = (p, u) => { const m = 1 - u; return [m * m * m * p[0][0] + 3 * m * m * u * p[1][0] + 3 * m * u * u * p[2][0] + u * u * u * p[3][0], m * m * m * p[0][1] + 3 * m * m * u * p[1][1] + 3 * m * u * u * p[2][1] + u * u * u * p[3][1]]; };
+  const P = [[[210, 30], [210, 160], [540, 120], [540, 270]], [[540, 30], [540, 120], [540, 180], [540, 270]], [[870, 30], [870, 160], [540, 120], [540, 270]]];
+  let k = 0;
+  for (let t = tLoan + .2; t < tSav - .1; t += .16) {
+    const path = P[k % 3], c = div('', $('#coinsP'), null, 'left:-14px;top:-14px;width:28px;height:28px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff6d0,#ffc640 50%,#a8700a);box-shadow:0 0 10px #ffc640');
+    const pr = { u: 0 }, mv = () => { const [x, y] = bz(path, pr.u); c.style.transform = `translate(${x}px, ${y}px)`; };
+    tl.set(c, { opacity: 0 }, 0);
+    tl.to(c, { opacity: 1, duration: .08 }, t);
+    tl.fromTo(pr, { u: 0 }, { u: 1, duration: .7, ease: 'power1.in', onUpdate: mv, onStart: mv, immediateRender: false }, t);
+    tl.to(c, { opacity: 0, duration: .1 }, t + .62);
+    if (k % 2 === 0) cue(t + .65, 'tick', .25, (k % 3 - 1) * .6, { f: 2600 });
+    k++;
+  }
+}
+/* owes: connect the account to both IOUs */
+R.draw('#ol1', W('B11', 6) - .2, .25); R.draw('#ol2', W('B11', 7) - .15, .25);
 
 R.captions($('#caps'));
 R.finish('banks');

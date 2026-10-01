@@ -179,8 +179,8 @@ const depthFmt = v => (v < .5 ? '0' : '−' + Math.round(v)) + ' FT';
       cx.globalCompositeOperation = 'lighter'; cx.fillStyle = g; cx.fillRect(0, Ht * (1 - st.build), Wd, Ht); cx.globalCompositeOperation = 'source-over';
     }
   };
-  tl.fromTo(st, { build: 0 }, { build: 1, duration: tHalf - tTons + .2, ease: 'power1.inOut', onUpdate: draw }, tTons - .25);
-  cue(tTons - .25, 'stack', .7, 0, { dur: tHalf - tTons + .2 });
+  tl.fromTo(st, { build: .45 }, { build: 1, duration: tHalf - S('mass') - .1, ease: 'power1.inOut', onUpdate: draw }, S('mass') + .05);
+  cue(S('mass') + .05, 'stack', .7, 0, { dur: tHalf - S('mass') - .1 });
   tl.fromTo(st, { zoom: 1 }, { zoom: .09, duration: tWorth - tHalf + .1, ease: 'power2.in', onUpdate: draw, immediateRender: false }, tHalf - .1);
   cue(tHalf - .1, 'zoom', .6, 0, { dur: tWorth - tHalf + .1, f: 220 });
   tl.fromTo(st, { sheen: -.3 }, { sheen: 1.4, duration: .9, ease: 'sine.inOut', onUpdate: draw, immediateRender: false }, tBars - .2);
@@ -290,9 +290,9 @@ const depthFmt = v => (v < .5 ? '0' : '−' + Math.round(v)) + ' FT';
     cells.push(e);
   }
   // the 122nd cage sits alone at the start of a 12th row
-  const dur = tLock - t122 + .05;
+  const dur = tLock - tIn - .05;
   cells.forEach((e, i) => {
-    const t = t122 - .1 + dur * Math.pow(i / 121, .8);
+    const t = tIn + dur * Math.pow(i / 121, .8);
     tl.set(e, { opacity: 0, scale: .3 }, 0); tl.to(e, { opacity: 1, scale: 1, duration: .14, ease: 'back.out(2)' }, t);
     if (i % 6 === 0) cue(t, 'tick', .35, (i % cols) / cols - .5, { f: 1800 + i * 6 });
     const lk = e.querySelector('.lk');
@@ -300,7 +300,7 @@ const depthFmt = v => (v < .5 ? '0' : '−' + Math.round(v)) + ' FT';
   });
   cue(tLock, 'lock', .9); cue(tLock + .25, 'lock', .6, .3);
   R.up('#cageHead', tIn - .05, .3, 30);
-  R.count('#cageN', t122 - .1, dur, 0, 122, v => Math.round(v), 'power1.out'); cue(t122 - .1, 'counter', .45, 0, { dur });
+  R.count('#cageN', tIn, dur, 0, 122, v => Math.round(v), 'power1.out'); cue(tIn, 'counter', .45, 0, { dur });
   // one owner each: zoom into a single cage
   const pick = cells[60], pr = Math.floor(60 / cols), pc = 60 % cols;
   const px = 96 + pc * (cw + gx) + cw / 2, py = 330 + pr * (ch + gy) + ch / 2;
@@ -392,8 +392,8 @@ const depthFmt = v => (v < .5 ? '0' : '−' + Math.round(v)) + ' FT';
   const tLoad = W('V09', 2), tCart = W('V09', 7), tWheel = W('V09', 9), tNext = W('V09', 14), tDoor = W('V09', 15);
   const flag = (host, name, hue) => div('', host,
     `<div style="position:absolute;left:30px;top:34px;width:150px;height:100px;border-radius:10px;overflow:hidden;background:linear-gradient(135deg,${hue},#1d1d22);border:3px solid rgba(255,255,255,.25)"><div style="position:absolute;left:0;top:0;width:150px;height:100px;font:900 64px/100px 'Unbounded';text-align:center;color:rgba(255,255,255,.75)">?</div></div>
-     <div class="anton" style="position:absolute;left:200px;top:44px;font-size:56px;color:#fff3cf">${name}</div>
-     <div class="mono" style="position:absolute;left:30px;top:160px;font-size:26px;color:#8a8578">account <span class="redact" style="width:120px"></span></div>`);
+     <div class="anton" style="position:absolute;left:204px;top:52px;font-size:48px;color:#fff3cf">${name}</div>
+     <div class="mono" style="position:absolute;left:30px;top:170px;font-size:26px;color:#8a8578">gold account <span class="redact" style="width:110px"></span></div>`);
   flag($('#cA'), 'COUNTRY A', '#6b5a8f'); flag($('#cB'), 'COUNTRY B', '#3f7f7a');
   tl.set('#cA', { opacity: 0, x: -200 }, 0); tl.to('#cA', { opacity: 1, x: 0, duration: .35, ease: 'power3.out' }, tWhen - .05); cue(tWhen - .05, 'swoosh', .5, -.5);
   tl.set('#cB', { opacity: 0, x: 200 }, 0); tl.to('#cB', { opacity: 1, x: 0, duration: .35, ease: 'power3.out' }, W('V08', 4) - .1); cue(W('V08', 4) - .1, 'swoosh', .5, .5);
@@ -479,9 +479,9 @@ const depthFmt = v => (v < .5 ? '0' : '−' + Math.round(v)) + ' FT';
   through('rent');
   const tFed = W('V11', 1), tNo = W('V11', 3), tRent = W('V11', 4), tAnd = W('V11', 5), tBack = W('V11', 12), tGets = W('V11', 14), tExact = W('V11', 16), tBars = W('V11', 18);
   tl.set('#receipt', { y: -640 }, 0);
-  tl.to('#receipt', { y: 0, duration: tRent - tFed + .1, ease: 'steps(14)' }, tFed - .15); cue(tFed - .15, 'print', .8, 0, { dur: tRent - tFed + .1 });
+  tl.to('#receipt', { y: 0, duration: tRent - S('rent') - .2, ease: 'steps(16)' }, S('rent') + .15); cue(S('rent') + .15, 'print', .8, 0, { dur: tRent - S('rent') - .2 });
   center('#noRent'); R.slam('#noRent', tRent + .05, 2.4, .2); cue(tRent + .25, 'stamp', 1); R.shake(tRent + .25, 16, .3);
-  tl.to('#receiptMask, #slotTop, #noRent', { opacity: 0, y: -80, duration: .3, ease: 'power2.in' }, tAnd - .1);
+  tl.to('#receiptMask, #slotTop, #noRent, #billN, #billK', { opacity: 0, y: -80, duration: .3, ease: 'power2.in' }, tAnd - .1);
   // deposited vs returned: the same serial numbers
   const sns = ['A-48213', 'A-48214', 'A-48215', 'A-48216'], ozs = ['400.12 oz', '399.87 oz', '400.31 oz', '401.04 oz'];
   const mk = (host, i) => { const s = div('serial', host, `<div class="sn">${sns[i]}</div><div class="oz">${ozs[i]}</div>`, `top:${i * 190}px`); goldBar(s, 0, 28, 150); return s; };
@@ -525,6 +525,96 @@ const depthFmt = v => (v < .5 ? '0' : '−' + Math.round(v)) + ' FT';
   tl.to('#downArrow', { y: 40, duration: .3, yoyo: true, repeat: 1, ease: 'sine.inOut' }, tDown + .15);
   tl.to('#downArrow', { opacity: 0, duration: .35 }, TOTAL - .55);
   cue(tDown + .3, 'boom', .6);
+}
+
+/* ================= polish pass: chapters, backdrop, extra layers ================= */
+// chapter chip: a new label slides in on every scene (a pattern interrupt every 3–8 s)
+{
+  const lab = { hook: '80 FT DOWN', mass: 'THE PILE', owner: 'THE OWNERS', door: 'THE DOOR', cages: 'THE CAGES', stack: 'THE STACKERS',
+    twist: 'THE TWIST', pay: 'THE PAYMENT', room: 'THE TRANSFER', rent: 'THE RULES', outro: 'LIBERTY ST' };
+  const ids = Object.keys(lab);
+  ids.forEach((id, i) => {
+    const c = div('chip', $('#chips'), `<b>${String(i + 1).padStart(2, '0')}</b>${lab[id]}`);
+    const tin = i ? S(id) + .1 : .35, tout = i < ids.length - 1 ? E(id) - .15 : TOTAL - .45;
+    tl.set(c, { opacity: 0, y: -24, xPercent: -50 }, 0);
+    tl.to(c, { opacity: 1, y: 0, duration: .25, ease: 'back.out(2)' }, tin);
+    tl.to(c, { opacity: 0, y: -24, duration: .15, ease: 'power2.in' }, tout);
+  });
+}
+// a blurred wall of bars behind every inside-the-vault scene, slowly drifting
+tl.set('#backdrop', { opacity: 0 }, 0);
+tl.to('#backdrop', { opacity: .14, duration: .5 }, E('hook') - .3);
+tl.to('#backdrop', { opacity: 0, duration: .3 }, S('outro') + .1);
+tl.fromTo('#backdrop', { scale: 1.02, x: 0 }, { scale: 1.12, x: -40, duration: TOTAL, ease: 'none', data: 'drift' }, 0);
+
+/* owner: anonymous countries orbit the ring and pour gold into it */
+{
+  const tA = W('V03', 0), tNone = W('V03', 2), tUS = W('V03', 7);
+  const cx = 540, cy = 620, angs = [35, 70, 110, 145, 215, 250, 290, 325];
+  const hues = ['#6b5a8f', '#3f7f7a', '#8f5a5a', '#5a6f8f', '#7f7a3f', '#5a8f6b', '#8f6b5a', '#6b6b8f'];
+  angs.forEach((a, i) => {
+    const r = a * Math.PI / 180, bx = cx + Math.sin(r) * 440, by = cy - Math.cos(r) * 420;
+    const bd = div('steelcard', $('#orbit'), `<div style="position:absolute;inset:8px;border-radius:12px;background:linear-gradient(135deg,${hues[i]},#1d1d22);font:900 40px/58px 'Unbounded';text-align:center;color:rgba(255,255,255,.8)">?</div>`,
+      `left:${bx - 52}px;top:${by - 37}px;width:104px;height:74px;border-radius:16px`);
+    const t = tA - .1 + i * .07;
+    tl.set(bd, { opacity: 0, scale: .3 }, 0); tl.to(bd, { opacity: 1, scale: 1, duration: .25, ease: 'back.out(2.2)' }, t);
+    cue(t, 'bloop', .3, Math.sin(r) * .8, { f: 500 + i * 70 });
+    tl.to(bd, { y: -10, duration: .9, yoyo: true, repeat: 2, ease: 'sine.inOut' }, t + .3);
+    const ln = svgEl('line', { x1: bx, y1: by, x2: cx + (bx - cx) * .74, y2: cy + (by - cy) * .74, stroke: 'rgba(255,198,64,.45)', 'stroke-width': 3, 'stroke-dasharray': '8 10' }, $('#streams'));
+    tl.set(ln, { opacity: 0 }, 0); tl.to(ln, { opacity: 1, duration: .2 }, t + .15);
+    for (let k = 0; k < 3; k++) {
+      const d = div('', $('#orbit'), null, `left:${bx - 9}px;top:${by - 9}px;width:18px;height:18px;border-radius:50%;background:#ffd36b;box-shadow:0 0 14px #ffc640`);
+      const t0 = t + .25 + k * .55;
+      tl.set(d, { opacity: 0 }, 0);
+      tl.to(d, { opacity: 1, duration: .08 }, t0);
+      tl.to(d, { x: (cx - bx) * .74, y: (cy - by) * .74, duration: .5, ease: 'power1.in' }, t0);
+      tl.to(d, { opacity: 0, duration: .08 }, t0 + .45);
+    }
+  });
+}
+
+/* pay: a flight route between the two countries — cancelled on "nothing gets shipped" */
+{
+  const tPays = W('V08', 3), tNo = W('V08', 7);
+  R.draw('#routeP', tPays - .15, .5);
+  const P0 = [240, 490], P1 = [540, 770], P2 = [840, 490];
+  const pos = u => [(1 - u) ** 2 * P0[0] + 2 * (1 - u) * u * P1[0] + u * u * P2[0], (1 - u) ** 2 * P0[1] + 2 * (1 - u) * u * P1[1] + u * u * P2[1]];
+  const pl = $('#plane'), pr = { u: 0 };
+  const place = () => {
+    const [x, y] = pos(pr.u), [x2, y2] = pos(Math.min(1, pr.u + .01));
+    const ang = Math.atan2(y2 - y, x2 - x) * 57.3 + 90;
+    pl.style.transform = `translate(${x - 55}px, ${y - 55}px) rotate(${ang}deg)`;
+  };
+  tl.set(pl, { opacity: 0 }, 0);
+  tl.fromTo(pr, { u: 0 }, { u: .78, duration: tNo - tPays + .1, ease: 'power1.inOut', onUpdate: place, onStart: place }, tPays - .1);
+  tl.to(pl, { opacity: 1, duration: .2 }, tPays - .1); cue(tPays - .1, 'jet', .5, -.3, { dur: tNo - tPays + .1 });
+  tl.to(pl, { opacity: 0, scale: .6, duration: .25 }, tNo - .05);
+  tl.to('#routeP', { stroke: '#ff4a3d', opacity: .35, duration: .25 }, tNo - .05);
+}
+
+/* plan: three staff must be present whenever a cage is opened */
+{
+  const tLoad = W('V09', 2), tDoor = W('V09', 15);
+  const host = $('#staff');
+  const ppl = [0, 1, 2].map(i => div('', host, `<svg viewBox="0 0 40 60" style="width:40px;height:60px"><circle cx="20" cy="12" r="10" fill="#ffd36b"/><path d="M4,58 L8,28 Q20,20 32,28 L36,58 Z" fill="#ffd36b"/></svg>`, `position:absolute;left:${i * 50}px;top:12px`));
+  const tx = div('mono', host, '3 STAFF PRESENT', 'position:absolute;left:170px;top:30px;font-size:30px;color:#ffe7a3');
+  ppl.forEach((pp, i) => { tl.set(pp, { opacity: 0, y: 20 }, 0); tl.to(pp, { opacity: 1, y: 0, duration: .2, ease: 'back.out(2)' }, V('V09') + .1 + i * .1); cue(V('V09') + .1 + i * .1, 'tick', .35, -.6, { f: 1500 + i * 200 }); });
+  tl.set(tx, { opacity: 0 }, 0); tl.to(tx, { opacity: 1, duration: .25 }, V('V09') + .4);
+  tl.to(host, { x: 480, duration: .5, ease: 'power2.inOut' }, tDoor - .3);   // they follow the cart to cage B
+}
+
+/* stack: the bar callout */
+R.up('#barCall', W('V06', 3), .3, 20); center('#barCall'); tl.set('#barCall', { left: 540 }, 0);
+
+/* rent: $0 a month */
+{
+  const tRent = W('V11', 4);
+  R.up('#billK', S('rent') + .1, .3, 15);
+  tl.set('#billN', { opacity: 0 }, 0); tl.to('#billN', { opacity: 1, duration: .25 }, W('V11', 1));
+  tl.set('#billV', { textContent: '$ ???' }, 0);
+  tl.to('#billV', { opacity: .5, duration: .25, yoyo: true, repeat: 1, ease: 'sine.inOut' }, W('V11', 1) + .1);
+  tl.set('#billV', { textContent: '$0', scale: 2 }, tRent - .05);
+  tl.to('#billV', { scale: 1, duration: .2, ease: 'power4.in' }, tRent - .05);
 }
 
 R.captions($('#caps'));

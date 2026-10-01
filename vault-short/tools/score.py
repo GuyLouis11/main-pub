@@ -146,6 +146,12 @@ class Synth(Kit):
         squeak = .1 * self.sine(2200 + 200 * np.sin(t * 9).mean(), sec) * (np.sin(2 * np.pi * 3.5 * t) > .97)
         return (roll + squeak) * self.adsr(n, .08, .15)
 
+    def jet(self, sec):                    # a distant airliner passing
+        n = self.n(sec)
+        t = np.arange(n) / SR
+        x = self.bp(self.noise(sec), 300, 3500) * np.sin(np.pi * t / t[-1]) ** 1.5
+        return x + .3 * self.sweep(900, 700, sec, 1) * np.sin(np.pi * t / t[-1]) ** 2
+
     def flip(self):
         out = np.zeros(self.n(.4))
         for k in range(5):
@@ -309,12 +315,12 @@ def main():
             "slash": k.slash, "grind": lambda: k.grind(max(.2, dur)), "clang": k.clang, "tick": lambda: k.tick(f, .01),
             "lock": k.lock, "bloop": lambda: k.bloop(f), "chime": k.chime, "fall": k.fall, "spot": k.spot,
             "heartbeat": k.heartbeat, "slide": lambda: k.whoosh(.35, 600, 3000), "cart": lambda: k.cart(max(.2, dur)),
-            "flip": k.flip, "print": lambda: k.printer(max(.2, dur)), "boom": lambda: k.boom(.9),
+            "flip": k.flip, "jet": lambda: k.jet(max(.3, dur)), "print": lambda: k.printer(max(.2, dur)), "boom": lambda: k.boom(.9),
         }[name]()
         base = {"rumble": .6, "train": .45, "shimmer": .4, "thud": .7, "swoosh": .4, "whoosh": .45, "riser": .35, "impact": .9,
                 "stack": .4, "zoom": .4, "counter": .25, "clank": .55, "coins": .4, "pop": .5, "blip": .35, "stamp": .8, "creak": .5,
                 "slash": .5, "grind": .55, "clang": 1.0, "tick": .35, "lock": .5, "bloop": .4, "chime": .45, "fall": .5, "spot": .7,
-                "heartbeat": .95, "slide": .45, "cart": .55, "flip": .5, "print": .4, "boom": .7}[name]
+                "heartbeat": .95, "slide": .45, "cart": .55, "flip": .5, "jet": .35, "print": .4, "boom": .7}[name]
         fx.add(t, s, g * base, max(-1, min(1, pan)))
 
     mus.reverb(.18, 2.2, 6000); fx.reverb(.16, 2.6, 6500)       # a big stone room

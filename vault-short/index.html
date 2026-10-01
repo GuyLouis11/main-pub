@@ -1116,6 +1116,7 @@
 
   <!-- world (decoration, never a beat) -->
   <div id="bg"></div>
+  <div id="backdrop" data-drift="1"></div>
   <canvas id="dust" width="1080" height="1920" data-drift="1"></canvas>
 
   <div id="stage" class="abs" style="inset:0">
@@ -1163,11 +1164,12 @@
         <div id="train" class="abs" style="left:-1400px;top:1420px;width:1300px;height:160px;border-radius:26px 60px 26px 26px;background:linear-gradient(180deg,#b9c2cc,#7c8590);box-shadow:0 0 60px rgba(255,230,160,.25)">
           <div id="trainWin" class="abs" style="left:40px;top:30px;right:120px;height:56px;background:repeating-linear-gradient(90deg,#ffe8a8 0 90px,#5c646e 90px 120px);opacity:.9"></div>
         </div>
-        <div class="abs mono" style="left:760px;top:1336px;font-size:24px;letter-spacing:4px;color:rgba(200,200,215,.5)">SUBWAY</div>
+        <div class="tag" style="left:640px;top:1330px;font-size:30px;border-color:rgba(200,200,215,.5);color:#e3e9ef">SUBWAY TUNNELS</div>
         <!-- bedrock: Manhattan schist -->
         <div class="stratum" style="top:1652px;height:1360px;background:linear-gradient(180deg,#1b1f26 0%,#141820 50%,#100f12 100%)"></div>
         <svg id="schist" class="stratum" viewBox="0 0 1080 1360" style="top:1652px;height:1360px"></svg>
-        <div class="abs mono" style="left:700px;top:1720px;font-size:24px;letter-spacing:4px;color:rgba(170,185,210,.45)">BEDROCK</div>
+        <div class="tag" style="left:520px;top:1720px;font-size:30px;border-color:rgba(170,185,210,.5);color:#dbe4ec">BEDROCK · MANHATTAN SCHIST</div>
+        <div class="tag" style="left:560px;top:2400px;font-size:30px;border-color:rgba(170,185,210,.5);color:#dbe4ec">50 FT BELOW SEA LEVEL</div>
         <!-- the vault chamber -->
         <div class="stratum" style="top:3012px;height:1188px;background:radial-gradient(ellipse 70% 60% at 50% 40%,#3b2a0e 0%,#1d150a 55%,#0a0806 100%)"></div>
         <div id="vaultWall" class="abs" style="left:90px;top:3150px;width:900px;height:860px;overflow:hidden;border-radius:12px"></div>
@@ -1228,6 +1230,8 @@
         <div class="anton goldtx" style="font-size:96px">OTHER</div>
         <div class="anton goldtx" style="font-size:96px;margin-top:6px">COUNTRIES</div>
       </div>
+      <div id="orbit" class="abs" style="inset:0"></div>
+      <svg id="streams" class="abs" viewBox="0 0 1080 1240" style="left:0;top:0;width:1080px;height:1240px;overflow:visible"></svg>
       <div id="usTag" class="tag" style="left:452px;top:236px;border-color:#ff4a3d;color:#ffd6d1">U.S.</div>
       <div id="notUS" class="stamp red" style="left:540px;top:1050px">NOT AMERICA'S</div>
     </div>
@@ -1302,6 +1306,7 @@
         <div id="dropBar" class="abs" style="left:190px;top:-150px;width:200px;height:74px"></div>
         <div id="sparks" class="abs" style="inset:0"></div>
       </div>
+      <div id="barCall" class="tag" style="left:560px;top:1120px;font-size:30px">EACH BAR · 400 TROY OZ · 99.5% GOLD</div>
       <div id="mgTile" class="abs" style="left:70px;top:170px;width:250px;height:280px;border-radius:20px;background:linear-gradient(160deg,#dfe7ee,#9fb0bf);color:#14181c;box-shadow:0 20px 60px rgba(0,0,0,.6)">
         <div class="mono" style="position:absolute;left:22px;top:20px;font-size:40px">12</div>
         <div class="big" style="position:absolute;left:0;top:76px;width:250px;text-align:center;font-size:120px">Mg</div>
@@ -1325,15 +1330,17 @@
     <!-- 8 · pay: nothing gets shipped; the cart -->
     <div id="sc-pay" class="scene clip" data-scene="pay" data-start="36.222" data-duration="8.274" data-track-index="8">
       <div id="payTop" class="abs" style="left:0;top:0;width:1080px;height:1240px">
-        <div id="cA" class="steelcard" style="left:70px;top:240px;width:380px;height:230px"></div>
-        <div id="cB" class="steelcard" style="left:630px;top:240px;width:380px;height:230px"></div>
+        <div id="cA" class="steelcard" style="left:40px;top:230px;width:400px;height:250px"></div>
+        <div id="cB" class="steelcard" style="left:640px;top:230px;width:400px;height:250px"></div>
+        <svg id="route" class="abs" viewBox="0 0 1080 300" style="left:0;top:470px;width:1080px;height:300px;overflow:visible"><path id="routeP" d="M240,20 Q540,300 840,20" stroke="#ffc640" stroke-width="7" stroke-dasharray="16 14" fill="none"/></svg>
+        <svg id="plane" class="abs" viewBox="0 0 120 120" style="left:0;top:0;width:110px;height:110px;overflow:visible"><path d="M60,6 L68,44 L112,62 L112,72 L68,64 L66,92 L80,102 L80,110 L60,104 L40,110 L40,102 L54,92 L52,64 L8,72 L8,62 L52,44 Z" fill="#e3e9ef"/></svg>
         <svg id="payArrow" class="abs" viewBox="0 0 220 80" style="left:430px;top:316px;width:220px;height:80px;overflow:visible">
           <path id="payPath" d="M10,40 L190,40" stroke="#ffc640" stroke-width="12" stroke-linecap="round" fill="none"/>
           <path id="payHead" d="M170,14 L206,40 L170,66" stroke="#ffc640" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
         </svg>
-        <div id="payLab" class="pill" style="left:540px;top:500px;background:#ffc640;color:#1a1204;font-size:34px">PAYS IN GOLD</div>
-        <div id="ships" class="abs" style="left:0;top:640px;width:1080px;height:360px"></div>
-        <div id="shippedT" class="anton head redtx" style="top:1040px;font-size:96px">SHIPPED: NOTHING</div>
+        <div id="payLab" class="pill" style="left:540px;top:520px;background:#ffc640;color:#1a1204;font-size:34px">PAYS IN GOLD</div>
+        <div id="ships" class="abs" style="left:0;top:720px;width:1080px;height:360px"></div>
+        <div id="shippedT" class="anton head redtx" style="top:1090px;font-size:96px">SHIPPED: NOTHING</div>
       </div>
       <div id="plan" class="abs" style="left:0;top:0;width:1080px;height:1240px">
         <div class="kick" style="top:190px;color:#ffe7a3">inside the vault · top view</div>
@@ -1352,6 +1359,7 @@
           <div id="cartLoad" class="abs" style="left:14px;top:22px;width:112px;height:66px"></div>
           <div class="abs" style="left:-14px;top:30px;width:12px;height:50px;border-radius:5px;background:#9aa9b7"></div>
         </div>
+        <div id="staff" class="abs" style="left:110px;top:1040px;width:420px;height:90px"></div>
         <div id="ledA" class="mono abs redtx" style="left:150px;top:800px;width:300px;text-align:center;font-size:56px">− GOLD</div>
         <div id="ledB" class="mono abs greentx" style="left:630px;top:800px;width:300px;text-align:center;font-size:56px">+ GOLD</div>
       </div>
@@ -1372,6 +1380,8 @@
 
     <!-- 10 · rent: no rent, exact same bars -->
     <div id="sc-rent" class="scene clip" data-scene="rent" data-start="48.667" data-duration="6.093" data-track-index="10">
+      <div id="billK" class="kick" style="top:150px;color:#ffe7a3">storage bill · 6,331 tons</div>
+      <div id="billN" class="abs" style="left:0;top:870px;width:1080px;text-align:center"><span class="kick" style="position:relative;width:auto;font-size:30px">rent per month</span><div id="billV" class="big goldtx" style="font-size:150px;margin-top:20px">$0</div></div>
       <div id="slotTop" class="abs" style="left:210px;top:190px;width:660px;height:30px;border-radius:15px;background:#000;box-shadow:0 0 0 6px #2a3038"></div>
       <div id="receiptMask" class="abs" style="left:240px;top:205px;width:600px;height:640px;overflow:hidden">
         <div id="receipt" class="abs" style="left:0;top:0;width:600px;height:620px;background:#f3efe2;border-radius:0 0 12px 12px;color:#1d1a14;font:700 34px/1.25 'JetBrains Mono',monospace;padding:40px 40px 30px;box-shadow:0 20px 50px rgba(0,0,0,.6)">
@@ -1404,7 +1414,7 @@
     </div>
   </div>
 
-  <div id="hudTop" data-layout-ignore>33 LIBERTY ST · NEW YORK</div>
+  <div id="chips" data-layout-ignore></div>
   <div id="vig" data-layout-ignore></div>
   <div id="dim" data-layout-ignore style="position:absolute;inset:0;background:#000;opacity:0;z-index:45;pointer-events:none"></div>
   <div id="caps"></div>

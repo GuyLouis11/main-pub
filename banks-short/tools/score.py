@@ -166,6 +166,12 @@ class Synth(Kit):
     def slash(self):
         return self.whoosh(.22, 2000, 9000) + self.sweep(3200, 5200, .22, 1) * self.env(self.n(.22), .08) * .25
 
+    def buzz(self):
+        n = self.n(.35)
+        tt = np.arange(n) / SR
+        s = np.sign(np.sin(2 * np.pi * 110 * tt)) + np.sign(np.sin(2 * np.pi * 116 * tt))
+        return self.lp(s, 2000) * self.adsr(n, .01, .06) * .35
+
     def pop_(self):
         return self.sweep(900, 300, .08, .6) * self.env(self.n(.08), .03)
 
@@ -251,11 +257,11 @@ def main():
             "impact": k.impact, "drop": k.drop, "counter": lambda: k.ticks(dur, .035, 2600), "blip": lambda: k.blip(f, .1),
             "paper": lambda: k.paper(.35), "stamp": k.stamp, "crash": k.crash, "type": lambda: k.typing(max(.2, dur)),
             "clunk": k.clunk, "snip": k.snip, "boing": k.boing, "flip": k.flip, "stream": lambda: k.stream(max(.2, dur)),
-            "heartbeat": k.heartbeat, "dissolve": k.dissolve, "clang": k.clang,
+            "heartbeat": k.heartbeat, "buzz": k.buzz, "tick": lambda: k.tick(f, .01), "dissolve": k.dissolve, "clang": k.clang,
         }[name]()
         base = {"spin": .5, "creak": .55, "thud": .7, "swoosh": .4, "whoosh": .45, "pop": .5, "slash": .5, "key": .55, "ding": .45,
                 "impact": .9, "drop": .6, "counter": .25, "blip": .35, "paper": .5, "stamp": .8, "crash": .55, "type": .4, "clunk": .8,
-                "snip": .6, "boing": .45, "flip": .55, "stream": .3, "heartbeat": .95, "dissolve": .7, "clang": .9}[name]
+                "snip": .6, "boing": .45, "flip": .55, "stream": .3, "heartbeat": .95, "buzz": .5, "tick": .3, "dissolve": .7, "clang": .9}[name]
         fx.add(t, s, g * base, max(-1, min(1, pan)))
 
     mus.reverb(.15, 1.8, 6500); fx.reverb(.12, 1.6, 7000)

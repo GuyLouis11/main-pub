@@ -1092,12 +1092,23 @@
         </div>
       </div>
       <div id="keys" class="abs" style="left:105px;top:880px;width:870px;height:150px"></div>
+      <div id="cashM" class="abs" style="left:190px;top:1060px;width:700px;height:110px;border-radius:24px;background:rgba(4,14,10,.9);border:3px solid rgba(255,198,64,.55)">
+        <svg viewBox="0 0 60 60" style="position:absolute;left:24px;top:22px;width:66px;height:66px"><circle cx="30" cy="30" r="26" fill="none" stroke="#ffc640" stroke-width="5"/><path d="M30,12 L30,48 M12,30 L48,30" stroke="#ffc640" stroke-width="5"/></svg>
+        <div style="position:absolute;left:110px;top:24px;font:700 26px/1 'Space Grotesk';letter-spacing:4px;color:#ffe7a3">CASH TAKEN FROM VAULT</div>
+        <div id="cashV" class="mono" style="position:absolute;left:110px;top:60px;font-size:40px;color:#fff3cf">$0.00</div>
+      </div>
       <div id="newMoney" class="stamp green" style="left:540px;top:880px;font-size:84px">NEW MONEY</div>
       <div id="spark" class="abs" style="inset:0"></div>
     </div>
 
     <!-- 3 · myth: the textbook version … a misconception -->
     <div id="sc-myth" class="scene clip" data-scene="myth" data-start="9.408" data-duration="10.640" data-track-index="3">
+      <div id="tbook" class="abs" style="left:0;top:330px;width:1080px;height:640px;text-align:center">
+        <svg viewBox="0 0 300 200" style="width:420px;height:280px"><path d="M150,40 Q90,10 20,24 L20,176 Q90,162 150,190 Q210,162 280,176 L280,24 Q210,10 150,40 Z" fill="#f2efe6"/><path d="M150,40 L150,190" stroke="#b9b2a2" stroke-width="5"/><g stroke="#cfc8b4" stroke-width="6"><path d="M44,60 L126,68 M44,86 L126,94 M44,112 L126,120 M174,68 L256,60 M174,94 L256,86 M174,120 L256,112"/></g></svg>
+        <div class="anton" style="font-size:96px;color:#eafff3;margin-top:24px">THE TEXTBOOK</div>
+        <div class="anton greentx" style="font-size:96px;margin-top:6px">VERSION</div>
+        <div class="pill" style="position:relative;display:inline-block;margin-top:30px;background:#ffc640;color:#03140c;font-size:30px">“fractional reserve”</div>
+      </div>
       <div id="mythK" class="kick" style="top:170px;color:#b8ffd9">the version you've heard</div>
       <div id="casc" class="abs" style="left:0;top:220px;width:1080px;height:960px">
         <div id="bDep" class="box" style="left:290px;top:20px;width:500px;height:150px"><div class="kick" style="position:relative;width:auto;top:22px;font-size:26px">you deposit</div><div class="big greentx" style="margin-top:36px;font-size:72px">$10,000</div></div>
@@ -1167,6 +1178,7 @@
         <path id="p2" d="M540,30 L540,270" stroke="#b8ffd9" stroke-width="8" stroke-dasharray="16 14" fill="none"/>
         <path id="p3" d="M870,30 C870,160 540,120 540,270" stroke="#b8ffd9" stroke-width="8" stroke-dasharray="16 14" fill="none"/>
       </svg>
+      <div id="coinsP" class="abs" style="left:0;top:420px;width:1080px;height:300px"></div>
       <div id="cutX" class="anton head redtx" style="top:520px;font-size:84px">✂ NOT FROM SAVERS</div>
       <div id="docWrap" class="abs" style="left:290px;top:720px;width:500px;height:420px;perspective:1400px">
         <div id="doc" class="abs" style="inset:0;transform-style:preserve-3d">
@@ -1197,13 +1209,21 @@
     <!-- 8 · destroy: paying it back destroys the money -->
     <div id="sc-destroy" class="scene clip" data-scene="destroy" data-start="41.725" data-duration="6.654" data-track-index="8">
       <div id="strangeT" class="serif head" style="top:220px;font-size:110px;color:#eafff3">the strangest part</div>
-      <div id="dCard" class="card" style="left:140px;top:420px;width:800px;height:300px">
-        <div class="kick" style="top:40px;width:800px;font-size:28px;color:#b8ffd9">loan balance</div>
-        <div id="dBal" class="mono head greentx" style="top:110px;width:800px;font-size:110px">$300,000</div>
+      <div id="dCard" class="card" style="left:50px;top:400px;width:470px;height:300px">
+        <div class="kick" style="top:36px;width:470px;font-size:24px;color:#b8ffd9">your deposit</div>
+        <div class="abs" style="left:0;top:76px;width:470px;text-align:center;font:600 22px/1 'JetBrains Mono';color:#7f9a8d">bank owes you</div>
+        <div id="dBal" class="mono head greentx" style="top:140px;width:470px;font-size:76px">$300,000</div>
         <div id="dParts" class="abs" style="inset:0"></div>
       </div>
-      <div id="payArrow" class="pill" style="left:540px;top:770px;background:#3dff9a;color:#03140c;font-size:40px">PAYMENT →</div>
-      <div id="destroyed" class="stamp red" style="left:540px;top:900px;font-size:100px">DESTROYED</div>
+      <div id="lCard" class="card" style="left:560px;top:400px;width:470px;height:300px;border-color:rgba(255,74,61,.5);background:linear-gradient(160deg,rgba(255,120,100,.10),rgba(255,74,61,.03))">
+        <div class="kick" style="top:36px;width:470px;font-size:24px;color:#ffc9c2">your loan</div>
+        <div class="abs" style="left:0;top:76px;width:470px;text-align:center;font:600 22px/1 'JetBrains Mono';color:#9a7f7b">you owe the bank</div>
+        <div id="lBal" class="mono head redtx" style="top:140px;width:470px;font-size:76px">$300,000</div>
+        <div id="lParts" class="abs" style="inset:0"></div>
+      </div>
+      <div id="cancelT" class="kick" style="top:740px;color:#ffe7a3;font-size:30px">they cancel out</div>
+      <div id="payArrow" class="pill" style="left:540px;top:800px;background:#3dff9a;color:#03140c;font-size:40px">PAYMENT →</div>
+      <div id="destroyed" class="stamp red" style="left:540px;top:930px;font-size:100px">DESTROYED</div>
     </div>
 
     <!-- 9 · limits: not unlimited -->
@@ -1214,8 +1234,9 @@
       </div>
       <div id="pipe" class="abs" style="left:0;top:640px;width:1080px;height:120px;background:linear-gradient(180deg,#2a4a3d,#14261f);border-top:4px solid #5a7268;border-bottom:4px solid #0a1410"></div>
       <div id="flow" class="abs" style="left:0;top:648px;width:1080px;height:104px;overflow:hidden"><div id="flowIn" class="mono" style="position:absolute;left:0;top:28px;font-size:46px;color:#3dff9a;white-space:nowrap;text-shadow:0 0 12px #3dff9a"></div></div>
-      <div id="clampA" class="abs" style="left:250px;top:560px;width:160px;height:280px;border-radius:20px;background:linear-gradient(90deg,#8fa79b,#e6efe9,#8fa79b);box-shadow:0 20px 50px rgba(0,0,0,.6)"></div>
-      <div id="clampB" class="abs" style="left:670px;top:560px;width:160px;height:280px;border-radius:20px;background:linear-gradient(90deg,#8fa79b,#e6efe9,#8fa79b);box-shadow:0 20px 50px rgba(0,0,0,.6)"></div>
+      <div id="pipeL" class="pill" style="left:540px;top:470px;background:rgba(4,14,10,.92);border:3px solid #3dff9a;color:#3dff9a;font-size:32px">NEW LOANS = NEW MONEY →</div>
+      <div id="clampA" class="abs" style="left:250px;top:580px;width:160px;height:280px;border-radius:20px;background:linear-gradient(90deg,#8fa79b,#e6efe9,#8fa79b);box-shadow:0 20px 50px rgba(0,0,0,.6)"></div>
+      <div id="clampB" class="abs" style="left:670px;top:580px;width:160px;height:280px;border-radius:20px;background:linear-gradient(90deg,#8fa79b,#e6efe9,#8fa79b);box-shadow:0 20px 50px rgba(0,0,0,.6)"></div>
       <div id="labA" class="tag" style="left:330px;top:880px;font-size:32px">INTEREST RATES</div>
       <div id="labB" class="tag" style="left:750px;top:880px;font-size:32px">REGULATORS</div>
       <div id="inCheck" class="stamp green" style="left:540px;top:1000px;font-size:80px">IN CHECK ✓</div>
@@ -1227,6 +1248,7 @@
         <div class="kick" style="top:40px;width:800px;font-size:28px;color:#b8ffd9">your account</div>
         <div class="mono head greentx" style="top:110px;width:800px;font-size:110px">$300,000</div>
       </div>
+      <svg id="owesL" class="abs" viewBox="0 0 1080 1000" style="left:0;top:0;width:1080px;height:1000px;overflow:visible"><path id="ol1" d="M400,600 C380,640 330,650 320,690" stroke="#3dff9a" stroke-width="6" fill="none"/><path id="ol2" d="M680,600 C700,640 750,660 760,710" stroke="#ff4a3d" stroke-width="6" fill="none"/></svg>
       <div id="iou1" class="paper" style="left:120px;top:680px;width:400px;height:200px;padding:30px;transform:rotate(-4deg)">
         <div class="big" style="font-size:64px;color:#0c7a45">IOU</div><div style="font:700 30px/1.2 'Space Grotesk';margin-top:16px">your bank owes you</div>
       </div>
@@ -1236,6 +1258,7 @@
     </div>
   </div>
 
+  <div id="chips" data-layout-ignore></div>
   <div id="vig" data-layout-ignore></div>
   <div id="dim" data-layout-ignore style="position:absolute;inset:0;background:#000;opacity:0;z-index:45;pointer-events:none"></div>
   <div id="caps"></div>

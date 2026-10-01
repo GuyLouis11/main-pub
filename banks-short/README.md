@@ -58,4 +58,5 @@ python3 tools/srt.py Banks_Dont_Lend_Your_Money && node tools/thumbs.mjs
 | Flicker | 0 frames |
 | Stillness | 0 runs over 1.5 s |
 | Voice | 11/11 lines within ±3 st, all takes clean; only B09 (mid-video twist) is deliberately whispered |
-| Master | −14.0 LUFS, true peak −1.26 dBTP |
+| Layout (tools/overflow.mjs) | no text outside its box or the frame at rest |
+| Master | −14.0 LUFS, true peak −1.28 dBTP |

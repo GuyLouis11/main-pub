@@ -64,4 +64,5 @@ python3 tools/srt.py The_Richest_Room_on_Earth && node tools/thumbs.mjs
 | Flicker | 0 frames |
 | Stillness | 0 runs over 1.5 s |
 | Voice | 12/12 lines within ±3 st and none whispered (voiced ≥ 0.55), all takes clean |
-| Master | −14.0 LUFS, true peak −1.36 dBTP |
+| Layout (tools/overflow.mjs) | no text outside its box or the frame at rest |
+| Master | −14.0 LUFS, true peak −1.18 dBTP |
