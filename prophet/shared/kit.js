@@ -47,7 +47,7 @@ window.KIT = function (R) {
     };
     const pr = { t: 0 };
     tl.fromTo(pr, { t: 0 }, { t: TOTAL, duration: TOTAL, ease: 'none', data: 'drift', onUpdate: () => draw(pr.t) }, 0);
-    for (let t = 0; t < TOTAL; t += 1 / 24) tl.set('#grain', { x: Math.round((rnd() - .5) * 120), y: Math.round((rnd() - .5) * 120) }, t);
+    for (let t = 0; t < TOTAL; t += 1 / 12) tl.set('#grain', { x: Math.round((rnd() - .5) * 120), y: Math.round((rnd() - .5) * 120) }, t);
   };
   K.weather = (t, v, d = 1) => tl.to(K.P, { ...v, duration: d, ease: 'sine.inOut', data: 'drift' }, t);
 

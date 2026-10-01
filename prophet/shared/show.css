@@ -26,7 +26,7 @@ body { font-family: 'Space Grotesk', sans-serif; color: var(--cold); }
 #world { position: absolute; left: 0; top: 0; }
 #tint { position: absolute; inset: 0; mix-blend-mode: soft-light; opacity: .0; background: #ffb347; }
 #vig { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse 72% 70% at 50% 48%, transparent 52%, rgba(0,0,0,.72) 100%); }
-#grain { position: absolute; left: -100px; top: -100px; width: 2120px; height: 1280px; opacity: .06; pointer-events: none; background-image: url(img/grain.png); }
+#grain { position: absolute; left: -100px; top: -100px; width: 2120px; height: 1280px; opacity: .04; pointer-events: none; background-image: url(img/grain.png); }
 #bars { position: absolute; inset: 0; pointer-events: none; }
 #bars::before, #bars::after { content: ''; position: absolute; left: 0; right: 0; height: 0; background: #000; }
 #flash { position: absolute; inset: 0; background: #fff; opacity: 0; pointer-events: none; }

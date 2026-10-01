@@ -106,12 +106,12 @@ S = [
  ("MONDAY", "ask", 0, [("P85", "So if a perfect record ever finds you, don't ask how they were right. Ask how many people they started with."),
                        ("P86", "Because you never see the people who got the other email.")]),
 
- ("THE SENDER", "turn", 0, [("P87", "I told you at the start that nobody knows who sent those emails."),
-                            ("P88", "That's not quite true.")]),
- ("THE SENDER", "how", 0, [("P89", "How do you think I know that Daniel reads everything twice? That he sat in his car in the driveway and asked who I was? That exactly seven of the ten paid?")]),
- ("THE SENDER", "sender", 0, [("P90", "I wrote every one of those emails. All ten thousand, two hundred and forty of them."),
-                              ("P91", "Daniel was number four thousand and ninety-one on my list.")]),
- ("THE SENDER", "again", 0, [("P92", "And next Monday, at six a.m., I'm starting again."),
+ ("THE SENDER", "turn", 0, [("P87", "At the start, I told you nobody knows who sent those emails."),
+                            ("P88", "That isn't quite true.")]),
+ ("THE SENDER", "how", 0, [("P89", "How do you think I know Daniel reads everything twice? That he sat in his car in the driveway, asking who I was? That exactly seven of the ten paid?")]),
+ ("THE SENDER", "sender", 0, [("P90", "Because I wrote them. Every single one. All ten thousand, two hundred and forty."),
+                              ("P91", "Daniel was number four thousand and ninety-one.")]),
+ ("THE SENDER", "again", 0, [("P92", "And next Monday, at six a.m., I start again."),
                              ("P93", "Check your inbox.")]),
  ("THE SENDER", "end", 16.0, []),
 ]

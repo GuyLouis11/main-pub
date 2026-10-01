@@ -116,6 +116,11 @@ SC.today = (R, K, h, id) => {
   mk(1240, 6, '@perfect.record', ['📊 screenshot: +412%', '📊 screenshot: 10/10', 'link in bio'], WT(R, 'P84', 13) - .1);
   const fic = K.text(h, 'ILLUSTRATIVE EXAMPLES', 'top:960px;font-size:18px', 'center label');
   R.up(fic, t0 + .5, .3, 8);
+  const env = K.text(h, '✉', 'left:860px;top:330px;width:200px;text-align:center;font-size:200px;color:#cfd8f5', '');
+  const x = K.text(h, '', 'left:840px;top:430px;width:240px;height:14px;border-radius:7px;background:#ff3b4f;box-shadow:0 0 20px #ff3b4f;transform:rotate(-30deg);transform-origin:50% 50%');
+  R.pop(env, V('P84') - .1, .35, .4); tl.set(x, { scaleX: 0 }, 0); tl.to(x, { scaleX: 1, duration: .25, ease: 'power3.out' }, WT(R, 'P84', 4)); cue(WT(R, 'P84', 4), 'slash', .6);
+  tl.to(env, { y: -12, duration: .3, yoyo: true, repeat: 1, ease: 'sine.inOut' }, V('P84') + .3);
+  tl.to([env, x], { opacity: 0, scale: .7, duration: .3 }, WT(R, 'P84', 7) - .25);
   const nd = K.text(h, 'NO EMAIL NEEDED.', 'top:70px;font-size:70px', 'center kin cold');
   R.up(nd, WT(R, 'P84', 4), .35, 16);
 };
@@ -148,7 +153,7 @@ SC.turn = (R, K, h, id) => {
   const u = K.text(h, 'UNKNOWN', 'left:296px;top:466px;font-size:150px', 'kin violet');
   R.up([q, u], V('P87') + .2, .4, 20, .1);
   const nk = K.text(h, '', 'left:300px;top:320px;font:italic 400 48px Instrument Serif;color:#cfd8f5;white-space:nowrap');
-  K.type(nk, '“Nobody knows who sent those emails.”', WT(R, 'P87', 5), 26);
+  K.type(nk, '“Nobody knows who sent those emails.”', WT(R, 'P87', 6), 26);
   tl.to(nk, { opacity: .35, duration: .3 }, V('P88') - .1);
   const tn = V('P88');
   const chars = 'UNKNOWN'.split('');
@@ -161,7 +166,7 @@ SC.turn = (R, K, h, id) => {
 SC.how = (R, K, h, id) => {
   const { tl, cue, S, V, VE } = R;
   K.weather(S(id), { rain: 0, drops: .3, bokeh: .1 }, .5);
-  const cards = [['READS EVERYTHING TWICE', 'daniel', WT(R, 'P89', 7)], ['ALONE IN HIS CAR, ASKING WHO I WAS', 'daniel', WT(R, 'P89', 13)], ['EXACTLY SEVEN OF THE TEN PAID', '7', WT(R, 'P89', 25)]];
+  const cards = [['READS EVERYTHING TWICE', 'daniel', WT(R, 'P89', 7)], ['ALONE IN HIS CAR, ASKING WHO I WAS', 'daniel', WT(R, 'P89', 15)], ['EXACTLY SEVEN OF THE TEN PAID', '7', WT(R, 'P89', 25)]];
   cards.forEach(([txt, kind, t], i) => {
     const c = K.text(h, '', `left:${140 + i * 560}px;top:280px;width:520px;height:520px;overflow:hidden`, 'glass');
     if (kind === 'daniel') { const p = K.person(c, 'daniel', 130, 70, 300, { rim: i === 1 ? '#ffb347' : '#9fb7ff' }); }
@@ -201,11 +206,11 @@ SC.sender = (R, K, h, id) => {
   K.text(mR, '<div class="mono" style="font-size:16px;color:#ffb347;line-height:1.7;padding:24px">WEEK 11 · OFFER<br>RECIPIENTS: 10<br>PAID: 7<br><br>TOTAL: $350,000</div>', 'inset:0');
   // the sender, from behind
   const pS = K.person(h, 'sender', 760, 520, 620, { rim: '#9b7bff', glow: 28 });
-  R.up(pS, WT(R, 'P90', 1), .7, 30);
+  R.up(pS, WT(R, 'P90', 2), .7, 30);
   const wr = K.text(h, 'I WROTE EVERY ONE.', 'top:80px;font-size:70px', 'center kin violet');
-  R.up(wr, WT(R, 'P90', 1), .4, 16); cue(WT(R, 'P90', 1), 'reveal_low', 1);
+  R.up(wr, WT(R, 'P90', 2), .4, 16); cue(WT(R, 'P90', 2), 'reveal_low', 1);
   const all = K.text(h, '10,240', 'left:120px;top:720px;font-size:120px', 'mono violet');
-  R.up(all, WT(R, 'P90', 9), .35, 16);
+  R.up(all, WT(R, 'P90', 8), .35, 16);
   const dn = K.text(h, 'DANIEL · #4,091', 'left:1360px;top:740px;font-size:44px', 'mono amber');
   R.up(dn, tD, .35, 16); cue(tD, 'ping', .7, .5);
 };
@@ -219,7 +224,7 @@ SC.again = (R, K, h, id) => {
   const btn = K.text(sch, 'SCHEDULE', 'left:50px;top:400px;padding:22px 44px;border-radius:14px;background:#9b7bff;color:#fff;font:800 30px Space Grotesk;letter-spacing:4px');
   const cur = K.text(h, '', 'left:0;top:0;width:0;height:0;border-left:18px solid #fff;border-top:10px solid transparent;border-bottom:30px solid transparent;transform:rotate(-20deg)');
   tl.set(cur, { x: 1300, y: 900 }, 0);
-  const tc = WT(R, 'P92', 6);
+  const tc = WT(R, 'P92', 7);
   tl.to(cur, { x: 640, y: 640, duration: .8, ease: 'power2.inOut' }, tc - .9);
   tl.to(btn, { scale: .94, duration: .06, yoyo: true, repeat: 1 }, tc); cue(tc, 'click', .9);
   tl.set(btn, { textContent: 'SCHEDULED ✓', background: '#3dff9a', color: '#04060c' }, tc + .1);

@@ -115,12 +115,12 @@
 
 ## THE SENDER
 
-**P87** · *turn* — I told you at the start that nobody knows who sent those emails.
-**P88** · *turn* — That's not quite true.
-**P89** · *how* — How do you think I know that Daniel reads everything twice? That he sat in his car in the driveway and asked who I was? That exactly seven of the ten paid?
-**P90** · *sender* — I wrote every one of those emails. All ten thousand, two hundred and forty of them.
-**P91** · *sender* — Daniel was number four thousand and ninety-one on my list.
-**P92** · *again* — And next Monday, at six a.m., I'm starting again.
+**P87** · *turn* — At the start, I told you nobody knows who sent those emails.
+**P88** · *turn* — That isn't quite true.
+**P89** · *how* — How do you think I know Daniel reads everything twice? That he sat in his car in the driveway, asking who I was? That exactly seven of the ten paid?
+**P90** · *sender* — Because I wrote them. Every single one. All ten thousand, two hundred and forty.
+**P91** · *sender* — Daniel was number four thousand and ninety-one.
+**P92** · *again* — And next Monday, at six a.m., I start again.
 **P93** · *again* — Check your inbox.
 
-*93 lines · 1361 words · ≈ 8.9 min of narration*
+*93 lines · 1353 words · ≈ 8.8 min of narration*

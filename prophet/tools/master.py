@@ -44,9 +44,17 @@ def main(src, dst):
     wav = os.path.join(ROOT, "renders", "master.wav")
     sf.write(wav, mix.astype(np.float32), SR, subtype="PCM_24")
     print(f"master {m.integrated_loudness(mix):.1f} LUFS, peak {20 * np.log10(np.abs(mix).max()):.2f} dBFS")
-    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", src, "-i", wav, "-map", "0:v", "-map", "1:a", "-c:v", "libx264",
-                    "-preset", "slow", "-crf", "18", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "256k", "-shortest",
-                    "-movflags", "+faststart", dst], check=True)
+    kbps = int(os.environ.get("VKBPS", "0"))
+    if kbps:   # two-pass to a size budget (GitHub keeps files < 100 MB)
+        log = os.path.join(ROOT, "renders", "mpass")
+        base = ["ffmpeg", "-y", "-loglevel", "error", "-i", src]
+        subprocess.run(base + ["-c:v", "libx264", "-preset", "slow", "-b:v", f"{kbps}k", "-pass", "1", "-passlogfile", log, "-an", "-f", "null", "/dev/null"], check=True)
+        subprocess.run(base + ["-i", wav, "-map", "0:v", "-map", "1:a", "-c:v", "libx264", "-preset", "slow", "-b:v", f"{kbps}k", "-pass", "2", "-passlogfile", log,
+                               "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "160k", "-shortest", "-movflags", "+faststart", dst], check=True)
+    else:
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", src, "-i", wav, "-map", "0:v", "-map", "1:a", "-c:v", "libx264",
+                        "-preset", "slow", "-crf", "18", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "256k", "-shortest",
+                        "-movflags", "+faststart", dst], check=True)
     print("wrote", dst)
 
 

@@ -202,6 +202,9 @@ SC.bet5 = (R, K, h, id) => {
   const slip = K.text(h, '<div class="label" style="font-size:20px">POSITION</div><div class="kin red" style="font-size:76px;margin-top:14px">MARKET DOWN</div><div class="label" style="font-size:20px;margin-top:30px">AMOUNT</div><div class="mono" style="font-size:80px;margin-top:12px;color:#fff">$500</div>',
     'left:200px;top:260px;width:560px;height:440px;padding:46px', 'glass');
   R.up(slip, WT(R, 'P27', 13) - .1, .45, 40); cue(WT(R, 'P27', 13) - .1, 'click', .6);
+  const amt = slip.querySelector('.mono');
+  R.count(amt, WT(R, 'P27', 13), 1.0, 0, 500, K.money, 'power2.out'); cue(WT(R, 'P27', 13), 'counter', .4, -.4, { dur: 1.0 });
+  tl.to(slip, { boxShadow: '0 0 40px rgba(255,59,79,.45)', borderColor: 'rgba(255,59,79,.7)', duration: .3, yoyo: true, repeat: 3 }, WT(R, 'P27', 13) + 1.0);
   const fl = K.text(h, 'FIRST BET OF HIS LIFE', 'left:200px;top:740px;font-size:24px;color:#ffb347', 'label');
   R.up(fl, WT(R, 'P27', 14), .3, 16);
   const rules = K.text(h, '<span class="green">MARKET FALLS → HE WINS</span><br><span class="red">MARKET RISES → HE LOSES IT ALL</span>', 'left:860px;top:250px;font:700 40px/1.6 Space Grotesk;white-space:nowrap');
