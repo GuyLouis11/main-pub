@@ -25,7 +25,7 @@ This is a fictional story built on a very real scam. Watch to the end.
 03:48 The Offer
 04:41 10,240
 06:21 Monday
-07:26 The Sender
+07:23 The Sender
 
 Daniel is fictional. The math, and the scam, are real.
 Sources: Jordan Ellenberg, *How Not to Be Wrong* (2014), "the Baltimore stockbroker" · Derren Brown: *The System* (Channel 4, 2008) · Federal Trade Commission, Consumer Sentinel data (2024): $5.7B reported lost to investment scams.

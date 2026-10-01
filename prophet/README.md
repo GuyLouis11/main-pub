@@ -22,10 +22,7 @@ node tools/thumbs.mjs              # thumbnails/thumb_A|B|C.png
 ```
 
 ## Status
-The ending (P86, P87, P89–P93) has no narration because the ElevenLabs key hit its 100,000-credit limit. Those lines
-play as a **typed confession**: the words appear on screen as if the sender is typing them (`confess()` in
-`scenes/c6.js`). `tools/typed.py` writes silent takes paced for reading plus matching word timings, so the scenes and
-captions stay in sync. P88 ("That isn't quite true.") is voiced.
-To voice the ending later: `XI_KEY=... python3 tools/vo.py --force P86 P87 P89 P90 P91 P92 P93`, delete the
-matching `assets/vo/*.PLACEHOLDER` files, then run scaffold → cues → score → render → master → srt. The band hides
-itself on voiced lines.
+Fully narrated. The ending (P86–P93) uses eleven_v3 delivery tags (`DIRECT` in `tools/vo.py`) for a slower, quieter
+confession, and per-scene pauses (`PACE` in `tools/script.py`).
+Fallback if narration is ever unavailable: `tools/typed.py` writes silent, reading-paced takes with word timings and
+`*.PLACEHOLDER` markers. Lines with a marker appear as a typed confession on screen (`confess()` in `scenes/c6.js`).

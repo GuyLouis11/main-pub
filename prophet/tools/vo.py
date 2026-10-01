@@ -31,6 +31,8 @@ LUFS = -17.0
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 # spoken form of display tokens (captions keep the display form); trailing .,?!: are carried over
 SAY = {}
+# eleven_v3 delivery tags (not spoken); lines listed here keep the slowest clean take of `tries`
+DIRECT = {"P86": "[slowly]", "P87": "[quietly, slowly]", "P89": "[slowly, knowing]"}
 
 
 def timing():
@@ -77,9 +79,10 @@ def frames_db(x, hop):
     return 20 * np.log10(np.sqrt((x[:n * hop].reshape(n, hop) ** 2).mean(1)) + 1e-9)
 
 
-def take(text, key, tries=3):
+def take(text, key, tries=3, tag=""):
     toks = tokens(text)
-    spoken = " ".join(t[1] for t in toks)
+    pre = tag + " " if tag else ""
+    spoken = pre + " ".join(t[1] for t in toks)
     best = None
     for attempt in range(tries):
         r = call(spoken, key)
@@ -88,11 +91,12 @@ def take(text, key, tries=3):
         db = frames_db(x, hop)
         loud = np.nonzero(db > -35)[0]
         clipped = not (len(loud) and (len(db) - 1 - loud[-1]) >= 3)
-        if best is None or (best[2] and not clipped):
-            best = (x, r["alignment"], clipped, attempt + 1)
-        if not clipped:
+        span = (loud[-1] - loud[0]) if len(loud) else 0
+        if best is None or (best[2] and not clipped) or (tag and not clipped and span > best[4]):
+            best = (x, r["alignment"], clipped, attempt + 1, span)
+        if not clipped and not tag:
             break
-    x, al, clipped, n = best
+    x, al, clipped, n, _ = best
     hop = int(SR * .01)
     db = frames_db(x, hop)
     on = np.nonzero(db > -50)[0]
@@ -104,7 +108,7 @@ def take(text, key, tries=3):
     # map characters of the spoken string back to display tokens
     chars, st, en = al["characters"], al["character_start_times_seconds"], al["character_end_times_seconds"]
     assert "".join(chars) == spoken, "alignment text mismatch"
-    words, pos = [], 0
+    words, pos = [], len(pre)
     for disp, sp, hi in toks:
         i0, i1 = pos, pos + len(sp) - 1
         words.append([disp, round(max(0.0, st[i0] - off), 3), round(min(len(y) / SR, en[i1] - off), 3), hi])
@@ -125,7 +129,7 @@ def main(argv):
         wav = os.path.join(ROOT, "assets", "vo", vid + ".wav")
         if os.path.exists(wav) and not force:
             print("skip", vid); continue
-        y, words, rep = take(v["text"], key)
+        y, words, rep = take(v["text"], key, tag=DIRECT.get(vid, ""))
         y = pyln.normalize.loudness(y, pyln.Meter(SR).integrated_loudness(y), LUFS)
         if np.abs(y).max() > .89:
             y *= .89 / np.abs(y).max()

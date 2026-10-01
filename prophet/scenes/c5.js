@@ -237,6 +237,9 @@ SC.again = (R, K, h, id) => {
     'left:660px;top:420px;width:600px;padding:24px 28px;border-radius:28px;background:rgba(235,240,255,.16);border:1px solid rgba(255,255,255,.18);z-index:90');
   tl.set(nt, { opacity: 0, y: -60 }, 0);
   tl.to(nt, { opacity: 1, y: 0, duration: .45, ease: 'back.out(1.5)' }, WT(R, 'P93', 2) + .15); cue(WT(R, 'P93', 2) + .15, 'notif', 1);
+  const tn = WT(R, 'P93', 2) + .6;   // the hold: a slow push in, the glass catching light
+  tl.to(nt, { scale: 1.07, duration: E(id) - .15 - tn, ease: 'sine.inOut' }, tn);
+  tl.to(nt, { boxShadow: '0 0 70px rgba(140,120,255,.45)', borderColor: 'rgba(190,175,255,.55)', duration: (E(id) - .15 - tn) * .6, ease: 'sine.inOut' }, tn);
   tl.to(nt, { opacity: 0, duration: .15 }, E(id) - .15);
   tl.to('#black', { opacity: 1, duration: .1 }, E(id) - .15);
 };

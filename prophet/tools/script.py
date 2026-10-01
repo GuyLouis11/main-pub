@@ -117,6 +117,9 @@ S = [
 ]
 
 EST = 2.55   # words per second for estimates
+# per-scene pacing overrides (dramatic pauses in the confession)
+PACE = {"ask": {"gap": .8}, "turn": {"gap": 1.0}, "how": {"lead": .5, "tail": .9},
+        "sender": {"lead": 1.0, "gap": 1.0}, "again": {"gap": 1.2, "tail": 2.6}}
 
 
 def main():
@@ -129,6 +132,7 @@ def main():
         sc = {"id": sid, "min": mn, "xin": 0 if i == 0 else .25, "vo": [l[0] for l in lines], "chapter": ch}
         if i and ch != S[i - 1][0] and ch != "COLD OPEN":
             sc["lead"] = 2.0            # room for the chapter card
+        sc.update(PACE.get(sid, {}))
         scenes.append(sc)
         for lid, text in lines:
             vo[lid] = {"text": text, "estimate": round(len(text.split()) / EST + .3, 2)}
