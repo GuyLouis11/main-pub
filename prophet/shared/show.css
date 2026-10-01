@@ -1,0 +1,112 @@
+/* "Inbox Noir" — 1920×1080 design system for THE PROPHET */
+@font-face { font-family: 'Anton'; src: url(fonts/Anton-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+2000-206F, U+2212; font-display: block; }
+@font-face { font-family: 'Anton'; src: url(fonts/Anton-ext.woff2) format('woff2'); unicode-range: U+0100-02BA; font-display: block; }
+@font-face { font-family: 'Unbounded'; src: url(fonts/Unbounded-var.woff2) format('woff2'); font-weight: 200 900; font-display: block; }
+@font-face { font-family: 'Space Grotesk'; src: url(fonts/SpaceGrotesk-var.woff2) format('woff2'); font-weight: 300 700; font-display: block; }
+@font-face { font-family: 'JetBrains Mono'; src: url(fonts/JetBrainsMono-var.woff2) format('woff2'); font-weight: 100 800; font-display: block; }
+@font-face { font-family: 'Instrument Serif'; src: url(fonts/InstrumentSerif-400-normal.woff2) format('woff2'); font-style: normal; font-display: block; }
+@font-face { font-family: 'Instrument Serif'; src: url(fonts/InstrumentSerif-400-italic.woff2) format('woff2'); font-style: italic; font-display: block; }
+@font-face { font-family: 'Noto Color Emoji'; src: local('Noto Color Emoji'); }
+
+:root {
+  --night: #04060c; --navy: #0a1120; --ink: #0d1526; --amber: #ffb347; --amber2: #ff8a3d; --green: #3dff9a; --red: #ff3b4f;
+  --cold: #e8eefc; --mute: #8390b5; --violet: #9b7bff; --glass: rgba(150, 175, 230, .08); --line: rgba(170, 190, 240, .22);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1920px; height: 1080px; overflow: hidden; background: var(--night); }
+body { font-family: 'Space Grotesk', sans-serif; color: var(--cold); }
+#root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: var(--night); }
+.abs { position: absolute; }
+.scene { position: absolute; inset: 0; overflow: hidden; }
+.cam { position: absolute; inset: 0; transform-origin: 50% 50%; }
+.full { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+/* ---------- world ---------- */
+#bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 70% at 50% 40%, #121b33 0%, #0a1020 50%, #04060c 100%); }
+#world { position: absolute; left: 0; top: 0; }
+#tint { position: absolute; inset: 0; mix-blend-mode: soft-light; opacity: .0; background: #ffb347; }
+#vig { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse 72% 70% at 50% 48%, transparent 52%, rgba(0,0,0,.72) 100%); }
+#grain { position: absolute; left: -100px; top: -100px; width: 2120px; height: 1280px; opacity: .06; pointer-events: none; background-image: url(img/grain.png); }
+#bars { position: absolute; inset: 0; pointer-events: none; }
+#bars::before, #bars::after { content: ''; position: absolute; left: 0; right: 0; height: 0; background: #000; }
+#flash { position: absolute; inset: 0; background: #fff; opacity: 0; pointer-events: none; }
+#black { position: absolute; inset: 0; background: #000; opacity: 0; }
+
+/* ---------- type ---------- */
+.serif { font-family: 'Instrument Serif', serif; font-weight: 400; }
+.mono { font-family: 'JetBrains Mono', monospace; font-weight: 700; line-height: 1; white-space: nowrap; }
+.big { font-family: 'Unbounded', sans-serif; font-weight: 800; line-height: 1; white-space: nowrap; }
+.kin { font-family: 'Anton', sans-serif; text-transform: uppercase; line-height: 1; white-space: nowrap; letter-spacing: 1px; }
+.label { font: 700 22px/1 'Space Grotesk', sans-serif; letter-spacing: 6px; text-transform: uppercase; color: var(--mute); white-space: nowrap; }
+.center { position: absolute; left: 0; width: 1920px; text-align: center; }
+.amber { color: #ffe2b8; text-shadow: 0 0 14px rgba(255,179,71,.85), 0 0 44px rgba(255,138,61,.45); }
+.green { color: #d6ffe9; text-shadow: 0 0 14px rgba(61,255,154,.85), 0 0 40px rgba(61,255,154,.4); }
+.red { color: #ffe0e4; text-shadow: 0 0 14px rgba(255,59,79,.9), 0 0 40px rgba(255,59,79,.45); }
+.cold { color: #f2f6ff; text-shadow: 0 0 18px rgba(170,200,255,.35); }
+.violet { color: #ece6ff; text-shadow: 0 0 14px rgba(155,123,255,.9), 0 0 40px rgba(155,123,255,.45); }
+
+/* ---------- components ---------- */
+.glass { position: absolute; border-radius: 26px; background: linear-gradient(160deg, rgba(170,190,255,.12), rgba(110,130,220,.04)); border: 1.5px solid var(--line);
+  box-shadow: 0 30px 80px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.18); }
+.chip { position: absolute; padding: 10px 20px 9px; border-radius: 40px; font: 700 24px/1 'Space Grotesk', sans-serif; letter-spacing: 3px; text-transform: uppercase; white-space: nowrap; }
+
+/* phone */
+.phone { position: absolute; width: 400px; height: 820px; border-radius: 62px; background: linear-gradient(145deg, #2a3042, #11141d 45%, #1d2230);
+  box-shadow: 0 50px 120px rgba(0,0,0,.75), inset 0 0 0 3px #3a4158, inset 0 0 0 9px #07090e; }
+.phone .scr { position: absolute; left: 16px; top: 16px; right: 16px; bottom: 16px; border-radius: 48px; overflow: hidden;
+  background: radial-gradient(ellipse at 50% 20%, #24345c 0%, #0f1730 55%, #070b17 100%); }
+.phone .isl { position: absolute; left: 50%; top: 14px; width: 118px; height: 34px; margin-left: -59px; border-radius: 20px; background: #000; }
+.phone .clock { position: absolute; left: 0; right: 0; top: 96px; text-align: center; font: 300 118px/1 'Space Grotesk', sans-serif; color: #eef3ff; letter-spacing: -3px; }
+.phone .date { position: absolute; left: 0; right: 0; top: 70px; text-align: center; font: 600 24px/1 'Space Grotesk', sans-serif; color: #c9d5f5; }
+.phone .notif { position: absolute; left: 14px; right: 14px; top: 300px; padding: 18px 20px; border-radius: 26px; background: rgba(235,240,255,.16);
+  border: 1px solid rgba(255,255,255,.14); }
+.phone .notif .app { font: 700 17px/1 'Space Grotesk', sans-serif; color: #b9c6e8; letter-spacing: 1px; }
+.phone .notif .app b { display: inline-block; width: 26px; height: 26px; border-radius: 7px; background: linear-gradient(135deg, #5d7cff, #8c5bff); vertical-align: middle; margin-right: 10px; }
+.phone .notif .sub { margin-top: 10px; font: 700 22px/1.2 'Space Grotesk', sans-serif; color: #fff; }
+.phone .notif .pre { margin-top: 6px; font: 500 20px/1.25 'Space Grotesk', sans-serif; color: #d4dcf3; }
+.phone .mail { position: absolute; inset: 0; background: #0b1020; padding: 70px 30px 0; }
+.phone .mail .from { font: 600 18px/1.3 'Space Grotesk', sans-serif; color: #8e9bc4; }
+.phone .mail .subj { margin-top: 18px; font: 700 30px/1.15 'Space Grotesk', sans-serif; color: #fff; }
+.phone .mail .hr { height: 1px; background: rgba(255,255,255,.12); margin: 24px 0; }
+.phone .mail .body { font: 500 34px/1.3 'Space Grotesk', sans-serif; color: #eef2ff; }
+.phone .glow { position: absolute; left: -200px; top: -200px; right: -200px; bottom: -200px; border-radius: 50%; background: radial-gradient(circle, rgba(120,150,255,.35), transparent 60%); opacity: 0; }
+
+/* email (desktop / large) */
+.mailcard { position: absolute; border-radius: 22px; background: #f3f5fb; color: #121a2c; box-shadow: 0 40px 100px rgba(0,0,0,.6); overflow: hidden; }
+.mailcard .bar { height: 54px; background: #e3e7f2; display: flex; align-items: center; padding: 0 22px; gap: 10px; }
+.mailcard .bar i { width: 14px; height: 14px; border-radius: 50%; background: #c9cfdf; display: inline-block; }
+.mailcard .hd { padding: 26px 40px 0; font: 600 22px/1.5 'Space Grotesk', sans-serif; color: #5b6582; }
+.mailcard .hd b { color: #121a2c; }
+.mailcard .sj { padding: 10px 40px 0; font: 700 40px/1.2 'Space Grotesk', sans-serif; color: #0d1424; }
+.mailcard .bd { padding: 26px 40px 40px; font: 500 44px/1.3 'Space Grotesk', sans-serif; color: #0d1424; }
+
+/* HUD */
+#hud { position: absolute; inset: 0; pointer-events: none; }
+#tally { position: absolute; right: 70px; top: 56px; display: flex; gap: 10px; }
+#tally .tb { width: 54px; height: 64px; border-radius: 10px; border: 2px solid rgba(170,190,240,.3); background: rgba(10,16,32,.55); position: relative;
+  font: 700 15px/1 'JetBrains Mono', monospace; color: #7f8bb0; text-align: center; padding-top: 7px; }
+#tally .tb .ar { position: absolute; left: 0; right: 0; top: 24px; font: 800 30px/1 'Space Grotesk', sans-serif; }
+#tally .tb .ok { position: absolute; right: -8px; top: -10px; width: 26px; height: 26px; border-radius: 50%; background: #3dff9a; color: #04060c; font: 900 17px/26px 'Space Grotesk', sans-serif; box-shadow: 0 0 14px #3dff9a; }
+#odds { position: absolute; left: 70px; top: 56px; }
+#odds .k { font: 700 18px/1 'Space Grotesk', sans-serif; letter-spacing: 5px; color: #8390b5; }
+#odds .v { margin-top: 10px; font: 700 46px/1 'JetBrains Mono', monospace; color: #ffe2b8; text-shadow: 0 0 14px rgba(255,179,71,.7); }
+#tag { position: absolute; left: 70px; bottom: 50px; font: 600 18px/1 'Space Grotesk', sans-serif; letter-spacing: 4px; color: rgba(200,210,240,.55); text-transform: uppercase; }
+
+/* chapter card */
+.chap { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.chap .n { font: 700 22px/1 'Space Grotesk', sans-serif; letter-spacing: 12px; color: #ffb347; }
+.chap .t { margin-top: 22px; font: italic 400 150px/1 'Instrument Serif', serif; color: #f4f7ff; text-shadow: 0 0 40px rgba(170,200,255,.35); }
+.chap .r { margin-top: 26px; width: 0; height: 2px; background: linear-gradient(90deg, transparent, #ffb347, transparent); }
+
+/* sheet */
+.sheet { position: absolute; border-radius: 16px; background: #f7f8fb; color: #18223a; overflow: hidden; box-shadow: 0 40px 100px rgba(0,0,0,.6); font-family: 'Space Grotesk', sans-serif; }
+.sheet .tabs { display: flex; background: #e4e8f1; padding: 10px 14px 0; gap: 6px; }
+.sheet .tab { padding: 12px 22px; border-radius: 10px 10px 0 0; font: 600 20px/1 'Space Grotesk', sans-serif; color: #5a6584; background: #d5dbe8; }
+.sheet .tab.on { background: #f7f8fb; color: #18223a; }
+.sheet .row { display: flex; border-bottom: 1px solid #e3e6ee; font: 500 26px/1 'Space Grotesk', sans-serif; }
+.sheet .row div { padding: 18px 22px; }
+.sheet .row.h { background: #eef1f7; font-weight: 700; font-size: 20px; letter-spacing: 2px; color: #6a7493; text-transform: uppercase; }
+
+.silh { position: absolute; }
+.stamp { position: absolute; font: 800 86px/1 'Unbounded', sans-serif; border: 10px solid currentColor; border-radius: 20px; padding: 18px 34px 14px; white-space: nowrap; }
+.emoji { font-family: 'Noto Color Emoji', sans-serif; line-height: 1; }

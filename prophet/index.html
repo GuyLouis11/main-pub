@@ -1,0 +1,8891 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1920, height=1080" />
+<title>The Prophet</title>
+<link rel="stylesheet" href="shared/show.css" />
+<script src="shared/vendor/gsap.min.js"></script>
+<script src="shared/rt.js"></script>
+<script src="shared/kit.js"></script>
+<script id="timing" type="application/json">
+{
+ "title": "The Prophet",
+ "seed": 4091,
+ "defaults": {
+  "lead": 0.3,
+  "gap": 0.55,
+  "tail": 0.5
+ },
+ "scenes": [
+  {
+   "id": "alarm",
+   "min": 0,
+   "xin": 0,
+   "vo": [
+    "P01"
+   ],
+   "chapter": "COLD OPEN",
+   "lead": 0.5
+  },
+  {
+   "id": "sentence",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P02",
+    "P03"
+   ],
+   "chapter": "COLD OPEN"
+  },
+  {
+   "id": "never",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P04",
+    "P05"
+   ],
+   "chapter": "COLD OPEN"
+  },
+  {
+   "id": "offer0",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P06"
+   ],
+   "chapter": "COLD OPEN"
+  },
+  {
+   "id": "stakes",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P07"
+   ],
+   "chapter": "COLD OPEN"
+  },
+  {
+   "id": "nobody",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P08"
+   ],
+   "chapter": "COLD OPEN"
+  },
+  {
+   "id": "title",
+   "min": 4.2,
+   "xin": 0.25,
+   "vo": [],
+   "chapter": "COLD OPEN"
+  },
+  {
+   "id": "w1",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P09",
+    "P10",
+    "P11"
+   ],
+   "chapter": "WEEK ONE",
+   "lead": 2.0
+  },
+  {
+   "id": "twice",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P12"
+   ],
+   "chapter": "WEEK ONE"
+  },
+  {
+   "id": "w1close",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P13",
+    "P14"
+   ],
+   "chapter": "WEEK ONE"
+  },
+  {
+   "id": "w2w3",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P15",
+    "P16",
+    "P17"
+   ],
+   "chapter": "WEEK ONE"
+  },
+  {
+   "id": "stopdel",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P18"
+   ],
+   "chapter": "WEEK ONE"
+  },
+  {
+   "id": "daniel",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P19",
+    "P20"
+   ],
+   "chapter": "DANIEL",
+   "lead": 2.0
+  },
+  {
+   "id": "family",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P21",
+    "P22"
+   ],
+   "chapter": "DANIEL"
+  },
+  {
+   "id": "tuition",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P23",
+    "P24"
+   ],
+   "chapter": "DANIEL"
+  },
+  {
+   "id": "track",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P25",
+    "P26"
+   ],
+   "chapter": "DANIEL"
+  },
+  {
+   "id": "bet5",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P27",
+    "P28",
+    "P29"
+   ],
+   "chapter": "DANIEL"
+  },
+  {
+   "id": "name",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P30"
+   ],
+   "chapter": "DANIEL"
+  },
+  {
+   "id": "w6w7",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P31",
+    "P32",
+    "P33"
+   ],
+   "chapter": "THE BELIEVER",
+   "lead": 2.0
+  },
+  {
+   "id": "marcus",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P34"
+   ],
+   "chapter": "THE BELIEVER"
+  },
+  {
+   "id": "head",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P35",
+    "P36",
+    "P37"
+   ],
+   "chapter": "THE BELIEVER"
+  },
+  {
+   "id": "w8",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P38",
+    "P39",
+    "P40"
+   ],
+   "chapter": "THE BELIEVER"
+  },
+  {
+   "id": "nine",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P41",
+    "P42"
+   ],
+   "chapter": "WEEK NINE",
+   "lead": 2.0
+  },
+  {
+   "id": "nosleep",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P43"
+   ],
+   "chapter": "WEEK NINE"
+  },
+  {
+   "id": "friday",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P44",
+    "P45",
+    "P46"
+   ],
+   "chapter": "WEEK NINE"
+  },
+  {
+   "id": "who",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P47",
+    "P48"
+   ],
+   "chapter": "WEEK NINE"
+  },
+  {
+   "id": "w10",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P49",
+    "P50"
+   ],
+   "chapter": "THE OFFER",
+   "lead": 2.0
+  },
+  {
+   "id": "offer",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P51",
+    "P52",
+    "P53"
+   ],
+   "chapter": "THE OFFER"
+  },
+  {
+   "id": "math",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P54",
+    "P55"
+   ],
+   "chapter": "THE OFFER"
+  },
+  {
+   "id": "maya",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P56",
+    "P57",
+    "P58"
+   ],
+   "chapter": "THE OFFER"
+  },
+  {
+   "id": "wire",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P59",
+    "P60"
+   ],
+   "chapter": "THE OFFER"
+  },
+  {
+   "id": "back",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P61",
+    "P62"
+   ],
+   "chapter": "10,240",
+   "lead": 2.0
+  },
+  {
+   "id": "split",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P63",
+    "P64"
+   ],
+   "chapter": "10,240"
+  },
+  {
+   "id": "halving",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P65",
+    "P66",
+    "P67"
+   ],
+   "chapter": "10,240"
+  },
+  {
+   "id": "ten",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P68",
+    "P69"
+   ],
+   "chapter": "10,240"
+  },
+  {
+   "id": "survived",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P70"
+   ],
+   "chapter": "10,240"
+  },
+  {
+   "id": "guess",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P71"
+   ],
+   "chapter": "10,240"
+  },
+  {
+   "id": "parable",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P72",
+    "P73"
+   ],
+   "chapter": "10,240"
+  },
+  {
+   "id": "cost",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P74",
+    "P75"
+   ],
+   "chapter": "10,240"
+  },
+  {
+   "id": "w12",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P76",
+    "P77",
+    "P78"
+   ],
+   "chapter": "MONDAY",
+   "lead": 2.0
+  },
+  {
+   "id": "kitchen",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P79"
+   ],
+   "chapter": "MONDAY"
+  },
+  {
+   "id": "lily",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P80",
+    "P81"
+   ],
+   "chapter": "MONDAY"
+  },
+  {
+   "id": "real",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P82",
+    "P83"
+   ],
+   "chapter": "MONDAY"
+  },
+  {
+   "id": "today",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P84"
+   ],
+   "chapter": "MONDAY"
+  },
+  {
+   "id": "ask",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P85",
+    "P86"
+   ],
+   "chapter": "MONDAY"
+  },
+  {
+   "id": "turn",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P87",
+    "P88"
+   ],
+   "chapter": "THE SENDER",
+   "lead": 2.0
+  },
+  {
+   "id": "how",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P89"
+   ],
+   "chapter": "THE SENDER"
+  },
+  {
+   "id": "sender",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P90",
+    "P91"
+   ],
+   "chapter": "THE SENDER"
+  },
+  {
+   "id": "again",
+   "min": 0,
+   "xin": 0.25,
+   "vo": [
+    "P92",
+    "P93"
+   ],
+   "chapter": "THE SENDER"
+  },
+  {
+   "id": "end",
+   "min": 16.0,
+   "xin": 0.25,
+   "vo": [],
+   "chapter": "THE SENDER"
+  }
+ ],
+ "vo": {
+  "P01": {
+   "text": "Every Monday morning, at exactly six a.m., Daniel Hale got an email from someone he'd never met.",
+   "estimate": 6.97,
+   "dur": 5.254,
+   "words": [
+    [
+     "Every",
+     0.0,
+     0.19,
+     false
+    ],
+    [
+     "Monday",
+     0.236,
+     0.51,
+     false
+    ],
+    [
+     "morning,",
+     0.56,
+     0.95,
+     false
+    ],
+    [
+     "at",
+     0.963,
+     0.99,
+     false
+    ],
+    [
+     "exactly",
+     1.05,
+     1.47,
+     false
+    ],
+    [
+     "six",
+     1.53,
+     1.71,
+     false
+    ],
+    [
+     "a.m.,",
+     1.83,
+     2.35,
+     false
+    ],
+    [
+     "Daniel",
+     2.407,
+     2.75,
+     false
+    ],
+    [
+     "Hale",
+     2.814,
+     3.07,
+     false
+    ],
+    [
+     "got",
+     3.11,
+     3.23,
+     false
+    ],
+    [
+     "an",
+     3.283,
+     3.39,
+     false
+    ],
+    [
+     "email",
+     3.443,
+     3.71,
+     false
+    ],
+    [
+     "from",
+     3.758,
+     3.95,
+     false
+    ],
+    [
+     "someone",
+     3.99,
+     4.27,
+     false
+    ],
+    [
+     "he'd",
+     4.323,
+     4.59,
+     false
+    ],
+    [
+     "never",
+     4.617,
+     4.75,
+     false
+    ],
+    [
+     "met.",
+     4.83,
+     5.23,
+     false
+    ]
+   ]
+  },
+  "P02": {
+   "text": "It was always one sentence. What the stock market would do that week.",
+   "estimate": 5.4,
+   "dur": 3.546,
+   "words": [
+    [
+     "It",
+     0.0,
+     0.02,
+     false
+    ],
+    [
+     "was",
+     0.06,
+     0.18,
+     false
+    ],
+    [
+     "always",
+     0.237,
+     0.58,
+     false
+    ],
+    [
+     "one",
+     0.62,
+     0.74,
+     false
+    ],
+    [
+     "sentence.",
+     0.82,
+     1.58,
+     false
+    ],
+    [
+     "What",
+     1.604,
+     1.7,
+     false
+    ],
+    [
+     "the",
+     1.74,
+     1.86,
+     false
+    ],
+    [
+     "stock",
+     1.913,
+     2.18,
+     false
+    ],
+    [
+     "market",
+     2.226,
+     2.5,
+     false
+    ],
+    [
+     "would",
+     2.527,
+     2.66,
+     false
+    ],
+    [
+     "do",
+     2.713,
+     2.82,
+     false
+    ],
+    [
+     "that",
+     2.852,
+     2.98,
+     false
+    ],
+    [
+     "week.",
+     3.06,
+     3.54,
+     false
+    ]
+   ]
+  },
+  "P03": {
+   "text": "Up. Down. Down. Up.",
+   "estimate": 1.87,
+   "dur": 2.72,
+   "words": [
+    [
+     "Up.",
+     0.0,
+     0.38,
+     false
+    ],
+    [
+     "Down.",
+     0.524,
+     1.5,
+     false
+    ],
+    [
+     "Down.",
+     1.58,
+     2.14,
+     false
+    ],
+    [
+     "Up.",
+     2.22,
+     2.72,
+     false
+    ]
+   ]
+  },
+  "P04": {
+   "text": "The sender was never wrong. Not once. Ten weeks in a row.",
+   "estimate": 5.01,
+   "dur": 3.63,
+   "words": [
+    [
+     "The",
+     0.0,
+     0.08,
+     false
+    ],
+    [
+     "sender",
+     0.126,
+     0.4,
+     false
+    ],
+    [
+     "was",
+     0.44,
+     0.56,
+     false
+    ],
+    [
+     "never",
+     0.613,
+     0.88,
+     false
+    ],
+    [
+     "wrong.",
+     0.947,
+     1.36,
+     false
+    ],
+    [
+     "Not",
+     1.46,
+     1.76,
+     false
+    ],
+    [
+     "once.",
+     1.856,
+     2.4,
+     false
+    ],
+    [
+     "Ten",
+     2.44,
+     2.56,
+     false
+    ],
+    [
+     "weeks",
+     2.613,
+     2.88,
+     false
+    ],
+    [
+     "in",
+     2.907,
+     2.96,
+     false
+    ],
+    [
+     "a",
+     3.0,
+     3.04,
+     false
+    ],
+    [
+     "row.",
+     3.12,
+     3.63,
+     false
+    ]
+   ]
+  },
+  "P05": {
+   "text": "The odds of guessing that are one in one thousand and twenty-four.",
+   "estimate": 5.01,
+   "dur": 3.232,
+   "words": [
+    [
+     "The",
+     0.0,
+     0.02,
+     false
+    ],
+    [
+     "odds",
+     0.068,
+     0.26,
+     false
+    ],
+    [
+     "of",
+     0.287,
+     0.34,
+     false
+    ],
+    [
+     "guessing",
+     0.376,
+     0.66,
+     false
+    ],
+    [
+     "that",
+     0.708,
+     0.9,
+     false
+    ],
+    [
+     "are",
+     0.96,
+     1.14,
+     false
+    ],
+    [
+     "one",
+     1.18,
+     1.3,
+     false
+    ],
+    [
+     "in",
+     1.38,
+     1.54,
+     false
+    ],
+    [
+     "one",
+     1.56,
+     1.62,
+     false
+    ],
+    [
+     "thousand",
+     1.682,
+     2.18,
+     false
+    ],
+    [
+     "and",
+     2.22,
+     2.34,
+     false
+    ],
+    [
+     "twenty-four.",
+     2.386,
+     3.22,
+     false
+    ]
+   ]
+  },
+  "P06": {
+   "text": "On the eleventh Monday, the email asked for fifty thousand dollars.",
+   "estimate": 4.61,
+   "dur": 3.801,
+   "words": [
+    [
+     "On",
+     0.0,
+     0.04,
+     false
+    ],
+    [
+     "the",
+     0.06,
+     0.12,
+     false
+    ],
+    [
+     "eleventh",
+     0.18,
+     0.6,
+     false
+    ],
+    [
+     "Monday,",
+     0.657,
+     1.16,
+     false
+    ],
+    [
+     "the",
+     1.18,
+     1.24,
+     false
+    ],
+    [
+     "email",
+     1.307,
+     1.64,
+     false
+    ],
+    [
+     "asked",
+     1.693,
+     1.96,
+     false
+    ],
+    [
+     "for",
+     2.0,
+     2.12,
+     false
+    ],
+    [
+     "fifty",
+     2.187,
+     2.52,
+     false
+    ],
+    [
+     "thousand",
+     2.573,
+     3.0,
+     false
+    ],
+    [
+     "dollars.",
+     3.07,
+     3.8,
+     false
+    ]
+   ]
+  },
+  "P07": {
+   "text": "Daniel had a wife, a mortgage, and a daughter about to start college. And ten perfect predictions sitting in his inbox.",
+   "estimate": 8.54,
+   "dur": 6.314,
+   "words": [
+    [
+     "Daniel",
+     0.0,
+     0.25,
+     false
+    ],
+    [
+     "had",
+     0.29,
+     0.41,
+     false
+    ],
+    [
+     "a",
+     0.45,
+     0.49,
+     false
+    ],
+    [
+     "wife,",
+     0.57,
+     0.97,
+     false
+    ],
+    [
+     "a",
+     1.01,
+     1.05,
+     false
+    ],
+    [
+     "mortgage,",
+     1.103,
+     1.61,
+     false
+    ],
+    [
+     "and",
+     1.63,
+     1.69,
+     false
+    ],
+    [
+     "a",
+     1.73,
+     1.77,
+     false
+    ],
+    [
+     "daughter",
+     1.806,
+     2.09,
+     false
+    ],
+    [
+     "about",
+     2.143,
+     2.41,
+     false
+    ],
+    [
+     "to",
+     2.437,
+     2.49,
+     false
+    ],
+    [
+     "start",
+     2.53,
+     2.73,
+     false
+    ],
+    [
+     "college.",
+     2.79,
+     3.29,
+     false
+    ],
+    [
+     "And",
+     3.33,
+     3.45,
+     false
+    ],
+    [
+     "ten",
+     3.55,
+     3.85,
+     false
+    ],
+    [
+     "perfect",
+     3.9,
+     4.25,
+     false
+    ],
+    [
+     "predictions",
+     4.297,
+     4.81,
+     false
+    ],
+    [
+     "sitting",
+     4.85,
+     5.13,
+     false
+    ],
+    [
+     "in",
+     5.157,
+     5.21,
+     false
+    ],
+    [
+     "his",
+     5.25,
+     5.37,
+     false
+    ],
+    [
+     "inbox.",
+     5.477,
+     6.17,
+     false
+    ]
+   ]
+  },
+  "P08": {
+   "text": "Nobody knows who sent those emails. But by the end of this, you'll know exactly how it worked.",
+   "estimate": 7.36,
+   "dur": 4.659,
+   "words": [
+    [
+     "Nobody",
+     0.0,
+     0.25,
+     false
+    ],
+    [
+     "knows",
+     0.303,
+     0.57,
+     false
+    ],
+    [
+     "who",
+     0.59,
+     0.65,
+     false
+    ],
+    [
+     "sent",
+     0.714,
+     0.97,
+     false
+    ],
+    [
+     "those",
+     0.997,
+     1.13,
+     false
+    ],
+    [
+     "emails.",
+     1.21,
+     1.77,
+     false
+    ],
+    [
+     "But",
+     1.79,
+     1.85,
+     false
+    ],
+    [
+     "by",
+     1.93,
+     2.09,
+     false
+    ],
+    [
+     "the",
+     2.11,
+     2.17,
+     false
+    ],
+    [
+     "end",
+     2.19,
+     2.25,
+     false
+    ],
+    [
+     "of",
+     2.277,
+     2.33,
+     false
+    ],
+    [
+     "this,",
+     2.394,
+     2.81,
+     false
+    ],
+    [
+     "you'll",
+     2.83,
+     2.97,
+     false
+    ],
+    [
+     "know",
+     3.002,
+     3.13,
+     false
+    ],
+    [
+     "exactly",
+     3.21,
+     3.77,
+     false
+    ],
+    [
+     "how",
+     3.83,
+     4.01,
+     false
+    ],
+    [
+     "it",
+     4.037,
+     4.09,
+     false
+    ],
+    [
+     "worked.",
+     4.147,
+     4.65,
+     false
+    ]
+   ]
+  },
+  "P09": {
+   "text": "The first one arrived on a Monday in March.",
+   "estimate": 3.83,
+   "dur": 2.27,
+   "words": [
+    [
+     "The",
+     0.0,
+     0.01,
+     false
+    ],
+    [
+     "first",
+     0.063,
+     0.33,
+     false
+    ],
+    [
+     "one",
+     0.37,
+     0.49,
+     false
+    ],
+    [
+     "arrived",
+     0.54,
+     0.89,
+     false
+    ],
+    [
+     "on",
+     0.917,
+     0.97,
+     false
+    ],
+    [
+     "a",
+     1.01,
+     1.05,
+     false
+    ],
+    [
+     "Monday",
+     1.107,
+     1.45,
+     false
+    ],
+    [
+     "in",
+     1.477,
+     1.53,
+     false
+    ],
+    [
+     "March.",
+     1.61,
+     2.27,
+     false
+    ]
+   ]
+  },
+  "P10": {
+   "text": "No logo. No link. No name. Just a subject line that said: Week one. And a single sentence.",
+   "estimate": 7.36,
+   "dur": 5.931,
+   "words": [
+    [
+     "No",
+     0.0,
+     0.08,
+     false
+    ],
+    [
+     "logo.",
+     0.176,
+     0.64,
+     false
+    ],
+    [
+     "No",
+     0.747,
+     0.96,
+     false
+    ],
+    [
+     "link.",
+     1.04,
+     1.44,
+     false
+    ],
+    [
+     "No",
+     1.52,
+     1.68,
+     false
+    ],
+    [
+     "name.",
+     1.76,
+     2.24,
+     false
+    ],
+    [
+     "Just",
+     2.272,
+     2.4,
+     false
+    ],
+    [
+     "a",
+     2.48,
+     2.56,
+     false
+    ],
+    [
+     "subject",
+     2.6,
+     2.88,
+     false
+    ],
+    [
+     "line",
+     2.928,
+     3.12,
+     false
+    ],
+    [
+     "that",
+     3.152,
+     3.28,
+     false
+    ],
+    [
+     "said:",
+     3.328,
+     3.6,
+     false
+    ],
+    [
+     "Week",
+     3.68,
+     4.0,
+     false
+    ],
+    [
+     "one.",
+     4.1,
+     4.48,
+     false
+    ],
+    [
+     "And",
+     4.52,
+     4.64,
+     false
+    ],
+    [
+     "a",
+     4.72,
+     4.8,
+     false
+    ],
+    [
+     "single",
+     4.846,
+     5.12,
+     false
+    ],
+    [
+     "sentence.",
+     5.182,
+     5.92,
+     false
+    ]
+   ]
+  },
+  "P11": {
+   "text": "The market will go down this week.",
+   "estimate": 3.05,
+   "dur": 1.836,
+   "words": [
+    [
+     "The",
+     0.0,
+     0.06,
+     false
+    ],
+    [
+     "market",
+     0.106,
+     0.38,
+     false
+    ],
+    [
+     "will",
+     0.428,
+     0.62,
+     false
+    ],
+    [
+     "go",
+     0.7,
+     0.86,
+     false
+    ],
+    [
+     "down",
+     0.908,
+     1.1,
+     false
+    ],
+    [
+     "this",
+     1.148,
+     1.34,
+     false
+    ],
+    [
+     "week.",
+     1.404,
+     1.82,
+     false
+    ]
+   ]
+  },
+  "P12": {
+   "text": "Daniel read it twice. He always reads things twice. Then he deleted it.",
+   "estimate": 5.4,
+   "dur": 3.606,
+   "words": [
+    [
+     "Daniel",
+     0.0,
+     0.24,
+     false
+    ],
+    [
+     "read",
+     0.272,
+     0.4,
+     false
+    ],
+    [
+     "it",
+     0.453,
+     0.56,
+     false
+    ],
+    [
+     "twice.",
+     0.627,
+     1.04,
+     false
+    ],
+    [
+     "He",
+     1.093,
+     1.2,
+     false
+    ],
+    [
+     "always",
+     1.246,
+     1.52,
+     false
+    ],
+    [
+     "reads",
+     1.56,
+     1.76,
+     false
+    ],
+    [
+     "things",
+     1.794,
+     2.0,
+     false
+    ],
+    [
+     "twice.",
+     2.067,
+     2.48,
+     false
+    ],
+    [
+     "Then",
+     2.528,
+     2.72,
+     false
+    ],
+    [
+     "he",
+     2.773,
+     2.88,
+     false
+    ],
+    [
+     "deleted",
+     2.93,
+     3.28,
+     false
+    ],
+    [
+     "it.",
+     3.333,
+     3.6,
+     false
+    ]
+   ]
+  },
+  "P13": {
+   "text": "That Friday, the market closed down.",
+   "estimate": 2.65,
+   "dur": 1.992,
+   "words": [
+    [
+     "That",
+     0.0,
+     0.14,
+     false
+    ],
+    [
+     "Friday,",
+     0.209,
+     0.7,
+     false
+    ],
+    [
+     "the",
+     0.72,
+     0.78,
+     false
+    ],
+    [
+     "market",
+     0.826,
+     1.1,
+     false
+    ],
+    [
+     "closed",
+     1.157,
+     1.5,
+     false
+    ],
+    [
+     "down.",
+     1.564,
+     1.98,
+     false
+    ]
+   ]
+  },
+  "P14": {
+   "text": "He didn't notice. Why would he? It was a coin flip, and the coin landed.",
+   "estimate": 6.18,
+   "dur": 3.508,
+   "words": [
+    [
+     "He",
+     0.0,
+     0.06,
+     false
+    ],
+    [
+     "didn't",
+     0.092,
+     0.3,
+     false
+    ],
+    [
+     "notice.",
+     0.369,
+     0.86,
+     false
+    ],
+    [
+     "Why",
+     0.9,
+     1.02,
+     false
+    ],
+    [
+     "would",
+     1.06,
+     1.26,
+     false
+    ],
+    [
+     "he?",
+     1.313,
+     1.58,
+     false
+    ],
+    [
+     "It",
+     1.607,
+     1.66,
+     false
+    ],
+    [
+     "was",
+     1.68,
+     1.74,
+     false
+    ],
+    [
+     "a",
+     1.82,
+     1.9,
+     false
+    ],
+    [
+     "coin",
+     1.948,
+     2.14,
+     false
+    ],
+    [
+     "flip,",
+     2.204,
+     2.5,
+     false
+    ],
+    [
+     "and",
+     2.51,
+     2.54,
+     false
+    ],
+    [
+     "the",
+     2.58,
+     2.7,
+     false
+    ],
+    [
+     "coin",
+     2.748,
+     2.94,
+     false
+    ],
+    [
+     "landed.",
+     2.997,
+     3.5,
+     false
+    ]
+   ]
+  },
+  "P15": {
+   "text": "The next Monday, at six a.m., the phone lit up again. Week two. The market will go up.",
+   "estimate": 7.36,
+   "dur": 4.551,
+   "words": [
+    [
+     "The",
+     0.0,
+     0.06,
+     false
+    ],
+    [
+     "next",
+     0.108,
+     0.3,
+     false
+    ],
+    [
+     "Monday,",
+     0.346,
+     0.7,
+     false
+    ],
+    [
+     "at",
+     0.727,
+     0.78,
+     false
+    ],
+    [
+     "six",
+     0.84,
+     1.02,
+     false
+    ],
+    [
+     "a.m.,",
+     1.1,
+     1.42,
+     false
+    ],
+    [
+     "the",
+     1.44,
+     1.5,
+     false
+    ],
+    [
+     "phone",
+     1.54,
+     1.74,
+     false
+    ],
+    [
+     "lit",
+     1.78,
+     1.9,
+     false
+    ],
+    [
+     "up",
+     1.953,
+     2.06,
+     false
+    ],
+    [
+     "again.",
+     2.113,
+     2.58,
+     false
+    ],
+    [
+     "Week",
+     2.62,
+     2.78,
+     false
+    ],
+    [
+     "two.",
+     2.86,
+     3.18,
+     false
+    ],
+    [
+     "The",
+     3.22,
+     3.34,
+     false
+    ],
+    [
+     "market",
+     3.386,
+     3.66,
+     false
+    ],
+    [
+     "will",
+     3.708,
+     3.9,
+     false
+    ],
+    [
+     "go",
+     3.953,
+     4.06,
+     false
+    ],
+    [
+     "up.",
+     4.14,
+     4.54,
+     false
+    ]
+   ]
+  },
+  "P16": {
+   "text": "It went up.",
+   "estimate": 1.48,
+   "dur": 0.8,
+   "words": [
+    [
+     "It",
+     0.0,
+     0.03,
+     false
+    ],
+    [
+     "went",
+     0.078,
+     0.27,
+     false
+    ],
+    [
+     "up.",
+     0.377,
+     0.8,
+     false
+    ]
+   ]
+  },
+  "P17": {
+   "text": "Week three. Down. It went down.",
+   "estimate": 2.65,
+   "dur": 2.466,
+   "words": [
+    [
+     "Week",
+     0.0,
+     0.16,
+     false
+    ],
+    [
+     "three.",
+     0.227,
+     0.64,
+     false
+    ],
+    [
+     "Down.",
+     0.752,
+     1.28,
+     false
+    ],
+    [
+     "It",
+     1.333,
+     1.44,
+     false
+    ],
+    [
+     "went",
+     1.504,
+     1.76,
+     false
+    ],
+    [
+     "down.",
+     1.84,
+     2.32,
+     false
+    ]
+   ]
+  },
+  "P18": {
+   "text": "By week four, Daniel had stopped deleting them.",
+   "estimate": 3.44,
+   "dur": 2.576,
+   "words": [
+    [
+     "By",
+     0.0,
+     0.07,
+     false
+    ],
+    [
+     "week",
+     0.118,
+     0.31,
+     false
+    ],
+    [
+     "four,",
+     0.39,
+     0.87,
+     false
+    ],
+    [
+     "Daniel",
+     0.927,
+     1.27,
+     false
+    ],
+    [
+     "had",
+     1.31,
+     1.43,
+     false
+    ],
+    [
+     "stopped",
+     1.47,
+     1.75,
+     false
+    ],
+    [
+     "deleting",
+     1.794,
+     2.15,
+     false
+    ],
+    [
+     "them.",
+     2.198,
+     2.55,
+     false
+    ]
+   ]
+  },
+  "P19": {
+   "text": "To understand what happened next, you have to understand Daniel.",
+   "estimate": 4.22,
+   "dur": 3.049,
+   "words": [
+    [
+     "To",
+     0.0,
+     0.09,
+     false
+    ],
+    [
+     "understand",
+     0.134,
+     0.57,
+     false
+    ],
+    [
+     "what",
+     0.602,
+     0.73,
+     false
+    ],
+    [
+     "happened",
+     0.766,
+     1.05,
+     false
+    ],
+    [
+     "next,",
+     1.13,
+     1.53,
+     false
+    ],
+    [
+     "you",
+     1.55,
+     1.61,
+     false
+    ],
+    [
+     "have",
+     1.642,
+     1.77,
+     false
+    ],
+    [
+     "to",
+     1.797,
+     1.85,
+     false
+    ],
+    [
+     "understand",
+     1.894,
+     2.33,
+     false
+    ],
+    [
+     "Daniel.",
+     2.399,
+     2.89,
+     false
+    ]
+   ]
+  },
+  "P20": {
+   "text": "Forty-four years old. He scheduled trucks for a freight company outside Columbus. Same desk for twenty-two years.",
+   "estimate": 6.97,
+   "dur": 6.009,
+   "words": [
+    [
+     "Forty-four",
+     0.0,
+     0.4,
+     false
+    ],
+    [
+     "years",
+     0.44,
+     0.64,
+     false
+    ],
+    [
+     "old.",
+     0.72,
+     1.12,
+     false
+    ],
+    [
+     "He",
+     1.173,
+     1.28,
+     false
+    ],
+    [
+     "scheduled",
+     1.32,
+     1.68,
+     false
+    ],
+    [
+     "trucks",
+     1.726,
+     2.0,
+     false
+    ],
+    [
+     "for",
+     2.02,
+     2.08,
+     false
+    ],
+    [
+     "a",
+     2.16,
+     2.24,
+     false
+    ],
+    [
+     "freight",
+     2.27,
+     2.48,
+     false
+    ],
+    [
+     "company",
+     2.52,
+     2.8,
+     false
+    ],
+    [
+     "outside",
+     2.85,
+     3.2,
+     false
+    ],
+    [
+     "Columbus.",
+     3.271,
+     4.0,
+     false
+    ],
+    [
+     "Same",
+     4.048,
+     4.24,
+     false
+    ],
+    [
+     "desk",
+     4.304,
+     4.56,
+     false
+    ],
+    [
+     "for",
+     4.6,
+     4.72,
+     false
+    ],
+    [
+     "twenty-two",
+     4.777,
+     5.28,
+     false
+    ],
+    [
+     "years.",
+     5.36,
+     6.0,
+     false
+    ]
+   ]
+  },
+  "P21": {
+   "text": "His wife, Maya, worked nights as a nurse. They traded off the car, the dishes, and the worrying.",
+   "estimate": 7.36,
+   "dur": 5.206,
+   "words": [
+    [
+     "His",
+     0.0,
+     0.06,
+     false
+    ],
+    [
+     "wife,",
+     0.124,
+     0.54,
+     false
+    ],
+    [
+     "Maya,",
+     0.572,
+     0.78,
+     false
+    ],
+    [
+     "worked",
+     0.814,
+     1.02,
+     false
+    ],
+    [
+     "nights",
+     1.054,
+     1.26,
+     false
+    ],
+    [
+     "as",
+     1.313,
+     1.42,
+     false
+    ],
+    [
+     "a",
+     1.46,
+     1.5,
+     false
+    ],
+    [
+     "nurse.",
+     1.567,
+     1.98,
+     false
+    ],
+    [
+     "They",
+     2.028,
+     2.22,
+     false
+    ],
+    [
+     "traded",
+     2.254,
+     2.46,
+     false
+    ],
+    [
+     "off",
+     2.52,
+     2.7,
+     false
+    ],
+    [
+     "the",
+     2.72,
+     2.78,
+     false
+    ],
+    [
+     "car,",
+     2.88,
+     3.26,
+     false
+    ],
+    [
+     "the",
+     3.28,
+     3.34,
+     false
+    ],
+    [
+     "dishes,",
+     3.42,
+     3.98,
+     false
+    ],
+    [
+     "and",
+     4.04,
+     4.22,
+     false
+    ],
+    [
+     "the",
+     4.24,
+     4.3,
+     false
+    ],
+    [
+     "worrying.",
+     4.362,
+     5.18,
+     false
+    ]
+   ]
+  },
+  "P22": {
+   "text": "And their daughter, Lily, had just been accepted to an engineering program four hundred miles away.",
+   "estimate": 6.57,
+   "dur": 4.33,
+   "words": [
+    [
+     "And",
+     0.0,
+     0.04,
+     false
+    ],
+    [
+     "their",
+     0.067,
+     0.2,
+     false
+    ],
+    [
+     "daughter,",
+     0.227,
+     0.52,
+     false
+    ],
+    [
+     "Lily,",
+     0.568,
+     0.84,
+     false
+    ],
+    [
+     "had",
+     0.88,
+     1.0,
+     false
+    ],
+    [
+     "just",
+     1.032,
+     1.16,
+     false
+    ],
+    [
+     "been",
+     1.176,
+     1.24,
+     false
+    ],
+    [
+     "accepted",
+     1.293,
+     1.72,
+     false
+    ],
+    [
+     "to",
+     1.773,
+     1.88,
+     false
+    ],
+    [
+     "an",
+     1.907,
+     1.96,
+     false
+    ],
+    [
+     "engineering",
+     2.0,
+     2.44,
+     false
+    ],
+    [
+     "program",
+     2.5,
+     2.92,
+     false
+    ],
+    [
+     "four",
+     2.968,
+     3.16,
+     false
+    ],
+    [
+     "hundred",
+     3.19,
+     3.4,
+     false
+    ],
+    [
+     "miles",
+     3.453,
+     3.72,
+     false
+    ],
+    [
+     "away.",
+     3.784,
+     4.33,
+     false
+    ]
+   ]
+  },
+  "P23": {
+   "text": "The tuition letter came the same week as email number four.",
+   "estimate": 4.61,
+   "dur": 2.822,
+   "words": [
+    [
+     "The",
+     0.0,
+     0.16,
+     false
+    ],
+    [
+     "tuition",
+     0.2,
+     0.48,
+     false
+    ],
+    [
+     "letter",
+     0.514,
+     0.72,
+     false
+    ],
+    [
+     "came",
+     0.768,
+     0.96,
+     false
+    ],
+    [
+     "the",
+     1.0,
+     1.12,
+     false
+    ],
+    [
+     "same",
+     1.168,
+     1.36,
+     false
+    ],
+    [
+     "week",
+     1.392,
+     1.52,
+     false
+    ],
+    [
+     "as",
+     1.573,
+     1.68,
+     false
+    ],
+    [
+     "email",
+     1.733,
+     2.0,
+     false
+    ],
+    [
+     "number",
+     2.034,
+     2.24,
+     false
+    ],
+    [
+     "four.",
+     2.32,
+     2.8,
+     false
+    ]
+   ]
+  },
+  "P24": {
+   "text": "Daniel had a spreadsheet for everything. The mortgage. The car. And one tab called Lily. Fifty-two thousand dollars, saved one paycheck at a time, since the day she was born.",
+   "estimate": 12.06,
+   "dur": 9.858,
+   "words": [
+    [
+     "Daniel",
+     0.0,
+     0.25,
+     false
+    ],
+    [
+     "had",
+     0.27,
+     0.33,
+     false
+    ],
+    [
+     "a",
+     0.37,
+     0.41,
+     false
+    ],
+    [
+     "spreadsheet",
+     0.45,
+     0.89,
+     false
+    ],
+    [
+     "for",
+     0.93,
+     1.05,
+     false
+    ],
+    [
+     "everything.",
+     1.108,
+     1.77,
+     false
+    ],
+    [
+     "The",
+     1.81,
+     1.93,
+     false
+    ],
+    [
+     "mortgage.",
+     1.992,
+     2.57,
+     false
+    ],
+    [
+     "The",
+     2.61,
+     2.73,
+     false
+    ],
+    [
+     "car.",
+     2.83,
+     3.21,
+     false
+    ],
+    [
+     "And",
+     3.25,
+     3.37,
+     false
+    ],
+    [
+     "one",
+     3.43,
+     3.61,
+     false
+    ],
+    [
+     "tab",
+     3.71,
+     4.01,
+     false
+    ],
+    [
+     "called",
+     4.044,
+     4.25,
+     false
+    ],
+    [
+     "Lily.",
+     4.346,
+     4.97,
+     false
+    ],
+    [
+     "Fifty-two",
+     5.01,
+     5.45,
+     false
+    ],
+    [
+     "thousand",
+     5.512,
+     6.01,
+     false
+    ],
+    [
+     "dollars,",
+     6.08,
+     6.65,
+     false
+    ],
+    [
+     "saved",
+     6.703,
+     6.97,
+     false
+    ],
+    [
+     "one",
+     7.03,
+     7.21,
+     false
+    ],
+    [
+     "paycheck",
+     7.254,
+     7.61,
+     false
+    ],
+    [
+     "at",
+     7.663,
+     7.77,
+     false
+    ],
+    [
+     "a",
+     7.89,
+     8.01,
+     false
+    ],
+    [
+     "time,",
+     8.058,
+     8.41,
+     false
+    ],
+    [
+     "since",
+     8.437,
+     8.57,
+     false
+    ],
+    [
+     "the",
+     8.61,
+     8.73,
+     false
+    ],
+    [
+     "day",
+     8.79,
+     8.97,
+     false
+    ],
+    [
+     "she",
+     9.01,
+     9.13,
+     false
+    ],
+    [
+     "was",
+     9.17,
+     9.29,
+     false
+    ],
+    [
+     "born.",
+     9.37,
+     9.85,
+     false
+    ]
+   ]
+  },
+  "P25": {
+   "text": "So he did what anyone with a spreadsheet would do. He started tracking the emails.",
+   "estimate": 6.18,
+   "dur": 3.914,
+   "words": [
+    [
+     "So",
+     0.0,
+     0.13,
+     false
+    ],
+    [
+     "he",
+     0.183,
+     0.29,
+     false
+    ],
+    [
+     "did",
+     0.33,
+     0.45,
+     false
+    ],
+    [
+     "what",
+     0.482,
+     0.61,
+     false
+    ],
+    [
+     "anyone",
+     0.656,
+     0.93,
+     false
+    ],
+    [
+     "with",
+     0.962,
+     1.09,
+     false
+    ],
+    [
+     "a",
+     1.13,
+     1.17,
+     false
+    ],
+    [
+     "spreadsheet",
+     1.21,
+     1.65,
+     false
+    ],
+    [
+     "would",
+     1.677,
+     1.81,
+     false
+    ],
+    [
+     "do.",
+     1.89,
+     2.13,
+     false
+    ],
+    [
+     "He",
+     2.21,
+     2.37,
+     false
+    ],
+    [
+     "started",
+     2.41,
+     2.69,
+     false
+    ],
+    [
+     "tracking",
+     2.734,
+     3.09,
+     false
+    ],
+    [
+     "the",
+     3.11,
+     3.17,
+     false
+    ],
+    [
+     "emails.",
+     3.25,
+     3.89,
+     false
+    ]
+   ]
+  },
+  "P26": {
+   "text": "Week four said up. It went up. Four for four.",
+   "estimate": 4.22,
+   "dur": 3.683,
+   "words": [
+    [
+     "Week",
+     0.0,
+     0.16,
+     false
+    ],
+    [
+     "four",
+     0.24,
+     0.56,
+     false
+    ],
+    [
+     "said",
+     0.656,
+     1.04,
+     false
+    ],
+    [
+     "up.",
+     1.173,
+     1.52,
+     false
+    ],
+    [
+     "It",
+     1.6,
+     1.76,
+     false
+    ],
+    [
+     "went",
+     1.824,
+     2.08,
+     false
+    ],
+    [
+     "up.",
+     2.213,
+     2.68,
+     false
+    ],
+    [
+     "Four",
+     2.72,
+     2.88,
+     false
+    ],
+    [
+     "for",
+     2.92,
+     3.04,
+     false
+    ],
+    [
+     "four.",
+     3.12,
+     3.68,
+     false
+    ]
+   ]
+  },
+  "P27": {
+   "text": "On week five, the email said down. And for the first time in his life, Daniel bet against the market.",
+   "estimate": 8.14,
+   "dur": 5.292,
+   "words": [
+    [
+     "On",
+     0.0,
+     0.07,
+     false
+    ],
+    [
+     "week",
+     0.118,
+     0.31,
+     false
+    ],
+    [
+     "five,",
+     0.406,
+     0.87,
+     false
+    ],
+    [
+     "the",
+     0.91,
+     1.03,
+     false
+    ],
+    [
+     "email",
+     1.083,
+     1.35,
+     false
+    ],
+    [
+     "said",
+     1.398,
+     1.59,
+     false
+    ],
+    [
+     "down.",
+     1.702,
+     2.15,
+     false
+    ],
+    [
+     "And",
+     2.19,
+     2.31,
+     false
+    ],
+    [
+     "for",
+     2.35,
+     2.47,
+     false
+    ],
+    [
+     "the",
+     2.51,
+     2.63,
+     false
+    ],
+    [
+     "first",
+     2.657,
+     2.79,
+     false
+    ],
+    [
+     "time",
+     2.838,
+     3.03,
+     false
+    ],
+    [
+     "in",
+     3.057,
+     3.11,
+     false
+    ],
+    [
+     "his",
+     3.15,
+     3.27,
+     false
+    ],
+    [
+     "life,",
+     3.35,
+     3.75,
+     false
+    ],
+    [
+     "Daniel",
+     3.796,
+     4.07,
+     false
+    ],
+    [
+     "bet",
+     4.13,
+     4.31,
+     false
+    ],
+    [
+     "against",
+     4.35,
+     4.63,
+     false
+    ],
+    [
+     "the",
+     4.65,
+     4.71,
+     false
+    ],
+    [
+     "market.",
+     4.779,
+     5.27,
+     false
+    ]
+   ]
+  },
+  "P28": {
+   "text": "Five hundred dollars. If the market fell, he'd win. If it rose, he'd lose all of it.",
+   "estimate": 6.97,
+   "dur": 5.121,
+   "words": [
+    [
+     "Five",
+     0.0,
+     0.24,
+     false
+    ],
+    [
+     "hundred",
+     0.29,
+     0.64,
+     false
+    ],
+    [
+     "dollars.",
+     0.72,
+     1.44,
+     false
+    ],
+    [
+     "If",
+     1.493,
+     1.6,
+     false
+    ],
+    [
+     "the",
+     1.62,
+     1.68,
+     false
+    ],
+    [
+     "market",
+     1.726,
+     2.0,
+     false
+    ],
+    [
+     "fell,",
+     2.08,
+     2.48,
+     false
+    ],
+    [
+     "he'd",
+     2.507,
+     2.72,
+     false
+    ],
+    [
+     "win.",
+     2.8,
+     3.12,
+     false
+    ],
+    [
+     "If",
+     3.2,
+     3.36,
+     false
+    ],
+    [
+     "it",
+     3.387,
+     3.44,
+     false
+    ],
+    [
+     "rose,",
+     3.536,
+     4.08,
+     false
+    ],
+    [
+     "he'd",
+     4.107,
+     4.24,
+     false
+    ],
+    [
+     "lose",
+     4.288,
+     4.48,
+     false
+    ],
+    [
+     "all",
+     4.52,
+     4.64,
+     false
+    ],
+    [
+     "of",
+     4.693,
+     4.8,
+     false
+    ],
+    [
+     "it.",
+     4.827,
+     5.12,
+     false
+    ]
+   ]
+  },
+  "P29": {
+   "text": "On Friday, the market fell. Daniel made eleven hundred dollars before lunch.",
+   "estimate": 5.01,
+   "dur": 4.09,
+   "words": [
+    [
+     "On",
+     0.0,
+     0.06,
+     false
+    ],
+    [
+     "Friday,",
+     0.117,
+     0.54,
+     false
+    ],
+    [
+     "the",
+     0.56,
+     0.62,
+     false
+    ],
+    [
+     "market",
+     0.666,
+     0.94,
+     false
+    ],
+    [
+     "fell.",
+     1.02,
+     1.58,
+     false
+    ],
+    [
+     "Daniel",
+     1.614,
+     1.82,
+     false
+    ],
+    [
+     "made",
+     1.852,
+     1.98,
+     false
+    ],
+    [
+     "eleven",
+     2.026,
+     2.3,
+     false
+    ],
+    [
+     "hundred",
+     2.34,
+     2.62,
+     false
+    ],
+    [
+     "dollars",
+     2.67,
+     3.02,
+     false
+    ],
+    [
+     "before",
+     3.066,
+     3.34,
+     false
+    ],
+    [
+     "lunch.",
+     3.42,
+     4.09,
+     false
+    ]
+   ]
+  },
+  "P30": {
+   "text": "Five for five. And that's when the emails started using his name.",
+   "estimate": 5.01,
+   "dur": 3.194,
+   "words": [
+    [
+     "Five",
+     0.0,
+     0.14,
+     false
+    ],
+    [
+     "for",
+     0.2,
+     0.38,
+     false
+    ],
+    [
+     "five.",
+     0.444,
+     0.78,
+     false
+    ],
+    [
+     "And",
+     0.82,
+     0.94,
+     false
+    ],
+    [
+     "that's",
+     0.956,
+     1.1,
+     false
+    ],
+    [
+     "when",
+     1.116,
+     1.18,
+     false
+    ],
+    [
+     "the",
+     1.22,
+     1.34,
+     false
+    ],
+    [
+     "emails",
+     1.386,
+     1.66,
+     false
+    ],
+    [
+     "started",
+     1.71,
+     2.06,
+     false
+    ],
+    [
+     "using",
+     2.113,
+     2.38,
+     false
+    ],
+    [
+     "his",
+     2.42,
+     2.54,
+     false
+    ],
+    [
+     "name.",
+     2.62,
+     3.18,
+     false
+    ]
+   ]
+  },
+  "P31": {
+   "text": "Week six. Good morning, Daniel. Up.",
+   "estimate": 2.65,
+   "dur": 2.561,
+   "words": [
+    [
+     "Week",
+     0.0,
+     0.24,
+     false
+    ],
+    [
+     "six.",
+     0.38,
+     0.88,
+     false
+    ],
+    [
+     "Good",
+     0.928,
+     1.12,
+     false
+    ],
+    [
+     "morning,",
+     1.16,
+     1.68,
+     false
+    ],
+    [
+     "Daniel.",
+     1.714,
+     2.0,
+     false
+    ],
+    [
+     "Up.",
+     2.133,
+     2.56,
+     false
+    ]
+   ]
+  },
+  "P32": {
+   "text": "He bet two thousand dollars. It went up.",
+   "estimate": 3.44,
+   "dur": 2.573,
+   "words": [
+    [
+     "He",
+     0.0,
+     0.03,
+     false
+    ],
+    [
+     "bet",
+     0.11,
+     0.35,
+     false
+    ],
+    [
+     "two",
+     0.39,
+     0.51,
+     false
+    ],
+    [
+     "thousand",
+     0.546,
+     0.83,
+     false
+    ],
+    [
+     "dollars.",
+     0.91,
+     1.55,
+     false
+    ],
+    [
+     "It",
+     1.63,
+     1.79,
+     false
+    ],
+    [
+     "went",
+     1.822,
+     1.95,
+     false
+    ],
+    [
+     "up.",
+     2.057,
+     2.43,
+     false
+    ]
+   ]
+  },
+  "P33": {
+   "text": "Week seven. Down. He bet four thousand. It went down.",
+   "estimate": 4.22,
+   "dur": 3.518,
+   "words": [
+    [
+     "Week",
+     0.0,
+     0.23,
+     false
+    ],
+    [
+     "seven.",
+     0.31,
+     1.03,
+     false
+    ],
+    [
+     "Down.",
+     1.094,
+     1.43,
+     false
+    ],
+    [
+     "He",
+     1.483,
+     1.59,
+     false
+    ],
+    [
+     "bet",
+     1.63,
+     1.75,
+     false
+    ],
+    [
+     "four",
+     1.798,
+     1.99,
+     false
+    ],
+    [
+     "thousand.",
+     2.052,
+     2.63,
+     false
+    ],
+    [
+     "It",
+     2.657,
+     2.71,
+     false
+    ],
+    [
+     "went",
+     2.758,
+     2.95,
+     false
+    ],
+    [
+     "down.",
+     3.03,
+     3.51,
+     false
+    ]
+   ]
+  },
+  "P34": {
+   "text": "He told his best friend, Marcus, over a beer. Marcus laughed. Then Marcus asked to see the emails. Then Marcus stopped laughing.",
+   "estimate": 8.93,
+   "dur": 6.741,
+   "words": [
+    [
+     "He",
+     0.0,
+     0.16,
+     false
+    ],
+    [
+     "told",
+     0.192,
+     0.32,
+     false
+    ],
+    [
+     "his",
+     0.36,
+     0.48,
+     false
+    ],
+    [
+     "best",
+     0.528,
+     0.72,
+     false
+    ],
+    [
+     "friend,",
+     0.743,
+     0.96,
+     false
+    ],
+    [
+     "Marcus,",
+     1.017,
+     1.36,
+     false
+    ],
+    [
+     "over",
+     1.408,
+     1.6,
+     false
+    ],
+    [
+     "a",
+     1.68,
+     1.76,
+     false
+    ],
+    [
+     "beer.",
+     1.808,
+     2.08,
+     false
+    ],
+    [
+     "Marcus",
+     2.149,
+     2.56,
+     false
+    ],
+    [
+     "laughed.",
+     2.62,
+     3.12,
+     false
+    ],
+    [
+     "Then",
+     3.168,
+     3.36,
+     false
+    ],
+    [
+     "Marcus",
+     3.406,
+     3.68,
+     false
+    ],
+    [
+     "asked",
+     3.72,
+     3.92,
+     false
+    ],
+    [
+     "to",
+     3.973,
+     4.08,
+     false
+    ],
+    [
+     "see",
+     4.12,
+     4.24,
+     false
+    ],
+    [
+     "the",
+     4.26,
+     4.32,
+     false
+    ],
+    [
+     "emails.",
+     4.4,
+     4.96,
+     false
+    ],
+    [
+     "Then",
+     5.008,
+     5.2,
+     false
+    ],
+    [
+     "Marcus",
+     5.269,
+     5.68,
+     false
+    ],
+    [
+     "stopped",
+     5.72,
+     6.0,
+     false
+    ],
+    [
+     "laughing.",
+     6.053,
+     6.72,
+     false
+    ]
+   ]
+  },
+  "P35": {
+   "text": "Here's what was going on in Daniel's head. And honestly, it's what would be going on in yours.",
+   "estimate": 7.36,
+   "dur": 3.934,
+   "words": [
+    [
+     "Here's",
+     0.0,
+     0.15,
+     false
+    ],
+    [
+     "what",
+     0.166,
+     0.23,
+     false
+    ],
+    [
+     "was",
+     0.27,
+     0.39,
+     false
+    ],
+    [
+     "going",
+     0.43,
+     0.63,
+     false
+    ],
+    [
+     "on",
+     0.683,
+     0.79,
+     false
+    ],
+    [
+     "in",
+     0.817,
+     0.87,
+     false
+    ],
+    [
+     "Daniel's",
+     0.927,
+     1.35,
+     false
+    ],
+    [
+     "head.",
+     1.398,
+     1.67,
+     false
+    ],
+    [
+     "And",
+     1.71,
+     1.83,
+     false
+    ],
+    [
+     "honestly,",
+     1.874,
+     2.39,
+     false
+    ],
+    [
+     "it's",
+     2.417,
+     2.55,
+     false
+    ],
+    [
+     "what",
+     2.566,
+     2.63,
+     false
+    ],
+    [
+     "would",
+     2.67,
+     2.87,
+     false
+    ],
+    [
+     "be",
+     2.897,
+     2.95,
+     false
+    ],
+    [
+     "going",
+     2.99,
+     3.19,
+     false
+    ],
+    [
+     "on",
+     3.243,
+     3.35,
+     false
+    ],
+    [
+     "in",
+     3.377,
+     3.43,
+     false
+    ],
+    [
+     "yours.",
+     3.51,
+     3.934,
+     false
+    ]
+   ]
+  },
+  "P36": {
+   "text": "One right guess is luck. Two is a coincidence. But every week, the streak got harder to explain.",
+   "estimate": 7.36,
+   "dur": 5.294,
+   "words": [
+    [
+     "One",
+     0.0,
+     0.23,
+     false
+    ],
+    [
+     "right",
+     0.283,
+     0.55,
+     false
+    ],
+    [
+     "guess",
+     0.59,
+     0.79,
+     false
+    ],
+    [
+     "is",
+     0.843,
+     0.95,
+     false
+    ],
+    [
+     "luck.",
+     1.03,
+     1.55,
+     false
+    ],
+    [
+     "Two",
+     1.6,
+     1.75,
+     false
+    ],
+    [
+     "is",
+     1.803,
+     1.909,
+     false
+    ],
+    [
+     "a",
+     1.91,
+     1.911,
+     false
+    ],
+    [
+     "coincidence.",
+     1.971,
+     2.791,
+     false
+    ],
+    [
+     "But",
+     2.811,
+     2.871,
+     false
+    ],
+    [
+     "every",
+     2.924,
+     3.191,
+     false
+    ],
+    [
+     "week,",
+     3.239,
+     3.511,
+     false
+    ],
+    [
+     "the",
+     3.551,
+     3.671,
+     false
+    ],
+    [
+     "streak",
+     3.705,
+     3.911,
+     false
+    ],
+    [
+     "got",
+     3.971,
+     4.151,
+     false
+    ],
+    [
+     "harder",
+     4.185,
+     4.391,
+     false
+    ],
+    [
+     "to",
+     4.444,
+     4.551,
+     false
+    ],
+    [
+     "explain.",
+     4.621,
+     5.271,
+     false
+    ]
+   ]
+  },
+  "P37": {
+   "text": "Five in a row: one in thirty-two. Seven: one in a hundred and twenty-eight. Eight: one in two hundred and fifty-six.",
+   "estimate": 8.54,
+   "dur": 6.662,
+   "words": [
+    [
+     "Five",
+     0.0,
+     0.16,
+     false
+    ],
+    [
+     "in",
+     0.213,
+     0.32,
+     false
+    ],
+    [
+     "a",
+     0.36,
+     0.4,
+     false
+    ],
+    [
+     "row:",
+     0.46,
+     0.8,
+     false
+    ],
+    [
+     "one",
+     0.86,
+     1.04,
+     false
+    ],
+    [
+     "in",
+     1.093,
+     1.2,
+     false
+    ],
+    [
+     "thirty-two.",
+     1.234,
+     2.16,
+     false
+    ],
+    [
+     "Seven:",
+     2.227,
+     2.72,
+     false
+    ],
+    [
+     "one",
+     2.76,
+     2.88,
+     false
+    ],
+    [
+     "in",
+     2.933,
+     3.04,
+     false
+    ],
+    [
+     "a",
+     3.08,
+     3.12,
+     false
+    ],
+    [
+     "hundred",
+     3.16,
+     3.44,
+     false
+    ],
+    [
+     "and",
+     3.46,
+     3.52,
+     false
+    ],
+    [
+     "twenty-eight.",
+     3.566,
+     4.24,
+     false
+    ],
+    [
+     "Eight:",
+     4.28,
+     4.64,
+     false
+    ],
+    [
+     "one",
+     4.68,
+     4.8,
+     false
+    ],
+    [
+     "in",
+     4.88,
+     5.04,
+     false
+    ],
+    [
+     "two",
+     5.08,
+     5.2,
+     false
+    ],
+    [
+     "hundred",
+     5.24,
+     5.52,
+     false
+    ],
+    [
+     "and",
+     5.56,
+     5.68,
+     false
+    ],
+    [
+     "fifty-six.",
+     5.72,
+     6.64,
+     false
+    ]
+   ]
+  },
+  "P38": {
+   "text": "Week eight said up. Daniel bet ten thousand dollars. The most he had ever risked on anything.",
+   "estimate": 6.97,
+   "dur": 4.886,
+   "words": [
+    [
+     "Week",
+     0.0,
+     0.16,
+     false
+    ],
+    [
+     "eight",
+     0.213,
+     0.48,
+     false
+    ],
+    [
+     "said",
+     0.544,
+     0.8,
+     false
+    ],
+    [
+     "up.",
+     0.88,
+     1.24,
+     false
+    ],
+    [
+     "Daniel",
+     1.269,
+     1.44,
+     false
+    ],
+    [
+     "bet",
+     1.5,
+     1.68,
+     false
+    ],
+    [
+     "ten",
+     1.72,
+     1.84,
+     false
+    ],
+    [
+     "thousand",
+     1.893,
+     2.32,
+     false
+    ],
+    [
+     "dollars.",
+     2.39,
+     2.96,
+     false
+    ],
+    [
+     "The",
+     2.98,
+     3.04,
+     false
+    ],
+    [
+     "most",
+     3.088,
+     3.28,
+     false
+    ],
+    [
+     "he",
+     3.307,
+     3.36,
+     false
+    ],
+    [
+     "had",
+     3.4,
+     3.52,
+     false
+    ],
+    [
+     "ever",
+     3.552,
+     3.68,
+     false
+    ],
+    [
+     "risked",
+     3.744,
+     4.08,
+     false
+    ],
+    [
+     "on",
+     4.133,
+     4.24,
+     false
+    ],
+    [
+     "anything.",
+     4.293,
+     4.88,
+     false
+    ]
+   ]
+  },
+  "P39": {
+   "text": "It went up. Eight for eight.",
+   "estimate": 2.65,
+   "dur": 1.63,
+   "words": [
+    [
+     "It",
+     0.0,
+     0.09,
+     false
+    ],
+    [
+     "went",
+     0.138,
+     0.33,
+     false
+    ],
+    [
+     "up.",
+     0.41,
+     0.65,
+     false
+    ],
+    [
+     "Eight",
+     0.69,
+     0.89,
+     false
+    ],
+    [
+     "for",
+     0.95,
+     1.13,
+     false
+    ],
+    [
+     "eight.",
+     1.17,
+     1.63,
+     false
+    ]
+   ]
+  },
+  "P40": {
+   "text": "Week nine almost broke him.",
+   "estimate": 2.26,
+   "dur": 1.699,
+   "words": [
+    [
+     "Week",
+     0.0,
+     0.16,
+     false
+    ],
+    [
+     "nine",
+     0.224,
+     0.48,
+     false
+    ],
+    [
+     "almost",
+     0.526,
+     0.8,
+     false
+    ],
+    [
+     "broke",
+     0.867,
+     1.2,
+     false
+    ],
+    [
+     "him.",
+     1.26,
+     1.68,
+     false
+    ]
+   ]
+  },
+  "P41": {
+   "text": "Week nine said up.",
+   "estimate": 1.87,
+   "dur": 1.271,
+   "words": [
+    [
+     "Week",
+     0.0,
+     0.15,
+     false
+    ],
+    [
+     "nine",
+     0.214,
+     0.47,
+     false
+    ],
+    [
+     "said",
+     0.534,
+     0.79,
+     false
+    ],
+    [
+     "up.",
+     0.87,
+     1.27,
+     false
+    ]
+   ]
+  },
+  "P42": {
+   "text": "On Monday, the market dropped. Tuesday, it dropped again. By Thursday, it had its worst day in months.",
+   "estimate": 7.36,
+   "dur": 5.322,
+   "words": [
+    [
+     "On",
+     0.0,
+     0.1,
+     false
+    ],
+    [
+     "Monday,",
+     0.146,
+     0.5,
+     false
+    ],
+    [
+     "the",
+     0.52,
+     0.58,
+     false
+    ],
+    [
+     "market",
+     0.626,
+     0.9,
+     false
+    ],
+    [
+     "dropped.",
+     0.95,
+     1.38,
+     false
+    ],
+    [
+     "Tuesday,",
+     1.44,
+     1.86,
+     false
+    ],
+    [
+     "it",
+     1.913,
+     2.02,
+     false
+    ],
+    [
+     "dropped",
+     2.05,
+     2.26,
+     false
+    ],
+    [
+     "again.",
+     2.327,
+     2.82,
+     false
+    ],
+    [
+     "By",
+     2.847,
+     2.9,
+     false
+    ],
+    [
+     "Thursday,",
+     2.962,
+     3.54,
+     false
+    ],
+    [
+     "it",
+     3.567,
+     3.62,
+     false
+    ],
+    [
+     "had",
+     3.66,
+     3.78,
+     false
+    ],
+    [
+     "its",
+     3.82,
+     3.94,
+     false
+    ],
+    [
+     "worst",
+     4.007,
+     4.34,
+     false
+    ],
+    [
+     "day",
+     4.38,
+     4.5,
+     false
+    ],
+    [
+     "in",
+     4.527,
+     4.58,
+     false
+    ],
+    [
+     "months.",
+     4.66,
+     5.3,
+     false
+    ]
+   ]
+  },
+  "P43": {
+   "text": "Daniel stopped sleeping. He refreshed the chart in the bathroom at work. He had twelve thousand dollars riding on this one.",
+   "estimate": 8.54,
+   "dur": 5.597,
+   "words": [
+    [
+     "Daniel",
+     0.0,
+     0.3,
+     false
+    ],
+    [
+     "stopped",
+     0.35,
+     0.7,
+     false
+    ],
+    [
+     "sleeping.",
+     0.753,
+     1.26,
+     false
+    ],
+    [
+     "He",
+     1.287,
+     1.34,
+     false
+    ],
+    [
+     "refreshed",
+     1.38,
+     1.74,
+     false
+    ],
+    [
+     "the",
+     1.78,
+     1.9,
+     false
+    ],
+    [
+     "chart",
+     1.94,
+     2.14,
+     false
+    ],
+    [
+     "in",
+     2.167,
+     2.22,
+     false
+    ],
+    [
+     "the",
+     2.24,
+     2.3,
+     false
+    ],
+    [
+     "bathroom",
+     2.344,
+     2.7,
+     false
+    ],
+    [
+     "at",
+     2.727,
+     2.78,
+     false
+    ],
+    [
+     "work.",
+     2.844,
+     3.18,
+     false
+    ],
+    [
+     "He",
+     3.207,
+     3.26,
+     false
+    ],
+    [
+     "had",
+     3.3,
+     3.42,
+     false
+    ],
+    [
+     "twelve",
+     3.466,
+     3.74,
+     false
+    ],
+    [
+     "thousand",
+     3.784,
+     4.14,
+     false
+    ],
+    [
+     "dollars",
+     4.19,
+     4.54,
+     false
+    ],
+    [
+     "riding",
+     4.586,
+     4.86,
+     false
+    ],
+    [
+     "on",
+     4.887,
+     4.94,
+     false
+    ],
+    [
+     "this",
+     4.972,
+     5.1,
+     false
+    ],
+    [
+     "one.",
+     5.18,
+     5.58,
+     false
+    ]
+   ]
+  },
+  "P44": {
+   "text": "Friday. Three p.m. One hour left. Still down.",
+   "estimate": 3.44,
+   "dur": 3.292,
+   "words": [
+    [
+     "Friday.",
+     0.0,
+     0.56,
+     false
+    ],
+    [
+     "Three",
+     0.587,
+     0.72,
+     false
+    ],
+    [
+     "p.m.",
+     0.84,
+     1.2,
+     false
+    ],
+    [
+     "One",
+     1.28,
+     1.52,
+     false
+    ],
+    [
+     "hour",
+     1.584,
+     1.84,
+     false
+    ],
+    [
+     "left.",
+     1.92,
+     2.4,
+     false
+    ],
+    [
+     "Still",
+     2.453,
+     2.72,
+     false
+    ],
+    [
+     "down.",
+     2.8,
+     3.28,
+     false
+    ]
+   ]
+  },
+  "P45": {
+   "text": "And then, in the last forty minutes, the market turned. A speech, a rumor, a rate. Nobody could really explain it.",
+   "estimate": 8.54,
+   "dur": 6.62,
+   "words": [
+    [
+     "And",
+     0.0,
+     0.08,
+     false
+    ],
+    [
+     "then,",
+     0.144,
+     0.56,
+     false
+    ],
+    [
+     "in",
+     0.587,
+     0.64,
+     false
+    ],
+    [
+     "the",
+     0.66,
+     0.72,
+     false
+    ],
+    [
+     "last",
+     0.784,
+     1.04,
+     false
+    ],
+    [
+     "forty",
+     1.08,
+     1.28,
+     false
+    ],
+    [
+     "minutes,",
+     1.34,
+     1.84,
+     false
+    ],
+    [
+     "the",
+     1.86,
+     1.92,
+     false
+    ],
+    [
+     "market",
+     1.966,
+     2.24,
+     false
+    ],
+    [
+     "turned.",
+     2.32,
+     2.92,
+     false
+    ],
+    [
+     "A",
+     2.98,
+     3.04,
+     false
+    ],
+    [
+     "speech,",
+     3.131,
+     3.76,
+     false
+    ],
+    [
+     "a",
+     3.8,
+     3.84,
+     false
+    ],
+    [
+     "rumor,",
+     3.92,
+     4.56,
+     false
+    ],
+    [
+     "a",
+     4.6,
+     4.64,
+     false
+    ],
+    [
+     "rate.",
+     4.72,
+     5.24,
+     false
+    ],
+    [
+     "Nobody",
+     5.269,
+     5.44,
+     false
+    ],
+    [
+     "could",
+     5.467,
+     5.6,
+     false
+    ],
+    [
+     "really",
+     5.634,
+     5.84,
+     false
+    ],
+    [
+     "explain",
+     5.9,
+     6.32,
+     false
+    ],
+    [
+     "it.",
+     6.347,
+     6.62,
+     false
+    ]
+   ]
+  },
+  "P46": {
+   "text": "At four o'clock, the market closed up. By less than half a percent.",
+   "estimate": 5.4,
+   "dur": 3.4,
+   "words": [
+    [
+     "At",
+     0.0,
+     0.01,
+     false
+    ],
+    [
+     "four",
+     0.074,
+     0.33,
+     false
+    ],
+    [
+     "o'clock,",
+     0.41,
+     0.81,
+     false
+    ],
+    [
+     "the",
+     0.83,
+     0.89,
+     false
+    ],
+    [
+     "market",
+     0.936,
+     1.21,
+     false
+    ],
+    [
+     "closed",
+     1.256,
+     1.53,
+     false
+    ],
+    [
+     "up.",
+     1.637,
+     1.93,
+     false
+    ],
+    [
+     "By",
+     1.957,
+     2.01,
+     false
+    ],
+    [
+     "less",
+     2.074,
+     2.33,
+     false
+    ],
+    [
+     "than",
+     2.346,
+     2.41,
+     false
+    ],
+    [
+     "half",
+     2.458,
+     2.65,
+     false
+    ],
+    [
+     "a",
+     2.73,
+     2.81,
+     false
+    ],
+    [
+     "percent.",
+     2.86,
+     3.4,
+     false
+    ]
+   ]
+  },
+  "P47": {
+   "text": "Nine for nine.",
+   "estimate": 1.48,
+   "dur": 1.143,
+   "words": [
+    [
+     "Nine",
+     0.0,
+     0.26,
+     false
+    ],
+    [
+     "for",
+     0.32,
+     0.5,
+     false
+    ],
+    [
+     "nine.",
+     0.58,
+     1.14,
+     false
+    ]
+   ]
+  },
+  "P48": {
+   "text": "That night, Daniel didn't celebrate. He sat in his car in the driveway, and he said it out loud. Who are you?",
+   "estimate": 8.93,
+   "dur": 6.03,
+   "words": [
+    [
+     "That",
+     0.0,
+     0.13,
+     false
+    ],
+    [
+     "night,",
+     0.183,
+     0.53,
+     false
+    ],
+    [
+     "Daniel",
+     0.576,
+     0.85,
+     false
+    ],
+    [
+     "didn't",
+     0.898,
+     1.41,
+     false
+    ],
+    [
+     "celebrate.",
+     1.442,
+     1.81,
+     false
+    ],
+    [
+     "He",
+     1.89,
+     2.05,
+     false
+    ],
+    [
+     "sat",
+     2.11,
+     2.29,
+     false
+    ],
+    [
+     "in",
+     2.317,
+     2.37,
+     false
+    ],
+    [
+     "his",
+     2.39,
+     2.45,
+     false
+    ],
+    [
+     "car",
+     2.51,
+     2.69,
+     false
+    ],
+    [
+     "in",
+     2.717,
+     2.77,
+     false
+    ],
+    [
+     "the",
+     2.81,
+     2.93,
+     false
+    ],
+    [
+     "driveway,",
+     2.983,
+     3.57,
+     false
+    ],
+    [
+     "and",
+     3.59,
+     3.65,
+     false
+    ],
+    [
+     "he",
+     3.703,
+     3.81,
+     false
+    ],
+    [
+     "said",
+     3.842,
+     3.97,
+     false
+    ],
+    [
+     "it",
+     4.023,
+     4.13,
+     false
+    ],
+    [
+     "out",
+     4.15,
+     4.21,
+     false
+    ],
+    [
+     "loud.",
+     4.29,
+     4.69,
+     false
+    ],
+    [
+     "Who",
+     4.81,
+     5.17,
+     false
+    ],
+    [
+     "are",
+     5.25,
+     5.49,
+     false
+    ],
+    [
+     "you?",
+     5.55,
+     6.03,
+     false
+    ]
+   ]
+  },
+  "P49": {
+   "text": "Week ten. Down. Of course it went down.",
+   "estimate": 3.44,
+   "dur": 2.9,
+   "words": [
+    [
+     "Week",
+     0.0,
+     0.24,
+     false
+    ],
+    [
+     "ten.",
+     0.34,
+     0.72,
+     false
+    ],
+    [
+     "Down.",
+     0.848,
+     1.48,
+     false
+    ],
+    [
+     "Of",
+     1.52,
+     1.6,
+     false
+    ],
+    [
+     "course",
+     1.657,
+     2.0,
+     false
+    ],
+    [
+     "it",
+     2.027,
+     2.08,
+     false
+    ],
+    [
+     "went",
+     2.112,
+     2.24,
+     false
+    ],
+    [
+     "down.",
+     2.32,
+     2.9,
+     false
+    ]
+   ]
+  },
+  "P50": {
+   "text": "Ten for ten. One in one thousand and twenty-four.",
+   "estimate": 3.83,
+   "dur": 2.939,
+   "words": [
+    [
+     "Ten",
+     0.0,
+     0.12,
+     false
+    ],
+    [
+     "for",
+     0.18,
+     0.36,
+     false
+    ],
+    [
+     "ten.",
+     0.44,
+     0.88,
+     false
+    ],
+    [
+     "One",
+     0.93,
+     1.08,
+     false
+    ],
+    [
+     "in",
+     1.16,
+     1.32,
+     false
+    ],
+    [
+     "one",
+     1.34,
+     1.4,
+     false
+    ],
+    [
+     "thousand",
+     1.453,
+     1.88,
+     false
+    ],
+    [
+     "and",
+     1.92,
+     2.04,
+     false
+    ],
+    [
+     "twenty-four.",
+     2.074,
+     2.92,
+     false
+    ]
+   ]
+  },
+  "P51": {
+   "text": "And on the eleventh Monday, at six a.m., there was no prediction.",
+   "estimate": 5.01,
+   "dur": 3.389,
+   "words": [
+    [
+     "And",
+     0.0,
+     0.02,
+     false
+    ],
+    [
+     "on",
+     0.073,
+     0.18,
+     false
+    ],
+    [
+     "the",
+     0.2,
+     0.26,
+     false
+    ],
+    [
+     "eleventh",
+     0.3,
+     0.66,
+     false
+    ],
+    [
+     "Monday,",
+     0.717,
+     1.14,
+     false
+    ],
+    [
+     "at",
+     1.193,
+     1.3,
+     false
+    ],
+    [
+     "six",
+     1.34,
+     1.46,
+     false
+    ],
+    [
+     "a.m.,",
+     1.62,
+     2.1,
+     false
+    ],
+    [
+     "there",
+     2.127,
+     2.26,
+     false
+    ],
+    [
+     "was",
+     2.32,
+     2.5,
+     false
+    ],
+    [
+     "no",
+     2.553,
+     2.66,
+     false
+    ],
+    [
+     "prediction.",
+     2.704,
+     3.38,
+     false
+    ]
+   ]
+  },
+  "P52": {
+   "text": "There was an offer.",
+   "estimate": 1.87,
+   "dur": 0.948,
+   "words": [
+    [
+     "There",
+     0.0,
+     0.06,
+     false
+    ],
+    [
+     "was",
+     0.1,
+     0.22,
+     false
+    ],
+    [
+     "an",
+     0.273,
+     0.38,
+     false
+    ],
+    [
+     "offer.",
+     0.447,
+     0.94,
+     false
+    ]
+   ]
+  },
+  "P53": {
+   "text": "You've seen what I can do. Fifty-two more weeks of predictions. The fee is fifty thousand dollars. You have until Friday.",
+   "estimate": 8.54,
+   "dur": 6.306,
+   "words": [
+    [
+     "You've",
+     0.0,
+     0.16,
+     false
+    ],
+    [
+     "seen",
+     0.192,
+     0.32,
+     false
+    ],
+    [
+     "what",
+     0.352,
+     0.48,
+     false
+    ],
+    [
+     "I",
+     0.56,
+     0.64,
+     false
+    ],
+    [
+     "can",
+     0.66,
+     0.72,
+     false
+    ],
+    [
+     "do.",
+     0.827,
+     1.12,
+     false
+    ],
+    [
+     "Fifty-two",
+     1.173,
+     1.68,
+     false
+    ],
+    [
+     "more",
+     1.728,
+     1.92,
+     false
+    ],
+    [
+     "weeks",
+     1.96,
+     2.16,
+     false
+    ],
+    [
+     "of",
+     2.187,
+     2.24,
+     false
+    ],
+    [
+     "predictions.",
+     2.307,
+     3.16,
+     false
+    ],
+    [
+     "The",
+     3.19,
+     3.28,
+     false
+    ],
+    [
+     "fee",
+     3.32,
+     3.44,
+     false
+    ],
+    [
+     "is",
+     3.493,
+     3.6,
+     false
+    ],
+    [
+     "fifty",
+     3.653,
+     3.92,
+     false
+    ],
+    [
+     "thousand",
+     3.964,
+     4.32,
+     false
+    ],
+    [
+     "dollars.",
+     4.39,
+     4.96,
+     false
+    ],
+    [
+     "You",
+     5.0,
+     5.12,
+     false
+    ],
+    [
+     "have",
+     5.152,
+     5.28,
+     false
+    ],
+    [
+     "until",
+     5.32,
+     5.52,
+     false
+    ],
+    [
+     "Friday.",
+     5.6,
+     6.16,
+     false
+    ]
+   ]
+  },
+  "P54": {
+   "text": "Fifty thousand. Almost exactly the number on the tab called Lily.",
+   "estimate": 4.61,
+   "dur": 3.763,
+   "words": [
+    [
+     "Fifty",
+     0.0,
+     0.24,
+     false
+    ],
+    [
+     "thousand.",
+     0.32,
+     1.16,
+     false
+    ],
+    [
+     "Almost",
+     1.189,
+     1.36,
+     false
+    ],
+    [
+     "exactly",
+     1.43,
+     1.92,
+     false
+    ],
+    [
+     "the",
+     1.96,
+     2.08,
+     false
+    ],
+    [
+     "number",
+     2.114,
+     2.32,
+     false
+    ],
+    [
+     "on",
+     2.347,
+     2.4,
+     false
+    ],
+    [
+     "the",
+     2.42,
+     2.48,
+     false
+    ],
+    [
+     "tab",
+     2.56,
+     2.8,
+     false
+    ],
+    [
+     "called",
+     2.846,
+     3.12,
+     false
+    ],
+    [
+     "Lily.",
+     3.216,
+     3.76,
+     false
+    ]
+   ]
+  },
+  "P55": {
+   "text": "Daniel ran the numbers. If the predictions kept coming, fifty thousand could become half a million by the end of the year. College, ten times over.",
+   "estimate": 10.5,
+   "dur": 7.386,
+   "words": [
+    [
+     "Daniel",
+     0.0,
+     0.26,
+     false
+    ],
+    [
+     "ran",
+     0.32,
+     0.5,
+     false
+    ],
+    [
+     "the",
+     0.52,
+     0.58,
+     false
+    ],
+    [
+     "numbers.",
+     0.64,
+     1.14,
+     false
+    ],
+    [
+     "If",
+     1.193,
+     1.3,
+     false
+    ],
+    [
+     "the",
+     1.34,
+     1.46,
+     false
+    ],
+    [
+     "predictions",
+     1.5,
+     1.94,
+     false
+    ],
+    [
+     "kept",
+     1.972,
+     2.1,
+     false
+    ],
+    [
+     "coming,",
+     2.157,
+     2.66,
+     false
+    ],
+    [
+     "fifty",
+     2.7,
+     2.9,
+     false
+    ],
+    [
+     "thousand",
+     2.944,
+     3.3,
+     false
+    ],
+    [
+     "could",
+     3.327,
+     3.46,
+     false
+    ],
+    [
+     "become",
+     3.506,
+     3.78,
+     false
+    ],
+    [
+     "half",
+     3.828,
+     4.02,
+     false
+    ],
+    [
+     "a",
+     4.06,
+     4.1,
+     false
+    ],
+    [
+     "million",
+     4.15,
+     4.5,
+     false
+    ],
+    [
+     "by",
+     4.553,
+     4.66,
+     false
+    ],
+    [
+     "the",
+     4.68,
+     4.74,
+     false
+    ],
+    [
+     "end",
+     4.78,
+     4.9,
+     false
+    ],
+    [
+     "of",
+     4.927,
+     4.98,
+     false
+    ],
+    [
+     "the",
+     5.0,
+     5.06,
+     false
+    ],
+    [
+     "year.",
+     5.14,
+     5.78,
+     false
+    ],
+    [
+     "College,",
+     5.82,
+     6.26,
+     false
+    ],
+    [
+     "ten",
+     6.3,
+     6.42,
+     false
+    ],
+    [
+     "times",
+     6.487,
+     6.82,
+     false
+    ],
+    [
+     "over.",
+     6.884,
+     7.38,
+     false
+    ]
+   ]
+  },
+  "P56": {
+   "text": "Maya found the spreadsheet on Thursday night.",
+   "estimate": 3.05,
+   "dur": 2.05,
+   "words": [
+    [
+     "Maya",
+     0.0,
+     0.25,
+     false
+    ],
+    [
+     "found",
+     0.277,
+     0.41,
+     false
+    ],
+    [
+     "the",
+     0.43,
+     0.49,
+     false
+    ],
+    [
+     "spreadsheet",
+     0.537,
+     1.05,
+     false
+    ],
+    [
+     "on",
+     1.077,
+     1.13,
+     false
+    ],
+    [
+     "Thursday",
+     1.174,
+     1.53,
+     false
+    ],
+    [
+     "night.",
+     1.583,
+     2.05,
+     false
+    ]
+   ]
+  },
+  "P57": {
+   "text": "She asked him one question. How do you know he's real?",
+   "estimate": 4.61,
+   "dur": 2.741,
+   "words": [
+    [
+     "She",
+     0.0,
+     0.08,
+     false
+    ],
+    [
+     "asked",
+     0.12,
+     0.32,
+     false
+    ],
+    [
+     "him",
+     0.36,
+     0.48,
+     false
+    ],
+    [
+     "one",
+     0.54,
+     0.72,
+     false
+    ],
+    [
+     "question.",
+     0.773,
+     1.28,
+     false
+    ],
+    [
+     "How",
+     1.34,
+     1.52,
+     false
+    ],
+    [
+     "do",
+     1.547,
+     1.6,
+     false
+    ],
+    [
+     "you",
+     1.62,
+     1.68,
+     false
+    ],
+    [
+     "know",
+     1.712,
+     1.84,
+     false
+    ],
+    [
+     "he's",
+     1.893,
+     2.08,
+     false
+    ],
+    [
+     "real?",
+     2.16,
+     2.72,
+     false
+    ]
+   ]
+  },
+  "P58": {
+   "text": "And Daniel said the only thing he could say. Because he's never been wrong.",
+   "estimate": 5.79,
+   "dur": 3.693,
+   "words": [
+    [
+     "And",
+     0.0,
+     0.09,
+     false
+    ],
+    [
+     "Daniel",
+     0.136,
+     0.41,
+     false
+    ],
+    [
+     "said",
+     0.442,
+     0.57,
+     false
+    ],
+    [
+     "the",
+     0.61,
+     0.73,
+     false
+    ],
+    [
+     "only",
+     0.778,
+     0.97,
+     false
+    ],
+    [
+     "thing",
+     1.023,
+     1.29,
+     false
+    ],
+    [
+     "he",
+     1.343,
+     1.45,
+     false
+    ],
+    [
+     "could",
+     1.49,
+     1.69,
+     false
+    ],
+    [
+     "say.",
+     1.75,
+     2.01,
+     false
+    ],
+    [
+     "Because",
+     2.05,
+     2.33,
+     false
+    ],
+    [
+     "he's",
+     2.383,
+     2.57,
+     false
+    ],
+    [
+     "never",
+     2.61,
+     2.81,
+     false
+    ],
+    [
+     "been",
+     2.858,
+     3.05,
+     false
+    ],
+    [
+     "wrong.",
+     3.117,
+     3.69,
+     false
+    ]
+   ]
+  },
+  "P59": {
+   "text": "On Friday morning, he wired the money.",
+   "estimate": 3.05,
+   "dur": 2.139,
+   "words": [
+    [
+     "On",
+     0.0,
+     0.05,
+     false
+    ],
+    [
+     "Friday",
+     0.107,
+     0.45,
+     false
+    ],
+    [
+     "morning,",
+     0.5,
+     0.93,
+     false
+    ],
+    [
+     "he",
+     0.983,
+     1.09,
+     false
+    ],
+    [
+     "wired",
+     1.143,
+     1.41,
+     false
+    ],
+    [
+     "the",
+     1.43,
+     1.49,
+     false
+    ],
+    [
+     "money.",
+     1.543,
+     2.13,
+     false
+    ]
+   ]
+  },
+  "P60": {
+   "text": "But Daniel never asked the one question that mattered. Not, how was he right? But, how many people did he start with?",
+   "estimate": 8.93,
+   "dur": 6.088,
+   "words": [
+    [
+     "But",
+     0.0,
+     0.08,
+     false
+    ],
+    [
+     "Daniel",
+     0.126,
+     0.4,
+     false
+    ],
+    [
+     "never",
+     0.453,
+     0.72,
+     false
+    ],
+    [
+     "asked",
+     0.76,
+     0.96,
+     false
+    ],
+    [
+     "the",
+     0.98,
+     1.04,
+     false
+    ],
+    [
+     "one",
+     1.1,
+     1.28,
+     false
+    ],
+    [
+     "question",
+     1.324,
+     1.68,
+     false
+    ],
+    [
+     "that",
+     1.712,
+     1.84,
+     false
+    ],
+    [
+     "mattered.",
+     1.884,
+     2.48,
+     false
+    ],
+    [
+     "Not,",
+     2.54,
+     2.8,
+     false
+    ],
+    [
+     "how",
+     2.86,
+     3.04,
+     false
+    ],
+    [
+     "was",
+     3.08,
+     3.2,
+     false
+    ],
+    [
+     "he",
+     3.253,
+     3.36,
+     false
+    ],
+    [
+     "right?",
+     3.413,
+     3.76,
+     false
+    ],
+    [
+     "But,",
+     3.84,
+     4.16,
+     false
+    ],
+    [
+     "how",
+     4.24,
+     4.48,
+     false
+    ],
+    [
+     "many",
+     4.512,
+     4.64,
+     false
+    ],
+    [
+     "people",
+     4.674,
+     4.88,
+     false
+    ],
+    [
+     "did",
+     4.92,
+     5.04,
+     false
+    ],
+    [
+     "he",
+     5.093,
+     5.2,
+     false
+    ],
+    [
+     "start",
+     5.24,
+     5.44,
+     false
+    ],
+    [
+     "with?",
+     5.504,
+     6.08,
+     false
+    ]
+   ]
+  },
+  "P61": {
+   "text": "Let's go back to the very first Monday.",
+   "estimate": 3.44,
+   "dur": 2.34,
+   "words": [
+    [
+     "Let's",
+     0.0,
+     0.14,
+     false
+    ],
+    [
+     "go",
+     0.193,
+     0.3,
+     false
+    ],
+    [
+     "back",
+     0.364,
+     0.62,
+     false
+    ],
+    [
+     "to",
+     0.647,
+     0.7,
+     false
+    ],
+    [
+     "the",
+     0.72,
+     0.78,
+     false
+    ],
+    [
+     "very",
+     0.86,
+     1.18,
+     false
+    ],
+    [
+     "first",
+     1.247,
+     1.58,
+     false
+    ],
+    [
+     "Monday.",
+     1.649,
+     2.34,
+     false
+    ]
+   ]
+  },
+  "P62": {
+   "text": "That morning, the email didn't go to just Daniel. It went to ten thousand, two hundred and forty people.",
+   "estimate": 7.75,
+   "dur": 5.284,
+   "words": [
+    [
+     "That",
+     0.0,
+     0.14,
+     false
+    ],
+    [
+     "morning,",
+     0.19,
+     0.62,
+     false
+    ],
+    [
+     "the",
+     0.66,
+     0.78,
+     false
+    ],
+    [
+     "email",
+     0.82,
+     1.02,
+     false
+    ],
+    [
+     "didn't",
+     1.052,
+     1.26,
+     false
+    ],
+    [
+     "go",
+     1.313,
+     1.42,
+     false
+    ],
+    [
+     "to",
+     1.473,
+     1.58,
+     false
+    ],
+    [
+     "just",
+     1.628,
+     1.82,
+     false
+    ],
+    [
+     "Daniel.",
+     1.877,
+     2.3,
+     false
+    ],
+    [
+     "It",
+     2.353,
+     2.46,
+     false
+    ],
+    [
+     "went",
+     2.492,
+     2.62,
+     false
+    ],
+    [
+     "to",
+     2.673,
+     2.78,
+     false
+    ],
+    [
+     "ten",
+     2.84,
+     3.02,
+     false
+    ],
+    [
+     "thousand,",
+     3.073,
+     3.66,
+     false
+    ],
+    [
+     "two",
+     3.7,
+     3.82,
+     false
+    ],
+    [
+     "hundred",
+     3.86,
+     4.14,
+     false
+    ],
+    [
+     "and",
+     4.2,
+     4.38,
+     false
+    ],
+    [
+     "forty",
+     4.42,
+     4.62,
+     false
+    ],
+    [
+     "people.",
+     4.689,
+     5.26,
+     false
+    ]
+   ]
+  },
+  "P63": {
+   "text": "Half of them were told the market would go up. The other half were told it would go down.",
+   "estimate": 7.75,
+   "dur": 3.906,
+   "words": [
+    [
+     "Half",
+     0.0,
+     0.12,
+     false
+    ],
+    [
+     "of",
+     0.173,
+     0.28,
+     false
+    ],
+    [
+     "them",
+     0.312,
+     0.44,
+     false
+    ],
+    [
+     "were",
+     0.472,
+     0.6,
+     false
+    ],
+    [
+     "told",
+     0.648,
+     0.84,
+     false
+    ],
+    [
+     "the",
+     0.86,
+     0.92,
+     false
+    ],
+    [
+     "market",
+     0.966,
+     1.24,
+     false
+    ],
+    [
+     "would",
+     1.267,
+     1.4,
+     false
+    ],
+    [
+     "go",
+     1.453,
+     1.56,
+     false
+    ],
+    [
+     "up.",
+     1.667,
+     2.0,
+     false
+    ],
+    [
+     "The",
+     2.03,
+     2.12,
+     false
+    ],
+    [
+     "other",
+     2.16,
+     2.36,
+     false
+    ],
+    [
+     "half",
+     2.392,
+     2.52,
+     false
+    ],
+    [
+     "were",
+     2.552,
+     2.68,
+     false
+    ],
+    [
+     "told",
+     2.728,
+     2.92,
+     false
+    ],
+    [
+     "it",
+     2.947,
+     3.0,
+     false
+    ],
+    [
+     "would",
+     3.027,
+     3.16,
+     false
+    ],
+    [
+     "go",
+     3.213,
+     3.32,
+     false
+    ],
+    [
+     "down.",
+     3.416,
+     3.88,
+     false
+    ]
+   ]
+  },
+  "P64": {
+   "text": "On Friday, one group was right. The other group never heard from the prophet again.",
+   "estimate": 6.18,
+   "dur": 4.014,
+   "words": [
+    [
+     "On",
+     0.0,
+     0.07,
+     false
+    ],
+    [
+     "Friday,",
+     0.127,
+     0.63,
+     false
+    ],
+    [
+     "one",
+     0.67,
+     0.79,
+     false
+    ],
+    [
+     "group",
+     0.843,
+     1.11,
+     false
+    ],
+    [
+     "was",
+     1.15,
+     1.27,
+     false
+    ],
+    [
+     "right.",
+     1.323,
+     1.67,
+     false
+    ],
+    [
+     "The",
+     1.69,
+     1.75,
+     false
+    ],
+    [
+     "other",
+     1.79,
+     1.99,
+     false
+    ],
+    [
+     "group",
+     2.03,
+     2.23,
+     false
+    ],
+    [
+     "never",
+     2.283,
+     2.55,
+     false
+    ],
+    [
+     "heard",
+     2.59,
+     2.79,
+     false
+    ],
+    [
+     "from",
+     2.822,
+     2.95,
+     false
+    ],
+    [
+     "the",
+     2.97,
+     3.03,
+     false
+    ],
+    [
+     "prophet",
+     3.08,
+     3.43,
+     false
+    ],
+    [
+     "again.",
+     3.497,
+     3.99,
+     false
+    ]
+   ]
+  },
+  "P65": {
+   "text": "After week one, five thousand, one hundred and twenty people were left. Split them in half again. Up. Down.",
+   "estimate": 7.75,
+   "dur": 5.67,
+   "words": [
+    [
+     "Week",
+     0.0,
+     0.15,
+     false
+    ],
+    [
+     "one.",
+     0.26,
+     0.64,
+     false
+    ],
+    [
+     "Five",
+     0.68,
+     0.84,
+     false
+    ],
+    [
+     "thousand,",
+     0.902,
+     1.48,
+     false
+    ],
+    [
+     "one",
+     1.5,
+     1.56,
+     false
+    ],
+    [
+     "hundred",
+     1.6,
+     1.88,
+     false
+    ],
+    [
+     "and",
+     1.92,
+     2.04,
+     false
+    ],
+    [
+     "twenty",
+     2.074,
+     2.28,
+     false
+    ],
+    [
+     "people",
+     2.326,
+     2.6,
+     false
+    ],
+    [
+     "left.",
+     2.68,
+     3.08,
+     false
+    ],
+    [
+     "Split",
+     3.133,
+     3.4,
+     false
+    ],
+    [
+     "them",
+     3.416,
+     3.48,
+     false
+    ],
+    [
+     "in",
+     3.533,
+     3.64,
+     false
+    ],
+    [
+     "half",
+     3.688,
+     3.88,
+     false
+    ],
+    [
+     "again.",
+     3.947,
+     4.52,
+     false
+    ],
+    [
+     "Up.",
+     4.6,
+     5.12,
+     false
+    ],
+    [
+     "Down.",
+     5.192,
+     5.67,
+     false
+    ]
+   ]
+  },
+  "P66": {
+   "text": "After week two: two thousand, five hundred and sixty. Week three: twelve hundred and eighty. Week four: six hundred and forty.",
+   "estimate": 8.54,
+   "dur": 6.588,
+   "words": [
+    [
+     "Week",
+     0.0,
+     0.21,
+     false
+    ],
+    [
+     "two:",
+     0.296,
+     0.856,
+     false
+    ],
+    [
+     "two",
+     0.887,
+     0.947,
+     false
+    ],
+    [
+     "thousand,",
+     0.991,
+     1.427,
+     false
+    ],
+    [
+     "five",
+     1.459,
+     1.587,
+     false
+    ],
+    [
+     "hundred",
+     1.627,
+     1.907,
+     false
+    ],
+    [
+     "and",
+     1.967,
+     2.146,
+     false
+    ],
+    [
+     "sixty.",
+     2.213,
+     2.706,
+     false
+    ],
+    [
+     "Week",
+     2.738,
+     2.866,
+     false
+    ],
+    [
+     "three:",
+     2.933,
+     3.44,
+     false
+    ],
+    [
+     "twelve",
+     3.466,
+     3.672,
+     false
+    ],
+    [
+     "hundred",
+     3.704,
+     3.913,
+     false
+    ],
+    [
+     "and",
+     3.973,
+     4.152,
+     false
+    ],
+    [
+     "eighty.",
+     4.186,
+     4.633,
+     false
+    ],
+    [
+     "Week",
+     4.665,
+     4.793,
+     false
+    ],
+    [
+     "four:",
+     4.888,
+     5.369,
+     false
+    ],
+    [
+     "six",
+     5.405,
+     5.526,
+     false
+    ],
+    [
+     "hundred",
+     5.566,
+     5.846,
+     false
+    ],
+    [
+     "and",
+     5.886,
+     6.005,
+     false
+    ],
+    [
+     "forty.",
+     6.059,
+     6.566,
+     false
+    ]
+   ]
+  },
+  "P67": {
+   "text": "Every single week, half the believers vanished. And the ones who were left saw a perfect record.",
+   "estimate": 6.97,
+   "dur": 4.572,
+   "words": [
+    [
+     "Every",
+     0.0,
+     0.16,
+     false
+    ],
+    [
+     "single",
+     0.206,
+     0.48,
+     false
+    ],
+    [
+     "week,",
+     0.544,
+     0.88,
+     false
+    ],
+    [
+     "half",
+     0.912,
+     1.04,
+     false
+    ],
+    [
+     "the",
+     1.08,
+     1.2,
+     false
+    ],
+    [
+     "believers",
+     1.24,
+     1.6,
+     false
+    ],
+    [
+     "vanished.",
+     1.662,
+     2.24,
+     false
+    ],
+    [
+     "And",
+     2.26,
+     2.32,
+     false
+    ],
+    [
+     "the",
+     2.34,
+     2.4,
+     false
+    ],
+    [
+     "ones",
+     2.448,
+     2.64,
+     false
+    ],
+    [
+     "who",
+     2.68,
+     2.8,
+     false
+    ],
+    [
+     "were",
+     2.816,
+     2.88,
+     false
+    ],
+    [
+     "left",
+     2.944,
+     3.2,
+     false
+    ],
+    [
+     "saw",
+     3.26,
+     3.44,
+     false
+    ],
+    [
+     "a",
+     3.48,
+     3.52,
+     false
+    ],
+    [
+     "perfect",
+     3.57,
+     3.92,
+     false
+    ],
+    [
+     "record.",
+     3.977,
+     4.56,
+     false
+    ]
+   ]
+  },
+  "P68": {
+   "text": "After week eight: forty. Week nine: twenty. Week ten…",
+   "estimate": 3.83,
+   "dur": 4.12,
+   "words": [
+    [
+     "Week",
+     0.0,
+     0.24,
+     false
+    ],
+    [
+     "eight:",
+     0.307,
+     0.88,
+     false
+    ],
+    [
+     "forty.",
+     0.96,
+     1.52,
+     false
+    ],
+    [
+     "Week",
+     1.552,
+     1.68,
+     false
+    ],
+    [
+     "nine:",
+     1.792,
+     2.6,
+     false
+    ],
+    [
+     "twenty.",
+     2.651,
+     3.16,
+     false
+    ],
+    [
+     "Week",
+     3.2,
+     3.36,
+     false
+    ],
+    [
+     "ten…",
+     3.48,
+     4.12,
+     false
+    ]
+   ]
+  },
+  "P69": {
+   "text": "Ten people. Ten people who had watched someone predict the market ten times in a row. Perfectly.",
+   "estimate": 6.97,
+   "dur": 5.304,
+   "words": [
+    [
+     "Ten",
+     0.0,
+     0.16,
+     false
+    ],
+    [
+     "people.",
+     0.229,
+     0.8,
+     false
+    ],
+    [
+     "Ten",
+     0.84,
+     0.96,
+     false
+    ],
+    [
+     "people",
+     1.017,
+     1.36,
+     false
+    ],
+    [
+     "who",
+     1.4,
+     1.52,
+     false
+    ],
+    [
+     "had",
+     1.54,
+     1.6,
+     false
+    ],
+    [
+     "watched",
+     1.65,
+     2.0,
+     false
+    ],
+    [
+     "someone",
+     2.03,
+     2.24,
+     false
+    ],
+    [
+     "predict",
+     2.29,
+     2.64,
+     false
+    ],
+    [
+     "the",
+     2.66,
+     2.72,
+     false
+    ],
+    [
+     "market",
+     2.789,
+     3.2,
+     false
+    ],
+    [
+     "ten",
+     3.28,
+     3.52,
+     false
+    ],
+    [
+     "times",
+     3.573,
+     3.84,
+     false
+    ],
+    [
+     "in",
+     3.867,
+     3.92,
+     false
+    ],
+    [
+     "a",
+     3.96,
+     4.0,
+     false
+    ],
+    [
+     "row.",
+     4.06,
+     4.32,
+     false
+    ],
+    [
+     "Perfectly.",
+     4.4,
+     5.28,
+     false
+    ]
+   ]
+  },
+  "P70": {
+   "text": "Daniel wasn't chosen. He survived. Like a coin that lands heads ten times in a row, because ten thousand coins were flipped.",
+   "estimate": 8.93,
+   "dur": 7.0,
+   "words": [
+    [
+     "Daniel",
+     0.0,
+     0.27,
+     false
+    ],
+    [
+     "wasn't",
+     0.318,
+     0.67,
+     false
+    ],
+    [
+     "chosen.",
+     0.739,
+     1.35,
+     false
+    ],
+    [
+     "He",
+     1.417,
+     1.55,
+     false
+    ],
+    [
+     "survived.",
+     1.612,
+     2.11,
+     false
+    ],
+    [
+     "Like",
+     2.174,
+     2.43,
+     false
+    ],
+    [
+     "a",
+     2.51,
+     2.59,
+     false
+    ],
+    [
+     "coin",
+     2.638,
+     2.83,
+     false
+    ],
+    [
+     "that",
+     2.862,
+     2.99,
+     false
+    ],
+    [
+     "lands",
+     3.043,
+     3.31,
+     false
+    ],
+    [
+     "heads",
+     3.377,
+     3.71,
+     false
+    ],
+    [
+     "ten",
+     3.77,
+     3.95,
+     false
+    ],
+    [
+     "times",
+     4.003,
+     4.27,
+     false
+    ],
+    [
+     "in",
+     4.297,
+     4.35,
+     false
+    ],
+    [
+     "a",
+     4.39,
+     4.43,
+     false
+    ],
+    [
+     "row,",
+     4.49,
+     4.75,
+     false
+    ],
+    [
+     "because",
+     4.79,
+     5.07,
+     false
+    ],
+    [
+     "ten",
+     5.11,
+     5.23,
+     false
+    ],
+    [
+     "thousand",
+     5.283,
+     5.71,
+     false
+    ],
+    [
+     "coins",
+     5.777,
+     6.11,
+     false
+    ],
+    [
+     "were",
+     6.158,
+     6.35,
+     false
+    ],
+    [
+     "flipped.",
+     6.4,
+     6.99,
+     false
+    ]
+   ]
+  },
+  "P71": {
+   "text": "The prophet didn't know anything about the market. Not one thing. Every prediction was a guess, split so that someone was always right.",
+   "estimate": 9.32,
+   "dur": 7.229,
+   "words": [
+    [
+     "The",
+     0.0,
+     0.1,
+     false
+    ],
+    [
+     "prophet",
+     0.15,
+     0.5,
+     false
+    ],
+    [
+     "didn't",
+     0.532,
+     0.74,
+     false
+    ],
+    [
+     "know",
+     0.788,
+     0.98,
+     false
+    ],
+    [
+     "anything",
+     1.033,
+     1.46,
+     false
+    ],
+    [
+     "about",
+     1.5,
+     1.7,
+     false
+    ],
+    [
+     "the",
+     1.72,
+     1.78,
+     false
+    ],
+    [
+     "market.",
+     1.837,
+     2.42,
+     false
+    ],
+    [
+     "Not",
+     2.52,
+     2.82,
+     false
+    ],
+    [
+     "one",
+     2.88,
+     3.06,
+     false
+    ],
+    [
+     "thing.",
+     3.14,
+     3.7,
+     false
+    ],
+    [
+     "Every",
+     3.727,
+     3.86,
+     false
+    ],
+    [
+     "prediction",
+     3.911,
+     4.42,
+     false
+    ],
+    [
+     "was",
+     4.46,
+     4.58,
+     false
+    ],
+    [
+     "a",
+     4.62,
+     4.66,
+     false
+    ],
+    [
+     "guess,",
+     4.727,
+     5.14,
+     false
+    ],
+    [
+     "split",
+     5.207,
+     5.54,
+     false
+    ],
+    [
+     "so",
+     5.593,
+     5.7,
+     false
+    ],
+    [
+     "that",
+     5.732,
+     5.86,
+     false
+    ],
+    [
+     "someone",
+     5.9,
+     6.18,
+     false
+    ],
+    [
+     "was",
+     6.24,
+     6.42,
+     false
+    ],
+    [
+     "always",
+     6.466,
+     6.74,
+     false
+    ],
+    [
+     "right.",
+     6.793,
+     7.22,
+     false
+    ]
+   ]
+  },
+  "P72": {
+   "text": "This trick is real, and it even has a name. In Jordan Ellenberg's book, How Not to Be Wrong, it's the parable of the Baltimore stockbroker. Ten thousand, two hundred and forty letters. Ten perfect records.",
+   "estimate": 14.42,
+   "dur": 11.034,
+   "words": [
+    [
+     "This",
+     0.0,
+     0.16,
+     false
+    ],
+    [
+     "trick",
+     0.187,
+     0.32,
+     false
+    ],
+    [
+     "is",
+     0.4,
+     0.56,
+     false
+    ],
+    [
+     "real,",
+     0.624,
+     0.96,
+     false
+    ],
+    [
+     "and",
+     1.0,
+     1.12,
+     false
+    ],
+    [
+     "it",
+     1.147,
+     1.2,
+     false
+    ],
+    [
+     "even",
+     1.248,
+     1.44,
+     false
+    ],
+    [
+     "has",
+     1.48,
+     1.6,
+     false
+    ],
+    [
+     "a",
+     1.64,
+     1.68,
+     false
+    ],
+    [
+     "name.",
+     1.76,
+     2.16,
+     false
+    ],
+    [
+     "In",
+     2.213,
+     2.32,
+     false
+    ],
+    [
+     "Jordan",
+     2.366,
+     2.64,
+     false
+    ],
+    [
+     "Ellenberg's",
+     2.693,
+     3.28,
+     false
+    ],
+    [
+     "book,",
+     3.328,
+     3.6,
+     false
+    ],
+    [
+     "How",
+     3.62,
+     3.68,
+     false
+    ],
+    [
+     "Not",
+     3.72,
+     3.84,
+     false
+    ],
+    [
+     "to",
+     3.893,
+     4.0,
+     false
+    ],
+    [
+     "Be",
+     4.027,
+     4.08,
+     false
+    ],
+    [
+     "Wrong,",
+     4.16,
+     4.64,
+     false
+    ],
+    [
+     "it's",
+     4.693,
+     4.88,
+     false
+    ],
+    [
+     "the",
+     4.9,
+     4.96,
+     false
+    ],
+    [
+     "parable",
+     5.02,
+     5.44,
+     false
+    ],
+    [
+     "of",
+     5.467,
+     5.52,
+     false
+    ],
+    [
+     "the",
+     5.54,
+     5.6,
+     false
+    ],
+    [
+     "Baltimore",
+     5.648,
+     6.08,
+     false
+    ],
+    [
+     "stockbroker.",
+     6.147,
+     7.04,
+     false
+    ],
+    [
+     "Ten",
+     7.08,
+     7.2,
+     false
+    ],
+    [
+     "thousand,",
+     7.253,
+     7.76,
+     false
+    ],
+    [
+     "two",
+     7.8,
+     7.92,
+     false
+    ],
+    [
+     "hundred",
+     7.96,
+     8.24,
+     false
+    ],
+    [
+     "and",
+     8.28,
+     8.4,
+     false
+    ],
+    [
+     "forty",
+     8.44,
+     8.64,
+     false
+    ],
+    [
+     "letters.",
+     8.71,
+     9.36,
+     false
+    ],
+    [
+     "Ten",
+     9.4,
+     9.52,
+     false
+    ],
+    [
+     "perfect",
+     9.58,
+     10.0,
+     false
+    ],
+    [
+     "records.",
+     10.07,
+     10.88,
+     false
+    ]
+   ]
+  },
+  "P73": {
+   "text": "In two thousand eight, the magician Derren Brown did a version of it on British television, with horse races. Seven thousand, seven hundred and seventy-six people. Five races. One woman left, convinced she'd found a system.",
+   "estimate": 14.42,
+   "dur": 11.276,
+   "words": [
+    [
+     "In",
+     0.0,
+     0.07,
+     false
+    ],
+    [
+     "two",
+     0.11,
+     0.23,
+     false
+    ],
+    [
+     "thousand",
+     0.266,
+     0.55,
+     false
+    ],
+    [
+     "eight,",
+     0.577,
+     0.87,
+     false
+    ],
+    [
+     "the",
+     0.89,
+     0.95,
+     false
+    ],
+    [
+     "magician",
+     1.003,
+     1.43,
+     false
+    ],
+    [
+     "Derren",
+     1.49,
+     1.83,
+     false
+    ],
+    [
+     "Brown",
+     1.897,
+     2.23,
+     false
+    ],
+    [
+     "did",
+     2.27,
+     2.39,
+     false
+    ],
+    [
+     "a",
+     2.43,
+     2.47,
+     false
+    ],
+    [
+     "version",
+     2.51,
+     2.79,
+     false
+    ],
+    [
+     "of",
+     2.843,
+     2.95,
+     false
+    ],
+    [
+     "it",
+     2.977,
+     3.03,
+     false
+    ],
+    [
+     "on",
+     3.083,
+     3.19,
+     false
+    ],
+    [
+     "British",
+     3.24,
+     3.59,
+     false
+    ],
+    [
+     "television,",
+     3.634,
+     4.15,
+     false
+    ],
+    [
+     "with",
+     4.166,
+     4.23,
+     false
+    ],
+    [
+     "horse",
+     4.283,
+     4.55,
+     false
+    ],
+    [
+     "races.",
+     4.63,
+     5.23,
+     false
+    ],
+    [
+     "Seven",
+     5.263,
+     5.43,
+     false
+    ],
+    [
+     "thousand,",
+     5.474,
+     5.99,
+     false
+    ],
+    [
+     "seven",
+     6.03,
+     6.23,
+     false
+    ],
+    [
+     "hundred",
+     6.26,
+     6.47,
+     false
+    ],
+    [
+     "and",
+     6.53,
+     6.71,
+     false
+    ],
+    [
+     "seventy-six",
+     6.75,
+     7.27,
+     false
+    ],
+    [
+     "people.",
+     7.327,
+     7.91,
+     false
+    ],
+    [
+     "Five",
+     7.958,
+     8.15,
+     false
+    ],
+    [
+     "races.",
+     8.243,
+     8.87,
+     false
+    ],
+    [
+     "One",
+     8.91,
+     9.03,
+     false
+    ],
+    [
+     "woman",
+     9.097,
+     9.43,
+     false
+    ],
+    [
+     "left,",
+     9.478,
+     9.75,
+     false
+    ],
+    [
+     "convinced",
+     9.79,
+     10.15,
+     false
+    ],
+    [
+     "she'd",
+     10.19,
+     10.39,
+     false
+    ],
+    [
+     "found",
+     10.417,
+     10.55,
+     false
+    ],
+    [
+     "a",
+     10.59,
+     10.63,
+     false
+    ],
+    [
+     "system.",
+     10.699,
+     11.27,
+     false
+    ]
+   ]
+  },
+  "P74": {
+   "text": "And it costs almost nothing. An email is free. Out of ten perfect records, the prophet only needs a few to say yes.",
+   "estimate": 9.32,
+   "dur": 6.33,
+   "words": [
+    [
+     "And",
+     0.0,
+     0.04,
+     false
+    ],
+    [
+     "it",
+     0.067,
+     0.12,
+     false
+    ],
+    [
+     "costs",
+     0.187,
+     0.52,
+     false
+    ],
+    [
+     "almost",
+     0.577,
+     0.92,
+     false
+    ],
+    [
+     "nothing.",
+     0.97,
+     1.4,
+     false
+    ],
+    [
+     "An",
+     1.48,
+     1.64,
+     false
+    ],
+    [
+     "email",
+     1.693,
+     1.96,
+     false
+    ],
+    [
+     "is",
+     1.987,
+     2.04,
+     false
+    ],
+    [
+     "free.",
+     2.12,
+     2.56,
+     false
+    ],
+    [
+     "Out",
+     2.59,
+     2.68,
+     false
+    ],
+    [
+     "of",
+     2.707,
+     2.76,
+     false
+    ],
+    [
+     "ten",
+     2.84,
+     3.08,
+     false
+    ],
+    [
+     "perfect",
+     3.13,
+     3.48,
+     false
+    ],
+    [
+     "records,",
+     3.54,
+     4.04,
+     false
+    ],
+    [
+     "the",
+     4.06,
+     4.12,
+     false
+    ],
+    [
+     "prophet",
+     4.16,
+     4.44,
+     false
+    ],
+    [
+     "only",
+     4.488,
+     4.68,
+     false
+    ],
+    [
+     "needs",
+     4.72,
+     4.92,
+     false
+    ],
+    [
+     "a",
+     4.96,
+     5.0,
+     false
+    ],
+    [
+     "few",
+     5.08,
+     5.32,
+     false
+    ],
+    [
+     "to",
+     5.347,
+     5.4,
+     false
+    ],
+    [
+     "say",
+     5.46,
+     5.64,
+     false
+    ],
+    [
+     "yes.",
+     5.74,
+     6.33,
+     false
+    ]
+   ]
+  },
+  "P75": {
+   "text": "Seven of the ten paid. Three hundred and fifty thousand dollars, for ten weeks of coin flips.",
+   "estimate": 6.97,
+   "dur": 5.444,
+   "words": [
+    [
+     "Seven",
+     0.0,
+     0.24,
+     false
+    ],
+    [
+     "of",
+     0.293,
+     0.4,
+     false
+    ],
+    [
+     "the",
+     0.42,
+     0.48,
+     false
+    ],
+    [
+     "ten",
+     0.56,
+     0.8,
+     false
+    ],
+    [
+     "paid.",
+     0.88,
+     1.36,
+     false
+    ],
+    [
+     "Three",
+     1.387,
+     1.52,
+     false
+    ],
+    [
+     "hundred",
+     1.56,
+     1.84,
+     false
+    ],
+    [
+     "and",
+     1.9,
+     2.08,
+     false
+    ],
+    [
+     "fifty",
+     2.133,
+     2.4,
+     false
+    ],
+    [
+     "thousand",
+     2.453,
+     2.88,
+     false
+    ],
+    [
+     "dollars,",
+     2.95,
+     3.52,
+     false
+    ],
+    [
+     "for",
+     3.54,
+     3.6,
+     false
+    ],
+    [
+     "ten",
+     3.68,
+     3.92,
+     false
+    ],
+    [
+     "weeks",
+     3.973,
+     4.24,
+     false
+    ],
+    [
+     "of",
+     4.293,
+     4.4,
+     false
+    ],
+    [
+     "coin",
+     4.448,
+     4.64,
+     false
+    ],
+    [
+     "flips.",
+     4.72,
+     5.28,
+     false
+    ]
+   ]
+  },
+  "P76": {
+   "text": "Week twelve's email said up. The market fell three percent.",
+   "estimate": 4.22,
+   "dur": 3.126,
+   "words": [
+    [
+     "Week",
+     0.0,
+     0.15,
+     false
+    ],
+    [
+     "twelve's",
+     0.196,
+     0.55,
+     false
+    ],
+    [
+     "email",
+     0.617,
+     0.95,
+     false
+    ],
+    [
+     "said",
+     0.982,
+     1.11,
+     false
+    ],
+    [
+     "up.",
+     1.19,
+     1.43,
+     false
+    ],
+    [
+     "The",
+     1.45,
+     1.51,
+     false
+    ],
+    [
+     "market",
+     1.567,
+     1.91,
+     false
+    ],
+    [
+     "fell",
+     1.958,
+     2.15,
+     false
+    ],
+    [
+     "three",
+     2.19,
+     2.39,
+     false
+    ],
+    [
+     "percent.",
+     2.46,
+     3.11,
+     false
+    ]
+   ]
+  },
+  "P77": {
+   "text": "Week thirteen, there was no email at all.",
+   "estimate": 3.44,
+   "dur": 2.684,
+   "words": [
+    [
+     "Week",
+     0.0,
+     0.18,
+     false
+    ],
+    [
+     "thirteen,",
+     0.251,
+     0.9,
+     false
+    ],
+    [
+     "there",
+     0.927,
+     1.06,
+     false
+    ],
+    [
+     "was",
+     1.1,
+     1.22,
+     false
+    ],
+    [
+     "no",
+     1.327,
+     1.54,
+     false
+    ],
+    [
+     "email",
+     1.62,
+     2.02,
+     false
+    ],
+    [
+     "at",
+     2.073,
+     2.18,
+     false
+    ],
+    [
+     "all.",
+     2.24,
+     2.66,
+     false
+    ]
+   ]
+  },
+  "P78": {
+   "text": "Daniel wrote back. The address bounced. The account was gone. So was the money.",
+   "estimate": 5.79,
+   "dur": 4.131,
+   "words": [
+    [
+     "Daniel",
+     0.0,
+     0.27,
+     false
+    ],
+    [
+     "wrote",
+     0.31,
+     0.51,
+     false
+    ],
+    [
+     "back.",
+     0.574,
+     0.91,
+     false
+    ],
+    [
+     "The",
+     0.95,
+     1.07,
+     false
+    ],
+    [
+     "address",
+     1.11,
+     1.39,
+     false
+    ],
+    [
+     "bounced.",
+     1.46,
+     2.03,
+     false
+    ],
+    [
+     "The",
+     2.05,
+     2.11,
+     false
+    ],
+    [
+     "account",
+     2.15,
+     2.43,
+     false
+    ],
+    [
+     "was",
+     2.47,
+     2.59,
+     false
+    ],
+    [
+     "gone.",
+     2.67,
+     3.15,
+     false
+    ],
+    [
+     "So",
+     3.203,
+     3.31,
+     false
+    ],
+    [
+     "was",
+     3.35,
+     3.47,
+     false
+    ],
+    [
+     "the",
+     3.49,
+     3.55,
+     false
+    ],
+    [
+     "money.",
+     3.617,
+     4.11,
+     false
+    ]
+   ]
+  },
+  "P79": {
+   "text": "He told Maya in the kitchen, at six a.m. on a Monday. The same time the emails used to come.",
+   "estimate": 8.14,
+   "dur": 4.954,
+   "words": [
+    [
+     "He",
+     0.0,
+     0.07,
+     false
+    ],
+    [
+     "told",
+     0.118,
+     0.31,
+     false
+    ],
+    [
+     "Maya",
+     0.374,
+     0.63,
+     false
+    ],
+    [
+     "in",
+     0.683,
+     0.79,
+     false
+    ],
+    [
+     "the",
+     0.81,
+     0.87,
+     false
+    ],
+    [
+     "kitchen,",
+     0.93,
+     1.43,
+     false
+    ],
+    [
+     "at",
+     1.483,
+     1.59,
+     false
+    ],
+    [
+     "six",
+     1.65,
+     1.83,
+     false
+    ],
+    [
+     "a.m.",
+     1.95,
+     2.23,
+     false
+    ],
+    [
+     "on",
+     2.283,
+     2.39,
+     false
+    ],
+    [
+     "a",
+     2.43,
+     2.47,
+     false
+    ],
+    [
+     "Monday.",
+     2.527,
+     3.03,
+     false
+    ],
+    [
+     "The",
+     3.07,
+     3.19,
+     false
+    ],
+    [
+     "same",
+     3.238,
+     3.43,
+     false
+    ],
+    [
+     "time",
+     3.478,
+     3.67,
+     false
+    ],
+    [
+     "the",
+     3.69,
+     3.75,
+     false
+    ],
+    [
+     "emails",
+     3.807,
+     4.15,
+     false
+    ],
+    [
+     "used",
+     4.182,
+     4.31,
+     false
+    ],
+    [
+     "to",
+     4.337,
+     4.39,
+     false
+    ],
+    [
+     "come.",
+     4.454,
+     4.95,
+     false
+    ]
+   ]
+  },
+  "P80": {
+   "text": "Lily still went to college. Two years at a community college first, working weekends. She's an engineer now. She doesn't talk about that spring.",
+   "estimate": 9.71,
+   "dur": 7.733,
+   "words": [
+    [
+     "Lily",
+     0.0,
+     0.31,
+     false
+    ],
+    [
+     "still",
+     0.35,
+     0.55,
+     false
+    ],
+    [
+     "went",
+     0.582,
+     0.71,
+     false
+    ],
+    [
+     "to",
+     0.737,
+     0.79,
+     false
+    ],
+    [
+     "college.",
+     0.87,
+     1.59,
+     false
+    ],
+    [
+     "Two",
+     1.63,
+     1.75,
+     false
+    ],
+    [
+     "years",
+     1.79,
+     1.99,
+     false
+    ],
+    [
+     "at",
+     2.043,
+     2.15,
+     false
+    ],
+    [
+     "a",
+     2.19,
+     2.23,
+     false
+    ],
+    [
+     "community",
+     2.27,
+     2.63,
+     false
+    ],
+    [
+     "college",
+     2.68,
+     3.03,
+     false
+    ],
+    [
+     "first,",
+     3.097,
+     3.59,
+     false
+    ],
+    [
+     "working",
+     3.63,
+     3.91,
+     false
+    ],
+    [
+     "weekends.",
+     3.981,
+     4.55,
+     false
+    ],
+    [
+     "She's",
+     4.63,
+     4.95,
+     false
+    ],
+    [
+     "an",
+     4.977,
+     5.03,
+     false
+    ],
+    [
+     "engineer",
+     5.074,
+     5.43,
+     false
+    ],
+    [
+     "now.",
+     5.51,
+     5.83,
+     false
+    ],
+    [
+     "She",
+     5.89,
+     6.07,
+     false
+    ],
+    [
+     "doesn't",
+     6.11,
+     6.39,
+     false
+    ],
+    [
+     "talk",
+     6.438,
+     6.63,
+     false
+    ],
+    [
+     "about",
+     6.67,
+     6.87,
+     false
+    ],
+    [
+     "that",
+     6.902,
+     7.03,
+     false
+    ],
+    [
+     "spring.",
+     7.099,
+     7.59,
+     false
+    ]
+   ]
+  },
+  "P81": {
+   "text": "And Daniel? He still wakes up every Monday at six. Not because he believes. Because he can't stop.",
+   "estimate": 7.36,
+   "dur": 5.284,
+   "words": [
+    [
+     "And",
+     0.0,
+     0.06,
+     false
+    ],
+    [
+     "Daniel?",
+     0.117,
+     0.54,
+     false
+    ],
+    [
+     "He",
+     0.62,
+     0.78,
+     false
+    ],
+    [
+     "still",
+     0.82,
+     1.02,
+     false
+    ],
+    [
+     "wakes",
+     1.06,
+     1.26,
+     false
+    ],
+    [
+     "up",
+     1.313,
+     1.42,
+     false
+    ],
+    [
+     "every",
+     1.447,
+     1.58,
+     false
+    ],
+    [
+     "Monday",
+     1.626,
+     1.9,
+     false
+    ],
+    [
+     "at",
+     1.953,
+     2.06,
+     false
+    ],
+    [
+     "six.",
+     2.18,
+     2.66,
+     false
+    ],
+    [
+     "Not",
+     2.69,
+     2.78,
+     false
+    ],
+    [
+     "because",
+     2.82,
+     3.1,
+     false
+    ],
+    [
+     "he",
+     3.153,
+     3.26,
+     false
+    ],
+    [
+     "believes.",
+     3.331,
+     4.06,
+     false
+    ],
+    [
+     "Because",
+     4.08,
+     4.22,
+     false
+    ],
+    [
+     "he",
+     4.273,
+     4.38,
+     false
+    ],
+    [
+     "can't",
+     4.44,
+     4.7,
+     false
+    ],
+    [
+     "stop.",
+     4.796,
+     5.26,
+     false
+    ]
+   ]
+  },
+  "P82": {
+   "text": "Here's the part that isn't fiction.",
+   "estimate": 2.65,
+   "dur": 1.814,
+   "words": [
+    [
+     "Here's",
+     0.0,
+     0.2,
+     false
+    ],
+    [
+     "the",
+     0.22,
+     0.28,
+     false
+    ],
+    [
+     "part",
+     0.344,
+     0.6,
+     false
+    ],
+    [
+     "that",
+     0.648,
+     0.84,
+     false
+    ],
+    [
+     "isn't",
+     0.9,
+     1.16,
+     false
+    ],
+    [
+     "fiction.",
+     1.22,
+     1.8,
+     false
+    ]
+   ]
+  },
+  "P83": {
+   "text": "In twenty twenty-four, Americans reported losing five point seven billion dollars to investment scams. More than any other kind of fraud, according to the Federal Trade Commission.",
+   "estimate": 10.89,
+   "dur": 9.449,
+   "words": [
+    [
+     "In",
+     0.0,
+     0.09,
+     false
+    ],
+    [
+     "twenty",
+     0.124,
+     0.33,
+     false
+    ],
+    [
+     "twenty-four,",
+     0.376,
+     1.13,
+     false
+    ],
+    [
+     "Americans",
+     1.186,
+     1.69,
+     false
+    ],
+    [
+     "reported",
+     1.734,
+     2.09,
+     false
+    ],
+    [
+     "losing",
+     2.136,
+     2.41,
+     false
+    ],
+    [
+     "five",
+     2.474,
+     2.73,
+     false
+    ],
+    [
+     "point",
+     2.797,
+     3.13,
+     false
+    ],
+    [
+     "seven",
+     3.17,
+     3.37,
+     false
+    ],
+    [
+     "billion",
+     3.44,
+     3.93,
+     false
+    ],
+    [
+     "dollars",
+     4.0,
+     4.49,
+     false
+    ],
+    [
+     "to",
+     4.517,
+     4.57,
+     false
+    ],
+    [
+     "investment",
+     4.621,
+     5.13,
+     false
+    ],
+    [
+     "scams.",
+     5.21,
+     5.77,
+     false
+    ],
+    [
+     "More",
+     5.802,
+     5.93,
+     false
+    ],
+    [
+     "than",
+     5.978,
+     6.17,
+     false
+    ],
+    [
+     "any",
+     6.23,
+     6.41,
+     false
+    ],
+    [
+     "other",
+     6.45,
+     6.65,
+     false
+    ],
+    [
+     "kind",
+     6.698,
+     6.89,
+     false
+    ],
+    [
+     "of",
+     6.943,
+     7.05,
+     false
+    ],
+    [
+     "fraud,",
+     7.117,
+     7.53,
+     false
+    ],
+    [
+     "according",
+     7.57,
+     7.93,
+     false
+    ],
+    [
+     "to",
+     7.957,
+     8.01,
+     false
+    ],
+    [
+     "the",
+     8.03,
+     8.09,
+     false
+    ],
+    [
+     "Federal",
+     8.13,
+     8.41,
+     false
+    ],
+    [
+     "Trade",
+     8.463,
+     8.73,
+     false
+    ],
+    [
+     "Commission.",
+     8.774,
+     9.29,
+     false
+    ]
+   ]
+  },
+  "P84": {
+   "text": "Today, the prophet doesn't need email. He runs a trading group. A signals channel. An account with screenshots of a perfect record.",
+   "estimate": 8.93,
+   "dur": 6.356,
+   "words": [
+    [
+     "Today,",
+     0.0,
+     0.25,
+     false
+    ],
+    [
+     "the",
+     0.27,
+     0.33,
+     false
+    ],
+    [
+     "prophet",
+     0.37,
+     0.65,
+     false
+    ],
+    [
+     "doesn't",
+     0.69,
+     0.97,
+     false
+    ],
+    [
+     "need",
+     1.002,
+     1.13,
+     false
+    ],
+    [
+     "email.",
+     1.197,
+     1.65,
+     false
+    ],
+    [
+     "He",
+     1.69,
+     1.77,
+     false
+    ],
+    [
+     "runs",
+     1.802,
+     1.93,
+     false
+    ],
+    [
+     "a",
+     2.01,
+     2.09,
+     false
+    ],
+    [
+     "trading",
+     2.13,
+     2.41,
+     false
+    ],
+    [
+     "group.",
+     2.463,
+     2.81,
+     false
+    ],
+    [
+     "A",
+     2.85,
+     2.89,
+     false
+    ],
+    [
+     "signals",
+     2.96,
+     3.45,
+     false
+    ],
+    [
+     "channel.",
+     3.5,
+     3.93,
+     false
+    ],
+    [
+     "An",
+     3.957,
+     4.01,
+     false
+    ],
+    [
+     "account",
+     4.05,
+     4.33,
+     false
+    ],
+    [
+     "with",
+     4.346,
+     4.41,
+     false
+    ],
+    [
+     "screenshots",
+     4.463,
+     5.05,
+     false
+    ],
+    [
+     "of",
+     5.077,
+     5.13,
+     false
+    ],
+    [
+     "a",
+     5.17,
+     5.21,
+     false
+    ],
+    [
+     "perfect",
+     5.28,
+     5.77,
+     false
+    ],
+    [
+     "record.",
+     5.839,
+     6.356,
+     false
+    ]
+   ]
+  },
+  "P85": {
+   "text": "So if a perfect record ever finds you, don't ask how they were right. Ask how many people they started with.",
+   "estimate": 8.54,
+   "dur": 5.003,
+   "words": [
+    [
+     "So",
+     0.0,
+     0.12,
+     false
+    ],
+    [
+     "if",
+     0.147,
+     0.2,
+     false
+    ],
+    [
+     "a",
+     0.24,
+     0.28,
+     false
+    ],
+    [
+     "perfect",
+     0.33,
+     0.68,
+     false
+    ],
+    [
+     "record",
+     0.726,
+     1.0,
+     false
+    ],
+    [
+     "ever",
+     1.032,
+     1.16,
+     false
+    ],
+    [
+     "finds",
+     1.24,
+     1.64,
+     false
+    ],
+    [
+     "you,",
+     1.68,
+     1.88,
+     false
+    ],
+    [
+     "don't",
+     1.9,
+     2.12,
+     false
+    ],
+    [
+     "ask",
+     2.18,
+     2.36,
+     false
+    ],
+    [
+     "how",
+     2.38,
+     2.44,
+     false
+    ],
+    [
+     "they",
+     2.472,
+     2.6,
+     false
+    ],
+    [
+     "were",
+     2.632,
+     2.76,
+     false
+    ],
+    [
+     "right.",
+     2.8,
+     3.16,
+     false
+    ],
+    [
+     "Ask",
+     3.24,
+     3.48,
+     false
+    ],
+    [
+     "how",
+     3.5,
+     3.56,
+     false
+    ],
+    [
+     "many",
+     3.592,
+     3.72,
+     false
+    ],
+    [
+     "people",
+     3.754,
+     3.96,
+     false
+    ],
+    [
+     "they",
+     4.008,
+     4.2,
+     false
+    ],
+    [
+     "started",
+     4.24,
+     4.52,
+     false
+    ],
+    [
+     "with.",
+     4.584,
+     5.0,
+     false
+    ]
+   ]
+  },
+  "P86": {
+   "text": "Because you never see the people who got the other email.",
+   "estimate": 4.61
+  },
+  "P87": {
+   "text": "I told you at the start that nobody knows who sent those emails.",
+   "estimate": 5.4
+  },
+  "P88": {
+   "text": "That's not quite true.",
+   "estimate": 1.87
+  },
+  "P89": {
+   "text": "How do you think I know that Daniel reads everything twice? That he sat in his car in the driveway and asked who I was? That exactly seven of the ten paid?",
+   "estimate": 12.85
+  },
+  "P90": {
+   "text": "I wrote every one of those emails. All ten thousand, two hundred and forty of them.",
+   "estimate": 6.57
+  },
+  "P91": {
+   "text": "Daniel was number four thousand and ninety-one on my list.",
+   "estimate": 4.22
+  },
+  "P92": {
+   "text": "And next Monday, at six a.m., I'm starting again.",
+   "estimate": 3.83
+  },
+  "P93": {
+   "text": "Check your inbox.",
+   "estimate": 1.48
+  }
+ },
+ "total": 502.15
+}
+</script>
+<script src="scenes/c0.js"></script>
+<script src="scenes/c1.js"></script>
+<script src="scenes/c2.js"></script>
+<script src="scenes/c3.js"></script>
+<script src="scenes/c4.js"></script>
+<script src="scenes/c5.js"></script>
+</head>
+<body>
+<div id="root" data-composition-id="prophet" data-start="0" data-duration="502.150" data-width="1920" data-height="1080">
+  <audio id="music" src="assets/audio/music.wav" data-start="0" data-duration="502.150" data-volume="0.75" data-track-index="20"></audio>
+  <audio id="sfx" src="assets/audio/sfx.wav" data-start="0" data-duration="502.150" data-volume="0.85" data-track-index="21"></audio>
+  <!-- VO:BEGIN (generated by tools/bake.py) -->
+  <audio id="vo_p01" src="assets/vo/P01.wav" data-start="0.500" data-duration="5.254" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p02" src="assets/vo/P02.wav" data-start="6.304" data-duration="3.546" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p03" src="assets/vo/P03.wav" data-start="10.400" data-duration="2.720" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p04" src="assets/vo/P04.wav" data-start="13.670" data-duration="3.630" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p05" src="assets/vo/P05.wav" data-start="17.850" data-duration="3.232" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p06" src="assets/vo/P06.wav" data-start="21.632" data-duration="3.801" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p07" src="assets/vo/P07.wav" data-start="25.983" data-duration="6.314" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p08" src="assets/vo/P08.wav" data-start="32.847" data-duration="4.659" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p09" src="assets/vo/P09.wav" data-start="43.706" data-duration="2.270" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p10" src="assets/vo/P10.wav" data-start="46.526" data-duration="5.931" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p11" src="assets/vo/P11.wav" data-start="53.007" data-duration="1.836" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p12" src="assets/vo/P12.wav" data-start="55.393" data-duration="3.606" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p13" src="assets/vo/P13.wav" data-start="59.549" data-duration="1.992" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p14" src="assets/vo/P14.wav" data-start="62.091" data-duration="3.508" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p15" src="assets/vo/P15.wav" data-start="66.149" data-duration="4.551" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p16" src="assets/vo/P16.wav" data-start="71.250" data-duration="0.800" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p17" src="assets/vo/P17.wav" data-start="72.600" data-duration="2.466" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p18" src="assets/vo/P18.wav" data-start="75.616" data-duration="2.576" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p19" src="assets/vo/P19.wav" data-start="80.442" data-duration="3.049" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p20" src="assets/vo/P20.wav" data-start="84.041" data-duration="6.009" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p21" src="assets/vo/P21.wav" data-start="90.600" data-duration="5.206" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p22" src="assets/vo/P22.wav" data-start="96.356" data-duration="4.330" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p23" src="assets/vo/P23.wav" data-start="101.236" data-duration="2.822" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p24" src="assets/vo/P24.wav" data-start="104.608" data-duration="9.858" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p25" src="assets/vo/P25.wav" data-start="115.016" data-duration="3.914" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p26" src="assets/vo/P26.wav" data-start="119.480" data-duration="3.683" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p27" src="assets/vo/P27.wav" data-start="123.713" data-duration="5.292" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p28" src="assets/vo/P28.wav" data-start="129.555" data-duration="5.121" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p29" src="assets/vo/P29.wav" data-start="135.226" data-duration="4.090" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p30" src="assets/vo/P30.wav" data-start="139.866" data-duration="3.194" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p31" src="assets/vo/P31.wav" data-start="145.310" data-duration="2.561" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p32" src="assets/vo/P32.wav" data-start="148.421" data-duration="2.573" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p33" src="assets/vo/P33.wav" data-start="151.544" data-duration="3.518" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p34" src="assets/vo/P34.wav" data-start="155.612" data-duration="6.741" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p35" src="assets/vo/P35.wav" data-start="162.903" data-duration="3.934" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p36" src="assets/vo/P36.wav" data-start="167.387" data-duration="5.294" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p37" src="assets/vo/P37.wav" data-start="173.231" data-duration="6.662" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p38" src="assets/vo/P38.wav" data-start="180.443" data-duration="4.886" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p39" src="assets/vo/P39.wav" data-start="185.879" data-duration="1.630" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p40" src="assets/vo/P40.wav" data-start="188.059" data-duration="1.699" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p41" src="assets/vo/P41.wav" data-start="192.008" data-duration="1.271" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p42" src="assets/vo/P42.wav" data-start="193.829" data-duration="5.322" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p43" src="assets/vo/P43.wav" data-start="199.701" data-duration="5.597" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p44" src="assets/vo/P44.wav" data-start="205.848" data-duration="3.292" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p45" src="assets/vo/P45.wav" data-start="209.690" data-duration="6.620" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p46" src="assets/vo/P46.wav" data-start="216.860" data-duration="3.400" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p47" src="assets/vo/P47.wav" data-start="220.810" data-duration="1.143" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p48" src="assets/vo/P48.wav" data-start="222.503" data-duration="6.030" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p49" src="assets/vo/P49.wav" data-start="230.783" data-duration="2.900" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p50" src="assets/vo/P50.wav" data-start="234.233" data-duration="2.939" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p51" src="assets/vo/P51.wav" data-start="237.722" data-duration="3.389" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p52" src="assets/vo/P52.wav" data-start="241.661" data-duration="0.948" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p53" src="assets/vo/P53.wav" data-start="243.159" data-duration="6.306" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p54" src="assets/vo/P54.wav" data-start="250.015" data-duration="3.763" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p55" src="assets/vo/P55.wav" data-start="254.328" data-duration="7.386" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p56" src="assets/vo/P56.wav" data-start="262.264" data-duration="2.050" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p57" src="assets/vo/P57.wav" data-start="264.864" data-duration="2.741" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p58" src="assets/vo/P58.wav" data-start="268.155" data-duration="3.693" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p59" src="assets/vo/P59.wav" data-start="272.398" data-duration="2.139" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p60" src="assets/vo/P60.wav" data-start="275.087" data-duration="6.088" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p61" src="assets/vo/P61.wav" data-start="283.425" data-duration="2.340" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p62" src="assets/vo/P62.wav" data-start="286.315" data-duration="5.284" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p63" src="assets/vo/P63.wav" data-start="292.149" data-duration="3.906" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p64" src="assets/vo/P64.wav" data-start="296.605" data-duration="4.014" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p65" src="assets/vo/P65.wav" data-start="301.169" data-duration="5.670" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p66" src="assets/vo/P66.wav" data-start="307.389" data-duration="6.588" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p67" src="assets/vo/P67.wav" data-start="314.527" data-duration="4.572" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p68" src="assets/vo/P68.wav" data-start="319.649" data-duration="4.120" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p69" src="assets/vo/P69.wav" data-start="324.319" data-duration="5.304" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p70" src="assets/vo/P70.wav" data-start="330.173" data-duration="7.000" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p71" src="assets/vo/P71.wav" data-start="337.723" data-duration="7.229" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p72" src="assets/vo/P72.wav" data-start="345.502" data-duration="11.034" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p73" src="assets/vo/P73.wav" data-start="357.086" data-duration="11.276" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p74" src="assets/vo/P74.wav" data-start="368.912" data-duration="6.330" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p75" src="assets/vo/P75.wav" data-start="375.792" data-duration="5.444" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p76" src="assets/vo/P76.wav" data-start="383.486" data-duration="3.126" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p77" src="assets/vo/P77.wav" data-start="387.162" data-duration="2.684" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p78" src="assets/vo/P78.wav" data-start="390.396" data-duration="4.131" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p79" src="assets/vo/P79.wav" data-start="395.077" data-duration="4.954" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p80" src="assets/vo/P80.wav" data-start="400.581" data-duration="7.733" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p81" src="assets/vo/P81.wav" data-start="408.864" data-duration="5.284" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p82" src="assets/vo/P82.wav" data-start="414.698" data-duration="1.814" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p83" src="assets/vo/P83.wav" data-start="417.062" data-duration="9.449" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p84" src="assets/vo/P84.wav" data-start="427.061" data-duration="6.356" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p85" src="assets/vo/P85.wav" data-start="433.967" data-duration="5.003" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p86" src="assets/vo/P86.wav" data-start="439.520" data-duration="4.610" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p87" src="assets/vo/P87.wav" data-start="446.380" data-duration="5.400" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p88" src="assets/vo/P88.wav" data-start="452.330" data-duration="1.870" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p89" src="assets/vo/P89.wav" data-start="454.750" data-duration="12.850" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p90" src="assets/vo/P90.wav" data-start="468.150" data-duration="6.570" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p91" src="assets/vo/P91.wav" data-start="475.270" data-duration="4.220" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p92" src="assets/vo/P92.wav" data-start="480.040" data-duration="3.830" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_p93" src="assets/vo/P93.wav" data-start="484.420" data-duration="1.480" data-volume="1" data-track-index="22"></audio>
+  <!-- VO:END -->
+  <div id="bg"></div>
+  <canvas id="world" width="1920" height="1080" data-drift="1"></canvas>
+  <div id="vig" data-layout-ignore></div>
+  <div id="stage" class="abs" style="inset:0">
+    <div id="sc-alarm" class="scene clip" data-scene="alarm" data-start="0.000" data-duration="6.254" data-track-index="1"><div class="cam"></div></div>
+    <div id="sc-sentence" class="scene clip" data-scene="sentence" data-start="6.004" data-duration="7.616" data-track-index="2"><div class="cam"></div></div>
+    <div id="sc-never" class="scene clip" data-scene="never" data-start="13.370" data-duration="8.212" data-track-index="3"><div class="cam"></div></div>
+    <div id="sc-offer0" class="scene clip" data-scene="offer0" data-start="21.332" data-duration="4.601" data-track-index="4"><div class="cam"></div></div>
+    <div id="sc-stakes" class="scene clip" data-scene="stakes" data-start="25.683" data-duration="7.114" data-track-index="5"><div class="cam"></div></div>
+    <div id="sc-nobody" class="scene clip" data-scene="nobody" data-start="32.547" data-duration="5.459" data-track-index="6"><div class="cam"></div></div>
+    <div id="sc-title" class="scene clip" data-scene="title" data-start="37.756" data-duration="4.200" data-track-index="1"><div class="cam"></div></div>
+    <div id="sc-w1" class="scene clip" data-scene="w1" data-start="41.706" data-duration="13.637" data-track-index="2"><div class="cam"></div></div>
+    <div id="sc-twice" class="scene clip" data-scene="twice" data-start="55.093" data-duration="4.406" data-track-index="3"><div class="cam"></div></div>
+    <div id="sc-w1close" class="scene clip" data-scene="w1close" data-start="59.249" data-duration="6.850" data-track-index="4"><div class="cam"></div></div>
+    <div id="sc-w2w3" class="scene clip" data-scene="w2w3" data-start="65.849" data-duration="9.717" data-track-index="5"><div class="cam"></div></div>
+    <div id="sc-stopdel" class="scene clip" data-scene="stopdel" data-start="75.316" data-duration="3.376" data-track-index="6"><div class="cam"></div></div>
+    <div id="sc-daniel" class="scene clip" data-scene="daniel" data-start="78.442" data-duration="12.108" data-track-index="1"><div class="cam"></div></div>
+    <div id="sc-family" class="scene clip" data-scene="family" data-start="90.300" data-duration="10.886" data-track-index="2"><div class="cam"></div></div>
+    <div id="sc-tuition" class="scene clip" data-scene="tuition" data-start="100.936" data-duration="14.030" data-track-index="3"><div class="cam"></div></div>
+    <div id="sc-track" class="scene clip" data-scene="track" data-start="114.716" data-duration="8.947" data-track-index="4"><div class="cam"></div></div>
+    <div id="sc-bet5" class="scene clip" data-scene="bet5" data-start="123.413" data-duration="16.403" data-track-index="5"><div class="cam"></div></div>
+    <div id="sc-name" class="scene clip" data-scene="name" data-start="139.566" data-duration="3.994" data-track-index="6"><div class="cam"></div></div>
+    <div id="sc-w6w7" class="scene clip" data-scene="w6w7" data-start="143.310" data-duration="12.252" data-track-index="1"><div class="cam"></div></div>
+    <div id="sc-marcus" class="scene clip" data-scene="marcus" data-start="155.312" data-duration="7.541" data-track-index="2"><div class="cam"></div></div>
+    <div id="sc-head" class="scene clip" data-scene="head" data-start="162.603" data-duration="17.790" data-track-index="3"><div class="cam"></div></div>
+    <div id="sc-w8" class="scene clip" data-scene="w8" data-start="180.143" data-duration="10.115" data-track-index="4"><div class="cam"></div></div>
+    <div id="sc-nine" class="scene clip" data-scene="nine" data-start="190.008" data-duration="9.643" data-track-index="5"><div class="cam"></div></div>
+    <div id="sc-nosleep" class="scene clip" data-scene="nosleep" data-start="199.401" data-duration="6.397" data-track-index="6"><div class="cam"></div></div>
+    <div id="sc-friday" class="scene clip" data-scene="friday" data-start="205.548" data-duration="15.212" data-track-index="1"><div class="cam"></div></div>
+    <div id="sc-who" class="scene clip" data-scene="who" data-start="220.510" data-duration="8.523" data-track-index="2"><div class="cam"></div></div>
+    <div id="sc-w10" class="scene clip" data-scene="w10" data-start="228.783" data-duration="8.889" data-track-index="3"><div class="cam"></div></div>
+    <div id="sc-offer" class="scene clip" data-scene="offer" data-start="237.422" data-duration="12.543" data-track-index="4"><div class="cam"></div></div>
+    <div id="sc-math" class="scene clip" data-scene="math" data-start="249.715" data-duration="12.499" data-track-index="5"><div class="cam"></div></div>
+    <div id="sc-maya" class="scene clip" data-scene="maya" data-start="261.964" data-duration="10.384" data-track-index="6"><div class="cam"></div></div>
+    <div id="sc-wire" class="scene clip" data-scene="wire" data-start="272.098" data-duration="9.577" data-track-index="1"><div class="cam"></div></div>
+    <div id="sc-back" class="scene clip" data-scene="back" data-start="281.425" data-duration="10.674" data-track-index="2"><div class="cam"></div></div>
+    <div id="sc-split" class="scene clip" data-scene="split" data-start="291.849" data-duration="9.270" data-track-index="3"><div class="cam"></div></div>
+    <div id="sc-halving" class="scene clip" data-scene="halving" data-start="300.869" data-duration="18.730" data-track-index="4"><div class="cam"></div></div>
+    <div id="sc-ten" class="scene clip" data-scene="ten" data-start="319.349" data-duration="10.774" data-track-index="5"><div class="cam"></div></div>
+    <div id="sc-survived" class="scene clip" data-scene="survived" data-start="329.873" data-duration="7.800" data-track-index="6"><div class="cam"></div></div>
+    <div id="sc-guess" class="scene clip" data-scene="guess" data-start="337.423" data-duration="8.029" data-track-index="1"><div class="cam"></div></div>
+    <div id="sc-parable" class="scene clip" data-scene="parable" data-start="345.202" data-duration="23.660" data-track-index="2"><div class="cam"></div></div>
+    <div id="sc-cost" class="scene clip" data-scene="cost" data-start="368.612" data-duration="13.124" data-track-index="3"><div class="cam"></div></div>
+    <div id="sc-w12" class="scene clip" data-scene="w12" data-start="381.486" data-duration="13.541" data-track-index="4"><div class="cam"></div></div>
+    <div id="sc-kitchen" class="scene clip" data-scene="kitchen" data-start="394.777" data-duration="5.754" data-track-index="5"><div class="cam"></div></div>
+    <div id="sc-lily" class="scene clip" data-scene="lily" data-start="400.281" data-duration="14.367" data-track-index="6"><div class="cam"></div></div>
+    <div id="sc-real" class="scene clip" data-scene="real" data-start="414.398" data-duration="12.613" data-track-index="1"><div class="cam"></div></div>
+    <div id="sc-today" class="scene clip" data-scene="today" data-start="426.761" data-duration="7.156" data-track-index="2"><div class="cam"></div></div>
+    <div id="sc-ask" class="scene clip" data-scene="ask" data-start="433.667" data-duration="10.963" data-track-index="3"><div class="cam"></div></div>
+    <div id="sc-turn" class="scene clip" data-scene="turn" data-start="444.380" data-duration="10.320" data-track-index="4"><div class="cam"></div></div>
+    <div id="sc-how" class="scene clip" data-scene="how" data-start="454.450" data-duration="13.650" data-track-index="5"><div class="cam"></div></div>
+    <div id="sc-sender" class="scene clip" data-scene="sender" data-start="467.850" data-duration="12.140" data-track-index="6"><div class="cam"></div></div>
+    <div id="sc-again" class="scene clip" data-scene="again" data-start="479.740" data-duration="6.660" data-track-index="1"><div class="cam"></div></div>
+    <div id="sc-end" class="scene clip" data-scene="end" data-start="486.150" data-duration="16.000" data-track-index="2"><div class="cam"></div></div>
+  </div>
+  <div id="hud" data-layout-ignore><div id="odds"><div class="k">STREAK ODDS</div><div class="v">—</div></div><div id="tally"></div></div>
+  <div id="tag" data-layout-ignore>A story based on a real scam</div>
+  <div id="tint" data-layout-ignore></div>
+  <div id="grain" data-drift="1" data-layout-ignore></div>
+  <div id="flash" data-layout-ignore></div>
+  <div id="black" data-layout-ignore></div>
+</div>
+<script>
+const R = RT_INIT();
+const K = KIT(R);
+K.world(); K.hud();
+R.tim.scenes.forEach(sc => {
+  const f = (window.SC || {})[sc.id];
+  const o = (f && f.opts) || {};
+  if (!o.nofade) K.fade(sc.id, o.din ?? .35, o.dout ?? .35);
+  if (!o.nocam) K.cam(sc.id, 1, o.zoom ?? 1.045, o.cx || 0, o.cy || 0);
+  if (f) f(R, K, K.host(sc.id), sc.id);
+});
+R.finish('prophet');
+window.__timelines = window.__timelines || {}; window.__timelines['prophet'] = R.tl;
+</script>
+</body>
+</html>
