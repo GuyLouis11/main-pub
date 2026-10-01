@@ -96,8 +96,8 @@ SC.w8 = (R, K, h, id) => {
   const t9 = V('P40');
   tl.to([stack, lab, most, c.wrap, f8], { opacity: .12, duration: .4 }, t9 - .1);
   const nb = K.text(h, 'WEEK NINE', 'top:420px;font-size:200px', 'center kin red');
-  R.up(nb, t9, .4, 20); R.glitch(nb, WT(R, 'P40', 3), .3); cue(WT(R, 'P40', 3), 'crack', .8);
-  tl.to(`[data-scene="${id}"] .cam`, { x: 6, duration: .05, yoyo: true, repeat: 7 }, WT(R, 'P40', 3));
+  R.up(nb, t9, .4, 20); cue(WT(R, 'P40', 3), 'crack', .8);
+  tl.fromTo(nb, { scale: 1 }, { scale: 1.08, duration: 1.4, ease: 'power2.out', immediateRender: false }, WT(R, 'P40', 3));
 };
 
 /* ---------------- CHAPTER 4 · WEEK NINE ---------------- */

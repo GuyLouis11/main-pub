@@ -167,6 +167,12 @@ class T(Kit):
         n = self.n(1.0)
         return .2 * self.sweep(2000, 7000, 1.0, .3) * self.env(n, .3) + .6 * fit(self.sub(110, 50, .4, .1), n) + .3 * self.hp(self.noise(1.0), 2500) * self.env(n, .2)
 
+    def wipers(self, sec):
+        out = np.zeros(self.n(sec + .6)); t = 0.0
+        while t < sec:
+            s = self.bp(self.noise(.5), 300, 1800) * np.sin(np.linspace(0, np.pi, self.n(.5))) * .5; i = self.n(t); out[i:i + len(s)] += s[:len(out) - i]; t += .65
+        return out
+
     def scroll(self, sec):
         out = np.zeros(self.n(sec + .1)); t = 0.0
         while t < sec:
@@ -275,13 +281,14 @@ def main():
             "whoosh": lambda: k.whoosh(.45), "swell": lambda: k.revswell(max(1, dur)), "glitch": lambda: k.glitch(.5), "rewind_tick": lambda: fit(k.rewind(.25), k.n(.4)) + .6 * fit(k.tick(2000, .02), k.n(.4)),
             "crt_on": k.crt, "scroll": lambda: k.scroll(dur), "reveal_low": lambda: k.impact() * .7 + .6 * fit(k.drone(midi(26), 2.6, 400), k.n(2.6)),
             "outro": lambda: np.zeros(10),
+            "wipers": lambda: k.wipers(dur),
         }[name]()
         base = {"buzz": .5, "notif": .5, "type": .3, "up": .45, "down": .45, "check": .4, "tick": .35, "hit": .75, "impact": .9, "soft": .3, "drone_hit": .7, "title": .9,
                 "chapter": .55, "paper": .4, "slash": .4, "glitch_soft": .4, "trash": .5, "tick_run": .2, "coin": .45, "coin_land": .45, "star": .35, "swoosh": .35,
                 "click": .5, "counter": .25, "cash": .5, "sting": .5, "rise": .35, "laugh": .35, "crack": .7, "heartbeat_loop": .6, "refresh": .35, "bell": .55,
                 "whisper_hit": .5, "sparkle": .35, "wire": .35, "cash_out": .5, "rewind": .45, "zoom_out": .6, "split": .45, "wipe_out": .4, "ping": .35, "coins": .4,
                 "branch": .3, "tv_on": .45, "beep": .35, "buzz_wrong": .55, "bounce": .5, "stamp": .85, "whoosh": .4, "swell": .45, "glitch": .55, "rewind_tick": .5,
-                "crt_on": .5, "scroll": .25, "reveal_low": .85, "outro": 0}[name]
+                "crt_on": .5, "scroll": .25, "reveal_low": .85, "outro": 0, "wipers": .3}[name]
         fx.add(t, s, g * base, max(-1, min(1, pan)))
 
     mus.reverb(.22, 2.4, 6000); fx.reverb(.12, 1.4, 7000)

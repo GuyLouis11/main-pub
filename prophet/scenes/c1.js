@@ -41,9 +41,7 @@ SC.twice = (R, K, h, id) => {
   const tw2 = K.text(h, 'ALWAYS.', 'left:182px;top:460px;font-size:86px', 'kin amber');
   R.up(tw2, WT(R, 'P12', 5), .35, 20);
   // [clue] the screen hiccups on "always reads"
-  tl.set('#stage', { filter: 'hue-rotate(70deg) contrast(1.4)' }, WT(R, 'P12', 5)); tl.set('#stage', { filter: 'none' }, WT(R, 'P12', 5) + .08);
-  tl.set('#stage', { x: 12 }, WT(R, 'P12', 5) + .03); tl.set('#stage', { x: 0 }, WT(R, 'P12', 5) + .09);
-  cue(WT(R, 'P12', 5), 'glitch_soft', .35);
+  tl.to(tw2, { textShadow: '0 0 24px rgba(255,179,71,1), 0 0 60px rgba(255,138,61,.7)', duration: .25, yoyo: true, repeat: 1 }, WT(R, 'P12', 5) + .2);
   // deleted
   const card = K.text(h, '<b style="font:700 26px Space Grotesk">Week 1</b><br><span style="font:500 22px Space Grotesk;color:#9aa6cb">The market will go down this week.</span>', 'left:1240px;top:400px;width:480px;padding:26px 30px;border-radius:18px;background:rgba(22,30,56,.92);border:1px solid rgba(170,190,240,.25)');
   const bin = K.text(h, '🗑', 'left:1660px;top:700px;font-size:110px', 'emoji');
@@ -69,8 +67,14 @@ SC.w1close = (R, K, h, id) => {
   const coin = K.text(h, '<div class="big" style="font-size:90px;color:#1a1204;line-height:260px">▼</div>', 'left:830px;top:300px;width:260px;height:260px;border-radius:50%;text-align:center;background:radial-gradient(circle at 35% 30%,#ffe7a8,#ffb347 55%,#b46a12);box-shadow:0 0 50px rgba(255,179,71,.6),inset 0 -10px 20px rgba(0,0,0,.3)');
   R.pop(coin, WT(R, 'P14', 9) - .3, .3, .3);
   const tf = WT(R, 'P14', 9) - .1;
-  for (let i = 0; i < 9; i++) tl.to(coin, { scaleX: i % 2 ? 1 : .05, duration: .07, ease: 'none' }, tf + i * .07);
-  tl.fromTo(coin, { y: 0 }, { y: -220, duration: .32, ease: 'power2.out', yoyo: true, repeat: 1, immediateRender: false }, tf);
+  const shadow = K.text(h, '', 'left:850px;top:600px;width:220px;height:34px;border-radius:50%;background:radial-gradient(ellipse,rgba(0,0,0,.6),transparent 70%)');
+  R.pop(shadow, WT(R, 'P14', 9) - .3, .3, .3);
+  for (let i = 0; i < 10; i++) tl.to(coin, { scaleX: i % 2 ? 1 : .06, duration: .064, ease: 'sine.inOut' }, tf + i * .064);
+  tl.fromTo(coin, { y: 0 }, { y: -240, duration: .32, ease: 'power2.out', immediateRender: false }, tf);
+  tl.to(coin, { y: 0, duration: .32, ease: 'bounce.out' }, tf + .32);
+  tl.fromTo(shadow, { scale: 1, opacity: 1 }, { scale: .55, opacity: .35, duration: .32, ease: 'power2.out', immediateRender: false }, tf);
+  tl.to(shadow, { scale: 1, opacity: 1, duration: .32, ease: 'bounce.out' }, tf + .32);
+  tl.to(coin, { rotation: 8, duration: .14, yoyo: true, repeat: 1, ease: 'sine.inOut' }, tf + .66);
   cue(tf, 'coin', .8); cue(tf + .64, 'coin_land', .7);
   const lb = K.text(h, 'A COIN FLIP', 'top:640px;font-size:60px', 'center kin cold');
   R.up(lb, WT(R, 'P14', 9), .3, 16);
@@ -110,15 +114,15 @@ SC.daniel = (R, K, h, id) => {
   K.hudShow(S(id), false);
   const pD = K.person(h, 'daniel', 300, 250, 720, { rim: '#ffb347', glow: 20 });
   R.up(pD, V('P19') - .1, .6, 30);
-  const card = K.text(h, '', 'left:980px;top:300px;width:700px;height:470px', 'glass');
+  const card = K.text(h, '', 'left:980px;top:150px;width:760px;height:300px', 'glass');
   R.up(card, V('P20') - .3, .4, 30);
   const rows = [['NAME', 'Daniel Hale', V('P20') - .1], ['AGE', '44', WT(R, 'P20', 0)], ['JOB', 'Freight scheduler · Columbus, OH', WT(R, 'P20', 4)], ['SAME DESK', '22 years', WT(R, 'P20', 13)]];
   rows.forEach(([k, v, t], i) => {
-    K.text(card, k, `left:44px;top:${46 + i * 102}px;font-size:20px`, 'label');
-    const val = K.text(card, '', `left:44px;top:${74 + i * 102}px;font:600 38px/1.2 Space Grotesk;color:#f2f6ff;white-space:nowrap`);
+    K.text(card, k, `left:${44 + (i % 2) * 330}px;top:${44 + Math.floor(i / 2) * 128}px;font-size:18px`, 'label');
+    const val = K.text(card, '', `left:${44 + (i % 2) * 330}px;top:${70 + Math.floor(i / 2) * 128}px;font:600 ${i === 2 ? 26 : 34}px/1.25 Space Grotesk;color:#f2f6ff;white-space:${i === 2 ? 'normal' : 'nowrap'};width:${i === 2 ? 310 : 300}px`);
     K.type(val, v, t, 34);
   });
-  const big = K.text(h, '22 YEARS', 'left:1000px;top:820px;font-size:90px', 'kin amber');
+  const big = K.text(h, '22 YEARS', 'left:1000px;top:905px;font-size:80px', 'kin amber');
   R.up(big, WT(R, 'P20', 13) + .2, .35, 20);
 };
 
@@ -231,7 +235,7 @@ SC.name = (R, K, h, id) => {
   const nm = K.text(m.bd, 'Daniel.', 'position:relative;display:inline;color:#d9780a');
   tl.set(nm, { opacity: 0 }, 0); tl.set(nm, { opacity: 1 }, tn + .3);
   tl.to(nm, { textShadow: '0 0 18px rgba(255,140,40,.9)', duration: .3 }, tn + .35);
-  cue(tn + .3, 'sting', .8); R.glitch(m, tn + .4, .2);
+  cue(tn + .3, 'sting', .8);
   tl.to(`[data-scene="${id}"] .cam`, { scale: 1.12, duration: 1.2, ease: 'power2.inOut' }, tn + .2);
 };
 SC.name.opts = { nocam: true };

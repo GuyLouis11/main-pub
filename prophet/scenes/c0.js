@@ -81,7 +81,7 @@ SC.offer0 = (R, K, h, id) => {
   const tf = WT(R, 'P06', 6);
   R.slam(fee, tf - .12, 2.4, .2); cue(tf + .08, 'impact', 1); R.shake(tf + .08, 14, .3, `[data-scene="${id}"] .cam`); R.flash(tf + .08, .25, .35);
   tl.to(m, { opacity: .3, duration: .3 }, tf);
-  R.glitch(fee, tf + .6, .25);
+  tl.to(fee, { scale: 1.04, duration: .5, yoyo: true, repeat: 1, ease: 'sine.inOut' }, tf + .5);
 };
 
 SC.stakes = (R, K, h, id) => {
@@ -129,7 +129,7 @@ SC.title = (R, K, h, id) => {
   tl.to(t, { opacity: 1, filter: 'blur(0px)', scale: 1, letterSpacing: '0px', duration: 1.3, ease: 'power3.out' }, S(id) + .2);
   tl.set(rule, { scaleX: 0 }, 0); tl.to(rule, { scaleX: 1, duration: .9, ease: 'power3.out' }, S(id) + .9);
   R.up(sub, S(id) + 1.2, .5, 16);
-  R.glitch(t, S(id) + 2.6, .2);
+
   cue(S(id) + .2, 'title', 1);
   tl.to(t, { scale: 1.04, duration: E(id) - S(id) - 1.5, ease: 'none' }, S(id) + 1.5);
   tl.to('#tag', { opacity: 0, duration: .4 }, E(id) - .2);

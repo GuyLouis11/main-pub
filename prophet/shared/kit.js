@@ -38,11 +38,13 @@ window.KIT = function (R) {
         }
       }
       if (P.drops > .01) for (const d of drops) {
-        const k = Math.max(0, t - d.t0) % (d.dl + 4), y = d.y + (k > d.dl ? (k - d.dl) * d.v : 0);
-        cx.fillStyle = `rgba(200,220,255,${(.14 * P.drops).toFixed(3)})`;
-        cx.beginPath(); cx.arc(d.x, y % 1100, d.r, 0, 6.2832); cx.fill();
-        cx.fillStyle = `rgba(255,255,255,${(.18 * P.drops).toFixed(3)})`;
-        cx.beginPath(); cx.arc(d.x - d.r * .35, (y % 1100) - d.r * .35, d.r * .35, 0, 6.2832); cx.fill();
+        const per = d.dl + 4, k = Math.max(0, t - d.t0) % per, y = d.y + (k > d.dl ? (k - d.dl) * d.v : 0);
+        const fa = Math.min(1, k / .6, (per - k) / .6);
+        if (y > 1090) continue;
+        cx.fillStyle = `rgba(200,220,255,${(.14 * P.drops * fa).toFixed(3)})`;
+        cx.beginPath(); cx.arc(d.x, y, d.r, 0, 6.2832); cx.fill();
+        cx.fillStyle = `rgba(255,255,255,${(.18 * P.drops * fa).toFixed(3)})`;
+        cx.beginPath(); cx.arc(d.x - d.r * .35, y - d.r * .35, d.r * .35, 0, 6.2832); cx.fill();
       }
     };
     const pr = { t: 0 };
@@ -93,6 +95,8 @@ window.KIT = function (R) {
     tl.to(c.querySelector('.n'), { letterSpacing: '20px', duration: 1.4, ease: 'power2.out' }, t);
     tl.to(c.querySelector('.t'), { opacity: 1, y: 0, filter: 'blur(0px)', duration: .7, ease: 'power3.out' }, t + .1);
     tl.to(c.querySelector('.r'), { width: 520, duration: .8, ease: 'power3.out' }, t + .3);
+    const sw = div('abs', c, null, 'left:-700px;top:-200px;width:420px;height:1500px;transform:rotate(18deg);background:linear-gradient(90deg,transparent,rgba(255,220,170,.10),rgba(255,240,220,.22),rgba(255,220,170,.10),transparent)');
+    tl.fromTo(sw, { x: 0 }, { x: 3000, duration: 1.1, ease: 'power2.inOut', immediateRender: false }, t + .05);
     tl.to(c, { opacity: 0, duration: .35 }, out);
     cue(t, 'chapter', 1);
     return c;
@@ -217,6 +221,7 @@ window.KIT = function (R) {
   K.person = (host, kind, x, y, h, o = {}) => {
     const rim = o.rim || '#ffb347', s = svg(host, 400, 520, `left:${x}px;top:${y}px;width:${h * 400 / 520}px;height:${h}px;filter:drop-shadow(0 0 ${o.glow || 14}px ${rim}66)`);
     s.setAttribute('width', h * 400 / 520); s.setAttribute('height', h);
+    s.classList.add('person');
     if (o.flip) s.style.transform = 'scaleX(-1)';
     const fill = o.fill || '#060912';
     if (HAIR[kind] && kind !== 'sender') el('path', { d: HAIR[kind], fill, stroke: rim, 'stroke-width': 4, 'stroke-opacity': .9 }, s);
@@ -273,10 +278,11 @@ window.KIT = function (R) {
         const gx = (i % COLS) * SP, gy = Math.floor(i / COLS) * SP, o = out[i];
         let col, a = 1;
         if (o <= wk) { col = '255,59,79'; a = .07; }                      // eliminated earlier
-        else if (o === wk + 1 && fr > 0) { col = '255,59,79'; a = 1 - .93 * Math.min(1, fr * 1.6); }   // eliminating now
-        else if (st.split > 0 && o >= st.nextW) {                          // colour the coming guess
-          const p = (perm[i] % 1024) ^ MASK, up = ((p >> (9 - (st.nextW - 1))) & 1) === 1;
-          col = up ? '61,255,154' : '255,120,140'; a = .35 + .65 * st.split;
+        else if (o === wk + 1 && fr > 0) {                                  // eliminating now: blush red, then fade
+          const kr = Math.min(1, fr * 3.5); col = `${Math.round(232 + 23 * kr)},${Math.round(238 - 179 * kr)},${Math.round(252 - 173 * kr)}`; a = 1 - .93 * Math.max(0, (fr - .28) / .72); }
+        else if (st.split > 0 && o >= st.nextW) {                          // blend toward the coming guess
+          const p = (perm[i] % 1024) ^ MASK, up = ((p >> (9 - (st.nextW - 1))) & 1) === 1, k2 = st.split;
+          col = up ? `${Math.round(232 - 171 * k2)},${Math.round(238 + 17 * k2)},${Math.round(252 - 98 * k2)}` : `${Math.round(232 + 23 * k2)},${Math.round(238 - 118 * k2)},${Math.round(252 - 112 * k2)}`;
         } else col = '232,238,252';
         cx.fillStyle = `rgba(${col},${(a * st.dim).toFixed(3)})`;
         cx.fillRect(gx + 2, gy + 2, 8, 8);

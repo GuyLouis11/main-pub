@@ -88,14 +88,12 @@ SC.halving = (R, K, h, id) => {
   tl.to(ud, { opacity: 0, duration: .2 }, steps[0][2] - .1);
   let prev = 5120;
   steps.forEach(([w, v, t], i) => {
-    D.set(t - .02, { nextW: w, split: i === 0 ? 1 : .6 });
-    D.to(t, { week: w }, .7, 'power1.inOut');
-    if (i < steps.length - 1) D.set(t + .72, { nextW: w + 1 });
+    D.to(t, { week: w }, .75, 'power1.inOut');
+    if (i === 0) D.to(t + .35, { split: 0 }, .5);
     R.count(n, t, .6, prev, v, K.fmt, 'power2.out'); prev = v;
     tl.set(wl, { textContent: 'AFTER WEEK ' + w }, t);
     cue(t, 'wipe_out', .6 + i * .05, 0, { f: 300 + i * 60 });
   });
-  D.to(steps[5][2] + .8, { split: 0 }, .4);
   tl.set(n, { textContent: '5,120' }, S(id));
   const pr = K.text(h, 'THE ONES LEFT SAW A PERFECT RECORD', 'top:1000px;font-size:34px', 'center mono amber');
   R.up(pr, WT(R, 'P67', 12), .3, 10);
