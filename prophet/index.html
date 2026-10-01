@@ -8671,35 +8671,51 @@
   },
   "P86": {
    "text": "Because you never see the people who got the other email.",
-   "estimate": 4.61
+   "estimate": 4.61,
+   "dur": 4.61,
+   "words": []
   },
   "P87": {
    "text": "I told you at the start that nobody knows who sent those emails.",
-   "estimate": 5.4
+   "estimate": 5.4,
+   "dur": 5.4,
+   "words": []
   },
   "P88": {
    "text": "That's not quite true.",
-   "estimate": 1.87
+   "estimate": 1.87,
+   "dur": 1.87,
+   "words": []
   },
   "P89": {
    "text": "How do you think I know that Daniel reads everything twice? That he sat in his car in the driveway and asked who I was? That exactly seven of the ten paid?",
-   "estimate": 12.85
+   "estimate": 12.85,
+   "dur": 12.85,
+   "words": []
   },
   "P90": {
    "text": "I wrote every one of those emails. All ten thousand, two hundred and forty of them.",
-   "estimate": 6.57
+   "estimate": 6.57,
+   "dur": 6.57,
+   "words": []
   },
   "P91": {
    "text": "Daniel was number four thousand and ninety-one on my list.",
-   "estimate": 4.22
+   "estimate": 4.22,
+   "dur": 4.22,
+   "words": []
   },
   "P92": {
    "text": "And next Monday, at six a.m., I'm starting again.",
-   "estimate": 3.83
+   "estimate": 3.83,
+   "dur": 3.83,
+   "words": []
   },
   "P93": {
    "text": "Check your inbox.",
-   "estimate": 1.48
+   "estimate": 1.48,
+   "dur": 1.48,
+   "words": []
   }
  },
  "total": 502.15
@@ -8884,6 +8900,35 @@ R.tim.scenes.forEach(sc => {
   if (!o.nocam) K.cam(sc.id, 1, o.zoom ?? 1.045, o.cx || 0, o.cy || 0);
   if (f) f(R, K, K.host(sc.id), sc.id);
 });
+// quiet-stretch filler: purposeful camera moves (push-ins, drifts) wherever no story beat happens for > 1.1 s
+(() => {
+  const { tl, S, E, TOTAL } = R;
+  const iv = [];
+  tl.getChildren(true, true, false).forEach(tw => {
+    const tg = (tw.targets && tw.targets()) || [];
+    if (!tg.length || tw.duration() === 0 && !tw.vars.textContent && !tw.vars.attr) return;
+    if (tw.data === 'drift') return;
+    if (tg.some(t => t && t.nodeType && (t.id === 'black' || (t.dataset && t.dataset.drift)))) return;
+    if (tg.every(t => !t || !t.nodeType)) { if (!tw.vars.onUpdate) return; }
+    const st = tw.startTime(); iv.push([st, st + Math.max(tw.totalDuration(), .15)]);
+  });
+  iv.sort((a, b) => a[0] - b[0]);
+  const gaps = []; let c = 0;
+  iv.forEach(([a, b]) => { if (a > c + 1e-3) gaps.push([c, a]); c = Math.max(c, b); });
+  if (TOTAL > c) gaps.push([c, TOTAL]);
+  let k = 0;
+  gaps.filter(g => g[1] - g[0] > .95).forEach(([a, b]) => {
+    const sc = R.tim.scenes.find(s => S(s.id) <= (a + b) / 2 && (a + b) / 2 < E(s.id) && s.id !== 'end');
+    if (!sc) return;
+    const el = R.$(`[data-scene="${sc.id}"]`);
+    const n = Math.ceil((b - a) / 1.0), d = (b - a) / n;
+    for (let i = 0; i < n; i++) {
+      const t = a + .05 + i * d, z = (k++ % 2) ? 1.0 : 1.022, ox = 30 + ((k * 37) % 40), oy = 35 + ((k * 23) % 30);
+      tl.to(el, { scale: z, x: ((k % 3) - 1) * 10, duration: d * .98, ease: 'sine.inOut', transformOrigin: `${ox}% ${oy}%` }, t);
+    }
+  });
+})();
+R.$$('#stage .label, #stage .phone *, #stage .mailcard *, #stage .sheet *, #stage .glass *, #stage .kin, #stage .chap *, #stage svg text').forEach(e => e.setAttribute('data-layout-allow-overlap', ''));
 R.finish('prophet');
 window.__timelines = window.__timelines || {}; window.__timelines['prophet'] = R.tl;
 </script>

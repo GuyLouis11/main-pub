@@ -147,6 +147,9 @@ SC.turn = (R, K, h, id) => {
   const q = K.text(h, 'SENDER:', 'left:300px;top:420px;font-size:28px;letter-spacing:10px', 'label');
   const u = K.text(h, 'UNKNOWN', 'left:296px;top:466px;font-size:150px', 'kin violet');
   R.up([q, u], V('P87') + .2, .4, 20, .1);
+  const nk = K.text(h, '', 'left:300px;top:320px;font:italic 400 48px Instrument Serif;color:#cfd8f5;white-space:nowrap');
+  K.type(nk, '“Nobody knows who sent those emails.”', WT(R, 'P87', 5), 26);
+  tl.to(nk, { opacity: .35, duration: .3 }, V('P88') - .1);
   const tn = V('P88');
   const chars = 'UNKNOWN'.split('');
   for (let i = 0; i < 10; i++) tl.set(u, { textContent: chars.map(() => String.fromCharCode(65 + Math.floor(R.rnd() * 26))).join('') }, tn + i * .05);
@@ -167,6 +170,8 @@ SC.how = (R, K, h, id) => {
     R.up(c, t - .2, .35, 40); cue(t - .2, 'rewind_tick', .7, -.6 + i * .6);
     tl.to(c, { borderColor: 'rgba(155,123,255,.8)', boxShadow: '0 0 40px rgba(155,123,255,.4)', duration: .3 }, t + .1);
   });
+  const hq = K.text(h, '', 'top:150px;font:italic 400 56px Instrument Serif;color:#e8eefc', 'center');
+  K.type(hq, 'How do you think I know…', V('P89'), 22);
   const hw = K.text(h, 'HOW WOULD I KNOW?', 'top:860px;font-size:70px', 'center kin violet');
   R.up(hw, VE('P89') - .5, .35, 16);
 };

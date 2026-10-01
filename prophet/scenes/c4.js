@@ -205,6 +205,15 @@ SC.parable = (R, K, h, id) => {
   K.text(card, 'THE PARABLE OF THE', 'left:60px;top:70px;font-size:24px', 'label');
   K.text(card, 'Baltimore<br>Stockbroker', 'left:56px;top:110px;font-size:108px;line-height:1;font-style:italic;white-space:nowrap', 'serif cold');
   K.text(card, 'Jordan Ellenberg · <i>How Not to Be Wrong</i> (2014)', 'left:60px;top:370px;font:500 26px/1.3 Space Grotesk;color:#a9b4d6;white-space:nowrap');
+  const strip = K.text(card, '', 'left:60px;top:540px;width:640px;height:40px');
+  const vals = [10240, 5120, 2560, 1280, 640, 320, 160, 80, 40, 20, 10];
+  const t0p = WT(R, 'P72', 9), t1p = WT(R, 'P72', 25) - .3;
+  vals.forEach((v, i) => {
+    const b = K.text(strip, '', `left:${i * 58}px;top:${40 - Math.max(4, Math.log2(v) / Math.log2(10240) * 40)}px;width:46px;height:${Math.max(4, Math.log2(v) / Math.log2(10240) * 40)}px;border-radius:4px;background:${i === 10 ? '#ffb347' : '#5b6ea8'}`);
+    const t = t0p + (t1p - t0p) * i / 10;
+    tl.set(b, { opacity: 0, scaleY: 0, transformOrigin: '50% 100%' }, 0); tl.to(b, { opacity: 1, scaleY: 1, duration: .25 }, t);
+    if (i % 3 === 0) cue(t, 'tick', .25, -.4, { f: 600 + i * 60 });
+  });
   const a = K.text(card, '10,240 LETTERS → 10 PERFECT RECORDS', 'left:60px;top:470px;font-size:30px', 'mono amber');
   R.up(a, WT(R, 'P72', 25), .3, 10); cue(WT(R, 'P72', 8), 'paper', .5);
   // TV special
@@ -212,7 +221,10 @@ SC.parable = (R, K, h, id) => {
   const scr = K.text(tv, '', 'left:40px;top:40px;width:620px;height:440px;border-radius:26px;background:radial-gradient(ellipse,#1e2b44,#070b14);overflow:hidden');
   R.up(tv, V('P73') - .1, .4, 30); cue(V('P73'), 'tv_on', .6);
   K.text(scr, '2008 · BRITISH TV', 'left:30px;top:26px;font-size:20px', 'label');
-  K.text(scr, 'Derren Brown: <i>The System</i>', 'left:30px;top:60px;font:600 30px Space Grotesk;color:#e8eefc;white-space:nowrap');
+  const dbn = K.text(scr, '', 'left:30px;top:60px;font:600 30px Space Grotesk;color:#e8eefc;white-space:nowrap');
+  K.type(dbn, 'Derren Brown: The System', WT(R, 'P73', 5), 24);
+  const stat = K.text(scr, '', 'inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.07) 0 2px,transparent 2px 6px);mix-blend-mode:screen');
+  for (let i = 0; i < 10; i++) tl.set(stat, { y: (i % 3) * 3, opacity: .5 + (i % 2) * .4 }, V('P73') + i * .4);
   const tiers = [7776, 1296, 216, 36, 6, 1];
   tiers.forEach((v, i) => {
     const t = WT(R, 'P73', 15) + i * .35;
@@ -231,6 +243,10 @@ SC.cost = (R, K, h, id) => {
   const r1 = K.text(led, 'COST · 10,240 EMAILS', 'left:50px;top:130px;font:600 34px Space Grotesk;color:#cfd8f5;white-space:nowrap');
   const v1 = K.text(led, '$0', 'left:600px;top:122px;font-size:52px', 'mono green');
   R.up([r1, v1], WT(R, 'P74', 7), .3, 10, .1);
+  const pe = K.text(led, 'PER EMAIL: $0.00', 'left:50px;top:200px;font-size:24px;color:#8390b5', 'mono');
+  R.up(pe, WT(R, 'P74', 9), .3, 8);
+  const few = K.text(led, 'NEEDS ONLY A FEW YESES', 'left:50px;top:250px;font-size:26px;color:#ffe2b8', 'mono');
+  R.up(few, WT(R, 'P74', 17), .3, 8);
   const r2 = K.text(led, 'REVENUE', 'left:50px;top:330px;font:600 34px Space Grotesk;color:#cfd8f5');
   const v2 = K.text(led, '$0', 'left:50px;top:390px;font-size:110px', 'big amber');
   R.up([r2, v2], V('P75'), .3, 10);

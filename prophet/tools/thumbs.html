@@ -1,0 +1,74 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../shared/show.css">
+<style>
+  html, body { width: 1280px; height: 720px; overflow: hidden; background: #04060c; }
+  .t { position: absolute; inset: 0; overflow: hidden; display: none; }
+  .t.on { display: block; }
+  .bgx { position: absolute; inset: 0; background: radial-gradient(ellipse 70% 80% at 30% 50%, #1b2a52 0%, #0a1020 55%, #03050a 100%); }
+  .rain { position: absolute; inset: 0; opacity: .25; background: repeating-linear-gradient(105deg, transparent 0 22px, rgba(190,210,255,.25) 22px 23px, transparent 23px 60px); }
+  .bok { position: absolute; border-radius: 50%; filter: blur(2px); }
+  .huge { font-family: 'Anton', sans-serif; text-transform: uppercase; line-height: .92; letter-spacing: 1px; }
+  .stroke { -webkit-text-stroke: 3px rgba(0,0,0,.35); paint-order: stroke fill; }
+</style></head>
+<body>
+<!-- A: the phone, ten for ten -->
+<div class="t" id="A">
+  <div class="bgx"></div><div class="rain"></div>
+  <div class="bok" style="left:900px;top:80px;width:160px;height:160px;background:radial-gradient(circle,rgba(255,170,90,.35),transparent 70%)"></div>
+  <div class="bok" style="left:1080px;top:420px;width:220px;height:220px;background:radial-gradient(circle,rgba(110,150,255,.3),transparent 70%)"></div>
+  <div style="position:absolute;left:70px;top:40px;width:330px;height:640px;border-radius:52px;background:linear-gradient(145deg,#2a3042,#11141d);box-shadow:0 0 90px rgba(120,150,255,.55),inset 0 0 0 7px #07090e;transform:rotate(-6deg)">
+    <div style="position:absolute;inset:14px;border-radius:40px;background:radial-gradient(ellipse at 50% 20%,#2c4176,#0f1730 60%,#070b17);overflow:hidden">
+      <div style="text-align:center;margin-top:60px;font:300 92px/1 'Space Grotesk';color:#eef3ff">6:00</div>
+      <div style="margin:36px 14px 0;padding:18px;border-radius:22px;background:rgba(235,240,255,.18)">
+        <div style="font:700 15px 'Space Grotesk';color:#c9d5f5">MAIL · NOW</div>
+        <div style="font:700 22px/1.2 'Space Grotesk';color:#fff;margin-top:8px">Week 10</div>
+        <div style="font:600 22px/1.25 'Space Grotesk';color:#e6ecff;margin-top:6px">The market will go down this week.</div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin:26px 22px 0">
+        <div style="width:44px;height:44px;border-radius:10px;background:#3dff9a;color:#04060c;font:900 26px/44px 'Space Grotesk';text-align:center;box-shadow:0 0 14px #3dff9a">✓</div><div style="width:44px;height:44px;border-radius:10px;background:#3dff9a;color:#04060c;font:900 26px/44px 'Space Grotesk';text-align:center;box-shadow:0 0 14px #3dff9a">✓</div><div style="width:44px;height:44px;border-radius:10px;background:#3dff9a;color:#04060c;font:900 26px/44px 'Space Grotesk';text-align:center;box-shadow:0 0 14px #3dff9a">✓</div><div style="width:44px;height:44px;border-radius:10px;background:#3dff9a;color:#04060c;font:900 26px/44px 'Space Grotesk';text-align:center;box-shadow:0 0 14px #3dff9a">✓</div><div style="width:44px;height:44px;border-radius:10px;background:#3dff9a;color:#04060c;font:900 26px/44px 'Space Grotesk';text-align:center;box-shadow:0 0 14px #3dff9a">✓</div>
+        <div style="width:44px;height:44px;border-radius:10px;background:#3dff9a;color:#04060c;font:900 26px/44px 'Space Grotesk';text-align:center;box-shadow:0 0 14px #3dff9a">✓</div><div style="width:44px;height:44px;border-radius:10px;background:#3dff9a;color:#04060c;font:900 26px/44px 'Space Grotesk';text-align:center;box-shadow:0 0 14px #3dff9a">✓</div><div style="width:44px;height:44px;border-radius:10px;background:#3dff9a;color:#04060c;font:900 26px/44px 'Space Grotesk';text-align:center;box-shadow:0 0 14px #3dff9a">✓</div><div style="width:44px;height:44px;border-radius:10px;background:#3dff9a;color:#04060c;font:900 26px/44px 'Space Grotesk';text-align:center;box-shadow:0 0 14px #3dff9a">✓</div><div style="width:44px;height:44px;border-radius:10px;background:#3dff9a;color:#04060c;font:900 26px/44px 'Space Grotesk';text-align:center;box-shadow:0 0 14px #3dff9a">✓</div>
+      </div>
+    </div>
+  </div>
+  <div class="huge stroke" style="position:absolute;left:470px;top:90px;font-size:230px;color:#fff6e6;text-shadow:0 0 40px rgba(255,179,71,.85),0 10px 0 #000">10/10</div>
+  <div class="huge stroke" style="position:absolute;left:478px;top:330px;font-size:120px;color:#ffb347;text-shadow:0 8px 0 #000">NEVER</div>
+  <div class="huge stroke" style="position:absolute;left:478px;top:445px;font-size:120px;color:#ffb347;text-shadow:0 8px 0 #000">WRONG.</div>
+</div>
+
+<!-- B: the man, the fee -->
+<div class="t" id="B">
+  <div class="bgx" style="background:radial-gradient(ellipse 60% 80% at 70% 60%,#2a1e10 0%,#0d0a10 55%,#020306 100%)"></div><div class="rain" style="opacity:.18"></div>
+  <div style="position:absolute;left:720px;top:280px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(120,160,255,.45),transparent 65%)"></div>
+  <svg viewBox="0 0 400 520" width="560" height="728" style="position:absolute;left:700px;top:90px;filter:drop-shadow(0 0 22px rgba(255,179,71,.7))">
+    <path d="M200,64 C256,64 288,108 288,164 C288,220 260,258 226,270 L229,302 C302,317 362,352 382,422 L394,980 L6,980 L18,422 C38,352 98,317 171,302 L174,270 C140,258 112,220 112,164 C112,108 144,64 200,64 Z" fill="#05070d" stroke="#ffb347" stroke-width="5"/>
+    <rect x="140" y="152" width="50" height="34" rx="10" fill="none" stroke="#ffb347" stroke-width="4" opacity=".8"/><rect x="210" y="152" width="50" height="34" rx="10" fill="none" stroke="#ffb347" stroke-width="4" opacity=".8"/>
+  </svg>
+  <div style="position:absolute;left:880px;top:520px;width:120px;height:200px;border-radius:18px;background:#1b2440;box-shadow:0 0 70px rgba(120,160,255,.9)"></div>
+  <div class="huge stroke" style="position:absolute;left:60px;top:150px;font-size:190px;color:#fff3dc;text-shadow:0 0 40px rgba(255,179,71,.9),0 10px 0 #000">$50,000</div>
+  <div class="huge stroke" style="position:absolute;left:66px;top:350px;font-size:96px;color:#ffffff;text-shadow:0 8px 0 #000">FOR ONE</div>
+  <div class="huge stroke" style="position:absolute;left:66px;top:440px;font-size:96px;color:#ff3b4f;text-shadow:0 8px 0 #000">MORE EMAIL?</div>
+</div>
+
+<!-- C: one of 10,240 -->
+<div class="t" id="C">
+  <div class="bgx" style="background:radial-gradient(ellipse 70% 80% at 50% 50%,#121b36 0%,#060914 60%,#020307 100%)"></div>
+  <canvas id="cv" width="1280" height="720" style="position:absolute;left:0;top:0"></canvas>
+  <div class="huge stroke" style="position:absolute;left:0;width:1280px;text-align:center;top:500px;font-size:150px;color:#fff;text-shadow:0 10px 0 #000,0 0 30px rgba(0,0,0,.8)">1 OF <span style="color:#ffb347">10,240</span></div>
+</div>
+<script>
+const id = new URLSearchParams(location.search).get('t') || 'A';
+document.getElementById(id).classList.add('on');
+if (id === 'C') {
+  const cx = document.getElementById('cv').getContext('2d');
+  let s = 7; const r = () => { s = (s * 16807) % 2147483647; return s / 2147483647; };
+  for (let y = 0; y < 52; y++) for (let x = 0; x < 100; x++) {
+    const px = 40 + x * 12.2, py = 30 + y * 12.2, d = Math.hypot(px - 640, py - 300);
+    const alive = r() < (d < 120 ? .25 : .06);
+    cx.fillStyle = alive ? 'rgba(232,238,252,.85)' : 'rgba(255,59,79,.18)'; cx.fillRect(px, py, 8, 8);
+  }
+  cx.fillStyle = '#ffb347'; cx.shadowColor = '#ffb347'; cx.shadowBlur = 30; cx.fillRect(626, 286, 28, 28);
+  cx.shadowBlur = 0; cx.strokeStyle = '#ffb347'; cx.lineWidth = 5; cx.strokeRect(612, 272, 56, 56);
+}
+</script>
+</body></html>
