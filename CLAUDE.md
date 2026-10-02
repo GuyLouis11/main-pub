@@ -123,6 +123,10 @@ python3 tools/srt.py && cp renders/*.srt captions/
   - Save the lift for the hook, the twist and the closing line. `vault-short/` and `banks-short/` are the reference.
   - `[low, steady]` alone can overshoot low (about −3.5 st). `[steady, conversational]` sits near the middle.
   - `brisk` pushes pitch up 4–5 st unless it's anchored with `low, steady`.
+  - **Always Eleven v4. Owner, Oct 2 2026: a little theatrical with emphasis is good, creepy is not.**
+    - The Prophet long-form sounded creepy in places (whispers, "menacing", "dark smile", "chilling").
+    - Long-form gets an even steadier storyteller.
+    - Prefer emphasis over mood tags.
   - **No whispers on the opening or closing lines.** Whispers are OK only mid-story (a twist, a confession).
     Openings should be clear, confident and informative with a touch of intrigue. Tags like `a secret`, `quiet`,
     `softly` and `a knowing smile` make v4 breathy. Use `[clear, confident storyteller, a touch of intrigue]`.

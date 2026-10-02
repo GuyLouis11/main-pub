@@ -1,0 +1,772 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<title>Airlines Are Credit Card Companies</title>
+<link rel="stylesheet" href="shared/show.css" />
+<script src="shared/vendor/gsap.min.js"></script>
+<script src="shared/rt.js"></script>
+<script id="timing" type="application/json">
+{
+ "title": "Airlines Are Credit Card Companies",
+ "seed": 2025,
+ "defaults": {
+  "lead": 0.12,
+  "gap": 0.2,
+  "tail": 0.18
+ },
+ "scenes": [
+  {
+   "id": "hook",
+   "min": 0,
+   "xin": 0,
+   "vo": [
+    "A01"
+   ],
+   "lead": 0.45
+  },
+  {
+   "id": "amex",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "A03"
+   ]
+  },
+  {
+   "id": "profit",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "A04"
+   ],
+   "tail": 0.3
+  },
+  {
+   "id": "united",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "A05"
+   ]
+  },
+  {
+   "id": "half",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "A06"
+   ],
+   "tail": 0.3
+  },
+  {
+   "id": "side",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "A07"
+   ]
+  },
+  {
+   "id": "outro",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "A08"
+   ],
+   "tail": 2.6
+  }
+ ],
+ "vo": {
+  "A01": {
+   "text": "Last year, Delta got *$8.2 billion* from a company that doesn't fly *a single plane.*",
+   "estimate": 5.56,
+   "dur": 6.49,
+   "words": [
+    [
+     "Last",
+     0.07,
+     0.39,
+     false
+    ],
+    [
+     "year,",
+     0.47,
+     0.87,
+     false
+    ],
+    [
+     "Delta",
+     1.03,
+     1.35,
+     false
+    ],
+    [
+     "got",
+     1.47,
+     1.59,
+     false
+    ],
+    [
+     "$8.2",
+     1.67,
+     2.31,
+     true
+    ],
+    [
+     "billion",
+     2.63,
+     3.51,
+     true
+    ],
+    [
+     "from",
+     3.59,
+     3.75,
+     false
+    ],
+    [
+     "a",
+     3.79,
+     3.83,
+     false
+    ],
+    [
+     "company",
+     3.91,
+     4.23,
+     false
+    ],
+    [
+     "that",
+     4.31,
+     4.47,
+     false
+    ],
+    [
+     "doesn't",
+     4.55,
+     4.79,
+     false
+    ],
+    [
+     "fly",
+     4.87,
+     5.19,
+     false
+    ],
+    [
+     "a",
+     5.31,
+     5.43,
+     true
+    ],
+    [
+     "single",
+     5.63,
+     5.83,
+     false
+    ],
+    [
+     "plane.",
+     6.07,
+     6.49,
+     true
+    ]
+   ]
+  },
+  "A03": {
+   "text": "*American Express.* Every time someone swipes a Delta credit card, Amex buys *miles* from Delta. With real cash.",
+   "estimate": 5.93,
+   "dur": 7.671,
+   "words": [
+    [
+     "American",
+     0.07,
+     0.47,
+     true
+    ],
+    [
+     "Express.",
+     0.55,
+     1.23,
+     true
+    ],
+    [
+     "Every",
+     1.75,
+     1.99,
+     false
+    ],
+    [
+     "time",
+     2.11,
+     2.23,
+     false
+    ],
+    [
+     "someone",
+     2.31,
+     2.55,
+     false
+    ],
+    [
+     "swipes",
+     2.63,
+     2.95,
+     false
+    ],
+    [
+     "a",
+     2.99,
+     3.03,
+     false
+    ],
+    [
+     "Delta",
+     3.11,
+     3.35,
+     false
+    ],
+    [
+     "credit",
+     3.43,
+     3.67,
+     false
+    ],
+    [
+     "card,",
+     3.75,
+     4.15,
+     false
+    ],
+    [
+     "Amex",
+     4.31,
+     4.71,
+     false
+    ],
+    [
+     "buys",
+     4.79,
+     5.03,
+     false
+    ],
+    [
+     "miles",
+     5.19,
+     5.51,
+     true
+    ],
+    [
+     "from",
+     5.59,
+     5.75,
+     false
+    ],
+    [
+     "Delta.",
+     5.95,
+     6.47,
+     false
+    ],
+    [
+     "With",
+     6.55,
+     6.63,
+     false
+    ],
+    [
+     "real",
+     6.71,
+     6.95,
+     false
+    ],
+    [
+     "cash.",
+     7.03,
+     7.671,
+     false
+    ]
+   ]
+  },
+  "A04": {
+   "text": "That's *more* than Delta's entire profit for the year. *$6.2 billion,* before taxes.",
+   "estimate": 4.81,
+   "dur": 6.98,
+   "words": [
+    [
+     "That's",
+     0.09,
+     0.33,
+     false
+    ],
+    [
+     "more",
+     0.41,
+     0.49,
+     true
+    ],
+    [
+     "than",
+     0.57,
+     0.65,
+     false
+    ],
+    [
+     "Delta's",
+     0.73,
+     1.13,
+     false
+    ],
+    [
+     "entire",
+     1.33,
+     1.77,
+     false
+    ],
+    [
+     "profit",
+     1.85,
+     2.25,
+     false
+    ],
+    [
+     "for",
+     2.33,
+     2.41,
+     false
+    ],
+    [
+     "the",
+     2.49,
+     2.57,
+     false
+    ],
+    [
+     "year.",
+     2.73,
+     3.33,
+     false
+    ],
+    [
+     "$6.2",
+     3.61,
+     4.17,
+     true
+    ],
+    [
+     "billion,",
+     4.41,
+     5.57,
+     true
+    ],
+    [
+     "before",
+     5.69,
+     6.09,
+     false
+    ],
+    [
+     "taxes.",
+     6.17,
+     6.98,
+     false
+    ]
+   ]
+  },
+  "A05": {
+   "text": "And it's not just Delta. In *2020,* United borrowed against its miles program. It was valued at *$22 billion.*",
+   "estimate": 7.04,
+   "dur": 8.16,
+   "words": [
+    [
+     "And",
+     0.01,
+     0.09,
+     false
+    ],
+    [
+     "it's",
+     0.17,
+     0.33,
+     false
+    ],
+    [
+     "not",
+     0.45,
+     0.57,
+     false
+    ],
+    [
+     "just",
+     0.69,
+     0.81,
+     false
+    ],
+    [
+     "Delta.",
+     1.05,
+     1.49,
+     false
+    ],
+    [
+     "In",
+     1.69,
+     1.85,
+     false
+    ],
+    [
+     "2020,",
+     2.01,
+     2.73,
+     true
+    ],
+    [
+     "United",
+     2.81,
+     3.21,
+     false
+    ],
+    [
+     "borrowed",
+     3.29,
+     3.61,
+     false
+    ],
+    [
+     "against",
+     3.77,
+     3.93,
+     false
+    ],
+    [
+     "its",
+     4.01,
+     4.09,
+     false
+    ],
+    [
+     "miles",
+     4.17,
+     4.41,
+     false
+    ],
+    [
+     "program.",
+     4.49,
+     5.29,
+     false
+    ],
+    [
+     "It",
+     5.33,
+     5.37,
+     false
+    ],
+    [
+     "was",
+     5.45,
+     5.53,
+     false
+    ],
+    [
+     "valued",
+     5.61,
+     5.93,
+     false
+    ],
+    [
+     "at",
+     6.01,
+     6.17,
+     false
+    ],
+    [
+     "$22",
+     6.37,
+     6.89,
+     true
+    ],
+    [
+     "billion.",
+     6.97,
+     8.16,
+     true
+    ]
+   ]
+  },
+  "A06": {
+   "text": "The whole airline, planes and all, was worth about *half* that.",
+   "estimate": 4.07,
+   "dur": 4.19,
+   "words": [
+    [
+     "The",
+     0.082,
+     0.242,
+     false
+    ],
+    [
+     "whole",
+     0.402,
+     0.562,
+     false
+    ],
+    [
+     "airline,",
+     0.642,
+     1.322,
+     false
+    ],
+    [
+     "planes",
+     1.442,
+     1.842,
+     false
+    ],
+    [
+     "and",
+     1.882,
+     1.922,
+     false
+    ],
+    [
+     "all,",
+     2.082,
+     2.442,
+     false
+    ],
+    [
+     "was",
+     2.562,
+     2.722,
+     false
+    ],
+    [
+     "worth",
+     2.842,
+     2.962,
+     false
+    ],
+    [
+     "about",
+     3.042,
+     3.282,
+     false
+    ],
+    [
+     "half",
+     3.442,
+     3.682,
+     true
+    ],
+    [
+     "that.",
+     3.842,
+     4.19,
+     false
+    ]
+   ]
+  },
+  "A07": {
+   "text": "Airlines don't just sell seats. They sell *miles,* to banks, by the billion.",
+   "estimate": 4.81,
+   "dur": 5.85,
+   "words": [
+    [
+     "Airlines",
+     0.081,
+     0.561,
+     false
+    ],
+    [
+     "don't",
+     0.641,
+     0.801,
+     false
+    ],
+    [
+     "just",
+     0.881,
+     1.041,
+     false
+    ],
+    [
+     "sell",
+     1.161,
+     1.281,
+     false
+    ],
+    [
+     "seats.",
+     1.361,
+     2.001,
+     false
+    ],
+    [
+     "They",
+     2.161,
+     2.321,
+     false
+    ],
+    [
+     "sell",
+     2.441,
+     2.561,
+     false
+    ],
+    [
+     "miles,",
+     2.601,
+     3.241,
+     true
+    ],
+    [
+     "to",
+     3.281,
+     3.441,
+     false
+    ],
+    [
+     "banks,",
+     3.681,
+     4.241,
+     false
+    ],
+    [
+     "by",
+     4.281,
+     4.321,
+     false
+    ],
+    [
+     "the",
+     4.401,
+     4.561,
+     false
+    ],
+    [
+     "billion.",
+     4.641,
+     5.85,
+     false
+    ]
+   ]
+  },
+  "A08": {
+   "text": "So every time you swipe for miles… *the airline gets paid.*",
+   "estimate": 4.07,
+   "dur": 4.11,
+   "words": [
+    [
+     "So",
+     0.09,
+     0.25,
+     false
+    ],
+    [
+     "every",
+     0.33,
+     0.57,
+     false
+    ],
+    [
+     "time",
+     0.69,
+     0.81,
+     false
+    ],
+    [
+     "you",
+     0.89,
+     1.05,
+     false
+    ],
+    [
+     "swipe",
+     1.09,
+     1.37,
+     false
+    ],
+    [
+     "for",
+     1.45,
+     1.53,
+     false
+    ],
+    [
+     "miles…",
+     1.61,
+     2.41,
+     false
+    ],
+    [
+     "the",
+     2.65,
+     2.73,
+     true
+    ],
+    [
+     "airline",
+     2.81,
+     3.21,
+     false
+    ],
+    [
+     "gets",
+     3.29,
+     3.53,
+     false
+    ],
+    [
+     "paid.",
+     3.61,
+     4.11,
+     true
+    ]
+   ]
+  }
+ },
+ "total": 47.641
+}
+</script>
+</head>
+<body>
+<div id="root" data-composition-id="miles" data-start="0" data-duration="47.641" data-width="1080" data-height="1920">
+  <audio id="music" src="assets/audio/music.wav" data-start="0" data-duration="47.641" data-volume="0.75" data-track-index="20"></audio>
+  <audio id="sfx" src="assets/audio/sfx.wav" data-start="0" data-duration="47.641" data-volume="0.85" data-track-index="21"></audio>
+  <!-- VO:BEGIN (generated by tools/bake.py) -->
+  <audio id="vo_a01" src="assets/vo/A01.wav" data-start="0.450" data-duration="6.490" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_a03" src="assets/vo/A03.wav" data-start="7.090" data-duration="7.671" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_a04" src="assets/vo/A04.wav" data-start="14.911" data-duration="6.980" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_a05" src="assets/vo/A05.wav" data-start="22.161" data-duration="8.160" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_a06" src="assets/vo/A06.wav" data-start="30.471" data-duration="4.190" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_a07" src="assets/vo/A07.wav" data-start="34.931" data-duration="5.850" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_a08" src="assets/vo/A08.wav" data-start="40.931" data-duration="4.110" data-volume="1" data-track-index="22"></audio>
+  <!-- VO:END -->
+  <div id="bg"></div>
+  <div id="grid" data-drift="1"></div>
+  <canvas id="fx" width="1080" height="1920" data-drift="1"></canvas>
+  <div id="stage" class="abs" style="inset:0">
+    <div id="sc-hook" class="scene clip" data-scene="hook" data-start="0.000" data-duration="7.120" data-track-index="1"></div>
+    <div id="sc-amex" class="scene clip" data-scene="amex" data-start="6.970" data-duration="7.971" data-track-index="2"></div>
+    <div id="sc-profit" class="scene clip" data-scene="profit" data-start="14.791" data-duration="7.400" data-track-index="3"></div>
+    <div id="sc-united" class="scene clip" data-scene="united" data-start="22.041" data-duration="8.460" data-track-index="4"></div>
+    <div id="sc-half" class="scene clip" data-scene="half" data-start="30.351" data-duration="4.610" data-track-index="5"></div>
+    <div id="sc-side" class="scene clip" data-scene="side" data-start="34.811" data-duration="6.150" data-track-index="6"></div>
+    <div id="sc-outro" class="scene clip" data-scene="outro" data-start="40.811" data-duration="6.830" data-track-index="7"></div>
+  </div>
+  <div id="chips" data-layout-ignore></div>
+  <div id="vig" data-layout-ignore></div>
+  <div id="dim" data-layout-ignore style="position:absolute;inset:0;background:#000;opacity:0;z-index:45;pointer-events:none"></div>
+  <div id="caps"></div>
+  <div id="grain" data-layout-ignore></div>
+  <div id="flash"></div>
+  <div id="black"></div>
+</div>
+<script src="scenes/miles.js"></script>
+<script>window.__timelines = window.__timelines || {}; window.__timelines['miles'] = R.tl;</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "name": "hotdog-short",
+  "version": "1.0.0",
+  "description": "hotdog-short: vertical Short (HyperFrames + GSAP)",
+  "private": true,
+  "scripts": {
+    "build": "python3 tools/script.py && python3 tools/scaffold.py",
+    "score": "node tools/cues.mjs && python3 tools/score.py",
+    "render": "hyperframes render . -f 30 -q standard -w 3 -o renders/raw.mp4",
+    "lint": "hyperframes lint",
+    "audit": "node tools/beat_audit.mjs"
+  },
+  "devDependencies": {
+    "gsap": "^3.15.0",
+    "hyperframes": "^0.8.86",
+    "playwright": "1.56"
+  }
+}
