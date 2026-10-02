@@ -19,7 +19,7 @@ Sources:
 • Delta Air Lines, December quarter and full-year 2025 results (Jan 13, 2026)
 • United Airlines SEC filing and bond documents, 2020 (MileagePlus valuation; equity value)
 • "About $38 per $1,000 charged" is an industry estimate (View from the Wing) from Delta and Amex disclosures
-Educational content, not financial advice.
+Educational content, not financial advice. Not affiliated with or endorsed by Delta, United or American Express.
 
 #CreditCards #Airlines #Money #Finance #MoneyFacts #Shorts
 

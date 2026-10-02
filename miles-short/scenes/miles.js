@@ -220,6 +220,42 @@ src(sc('profit'), 'source: Delta Air Lines full-year 2025 results', W('A04', 5))
   R.count('#tkN', t, W('A08', 10) - t, 0, 38, v => 'AIRLINE EARNS: $' + v.toFixed(2) + ' per $1,000', 'power1.in');
 }
 
+/* ================= assets pass: brand wordmarks + a drifting prop layer ================= */
+const propLayer = (icons, n, alpha) => {
+  const L = document.createElement('div'); L.className = 'abs'; L.style.cssText = 'inset:0;pointer-events:none'; L.dataset.drift = '1';
+  $('#stage').parentNode.insertBefore(L, $('#stage'));
+  for (let i = 0; i < n; i++) {
+    const d = div('', L, icons[i % icons.length], `left:${(i * 197) % 1000 + rnd() * 60 - 20}px;top:${(i * 311) % 1700 + 120}px;opacity:${alpha * (.6 + rnd() * .6)};width:120px;height:120px`);
+    d.dataset.drift = '1';
+    const s = .6 + rnd() * .9; tl.set(d, { scale: s, rotation: (rnd() - .5) * 40 }, 0);
+    // drift out and back over the whole Short, so the last frame matches frame 0 (loop)
+    tl.to(d, { y: -(60 + rnd() * 120), x: (rnd() - .5) * 80, rotation: '+=' + ((rnd() - .5) * 60), duration: TOTAL / 2, ease: 'sine.inOut', yoyo: true, repeat: 1, data: 'drift' }, 0);
+  }
+};
+const logoIn = (host, html, css, t, t2) => { const e = put(host, svg(html, css)); tl.set(e, { opacity: 0, scale: .6 }, 0); tl.to(e, { opacity: 1, scale: 1, duration: .3, ease: 'back.out(2)' }, t); if (t2) tl.to(e, { opacity: 0, duration: .2 }, t2); return e; };
+
+const DELTA = (w = 300) => `<svg viewBox="0 0 340 110" style="width:${w}px;height:${w * 110 / 340}px"><path d="M10,96 L52,14 L94,96 Z" fill="#c8102e"/><path d="M52,14 L94,96 L60,96 Z" fill="#8b0d22"/><text x="110" y="84" font-family="Space Grotesk" font-weight="700" font-size="74" fill="#fff" letter-spacing="2">DELTA</text></svg>`;
+const AMEX = (w = 220) => `<div style="width:${w}px;height:${w}px;background:#016fd0;border-radius:${w * .06}px;display:flex;flex-direction:column;align-items:center;justify-content:center;font:900 ${w * .19}px/1.02 'Space Grotesk';color:#fff;letter-spacing:-1px;text-align:center"><div>AMERICAN</div><div>EXPRESS</div></div>`;
+const UNITED = (w = 300) => `<svg viewBox="0 0 300 100" style="width:${w}px;height:${w / 3}px"><circle cx="50" cy="50" r="40" fill="#005daa"/><g stroke="#fff" stroke-width="4" fill="none"><ellipse cx="50" cy="50" rx="18" ry="40"/><path d="M10,50 L90,50 M16,30 L84,30 M16,70 L84,70"/></g><text x="104" y="68" font-family="Space Grotesk" font-weight="700" font-size="54" fill="#fff" letter-spacing="3">UNITED</text></svg>`;
+const ICON = {
+  pass: `<svg viewBox="0 0 120 120"><rect x="6" y="30" width="108" height="60" rx="8" fill="#dbe9f7"/><path d="M80,30 L80,90" stroke="#9fb6d0" stroke-width="3" stroke-dasharray="5 5"/><text x="16" y="56" font-family="JetBrains Mono" font-weight="800" font-size="16" fill="#0b1a33">JFK → ATL</text><rect x="16" y="66" width="50" height="10" fill="#9fb6d0"/></svg>`,
+  lug: `<svg viewBox="0 0 120 120"><rect x="30" y="34" width="60" height="74" rx="10" fill="#4fc3ff"/><rect x="48" y="16" width="24" height="22" rx="6" fill="none" stroke="#4fc3ff" stroke-width="6"/><path d="M30,60 L90,60" stroke="#0b1a33" stroke-width="5"/></svg>`,
+  card: `<svg viewBox="0 0 120 120"><rect x="8" y="28" width="104" height="66" rx="10" fill="#1b3a6b" stroke="#dbe9f7" stroke-width="3"/><rect x="20" y="46" width="22" height="16" rx="3" fill="#ffc640"/></svg>`,
+  coin: `<svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="44" fill="#ffc640"/><text x="60" y="76" text-anchor="middle" font-family="Unbounded" font-weight="900" font-size="40" fill="#a8700a">$</text></svg>`,
+  plane: `<svg viewBox="0 0 120 120"><path d="M60,6 L68,44 L112,62 L112,72 L68,64 L66,92 L80,102 L80,110 L60,104 L40,110 L40,102 L54,92 L52,64 L8,72 L8,62 L52,44 Z" fill="#dbe9f7"/></svg>`,
+  mi: `<svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="44" fill="none" stroke="#4fc3ff" stroke-width="6"/><text x="60" y="74" text-anchor="middle" font-family="Anton" font-size="40" fill="#4fc3ff">MI</text></svg>`,
+};
+propLayer(Object.values(ICON), 22, .15);
+// brand marks where the story names each company
+logoIn(sc('hook'), DELTA(300), 'left:390px;top:930px', W('A01', 2) - .1, W('A01', 6) - .2);
+logoIn(sc('amex'), AMEX(170), 'left:455px;top:440px', W('A03', 0) + .3, W('A03', 5) - .4);
+logoIn(sc('amex'), AMEX(110), 'left:40px;top:780px', W('A03', 10) - .2);
+logoIn(sc('amex'), DELTA(220), 'left:820px;top:790px', W('A03', 13) - .2);
+logoIn(sc('profit'), AMEX(90), 'left:245px;top:900px', S('profit') + .3);
+logoIn(sc('profit'), DELTA(170), 'left:705px;top:960px', W('A04', 5));
+logoIn(sc('united'), UNITED(300), 'left:390px;top:1060px', W('A05', 7) - .1);
+logoIn(sc('half'), UNITED(260), 'left:410px;top:240px', S('half') + .15);
+
 // a slow camera drift on every scene so no beat ever sits still
 R.tim.scenes.forEach(x => { const h = sc(x.id); tl.fromTo(h, { y: 0 }, { y: -18, duration: E(x.id) - S(x.id), ease: 'sine.inOut', immediateRender: false }, S(x.id)); });
 

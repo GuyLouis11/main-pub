@@ -118,7 +118,7 @@ center('#tag0');
   const host = sc('cost'), tLit = W('C05', 4), tNo = W('C05', 6), tFood = W('C05', 9);
   const sign = put(host, svg(`<div style="position:relative;padding:22px 50px;border-radius:20px;background:${KET};color:#fff;font:400 90px/1 'Anton';letter-spacing:6px;box-shadow:0 0 60px rgba(232,50,43,.5)">FOOD COURT</div>`, 'left:540px;top:220px'));
   center(sign); pop(sign, S('cost') + .05, .6); cue(S('cost') + .1, 'ding', .5);
-  put(host, svg(`<div style="position:absolute;left:300px;top:420px">${COMBO(480)}</div>`, 'left:0;top:0'));
+  put(host, svg(`<div style="position:absolute;left:330px;top:450px">${COMBO(400)}</div>`, 'left:0;top:0'));
   const meter = put(host, svg(`<svg viewBox="0 0 800 420" style="width:800px;height:420px;overflow:visible"><path d="M80,380 A320,320 0 0 1 720,380" stroke="rgba(255,244,214,.18)" stroke-width="56" fill="none"/>
     <path d="M80,380 A320,320 0 0 1 400,60" stroke="${KET}" stroke-width="56" fill="none" opacity=".5"/><path d="M400,60 A320,320 0 0 1 720,380" stroke="${MUST}" stroke-width="56" fill="none" opacity=".5"/>
     <text x="70" y="430" fill="#fff4d6" font-family="JetBrains Mono" font-size="30">$0</text><text x="640" y="430" fill="#fff4d6" font-family="JetBrains Mono" font-size="30">PROFIT</text>
@@ -250,6 +250,42 @@ src(sc('fees'), 'source: Costco Form 10-K, fiscal year ended Aug 31, 2025', W('C
 src(sc('renew'), 'membership fee revenue $5.3B · FY2025', W('C08', 1));
 // bait: shoppers travel the loop forever
 rider('#lp', sc('bait'), W('C09', 8) - .1, 2.2, 5, `<svg viewBox="0 0 60 100" style="width:44px;height:74px"><circle cx="30" cy="20" r="16" fill="${MUST}"/><path d="M4,100 L8,52 Q30,38 52,52 L56,100 Z" fill="${MUST}"/></svg>`, .35);
+
+/* ================= assets pass: brand wordmarks + a drifting prop layer ================= */
+const propLayer = (icons, n, alpha) => {
+  const L = document.createElement('div'); L.className = 'abs'; L.style.cssText = 'inset:0;pointer-events:none'; L.dataset.drift = '1';
+  $('#stage').parentNode.insertBefore(L, $('#stage'));
+  for (let i = 0; i < n; i++) {
+    const d = div('', L, icons[i % icons.length], `left:${(i * 197) % 1000 + rnd() * 60 - 20}px;top:${(i * 311) % 1700 + 120}px;opacity:${alpha * (.6 + rnd() * .6)};width:120px;height:120px`);
+    d.dataset.drift = '1';
+    const s = .6 + rnd() * .9; tl.set(d, { scale: s, rotation: (rnd() - .5) * 40 }, 0);
+    // drift out and back over the whole Short, so the last frame matches frame 0 (loop)
+    tl.to(d, { y: -(60 + rnd() * 120), x: (rnd() - .5) * 80, rotation: '+=' + ((rnd() - .5) * 60), duration: TOTAL / 2, ease: 'sine.inOut', yoyo: true, repeat: 1, data: 'drift' }, 0);
+  }
+};
+const logoIn = (host, html, css, t, t2) => { const e = put(host, svg(html, css)); tl.set(e, { opacity: 0, scale: .6 }, 0); tl.to(e, { opacity: 1, scale: 1, duration: .3, ease: 'back.out(2)' }, t); if (t2) tl.to(e, { opacity: 0, duration: .2 }, t2); return e; };
+
+const COSTCO = (w = 420) => `<svg viewBox="0 0 420 150" style="width:${w}px;height:${w * 150 / 420}px"><text x="210" y="92" text-anchor="middle" font-family="Anton" font-size="104" fill="#e31837" transform="skewX(-10) translate(16 0)" letter-spacing="2">COSTCO</text>
+  <rect x="40" y="102" width="340" height="36" fill="#005daa"/><text x="210" y="130" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="28" fill="#fff" letter-spacing="10">WHOLESALE</text></svg>`;
+const ICON = {
+  cart: `<svg viewBox="0 0 120 120"><path d="M10,24 L28,24 L42,78 L96,78 L108,38 L34,38" stroke="#ffcf3a" stroke-width="8" fill="none" stroke-linejoin="round"/><circle cx="48" cy="96" r="9" fill="#ffcf3a"/><circle cx="90" cy="96" r="9" fill="#ffcf3a"/></svg>`,
+  receipt: `<svg viewBox="0 0 120 120"><path d="M30,10 L90,10 L90,110 L80,102 L70,110 L60,102 L50,110 L40,102 L30,110 Z" fill="#f2efe6"/><g stroke="#b9b2a2" stroke-width="5"><path d="M42,32 L78,32 M42,50 L78,50 M42,68 L66,68"/></g></svg>`,
+  tag: `<svg viewBox="0 0 120 120"><path d="M14,58 L58,14 L106,14 L106,62 L62,106 Z" fill="#e8322b"/><circle cx="86" cy="34" r="8" fill="#1c0807"/><text x="60" y="78" text-anchor="middle" font-family="Anton" font-size="34" fill="#fff" transform="rotate(-45 60 66)">$</text></svg>`,
+  coin: `<svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="44" fill="#ffcf3a"/><circle cx="60" cy="60" r="34" fill="none" stroke="#a8700a" stroke-width="5"/><text x="60" y="76" text-anchor="middle" font-family="Unbounded" font-weight="900" font-size="40" fill="#a8700a">$</text></svg>`,
+  dog: `<svg viewBox="0 0 120 120"><path d="M10,64 Q10,44 30,44 L90,44 Q110,44 110,64 Q110,84 90,84 L30,84 Q10,84 10,64 Z" fill="#e9b872"/><path d="M8,60 Q8,52 18,52 L102,52 Q112,52 112,60 Q112,68 102,68 L18,68 Q8,68 8,60 Z" fill="#b5462c"/><path d="M20,60 Q34,52 48,60 T76,60 T104,60" stroke="#ffcf3a" stroke-width="5" fill="none"/></svg>`,
+  soda: `<svg viewBox="0 0 120 120"><rect x="38" y="24" width="44" height="86" rx="6" fill="#e8322b"/><rect x="34" y="16" width="52" height="12" rx="4" fill="#f2efe6"/><rect x="58" y="0" width="6" height="22" fill="#f2efe6"/></svg>`,
+};
+propLayer(Object.values(ICON), 22, .16);
+// brand marks where the story names Costco
+logoIn(sc('hook'), `<div style="padding:18px 26px;border-radius:22px;background:#fff;box-shadow:0 20px 60px rgba(0,0,0,.5)">${COSTCO(360)}</div>`, 'left:338px;top:200px', W('C01', 0) - .05);
+logoIn(sc('cost'), `<div style="padding:10px 16px;border-radius:16px;background:#fff">${COSTCO(220)}</div>`, 'left:812px;top:236px', S('cost') + .2);
+logoIn(sc('how'), `<div style="padding:10px 18px;border-radius:16px;background:#fff">${COSTCO(250)}</div>`, 'left:415px;top:330px', S('how') + .15);
+logoIn(sc('fees'), `<div style="padding:8px 14px;border-radius:14px;background:#fff">${COSTCO(200)}</div>`, 'left:440px;top:422px', S('fees') + .2);
+logoIn(sc('renew'), `<div style="padding:6px 12px;border-radius:12px;background:#fff">${COSTCO(190)}</div>`, 'left:700px;top:250px', W('C08', 0));
+logoIn(sc('outro'), `<div style="padding:10px 16px;border-radius:16px;background:#fff">${COSTCO(220)}</div>`, 'left:430px;top:150px', S('outro') + .1, TOTAL - .5);
+// food-court menu board beside the meter (real combo contents)
+{ const m = put(sc('cost'), svg(`<div style="width:300px;padding:22px;border-radius:18px;background:#111;border:3px solid #ffcf3a;font:700 30px/1.5 'JetBrains Mono';color:#fff4d6"><div style="color:#ffcf3a;font:400 40px/1 'Anton';margin-bottom:10px">COMBO</div>¼-lb beef hot dog<br>20 oz soda<br><span style="color:#ffcf3a;font-size:44px">$1.50</span></div>`, 'left:760px;top:430px'));
+  up(m, W('C05', 2), 30); }
 
 // a slow camera drift on every scene so no beat ever sits still
 R.tim.scenes.forEach(x => { const h = sc(x.id); tl.fromTo(h, { y: 0 }, { y: -18, duration: E(x.id) - S(x.id), ease: 'sine.inOut', immediateRender: false }, S(x.id)); });

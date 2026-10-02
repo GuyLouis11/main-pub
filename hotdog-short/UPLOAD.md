@@ -18,7 +18,7 @@ Is the membership worth it? Tell me in the comments.
 Sources:
 • Costco Wholesale Corp., Form 10-K for fiscal year ended Aug 31, 2025
 • Costco CFO on the food court ("not making a lot or any" profit), and the 2013 Sinegal–Jelinek exchange, as widely reported
-Educational content, not financial advice.
+Educational content, not financial advice. Not affiliated with or endorsed by Costco Wholesale.
 
 #Costco #Money #Business #Finance #MoneyFacts #Shorts
 
