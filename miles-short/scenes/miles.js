@@ -113,7 +113,7 @@ const f0 = put('#stage', svg(`<div id="f0p" style="position:absolute;left:390px;
 {
   through('united');
   const host = sc('united'), tJust = W('A05', 3), t20 = W('A05', 6), tUn = W('A05', 7), tBor = W('A05', 8), tProg = W('A05', 12), tVal = W('A05', 15), t22 = W('A05', 17);
-  const not = put(host, svg(`<div class="anton" style="font-size:88px;color:#fff">NOT JUST <span style="color:${SKY}">DELTA</span></div>`, 'left:0;top:190px;width:1080px;text-align:center')); up(not, tJust - .3, 30);
+  const not = put(host, svg(`<div class="anton" style="font-size:88px;color:#fff">NOT JUST <span style="color:${SKY}">DELTA</span></div>`, 'left:0;top:190px;width:1080px;text-align:center')); up(not, S('united') + .05, 30);
   const doc = put(host, svg(`<div class="paper" style="position:relative;width:640px;height:560px;padding:44px">
     <div class="mono" style="font-size:28px;color:#5b6b63">LOAN · <span id="yr">2020</span></div>
     <div class="anton" style="font-size:64px;margin-top:16px;color:#101418">UNITED AIRLINES</div>
@@ -122,7 +122,7 @@ const f0 = put('#stage', svg(`<div id="f0p" style="position:absolute;left:390px;
     <div id="coll" class="anton" style="font-size:60px;margin-top:10px;color:#1b5a8f">THE MILES PROGRAM</div>
     <div id="valL" class="mono" style="font-size:30px;margin-top:34px;color:#5b6b63">APPRAISED VALUE:</div>
     <div id="valN" class="big" style="font-size:80px;margin-top:8px;color:#0c7a45">$0</div></div>`, 'left:220px;top:320px'));
-  tl.set(doc, { opacity: 0, y: 80, rotation: -3 }, 0); tl.to(doc, { opacity: 1, y: 0, rotation: 0, duration: .4, ease: 'power3.out' }, t20 - .2); cue(t20 - .2, 'paper', .6);
+  tl.set(doc, { opacity: 0, y: 80, rotation: -3 }, 0); tl.to(doc, { opacity: 1, y: 0, rotation: 0, duration: .4, ease: 'power3.out' }, S('united') + .12); cue(S('united') + .12, 'paper', .6); tl.to('#yr', { color: '#1b5a8f', duration: .2, yoyo: true, repeat: 1 }, t20);
   tl.set('#coll', { opacity: 0 }, 0); tl.to('#coll', { opacity: 1, duration: .2 }, tProg - .1); cue(tProg - .1, 'stamp', .5);
   tl.set('#valL, #valN', { opacity: 0 }, 0); tl.to('#valL, #valN', { opacity: 1, duration: .2 }, tVal - .1);
   R.count('#valN', tVal, t22 - tVal + .3, 0, 21.9, v => '$' + v.toFixed(1) + 'B', 'power3.out'); cue(tVal, 'counter', .5, 0, { dur: t22 - tVal + .3 });
@@ -170,13 +170,54 @@ const f0 = put('#stage', svg(`<div id="f0p" style="position:absolute;left:390px;
   const card = put(host, svg(CARD('MILES CARD', 'earns miles on every purchase'), 'left:260px;top:220px'));
   up(card, S('outro') + .05, 60);
   tl.to(card, { x: 120, rotation: 4, duration: .25, yoyo: true, repeat: 1, ease: 'power2.inOut' }, tSw - .1); cue(tSw, 'swipe', .7);
-  const paid = put(host, svg(`<div class="stamp green" style="position:relative;font-size:72px">AIRLINE GETS PAID ✓</div>`, 'left:540px;top:640px')); center(paid);
+  const paid = put(host, svg(`<div class="stamp green" style="position:relative;font-size:72px">AIRLINE GETS PAID ✓</div>`, 'left:540px;top:690px')); center(paid);
   slam(paid, tPaid - .1); cue(tPaid + .1, 'coins', .8); R.shake(tPaid + .1, 10, .25);
   const q = put(host, svg(`<div class="qcard" style="position:relative;left:0"><div class="anton" style="font-size:66px;color:#fff">DO YOU PAY WITH A</div><div class="anton greentx" style="font-size:96px;margin-top:6px">MILES CARD?</div><div class="mono" style="font-size:32px;color:#dbe9f7;margin-top:18px">Worth it or a trap? Comment 👇</div></div>`, 'left:90px;top:820px;width:900px'));
   up(q, tEnd - .1, 60, .35); cue(tEnd - .1, 'whoosh', .5);
   tl.to(q, { scale: 1.04, duration: .3, yoyo: true, repeat: 1, transformOrigin: '50% 50%' }, tEnd + .35);
   tl.to(host, { opacity: 0, duration: .3 }, TOTAL - .45);
   tl.set(f0, { y: 0, scale: 1 }, TOTAL - .5); tl.to(f0, { opacity: 1, duration: .3 }, TOTAL - .45);
+}
+
+/* ================= polish pass: punch-ins, riders, extra detail ================= */
+const punch = (t, a = 1.05) => { tl.to('#stage', { scale: a, duration: .12, ease: 'power2.out', transformOrigin: '50% 40%' }, t).to('#stage', { scale: 1, duration: .38, ease: 'power2.inOut' }, t + .12); };
+const rider = (pathSel, host, t0, dur, n, html, gap) => {
+  const p = $(pathSel), L = p.getTotalLength(), box = p.ownerSVGElement;
+  for (let i = 0; i < n; i++) {
+    const d = div('', host, html, 'left:0;top:0'), pr = { u: 0 };
+    const mv = () => { const pt = p.getPointAtLength(pr.u * L), m = box.getScreenCTM(), hm = host.getScreenCTM ? null : host.getBoundingClientRect();
+      const r = box.getBoundingClientRect(), hr = host.getBoundingClientRect(), vb = box.viewBox.baseVal, sx = r.width / vb.width, sy = r.height / vb.height;
+      d.style.transform = `translate(${r.left - hr.left + pt.x * sx - 22}px, ${r.top - hr.top + pt.y * sy - 22}px)`; };
+    const t = t0 + i * gap;
+    tl.set(d, { opacity: 0 }, 0); tl.to(d, { opacity: 1, duration: .1 }, t);
+    tl.fromTo(pr, { u: 0 }, { u: 1, duration: dur, ease: 'none', onUpdate: mv, onStart: mv, immediateRender: false }, t);
+    tl.to(d, { opacity: 0, duration: .15 }, t + dur - .15);
+  }
+};
+const src = (host, txt, t) => { const e = div('mono', host, txt, 'left:0;top:1176px;width:1080px;text-align:center;font-size:22px;color:rgba(219,233,247,.6);letter-spacing:2px'); tl.set(e, { opacity: 0 }, 0); tl.to(e, { opacity: 1, duration: .3 }, t); };
+
+[[ 'A01', 4 ], [ 'A03', 0 ], [ 'A04', 1 ], [ 'A05', 17 ], [ 'A06', 9 ], [ 'A07', 12 ], [ 'A08', 10 ]].forEach(([id, k]) => punch(W(id, k)));
+// hook: the plane leaves a contrail across the frame
+{
+  const tr = put('#stage', svg(`<svg viewBox="0 0 1080 400" style="width:1080px;height:400px;overflow:visible"><path id="trail" d="M-40,360 C300,300 600,120 1120,80" stroke="rgba(219,233,247,.55)" stroke-width="10" fill="none" stroke-linecap="round" stroke-dasharray="2 18"/></svg>`, 'left:0;top:160px'));
+  R.draw('#trail', .05, 1.6, 'power1.inOut'); tl.to(tr, { opacity: 0, duration: .3 }, E('hook') - .3);
+  tl.to('#f0p', { x: 30, rotation: 6, duration: 1.4, ease: 'sine.inOut', yoyo: true, repeat: 1 }, .05);
+}
+// profit + united: sources on screen
+src(sc('profit'), 'source: Delta Air Lines full-year 2025 results', W('A04', 5));
+// side: a stream of $ from banks back to the airline
+{
+  const host = sc('side'), t0 = W('A07', 9) + .2;
+  for (let i = 0; i < 10; i++) { const d = div('mono', host, '$', `left:540px;top:900px;font-size:58px;color:${GOLD};text-shadow:0 0 14px ${GOLD}`);
+    const t = t0 + i * .12; tl.set(d, { opacity: 0 }, 0); tl.to(d, { opacity: 1, duration: .06 }, t); tl.to(d, { x: 230 + (i % 3) * 20, y: -560 + (i % 2) * 30, duration: .7, ease: 'power1.in' }, t); tl.to(d, { opacity: 0, duration: .1 }, t + .6); }
+  cue(t0, 'coins', .4, .3);
+}
+// outro: a running "miles → $" ticker under the card
+{
+  const host = sc('outro'), t = W('A08', 1);
+  const tk = put(host, svg(`<div class="mono" id="tkN" style="font-size:44px;color:${GOLD}">AIRLINE EARNS: $0</div>`, 'left:540px;top:610px')); center(tk);
+  tl.set(tk, { opacity: 0 }, 0); tl.to(tk, { opacity: 1, duration: .2 }, t);
+  R.count('#tkN', t, W('A08', 10) - t, 0, 38, v => 'AIRLINE EARNS: $' + v.toFixed(2) + ' per $1,000', 'power1.in');
 }
 
 // a slow camera drift on every scene so no beat ever sits still

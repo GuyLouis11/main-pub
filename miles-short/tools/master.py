@@ -16,7 +16,7 @@ ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 SR = 48000
 
 
-def limit(x, ceil=10 ** (-1.5 / 20), look=.004, rel=.08):
+def limit(x, ceil=10 ** (-1.8 / 20), look=.004, rel=.08):
     pk = maximum_filter1d(np.abs(x).max(1), int(SR * look) * 2 + 1)
     g = np.minimum(1, ceil / np.maximum(pk, 1e-9))
     g = np.minimum(g, uniform_filter1d(g, int(SR * look) * 2 + 1))          # smooth attack

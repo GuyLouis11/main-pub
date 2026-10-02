@@ -74,7 +74,7 @@ center('#tag0');
     <text x="60" y="690" fill="#fff4d6" font-family="JetBrains Mono" font-size="28">1984</text><text x="790" y="690" fill="#fff4d6" font-family="JetBrains Mono" font-size="28">2026</text>
     <path id="cpi" d="M60,600 C200,560 300,500 420,430 S640,260 880,110" stroke="${KET}" stroke-width="12" fill="none" stroke-linecap="round"/>
     <path id="flat" d="M60,600 L880,600" stroke="${MUST}" stroke-width="12" fill="none" stroke-linecap="round"/>
-    <text id="cpiL" x="600" y="110" fill="${KET}" font-family="Anton" font-size="46">EVERYTHING ELSE ×3</text>
+    <text id="cpiL" x="440" y="110" fill="${KET}" font-family="Anton" font-size="46">EVERYTHING ELSE ×3</text>
     <text id="flatL" x="520" y="570" fill="${MUST}" font-family="Anton" font-size="46">HOT DOG $1.50</text></svg>`, 'left:90px;top:260px'));
   R.draw('#cpi', tP, tTr - tP + .4); cue(tP, 'riser', .4, 0, { dur: tTr - tP + .4 });
   pop('#cpiL', tTr, .5); cue(tTr, 'impact', .5);
@@ -96,7 +96,7 @@ center('#tag0');
   pop(cal, t13 - .1); cue(t13 - .1, 'paper', .5);
   const person = (x, label, hue) => put(host, svg(`<svg viewBox="0 0 200 300" style="width:200px;height:300px"><circle cx="100" cy="60" r="46" fill="${hue}"/><path d="M20,300 L34,150 Q100,118 166,150 L180,300 Z" fill="${hue}"/></svg><div class="tag" style="position:absolute;left:50%;top:310px;transform:translateX(-50%);font-size:28px">${label}</div>`, `left:${x}px;top:470px`));
   const ceo = person(130, 'CEO', '#c9b8a0'), fou = person(750, 'FOUNDER', '#e9d4b0');
-  up(ceo, tCEO - .1); up(fou, tFou - .1); cue(tCEO, 'pop', .4, -.5); cue(tFou, 'pop', .4, .5);
+  up(ceo, S('quote') + .15); up(fou, S('quote') + .3); tl.to(ceo, { y: -14, duration: .25, yoyo: true, repeat: 1 }, tCEO); tl.to(fou, { y: -14, duration: .25, yoyo: true, repeat: 1 }, tFou); cue(tCEO, 'pop', .4, -.5); cue(tFou, 'pop', .4, .5);
   const ask = put(host, svg(`<div class="paper" style="position:relative;padding:20px 28px;font:800 54px/1 'Unbounded';color:#101418">$1.75?</div>`, 'left:300px;top:400px'));
   pop(ask, tRaise - .1, .3); cue(tRaise - .1, 'bloop', .5, -.4, { f: 600 });
   tl.to([ceo, ask], { opacity: .35, duration: .3 }, tAns);
@@ -134,7 +134,7 @@ center('#tag0');
   through('how');
   const host = sc('how'), tStore = W('C06', 4), tBil = W('C06', 11);
   const store = put(host, svg(`<svg viewBox="0 0 700 420" style="width:700px;height:420px"><rect x="40" y="120" width="620" height="280" fill="#2a2a32"/><path d="M20,130 L350,20 L680,130 Z" fill="${KET}"/><rect x="290" y="250" width="120" height="150" fill="#14141a"/><g fill="${MUST}" opacity=".85"><rect x="90" y="190" width="140" height="80"/><rect x="470" y="190" width="140" height="80"/></g><text x="350" y="105" text-anchor="middle" font-family="Anton" font-size="44" fill="#fff">WAREHOUSE</text></svg>`, 'left:190px;top:240px'));
-  up(store, tStore - .2, 60); cue(tStore - .2, 'thud', .5);
+  up(store, S('how') + .05, 60); cue(S('how') + .05, 'thud', .5);
   const big = put(host, svg(`<div class="big greentx" style="font-size:150px">BILLIONS?</div>`, 'left:540px;top:760px'));
   center(big); tl.set(big, { opacity: 0, scale: 2.2 }, 0); tl.to(big, { opacity: 1, scale: 1, duration: .22, ease: 'power4.in' }, tBil - .12); cue(tBil + .1, 'impact', .8); R.shake(tBil + .1, 16, .3);
   for (let i = 0; i < 18; i++) { const c = div('', host, null, `left:540px;top:640px;width:46px;height:46px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff6d0,${MUST} 50%,#a8700a)`);
@@ -147,7 +147,7 @@ center('#tag0');
   const host = sc('fees'), t104 = W('C07', 4), tOp = W('C07', 7), t53 = W('C07', 9), tOne = W('C07', 15);
   const kick = put(host, svg(`<div class="kick" style="position:relative;width:1080px;color:#fff4d6">operating profit · fiscal 2025</div>`, 'left:0;top:200px')); up(kick, S('fees') + .05, 20);
   const n = put(host, svg(`<div id="opN" class="big greentx" style="font-size:150px">$0</div>`, 'left:540px;top:260px')); center(n);
-  tl.set(n, { opacity: 0 }, 0); tl.to(n, { opacity: 1, duration: .15 }, t104 - .1);
+  tl.set(n, { opacity: 0 }, 0); tl.to(n, { opacity: 1, duration: .15 }, S('fees') + .05); tl.set('#opN', { textContent: '$?' }, S('fees') + .04);
   R.count('#opN', t104 - .1, .8, 0, 10.4, v => '$' + v.toFixed(1) + 'B', 'power3.out'); cue(t104 - .1, 'counter', .5, 0, { dur: .8 });
   const bar = put(host, svg(`<div style="position:relative;width:900px;height:200px;border-radius:24px;overflow:hidden;background:rgba(255,244,214,.08);border:3px solid rgba(255,244,214,.3)">
     <div id="barAll" style="position:absolute;left:0;top:0;width:100%;height:100%;background:linear-gradient(90deg,#8a6a1a,${MUST});transform-origin:0 50%"></div>
@@ -193,7 +193,7 @@ center('#tag0');
   tl.set(x, { opacity: 0, scale: 2, rotation: -6 }, 0); tl.to(x, { opacity: 1, scale: 1, duration: .2, ease: 'power4.in' }, tProd - .05); cue(tProd + .15, 'stamp', .8);
   // the loop: home → store → hot dog → renew → home
   const loop = put(host, svg(`<svg viewBox="0 0 900 360" style="width:900px;height:360px;overflow:visible"><path id="lp" d="M450,40 C800,40 800,320 450,320 C100,320 100,40 450,40" stroke="${MUST}" stroke-width="10" fill="none" stroke-dasharray="20 16"/>
-    <g font-family="Anton" font-size="44" fill="#fff4d6" text-anchor="middle"><text x="450" y="24">VISIT</text><text x="830" y="190">HOT DOG</text><text x="450" y="370">RENEW</text><text x="70" y="190">REPEAT</text></g></svg>`, 'left:90px;top:800px'));
+    <g font-family="Anton" font-size="58" fill="#fff4d6" text-anchor="middle"><text x="450" y="24">VISIT</text><text x="830" y="190">HOT DOG</text><text x="450" y="370">RENEW</text><text x="70" y="190">REPEAT</text></g></svg>`, 'left:90px;top:800px'));
   R.draw('#lp', tReason - .2, .7); cue(tReason - .2, 'riser', .4, 0, { dur: .7 });
   tl.to('#lp', { attr: { 'stroke-dashoffset': -144 }, duration: E('bait') - tReason, ease: 'none' }, tReason + .5);
   tl.to(dog, { scale: 1.08, duration: .3, yoyo: true, repeat: 1, transformOrigin: '50% 60%' }, tBack);
@@ -213,6 +213,43 @@ center('#tag0');
   tl.to(host, { opacity: 0, duration: .3 }, TOTAL - .45);
   tl.set(f0, { y: 0, scale: 1 }, TOTAL - .5); tl.to(f0, { opacity: 1, duration: .3 }, TOTAL - .45);
 }
+
+/* ================= polish pass: punch-ins, riders, extra detail ================= */
+const punch = (t, a = 1.05) => { tl.to('#stage', { scale: a, duration: .12, ease: 'power2.out', transformOrigin: '50% 40%' }, t).to('#stage', { scale: 1, duration: .38, ease: 'power2.inOut' }, t + .12); };
+const rider = (pathSel, host, t0, dur, n, html, gap) => {
+  const p = $(pathSel), L = p.getTotalLength(), box = p.ownerSVGElement;
+  for (let i = 0; i < n; i++) {
+    const d = div('', host, html, 'left:0;top:0'), pr = { u: 0 };
+    const mv = () => { const pt = p.getPointAtLength(pr.u * L), m = box.getScreenCTM(), hm = host.getScreenCTM ? null : host.getBoundingClientRect();
+      const r = box.getBoundingClientRect(), hr = host.getBoundingClientRect(), vb = box.viewBox.baseVal, sx = r.width / vb.width, sy = r.height / vb.height;
+      d.style.transform = `translate(${r.left - hr.left + pt.x * sx - 22}px, ${r.top - hr.top + pt.y * sy - 22}px)`; };
+    const t = t0 + i * gap;
+    tl.set(d, { opacity: 0 }, 0); tl.to(d, { opacity: 1, duration: .1 }, t);
+    tl.fromTo(pr, { u: 0 }, { u: 1, duration: dur, ease: 'none', onUpdate: mv, onStart: mv, immediateRender: false }, t);
+    tl.to(d, { opacity: 0, duration: .15 }, t + dur - .15);
+  }
+};
+const src = (host, txt, t) => { const e = div('mono', host, txt, 'left:0;top:1176px;width:1080px;text-align:center;font-size:22px;color:rgba(255,244,214,.6);letter-spacing:2px'); tl.set(e, { opacity: 0 }, 0); tl.to(e, { opacity: 1, duration: .3 }, t); };
+
+[[ 'C01', 10 ], [ 'C02', 4 ], [ 'C04', 11 ], [ 'C06', 11 ], [ 'C07', 9 ], [ 'C08', 0 ], [ 'C10', 7 ]].forEach(([id, k]) => punch(W(id, k)));
+// inflation: a marker rides the "everything else" curve while a multiplier climbs to ×3
+{
+  const host = sc('tripled'), tP = W('C02', 0), tTr = W('C02', 4);
+  rider('#cpi', host, tP + .05, tTr - tP + .35, 1, `<div style="width:44px;height:44px;border-radius:50%;background:${KET};box-shadow:0 0 24px ${KET};border:5px solid #fff"></div>`, 0);
+  const mult = put(host, svg(`<div class="big" id="multN" style="font-size:110px;color:${KET};text-shadow:0 0 30px rgba(232,50,43,.6)">×1.0</div>`, 'left:600px;top:960px'));
+  tl.set(mult, { opacity: 0 }, 0); tl.to(mult, { opacity: 1, duration: .2 }, tP);
+  R.count('#multN', tP, tTr - tP + .35, 1, 3, v => '×' + v.toFixed(1), 'power1.in'); cue(tP, 'counter', .35, .3, { dur: tTr - tP + .35 });
+  const hd = put(host, svg(`<div class="big" style="font-size:110px;color:${MUST};text-shadow:0 0 30px rgba(255,207,58,.6)">×1.0</div>`, 'left:140px;top:960px'));
+  up(hd, W('C02', 7), 30);
+  tl.to(hd, { x: 8, duration: .06, yoyo: true, repeat: 5 }, W('C02', 10)); 
+}
+// how: the food-court profit chip
+{ const host = sc('how'); const c = put(host, svg(`<div class="tag" style="position:relative;font-size:34px;border-color:${KET};color:#ffd6d1">FOOD COURT PROFIT ≈ $0</div>`, 'left:540px;top:690px')); center(c); up(c, W('C06', 6) - .1, 20); cue(W('C06', 6), 'blip', .35, 0, { f: 700 }); }
+// fees: source chip; the bar outline appears with the scene
+src(sc('fees'), 'source: Costco Form 10-K, fiscal year ended Aug 31, 2025', W('C07', 4));
+src(sc('renew'), 'membership fee revenue $5.3B · FY2025', W('C08', 1));
+// bait: shoppers travel the loop forever
+rider('#lp', sc('bait'), W('C09', 8) - .1, 2.2, 5, `<svg viewBox="0 0 60 100" style="width:44px;height:74px"><circle cx="30" cy="20" r="16" fill="${MUST}"/><path d="M4,100 L8,52 Q30,38 52,52 L56,100 Z" fill="${MUST}"/></svg>`, .35);
 
 // a slow camera drift on every scene so no beat ever sits still
 R.tim.scenes.forEach(x => { const h = sc(x.id); tl.fromTo(h, { y: 0 }, { y: -18, duration: E(x.id) - S(x.id), ease: 'sine.inOut', immediateRender: false }, S(x.id)); });
