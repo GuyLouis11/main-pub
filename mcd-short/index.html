@@ -1,0 +1,895 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<title>McDonald's Is a Landlord</title>
+<link rel="stylesheet" href="shared/show.css" />
+<script src="shared/vendor/gsap.min.js"></script>
+<script src="shared/rt.js"></script>
+<script id="timing" type="application/json">
+{
+ "title": "McDonald's Is a Landlord",
+ "seed": 1955,
+ "defaults": {
+  "lead": 0.12,
+  "gap": 0.2,
+  "tail": 0.18
+ },
+ "scenes": [
+  {
+   "id": "hook",
+   "min": 0,
+   "xin": 0,
+   "vo": [
+    "M01"
+   ],
+   "lead": 0.45
+  },
+  {
+   "id": "rent",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "M02"
+   ]
+  },
+  {
+   "id": "land",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "M03"
+   ]
+  },
+  {
+   "id": "vs",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "M04"
+   ],
+   "tail": 0.3
+  },
+  {
+   "id": "quote",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "M05",
+    "M06"
+   ],
+   "tail": 0.3
+  },
+  {
+   "id": "door",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "M07"
+   ]
+  },
+  {
+   "id": "outro",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "M08"
+   ],
+   "tail": 2.6
+  }
+ ],
+ "vo": {
+  "M01": {
+   "text": "You've eaten at McDonald's. But you've never seen its biggest business: *$10.4 billion* a year, from something you *can't eat.*",
+   "estimate": 7.41,
+   "dur": 8.558,
+   "words": [
+    [
+     "You've",
+     0.15,
+     0.31,
+     false
+    ],
+    [
+     "eaten",
+     0.39,
+     0.55,
+     false
+    ],
+    [
+     "at",
+     0.63,
+     0.71,
+     false
+    ],
+    [
+     "McDonald's.",
+     0.83,
+     1.777,
+     false
+    ],
+    [
+     "But",
+     1.803,
+     1.83,
+     false
+    ],
+    [
+     "you've",
+     1.91,
+     2.15,
+     false
+    ],
+    [
+     "never",
+     2.23,
+     2.47,
+     false
+    ],
+    [
+     "seen",
+     2.55,
+     2.71,
+     false
+    ],
+    [
+     "its",
+     2.87,
+     3.03,
+     false
+    ],
+    [
+     "biggest",
+     3.11,
+     3.43,
+     false
+    ],
+    [
+     "business:",
+     3.51,
+     4.31,
+     false
+    ],
+    [
+     "$10.4",
+     4.39,
+     5.27,
+     true
+    ],
+    [
+     "billion",
+     5.35,
+     6.15,
+     true
+    ],
+    [
+     "a",
+     6.23,
+     6.31,
+     false
+    ],
+    [
+     "year,",
+     6.39,
+     6.95,
+     false
+    ],
+    [
+     "from",
+     7.03,
+     7.11,
+     false
+    ],
+    [
+     "something",
+     7.31,
+     7.51,
+     false
+    ],
+    [
+     "you",
+     7.59,
+     7.67,
+     false
+    ],
+    [
+     "can't",
+     7.75,
+     8.07,
+     true
+    ],
+    [
+     "eat.",
+     8.15,
+     8.558,
+     true
+    ]
+   ]
+  },
+  "M02": {
+   "text": "It's *rent.* About *95%* of McDonald's restaurants are run by franchisees. And most of them pay rent… to *McDonald's.*",
+   "estimate": 7.04,
+   "dur": 8.334,
+   "words": [
+    [
+     "It's",
+     0.149,
+     0.24,
+     false
+    ],
+    [
+     "rent.",
+     0.32,
+     1.0,
+     true
+    ],
+    [
+     "About",
+     1.36,
+     1.68,
+     false
+    ],
+    [
+     "95%",
+     1.76,
+     2.64,
+     true
+    ],
+    [
+     "of",
+     2.68,
+     2.72,
+     false
+    ],
+    [
+     "McDonald's",
+     2.84,
+     3.28,
+     false
+    ],
+    [
+     "restaurants",
+     3.56,
+     3.84,
+     false
+    ],
+    [
+     "are",
+     3.92,
+     4.08,
+     false
+    ],
+    [
+     "run",
+     4.16,
+     4.24,
+     false
+    ],
+    [
+     "by",
+     4.32,
+     4.48,
+     false
+    ],
+    [
+     "franchisees.",
+     4.52,
+     5.64,
+     false
+    ],
+    [
+     "And",
+     5.68,
+     5.84,
+     false
+    ],
+    [
+     "most",
+     5.92,
+     6.0,
+     false
+    ],
+    [
+     "of",
+     6.08,
+     6.16,
+     false
+    ],
+    [
+     "them",
+     6.28,
+     6.4,
+     false
+    ],
+    [
+     "pay",
+     6.52,
+     6.64,
+     false
+    ],
+    [
+     "rent…",
+     6.96,
+     7.307,
+     false
+    ],
+    [
+     "to",
+     7.333,
+     7.36,
+     false
+    ],
+    [
+     "McDonald's.",
+     7.44,
+     8.334,
+     true
+    ]
+   ]
+  },
+  "M03": {
+   "text": "In its biggest markets, McDonald's owns the land under more than *half* its restaurants, and about *80%* of the buildings.",
+   "estimate": 7.41,
+   "dur": 6.92,
+   "words": [
+    [
+     "In",
+     0.092,
+     0.11,
+     false
+    ],
+    [
+     "its",
+     0.23,
+     0.35,
+     false
+    ],
+    [
+     "biggest",
+     0.39,
+     0.67,
+     false
+    ],
+    [
+     "markets,",
+     0.75,
+     1.31,
+     false
+    ],
+    [
+     "McDonald's",
+     1.39,
+     1.95,
+     false
+    ],
+    [
+     "owns",
+     2.03,
+     2.27,
+     false
+    ],
+    [
+     "the",
+     2.31,
+     2.35,
+     false
+    ],
+    [
+     "land",
+     2.51,
+     2.67,
+     false
+    ],
+    [
+     "under",
+     2.75,
+     2.99,
+     false
+    ],
+    [
+     "more",
+     3.07,
+     3.15,
+     false
+    ],
+    [
+     "than",
+     3.27,
+     3.39,
+     false
+    ],
+    [
+     "half",
+     3.47,
+     3.71,
+     true
+    ],
+    [
+     "its",
+     3.83,
+     3.95,
+     false
+    ],
+    [
+     "restaurants,",
+     4.27,
+     4.63,
+     false
+    ],
+    [
+     "and",
+     4.67,
+     4.75,
+     false
+    ],
+    [
+     "about",
+     4.83,
+     5.07,
+     false
+    ],
+    [
+     "80%",
+     5.15,
+     5.87,
+     true
+    ],
+    [
+     "of",
+     5.95,
+     6.03,
+     false
+    ],
+    [
+     "the",
+     6.07,
+     6.11,
+     false
+    ],
+    [
+     "buildings.",
+     6.23,
+     6.92,
+     false
+    ]
+   ]
+  },
+  "M04": {
+   "text": "The royalties on all those burgers? About *$6 billion.* The rent? *$10.4 billion.*",
+   "estimate": 4.81,
+   "dur": 7.12,
+   "words": [
+    [
+     "The",
+     0.02,
+     0.1,
+     false
+    ],
+    [
+     "royalties",
+     0.18,
+     0.58,
+     false
+    ],
+    [
+     "on",
+     0.66,
+     0.74,
+     false
+    ],
+    [
+     "all",
+     0.78,
+     0.82,
+     false
+    ],
+    [
+     "those",
+     0.9,
+     1.06,
+     false
+    ],
+    [
+     "burgers?",
+     1.18,
+     1.78,
+     false
+    ],
+    [
+     "About",
+     1.94,
+     2.26,
+     false
+    ],
+    [
+     "$6",
+     2.34,
+     2.58,
+     true
+    ],
+    [
+     "billion.",
+     2.74,
+     3.86,
+     true
+    ],
+    [
+     "The",
+     4.1,
+     4.18,
+     false
+    ],
+    [
+     "rent?",
+     4.38,
+     4.82,
+     false
+    ],
+    [
+     "$10.4",
+     5.06,
+     5.86,
+     true
+    ],
+    [
+     "billion.",
+     6.1,
+     7.12,
+     true
+    ]
+   ]
+  },
+  "M05": {
+   "text": "Back in the fifties, its finance chief Harry Sonneborn put it like this:",
+   "estimate": 4.81,
+   "dur": 4.44,
+   "words": [
+    [
+     "Back",
+     0.08,
+     0.24,
+     false
+    ],
+    [
+     "in",
+     0.28,
+     0.32,
+     false
+    ],
+    [
+     "the",
+     0.4,
+     0.48,
+     false
+    ],
+    [
+     "fifties,",
+     0.52,
+     1.2,
+     false
+    ],
+    [
+     "its",
+     1.28,
+     1.44,
+     false
+    ],
+    [
+     "finance",
+     1.52,
+     1.92,
+     false
+    ],
+    [
+     "chief",
+     2.0,
+     2.24,
+     false
+    ],
+    [
+     "Harry",
+     2.32,
+     2.56,
+     false
+    ],
+    [
+     "Sonneborn",
+     2.72,
+     3.28,
+     false
+    ],
+    [
+     "put",
+     3.36,
+     3.44,
+     false
+    ],
+    [
+     "it",
+     3.52,
+     3.6,
+     false
+    ],
+    [
+     "like",
+     3.72,
+     3.84,
+     false
+    ],
+    [
+     "this:",
+     3.92,
+     4.44,
+     false
+    ]
+   ]
+  },
+  "M06": {
+   "text": "*We are not technically in the food business. We are in the real estate business.*",
+   "estimate": 5.56,
+   "dur": 4.572,
+   "words": [
+    [
+     "We",
+     0.088,
+     0.168,
+     true
+    ],
+    [
+     "are",
+     0.208,
+     0.248,
+     false
+    ],
+    [
+     "not",
+     0.328,
+     0.568,
+     false
+    ],
+    [
+     "technically",
+     0.648,
+     1.208,
+     false
+    ],
+    [
+     "in",
+     1.248,
+     1.288,
+     false
+    ],
+    [
+     "the",
+     1.368,
+     1.528,
+     false
+    ],
+    [
+     "food",
+     1.648,
+     1.768,
+     false
+    ],
+    [
+     "business.",
+     1.848,
+     2.568,
+     false
+    ],
+    [
+     "We",
+     2.728,
+     2.808,
+     false
+    ],
+    [
+     "are",
+     2.848,
+     2.888,
+     false
+    ],
+    [
+     "in",
+     2.968,
+     3.048,
+     false
+    ],
+    [
+     "the",
+     3.128,
+     3.208,
+     false
+    ],
+    [
+     "real",
+     3.288,
+     3.448,
+     false
+    ],
+    [
+     "estate",
+     3.528,
+     3.848,
+     false
+    ],
+    [
+     "business.",
+     3.928,
+     4.572,
+     true
+    ]
+   ]
+  },
+  "M07": {
+   "text": "The burger gets you in the door. The door is what *they own.*",
+   "estimate": 4.81,
+   "dur": 4.012,
+   "words": [
+    [
+     "The",
+     0.0,
+     0.15,
+     false
+    ],
+    [
+     "burger",
+     0.31,
+     0.47,
+     false
+    ],
+    [
+     "gets",
+     0.55,
+     0.79,
+     false
+    ],
+    [
+     "you",
+     0.83,
+     0.87,
+     false
+    ],
+    [
+     "in",
+     0.95,
+     1.03,
+     false
+    ],
+    [
+     "the",
+     1.07,
+     1.11,
+     false
+    ],
+    [
+     "door.",
+     1.19,
+     1.83,
+     false
+    ],
+    [
+     "The",
+     2.07,
+     2.23,
+     false
+    ],
+    [
+     "door",
+     2.55,
+     2.87,
+     false
+    ],
+    [
+     "is",
+     2.95,
+     3.03,
+     false
+    ],
+    [
+     "what",
+     3.11,
+     3.19,
+     false
+    ],
+    [
+     "they",
+     3.27,
+     3.43,
+     true
+    ],
+    [
+     "own.",
+     3.51,
+     4.012,
+     true
+    ]
+   ]
+  },
+  "M08": {
+   "text": "*Your Big Mac pays the rent.*",
+   "estimate": 2.22,
+   "dur": 2.07,
+   "words": [
+    [
+     "Your",
+     0.07,
+     0.23,
+     true
+    ],
+    [
+     "Big",
+     0.31,
+     0.39,
+     false
+    ],
+    [
+     "Mac",
+     0.47,
+     0.79,
+     false
+    ],
+    [
+     "pays",
+     1.03,
+     1.27,
+     false
+    ],
+    [
+     "the",
+     1.35,
+     1.43,
+     false
+    ],
+    [
+     "rent.",
+     1.51,
+     2.07,
+     true
+    ]
+   ]
+  }
+ },
+ "total": 50.416
+}
+</script>
+</head>
+<body>
+<div id="root" data-composition-id="mcd" data-start="0" data-duration="50.416" data-width="1080" data-height="1920">
+  <audio id="music" src="assets/audio/music.wav" data-start="0" data-duration="50.416" data-volume="0.75" data-track-index="20"></audio>
+  <audio id="sfx" src="assets/audio/sfx.wav" data-start="0" data-duration="50.416" data-volume="0.85" data-track-index="21"></audio>
+  <!-- VO:BEGIN (generated by tools/bake.py) -->
+  <audio id="vo_m01" src="assets/vo/M01.wav" data-start="0.450" data-duration="8.558" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_m02" src="assets/vo/M02.wav" data-start="9.158" data-duration="8.334" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_m03" src="assets/vo/M03.wav" data-start="17.642" data-duration="6.920" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_m04" src="assets/vo/M04.wav" data-start="24.712" data-duration="7.120" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_m05" src="assets/vo/M05.wav" data-start="32.102" data-duration="4.440" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_m06" src="assets/vo/M06.wav" data-start="36.742" data-duration="4.572" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_m07" src="assets/vo/M07.wav" data-start="41.584" data-duration="4.012" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_m08" src="assets/vo/M08.wav" data-start="45.746" data-duration="2.070" data-volume="1" data-track-index="22"></audio>
+  <!-- VO:END -->
+  <div id="bg"></div>
+  <div id="grid" data-drift="1"></div>
+  <canvas id="fx" width="1080" height="1920" data-drift="1"></canvas>
+  <div id="stage" class="abs" style="inset:0">
+    <div id="sc-hook" class="scene clip" data-scene="hook" data-start="0.000" data-duration="9.188" data-track-index="1"></div>
+    <div id="sc-rent" class="scene clip" data-scene="rent" data-start="9.038" data-duration="8.634" data-track-index="2"></div>
+    <div id="sc-land" class="scene clip" data-scene="land" data-start="17.522" data-duration="7.220" data-track-index="3"></div>
+    <div id="sc-vs" class="scene clip" data-scene="vs" data-start="24.592" data-duration="7.540" data-track-index="4"></div>
+    <div id="sc-quote" class="scene clip" data-scene="quote" data-start="31.982" data-duration="9.632" data-track-index="5"></div>
+    <div id="sc-door" class="scene clip" data-scene="door" data-start="41.464" data-duration="4.312" data-track-index="6"></div>
+    <div id="sc-outro" class="scene clip" data-scene="outro" data-start="45.626" data-duration="4.790" data-track-index="7"></div>
+  </div>
+  <div id="chips" data-layout-ignore></div>
+  <div id="vig" data-layout-ignore></div>
+  <div id="dim" data-layout-ignore style="position:absolute;inset:0;background:#000;opacity:0;z-index:45;pointer-events:none"></div>
+  <div id="caps"></div>
+  <div id="grain" data-layout-ignore></div>
+  <div id="flash"></div>
+  <div id="black"></div>
+</div>
+<script src="scenes/mcd.js"></script>
+<script>window.__timelines = window.__timelines || {}; window.__timelines['mcd'] = R.tl;</script>
+</body>
+</html>

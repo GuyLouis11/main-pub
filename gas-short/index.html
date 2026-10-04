@@ -1,0 +1,859 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<title>Gas Is the Bait</title>
+<link rel="stylesheet" href="shared/show.css" />
+<script src="shared/vendor/gsap.min.js"></script>
+<script src="shared/rt.js"></script>
+<script id="timing" type="application/json">
+{
+ "title": "Gas Is the Bait",
+ "seed": 2025,
+ "defaults": {
+  "lead": 0.12,
+  "gap": 0.2,
+  "tail": 0.18
+ },
+ "scenes": [
+  {
+   "id": "hook",
+   "min": 0,
+   "xin": 0,
+   "vo": [
+    "G01"
+   ],
+   "lead": 0.45
+  },
+  {
+   "id": "two",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "G02"
+   ]
+  },
+  {
+   "id": "swipe",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "G03"
+   ]
+  },
+  {
+   "id": "bait",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "G04"
+   ],
+   "tail": 0.3
+  },
+  {
+   "id": "split",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "G05"
+   ]
+  },
+  {
+   "id": "inside",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "G06"
+   ]
+  },
+  {
+   "id": "walk",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "G07"
+   ]
+  },
+  {
+   "id": "sign",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "G08"
+   ]
+  },
+  {
+   "id": "outro",
+   "min": 0,
+   "xin": 0.15,
+   "vo": [
+    "G09"
+   ],
+   "tail": 2.6
+  }
+ ],
+ "vo": {
+  "G01": {
+   "text": "Every time you fill up, the station makes about *13 cents* a gallon. So why does it *never stop* selling you gas?",
+   "estimate": 8.15,
+   "dur": 7.112,
+   "words": [
+    [
+     "Every",
+     0.061,
+     0.301,
+     false
+    ],
+    [
+     "time",
+     0.381,
+     0.461,
+     false
+    ],
+    [
+     "you",
+     0.541,
+     0.701,
+     false
+    ],
+    [
+     "fill",
+     0.781,
+     0.861,
+     false
+    ],
+    [
+     "up,",
+     0.941,
+     1.301,
+     false
+    ],
+    [
+     "the",
+     1.421,
+     1.501,
+     false
+    ],
+    [
+     "station",
+     1.701,
+     1.901,
+     false
+    ],
+    [
+     "makes",
+     2.021,
+     2.141,
+     false
+    ],
+    [
+     "about",
+     2.301,
+     2.461,
+     false
+    ],
+    [
+     "13",
+     2.541,
+     2.941,
+     true
+    ],
+    [
+     "cents",
+     3.101,
+     3.261,
+     true
+    ],
+    [
+     "a",
+     3.341,
+     3.421,
+     false
+    ],
+    [
+     "gallon.",
+     3.461,
+     4.181,
+     false
+    ],
+    [
+     "So",
+     4.461,
+     4.781,
+     false
+    ],
+    [
+     "why",
+     4.861,
+     4.941,
+     false
+    ],
+    [
+     "does",
+     5.021,
+     5.101,
+     false
+    ],
+    [
+     "it",
+     5.181,
+     5.341,
+     false
+    ],
+    [
+     "never",
+     5.421,
+     5.661,
+     true
+    ],
+    [
+     "stop",
+     5.741,
+     5.981,
+     true
+    ],
+    [
+     "selling",
+     6.061,
+     6.301,
+     false
+    ],
+    [
+     "you",
+     6.381,
+     6.461,
+     false
+    ],
+    [
+     "gas?",
+     6.701,
+     7.112,
+     false
+    ]
+   ]
+  },
+  "G02": {
+   "text": "Fill up fifteen gallons, and the owner clears about *two bucks.*",
+   "estimate": 4.07,
+   "dur": 4.12,
+   "words": [
+    [
+     "Fill",
+     0.13,
+     0.29,
+     false
+    ],
+    [
+     "up",
+     0.37,
+     0.45,
+     false
+    ],
+    [
+     "fifteen",
+     0.53,
+     0.93,
+     false
+    ],
+    [
+     "gallons,",
+     1.01,
+     1.81,
+     false
+    ],
+    [
+     "and",
+     1.97,
+     2.05,
+     false
+    ],
+    [
+     "the",
+     2.13,
+     2.21,
+     false
+    ],
+    [
+     "owner",
+     2.33,
+     2.45,
+     false
+    ],
+    [
+     "clears",
+     2.53,
+     2.81,
+     false
+    ],
+    [
+     "about",
+     2.85,
+     3.17,
+     false
+    ],
+    [
+     "two",
+     3.25,
+     3.33,
+     true
+    ],
+    [
+     "bucks.",
+     3.49,
+     4.12,
+     true
+    ]
+   ]
+  },
+  "G03": {
+   "text": "Your card swipe alone eats *8 cents* of every gallon.",
+   "estimate": 3.7,
+   "dur": 3.821,
+   "words": [
+    [
+     "Your",
+     0.06,
+     0.22,
+     false
+    ],
+    [
+     "card",
+     0.34,
+     0.46,
+     false
+    ],
+    [
+     "swipe",
+     0.54,
+     0.78,
+     false
+    ],
+    [
+     "alone",
+     1.02,
+     1.26,
+     false
+    ],
+    [
+     "eats",
+     1.34,
+     1.66,
+     false
+    ],
+    [
+     "8",
+     1.74,
+     1.98,
+     true
+    ],
+    [
+     "cents",
+     2.06,
+     2.38,
+     true
+    ],
+    [
+     "of",
+     2.46,
+     2.7,
+     false
+    ],
+    [
+     "every",
+     2.78,
+     3.02,
+     false
+    ],
+    [
+     "gallon.",
+     3.1,
+     3.82,
+     false
+    ]
+   ]
+  },
+  "G04": {
+   "text": "Because gas isn't the business. Gas is the *bait.*",
+   "estimate": 3.33,
+   "dur": 3.84,
+   "words": [
+    [
+     "Because",
+     0.033,
+     0.353,
+     false
+    ],
+    [
+     "gas",
+     0.433,
+     0.833,
+     false
+    ],
+    [
+     "isn't",
+     0.913,
+     1.153,
+     false
+    ],
+    [
+     "the",
+     1.233,
+     1.313,
+     false
+    ],
+    [
+     "business.",
+     1.593,
+     2.113,
+     false
+    ],
+    [
+     "Gas",
+     2.353,
+     2.753,
+     false
+    ],
+    [
+     "is",
+     2.833,
+     2.993,
+     false
+    ],
+    [
+     "the",
+     3.073,
+     3.153,
+     false
+    ],
+    [
+     "bait.",
+     3.233,
+     3.84,
+     true
+    ]
+   ]
+  },
+  "G05": {
+   "text": "Fuel is *65%* of what gas stations sell, but only about *39%* of their profit.",
+   "estimate": 5.56,
+   "dur": 6.31,
+   "words": [
+    [
+     "Fuel",
+     0.12,
+     0.36,
+     false
+    ],
+    [
+     "is",
+     0.44,
+     0.68,
+     false
+    ],
+    [
+     "65%",
+     0.76,
+     1.88,
+     true
+    ],
+    [
+     "of",
+     1.96,
+     2.04,
+     false
+    ],
+    [
+     "what",
+     2.12,
+     2.2,
+     false
+    ],
+    [
+     "gas",
+     2.28,
+     2.44,
+     false
+    ],
+    [
+     "stations",
+     2.52,
+     2.92,
+     false
+    ],
+    [
+     "sell,",
+     3.0,
+     3.56,
+     false
+    ],
+    [
+     "but",
+     3.68,
+     3.8,
+     false
+    ],
+    [
+     "only",
+     3.88,
+     4.04,
+     false
+    ],
+    [
+     "about",
+     4.12,
+     4.36,
+     false
+    ],
+    [
+     "39%",
+     4.44,
+     5.4,
+     true
+    ],
+    [
+     "of",
+     5.48,
+     5.56,
+     false
+    ],
+    [
+     "their",
+     5.64,
+     5.72,
+     false
+    ],
+    [
+     "profit.",
+     5.96,
+     6.31,
+     false
+    ]
+   ]
+  },
+  "G06": {
+   "text": "The rest comes from *inside:* coffee, hot dogs, energy drinks and snacks.",
+   "estimate": 4.07,
+   "dur": 5.21,
+   "words": [
+    [
+     "The",
+     0.08,
+     0.16,
+     false
+    ],
+    [
+     "rest",
+     0.32,
+     0.48,
+     false
+    ],
+    [
+     "comes",
+     0.6,
+     0.72,
+     false
+    ],
+    [
+     "from",
+     0.8,
+     0.88,
+     false
+    ],
+    [
+     "inside:",
+     0.96,
+     1.72,
+     true
+    ],
+    [
+     "coffee,",
+     1.92,
+     2.52,
+     false
+    ],
+    [
+     "hot",
+     2.64,
+     2.88,
+     false
+    ],
+    [
+     "dogs,",
+     3.12,
+     3.44,
+     false
+    ],
+    [
+     "energy",
+     3.52,
+     3.84,
+     false
+    ],
+    [
+     "drinks",
+     3.92,
+     4.24,
+     false
+    ],
+    [
+     "and",
+     4.32,
+     4.4,
+     false
+    ],
+    [
+     "snacks.",
+     4.48,
+     5.21,
+     false
+    ]
+   ]
+  },
+  "G07": {
+   "text": "And *57%* of drivers who fill up walk right in.",
+   "estimate": 3.7,
+   "dur": 3.67,
+   "words": [
+    [
+     "And",
+     0.02,
+     0.18,
+     false
+    ],
+    [
+     "57%",
+     0.26,
+     1.3,
+     true
+    ],
+    [
+     "of",
+     1.34,
+     1.38,
+     false
+    ],
+    [
+     "drivers",
+     1.46,
+     1.86,
+     false
+    ],
+    [
+     "who",
+     1.94,
+     2.02,
+     false
+    ],
+    [
+     "fill",
+     2.1,
+     2.26,
+     false
+    ],
+    [
+     "up",
+     2.34,
+     2.66,
+     false
+    ],
+    [
+     "walk",
+     2.78,
+     2.9,
+     false
+    ],
+    [
+     "right",
+     3.06,
+     3.22,
+     false
+    ],
+    [
+     "in.",
+     3.3,
+     3.67,
+     false
+    ]
+   ]
+  },
+  "G08": {
+   "text": "So that big price sign? Its real job is getting you *off the road.*",
+   "estimate": 5.19,
+   "dur": 4.131,
+   "words": [
+    [
+     "So",
+     0.11,
+     0.19,
+     false
+    ],
+    [
+     "that",
+     0.27,
+     0.43,
+     false
+    ],
+    [
+     "big",
+     0.51,
+     0.59,
+     false
+    ],
+    [
+     "price",
+     0.67,
+     0.91,
+     false
+    ],
+    [
+     "sign?",
+     0.99,
+     1.47,
+     false
+    ],
+    [
+     "Its",
+     1.63,
+     1.79,
+     false
+    ],
+    [
+     "real",
+     1.95,
+     2.19,
+     false
+    ],
+    [
+     "job",
+     2.27,
+     2.59,
+     false
+    ],
+    [
+     "is",
+     2.67,
+     2.83,
+     false
+    ],
+    [
+     "getting",
+     2.95,
+     3.07,
+     false
+    ],
+    [
+     "you",
+     3.11,
+     3.15,
+     false
+    ],
+    [
+     "off",
+     3.23,
+     3.39,
+     true
+    ],
+    [
+     "the",
+     3.47,
+     3.55,
+     false
+    ],
+    [
+     "road.",
+     3.75,
+     4.131,
+     true
+    ]
+   ]
+  },
+  "G09": {
+   "text": "*Your coffee pays for the gas.*",
+   "estimate": 2.22,
+   "dur": 2.2,
+   "words": [
+    [
+     "Your",
+     0.07,
+     0.23,
+     true
+    ],
+    [
+     "coffee",
+     0.31,
+     0.71,
+     false
+    ],
+    [
+     "pays",
+     0.87,
+     1.19,
+     false
+    ],
+    [
+     "for",
+     1.23,
+     1.27,
+     false
+    ],
+    [
+     "the",
+     1.35,
+     1.43,
+     false
+    ],
+    [
+     "gas.",
+     1.71,
+     2.2,
+     true
+    ]
+   ]
+  }
+ },
+ "total": 44.784
+}
+</script>
+</head>
+<body>
+<div id="root" data-composition-id="gas" data-start="0" data-duration="44.784" data-width="1080" data-height="1920">
+  <audio id="music" src="assets/audio/music.wav" data-start="0" data-duration="44.784" data-volume="0.75" data-track-index="20"></audio>
+  <audio id="sfx" src="assets/audio/sfx.wav" data-start="0" data-duration="44.784" data-volume="0.85" data-track-index="21"></audio>
+  <!-- VO:BEGIN (generated by tools/bake.py) -->
+  <audio id="vo_g01" src="assets/vo/G01.wav" data-start="0.450" data-duration="7.112" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_g02" src="assets/vo/G02.wav" data-start="7.712" data-duration="4.120" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_g03" src="assets/vo/G03.wav" data-start="11.982" data-duration="3.821" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_g04" src="assets/vo/G04.wav" data-start="15.953" data-duration="3.840" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_g05" src="assets/vo/G05.wav" data-start="20.063" data-duration="6.310" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_g06" src="assets/vo/G06.wav" data-start="26.523" data-duration="5.210" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_g07" src="assets/vo/G07.wav" data-start="31.883" data-duration="3.670" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_g08" src="assets/vo/G08.wav" data-start="35.703" data-duration="4.131" data-volume="1" data-track-index="22"></audio>
+  <audio id="vo_g09" src="assets/vo/G09.wav" data-start="39.984" data-duration="2.200" data-volume="1" data-track-index="22"></audio>
+  <!-- VO:END -->
+  <div id="bg"></div>
+  <div id="grid" data-drift="1"></div>
+  <canvas id="fx" width="1080" height="1920" data-drift="1"></canvas>
+  <div id="stage" class="abs" style="inset:0">
+    <div id="sc-hook" class="scene clip" data-scene="hook" data-start="0.000" data-duration="7.742" data-track-index="1"></div>
+    <div id="sc-two" class="scene clip" data-scene="two" data-start="7.592" data-duration="4.420" data-track-index="2"></div>
+    <div id="sc-swipe" class="scene clip" data-scene="swipe" data-start="11.862" data-duration="4.121" data-track-index="3"></div>
+    <div id="sc-bait" class="scene clip" data-scene="bait" data-start="15.833" data-duration="4.260" data-track-index="4"></div>
+    <div id="sc-split" class="scene clip" data-scene="split" data-start="19.943" data-duration="6.610" data-track-index="5"></div>
+    <div id="sc-inside" class="scene clip" data-scene="inside" data-start="26.403" data-duration="5.510" data-track-index="6"></div>
+    <div id="sc-walk" class="scene clip" data-scene="walk" data-start="31.763" data-duration="3.970" data-track-index="7"></div>
+    <div id="sc-sign" class="scene clip" data-scene="sign" data-start="35.583" data-duration="4.431" data-track-index="8"></div>
+    <div id="sc-outro" class="scene clip" data-scene="outro" data-start="39.864" data-duration="4.920" data-track-index="9"></div>
+  </div>
+  <div id="chips" data-layout-ignore></div>
+  <div id="vig" data-layout-ignore></div>
+  <div id="dim" data-layout-ignore style="position:absolute;inset:0;background:#000;opacity:0;z-index:45;pointer-events:none"></div>
+  <div id="caps"></div>
+  <div id="grain" data-layout-ignore></div>
+  <div id="flash"></div>
+  <div id="black"></div>
+</div>
+<script src="scenes/gas.js"></script>
+<script>window.__timelines = window.__timelines || {}; window.__timelines['gas'] = R.tl;</script>
+</body>
+</html>

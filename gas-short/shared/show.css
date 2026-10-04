@@ -1,0 +1,97 @@
+/* "Ledger" — vertical 1080×1920 design system for Banks Don't Lend Your Money */
+@font-face { font-family: 'Anton'; src: url(fonts/Anton-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+2000-206F, U+2212; font-display: block; }
+@font-face { font-family: 'Anton'; src: url(fonts/Anton-ext.woff2) format('woff2'); unicode-range: U+0100-02BA; font-display: block; }
+@font-face { font-family: 'Unbounded'; src: url(fonts/Unbounded-var.woff2) format('woff2'); font-weight: 200 900; font-display: block; }
+@font-face { font-family: 'Space Grotesk'; src: url(fonts/SpaceGrotesk-var.woff2) format('woff2'); font-weight: 300 700; font-display: block; }
+@font-face { font-family: 'JetBrains Mono'; src: url(fonts/JetBrainsMono-var.woff2) format('woff2'); font-weight: 100 800; font-display: block; }
+@font-face { font-family: 'Instrument Serif'; src: url(fonts/InstrumentSerif-400-italic.woff2) format('woff2'); font-style: italic; font-display: block; }
+@font-face { font-family: 'Instrument Serif'; src: url(fonts/InstrumentSerif-400-normal.woff2) format('woff2'); font-style: normal; font-display: block; }
+
+:root {
+  --night: #030c09; --deep: #071a14; --green: #3dff9a; --mint: #b8ffd9; --paper: #f2efe6; --ink: #101418;
+  --red: #ff4a3d; --amber: #ffc640; --white: #effff6; --mute: #7f9a8d;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--night); }
+body { font-family: 'Space Grotesk', sans-serif; color: var(--white); }
+#root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: var(--night); }
+.abs { position: absolute; }
+.scene { position: absolute; inset: 0; }
+
+/* ---------- world ---------- */
+#bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 45% at 50% 38%, #0f3326 0%, #08201a 42%, #04110d 72%, #020806 100%); }
+#grid { position: absolute; inset: -120px; opacity: .5; background:
+  repeating-linear-gradient(0deg, rgba(61,255,154,.06) 0 2px, transparent 2px 90px), repeating-linear-gradient(90deg, rgba(61,255,154,.06) 0 2px, transparent 2px 90px); }
+#digits { position: absolute; left: 0; top: 0; }
+#vig { position: absolute; inset: 0; pointer-events: none; z-index: 40; background: radial-gradient(ellipse 85% 65% at 50% 42%, transparent 55%, rgba(0,0,0,.7) 100%); }
+#grain { position: absolute; inset: 0; z-index: 66; pointer-events: none; opacity: .045; background: repeating-linear-gradient(0deg, rgba(255,255,255,.5) 0 1px, transparent 1px 4px); }
+
+/* ---------- type ---------- */
+.big { font-family: 'Unbounded', sans-serif; font-weight: 900; line-height: 1; white-space: nowrap; }
+.anton { font-family: 'Anton', sans-serif; font-weight: 400; line-height: 1; white-space: nowrap; text-transform: uppercase; }
+.mono { font-family: 'JetBrains Mono', monospace; font-weight: 800; line-height: 1; white-space: nowrap; }
+.serif { font-family: 'Instrument Serif', serif; font-style: italic; line-height: 1.12; }
+.head { position: absolute; left: 0; width: 1080px; text-align: center; }
+.kick { position: absolute; left: 0; width: 1080px; text-align: center; font: 700 34px/1 'Space Grotesk', sans-serif; letter-spacing: 9px; color: var(--mute); text-transform: uppercase; }
+.greentx { color: #eafff3; text-shadow: 0 0 14px rgba(61,255,154,.9), 0 0 50px rgba(61,255,154,.45), 0 6px 0 rgba(0,40,20,.9); }
+.redtx { color: #ffe1dc; text-shadow: 0 0 12px rgba(255,74,61,.95), 0 0 44px rgba(255,74,61,.6); }
+.ambertx { color: #fff3cf; text-shadow: 0 0 12px rgba(255,198,64,.9), 0 0 40px rgba(255,198,64,.5); }
+.papertx { color: var(--paper); text-shadow: 0 5px 0 rgba(0,0,0,.8); }
+
+/* ---------- objects ---------- */
+.card { position: absolute; border-radius: 30px; background: linear-gradient(160deg, rgba(150,255,200,.10), rgba(61,255,154,.03)); border: 2px solid rgba(120,255,180,.3);
+  box-shadow: 0 30px 80px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.16); }
+.paper { position: absolute; border-radius: 18px; background: var(--paper); color: var(--ink); box-shadow: 0 30px 70px rgba(0,0,0,.6); }
+.pill { position: absolute; padding: 14px 30px 12px; border-radius: 60px; font: 800 36px/1 'Unbounded', sans-serif; white-space: nowrap; }
+.stamp { position: absolute; font: 900 92px/1 'Unbounded', sans-serif; border: 11px solid currentColor; border-radius: 24px; padding: 20px 40px 16px; white-space: nowrap; }
+.stamp.red { color: #ff4a3d; box-shadow: 0 0 40px rgba(255,74,61,.5), inset 0 0 30px rgba(255,74,61,.35); text-shadow: 0 0 20px rgba(255,74,61,.8); }
+.stamp.green { color: #3dff9a; box-shadow: 0 0 40px rgba(61,255,154,.45), inset 0 0 30px rgba(61,255,154,.3); text-shadow: 0 0 20px rgba(61,255,154,.8); }
+.stamp.amber { color: #ffc640; box-shadow: 0 0 40px rgba(255,198,64,.5), inset 0 0 30px rgba(255,198,64,.35); text-shadow: 0 0 20px rgba(255,198,64,.8); }
+.tag { position: absolute; padding: 10px 18px 8px; border-radius: 12px; background: rgba(4,14,10,.92); border: 2px solid rgba(61,255,154,.5); font: 700 28px/1 'JetBrains Mono', monospace; color: var(--mint); white-space: nowrap; }
+.strike { position: absolute; height: 14px; border-radius: 7px; background: var(--red); box-shadow: 0 0 22px var(--red); transform-origin: 0 50%; }
+.box { position: absolute; border-radius: 22px; border: 3px solid rgba(61,255,154,.55); background: rgba(5,22,16,.9); text-align: center; box-shadow: 0 20px 50px rgba(0,0,0,.5); }
+
+/* ---------- captions ---------- */
+#caps { position: absolute; left: 0; top: 1236px; width: 1080px; height: 220px; z-index: 50; pointer-events: none; }
+.cap { position: absolute; left: 80px; right: 80px; top: 0; text-align: center; line-height: 1.14; }
+.cap .w { display: inline-block; margin: 0 18px; font: 400 104px/1.14 'Anton', sans-serif; text-transform: uppercase; color: #fff;
+  -webkit-text-stroke: 12px #020806; paint-order: stroke fill; text-shadow: 0 8px 0 #020806, 0 0 30px rgba(0,0,0,.6); }
+.cap .w.hi { color: var(--green); }
+
+/* ---------- overlays ---------- */
+#flash { position: absolute; inset: 0; background: #fff; opacity: 0; z-index: 70; pointer-events: none; }
+#black { position: absolute; inset: 0; background: #000; opacity: 0; z-index: 80; }
+
+/* chapter chip (polish pass) */
+#chips { position: absolute; left: 0; top: 64px; width: 1080px; height: 70px; z-index: 46; pointer-events: none; }
+.chip { position: absolute; left: 540px; top: 0; display: flex; align-items: center; gap: 16px; padding: 10px 26px 10px 12px; border-radius: 40px; white-space: nowrap;
+  background: rgba(3,12,9,.85); border: 2px solid rgba(61,255,154,.5); box-shadow: 0 10px 30px rgba(0,0,0,.5);
+  font: 700 28px/1 'JetBrains Mono', monospace; letter-spacing: 5px; color: var(--mint); }
+.chip b { font-weight: 800; background: var(--green); color: #03140c; border-radius: 30px; padding: 6px 14px 5px; letter-spacing: 1px; }
+
+/* ===== theme for this Short (overrides the Ledger defaults) ===== */
+:root { --green: #ffcf3a; --mint: #fff4d6; --accent2: #e8322b; }
+#bg { background: radial-gradient(ellipse 80% 45% at 50% 38%, #3a1210 0%, #1c0807 45%, #0a0303 100%); }
+#grid { background: repeating-linear-gradient(0deg, rgba(255,207,58,.05) 0 2px, transparent 2px 90px), repeating-linear-gradient(90deg, rgba(255,207,58,.05) 0 2px, transparent 2px 90px); }
+.greentx { color: #fffaf0; text-shadow: 0 0 14px rgba(255,207,58,.9), 0 0 50px rgba(255,207,58,.45), 0 6px 0 rgba(0,0,0,.8); }
+.card { background: linear-gradient(160deg, rgba(255,207,58,.12), rgba(255,207,58,.03)); border-color: rgba(255,207,58,.35); }
+.tag, .box { border-color: rgba(255,207,58,.55); }
+.stamp.green { color: #ffcf3a; box-shadow: 0 0 40px rgba(255,207,58,.45), inset 0 0 30px rgba(255,207,58,.3); text-shadow: 0 0 20px rgba(255,207,58,.8); }
+.chip { border-color: rgba(255,207,58,.55); background: rgba(5,5,8,.85); }
+.chip b { background: #ffcf3a; color: #0a0a0a; }
+.cap .w.hi { color: #ffcf3a; }
+.qcard { position: absolute; left: 90px; width: 900px; padding: 36px 40px; border-radius: 30px; background: rgba(8,8,12,.92); border: 4px solid #ffcf3a;
+  box-shadow: 0 0 60px rgba(255,207,58,.4); text-align: center; }
+
+/* ===== gas-short theme: dusk forecourt (no black voids) ===== */
+:root { --green: #ffd23f; }
+#bg { background: linear-gradient(180deg, #121c42 0%, #2a2160 30%, #5b2a6e 55%, #a8435f 75%, #f08c4f 100%); }
+#grid { background: repeating-linear-gradient(0deg, rgba(255,210,63,.05) 0 2px, transparent 2px 90px), repeating-linear-gradient(90deg, rgba(255,210,63,.05) 0 2px, transparent 2px 90px); }
+#vig { background: radial-gradient(ellipse 90% 70% at 50% 45%, transparent 60%, rgba(10,6,30,.55) 100%); }
+.greentx { color: #fffaf0; text-shadow: 0 0 14px rgba(255,210,63,.9), 0 0 50px rgba(255,210,63,.45), 0 6px 0 rgba(0,0,0,.8); }
+.chip { border-color: rgba(255,210,63,.6); background: rgba(18,14,40,.85); } .chip b { background: #ffd23f; color: #120d04; }
+.cap .w.hi { color: #ffd23f; }
+.qcard { border-color: #ffd23f; box-shadow: 0 0 60px rgba(255,210,63,.4); background: rgba(18,14,40,.94); }
+.card { background: linear-gradient(160deg, rgba(40,30,90,.85), rgba(20,16,50,.85)); border-color: rgba(255,210,63,.4); }
+.led { font-family: 'JetBrains Mono', monospace; font-weight: 800; color: #ff5a3c; text-shadow: 0 0 10px #ff5a3c, 0 0 30px rgba(255,90,60,.7); }
+.ledg { font-family: 'JetBrains Mono', monospace; font-weight: 800; color: #3dff9a; text-shadow: 0 0 10px #3dff9a, 0 0 30px rgba(61,255,154,.6); }
