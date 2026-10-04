@@ -1,0 +1,42 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../shared/show.css"><style>
+html,body{width:1280px;height:720px;background:#0c0a2c}
+.v{display:none;position:absolute;inset:0;overflow:hidden} .v.on{display:block}
+.line{position:absolute;font:400 120px/0.95 'Anton';text-transform:uppercase;color:#fff;-webkit-text-stroke:12px #000;paint-order:stroke fill;text-shadow:0 10px 0 #000;white-space:nowrap}
+.huge{position:absolute;font:900 210px/1 'Unbounded';white-space:nowrap;-webkit-text-stroke:10px #000;paint-order:stroke fill}
+.grid{position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.05) 0 2px,transparent 2px 80px),repeating-linear-gradient(90deg,rgba(255,255,255,.05) 0 2px,transparent 2px 80px)}
+.mark{position:absolute;padding:8px 16px;border-radius:10px;background:#fff;font:700 30px/1 'Space Grotesk'}
+</style></head><body><div id="root" style="width:1280px;height:720px;position:relative;overflow:hidden">
+<svg width="0" height="0" style="position:absolute"><defs><linearGradient id="ga" x1="0" x2="1"><stop offset="0" stop-color="#ff3b4f"/><stop offset=".5" stop-color="#ffb347"/><stop offset="1" stop-color="#3dff9a"/></linearGradient>
+<g id="gauge"><path d="M60,310 A240,240 0 0 1 540,310" fill="none" stroke="rgba(0,0,0,.5)" stroke-width="64" stroke-linecap="round"/><path d="M60,310 A240,240 0 0 1 540,310" fill="none" stroke="url(#ga)" stroke-width="48" stroke-linecap="round"/></g></defs></svg>
+
+<!-- A: the number + you're the product -->
+<div class="v" id="A"><div style="position:absolute;inset:0;background:radial-gradient(ellipse 80% 90% at 30% 50%,#3a2f9a 0%,#1a1450 55%,#07051c 100%)"></div><div class="grid"></div>
+  <svg viewBox="0 0 600 400" style="position:absolute;left:-10px;top:120px;width:700px;height:467px;overflow:visible;filter:drop-shadow(0 0 40px rgba(61,255,154,.35))"><use href="#gauge"/><g transform="rotate(42 300 310)"><circle cx="300" cy="70" r="34" fill="#fff" stroke="#0a1120" stroke-width="10"/></g></svg>
+  <div class="huge" style="left:125px;top:330px;font-size:170px;color:#3dff9a;text-shadow:0 0 40px rgba(61,255,154,.6)">742</div>
+  <div class="line" style="left:650px;top:150px;font-size:118px">YOU'RE THE</div>
+  <div class="line" style="left:640px;top:285px;font-size:178px;color:#ffc640">PRODUCT</div>
+  <div style="position:absolute;left:700px;top:500px;padding:16px 20px;border-radius:14px;background:#fff;transform:rotate(-6deg);box-shadow:0 20px 40px rgba(0,0,0,.6)"><div style="width:440px;height:90px;background:repeating-linear-gradient(90deg,#111 0 7px,#fff 7px 12px,#111 12px 15px,#fff 15px 24px)"></div></div>
+</div>
+
+<!-- B: the money -->
+<div class="v" id="B"><div style="position:absolute;inset:0;background:radial-gradient(ellipse 90% 90% at 50% 30%,#2e3b6e 0%,#141c3e 55%,#05071a 100%)"></div><div class="grid"></div>
+  <div style="position:absolute;left:760px;top:250px;width:150px;height:470px;background:linear-gradient(180deg,#9e1b32,#2a0a12);box-shadow:inset 0 0 0 4px rgba(255,255,255,.15)"></div>
+  <div style="position:absolute;left:930px;top:180px;width:160px;height:540px;background:linear-gradient(180deg,#6d2077,#1a0820);box-shadow:inset 0 0 0 4px rgba(255,255,255,.15)"></div>
+  <div style="position:absolute;left:1110px;top:300px;width:150px;height:420px;background:linear-gradient(180deg,#00a6ca,#032a35);box-shadow:inset 0 0 0 4px rgba(255,255,255,.15)"></div>
+  <div style="position:absolute;left:760px;top:250px;width:500px;height:470px;background:repeating-linear-gradient(0deg,rgba(255,233,168,.35) 0 8px,transparent 8px 26px)"></div>
+  <div class="huge" style="left:40px;top:120px;font-size:230px;color:#ffc640;text-shadow:0 0 60px rgba(255,198,64,.8)">$18B</div>
+  <div class="line" style="left:50px;top:400px;font-size:120px">A YEAR</div>
+  <div class="line" style="left:50px;top:520px;font-size:120px;color:#ff4a3d">OFF YOU</div>
+  <svg viewBox="0 0 60 100" style="position:absolute;left:520px;top:390px;width:200px;height:333px;filter:drop-shadow(0 0 30px rgba(255,198,64,.6))"><circle cx="30" cy="20" r="16" fill="#fff4d6"/><path d="M4,100 L8,52 Q30,38 52,52 L56,100 Z" fill="#fff4d6"/><rect x="14" y="62" width="32" height="14" fill="#111"/><path d="M16,62 v14 M20,62 v14 M25,62 v14 M28,62 v14 M33,62 v14 M38,62 v14 M42,62 v14" stroke="#fff" stroke-width="1.6"/></svg>
+</div>
+
+<!-- C: the reveal -->
+<div class="v" id="C"><div style="position:absolute;inset:0;background:radial-gradient(ellipse 80% 90% at 70% 50%,#5a2a8a 0%,#2b1d6b 50%,#0b0822 100%)"></div><div class="grid"></div>
+  <svg viewBox="0 0 600 400" style="position:absolute;left:545px;top:110px;width:700px;height:467px;overflow:visible;filter:drop-shadow(0 0 50px rgba(255,198,64,.45))"><use href="#gauge"/><g transform="rotate(88 300 310)"><circle cx="300" cy="70" r="34" fill="#fff" stroke="#0a1120" stroke-width="10"/></g></svg>
+  <div class="huge" style="left:700px;top:300px;font-size:170px;color:#ffc640;text-shadow:0 0 50px rgba(255,198,64,.7)">850</div>
+  <div style="position:absolute;left:680px;top:540px;white-space:nowrap;font:400 58px/1 'Anton';color:#fff;letter-spacing:4px;-webkit-text-stroke:8px #000;paint-order:stroke fill"><span style="position:relative;color:#aaa">CREDIT<i style="position:absolute;left:-6px;right:-6px;top:46%;height:10px;background:#ff4a3d"></i></span> <span style="color:#ffc640">PROFIT</span> SCORE</div>
+  <div class="line" style="left:40px;top:150px;font-size:150px">NOT</div>
+  <div class="line" style="left:40px;top:300px;font-size:150px;color:#ffc640">ABOUT</div>
+  <div class="line" style="left:40px;top:450px;font-size:150px">YOU</div>
+</div>
+</div><script>document.getElementById(new URLSearchParams(location.search).get('t')||'A').classList.add('on')</script></body></html>
