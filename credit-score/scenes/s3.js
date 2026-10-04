@@ -17,7 +17,7 @@ chapterCard('e0', 5, 'WHEN THE FILE IS WRONG', 'Errors, disputes — and a breac
   const ftc = at(host, A.ftc(270), 140, 170); pop(ftc, W('E2', 'federal') - .1, .4); cue(W('E2', 'federal'), 'clunk', .5, -.7);
   const five = [0, 1, 2, 3, 4].map(i => { const p = at(host, A.person(120, CREAM), 640 + i * 230, 160, `color:${CREAM}`); up(p, W('E2', 'one') - .2 + i * .06, 40); return p; });
   const err = at(host, `<div class="pill" style="position:relative;background:${RED};color:#fff;font-size:30px">ERROR</div>`, 1120, 380);
-  tl.to(five[2], { color: RED, duration: .2 }, W('E2', 'five') - .05); five[2].querySelectorAll('circle,path').forEach(e => e.setAttribute('fill', 'currentColor'));
+  tl.to(five[2], { color: RED, duration: .2 }, W('E2', 'five') - .05); five[2].querySelectorAll('circle,path:not(.hl)').forEach(e => e.setAttribute('fill', 'currentColor'));
   pop(err, W('E2', 'five')); cue(W('E2', 'five'), 'buzz', .45, .2);
   const k5 = at(host, `<div class="big glow" style="font-size:96px;--acc:${RED}">1 in 5</div>`, 140, 480); slam(k5, W('E2', 'one') - .05);
   const rp = report(host, 640, 470, 1100, [['CITY AUTO LOAN', 'PAID AS AGREED'], ['VISA •••• 4421', 'CURRENT'], ['MEDCOLL AGENCY', 'LATE 90 DAYS', '#b3262e']]);
@@ -28,7 +28,7 @@ chapterCard('e0', 5, 'WHEN THE FILE IS WRONG', 'Errors, disputes — and a breac
   const t3 = V('E3') - .2;
   tl.to([...five, err, k5], { opacity: 0, duration: .25 }, t3);
   const twenty = []; for (let i = 0; i < 20; i++) { const p = at(host, A.person(56, CREAM), 640 + (i % 10) * 110, 150 + Math.floor(i / 10) * 120, `color:${CREAM}`); tl.set(p, { opacity: 0 }, 0); tl.to(p, { opacity: 1, duration: .15 }, t3 + .1 + i * .03); twenty.push(p); }
-  twenty[13].querySelectorAll('circle,path').forEach(e => e.setAttribute('fill', 'currentColor'));
+  twenty[13].querySelectorAll('circle,path:not(.hl)').forEach(e => e.setAttribute('fill', 'currentColor'));
   tl.to(twenty[13], { color: AMBER, scale: 1.3, duration: .25 }, W('E3', 'twenty') - .05); cue(W('E3', 'twenty'), 'ding', .4, .4);
   const k20 = at(host, `<div class="big glow" style="font-size:96px;--acc:${AMBER}">1 in 20</div>`, 140, 480); slam(k20, W('E3', 'one') - .05);
   const pm = at(host, `<div class="pill" style="position:relative;background:${AMBER};color:#1a0a0a;font-size:30px">$ PAYS MORE ↑</div>`, 1000, 400); pop(pm, W('E3', 'pay') - .05); cue(W('E3', 'pay'), 'coins', .4, .3);
@@ -159,10 +159,27 @@ chapterCard('c0', 6, 'WHAT IT COSTS YOU', 'Same house. Different number.', A.hou
   [L, Rr].forEach((c, i) => up(c.pay, V('C3') - .2 + i * .1, 20));
   countTo(L.pay.querySelector('.pv'), V('C3'), .9, 0, 1896, v => '$' + commas(v)); countTo(Rr.pay.querySelector('.pv'), V('C3') + .1, .9, 0, 2201, v => '$' + commas(v)); cue(V('C3'), 'counter', .4, 0, { dur: .9 });
   const d300 = at(host, `<div class="pill" style="position:relative;background:${RED};color:#fff;font-size:40px">+$305 / MONTH</div>`, 1300, 655); pop(d300, W('C3', '300') - .05); cue(W('C3', '300'), 'impact', .5, .6);
-  const life = at(host, `<div style="position:relative;width:1680px;height:96px;border-radius:48px;background:rgba(255,255,255,.1);border:3px solid rgba(255,255,255,.3);overflow:hidden"><i class="lf" style="position:absolute;left:0;top:0;height:100%;width:100%;background:linear-gradient(90deg,#ffb347,#ff3b4f);transform-origin:0 50%"></i><div class="big lv" style="position:absolute;left:40px;top:16px;font-size:56px;color:#fff">+$0 OVER 30 YEARS</div></div>`, 120, 755);
-  up(life, W('C3', '100000') - .3, 30);
-  tl.set(life.querySelector('.lf'), { scaleX: 0 }, 0); tl.to(life.querySelector('.lf'), { scaleX: 1, duration: 1.4, ease: 'power2.out' }, W('C3', '100000') - .1);
-  countTo(life.querySelector('.lv'), W('C3', '100000') - .1, 1.4, 0, 109830, v => '+$' + commas(v) + ' OVER 30 YEARS'); cue(W('C3', '100000'), 'counter', .45, 0, { dur: 1.4 }); cue(W('C3', 'years') + .2, 'coins', .5);
+  const P0 = 300000, NM = 360, payOf = r => P0 * (r / 12) / (1 - Math.pow(1 + r / 12, -NM));
+  const cum = r => { const p = payOf(r); let b = P0, s0 = 0; const o = [0]; for (let m = 1; m <= NM; m++) { const it = b * r / 12; s0 += it; b -= p - it; if (m % 12 === 0) o.push(s0); } return o; };
+  const A1 = cum(.065), A2 = cum(.08), MX = A2[30], CW = 1680, CH = 150, px = k => (k / 30 * CW).toFixed(1), py = v => (CH - v / MX * CH).toFixed(1);
+  const pth = arr => arr.map((v, k) => `${k ? 'L' : 'M'}${px(k)},${py(v)}`).join(' ');
+  const area = `${pth(A2)} ${A1.slice().reverse().map((v, k) => `L${px(30 - k)},${py(v)}`).join(' ')} Z`;
+  const chart = at(host, `<div style="position:relative;width:${CW}px;height:${CH + 40}px"><svg viewBox="0 0 ${CW} ${CH + 40}" style="position:absolute;inset:0;width:${CW}px;height:${CH + 40}px;overflow:visible">
+    <defs><linearGradient id="cgA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff3b4f" stop-opacity=".55"/><stop offset="1" stop-color="#ff3b4f" stop-opacity=".1"/></linearGradient></defs>
+    ${[0, 5, 10, 15, 20, 25, 30].map(y => `<line x1="${px(y)}" y1="0" x2="${px(y)}" y2="${CH}" stroke="#fff" stroke-opacity=".1" stroke-width="2"/><text x="${px(y)}" y="${CH + 32}" text-anchor="middle" font-family="JetBrains Mono" font-weight="800" font-size="20" fill="#c9f5cf">${y ? 'YR ' + y : 'TODAY'}</text>`).join('')}
+    <path d="M0,${CH} H${CW}" stroke="#fff" stroke-opacity=".45" stroke-width="3"/>
+    <path class="ar" d="${area}" fill="url(#cgA)"/>
+    <path class="l1" d="${pth(A1)}" fill="none" stroke="#3dff9a" stroke-width="7" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" style="filter:drop-shadow(0 0 10px #3dff9a)"/>
+    <path class="l2" d="${pth(A2)}" fill="none" stroke="#ff3b4f" stroke-width="7" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" style="filter:drop-shadow(0 0 10px #ff3b4f)"/></svg>
+    <div class="mono" style="position:absolute;left:14px;top:14px;font-size:22px;color:${CREAM};letter-spacing:2px">TOTAL INTEREST PAID · 30 YEARS</div>
+    <div class="big lv" style="position:absolute;right:150px;top:56px;font-size:54px;color:#fff;text-shadow:0 0 24px #ff3b4f,0 6px 0 rgba(0,0,0,.5)">+$0</div></div>`, 120, 668);
+  const tC = W('C3', '100000') - .4;
+  tl.to(d300, { opacity: 0, duration: .25 }, tC - .1);
+  up(chart, tC, 30);
+  tl.to(chart.querySelector('.l1'), { attr: { 'stroke-dashoffset': 0 }, duration: 1.5, ease: 'power2.inOut' }, tC + .1);
+  tl.to(chart.querySelector('.l2'), { attr: { 'stroke-dashoffset': 0 }, duration: 1.5, ease: 'power2.inOut' }, tC + .2);
+  tl.set(chart.querySelector('.ar'), { opacity: 0 }, 0); tl.to(chart.querySelector('.ar'), { opacity: 1, duration: .8 }, tC + 1.2);
+  countTo(chart.querySelector('.lv'), tC + .3, 1.5, 0, 109830, v => '+$' + commas(v)); cue(tC + .3, 'counter', .45, 0, { dur: 1.5 }); cue(W('C3', 'years') + .2, 'coins', .5);
   // C4: same house, same person, different number
   const eq = (t, y, ch, c) => { const e = at(host, `<div class="big glow" style="font-size:110px;--acc:${c}">${ch}</div>`, 960, y); center(e); slam(e, t); cue(t + .15, 'stamp', .5); return e; };
   tl.to([d300, div1], { opacity: 0, duration: .2 }, V('C4') - .1);
@@ -202,7 +219,7 @@ chapterCard('c0', 6, 'WHAT IT COSTS YOU', 'Same house. Different number.', A.hou
   tl.to(sh, { scale: 1.08, duration: .5, yoyo: true, repeat: 1, ease: 'sine.inOut' }, W('X1', 'power'));
   const pw = at(host, `<div class="anton" style="font-size:100px;color:#fff">MORE POWER THAN THEY <span style="color:${GRN}">ADVERTISE</span></div>`, 960, 540); center(pw); up(pw, W('X1', 'power') - .15, 30);
   tl.to([sh, pw], { opacity: 0, y: -40, duration: .3 }, V('X2') - .2);
-  const card = (i, w, html) => { const c = at(host, `<div class="card" style="position:relative;width:540px;height:470px;padding:34px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;text-align:center">${html}</div>`, 120 + i * 580, 170); tl.set(c, { opacity: 0, rotationY: 80, transformPerspective: 1500 }, 0); tl.to(c, { opacity: 1, rotationY: 0, duration: .5, ease: 'back.out(1.4)' }, W('X2', w) - .25); cue(W('X2', w) - .2, 'flip', .45, -.6 + i * .6); return c; };
+  const card = (i, w, html) => { const c = at(host, `<div class="card" style="position:relative;width:540px;height:470px;padding:34px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;text-align:center">${html}</div>`, 120 + i * 580, 170); tl.set(c, { opacity: 0, rotationY: 80, transformPerspective: 1500 }, 0); tl.to(c, { opacity: .38, rotationY: 0, duration: .5, ease: 'back.out(1.4)' }, V('X2') - .15 + i * .14); cue(V('X2') - .1 + i * .14, 'flip', .35, -.6 + i * .6); tl.to(c, { opacity: 1, scale: 1.06, duration: .25, ease: 'back.out(2)' }, W('X2', w) - .2); tl.to(c, { scale: 1, duration: .4 }, W('X2', w) + .05); cue(W('X2', w) - .15, 'ding', .35, -.6 + i * .6); return c; };
   const c1 = card(0, 'check', `<div style="width:460px;border-radius:14px;background:#fff;padding:14px 18px;text-align:left"><div style="display:flex;gap:8px">${['#ff5f57', '#febc2e', '#28c840'].map(c => `<i style="display:block;width:14px;height:14px;border-radius:50%;background:${c}"></i>`).join('')}</div><div class="mono url" style="margin-top:12px;padding:10px 12px;border-radius:8px;background:#eef1f8;font-size:26px;color:#1a2347;white-space:nowrap;overflow:hidden"></div></div><div class="anton" style="font-size:58px;color:#fff">ALL 3 REPORTS</div><div style="display:flex;gap:12px"><span class="pill pf" style="position:relative;background:${GRN};color:#04221f;font-size:26px">FREE</span><span class="pill pw" style="position:relative;background:${SKY};color:#04121f;font-size:26px">WEEKLY</span></div>`);
   [['.pf', 'free'], ['.pw', 'week']].forEach(([q, w]) => { const e = c1.querySelector(q); tl.set(e, { scale: 0 }, 0); tl.to(e, { scale: 1, duration: .3, ease: 'back.out(3)' }, W('X2', w) - .05); cue(W('X2', w), 'pop', .35, -.6); });
   tl.to(c1, { y: -12, duration: 1.2, ease: 'sine.inOut', yoyo: true, repeat: 1 }, W('X2', 'free') + .3);
@@ -215,7 +232,7 @@ chapterCard('c0', 6, 'WHAT IT COSTS YOU', 'Same house. Different number.', A.hou
   const tb = V('X2b') - .2;
   tl.to([c1, c2, c3], { opacity: 0, y: -40, duration: .3, stagger: .04 }, tb);
   const B = [['time', 'PAY ON TIME', '35%'], ['low', 'KEEP BALANCES LOW', '30%'], ['oldest', 'KEEP YOUR OLDEST CARD', '15%']];
-  B.forEach(([w, txt, pc], i) => { const r = at(host, `<div style="display:flex;align-items:center;gap:30px;width:1300px;padding:26px 40px;border-radius:24px;background:rgba(10,8,30,.7);border:3px solid rgba(61,255,154,.6)"><b style="display:block;width:76px;height:76px;border-radius:18px;background:${GRN};color:#04221f;text-align:center;font:900 54px/76px 'Unbounded'">✓</b><div class="anton" style="font-size:66px;color:#fff;flex:1">${txt}</div><div class="big" style="font-size:44px;color:${GRN}">${pc}</div></div>`, 310, 170 + i * 200); tl.set(r, { opacity: 0, x: -200 }, 0); tl.to(r, { opacity: 1, x: 0, duration: .4, ease: 'back.out(1.5)' }, W('X2b', w) - .3); cue(W('X2b', w) - .2, 'ding', .45, -.4 + i * .4); });
+  B.forEach(([w, txt, pc], i) => { const r = at(host, `<div style="display:flex;align-items:center;gap:30px;width:1300px;padding:26px 40px;border-radius:24px;background:rgba(10,8,30,.7);border:3px solid rgba(61,255,154,.6)"><b style="display:block;width:76px;height:76px;border-radius:18px;background:${GRN};color:#04221f;text-align:center;font:900 54px/76px 'Unbounded'">✓</b><div class="anton" style="font-size:66px;color:#fff;flex:1">${txt}</div><div class="big" style="font-size:44px;color:${GRN}">${pc}</div></div>`, 310, 170 + i * 200); tl.set(r, { opacity: 0, x: -200 }, 0); tl.to(r, { opacity: .35, x: 0, duration: .4, ease: 'back.out(1.5)' }, V('X2b') - .1 + i * .12); tl.to(r, { opacity: 1, x: 20, duration: .25, ease: 'power2.out' }, W('X2b', w) - .25); tl.to(r, { x: 0, duration: .35 }, W('X2b', w)); cue(W('X2b', w) - .2, 'ding', .45, -.4 + i * .4); });
   cam(id, { z: 1.04, y: -8 });
 }
 
@@ -245,13 +262,16 @@ chapterCard('c0', 6, 'WHAT IT COSTS YOU', 'Same house. Different number.', A.hou
   const id = 'x3', host = sc(id); through(id, { last: true }); chip(id, 'YOUR TAKE', '★');
   const qc = at(host, `<div class="qcard" style="position:relative;width:1500px"><div class="mono" style="font-size:28px;color:${GOLD};letter-spacing:4px">THE QUESTION</div><div class="anton" style="font-size:72px;color:#fff;margin-top:16px;white-space:normal;line-height:1.1">SHOULD COMPANIES YOU NEVER SIGNED UP WITH DECIDE WHAT YOUR LIFE COSTS?</div></div>`, 960, 130);
   center(qc); tl.set(qc, { opacity: 0, rotationX: -60, transformPerspective: 1600 }, 0); tl.to(qc, { opacity: 1, rotationX: 0, duration: .55, ease: 'back.out(1.4)' }, W('X5', 'should') - .2); cue(W('X5', 'should') - .1, 'riser', .3, 0, { dur: .4 });
+  const crowd = people(host, 90, 700, 16, 1, 74, 40, 'rgba(255,244,214,.55)');
+  crowd.forEach((p, i) => { tl.set(p, { opacity: 0, y: 60 }, 0); tl.to(p, { opacity: 1, y: 0, duration: .4, ease: 'power3.out' }, V('X5') + .1 + Math.abs(7.5 - i) * .05); });
+  cue(V('X5') + .2, 'rumble', .25, 0, { dur: .6 });
   const opt = (x, lbl, c, w, pct) => { const o = at(host, `<div style="position:relative;width:640px;padding:26px 34px;border-radius:24px;background:rgba(10,8,30,.85);border:4px solid ${c}"><div class="anton" style="font-size:64px;color:${c}">${lbl}</div><div style="margin-top:16px;height:30px;border-radius:15px;background:rgba(255,255,255,.12);overflow:hidden"><i class="vb" style="display:block;height:100%;width:${pct}%;background:${c};transform-origin:0 50%"></i></div></div>`, x, 520); tl.set(o, { opacity: 0, y: 60 }, 0); tl.to(o, { opacity: 1, y: 0, duration: .4, ease: 'back.out(1.6)' }, W('X5', w) - .15); tl.set(o.querySelector('.vb'), { scaleX: 0 }, 0); tl.to(o.querySelector('.vb'), { scaleX: 1, duration: 1.2, ease: 'power2.out' }, W('X5', w) + .2); cue(W('X5', w), 'pop', .45, x < 900 ? -.6 : .6); return o; };
   const o1 = opt(240, '✗ IT\'S RIGGED', RED, 'decide', 58), o2 = opt(1040, '✓ IT\'S FAIR', GRN, 'fairest', 42);
   const coms = ['“Paid off my car — score dropped 30 pts!”', '“Cash only for 10 years. Couldn\'t rent.”', '“Without it, lending would be worse.”'];
   const cm = coms.map((c, i) => { const b = at(host, `<div style="padding:16px 26px;border-radius:22px;background:#fff;color:#1a2347;font:700 28px/1.2 'Space Grotesk';box-shadow:0 14px 30px rgba(0,0,0,.4);white-space:nowrap">${c}</div>`, [180, 1000, 560][i], [710, 710, 790][i]); pop(b, W('X5', 'comments') - .1 + i * .18, .4); cue(W('X5', 'comments') + i * .18, 'pop', .35, -.6 + i * .6); return b; });
   // X6: subscribe
   const t6 = V('X6') - .2;
-  tl.to([qc, o1, o2, ...cm], { opacity: 0, y: -30, duration: .3, stagger: .03 }, t6);
+  tl.to([qc, o1, o2, ...cm, ...crowd], { opacity: 0, y: -30, duration: .3, stagger: .02 }, t6);
   const sub = at(host, `<div style="display:flex;align-items:center;gap:30px"><div class="sb" style="white-space:nowrap;padding:30px 70px;border-radius:20px;background:#ff0033;font:900 76px/1 'Unbounded';color:#fff;box-shadow:0 18px 0 #8a001c">SUBSCRIBE</div><svg class="bell" viewBox="0 0 100 110" style="width:120px;height:132px"><path d="M50,8 C28,8 20,28 20,48 L20,72 L8,86 L92,86 L80,72 L80,48 C80,28 72,8 50,8 Z" fill="${GOLD}"/><circle cx="50" cy="98" r="10" fill="${GOLD}"/></svg></div>`, 960, 230);
   center(sub); pop(sub, W('X6', 'subscribe') - .1, .5);
   const sb = sub.querySelector('.sb'); tl.to(sb, { y: 14, boxShadow: '0 4px 0 #8a001c', duration: .1 }, W('X6', 'subscribe') + .5); tl.to(sb, { y: 0, boxShadow: '0 18px 0 #8a001c', backgroundColor: '#3a3f52', duration: .2 }, W('X6', 'subscribe') + .6); tl.set(sb, { textContent: 'SUBSCRIBE' }, 0); tl.set(sb, { textContent: 'SUBSCRIBED ✓' }, W('X6', 'subscribe') + .6); cue(W('X6', 'subscribe') + .5, 'key', .6, 0, { f: 900 });

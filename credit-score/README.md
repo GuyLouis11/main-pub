@@ -12,6 +12,12 @@ Built from the prophet/ pipeline with the widescreen kit from the earlier long-f
   donut, streams, the phone and the brand marks.
 - `scenes/s1.js` covers the hook, ch1 and ch2. `scenes/s2.js` covers ch3 and ch4. `scenes/s3.js` covers ch5, ch6, the
   fixes, the twist, the debate and the end screen.
+- v2 polish layers:
+  - `scenes/assets2.js`: shaded, rim-lit redraws of every asset, with the same signatures.
+  - `scenes/env.js`: an illustrated backdrop per chapter world, a 3D floor, light leaks and the HUD; the FX engine
+    (impact bursts, card light sweeps, floating layers, breathing silhouettes); and the tension and bloom emotion layers.
+  - `scenes/extras.js`: the infographic set-pieces (orbiting hook chips, rumour network, tower money streams, the breach
+    people strip) and the emotion map.
 - `tools/voqa.py` takes `VO_REF=152`, which is this read's own median (the long-form sits ~3 st above the 131 Hz v4 ref
   but is consistent).
 

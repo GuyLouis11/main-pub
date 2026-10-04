@@ -7,8 +7,9 @@ const donut = (host, x, y, size, drawn = 0) => {
   RECIPE.forEach(([f, c], i) => { segs += `<circle class="sg${i}" cx="300" cy="300" r="230" fill="none" stroke="${c}" stroke-width="96" stroke-dasharray="${f * C - 6} ${C}" stroke-dashoffset="${i < drawn ? 0 : f * C}" transform="rotate(${-90 + a0 * 360} 300 300)"/>`; a0 += f; });
   const d = at(host, `<div style="position:relative;width:${size}px;height:${size}px"><svg viewBox="0 0 600 600" style="width:100%;height:100%;overflow:visible;filter:drop-shadow(0 30px 40px rgba(0,0,0,.45))"><circle cx="300" cy="300" r="230" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="96"/>${segs}</svg>
     <div class="big dn" style="position:absolute;left:0;top:${size * .38}px;width:100%;text-align:center;font-size:${size * .17}px;color:#fff">${drawn ? '' : '?'}</div></div>`, x, y);
-  const o = { el: d, num: d.querySelector('.dn') };
-  o.seg = (i, t, d2 = .6) => { const f = RECIPE[i][0]; tl.to(d.querySelector('.sg' + i), { attr: { 'stroke-dashoffset': 0 }, duration: d2, ease: 'power2.out' }, t); tl.set(o.num, { textContent: Math.round(f * 100) + '%', color: RECIPE[i][1] }, t); cue(t, 'swoosh', .4); };
+  tl.set(d, { rotationX: 30, transformPerspective: 1400 }, 0);
+  const o = { el: d, num: d.querySelector('.dn'), prev: null };
+  o.seg = (i, t, d2 = .6) => { const f = RECIPE[i][0]; const cs = d.querySelector('.sg' + i); if (o.prev) tl.to(o.prev, { attr: { 'stroke-width': 96 }, duration: .3 }, t); tl.to(cs, { attr: { 'stroke-width': 124 }, duration: .35, ease: 'back.out(2)' }, t); o.prev = cs; tl.to(d.querySelector('.sg' + i), { attr: { 'stroke-dashoffset': 0 }, duration: d2, ease: 'power2.out' }, t); tl.set(o.num, { textContent: Math.round(f * 100) + '%', color: RECIPE[i][1] }, t); cue(t, 'swoosh', .4); };
   return o;
 };
 const legendRow = (host, i, x, y, t, extra = '') => {
@@ -131,7 +132,7 @@ chapterCard('j0', 3, 'THE FORMULA', 'What actually goes into your number', `<svg
   const inv = [3, 11, 18, 27, 34, 46, 52, 63, 71, 88], thin = [6, 21, 39, 44, 58, 66, 80, 95];
   inv.forEach((k, j) => { tl.to(ppl[k], { opacity: .18, duration: .2 }, W('J8', '26') + j * .05); });
   thin.forEach((k, j) => { tl.set(ppl[k], { color: 'rgba(255,255,255,.8)' }, 0); tl.to(ppl[k], { color: AMBER, duration: .2 }, W('J8', '19') + j * .05); });
-  thin.forEach(k => { ppl[k].querySelectorAll('circle,path').forEach(e => e.setAttribute('fill', 'currentColor')); });
+  thin.forEach(k => { ppl[k].querySelectorAll('circle,path:not(.hl)').forEach(e => e.setAttribute('fill', 'currentColor')); });
   const k1 = bigCount(host, 150, 120, 'NO CREDIT HISTORY AT ALL', 96, CREAM, W('J8', '26') - .05, .9, 0, 26, v => Math.round(v) + 'M');
   const k2 = bigCount(host, 980, 120, 'TOO THIN OR TOO OLD TO SCORE', 96, AMBER, W('J8', '19') - .05, .9, 0, 19, v => Math.round(v) + 'M');
   src(host, 'Source: CFPB, “Data Point: Credit Invisibles” (2015)', W('J8', 'score') - .3);
@@ -285,7 +286,7 @@ chapterCard('b0', 4, 'YOU ARE THE PRODUCT', 'The $18-billion business of you', `
   const id = 'b4', host = sc(id); through(id, { mode: 'slide' }); chip(id, 'THE MIDDLEMEN', 4);
   const fl = at(host, A.fico(320), 160, 150); pop(fl, W('B6', 'fico') - .1); cue(W('B6', 'fico'), 'pop', .5, -.6);
   const reg = at(host, `<div style="position:relative;width:520px;height:330px;border-radius:26px;background:linear-gradient(180deg,#2c3a72,#141c3e);border:4px solid #5a6aa8;box-shadow:0 30px 60px rgba(0,0,0,.5)"><div class="mono" style="position:absolute;left:30px;top:24px;font-size:24px;color:${CREAM}">SCORE PULLS TODAY</div><div class="big pc" style="position:absolute;left:30px;top:96px;font-size:80px;color:${GOLD}">0</div><div class="mono" style="position:absolute;left:30px;bottom:30px;font-size:26px;color:#9fd3ff">FICO GETS PAID EACH TIME</div></div>`, 140, 380);
-  up(reg, W('B6', 'paid') - .3, 50);
+  up(reg, V('B6') + .25, 50);
   const pc = reg.querySelector('.pc'); ['paid', 'pull', 'score'].forEach((w, i) => { const t = W('B6', w); tl.set(pc, { textContent: commas((i + 1) * 1e6 + 234567 * (i + 1)) }, t); tl.to(reg, { scale: 1.04, duration: .1, yoyo: true, repeat: 1 }, t); cue(t, 'coins', .4, -.5); const c = at(host, A.coin(70), 600, 520); tl.set(c, { opacity: 0 }, 0); tl.to(c, { opacity: 1, duration: .05 }, t); tl.to(c, { x: -280, y: -370, scale: .5, duration: .5, ease: 'power2.in' }, t); tl.to(c, { opacity: 0, duration: .1 }, t + .45); });
   tl.set(pc, { textContent: '0' }, 0);
   const pb = at(host, `<div class="card" style="position:relative;width:1000px;padding:40px 50px"><div class="mono" style="font-size:28px;color:${CREAM}">PRICE OF ONE MORTGAGE SCORE</div><div style="display:flex;align-items:center;gap:30px;margin-top:20px"><div class="big" style="font-size:76px;color:rgba(255,255,255,.55)">$3.50</div><div class="big" style="font-size:60px;color:${GOLD}">→</div><div class="big pv" style="font-size:92px;color:#fff">$3.50</div></div></div>`, 820, 170);

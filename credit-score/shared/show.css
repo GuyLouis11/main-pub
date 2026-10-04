@@ -53,3 +53,25 @@ body { font-family: 'Space Grotesk', sans-serif; color: #fff; }
 /* 3D helpers */
 .box3d { position: absolute; transform-style: preserve-3d; }
 .box3d > i { position: absolute; display: block; backface-visibility: hidden; }
+
+/* ===== v2 polish: glass cards, richer paper, glossy pills, layered depth ===== */
+.card { border-radius: 30px; background: linear-gradient(150deg, rgba(255,255,255,.17) 0%, rgba(255,255,255,.06) 38%, rgba(8,6,28,.62) 100%);
+  border: 1.5px solid rgba(255,255,255,.3); backdrop-filter: blur(14px) saturate(1.35);
+  box-shadow: 0 40px 90px rgba(0,0,0,.55), 0 0 60px rgba(120,160,255,.12), inset 0 1px 0 rgba(255,255,255,.45), inset 0 -30px 60px rgba(0,0,0,.25); }
+.paper { background: linear-gradient(172deg, #fffdf7 0%, #f6efdd 60%, #ebe1c8 100%);
+  box-shadow: 0 50px 90px rgba(0,0,0,.55), 0 8px 18px rgba(0,0,0,.3), inset 0 0 0 1px rgba(0,0,0,.06), inset 0 -40px 60px rgba(120,90,40,.08); }
+.pill { box-shadow: inset 0 3px 0 rgba(255,255,255,.45), inset 0 -5px 0 rgba(0,0,0,.18), 0 14px 34px rgba(0,0,0,.4); }
+.tag { background: linear-gradient(160deg, rgba(40,46,90,.92), rgba(10,8,30,.92)); border: 1.5px solid rgba(255,255,255,.45); box-shadow: 0 12px 26px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.3); }
+.stamp { box-shadow: 0 0 50px currentColor, inset 0 0 30px rgba(0,0,0,.4); }
+.qcard { background: linear-gradient(160deg, rgba(40,30,90,.95), rgba(10,8,30,.95)); }
+.chip { background: linear-gradient(160deg, rgba(40,46,100,.9), rgba(10,8,30,.9)); box-shadow: 0 10px 30px rgba(0,0,0,.45), 0 0 24px rgba(255,198,64,.25); }
+#rail .pip { box-shadow: 0 8px 20px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.25); }
+#grid { opacity: .55; }
+.shine { position: absolute; inset: 0; border-radius: inherit; overflow: hidden; pointer-events: none; }
+.shine > i { position: absolute; top: -20%; left: 0; width: 34%; height: 140%; transform: translateX(-160%) skewX(-18deg);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.22) 45%, rgba(255,255,255,.08) 60%, transparent); }
+.spark { position: absolute; left: 0; top: 0; width: 26px; height: 6px; border-radius: 3px; }
+.wave { position: absolute; left: 0; top: 0; border-radius: 50%; }
+#hud { position: absolute; inset: 0; z-index: 42; pointer-events: none; }
+#tension { position: absolute; inset: 0; z-index: 41; pointer-events: none; opacity: 0; background: radial-gradient(ellipse 75% 70% at 50% 50%, transparent 45%, rgba(255,20,40,.55) 100%); }
+#bloom { position: absolute; inset: 0; z-index: 41; pointer-events: none; opacity: 0; mix-blend-mode: screen; background: radial-gradient(ellipse 60% 55% at 50% 40%, rgba(255,214,120,.45), transparent 70%); }

@@ -48,7 +48,7 @@ const gauge = (host, x, y, w = 640, { score = 300, label = 'CREDIT SCORE', hide 
     <path d="M60,310 A240,240 0 0 1 540,310" fill="none" stroke="url(#gg${u})" stroke-width="44" stroke-linecap="round" opacity=".5" filter="url(#gl${u})"/>
     <path class="arc" d="M60,310 A240,240 0 0 1 540,310" fill="none" stroke="url(#gg${u})" stroke-width="40" stroke-linecap="round" stroke-dasharray="754" stroke-dashoffset="0"/>
     ${ticks}
-    <g class="mk"><circle cx="300" cy="70" r="30" fill="#fff" stroke="#0a1120" stroke-width="8"/><path d="M300,104 L288,122 L312,122 Z" fill="#fff"/></g>
+    <g class="mk"><circle cx="300" cy="70" r="30" fill="#fff" stroke="#0a1120" stroke-width="8"/><circle cx="300" cy="70" r="46" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="4"/></g>
     <text x="60" y="378" text-anchor="middle" font-family="JetBrains Mono" font-weight="800" font-size="34" fill="rgba(255,255,255,.75)">300</text>
     <text x="540" y="378" text-anchor="middle" font-family="JetBrains Mono" font-weight="800" font-size="34" fill="rgba(255,255,255,.75)">850</text></svg>
     <div class="num big" style="position:absolute;left:0;top:${w * .25}px;width:100%;text-align:center;font-size:${w * .19}px;color:${scoreColor(score)};text-shadow:0 0 30px rgba(0,0,0,.6),0 8px 0 rgba(0,0,0,.5)">${score}</div>
@@ -86,7 +86,7 @@ const dline = (host, html, t, css = '') => { const e = div('', host, html, `font
 const ring = (host, x, y, w, h, t, c = '#ff3b4f') => { const e = put(host, svg(`<svg viewBox="0 0 ${w} ${h}" style="width:${w}px;height:${h}px;overflow:visible"><ellipse cx="${w / 2}" cy="${h / 2}" rx="${w / 2 - 6}" ry="${h / 2 - 6}" fill="none" stroke="${c}" stroke-width="9" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" transform="rotate(-8 ${w / 2} ${h / 2})"/></svg>`, `left:${x}px;top:${y}px`)); const p = e.querySelector('ellipse'); tl.to(p, { attr: { 'stroke-dashoffset': 0 }, duration: .45, ease: 'power2.inOut' }, t); cue(t, 'snip', .35); return e; };
 
 /* stamp that slams on (class .stamp red|gold|green) */
-const stampOn = (host, html, kind, x, y, t, rot = -8, size = 84) => { const s = put(host, svg(`<div class="stamp ${kind}" style="position:relative;font-size:${size}px">${html}</div>`, `left:${x}px;top:${y}px`)); tl.set(s, { opacity: 0, scale: 2.4, rotation: rot - 6 }, 0); tl.to(s, { opacity: 1, scale: 1, rotation: rot, duration: .22, ease: 'power4.in' }, t); cue(t + .2, 'stamp', .9); R.shake(t + .2, 12, .3); return s; };
+const stampOn = (host, html, kind, x, y, t, rot = -8, size = 84) => { const s = put(host, svg(`<div class="stamp ${kind}" style="position:relative;font-size:${size}px">${html}</div>`, `left:${x}px;top:${y}px`)); tl.set(s, { opacity: 0, scale: 2.4, rotation: rot - 6 }, 0); tl.to(s, { opacity: 1, scale: 1, rotation: rot, duration: .22, ease: 'power4.in' }, t); cue(t + .2, 'stamp', .9); R.shake(t + .2, 12, .3); burst(s, t + .22, kind === 'red' ? '#ff4a3d' : kind === 'green' ? '#3dff9a' : '#ffc640', 18, 260); return s; };
 
 /* label pill */
 const pill = (host, html, bg, fg, x, y, size = 34) => put(host, svg(`<div class="pill" style="position:relative;background:${bg};color:${fg};font-size:${size}px">${html}</div>`, `left:${x}px;top:${y}px`));
