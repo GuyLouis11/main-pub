@@ -3,7 +3,7 @@
 const R = RT_INIT();
 const { tl, S, E, V, VE, W, WE, rnd, $, $$, div, cue, TOTAL } = R;
 const NS = 'http://www.w3.org/2000/svg';
-const svg = (html, css) => { const d = document.createElement('div'); d.className = 'abs'; d.innerHTML = html; if (css) d.style.cssText += css; return d; };
+const svg = (html, css) => { const d = document.createElement('div'); d.className = 'abs'; d.innerHTML = html; d.dataset.f = '1'; if (css) d.style.cssText += css; return d; };
 const put = (host, el) => { (typeof host === 'string' ? $(host) : host).appendChild(el); return el; };
 const sc = id => $(`[data-scene="${id}"]`);
 const center = sel => tl.set(sel, { xPercent: -50 }, 0);
@@ -23,7 +23,7 @@ const through = (id, { first = false, last = false, sfx = 'whoosh', mode = 'zoom
 const pop = (el, t, from = .4, d = .32) => { tl.set(el, { opacity: 0, scale: from }, 0); tl.to(el, { opacity: 1, scale: 1, duration: d, ease: 'back.out(2)' }, t); };
 const up = (el, t, y = 40, d = .32) => { tl.set(el, { opacity: 0, y }, 0); tl.to(el, { opacity: 1, y: 0, duration: d, ease: 'power3.out' }, t); };
 const fromL = (el, t, x = -200, d = .35) => { tl.set(el, { opacity: 0, x }, 0); tl.to(el, { opacity: 1, x: 0, duration: d, ease: 'power3.out' }, t); };
-const slam = (el, t, from = 2.2) => { tl.set(el, { opacity: 0, scale: from }, 0); tl.to(el, { opacity: 1, scale: 1, duration: .2, ease: 'power4.in' }, t); };
+const slam = (el, t, from = 2.2, col = '#ffc640') => { tl.set(el, { opacity: 0, scale: from }, 0); tl.to(el, { opacity: 1, scale: 1, duration: .2, ease: 'power4.in' }, t); burst(el, t + .2, col, 14, 200); };
 const out = (el, t, d = .25) => tl.to(el, { opacity: 0, duration: d }, t);
 const punch = (t, a = 1.04) => { tl.to('#stage', { scale: a, duration: .12, ease: 'power2.out', transformOrigin: '50% 45%' }, t).to('#stage', { scale: 1, duration: .38, ease: 'power2.inOut' }, t + .12); };
 const countTo = (el, t, d, a, b, fmt) => { const e = typeof el === 'string' ? $(el) : el; R.count(e, t, d, a, b, fmt); };
@@ -154,6 +154,9 @@ const chapterCard = (id, n, title, sub, icon, accent, world) => {
   tl.to(ic, { rotationY: -14, y: -16, duration: E(id) - t - 1, ease: 'sine.inOut' }, t + 1.05);
   cue(t + .1, 'impact', .8); cue(t + .15, 'riser', .3, 0, { dur: .4 }); cue(t + .45, 'whoosh', .4, .5);
   tl.to(num, { rotationY: 12, duration: E(id) - t - .4, ease: 'sine.inOut' }, t + .7);
+  const band = put(host, svg(`<div style="width:1920px;height:64px;background:linear-gradient(90deg,${accent},${accent}cc);transform:rotate(-2deg);box-shadow:0 10px 40px rgba(0,0,0,.4);overflow:hidden"><div class="mq anton" style="font-size:44px;line-height:64px;color:#0a0618;white-space:nowrap">${Array(12).fill(title + ' &nbsp;✦&nbsp; ').join('')}</div></div>`, 'left:0;top:850px'));
+  tl.set(band, { opacity: 0, x: -300 }, 0); tl.to(band, { opacity: 1, x: 0, duration: .45, ease: 'power3.out' }, t + .2);
+  tl.fromTo(band.querySelector('.mq'), { x: 0 }, { x: -700, duration: E(id) - t, ease: 'none', immediateRender: false }, t);
   cam(id, { z: 1.05 });
   through(id, { sfx: null });
 };
