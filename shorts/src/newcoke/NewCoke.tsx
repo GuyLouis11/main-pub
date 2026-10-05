@@ -147,10 +147,10 @@ const RecipeScene: React.FC = () => {
   const stamp = prog(f, fRec, fRec + 6, EZ.back);
   return (
     <AbsoluteFill style={{background: 'radial-gradient(ellipse at 50% 40%, #3a2410, #0b0603 78%)'}}>
-      <div style={{position: 'absolute', left: 190, top: 120, transform: `translateY(${(1 - prog(f, fCh - 8, fCh + 6)) * 300}px)`, opacity: prog(f, fCh - 8, fCh)}}>
+      <div style={{position: 'absolute', left: 190, top: 120, transform: `translateY(${(1 - prog(f, t.ls('L04') - 4, fCh + 6)) * 300}px) rotate(${(1 - prog(f, t.ls('L04') - 4, fCh + 6)) * 8}deg)`, opacity: prog(f, t.ls('L04') - 4, t.ls('L04') + 4)}}>
         <Ledger stamp={stamp} w={680} />
       </div>
-      <div style={{position: 'absolute', left: 80, top: 120, ...big, fontSize: 150, color: K.gold, opacity: prog(f, fNN, fNN + 6) * (1 - prog(f, fSw - 4, fSw + 2)), transform: `scale(${1 + 0.4 * (1 - prog(f, fNN, fNN + 8))})`, textShadow: '0 12px 30px rgba(0,0,0,.7)'}}>
+      <div style={{...center, top: 900, ...big, fontSize: 170, color: K.gold, opacity: prog(f, fNN, fNN + 6) * (1 - prog(f, fSw - 6, fSw - 1)), transform: `scale(${1 + 0.4 * (1 - prog(f, fNN, fNN + 8))})`, textShadow: '0 12px 30px rgba(0,0,0,.7)'}}>
         99 YEARS
       </div>
       {/* sugar crystals */}
@@ -371,7 +371,7 @@ const ClassicScene: React.FC = () => {
     <AbsoluteFill style={{background: `linear-gradient(180deg, ${K.red}, #9a0710)`}}>
       <AbsoluteFill style={{background: 'radial-gradient(ellipse at 50% 30%, rgba(255,255,255,.25), transparent 60%)'}} />
       <div style={{...center, top: 120, display: 'flex', justifyContent: 'center'}}>
-        <LogoReveal path={SCRIPT} at={fCC - 8} size={820} color="#ffffff" draw={26} glow="rgba(255,255,255,.5)" />
+        <LogoReveal path={SCRIPT} at={t.ls('L12') - 2} size={820} color="#ffffff" draw={Math.max(26, fCC - t.ls('L12') + 6)} glow="rgba(255,255,255,.5)" />
       </div>
       <div style={{...center, top: 640, transform: `scale(${f >= fCl ? 1.8 - 0.8 * ban : 0})`}}>
         <div style={{display: 'inline-block', background: '#fff', color: K.red, fontFamily: 'Bebas Neue', fontSize: 120, letterSpacing: 18, padding: '6px 40px 0', borderRadius: 6, boxShadow: '0 20px 50px rgba(0,0,0,.35)'}}>CLASSIC</div>
@@ -401,7 +401,7 @@ const QuoteScene: React.FC = () => {
       <div style={{position: 'absolute', left: 90, top: 200, width: 900, opacity: prog(f, fPres - 4, fPres + 6)}}>
         <div style={{fontFamily: 'Playfair Display', fontSize: 300, color: K.red, lineHeight: 0.6, height: 120}}>“</div>
         <div style={{fontFamily: 'Playfair Display', fontWeight: 700, fontStyle: 'italic', fontSize: 84, color: '#fff', lineHeight: 1.15}}>
-          <span style={{opacity: prog(f, fDumb - 18, fDumb - 6)}}>We're not that dumb…</span>
+          <span style={{opacity: prog(f, fPres + 2, fPres + 12)}}>We're not that dumb…</span>
           <br />
           <span style={{opacity: prog(f, fAnd - 4, fAnd + 6), color: K.gold}}>and we're not that smart.</span>
         </div>

@@ -497,3 +497,50 @@ export const FriesBox: React.FC<{w?: number; peel?: number; style?: React.CSSPro
     </div>
   </div>
 );
+
+/** isometric cardboard box (SVG) with hinged flaps: open 0 → 1 */
+export const BoxIso: React.FC<{open: number; w?: number}> = ({open, w = 520}) => {
+  // iso geometry in a 200×200 box: top rhombus corners
+  const T = {l: [20, 70], f: [100, 110], r: [180, 70], b: [100, 30]};
+  const H = 80; // wall height
+  const P = (pts: number[][]) => pts.map((p) => p.join(',')).join(' ');
+  const a = open * 150; // flap angle
+  const rad = (d: number) => (d * Math.PI) / 180;
+  // front flaps hinge on the front-left and front-right top edges; project a lifted flap with a simple cosine
+  const lift = Math.cos(rad(a));
+  const up = Math.sin(rad(a));
+  const flapL = [T.l, T.f, [T.f[0] - 40 * lift, T.f[1] - 20 * lift - 55 * up], [T.l[0] - 40 * lift + 40, T.l[1] - 20 * lift - 55 * up + 20]];
+  const flapR = [T.f, T.r, [T.r[0] + 0 - 40 * lift + 40 - 40, T.r[1] - 20 * lift - 55 * up + 0], [T.f[0] + 40 * lift - 40 + 40, T.f[1] - 20 * lift - 55 * up]];
+  return (
+    <svg viewBox="-20 -60 240 260" width={w} height={w * 1.08} style={{overflow: 'visible'}}>
+      <defs>
+        <linearGradient id="bxL" x1="0" x2="1"><stop offset="0" stopColor="#b78347" /><stop offset="1" stopColor="#c99659" /></linearGradient>
+        <linearGradient id="bxR" x1="0" x2="1"><stop offset="0" stopColor="#a8743c" /><stop offset="1" stopColor="#8f6131" /></linearGradient>
+        <radialGradient id="bxIn"><stop offset="0" stopColor="rgba(255,90,70,.9)" /><stop offset="1" stopColor="#2a140a" /></radialGradient>
+      </defs>
+      <ellipse cx="100" cy={T.f[1] + H + 8} rx="95" ry="22" fill="rgba(0,0,0,.45)" />
+      {/* interior (visible when open) */}
+      <polygon points={P([T.l, T.f, T.r, T.b])} fill="url(#bxIn)" opacity={open} />
+      {/* back flaps */}
+      <polygon points={P([T.l, T.b, [T.b[0] - 40 * open, T.b[1] - 50 * open], [T.l[0] - 40 * open, T.l[1] - 50 * open]])} fill="#c49157" opacity={open > 0.05 ? 1 : 0} />
+      <polygon points={P([T.b, T.r, [T.r[0] + 40 * open, T.r[1] - 50 * open], [T.b[0] + 40 * open, T.b[1] - 50 * open]])} fill="#b07a40" opacity={open > 0.05 ? 1 : 0} />
+      {/* walls */}
+      <polygon points={P([T.l, T.f, [T.f[0], T.f[1] + H], [T.l[0], T.l[1] + H]])} fill="url(#bxL)" />
+      <polygon points={P([T.f, T.r, [T.r[0], T.r[1] + H], [T.f[0], T.f[1] + H]])} fill="url(#bxR)" />
+      {/* tape + label */}
+      <polygon points={P([[56, 88], [64, 92], [64, 172], [56, 168]])} fill="rgba(235,215,160,.6)" />
+      <text x="32" y="146" fontFamily="Special Elite" fontSize="9" fill="#3a2a14" transform="skewY(26.5)">SECURITY SEALS</text>
+      <text x="32" y="158" fontFamily="Special Elite" fontSize="7" fill="#3a2a14" transform="skewY(26.5)">QTY 5,000 · FRAGILE</text>
+      {/* closed lid / front flaps */}
+      {open < 0.02 ? (
+        <polygon points={P([T.l, T.f, T.r, T.b])} fill="#d6a565" stroke="#b07a40" strokeWidth="1" />
+      ) : (
+        <>
+          <polygon points={P(flapL)} fill="#d2a061" stroke="#a8743c" strokeWidth="1" />
+          <polygon points={P(flapR)} fill="#c08a4f" stroke="#a8743c" strokeWidth="1" />
+        </>
+      )}
+      {open < 0.02 && <line x1={T.l[0] + 40} y1={T.l[1] + 20} x2={T.b[0] + 40} y2={T.b[1] + 20} stroke="rgba(235,215,160,.8)" strokeWidth="6" />}
+    </svg>
+  );
+};

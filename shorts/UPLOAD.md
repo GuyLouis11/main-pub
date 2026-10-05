@@ -1,7 +1,7 @@
 # Upload packages: two Shorts (1080×1920, under 60 s, Private)
 
-Both are true stories. Every claim is phrased to match multiple reputable sources (notes at the bottom). Visibility is
-Private; the owner publishes. Don't mention AI anywhere.
+Both are true stories. Every claim is phrased to match multiple reputable sources (notes at the bottom). The ready-to-paste
+ChatGPT handoff is `deliveries/HANDOFF_2026-10-05_REMOTION_SHORTS.md`. Don't mention AI anywhere.
 
 ---
 
@@ -20,6 +20,7 @@ Private; the owner publishes. Don't mention AI anywhere.
 The man hired to protect McDonald's million-dollar Monopoly pieces was the one stealing them. A supplier's mistake gave him the tamper-proof seals, and an airport bathroom stall did the rest.
 
 Sources: FBI and U.S. DOJ press releases (Aug. 21, 2001) · CNBC (2020) · HBO, "McMillions" (2020)
+Educational content. Not affiliated with or endorsed by McDonald's or Hasbro.
 
 #shorts #mcdonalds #monopoly #truecrime #scam #fbi
 
@@ -44,6 +45,7 @@ Sources: FBI and U.S. DOJ press releases (Aug. 21, 2001) · CNBC (2020) · HBO, 
 In 1985 Coca-Cola ran about 200,000 taste tests and changed its 99-year-old recipe. Seventy-nine days later the original was back. The problem was the test itself: a sip isn't a can.
 
 Sources: History.com, "Why New Coke Flopped" · Britannica · TIME (1985) · The Coca-Cola Company archives · Malcolm Gladwell, *Blink* (2005)
+Educational content. Not affiliated with or endorsed by The Coca-Cola Company or PepsiCo.
 
 #shorts #cocacola #newcoke #marketing #psychology #history
 

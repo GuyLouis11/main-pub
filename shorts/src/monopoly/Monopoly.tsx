@@ -8,7 +8,7 @@ import {Chroma, drift, Flash, FlareSweep, FxDefs, Grain, LightLeaks, motionBlur,
 import {Captions} from '../kit/Captions';
 import {Scene} from '../kit/Scene';
 import {LogoReveal, Odometer, Typewriter, useStamp} from '../kit/Brand';
-import {ARCHES, Bars, Box3D, C, CashRain, Envelope, FriesBox, GamePiece, GateSign, Stall, Suit, Tiles} from './art';
+import {ARCHES, Bars, BoxIso, C, CashRain, Envelope, FriesBox, GamePiece, GateSign, Stall, Suit, Tiles} from './art';
 
 const t = makeT(tlData as never);
 export const MONOPOLY_FRAMES = t.frames;
@@ -222,8 +222,8 @@ const BoxScene: React.FC = () => {
   const stamp = useStamp(fSlip, 9);
   return (
     <AbsoluteFill style={{background: 'radial-gradient(ellipse at 50% 55%, #2a1a12, #0a0706 75%)'}}>
-      <div style={{position: 'absolute', left: 330, top: 640 - (1 - drop) * 1200}}>
-        <Box3D open={open} size={420} ry={kf(f, [[a, -38], [a + 140, -18]], EZ.soft)} />
+      <div style={{position: 'absolute', left: 540 - 260, top: 470 - (1 - drop) * 1200, transform: `rotate(${kf(f, [[a, -4], [a + 140, 2]], EZ.soft)}deg)`}}>
+        <BoxIso open={open} w={520} />
       </div>
       {/* seals fanning out of the box */}
       {Array.from({length: 7}).map((_, i) => {
@@ -456,7 +456,7 @@ const FBIScene: React.FC = () => {
   return (
     <AbsoluteFill style={{background: '#04060c'}}>
       {/* police light sweeps (smooth rotation, no strobe) */}
-      <AbsoluteFill style={{opacity: prog(f, fFBI - 6, fFBI + 4), mixBlendMode: 'screen'}}>
+      <AbsoluteFill style={{opacity: 0.35 + 0.65 * prog(f, fFBI - 6, fFBI + 4), mixBlendMode: 'screen'}}>
         <div style={{position: 'absolute', left: -400, top: -200, width: 1900, height: 1900, background: `conic-gradient(from ${sweep * 60}deg at 30% 40%, rgba(47,123,255,.55), transparent 18%, transparent 50%, rgba(255,40,60,.45), transparent 68%)`, filter: 'blur(60px)'}} />
       </AbsoluteFill>
       <div style={{position: 'absolute', left: 120, top: 260, width: 840, padding: '36px 40px', background: '#f3efe4', transform: 'rotate(-2deg)', boxShadow: '0 30px 70px rgba(0,0,0,.6)', opacity: prog(f, fAnon - 8, fAnon)}}>
