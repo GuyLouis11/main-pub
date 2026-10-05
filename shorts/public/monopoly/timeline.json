@@ -1,0 +1,943 @@
+{
+ "title": "The Bathroom Stall",
+ "fps": 30,
+ "total": 54.738,
+ "lines": [
+  {
+   "id": "L01",
+   "start": 0.304,
+   "end": 4.643,
+   "text": "McDonald's million-dollar Monopoly winners were picked in an airport bathroom stall.",
+   "words": [
+    {
+     "w": "McDonald's",
+     "s": 0.357,
+     "e": 0.983,
+     "hi": false
+    },
+    {
+     "w": "million-dollar",
+     "s": 1.052,
+     "e": 1.609,
+     "hi": true
+    },
+    {
+     "w": "Monopoly",
+     "s": 1.678,
+     "e": 2.096,
+     "hi": false
+    },
+    {
+     "w": "winners",
+     "s": 2.165,
+     "e": 2.443,
+     "hi": false
+    },
+    {
+     "w": "were",
+     "s": 2.513,
+     "e": 2.652,
+     "hi": false
+    },
+    {
+     "w": "picked",
+     "s": 2.722,
+     "e": 2.93,
+     "hi": false
+    },
+    {
+     "w": "in",
+     "s": 2.965,
+     "e": 3.0,
+     "hi": false
+    },
+    {
+     "w": "an",
+     "s": 3.07,
+     "e": 3.209,
+     "hi": false
+    },
+    {
+     "w": "airport",
+     "s": 3.417,
+     "e": 3.626,
+     "hi": true
+    },
+    {
+     "w": "bathroom",
+     "s": 3.696,
+     "e": 4.043,
+     "hi": true
+    },
+    {
+     "w": "stall.",
+     "s": 4.183,
+     "e": 4.643,
+     "hi": true
+    }
+   ]
+  },
+  {
+   "id": "L02",
+   "start": 4.861,
+   "end": 6.841,
+   "text": "By the man hired to protect them.",
+   "words": [
+    {
+     "w": "By",
+     "s": 4.948,
+     "e": 5.017,
+     "hi": false
+    },
+    {
+     "w": "the",
+     "s": 5.087,
+     "e": 5.157,
+     "hi": false
+    },
+    {
+     "w": "man",
+     "s": 5.226,
+     "e": 5.504,
+     "hi": false
+    },
+    {
+     "w": "hired",
+     "s": 5.574,
+     "e": 5.852,
+     "hi": false
+    },
+    {
+     "w": "to",
+     "s": 5.922,
+     "e": 5.991,
+     "hi": false
+    },
+    {
+     "w": "protect",
+     "s": 6.2,
+     "e": 6.409,
+     "hi": true
+    },
+    {
+     "w": "them.",
+     "s": 6.548,
+     "e": 6.841,
+     "hi": false
+    }
+   ]
+  },
+  {
+   "id": "L03",
+   "start": 7.102,
+   "end": 11.476,
+   "text": "Jerry Jacobson. Ex-cop. Head of security for the company running the game.",
+   "words": [
+    {
+     "w": "Jerry",
+     "s": 7.189,
+     "e": 7.397,
+     "hi": false
+    },
+    {
+     "w": "Jacobson.",
+     "s": 7.467,
+     "e": 8.232,
+     "hi": false
+    },
+    {
+     "w": "Ex-cop.",
+     "s": 8.441,
+     "e": 9.206,
+     "hi": false
+    },
+    {
+     "w": "Head",
+     "s": 9.415,
+     "e": 9.484,
+     "hi": false
+    },
+    {
+     "w": "of",
+     "s": 9.519,
+     "e": 9.554,
+     "hi": false
+    },
+    {
+     "w": "security",
+     "s": 9.623,
+     "e": 10.041,
+     "hi": true
+    },
+    {
+     "w": "for",
+     "s": 10.18,
+     "e": 10.215,
+     "hi": false
+    },
+    {
+     "w": "the",
+     "s": 10.25,
+     "e": 10.319,
+     "hi": false
+    },
+    {
+     "w": "company",
+     "s": 10.389,
+     "e": 10.667,
+     "hi": false
+    },
+    {
+     "w": "running",
+     "s": 10.737,
+     "e": 10.945,
+     "hi": false
+    },
+    {
+     "w": "the",
+     "s": 10.98,
+     "e": 11.015,
+     "hi": false
+    },
+    {
+     "w": "game.",
+     "s": 11.084,
+     "e": 11.476,
+     "hi": false
+    }
+   ]
+  },
+  {
+   "id": "L04",
+   "start": 11.693,
+   "end": 16.098,
+   "text": "His job? Escort the winning pieces, with an auditor watching his every move.",
+   "words": [
+    {
+     "w": "His",
+     "s": 11.78,
+     "e": 11.794,
+     "hi": false
+    },
+    {
+     "w": "job?",
+     "s": 11.863,
+     "e": 12.35,
+     "hi": false
+    },
+    {
+     "w": "Escort",
+     "s": 12.559,
+     "e": 12.907,
+     "hi": false
+    },
+    {
+     "w": "the",
+     "s": 12.942,
+     "e": 12.977,
+     "hi": false
+    },
+    {
+     "w": "winning",
+     "s": 13.046,
+     "e": 13.185,
+     "hi": false
+    },
+    {
+     "w": "pieces,",
+     "s": 13.255,
+     "e": 13.846,
+     "hi": false
+    },
+    {
+     "w": "with",
+     "s": 13.95,
+     "e": 14.09,
+     "hi": false
+    },
+    {
+     "w": "an",
+     "s": 14.159,
+     "e": 14.229,
+     "hi": false
+    },
+    {
+     "w": "auditor",
+     "s": 14.298,
+     "e": 14.646,
+     "hi": true
+    },
+    {
+     "w": "watching",
+     "s": 14.716,
+     "e": 14.994,
+     "hi": false
+    },
+    {
+     "w": "his",
+     "s": 15.098,
+     "e": 15.203,
+     "hi": false
+    },
+    {
+     "w": "every",
+     "s": 15.272,
+     "e": 15.55,
+     "hi": false
+    },
+    {
+     "w": "move.",
+     "s": 15.62,
+     "e": 16.098,
+     "hi": false
+    }
+   ]
+  },
+  {
+   "id": "L05",
+   "start": 16.359,
+   "end": 20.761,
+   "text": "Then a supplier slipped up, and mailed Jerry a box of tamper-proof seals.",
+   "words": [
+    {
+     "w": "Then",
+     "s": 16.446,
+     "e": 16.724,
+     "hi": false
+    },
+    {
+     "w": "a",
+     "s": 16.794,
+     "e": 16.863,
+     "hi": false
+    },
+    {
+     "w": "supplier",
+     "s": 16.933,
+     "e": 17.42,
+     "hi": false
+    },
+    {
+     "w": "slipped",
+     "s": 17.49,
+     "e": 17.768,
+     "hi": false
+    },
+    {
+     "w": "up,",
+     "s": 17.837,
+     "e": 18.116,
+     "hi": false
+    },
+    {
+     "w": "and",
+     "s": 18.255,
+     "e": 18.394,
+     "hi": false
+    },
+    {
+     "w": "mailed",
+     "s": 18.429,
+     "e": 18.672,
+     "hi": false
+    },
+    {
+     "w": "Jerry",
+     "s": 18.811,
+     "e": 18.95,
+     "hi": false
+    },
+    {
+     "w": "a",
+     "s": 18.985,
+     "e": 19.02,
+     "hi": false
+    },
+    {
+     "w": "box",
+     "s": 19.09,
+     "e": 19.298,
+     "hi": false
+    },
+    {
+     "w": "of",
+     "s": 19.368,
+     "e": 19.437,
+     "hi": false
+    },
+    {
+     "w": "tamper-proof",
+     "s": 19.507,
+     "e": 20.063,
+     "hi": true
+    },
+    {
+     "w": "seals.",
+     "s": 20.203,
+     "e": 20.76,
+     "hi": true
+    }
+   ]
+  },
+  {
+   "id": "L06",
+   "start": 20.935,
+   "end": 24.065,
+   "text": "Now he could reseal the envelopes, and nobody would know.",
+   "words": [
+    {
+     "w": "Now",
+     "s": 21.022,
+     "e": 21.161,
+     "hi": false
+    },
+    {
+     "w": "he",
+     "s": 21.23,
+     "e": 21.3,
+     "hi": false
+    },
+    {
+     "w": "could",
+     "s": 21.37,
+     "e": 21.509,
+     "hi": false
+    },
+    {
+     "w": "reseal",
+     "s": 21.578,
+     "e": 21.926,
+     "hi": false
+    },
+    {
+     "w": "the",
+     "s": 21.996,
+     "e": 22.065,
+     "hi": false
+    },
+    {
+     "w": "envelopes,",
+     "s": 22.135,
+     "e": 22.97,
+     "hi": false
+    },
+    {
+     "w": "and",
+     "s": 23.039,
+     "e": 23.109,
+     "hi": false
+    },
+    {
+     "w": "nobody",
+     "s": 23.224,
+     "e": 23.457,
+     "hi": true
+    },
+    {
+     "w": "would",
+     "s": 23.526,
+     "e": 23.665,
+     "hi": false
+    },
+    {
+     "w": "know.",
+     "s": 23.804,
+     "e": 24.065,
+     "hi": false
+    }
+   ]
+  },
+  {
+   "id": "L07",
+   "start": 24.283,
+   "end": 28.396,
+   "text": "So he'd slip into airport stalls... and swap the winners for duds.",
+   "words": [
+    {
+     "w": "So",
+     "s": 24.37,
+     "e": 24.439,
+     "hi": false
+    },
+    {
+     "w": "he'd",
+     "s": 24.509,
+     "e": 24.717,
+     "hi": false
+    },
+    {
+     "w": "slip",
+     "s": 24.787,
+     "e": 24.996,
+     "hi": false
+    },
+    {
+     "w": "into",
+     "s": 25.1,
+     "e": 25.204,
+     "hi": false
+    },
+    {
+     "w": "airport",
+     "s": 25.413,
+     "e": 25.622,
+     "hi": false
+    },
+    {
+     "w": "stalls...",
+     "s": 25.691,
+     "e": 26.317,
+     "hi": false
+    },
+    {
+     "w": "and",
+     "s": 26.526,
+     "e": 26.665,
+     "hi": false
+    },
+    {
+     "w": "swap",
+     "s": 26.735,
+     "e": 27.013,
+     "hi": true
+    },
+    {
+     "w": "the",
+     "s": 27.083,
+     "e": 27.152,
+     "hi": false
+    },
+    {
+     "w": "winners",
+     "s": 27.222,
+     "e": 27.5,
+     "hi": false
+    },
+    {
+     "w": "for",
+     "s": 27.57,
+     "e": 27.709,
+     "hi": false
+    },
+    {
+     "w": "duds.",
+     "s": 27.778,
+     "e": 28.396,
+     "hi": false
+    }
+   ]
+  },
+  {
+   "id": "L08",
+   "start": 28.57,
+   "end": 33.7,
+   "text": "Then he sold them. To family. To friends. To strangers paying cash.",
+   "words": [
+    {
+     "w": "Then",
+     "s": 28.657,
+     "e": 28.796,
+     "hi": false
+    },
+    {
+     "w": "he",
+     "s": 28.9,
+     "e": 29.004,
+     "hi": false
+    },
+    {
+     "w": "sold",
+     "s": 29.074,
+     "e": 29.283,
+     "hi": true
+    },
+    {
+     "w": "them.",
+     "s": 29.352,
+     "e": 29.77,
+     "hi": false
+    },
+    {
+     "w": "To",
+     "s": 29.978,
+     "e": 30.048,
+     "hi": false
+    },
+    {
+     "w": "family.",
+     "s": 30.187,
+     "e": 30.813,
+     "hi": false
+    },
+    {
+     "w": "To",
+     "s": 31.022,
+     "e": 31.091,
+     "hi": false
+    },
+    {
+     "w": "friends.",
+     "s": 31.161,
+     "e": 31.822,
+     "hi": false
+    },
+    {
+     "w": "To",
+     "s": 31.996,
+     "e": 32.065,
+     "hi": false
+    },
+    {
+     "w": "strangers",
+     "s": 32.204,
+     "e": 32.622,
+     "hi": false
+    },
+    {
+     "w": "paying",
+     "s": 32.761,
+     "e": 32.97,
+     "hi": false
+    },
+    {
+     "w": "cash.",
+     "s": 33.039,
+     "e": 33.7,
+     "hi": true
+    }
+   ]
+  },
+  {
+   "id": "L09",
+   "start": 33.961,
+   "end": 39.457,
+   "text": "For years, almost every top prize went to his network. Over twenty million dollars.",
+   "words": [
+    {
+     "w": "For",
+     "s": 34.048,
+     "e": 34.117,
+     "hi": false
+    },
+    {
+     "w": "years,",
+     "s": 34.257,
+     "e": 34.813,
+     "hi": false
+    },
+    {
+     "w": "almost",
+     "s": 34.952,
+     "e": 35.37,
+     "hi": false
+    },
+    {
+     "w": "every",
+     "s": 35.439,
+     "e": 35.648,
+     "hi": false
+    },
+    {
+     "w": "top",
+     "s": 35.717,
+     "e": 35.926,
+     "hi": false
+    },
+    {
+     "w": "prize",
+     "s": 35.996,
+     "e": 36.343,
+     "hi": false
+    },
+    {
+     "w": "went",
+     "s": 36.413,
+     "e": 36.552,
+     "hi": false
+    },
+    {
+     "w": "to",
+     "s": 36.587,
+     "e": 36.622,
+     "hi": false
+    },
+    {
+     "w": "his",
+     "s": 36.726,
+     "e": 36.83,
+     "hi": false
+    },
+    {
+     "w": "network.",
+     "s": 37.039,
+     "e": 37.491,
+     "hi": false
+    },
+    {
+     "w": "Over",
+     "s": 37.717,
+     "e": 37.926,
+     "hi": false
+    },
+    {
+     "w": "twenty",
+     "s": 37.996,
+     "e": 38.274,
+     "hi": true
+    },
+    {
+     "w": "million",
+     "s": 38.483,
+     "e": 38.83,
+     "hi": true
+    },
+    {
+     "w": "dollars.",
+     "s": 38.935,
+     "e": 39.457,
+     "hi": true
+    }
+   ]
+  },
+  {
+   "id": "L10",
+   "start": 39.718,
+   "end": 43.963,
+   "text": "Then an anonymous tip reached the FBI. Jerry got thirty-seven months.",
+   "words": [
+    {
+     "w": "Then",
+     "s": 39.805,
+     "e": 40.014,
+     "hi": false
+    },
+    {
+     "w": "an",
+     "s": 40.223,
+     "e": 40.292,
+     "hi": false
+    },
+    {
+     "w": "anonymous",
+     "s": 40.362,
+     "e": 40.779,
+     "hi": false
+    },
+    {
+     "w": "tip",
+     "s": 40.849,
+     "e": 41.057,
+     "hi": false
+    },
+    {
+     "w": "reached",
+     "s": 41.197,
+     "e": 41.405,
+     "hi": false
+    },
+    {
+     "w": "the",
+     "s": 41.44,
+     "e": 41.475,
+     "hi": false
+    },
+    {
+     "w": "FBI.",
+     "s": 41.614,
+     "e": 42.275,
+     "hi": true
+    },
+    {
+     "w": "Jerry",
+     "s": 42.501,
+     "e": 42.71,
+     "hi": false
+    },
+    {
+     "w": "got",
+     "s": 42.814,
+     "e": 42.918,
+     "hi": false
+    },
+    {
+     "w": "thirty-seven",
+     "s": 42.988,
+     "e": 43.475,
+     "hi": false
+    },
+    {
+     "w": "months.",
+     "s": 43.649,
+     "e": 43.964,
+     "hi": false
+    }
+   ]
+  },
+  {
+   "id": "L11",
+   "start": 44.311,
+   "end": 49.19,
+   "text": "Prosecutors say even the million-dollar piece mailed to a children's hospital came from Jerry.",
+   "words": [
+    {
+     "w": "Prosecutors",
+     "s": 44.347,
+     "e": 44.973,
+     "hi": false
+    },
+    {
+     "w": "say",
+     "s": 45.043,
+     "e": 45.251,
+     "hi": false
+    },
+    {
+     "w": "even",
+     "s": 45.46,
+     "e": 45.669,
+     "hi": false
+    },
+    {
+     "w": "the",
+     "s": 45.703,
+     "e": 45.738,
+     "hi": false
+    },
+    {
+     "w": "million-dollar",
+     "s": 45.877,
+     "e": 46.434,
+     "hi": true
+    },
+    {
+     "w": "piece",
+     "s": 46.503,
+     "e": 46.782,
+     "hi": false
+    },
+    {
+     "w": "mailed",
+     "s": 46.851,
+     "e": 47.06,
+     "hi": false
+    },
+    {
+     "w": "to",
+     "s": 47.095,
+     "e": 47.13,
+     "hi": false
+    },
+    {
+     "w": "a",
+     "s": 47.199,
+     "e": 47.269,
+     "hi": false
+    },
+    {
+     "w": "children's",
+     "s": 47.338,
+     "e": 47.756,
+     "hi": false
+    },
+    {
+     "w": "hospital",
+     "s": 47.982,
+     "e": 48.225,
+     "hi": false
+    },
+    {
+     "w": "came",
+     "s": 48.295,
+     "e": 48.434,
+     "hi": false
+    },
+    {
+     "w": "from",
+     "s": 48.503,
+     "e": 48.643,
+     "hi": false
+    },
+    {
+     "w": "Jerry.",
+     "s": 48.712,
+     "e": 49.19,
+     "hi": false
+    }
+   ]
+  },
+  {
+   "id": "L12",
+   "start": 49.581,
+   "end": 53.137,
+   "text": "So next time you peel one... ask who touched it first.",
+   "words": [
+    {
+     "w": "So",
+     "s": 49.668,
+     "e": 49.807,
+     "hi": false
+    },
+    {
+     "w": "next",
+     "s": 49.877,
+     "e": 50.085,
+     "hi": false
+    },
+    {
+     "w": "time",
+     "s": 50.19,
+     "e": 50.294,
+     "hi": false
+    },
+    {
+     "w": "you",
+     "s": 50.363,
+     "e": 50.433,
+     "hi": false
+    },
+    {
+     "w": "peel",
+     "s": 50.503,
+     "e": 50.711,
+     "hi": false
+    },
+    {
+     "w": "one...",
+     "s": 50.781,
+     "e": 51.337,
+     "hi": false
+    },
+    {
+     "w": "ask",
+     "s": 51.563,
+     "e": 51.842,
+     "hi": false
+    },
+    {
+     "w": "who",
+     "s": 51.911,
+     "e": 51.981,
+     "hi": false
+    },
+    {
+     "w": "touched",
+     "s": 52.05,
+     "e": 52.259,
+     "hi": false
+    },
+    {
+     "w": "it",
+     "s": 52.329,
+     "e": 52.468,
+     "hi": false
+    },
+    {
+     "w": "first.",
+     "s": 52.537,
+     "e": 53.137,
+     "hi": true
+    }
+   ]
+  }
+ ]
+}

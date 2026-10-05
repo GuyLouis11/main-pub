@@ -1,0 +1,975 @@
+{
+ "title": "The Sip",
+ "fps": 30,
+ "total": 58.015,
+ "lines": [
+  {
+   "id": "L01",
+   "start": 0.302,
+   "end": 5.709,
+   "text": "Coca-Cola tested its new formula on about two hundred thousand people. They loved it.",
+   "words": [
+    {
+     "w": "Coca-Cola",
+     "s": 0.345,
+     "e": 0.966,
+     "hi": false
+    },
+    {
+     "w": "tested",
+     "s": 1.138,
+     "e": 1.31,
+     "hi": false
+    },
+    {
+     "w": "its",
+     "s": 1.379,
+     "e": 1.448,
+     "hi": false
+    },
+    {
+     "w": "new",
+     "s": 1.517,
+     "e": 1.655,
+     "hi": false
+    },
+    {
+     "w": "formula",
+     "s": 1.793,
+     "e": 2.207,
+     "hi": false
+    },
+    {
+     "w": "on",
+     "s": 2.276,
+     "e": 2.345,
+     "hi": false
+    },
+    {
+     "w": "about",
+     "s": 2.414,
+     "e": 2.621,
+     "hi": false
+    },
+    {
+     "w": "two",
+     "s": 2.69,
+     "e": 2.897,
+     "hi": true
+    },
+    {
+     "w": "hundred",
+     "s": 3.034,
+     "e": 3.31,
+     "hi": true
+    },
+    {
+     "w": "thousand",
+     "s": 3.517,
+     "e": 3.862,
+     "hi": true
+    },
+    {
+     "w": "people.",
+     "s": 4.0,
+     "e": 4.586,
+     "hi": false
+    },
+    {
+     "w": "They",
+     "s": 4.81,
+     "e": 4.948,
+     "hi": false
+    },
+    {
+     "w": "loved",
+     "s": 5.086,
+     "e": 5.293,
+     "hi": true
+    },
+    {
+     "w": "it.",
+     "s": 5.362,
+     "e": 5.709,
+     "hi": false
+    }
+   ]
+  },
+  {
+   "id": "L02",
+   "start": 5.968,
+   "end": 8.399,
+   "text": "Seventy-nine days later, it was gone.",
+   "words": [
+    {
+     "w": "Seventy-nine",
+     "s": 6.054,
+     "e": 6.468,
+     "hi": false
+    },
+    {
+     "w": "days",
+     "s": 6.606,
+     "e": 6.813,
+     "hi": false
+    },
+    {
+     "w": "later,",
+     "s": 6.985,
+     "e": 7.572,
+     "hi": false
+    },
+    {
+     "w": "it",
+     "s": 7.641,
+     "e": 7.709,
+     "hi": false
+    },
+    {
+     "w": "was",
+     "s": 7.778,
+     "e": 7.916,
+     "hi": false
+    },
+    {
+     "w": "gone.",
+     "s": 8.089,
+     "e": 8.399,
+     "hi": true
+    }
+   ]
+  },
+  {
+   "id": "L03",
+   "start": 8.658,
+   "end": 12.529,
+   "text": "1985. Pepsi is beating Coke in blind taste tests.",
+   "words": [
+    {
+     "w": "1985.",
+     "s": 8.727,
+     "e": 9.968,
+     "hi": false
+    },
+    {
+     "w": "Pepsi",
+     "s": 10.175,
+     "e": 10.52,
+     "hi": false
+    },
+    {
+     "w": "is",
+     "s": 10.623,
+     "e": 10.727,
+     "hi": false
+    },
+    {
+     "w": "beating",
+     "s": 10.761,
+     "e": 11.003,
+     "hi": false
+    },
+    {
+     "w": "Coke",
+     "s": 11.072,
+     "e": 11.278,
+     "hi": false
+    },
+    {
+     "w": "in",
+     "s": 11.347,
+     "e": 11.416,
+     "hi": false
+    },
+    {
+     "w": "blind",
+     "s": 11.554,
+     "e": 11.692,
+     "hi": false
+    },
+    {
+     "w": "taste",
+     "s": 11.727,
+     "e": 11.968,
+     "hi": false
+    },
+    {
+     "w": "tests.",
+     "s": 12.175,
+     "e": 12.529,
+     "hi": false
+    }
+   ]
+  },
+  {
+   "id": "L04",
+   "start": 12.745,
+   "end": 17.236,
+   "text": "So Coke changes its ninety-nine-year-old recipe. Sweeter. Smoother.",
+   "words": [
+    {
+     "w": "So",
+     "s": 12.831,
+     "e": 12.969,
+     "hi": false
+    },
+    {
+     "w": "Coke",
+     "s": 13.038,
+     "e": 13.314,
+     "hi": false
+    },
+    {
+     "w": "changes",
+     "s": 13.383,
+     "e": 13.728,
+     "hi": false
+    },
+    {
+     "w": "its",
+     "s": 13.831,
+     "e": 13.934,
+     "hi": false
+    },
+    {
+     "w": "ninety-nine-year-old",
+     "s": 14.003,
+     "e": 14.762,
+     "hi": true
+    },
+    {
+     "w": "recipe.",
+     "s": 14.831,
+     "e": 15.521,
+     "hi": false
+    },
+    {
+     "w": "Sweeter.",
+     "s": 15.745,
+     "e": 16.4,
+     "hi": false
+    },
+    {
+     "w": "Smoother.",
+     "s": 16.624,
+     "e": 17.236,
+     "hi": false
+    }
+   ]
+  },
+  {
+   "id": "L05",
+   "start": 17.452,
+   "end": 20.919,
+   "text": "In blind tests, it beats old Coke. And Pepsi.",
+   "words": [
+    {
+     "w": "In",
+     "s": 17.469,
+     "e": 17.607,
+     "hi": false
+    },
+    {
+     "w": "blind",
+     "s": 17.745,
+     "e": 17.883,
+     "hi": false
+    },
+    {
+     "w": "tests,",
+     "s": 17.952,
+     "e": 18.538,
+     "hi": false
+    },
+    {
+     "w": "it",
+     "s": 18.71,
+     "e": 18.848,
+     "hi": false
+    },
+    {
+     "w": "beats",
+     "s": 18.883,
+     "e": 19.055,
+     "hi": false
+    },
+    {
+     "w": "old",
+     "s": 19.124,
+     "e": 19.331,
+     "hi": false
+    },
+    {
+     "w": "Coke.",
+     "s": 19.366,
+     "e": 19.917,
+     "hi": false
+    },
+    {
+     "w": "And",
+     "s": 20.141,
+     "e": 20.348,
+     "hi": false
+    },
+    {
+     "w": "Pepsi.",
+     "s": 20.383,
+     "e": 20.919,
+     "hi": true
+    }
+   ]
+  },
+  {
+   "id": "L06",
+   "start": 21.178,
+   "end": 24.608,
+   "text": "New Coke launches. And America... loses it.",
+   "words": [
+    {
+     "w": "New",
+     "s": 21.264,
+     "e": 21.402,
+     "hi": true
+    },
+    {
+     "w": "Coke",
+     "s": 21.471,
+     "e": 21.747,
+     "hi": true
+    },
+    {
+     "w": "launches.",
+     "s": 21.816,
+     "e": 22.505,
+     "hi": false
+    },
+    {
+     "w": "And",
+     "s": 22.712,
+     "e": 22.781,
+     "hi": false
+    },
+    {
+     "w": "America...",
+     "s": 22.85,
+     "e": 23.678,
+     "hi": false
+    },
+    {
+     "w": "loses",
+     "s": 23.902,
+     "e": 24.247,
+     "hi": true
+    },
+    {
+     "w": "it.",
+     "s": 24.316,
+     "e": 24.608,
+     "hi": true
+    }
+   ]
+  },
+  {
+   "id": "L07",
+   "start": 24.823,
+   "end": 29.625,
+   "text": "Fifteen hundred angry calls a day. One letter was addressed to Chief Dodo.",
+   "words": [
+    {
+     "w": "Fifteen",
+     "s": 24.909,
+     "e": 25.392,
+     "hi": false
+    },
+    {
+     "w": "hundred",
+     "s": 25.53,
+     "e": 25.875,
+     "hi": false
+    },
+    {
+     "w": "angry",
+     "s": 26.082,
+     "e": 26.358,
+     "hi": false
+    },
+    {
+     "w": "calls",
+     "s": 26.427,
+     "e": 26.634,
+     "hi": false
+    },
+    {
+     "w": "a",
+     "s": 26.703,
+     "e": 26.772,
+     "hi": false
+    },
+    {
+     "w": "day.",
+     "s": 26.841,
+     "e": 27.427,
+     "hi": false
+    },
+    {
+     "w": "One",
+     "s": 27.651,
+     "e": 27.72,
+     "hi": false
+    },
+    {
+     "w": "letter",
+     "s": 27.789,
+     "e": 27.996,
+     "hi": false
+    },
+    {
+     "w": "was",
+     "s": 28.065,
+     "e": 28.134,
+     "hi": false
+    },
+    {
+     "w": "addressed",
+     "s": 28.203,
+     "e": 28.616,
+     "hi": false
+    },
+    {
+     "w": "to",
+     "s": 28.685,
+     "e": 28.754,
+     "hi": false
+    },
+    {
+     "w": "Chief",
+     "s": 28.823,
+     "e": 29.03,
+     "hi": true
+    },
+    {
+     "w": "Dodo.",
+     "s": 29.099,
+     "e": 29.625,
+     "hi": true
+    }
+   ]
+  },
+  {
+   "id": "L08",
+   "start": 29.884,
+   "end": 34.237,
+   "text": "Coke hired a psychiatrist to listen in. Callers sounded like they were grieving.",
+   "words": [
+    {
+     "w": "Coke",
+     "s": 29.944,
+     "e": 30.22,
+     "hi": false
+    },
+    {
+     "w": "hired",
+     "s": 30.254,
+     "e": 30.496,
+     "hi": false
+    },
+    {
+     "w": "a",
+     "s": 30.53,
+     "e": 30.565,
+     "hi": false
+    },
+    {
+     "w": "psychiatrist",
+     "s": 30.737,
+     "e": 31.392,
+     "hi": true
+    },
+    {
+     "w": "to",
+     "s": 31.461,
+     "e": 31.53,
+     "hi": false
+    },
+    {
+     "w": "listen",
+     "s": 31.668,
+     "e": 31.806,
+     "hi": false
+    },
+    {
+     "w": "in.",
+     "s": 31.909,
+     "e": 32.289,
+     "hi": false
+    },
+    {
+     "w": "Callers",
+     "s": 32.513,
+     "e": 32.858,
+     "hi": false
+    },
+    {
+     "w": "sounded",
+     "s": 32.892,
+     "e": 33.134,
+     "hi": false
+    },
+    {
+     "w": "like",
+     "s": 33.203,
+     "e": 33.272,
+     "hi": false
+    },
+    {
+     "w": "they",
+     "s": 33.341,
+     "e": 33.409,
+     "hi": false
+    },
+    {
+     "w": "were",
+     "s": 33.478,
+     "e": 33.547,
+     "hi": false
+    },
+    {
+     "w": "grieving.",
+     "s": 33.616,
+     "e": 34.237,
+     "hi": true
+    }
+   ]
+  },
+  {
+   "id": "L09",
+   "start": 34.539,
+   "end": 38.157,
+   "text": "So how did two hundred thousand tests get it so wrong?",
+   "words": [
+    {
+     "w": "So",
+     "s": 34.625,
+     "e": 34.763,
+     "hi": false
+    },
+    {
+     "w": "how",
+     "s": 34.901,
+     "e": 35.039,
+     "hi": false
+    },
+    {
+     "w": "did",
+     "s": 35.142,
+     "e": 35.246,
+     "hi": false
+    },
+    {
+     "w": "two",
+     "s": 35.315,
+     "e": 35.522,
+     "hi": false
+    },
+    {
+     "w": "hundred",
+     "s": 35.591,
+     "e": 35.797,
+     "hi": false
+    },
+    {
+     "w": "thousand",
+     "s": 36.004,
+     "e": 36.349,
+     "hi": false
+    },
+    {
+     "w": "tests",
+     "s": 36.487,
+     "e": 36.901,
+     "hi": false
+    },
+    {
+     "w": "get",
+     "s": 36.97,
+     "e": 37.039,
+     "hi": false
+    },
+    {
+     "w": "it",
+     "s": 37.142,
+     "e": 37.246,
+     "hi": false
+    },
+    {
+     "w": "so",
+     "s": 37.315,
+     "e": 37.522,
+     "hi": false
+    },
+    {
+     "w": "wrong?",
+     "s": 37.591,
+     "e": 38.157,
+     "hi": true
+    }
+   ]
+  },
+  {
+   "id": "L10",
+   "start": 38.459,
+   "end": 42.933,
+   "text": "They were sips. And in a single sip, the sweeter drink tends to win.",
+   "words": [
+    {
+     "w": "They",
+     "s": 38.476,
+     "e": 38.614,
+     "hi": false
+    },
+    {
+     "w": "were",
+     "s": 38.717,
+     "e": 38.821,
+     "hi": false
+    },
+    {
+     "w": "sips.",
+     "s": 38.959,
+     "e": 39.648,
+     "hi": true
+    },
+    {
+     "w": "And",
+     "s": 39.855,
+     "e": 39.924,
+     "hi": false
+    },
+    {
+     "w": "in",
+     "s": 39.993,
+     "e": 40.062,
+     "hi": false
+    },
+    {
+     "w": "a",
+     "s": 40.131,
+     "e": 40.2,
+     "hi": false
+    },
+    {
+     "w": "single",
+     "s": 40.269,
+     "e": 40.545,
+     "hi": false
+    },
+    {
+     "w": "sip,",
+     "s": 40.752,
+     "e": 41.131,
+     "hi": false
+    },
+    {
+     "w": "the",
+     "s": 41.303,
+     "e": 41.441,
+     "hi": false
+    },
+    {
+     "w": "sweeter",
+     "s": 41.51,
+     "e": 41.786,
+     "hi": true
+    },
+    {
+     "w": "drink",
+     "s": 41.855,
+     "e": 42.062,
+     "hi": false
+    },
+    {
+     "w": "tends",
+     "s": 42.131,
+     "e": 42.338,
+     "hi": false
+    },
+    {
+     "w": "to",
+     "s": 42.407,
+     "e": 42.476,
+     "hi": false
+    },
+    {
+     "w": "win.",
+     "s": 42.545,
+     "e": 42.933,
+     "hi": false
+    }
+   ]
+  },
+  {
+   "id": "L11",
+   "start": 43.105,
+   "end": 46.332,
+   "text": "But nobody drinks a sip. You drink the whole can.",
+   "words": [
+    {
+     "w": "But",
+     "s": 43.157,
+     "e": 43.295,
+     "hi": false
+    },
+    {
+     "w": "nobody",
+     "s": 43.364,
+     "e": 43.709,
+     "hi": false
+    },
+    {
+     "w": "drinks",
+     "s": 43.778,
+     "e": 43.984,
+     "hi": false
+    },
+    {
+     "w": "a",
+     "s": 44.053,
+     "e": 44.191,
+     "hi": false
+    },
+    {
+     "w": "sip.",
+     "s": 44.26,
+     "e": 44.743,
+     "hi": false
+    },
+    {
+     "w": "You",
+     "s": 44.95,
+     "e": 45.088,
+     "hi": false
+    },
+    {
+     "w": "drink",
+     "s": 45.191,
+     "e": 45.295,
+     "hi": false
+    },
+    {
+     "w": "the",
+     "s": 45.398,
+     "e": 45.502,
+     "hi": false
+    },
+    {
+     "w": "whole",
+     "s": 45.64,
+     "e": 45.778,
+     "hi": true
+    },
+    {
+     "w": "can.",
+     "s": 45.847,
+     "e": 46.332,
+     "hi": true
+    }
+   ]
+  },
+  {
+   "id": "L12",
+   "start": 46.634,
+   "end": 50.785,
+   "text": "The original came back as Coca-Cola Classic, and was soon beating Pepsi again.",
+   "words": [
+    {
+     "w": "The",
+     "s": 46.642,
+     "e": 46.711,
+     "hi": false
+    },
+    {
+     "w": "original",
+     "s": 46.78,
+     "e": 47.194,
+     "hi": false
+    },
+    {
+     "w": "came",
+     "s": 47.263,
+     "e": 47.401,
+     "hi": false
+    },
+    {
+     "w": "back",
+     "s": 47.47,
+     "e": 47.608,
+     "hi": false
+    },
+    {
+     "w": "as",
+     "s": 47.677,
+     "e": 47.746,
+     "hi": false
+    },
+    {
+     "w": "Coca-Cola",
+     "s": 47.815,
+     "e": 48.297,
+     "hi": false
+    },
+    {
+     "w": "Classic,",
+     "s": 48.366,
+     "e": 49.022,
+     "hi": true
+    },
+    {
+     "w": "and",
+     "s": 49.194,
+     "e": 49.263,
+     "hi": false
+    },
+    {
+     "w": "was",
+     "s": 49.366,
+     "e": 49.47,
+     "hi": false
+    },
+    {
+     "w": "soon",
+     "s": 49.573,
+     "e": 49.677,
+     "hi": false
+    },
+    {
+     "w": "beating",
+     "s": 49.746,
+     "e": 49.953,
+     "hi": false
+    },
+    {
+     "w": "Pepsi",
+     "s": 50.022,
+     "e": 50.297,
+     "hi": false
+    },
+    {
+     "w": "again.",
+     "s": 50.366,
+     "e": 50.78,
+     "hi": false
+    }
+   ]
+  },
+  {
+   "id": "L13",
+   "start": 51.087,
+   "end": 56.415,
+   "text": "Was it all a plan? Coke's president said: we're not that dumb... and we're not that smart.",
+   "words": [
+    {
+     "w": "Was",
+     "s": 51.122,
+     "e": 51.259,
+     "hi": false
+    },
+    {
+     "w": "it",
+     "s": 51.294,
+     "e": 51.328,
+     "hi": false
+    },
+    {
+     "w": "all",
+     "s": 51.397,
+     "e": 51.466,
+     "hi": false
+    },
+    {
+     "w": "a",
+     "s": 51.535,
+     "e": 51.604,
+     "hi": false
+    },
+    {
+     "w": "plan?",
+     "s": 51.673,
+     "e": 52.328,
+     "hi": false
+    },
+    {
+     "w": "Coke's",
+     "s": 52.553,
+     "e": 52.828,
+     "hi": false
+    },
+    {
+     "w": "president",
+     "s": 52.932,
+     "e": 53.242,
+     "hi": false
+    },
+    {
+     "w": "said:",
+     "s": 53.346,
+     "e": 53.794,
+     "hi": false
+    },
+    {
+     "w": "we're",
+     "s": 53.828,
+     "e": 53.932,
+     "hi": false
+    },
+    {
+     "w": "not",
+     "s": 54.035,
+     "e": 54.139,
+     "hi": false
+    },
+    {
+     "w": "that",
+     "s": 54.208,
+     "e": 54.415,
+     "hi": false
+    },
+    {
+     "w": "dumb...",
+     "s": 54.449,
+     "e": 55.035,
+     "hi": true
+    },
+    {
+     "w": "and",
+     "s": 55.173,
+     "e": 55.311,
+     "hi": false
+    },
+    {
+     "w": "we're",
+     "s": 55.38,
+     "e": 55.518,
+     "hi": false
+    },
+    {
+     "w": "not",
+     "s": 55.587,
+     "e": 55.656,
+     "hi": false
+    },
+    {
+     "w": "that",
+     "s": 55.759,
+     "e": 55.863,
+     "hi": false
+    },
+    {
+     "w": "smart.",
+     "s": 56.035,
+     "e": 56.415,
+     "hi": true
+    }
+   ]
+  }
+ ]
+}

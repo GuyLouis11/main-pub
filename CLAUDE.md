@@ -46,6 +46,7 @@ The goal of every video is **views, retention and monetization**:
 | `monty-short/` | **Should You Switch Doors?** Monty Hall Short, 1080×1920 | Done |
 | `nines-short/` | **0.999… = 1** Short, 1080×1920 | Done |
 | `film/`, `hot-water-opening/` | **The Boy Who Froze Hot Water**: earlier film with generated video shots ("Flow" slots) | Done |
+| `shorts/` | **Remotion Shorts studio**: "The Bathroom Stall" (McDonald's Monopoly) and "The Sip" (New Coke). React motion kit with AE-style motion blur, transitions and captions, real logos from `simple-icons`, and a three.js 3D can. See `shorts/README.md`. | Done |
 | `voice-tests/` | Eleven v4 test reel for the Tim voice (v3 vs v4, tags, accents, characters, SFX) | Reference |
 | `deliveries/` | Final MP4s (force-added; GitHub's hard limit is 100 MB per file) | — |
 

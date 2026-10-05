@@ -1,0 +1,33 @@
+{
+  "name": "gww-shorts",
+  "version": "1.0.0",
+  "description": "Vertical Shorts built with Remotion (React motion design)",
+  "private": true,
+  "scripts": {
+    "studio": "remotion studio",
+    "render": "remotion render"
+  },
+  "dependencies": {
+    "@react-three/fiber": "^9.8.1",
+    "@remotion/bundler": "^4.0.533",
+    "@remotion/cli": "^4.0.533",
+    "@remotion/fonts": "^4.0.533",
+    "@remotion/layout-utils": "^4.0.533",
+    "@remotion/media-utils": "^4.0.533",
+    "@remotion/motion-blur": "^4.0.533",
+    "@remotion/noise": "^4.0.533",
+    "@remotion/paths": "^4.0.533",
+    "@remotion/renderer": "^4.0.533",
+    "@remotion/shapes": "^4.0.533",
+    "@remotion/three": "^4.0.533",
+    "@remotion/transitions": "^4.0.533",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "remotion": "^4.0.533",
+    "simple-icons": "^16.34.0",
+    "three": "^0.186.1"
+  },
+  "devDependencies": {
+    "@types/three": "^0.186.0"
+  }
+}
