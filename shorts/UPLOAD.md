@@ -7,7 +7,7 @@ ChatGPT handoff is `deliveries/HANDOFF_2026-10-05_REMOTION_SHORTS.md`. Don't men
 
 ## SHORT 1: "The Bathroom Stall" (McDonald's Monopoly)
 
-- **File:** `deliveries/McDonalds_Monopoly_Bathroom_Stall_1080x1920.mp4` (≈55 s)
+- **File:** `deliveries/McDonalds_Monopoly_Bathroom_Stall_1080x1920.mp4` (≈47 s)
 - **Captions:** `shorts/captions/monopoly.en.srt`
 
 **Title (main):** McDonald's Monopoly Was Rigged From an Airport Bathroom
@@ -32,7 +32,7 @@ Educational content. Not affiliated with or endorsed by McDonald's or Hasbro.
 
 ## SHORT 2: "The Sip" (New Coke)
 
-- **File:** `deliveries/New_Coke_The_Sip_1080x1920.mp4` (≈58 s)
+- **File:** `deliveries/New_Coke_The_Sip_1080x1920.mp4` (≈48 s)
 - **Captions:** `shorts/captions/newcoke.en.srt`
 
 **Title (main):** Coke Tested This on 200,000 People. It Still Flopped.

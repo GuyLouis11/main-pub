@@ -11,8 +11,8 @@ Two vertical Shorts built in React with Remotion 4, designed to look like After 
 
 | Short | Composition | Length |
 |---|---|---|
-| The Bathroom Stall (McDonald's Monopoly) | `Monopoly` | ≈55 s |
-| The Sip (New Coke) | `NewCoke` | ≈58 s |
+| The Bathroom Stall (McDonald's Monopoly) | `Monopoly` | ≈47 s |
+| The Sip (New Coke) | `NewCoke` | ≈48 s |
 
 ## Pipeline
 ```bash
@@ -39,8 +39,19 @@ downloads its own.
   - `motion` (AE easing presets, keyframes, springs).
 - `src/monopoly/`, `src/newcoke/`: each Short's art and composition. Every beat is placed on a spoken word via
   `t.find(line, word)`.
-- Voice tooling reuses `prophet/tools/vo.py` (v4 alignment mapping). Narration is tightened (long v4 pauses cut to
-  0.26 s) and sped up 1.15× with pitch preserved (rubberband), for Shorts pacing.
+- **Voice:** Shorts use the Tim voice's own trained model, `eleven_multilingual_v2`, with a speed setting of 1.08.
+  - Plain text only, no tags, no time-stretching.
+  - The first version used v4 with "low, hushed" direction plus a 1.15× rubberband stretch. It measured 2–3× breathier
+    with a flat pitch, and the owner heard it as robotic, whispery and "sexy". Don't go back to that.
+  - Pitch QA runs after every pass; retake anything more than 3 semitones off.
+- **People:** `src/kit/Person.tsx` draws illustrated people, not silhouettes:
+  - face, eyes that blink, brows, nose, lips, ears;
+  - hair styles, glasses, facial hair;
+  - outfits (suit, uniform, sweater, blouse, vest);
+  - moods (neutral, smirk, worried, angry, shout, smile, stern, shock);
+  - rim light and breathing.
+  - `CAST` holds the recurring characters. They're generic people, never likenesses of real individuals.
+- **Maps:** the route scene draws a real US map from `us-atlas` (Census boundaries) with `d3-geo`.
 
 ## Real photos
 Logos are real (`simple-icons`). Photo libraries (Wikimedia Commons and others) are blocked by this environment's

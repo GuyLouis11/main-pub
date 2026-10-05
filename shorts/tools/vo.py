@@ -22,9 +22,13 @@ import vo as P  # noqa: E402  (prophet engine: take(), tokens(), performance(), 
 
 SR = P.SR
 LEAD, TAIL = 0.35, 1.6          # silence before the first line / after the last
-MAXP = 0.26                     # longest pause kept inside a take (v4 leaves long theatrical gaps; Shorts need pace)
+MAXP = 0.40                     # longest pause kept inside a take (trims only the odd long breath)
 HEAD = 0.10                     # silence kept before a take's first word
-TEMPO = {"monopoly": 1.15, "newcoke": 1.16}   # pitch-preserving speed-up (rubberband), applied to the whole track
+TEMPO = {}                      # no time-stretching: it made the voice sound robotic. Pace comes from the model's speed setting.
+# Shorts use the voice's own trained model (Tim's clone is fine-tuned for multilingual v2): natural, energetic, true to
+# the voice. v4 sounded breathy and drifted ~4 semitones high on this voice. Plain text only (v2 would speak [tags]).
+MODEL = "eleven_multilingual_v2"
+SETTINGS = {"stability": 0.45, "similarity_boost": 0.85, "style": 0.35, "use_speaker_boost": True, "speed": 1.08}
 
 
 def tighten(x, ws):
@@ -85,7 +89,8 @@ def generate(short, lines, force, only):
             continue
         if not key:
             raise SystemExit("set XI_KEY (environment or .env)")
-        y, words, rep = P.take(text, key, perf=perf)
+        P.MODEL, P.SETTINGS = MODEL, SETTINGS
+        y, words, rep = P.take(text, key)
         y = pyln.normalize.loudness(y, pyln.Meter(SR).integrated_loudness(y), P.LUFS)
         if np.abs(y).max() > .89:
             y *= .89 / np.abs(y).max()

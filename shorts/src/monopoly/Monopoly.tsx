@@ -8,7 +8,11 @@ import {Chroma, drift, Flash, FlareSweep, FxDefs, Grain, LightLeaks, motionBlur,
 import {Captions} from '../kit/Captions';
 import {Scene} from '../kit/Scene';
 import {LogoReveal, Odometer, Typewriter, useStamp} from '../kit/Brand';
-import {ARCHES, Bars, BoxIso, C, CashRain, Envelope, FriesBox, GamePiece, GateSign, Stall, Suit, Tiles} from './art';
+import {CAST, HAIRC, Person, SKIN} from '../kit/Person';
+import {geoAlbersUsa, geoPath} from 'd3-geo';
+import {feature} from 'topojson-client';
+import usStates from 'us-atlas/states-albers-10m.json';
+import {ARCHES, Bars, BoxIso, C, CashRain, Envelope, FriesBox, GamePiece, GateSign, Stall, Tiles} from './art';
 
 const t = makeT(tlData as never);
 export const MONOPOLY_FRAMES = t.frames;
@@ -82,12 +86,18 @@ const StallScene: React.FC = () => {
     <AbsoluteFill>
       <Tiles />
       <GateSign />
-      <Stall occupied={f >= fStall ? 1 : 0} />
-      {/* light spill under the door */}
-      <div style={{position: 'absolute', left: 190, top: 1560, width: 700, height: 40, background: 'radial-gradient(ellipse at 50% 0%, rgba(255,240,200,.35), transparent 70%)'}} />
-      <div style={{position: 'absolute', left: 540 - 330, top: 520 + (1 - rise) * 900, opacity: rise}}>
-        <Suit w={660} rim="#ffd27a" badge breathe={Math.sin(f / 18) * 1.2} />
-        <div style={{position: 'absolute', left: 448, top: 470, width: 120, height: 120, borderRadius: '50%', background: `radial-gradient(circle, rgba(255,230,140,${glint}), transparent 65%)`, mixBlendMode: 'screen'}} />
+      <Stall occupied={f >= fStall ? 1 : 0} top={300} h={930} />
+      {/* the gap under the door: light spill, dress shoes, a briefcase */}
+      <div style={{position: 'absolute', left: 190, top: 1230, width: 700, height: 70, background: 'radial-gradient(ellipse at 50% 0%, rgba(255,240,200,.45), rgba(0,0,0,.6) 75%)'}} />
+      {[0, 1].map((k) => (
+        <div key={k} style={{position: 'absolute', left: 430 + k * 120, top: 1252, width: 96, height: 34, borderRadius: '40px 50px 8px 8px', background: 'linear-gradient(180deg,#3a2a1f,#120c08)', boxShadow: '0 6px 10px rgba(0,0,0,.7)', transform: `translateX(${k ? 0 : Math.sin(f / 9) * 2}px)`}}>
+          <div style={{position: 'absolute', left: 14, top: 6, width: 40, height: 5, borderRadius: 3, background: 'rgba(255,255,255,.25)'}} />
+        </div>
+      ))}
+      <div style={{position: 'absolute', left: 300, top: 1238, width: 110, height: 52, borderRadius: 8, background: 'linear-gradient(160deg,#7a5530,#3e2814)', boxShadow: 'inset 0 0 0 3px #2a1a0c'}} />
+      <div style={{position: 'absolute', left: 540 - 300, top: 560 + (1 - rise) * 900, opacity: rise}}>
+        <Person {...CAST.jerry} w={600} rim="#ffd27a" mood={f >= fProt ? 'smirk' : 'neutral'} look={0.3} />
+        <div style={{position: 'absolute', left: 250, top: 560, width: 120, height: 120, borderRadius: '50%', background: `radial-gradient(circle, rgba(255,230,140,${glint}), transparent 65%)`, mixBlendMode: 'screen'}} />
       </div>
       <div style={{...center, top: 470, opacity: prog(f, fMan, fMan + 8), transform: `translateY(${(1 - prog(f, fMan, fMan + 12)) * 30}px)`}}>
         <div style={{display: 'inline-block', position: 'relative', fontFamily: 'Oswald', fontWeight: 700, fontSize: 70, color: '#fff', letterSpacing: 6, padding: '10px 26px', background: 'rgba(5,5,8,.72)', borderRadius: 8}}>
@@ -115,7 +125,14 @@ const FileScene: React.FC = () => {
       <div style={{position: 'absolute', left: 80, top: 230, width: 920, height: 1000, borderRadius: 18, background: 'linear-gradient(170deg,#d8b878,#b8955a)', transform: 'rotate(-3deg)', boxShadow: '0 40px 120px rgba(0,0,0,.7)'}}>
         <div style={{position: 'absolute', left: 40, top: -46, width: 300, height: 60, borderRadius: '14px 14px 0 0', background: '#d2b272'}} />
         <div style={{position: 'absolute', right: 50, top: 40, fontFamily: 'Special Elite', fontSize: 36, color: '#5a4320'}}>CASE FILE · SIMON MARKETING</div>
+        <div style={{position: 'absolute', right: 90, bottom: 60, width: 200, height: 200, borderRadius: '50%', border: '14px solid rgba(110,70,30,.25)', filter: 'blur(1px)'}} />
+        <div style={{position: 'absolute', left: 70, top: 690, fontFamily: 'Special Elite', fontSize: 30, color: '#4a3818', lineHeight: 1.5, whiteSpace: 'pre'}}>
+          {'ROLE: escorts winning game pieces\nACCESS: printer, packaging plants\nNOTES: former police officer'}
+        </div>
       </div>
+      <svg width="90" height="200" style={{position: 'absolute', left: 190, top: 330, transform: 'rotate(-8deg)', zIndex: 2}}>
+        <path d="M30 10 L30 160 Q30 185 50 185 Q70 185 70 160 L70 40 Q70 25 58 25 Q46 25 46 40 L46 150" fill="none" stroke="#c9ced6" strokeWidth="7" strokeLinecap="round" />
+      </svg>
       <div
         style={{
           position: 'absolute',
@@ -132,7 +149,7 @@ const FileScene: React.FC = () => {
       >
         <div style={{height: 92, background: C.red, color: '#fff', fontFamily: 'Oswald', fontWeight: 700, fontSize: 40, letterSpacing: 6, display: 'flex', alignItems: 'center', paddingLeft: 36}}>SECURITY · ALL ACCESS</div>
         <div style={{position: 'absolute', left: 36, top: 126, width: 230, height: 290, borderRadius: 12, background: 'linear-gradient(180deg,#9aa3b1,#59606c)', overflow: 'hidden'}}>
-          <svg viewBox="0 0 100 120" width={230} height={290}><circle cx="50" cy="44" r="22" fill="#15161a" /><path d="M10 120c4-30 22-44 40-44s36 14 40 44z" fill="#15161a" /></svg>
+          <div style={{position: 'absolute', left: -25, top: -38}}><Person {...CAST.jerry} w={280} rim="#cfe0ff" lanyard={false} /></div>
         </div>
         <div style={{position: 'absolute', left: 300, top: 140, fontFamily: 'Special Elite', fontSize: 46, color: '#1c1a17', lineHeight: 1.2}}>
           <Typewriter text="JEROME P." at={t.find('L03', 'jerry')} cps={26} cursor={false} />
@@ -153,58 +170,87 @@ const FileScene: React.FC = () => {
   );
 };
 
-/* ---------- S4: escort route + the auditor ---------- */
-const ROUTE = 'M 250 1040 C 380 820, 540 900, 560 700 S 740 420, 840 360';
+/* ---------- S4: escort route across a real US map, with the auditor watching ---------- */
+const PROJ = geoAlbersUsa().scale(1300).translate([487.5, 305]); // the projection us-atlas "albers" files are baked in
+const STATES = feature(usStates as never, (usStates as never as {objects: {states: never}}).objects.states) as never as {features: {id: string}[]};
+const statePath = geoPath(null);
+const MAP_S = 1.04;
+const MAP_X = 30;
+const MAP_Y = 250;
+const P = (lon: number, lat: number) => {
+  const q = PROJ([lon, lat])!;
+  return {x: MAP_X + q[0] * MAP_S, y: MAP_Y + q[1] * MAP_S};
+};
+const ORIGIN = P(-84.39, 33.75); // Georgia, where Jerry was based
+const PLANTS = [P(-87.65, 41.85), P(-96.8, 32.78), P(-118.24, 34.05), P(-75.16, 39.95)];
+const arc = (a: {x: number; y: number}, b: {x: number; y: number}) => {
+  const mx = (a.x + b.x) / 2;
+  const my = (a.y + b.y) / 2 - Math.hypot(b.x - a.x, b.y - a.y) * 0.35;
+  return `M ${a.x} ${a.y} Q ${mx} ${my} ${b.x} ${b.y}`;
+};
 const RouteScene: React.FC = () => {
   const f = useCurrentFrame();
+  const {fps} = useVideoConfig();
   const a = t.find('L04', 'escort') - 4;
   const fAud = t.find('L04', 'auditor');
   const fWatch = t.find('L04', 'watching');
-  const end = t.le('L04');
-  const L = getLength(ROUTE);
-  const p = prog(f, a, end, EZ.inOut);
-  const ev = evolvePath(Math.max(0.001, p), ROUTE);
-  const pt = getPointAtLength(ROUTE, Math.max(0.001, p) * L) ?? {x: 180, y: 900};
-  const pa = Math.max(0.001, p - 0.14);
-  const ptA = getPointAtLength(ROUTE, pa * L) ?? {x: 180, y: 900};
-  const aud = prog(f, fAud - 4, fAud + 6);
-  const cone = Math.sin((f - fWatch) / 7) * 18;
-  const nodes = [
-    {x: 250, y: 1040, l: 'SECURE VAULT', dx: 0, dy: 74},
-    {x: 560, y: 700, l: 'PRINT PLANT', dx: -150, dy: 14},
-    {x: 840, y: 360, l: 'PACKAGING', dx: 0, dy: 84},
-  ];
+  const end = t.le('L04') + 4;
+  const seg = (end - a) / PLANTS.length;
+  const cur = Math.min(PLANTS.length - 1, Math.max(0, Math.floor((f - a) / seg)));
+  const cp = prog(f, a + cur * seg, a + (cur + 1) * seg, EZ.inOut);
+  const route = arc(ORIGIN, PLANTS[cur]);
+  const L = getLength(route);
+  const pt = getPointAtLength(route, Math.max(0.001, cp) * L) ?? ORIGIN;
+  const ptA = getPointAtLength(route, Math.max(0.001, cp - 0.16) * L) ?? ORIGIN;
+  const audIn = spr(f, fps, fAud - 4, {damping: 14, stiffness: 160});
+  const jerIn = spr(f, fps, a, {damping: 14, stiffness: 160});
+  const scan = f >= fWatch ? (Math.sin((f - fWatch) / 6) + 1) / 2 : 0;
   return (
-    <AbsoluteFill style={{background: 'radial-gradient(ellipse at 50% 40%, #0f1a2e, #05070c 80%)'}}>
-      <AbsoluteFill style={{backgroundImage: 'linear-gradient(rgba(80,120,200,.12) 2px, transparent 2px), linear-gradient(90deg, rgba(80,120,200,.12) 2px, transparent 2px)', backgroundSize: '90px 90px', transform: 'perspective(1200px) rotateX(28deg) scale(1.3)', transformOrigin: '50% 30%'}} />
+    <AbsoluteFill style={{background: 'radial-gradient(ellipse at 50% 35%, #102038, #04070d 80%)'}}>
       <svg width={1080} height={1920} style={{position: 'absolute', inset: 0}}>
-        <path d={ROUTE} fill="none" stroke="rgba(120,160,255,.18)" strokeWidth={10} strokeDasharray="2 22" strokeLinecap="round" />
-        <path d={ROUTE} fill="none" stroke={C.gold} strokeWidth={8} strokeLinecap="round" strokeDasharray={ev.strokeDasharray} strokeDashoffset={ev.strokeDashoffset} style={{filter: 'drop-shadow(0 0 12px rgba(255,199,44,.8))'}} />
-        {nodes.map((n, i) => {
-          const on = p > i / 2 - 0.02;
+        <g transform={`translate(${MAP_X} ${MAP_Y}) scale(${MAP_S})`}>
+          {STATES.features.map((st, i) => (
+            <path key={i} d={statePath(st as never) || ''} fill={st.id === '13' ? 'rgba(255,199,44,.22)' : 'rgba(90,130,200,.12)'} stroke="rgba(150,185,255,.38)" strokeWidth={0.9} />
+          ))}
+        </g>
+        {PLANTS.map((pl, i) => {
+          const d = arc(ORIGIN, pl);
+          const done = i < cur ? 1 : i === cur ? cp : 0;
+          const ev = evolvePath(Math.max(0.001, done), d);
           return (
             <g key={i}>
-              <circle cx={n.x} cy={n.y} r={on ? 30 : 18} fill={on ? C.gold : '#2a3550'} style={{filter: on ? 'drop-shadow(0 0 16px rgba(255,199,44,.9))' : 'none'}} />
-              <text x={n.x + n.dx} y={n.y + n.dy} textAnchor="middle" fontFamily="Oswald" fontWeight={700} fontSize={40} fill={on ? '#fff' : '#5c6785'} letterSpacing={3}>{n.l}</text>
+              <path d={d} fill="none" stroke="rgba(255,199,44,.18)" strokeWidth={4} strokeDasharray="3 12" />
+              <path d={d} fill="none" stroke={C.gold} strokeWidth={5} strokeLinecap="round" strokeDasharray={ev.strokeDasharray} strokeDashoffset={ev.strokeDashoffset} style={{filter: 'drop-shadow(0 0 8px rgba(255,199,44,.8))'}} />
+              <circle cx={pl.x} cy={pl.y} r={done >= 1 ? 13 : 9} fill={done >= 1 ? C.gold : '#3a4a6e'} />
+              <text x={pl.x} y={pl.y - 22} textAnchor="middle" fontFamily="Oswald" fontWeight={700} fontSize={26} fill={done >= 1 ? '#fff' : '#7d8db0'} letterSpacing={2}>PLANT</text>
             </g>
           );
         })}
-        {/* auditor: follows, with a vision cone */}
-        <g opacity={aud} transform={`translate(${ptA.x} ${ptA.y})`}>
-          <path d={`M 0 0 L ${120} ${-70} A 140 140 0 0 1 ${120} ${70} Z`} fill="rgba(80,200,255,.18)" transform={`rotate(${-30 + cone})`} />
-          <circle r={22} fill="#59c8ff" />
-          <text y={70} textAnchor="middle" fontFamily="Oswald" fontWeight={700} fontSize={34} fill="#9fe0ff" letterSpacing={4}>AUDITOR</text>
+        <circle cx={ORIGIN.x} cy={ORIGIN.y} r={16} fill={C.red} style={{filter: 'drop-shadow(0 0 12px rgba(218,41,28,.9))'}} />
+        <text x={ORIGIN.x + 10} y={ORIGIN.y + 52} textAnchor="middle" fontFamily="Oswald" fontWeight={700} fontSize={28} fill="#ffd7cf" letterSpacing={2}>WINNING PIECES</text>
+        {/* auditor trailing the briefcase */}
+        <g opacity={prog(f, fAud - 4, fAud + 4)} transform={`translate(${ptA.x} ${ptA.y})`}>
+          <circle r={26} fill="none" stroke="#59c8ff" strokeWidth={3} opacity={0.5 + 0.5 * scan} />
+          <circle r={11} fill="#59c8ff" />
         </g>
       </svg>
-      {/* briefcase on the route */}
-      <div style={{position: 'absolute', left: pt.x - 80, top: pt.y - 120, width: 160, height: 112, transform: 'scale(1.15)'}}>
-        <div style={{position: 'absolute', left: 45, top: -16, width: 50, height: 24, border: '7px solid #3a2a18', borderBottom: 'none', borderRadius: '12px 12px 0 0'}} />
-        <div style={{position: 'absolute', inset: 0, borderRadius: 14, background: 'linear-gradient(160deg,#7a5530,#4a301a)', boxShadow: '0 12px 30px rgba(0,0,0,.6), inset 0 0 0 4px #2e1d0f'}} />
-        <div style={{position: 'absolute', left: 58, top: 40, width: 24, height: 20, borderRadius: 4, background: C.gold}} />
+      {/* briefcase traveling the arc */}
+      <div style={{position: 'absolute', left: pt.x - 46, top: pt.y - 70, width: 92, height: 64}}>
+        <div style={{position: 'absolute', left: 28, top: -12, width: 34, height: 16, border: '6px solid #3a2a18', borderBottom: 'none', borderRadius: '10px 10px 0 0'}} />
+        <div style={{position: 'absolute', inset: 0, borderRadius: 10, background: 'linear-gradient(160deg,#8a6236,#4a301a)', boxShadow: '0 10px 24px rgba(0,0,0,.6), inset 0 0 0 3px #2e1d0f'}} />
+        <div style={{position: 'absolute', left: 36, top: 22, width: 20, height: 16, borderRadius: 3, background: C.gold}} />
       </div>
-      <div style={{...center, top: 1180, fontFamily: 'Oswald', fontWeight: 700, fontSize: 46, color: '#cfe0ff', letterSpacing: 5, opacity: prog(f, fWatch, fWatch + 8)}}>
-        EVERY MOVE · WATCHED
-      </div>
+      {/* portrait cards: Jerry escorts, the auditor watches */}
+      {[
+        {p: CAST.jerry, label: 'JERRY · ESCORT', x: 60, inn: jerIn, look: 0.6, rim: '#ffd27a', col: C.gold},
+        {p: CAST.auditor, label: 'AUDITOR · WATCHING', x: 560, inn: audIn, look: -1, rim: '#9fe0ff', col: '#9fe0ff'},
+      ].map((c, i) => (
+        <div key={i} style={{position: 'absolute', left: c.x, top: 900 + (1 - c.inn) * 500, width: 460, height: 360, borderRadius: 22, overflow: 'hidden', background: 'linear-gradient(180deg,#1a2438,#0b111c)', boxShadow: `0 20px 60px rgba(0,0,0,.6), inset 0 0 0 2px ${i && scan ? `rgba(159,224,255,${0.3 + 0.6 * scan})` : 'rgba(255,255,255,.12)'}`}}>
+          <div style={{position: 'absolute', left: 60, top: -10}}><Person {...c.p} w={340} rim={c.rim} look={c.look} /></div>
+          <div style={{position: 'absolute', left: 0, right: 0, bottom: 0, padding: '12px 20px', background: 'rgba(4,7,13,.85)', fontFamily: 'Oswald', fontWeight: 700, fontSize: 32, color: c.col, letterSpacing: 4}}>{c.label}</div>
+          {i === 1 && <div style={{position: 'absolute', left: 0, right: 0, top: `${scan * 80}%`, height: 3, background: 'rgba(159,224,255,.7)', boxShadow: '0 0 14px #9fe0ff', opacity: scan > 0 ? 1 : 0}} />}
+        </div>
+      ))}
     </AbsoluteFill>
   );
 };
@@ -339,11 +385,11 @@ const SwapScene: React.FC = () => {
 
 /* ---------- S8: the network ---------- */
 const BOARD = [
-  {x: 540, y: 560, l: 'UNCLE JERRY', r: -2},
-  {x: 230, y: 330, l: 'FAMILY', r: -6, w: 'family'},
-  {x: 850, y: 330, l: 'FRIENDS', r: 5, w: 'friends'},
-  {x: 240, y: 880, l: 'STRANGERS', r: 4, w: 'strangers'},
-  {x: 840, y: 880, l: 'CASH BUYERS', r: -5, w: 'cash'},
+  {x: 540, y: 560, l: 'UNCLE JERRY', r: -2, who: {...CAST.jerry, mood: 'smirk' as const, lanyard: false}},
+  {x: 230, y: 330, l: 'FAMILY', r: -6, w: 'family', who: {skin: SKIN[0], hair: 'long' as const, hairColor: HAIRC.blonde, outfit: 'blouse' as const, cloth: '#3f6ea8', mood: 'smile' as const, age: 0.25, seed: 4}},
+  {x: 850, y: 330, l: 'FRIENDS', r: 5, w: 'friends', who: {skin: SKIN[2], hair: 'side' as const, hairColor: HAIRC.brown, outfit: 'sweater' as const, cloth: '#7a5b3a', mood: 'smirk' as const, age: 0.35, stubble: true, seed: 6}},
+  {x: 240, y: 880, l: 'STRANGERS', r: 4, w: 'strangers', who: {skin: SKIN[4], hair: 'curly' as const, hairColor: HAIRC.black, outfit: 'tee' as const, cloth: '#6a3b8a', mood: 'neutral' as const, age: 0.2, seed: 2}},
+  {x: 840, y: 880, l: 'CASH BUYERS', r: -5, w: 'cash', who: {skin: SKIN[1], hair: 'bald' as const, hairColor: HAIRC.grey, outfit: 'suit' as const, cloth: '#3a3a3a', tie: '#c9a227', mood: 'stern' as const, age: 0.6, beard: true, seed: 10}},
 ];
 const NetworkScene: React.FC = () => {
   const f = useCurrentFrame();
@@ -383,8 +429,8 @@ const NetworkScene: React.FC = () => {
               opacity: s,
             }}
           >
-            <div style={{width: 228, height: 200, background: i === 0 ? 'linear-gradient(180deg,#43362a,#16120e)' : 'linear-gradient(180deg,#5d5a55,#24221f)', display: 'flex', alignItems: 'flex-end', justifyContent: 'center', overflow: 'hidden'}}>
-              <svg viewBox="0 0 100 100" width={180} height={180}><circle cx="50" cy="40" r="20" fill="#0c0b0a" /><path d="M12 100c4-28 20-40 38-40s34 12 38 40z" fill="#0c0b0a" /></svg>
+            <div style={{position: 'relative', width: 228, height: 200, background: i === 0 ? 'linear-gradient(180deg,#6b5640,#2a2018)' : 'linear-gradient(180deg,#8a8781,#3a3834)', overflow: 'hidden'}}>
+              <div style={{position: 'absolute', left: 16 - 6, top: 16 - 26}}><Person {...n.who} w={240} rim="#ffd9a0" /></div>
             </div>
             <div style={{fontFamily: 'Permanent Marker', fontSize: 30, color: i === 0 ? C.red : '#222', textAlign: 'center', marginTop: 12}}>{n.l}</div>
             <div style={{position: 'absolute', left: 116, top: -10, width: 28, height: 28, borderRadius: '50%', background: 'radial-gradient(circle at 35% 35%, #ff6b6b, #8a0f0f)'}} />
@@ -465,13 +511,33 @@ const FBIScene: React.FC = () => {
           <Typewriter text={'"The game is rigged.\nAsk about Uncle Jerry."'} at={fAnon} cps={30} style={{whiteSpace: 'pre-wrap'}} />
         </div>
       </div>
+      {/* the incoming tip call, until the FBI lands */}
+      <div style={{position: 'absolute', left: 0, right: 0, top: 600, height: 300, opacity: prog(f, fAnon - 6, fAnon + 4) * (1 - prog(f, fFBI - 4, fFBI + 2))}}>
+        <svg viewBox="0 0 24 24" width={150} height={150} style={{position: 'absolute', left: 140, top: 60, transform: `rotate(${Math.sin(f * 1.6) * 8}deg)`}}>
+          <path fill="#e8eef8" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z" />
+        </svg>
+        {[0, 1, 2].map((k) => {
+          const r = ((f - fAnon) * 3 + k * 40) % 120;
+          return <div key={k} style={{position: 'absolute', left: 215 - r, top: 135 - r, width: r * 2, height: r * 2, borderRadius: '50%', border: '4px solid rgba(232,238,248,.6)', opacity: 1 - r / 120}} />;
+        })}
+        <div style={{position: 'absolute', left: 380, top: 80, display: 'flex', alignItems: 'center', gap: 7, height: 140}}>
+          {Array.from({length: 38}).map((_, i) => (
+            <div key={i} style={{width: 9, borderRadius: 5, background: '#9fc0ff', height: 14 + 110 * Math.abs(Math.sin(f / 3 + i * 0.6) * Math.sin(f / 9 + i * 0.21))}} />
+          ))}
+        </div>
+        <div style={{position: 'absolute', left: 380, top: 236, fontFamily: 'Oswald', fontWeight: 700, fontSize: 34, color: '#cfe0ff', letterSpacing: 6}}>INCOMING · ANONYMOUS · 2000</div>
+      </div>
       <div style={{...center, top: 640, transform: `scale(${f >= fFBI ? 2.4 - 1.4 * s : 0})`}}>
         <Chroma amt={f >= fFBI ? Math.exp(-(f - fFBI) / 5) * 18 : 0}>
           <div style={{...big, fontSize: 300, color: '#fff', textShadow: '0 0 70px rgba(47,123,255,.9)', letterSpacing: 20}}>FBI</div>
         </Chroma>
       </div>
-      <div style={{position: 'absolute', left: 540 - 250, top: 950 + (1 - prog(f, fJerry - 4, fJerry + 10)) * 400, opacity: prog(f, fJerry - 4, fJerry + 4)}}>
-        <Suit w={500} rim="#9fc0ff" />
+      <div style={{position: 'absolute', left: 40, top: 880 + (1 - spr(f, fps, fFBI + 6, {damping: 15, stiffness: 140})) * 600, opacity: f >= fFBI ? 1 : 0}}>
+        <Person {...CAST.agent} w={360} rim="#7fb0ff" look={0.8} />
+        <div style={{position: 'absolute', left: 70, top: 300, padding: '4px 14px', background: '#0d1b3d', color: '#cfe0ff', fontFamily: 'Oswald', fontWeight: 700, fontSize: 28, letterSpacing: 4, border: '2px solid #2f7bff'}}>FBI · JACKSONVILLE</div>
+      </div>
+      <div style={{position: 'absolute', left: 520, top: 860 + (1 - prog(f, fJerry - 4, fJerry + 10)) * 400, opacity: prog(f, fJerry - 4, fJerry + 4)}}>
+        <Person {...CAST.jerry} w={460} rim="#9fc0ff" mood="worried" look={-0.6} lanyard={false} />
       </div>
       {f >= fBars - 7 && <Bars at={fBars - 7} />}
       <div style={{...center, top: 1060, opacity: prog(f, fBars + 2, fBars + 8)}}>
@@ -517,6 +583,12 @@ const TwistScene: React.FC = () => {
       <div style={{position: 'absolute', left: 200, top: 1010, fontFamily: 'Special Elite', fontSize: 64, color: '#3b3226', opacity: prog(f, fCame - 4, fCame + 4)}}>FROM:</div>
       <div style={{position: 'absolute', left: 470, top: 1010, width: 300, textAlign: 'center', fontFamily: 'Permanent Marker', fontSize: 66, color: f >= fJerry ? C.red : '#3b3226', opacity: prog(f, fCame - 4, fCame + 4), transform: `scale(${f >= fJerry ? 1 + 0.25 * Math.exp(-(f - fJerry) / 4) : 1})`}}>
         {f >= fJerry ? 'JERRY' : '?????'}
+      </div>
+      <div style={{position: 'absolute', left: 720, top: 150 + (1 - spr(f, fps, fJerry, {damping: 12, stiffness: 180})) * -700, width: 280, height: 330, background: '#f4f1ea', padding: 14, boxShadow: '0 20px 50px rgba(0,0,0,.6)', transform: 'rotate(7deg)', opacity: f >= fJerry ? 1 : 0, zIndex: 3}}>
+        <div style={{position: 'relative', width: 252, height: 240, overflow: 'hidden', background: 'linear-gradient(180deg,#6b5640,#2a2018)'}}>
+          <div style={{position: 'absolute', left: 0, top: -30}}><Person {...CAST.jerry} w={260} rim="#ffd9a0" mood="smirk" lanyard={false} /></div>
+        </div>
+        <div style={{fontFamily: 'Permanent Marker', fontSize: 34, color: C.red, textAlign: 'center', marginTop: 12}}>JERRY</div>
       </div>
       <svg width={1080} height={1920} style={{position: 'absolute', inset: 0}}>
         <path d={CIRCLE} fill="none" stroke={C.red} strokeWidth={10} strokeLinecap="round" strokeDasharray={ev.strokeDasharray} strokeDashoffset={ev.strokeDashoffset} style={{filter: 'drop-shadow(0 0 10px rgba(218,41,28,.8))'}} />

@@ -58,27 +58,31 @@ const makeLabel = (kind: CanKind) => {
 };
 
 const R = 0.98;
-const BODY_H = 2.9;
-/** realistic 12 oz can silhouette (≈1.85:1): domed base, straight body, necked shoulder, rim */
-const canProfile = () => {
-  const pts: [number, number][] = [
-    [0, -1.86], [0.62, -1.86], [0.86, -1.78], [0.95, -1.66], [0.98, -1.54], [0.98, 1.4], [0.92, 1.58], [0.8, 1.74], [0.78, 1.81], [0.8, 1.84], [0.74, 1.86], [0, 1.81],
-  ];
-  return pts.map(([x, y]) => new THREE.Vector2(x, y));
-};
+const WALL0 = -1.54; // the straight printed wall runs from WALL0 to WALL1
+const WALL1 = 1.4;
+const BODY_H = WALL1 - WALL0;
+/** realistic 12 oz can silhouette (≈1.85:1). The aluminium shell is two separate pieces (domed base, necked top) that
+ *  stop exactly where the printed wall starts, so no two surfaces overlap: no z-fighting, no glitching label. */
+const baseProfile = () =>
+  ([[0, -1.86], [0.62, -1.86], [0.86, -1.78], [0.95, -1.66], [R, WALL0]] as [number, number][]).map(([x, y]) => new THREE.Vector2(x, y));
+const topProfile = () =>
+  ([[R, WALL1], [0.92, 1.58], [0.8, 1.74], [0.78, 1.81], [0.8, 1.84], [0.74, 1.86], [0, 1.81]] as [number, number][]).map(([x, y]) => new THREE.Vector2(x, y));
 
 const CanMesh: React.FC<{kind: CanKind; rotY: number; tilt: number}> = ({kind, rotY, tilt}) => {
   const label = useMemo(() => makeLabel(kind), [kind]);
-  const lathe = useMemo(() => new THREE.LatheGeometry(canProfile(), 96), []);
-  const body = useMemo(() => new THREE.CylinderGeometry(R + 0.005, R + 0.005, BODY_H, 128, 1, true), []);
+  const base = useMemo(() => new THREE.LatheGeometry(baseProfile(), 96), []);
+  const top = useMemo(() => new THREE.LatheGeometry(topProfile(), 96), []);
+  const body = useMemo(() => new THREE.CylinderGeometry(R, R, BODY_H, 160, 1, true), []);
   return (
     <group rotation={[tilt, rotY + Math.PI / 2, 0.06]}>
       {/* aluminium shell (top, bottom, neck) */}
-      <mesh geometry={lathe}>
-        <meshPhysicalMaterial color="#d9dde3" metalness={1} roughness={0.22} clearcoat={0.6} />
-      </mesh>
+      {[base, top].map((g, i) => (
+        <mesh key={i} geometry={g}>
+          <meshPhysicalMaterial color="#d9dde3" metalness={1} roughness={0.22} clearcoat={0.6} side={THREE.DoubleSide} />
+        </mesh>
+      ))}
       {/* printed label */}
-      <mesh geometry={body} position={[0, -0.07, 0]}>
+      <mesh geometry={body} position={[0, (WALL0 + WALL1) / 2, 0]}>
         <meshPhysicalMaterial map={label} metalness={0.45} roughness={0.28} clearcoat={1} clearcoatRoughness={0.12} side={THREE.FrontSide} />
       </mesh>
       {/* pull tab */}

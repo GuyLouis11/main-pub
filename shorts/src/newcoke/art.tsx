@@ -2,6 +2,7 @@ import React, {useLayoutEffect, useRef} from 'react';
 import {AbsoluteFill, useCurrentFrame} from 'remotion';
 import {siCocacola} from 'simple-icons';
 import {EZ, prog, rnd} from '../kit/motion';
+import {HAIRC, Person, PersonProps, SKIN} from '../kit/Person';
 
 export const K = {
   bg: '#0b0204',
@@ -31,16 +32,17 @@ export const PeopleField: React.FC<{reveal: number; wave: number; tint?: string;
     for (let r = 0; r < rows; r++) {
       for (let q = 0; q < cols; q++) {
         const i = r * cols + q;
-        const order = rnd(i * 0.37 + 3) * 0.6 + (r / rows) * 0.4; // fill from the top with scatter
-        if (order > reveal) continue;
+        const order = (r / rows) * 0.92 + (q / cols) * 0.08; // a smooth sweep from the top, no random sparkle
+        const a = Math.max(0, Math.min(1, (reveal - order) / 0.06));
+        if (a <= 0) continue;
         const x = q * sx + sx / 2;
         const y = r * sy + sy / 2;
         const d = Math.hypot(x - W / 2, y - H / 2) / Math.hypot(W / 2, H / 2);
-        const lit = Math.max(0, 1 - Math.abs(d - wave) * 6);
+        const lit = Math.max(0, 1 - Math.abs(d - wave) * 4);
         const loved = d < wave;
-        g.fillStyle = wrong > 0 && rnd(i + 7) < wrong ? '#ff3344' : loved ? tint : '#b99aa0';
-        g.globalAlpha = 0.6 + 0.4 * lit;
-        const rr = 3.2 + lit * 2.2;
+        g.fillStyle = wrong > 0 && (r / rows + rnd(i + 7) * 0.15) < wrong * 1.15 ? '#ff3344' : loved ? tint : '#b99aa0';
+        g.globalAlpha = a * (0.7 + 0.3 * lit);
+        const rr = 3.2 + lit * 1.2;
         g.beginPath();
         g.arc(x, y, rr, 0, Math.PI * 2);
         g.fill();
@@ -163,26 +165,31 @@ export const Gauge: React.FC<{v: number; label: string; w?: number}> = ({v, labe
   </div>
 );
 
-/** crowd of protest silhouettes with signs */
+/** a crowd of protesters (illustrated people) waving signs */
+const PROTESTERS: PersonProps[] = [
+  {skin: SKIN[1], hair: 'side', hairColor: HAIRC.brown, outfit: 'sweater', cloth: '#7a2a2a', mood: 'shout', age: 0.5, mustache: true, seed: 1},
+  {skin: SKIN[4], hair: 'curly', hairColor: HAIRC.black, outfit: 'tee', cloth: '#2a5a8a', mood: 'angry', age: 0.3, seed: 2},
+  {skin: SKIN[0], hair: 'bob', hairColor: HAIRC.auburn, outfit: 'blouse', cloth: '#5a7a3a', mood: 'shout', age: 0.4, earrings: true, seed: 3},
+  {skin: SKIN[2], hair: 'receding', hairColor: HAIRC.grey, outfit: 'vest', cloth: '#4a3a2a', tie: '#2a4a7a', mood: 'angry', age: 0.8, glasses: true, seed: 4},
+];
 export const Crowd: React.FC<{rise: number; signs: string[]}> = ({rise, signs}) => {
   const f = useCurrentFrame();
   return (
-    <div style={{position: 'absolute', left: 0, right: 0, bottom: 760, height: 700}}>
+    <div style={{position: 'absolute', left: 0, right: 0, bottom: 590, height: 900}}>
       {signs.map((s, i) => {
-        const x = 40 + i * (1000 / signs.length);
-        const bob = Math.sin(f / 6 + i * 1.7) * 14;
+        const x = -20 + i * 270;
+        const bob = Math.sin(f / 6 + i * 1.7) * 12;
         const r = (rnd(i + 4) - 0.5) * 14 + Math.sin(f / 9 + i) * 3;
         const p = prog(rise, i * 0.12, i * 0.12 + 0.5, EZ.out);
         return (
-          <div key={i} style={{position: 'absolute', left: x, bottom: 0, width: 300, transform: `translateY(${(1 - p) * 500 + bob}px)`, opacity: p}}>
-            <div style={{position: 'absolute', left: 30, bottom: 360, width: 240, padding: '18px 14px', background: '#f6f0e2', transform: `rotate(${r}deg)`, fontFamily: 'Permanent Marker', fontSize: 34, color: i % 2 ? K.red : '#1b1b1b', textAlign: 'center', lineHeight: 1.05, boxShadow: '0 10px 24px rgba(0,0,0,.5)'}}>
+          <div key={i} style={{position: 'absolute', left: x, bottom: (i % 2) * 40, width: 330, transform: `translateY(${(1 - p) * 600 + bob}px)`, opacity: p}}>
+            <div style={{position: 'absolute', left: 150, bottom: 300, width: 12, height: 300, background: '#7a5a32', transform: `rotate(${r}deg)`, transformOrigin: '50% 100%'}} />
+            <div style={{position: 'absolute', left: 30, bottom: 560, width: 270, padding: '18px 14px', background: '#f6f0e2', transform: `rotate(${r}deg)`, fontFamily: 'Permanent Marker', fontSize: 34, color: i % 2 ? K.red : '#1b1b1b', textAlign: 'center', lineHeight: 1.05, boxShadow: '0 10px 24px rgba(0,0,0,.5)'}}>
               {s}
             </div>
-            <div style={{position: 'absolute', left: 145, bottom: 220, width: 10, height: 160, background: '#7a5a32', transform: `rotate(${r}deg)`, transformOrigin: '50% 100%'}} />
-            <svg viewBox="0 0 100 120" width={240} height={290} style={{position: 'absolute', left: 30, bottom: -60}}>
-              <circle cx="50" cy="34" r="20" fill="#0a0506" stroke="#ff8a7a" strokeWidth="2.5" />
-              <path d="M8 120c4-40 20-56 42-56s38 16 42 56z" fill="#0a0506" stroke="#ff8a7a" strokeWidth="2.5" />
-            </svg>
+            <div style={{position: 'absolute', left: 0, bottom: -40}}>
+              <Person {...PROTESTERS[i % PROTESTERS.length]} w={330} rim="#ff8a7a" turn={Math.sin(f / 7 + i) * 3} />
+            </div>
           </div>
         );
       })}

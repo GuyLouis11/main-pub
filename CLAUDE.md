@@ -117,6 +117,11 @@ python3 tools/srt.py && cp renders/*.srt captions/
   - Use character voices for quoted lines: `[as Maya, worried but firm]`, `[shaken, whispering, as Daniel]`.
   - Use non-verbals: `[chuckles]`, `[exhales]`, `[whispers]`.
   - A line whispered all the way through is mixed 2.5 dB lower on purpose.
+- **Shorts are different: use the voice's native model.** For Shorts, use `eleven_multilingual_v2` (speed about 1.08),
+  with plain text and no time-stretching. v4 with "low/hushed" tags plus a speed-up sounded robotic, whispery and
+  "sexy" to the owner, and measured 2–3× breathier. See `shorts/tools/vo.py`.
+- **People, not silhouettes:** use `shorts/src/kit/Person.tsx`, illustrated people with faces, hair, outfits and
+  moods. Port it to HyperFrames projects as plain SVG if needed.
 - **Keep sound effects out of the narration.** The score and SFX bus handle them, so they can be ducked and timed.
 - **Pitch anchoring (important):** this voice's library profile is "an ecstatic, happy young man". Tags like
   *excited, proud, glowing, impressed, thrilled* push v4 **7–11 semitones high**, and it stops sounding like the

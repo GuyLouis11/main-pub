@@ -8,6 +8,9 @@ import {Captions} from '../kit/Captions';
 import {Scene} from '../kit/Scene';
 import {LogoReveal, Odometer, Typewriter, useStamp} from '../kit/Brand';
 import {Can3D} from './Can3D';
+import {CAST, HAIRC, Person, PersonProps, SKIN} from '../kit/Person';
+
+const TASTER: PersonProps = {skin: SKIN[3], hair: 'side', hairColor: HAIRC.black, outfit: 'tee', cloth: '#d8d2c4', age: 0.2, stubble: true, seed: 12};
 import {Chyron, Crowd, Cup, Gauge, K, Ledger, Letter, PeopleField, SalesChart, SCRIPT, Switchboard, TV} from './art';
 
 const t = makeT(tlData as never);
@@ -110,10 +113,15 @@ const TVScene: React.FC = () => {
           <AbsoluteFill style={{background: 'linear-gradient(180deg,#1b2a6b,#0b1230)'}}>
             <div style={{position: 'absolute', left: 110, top: 64, fontFamily: 'VT323', fontSize: 52, color: K.vhs, textShadow: `3px 0 ${K.mag}`}}>PLAY ▶</div>
             <div style={{position: 'absolute', right: 110, top: 64, fontFamily: 'VT323', fontSize: 52, color: K.vhs, textShadow: `3px 0 ${K.mag}`}}>1985</div>
-            <div style={{position: 'absolute', left: 90, top: 150}}><Cup label="A" fill={0.8} /></div>
-            <div style={{position: 'absolute', left: 360, top: 150}}><Cup label="B" fill={0.8} glow={prog(f, fPepsi, fPepsi + 8)} /></div>
-            <div style={{position: 'absolute', left: 60, top: 470, width: 260, textAlign: 'center', fontFamily: 'Bebas Neue', fontSize: 64, color: '#ff6b6b', opacity: reveal}}>COKE</div>
-            <div style={{position: 'absolute', left: 330, top: 470, width: 260, textAlign: 'center', fontFamily: 'Bebas Neue', fontSize: 64, color: '#8fb4ff', opacity: reveal}}>PEPSI ✓</div>
+            <div style={{position: 'absolute', left: 190, top: -40}}>
+              <Person skin={SKIN[0]} hair="long" hairColor={HAIRC.blonde} outfit="blouse" cloth="#c7524a" age={0.25} earrings mood={f >= fBeat ? 'smile' : 'neutral'} look={f >= fPepsi ? 1 : -0.2} rim="#9fb8ff" w={250} seed={14} />
+            </div>
+            {/* the tasting table */}
+            <div style={{position: 'absolute', left: 0, right: 0, top: 300, height: 300, background: 'linear-gradient(180deg,#e9e2d2,#b9ad95)'}} />
+            <div style={{position: 'absolute', left: 80, top: 220}}><Cup label="A" fill={0.8} w={170} /></div>
+            <div style={{position: 'absolute', left: 390, top: 220}}><Cup label="B" fill={0.8} w={170} glow={prog(f, fPepsi, fPepsi + 8)} /></div>
+            <div style={{position: 'absolute', left: 40, top: 445, width: 250, textAlign: 'center', fontFamily: 'Bebas Neue', fontSize: 58, color: '#b8101e', opacity: reveal}}>COKE</div>
+            <div style={{position: 'absolute', left: 350, top: 445, width: 250, textAlign: 'center', fontFamily: 'Bebas Neue', fontSize: 58, color: '#1a4fb0', opacity: reveal}}>PEPSI ✓</div>
           </AbsoluteFill>
         </TV>
       </div>
@@ -190,8 +198,12 @@ const BeatsScene: React.FC = () => {
           <div key={i} style={{position: 'absolute', left: 90, top: 300 + i * 400, width: 900}}>
             <div style={{fontFamily: 'Bebas Neue', fontSize: 72, color: '#fff', letterSpacing: 3}}>{a} <span style={{color: '#b58a8e'}}>vs</span> {b}</div>
             <div style={{display: 'flex', alignItems: 'flex-end', gap: 40, height: 220, marginTop: 10}}>
-              <div style={{width: 300, height: 220 * p, background: `linear-gradient(180deg,#ff4a55,${K.red})`, borderRadius: '12px 12px 0 0', boxShadow: '0 0 30px rgba(232,16,30,.6)'}} />
-              <div style={{width: 300, height: 150 * p, background: c === K.pepsi ? 'linear-gradient(180deg,#4f8cff,#1a5fd6)' : 'linear-gradient(180deg,#8a2a30,#5a0a10)', borderRadius: '12px 12px 0 0'}} />
+              <div style={{position: 'relative', width: 300, height: 220 * p, background: `linear-gradient(180deg,#ff4a55,${K.red})`, borderRadius: '12px 12px 0 0', boxShadow: '0 0 30px rgba(232,16,30,.6)'}}>
+                <div style={{position: 'absolute', left: 0, right: 0, top: 14, textAlign: 'center', fontFamily: 'Bebas Neue', fontSize: 52, color: '#fff', opacity: p}}>NEW</div>
+              </div>
+              <div style={{position: 'relative', width: 300, height: 150 * p, background: c === K.pepsi ? 'linear-gradient(180deg,#4f8cff,#1a5fd6)' : 'linear-gradient(180deg,#8a2a30,#5a0a10)', borderRadius: '12px 12px 0 0'}}>
+                <div style={{position: 'absolute', left: 0, right: 0, top: 14, textAlign: 'center', fontFamily: 'Bebas Neue', fontSize: 52, color: 'rgba(255,255,255,.85)', opacity: p}}>{b === 'PEPSI' ? 'PEPSI' : 'OLD'}</div>
+              </div>
               <div style={{fontSize: 160, color: '#7dffa1', transform: `scale(${f >= win + 10 ? chk : 0})`, textShadow: '0 0 30px rgba(125,255,161,.8)'}}>✓</div>
             </div>
           </div>
@@ -217,8 +229,11 @@ const LaunchScene: React.FC = () => {
       {[-1, 1].map((s) => (
         <div key={s} style={{position: 'absolute', left: 540 + s * 260 - 300, top: -200, width: 600, height: 1400, background: 'linear-gradient(180deg, rgba(255,240,220,.35), transparent 75%)', clipPath: 'polygon(40% 0, 60% 0, 100% 100%, 0 100%)', transform: `rotate(${s * -12 + Math.sin(f / 30 + s) * 4}deg)`, transformOrigin: '50% 0%', mixBlendMode: 'screen'}} />
       ))}
-      <div style={{position: 'absolute', left: 540 - 260, top: 150 + (1 - can) * 600, transform: `scale(${1 - rise * 0.25})`, transformOrigin: '50% 0%'}}>
-        <Can3D kind="new" size={520} rotY={-0.3 + (f - fNew) * 0.015} light={1 + 0.6 * Math.max(...flashes.map((a) => (f >= a ? Math.exp(-(f - a) / 3) : 0)))} />
+      <div style={{position: 'absolute', left: 210, top: 380, opacity: 1 - rise}}>
+        <Person skin={SKIN[1]} hair="side" hairColor={HAIRC.grey} outfit="suit" cloth="#23262e" tie="#c8102e" age={0.6} mood="smile" rim="#ffe0c0" w={440} look={0.5} seed={15} />
+      </div>
+      <div style={{position: 'absolute', left: 620, top: 160 + (1 - can) * 600, transform: `scale(${0.82 - rise * 0.2})`, transformOrigin: '50% 0%'}}>
+        <Can3D kind="new" size={480} rotY={-0.3 + (f - fNew) * 0.015} light={1 + 0.6 * Math.max(...flashes.map((a) => (f >= a ? Math.exp(-(f - a) / 3) : 0)))} />
       </div>
       {/* podium */}
       <div style={{position: 'absolute', left: 290, top: 820, width: 500, height: 260, background: 'linear-gradient(180deg,#2a2a30,#121216)', borderRadius: '14px 14px 0 0', boxShadow: '0 -10px 40px rgba(0,0,0,.6)', opacity: 1 - rise}}>
@@ -250,8 +265,20 @@ const CallsScene: React.FC = () => {
       <div style={{position: 'absolute', left: 60, top: 160, opacity: 1 - swap * 0.75, transform: `scale(${1 - swap * 0.15}) translateY(${-swap * 80}px)`, transformOrigin: '50% 0%'}}>
         <Switchboard lit={lit} />
       </div>
-      <div style={{...center, top: 900, opacity: prog(f, a, a + 8) * (1 - swap)}}>
-        <Odometer from={0} to={1500} a={a} b={fDay + 4} style={{...big, fontSize: 200, color: '#ffb02e', justifyContent: 'center', textShadow: '0 0 50px rgba(255,176,46,.6)'}} />
+      {[
+        {who: {skin: SKIN[0], hair: 'receding' as const, hairColor: HAIRC.grey, outfit: 'sweater' as const, cloth: '#5a6a4a', mood: 'angry' as const, age: 0.8, glasses: true, seed: 21}, x: 70, at: a + 2},
+        {who: {skin: SKIN[3], hair: 'bob' as const, hairColor: HAIRC.black, outfit: 'blouse' as const, cloth: '#8a3a5a', mood: 'shout' as const, age: 0.4, earrings: true, seed: 22}, x: 400, at: a + 10},
+        {who: {skin: SKIN[2], hair: 'side' as const, hairColor: HAIRC.brown, outfit: 'tee' as const, cloth: '#2a4a6a', mood: 'worried' as const, age: 0.3, stubble: true, seed: 23}, x: 730, at: a + 18},
+      ].map((c, i) => {
+        const pop = prog(f, c.at, c.at + 8, EZ.back);
+        return (
+          <div key={i} style={{position: 'absolute', left: c.x, top: 640, width: 280, height: 280, borderRadius: '50%', overflow: 'hidden', background: 'linear-gradient(180deg,#5a4a3a,#1a120c)', boxShadow: `0 0 0 6px #ffb02e, 0 0 ${30 + 20 * Math.sin(f / 3 + i)}px rgba(255,176,46,.6)`, transform: `scale(${pop})`, opacity: (1 - swap)}}>
+            <div style={{position: 'absolute', left: 25, top: -20}}><Person {...c.who} w={230} rim="#ffd08a" /></div>
+          </div>
+        );
+      })}
+      <div style={{...center, top: 960, opacity: prog(f, a, a + 8) * (1 - swap)}}>
+        <Odometer from={0} to={1500} a={a} b={fDay + 4} style={{...big, fontSize: 170, color: '#ffb02e', justifyContent: 'center', textShadow: '0 0 50px rgba(255,176,46,.6)'}} />
         <div style={{fontFamily: 'Oswald', fontWeight: 700, fontSize: 50, color: K.cream, letterSpacing: 10}}>ANGRY CALLS · EVERY DAY</div>
       </div>
       <div style={{position: 'absolute', left: 130, top: 600 + (1 - swap) * 1500}}>
@@ -270,20 +297,18 @@ const PsychScene: React.FC = () => {
   return (
     <AbsoluteFill style={{background: 'radial-gradient(ellipse at 50% 35%, #142033, #05070b 78%)'}}>
       {/* headphones */}
-      <svg viewBox="0 0 200 160" width={460} height={368} style={{position: 'absolute', left: 310, top: 330, opacity: prog(f, fPsy - 6, fPsy + 4)}}>
-        <path d="M30 110 Q30 20 100 20 Q170 20 170 110" fill="none" stroke="#c9ced6" strokeWidth="12" strokeLinecap="round" />
-        <rect x="14" y="96" width="40" height="60" rx="14" fill="#2a2e36" stroke="#c9ced6" strokeWidth="4" />
-        <rect x="146" y="96" width="40" height="60" rx="14" fill="#2a2e36" stroke="#c9ced6" strokeWidth="4" />
-      </svg>
+      <div style={{position: 'absolute', left: 300, top: 250 + (1 - prog(f, fPsy - 8, fPsy + 6)) * 120, opacity: prog(f, fPsy - 8, fPsy + 2)}}>
+        <Person {...CAST.psych} w={480} rim="#8fb4ff" mood={f >= fGr ? 'worried' : 'stern'} look={-0.4} />
+      </div>
       {/* caller waveform */}
-      <div style={{position: 'absolute', left: 90, top: 720, width: 900, height: 220, display: 'flex', alignItems: 'center', gap: 6}}>
+      <div style={{position: 'absolute', left: 90, top: 850, width: 900, height: 160, display: 'flex', alignItems: 'center', gap: 6}}>
         {Array.from({length: 60}).map((_, i) => {
           const live = f > fPsy;
-          const h = live ? 20 + 180 * Math.abs(Math.sin(f / 3 + i * 0.7) * Math.sin(f / 11 + i * 0.23)) * (0.4 + rnd(i) * 0.6) : 6;
+          const h = live ? 16 + 130 * Math.abs(Math.sin(f / 3 + i * 0.7) * Math.sin(f / 11 + i * 0.23)) * (0.4 + rnd(i) * 0.6) : 6;
           return <div key={i} style={{width: 9, height: h, borderRadius: 5, background: f > fCall ? '#9fc3ff' : '#4b6aa8', boxShadow: '0 0 10px rgba(130,170,255,.5)'}} />;
         })}
       </div>
-      <div style={{position: 'absolute', left: 150, top: 990, width: 780, padding: '24px 36px', background: '#f2ecdc', transform: 'rotate(-2deg)', boxShadow: '0 20px 60px rgba(0,0,0,.6)', opacity: prog(f, fCall - 6, fCall + 2)}}>
+      <div style={{position: 'absolute', left: 150, top: 1030, width: 780, padding: '20px 36px', background: '#f2ecdc', transform: 'rotate(-2deg)', boxShadow: '0 20px 60px rgba(0,0,0,.6)', opacity: prog(f, fCall - 6, fCall + 2)}}>
         <div style={{fontFamily: 'Oswald', fontWeight: 700, fontSize: 30, color: '#7a2a2a', letterSpacing: 4}}>CALL NOTES · 1985</div>
         <div style={{fontFamily: 'Special Elite', fontSize: 44, color: '#1b1915', marginTop: 10}}>
           <Typewriter text="Sounds like a death in the family." at={fCall} cps={30} />
@@ -323,7 +348,10 @@ const SipScene: React.FC = () => {
   const needle = kf(f, [[fSw - 10, 0], [fSw + 6, 0.85]], EZ.back);
   return (
     <AbsoluteFill style={{background: 'radial-gradient(ellipse at 50% 40%, #2a0a10, #070203 78%)'}}>
-      <div style={{position: 'absolute', left: 540 - 110, top: 300, transform: `scale(${0.6 + 0.4 * prog(f, fSips - 6, fSips + 6, EZ.back)})`}}>
+      <div style={{position: 'absolute', left: 60, top: 180}}>
+        <Person {...TASTER} w={440} rim="#ff9aa2" mood={f >= fSw ? 'smile' : 'neutral'} look={0.7} />
+      </div>
+      <div style={{position: 'absolute', left: 660, top: 330, transform: `scale(${0.6 + 0.4 * prog(f, fSips - 6, fSips + 6, EZ.back)})`}}>
         <Cup label="1 SIP" fill={0.18} w={220} />
       </div>
       <div style={{position: 'absolute', left: 540 - 300, top: 760, opacity: prog(f, fSw - 14, fSw - 4)}}>
@@ -343,14 +371,17 @@ const CanScene: React.FC = () => {
   const needle = kf(f, [[a, 0.85], [fWhole - 2, 0.85], [fWhole + 12, -0.55]], [EZ.linear, EZ.back]);
   return (
     <AbsoluteFill style={{background: redRoom}}>
-      <div style={{position: 'absolute', left: 60, top: 110}}>
-        <Can3D kind="new" size={560} rotY={0.2 + (f - a) * 0.012} />
+      <div style={{position: 'absolute', left: 20, top: 120}}>
+        <Can3D kind="new" size={460} rotY={0.2 + (f - a) * 0.012} />
+      </div>
+      <div style={{position: 'absolute', left: 560, top: 200}}>
+        <Person {...TASTER} w={440} rim="#ff9aa2" mood={f >= fWhole + 6 ? 'worried' : 'smile'} look={-0.7} />
       </div>
       {/* fill meter */}
-      <div style={{position: 'absolute', left: 640, top: 240, width: 90, height: 560, borderRadius: 45, background: 'rgba(255,255,255,.08)', boxShadow: 'inset 0 0 0 4px rgba(255,255,255,.3)', overflow: 'hidden'}}>
+      <div style={{position: 'absolute', left: 470, top: 300, width: 60, height: 460, borderRadius: 30, background: 'rgba(255,255,255,.08)', boxShadow: 'inset 0 0 0 4px rgba(255,255,255,.3)', overflow: 'hidden'}}>
         <div style={{position: 'absolute', left: 0, right: 0, bottom: 0, height: `${(1 - drain) * 100}%`, background: 'linear-gradient(180deg,#5a1a0a,#2a0a04)'}} />
       </div>
-      <div style={{position: 'absolute', left: 760, top: 470, fontFamily: 'Oswald', fontWeight: 700, fontSize: 48, color: K.cream, letterSpacing: 4, lineHeight: 1.1}}>12 OZ<br /><span style={{color: '#b58a8e', fontSize: 34}}>ALL OF IT</span></div>
+      <div style={{position: 'absolute', left: 120, top: 790, fontFamily: 'Oswald', fontWeight: 700, fontSize: 44, color: K.cream, letterSpacing: 4}}>12 OZ · ALL OF IT</div>
       <div style={{position: 'absolute', left: 540 - 300, top: 900}}>
         <Gauge v={needle} label="WHOLE CAN" w={600} />
       </div>

@@ -47,7 +47,7 @@ export const LogoReveal: React.FC<{
   );
 };
 
-/** rolling odometer: value tweened between frames, each digit column slides with motion blur feel */
+/** counter: eases between values and always shows whole, steady digits (no half-rolled digits that read as glitching) */
 export const Odometer: React.FC<{
   from: number;
   to: number;
@@ -58,39 +58,15 @@ export const Odometer: React.FC<{
   style?: React.CSSProperties;
   digitStyle?: React.CSSProperties;
   commas?: boolean;
-}> = ({from, to, a, b, prefix = '', suffix = '', style, digitStyle, commas = true}) => {
+}> = ({from, to, a, b, prefix = '', suffix = '', style, commas = true}) => {
   const f = useCurrentFrame();
-  const v = from + (to - from) * prog(f, a, b, EZ.inOut);
-  const width = Math.max(from, to).toString().length;
-  const lead = Math.round(v).toString().length;
-  const chars: {c: string; frac: number}[] = [];
-  for (let i = 0; i < width; i++) {
-    const place = width - 1 - i;
-    if (place >= lead) continue;
-    const q = v / Math.pow(10, place);
-    const base = Math.floor(q) % 10;
-    // a column rolls to the next digit only while the column below it wraps 9 → 0 (true odometer behaviour)
-    const below = place === 0 ? 0 : (v / Math.pow(10, place - 1)) % 10;
-    const frac = place === 0 ? q % 1 : below > 9 ? below - 9 : 0;
-    chars.push({c: String(base), frac});
-    if (commas && place > 0 && place % 3 === 0) chars.push({c: ',', frac: -1});
-  }
+  const v = Math.round(from + (to - from) * prog(f, a, b, EZ.inOut));
+  const txt = commas ? v.toLocaleString('en-US') : String(v);
   return (
     <div style={{display: 'flex', alignItems: 'baseline', fontVariantNumeric: 'tabular-nums', ...style}}>
-      {prefix && <span>{prefix}</span>}
-      {chars.map((d, i) =>
-        d.c === ' ' ? null : d.frac < 0 ? (
-          <span key={i} style={digitStyle}>,</span>
-        ) : (
-          <span key={i} style={{display: 'inline-block', overflow: 'hidden', height: '1.05em', lineHeight: '1.05em', verticalAlign: 'bottom', ...digitStyle}}>
-            <span style={{display: 'block', transform: `translateY(${-d.frac * 1.05}em)`}}>
-              <span style={{display: 'block'}}>{d.c}</span>
-              <span style={{display: 'block'}}>{(Number(d.c) + 1) % 10}</span>
-            </span>
-          </span>
-        ),
-      )}
-      {suffix && <span>{suffix}</span>}
+      {prefix}
+      {txt}
+      {suffix}
     </div>
   );
 };

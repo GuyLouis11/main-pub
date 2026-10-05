@@ -16,7 +16,7 @@ ATTACHED FILES
 - monopoly.en.srt
 
 ==================== SHORT 1 (publish first) ====================
-VIDEO: New_Coke_The_Sip_1080x1920.mp4 (vertical 1080x1920, 58 s, loops)
+VIDEO: New_Coke_The_Sip_1080x1920.mp4 (vertical 1080x1920, 48 s, loops)
 CAPTIONS: newcoke.en.srt
 
 TITLE:
@@ -56,7 +56,7 @@ A bold, high-contrast vertical cover.
 - No faces, no real brand logos, and no other text.
 
 ==================== SHORT 2 (publish 24 hours later) ====================
-VIDEO: McDonalds_Monopoly_Bathroom_Stall_1080x1920.mp4 (vertical 1080x1920, 55 s, loops)
+VIDEO: McDonalds_Monopoly_Bathroom_Stall_1080x1920.mp4 (vertical 1080x1920, 47 s, loops)
 CAPTIONS: monopoly.en.srt
 
 TITLE:

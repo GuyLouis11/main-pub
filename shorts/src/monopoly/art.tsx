@@ -52,8 +52,8 @@ export const Tiles: React.FC<{tint?: string; angle?: number}> = ({tint = '#c9d6d
 );
 
 /** a toilet-stall door with a lock indicator and a hanging airport gate sign */
-export const Stall: React.FC<{occupied: number; x?: number}> = ({occupied, x = 0}) => (
-  <div style={{position: 'absolute', left: 190 + x, top: 330, width: 700, height: 1250}}>
+export const Stall: React.FC<{occupied: number; x?: number; top?: number; h?: number}> = ({occupied, x = 0, top = 330, h = 1250}) => (
+  <div style={{position: 'absolute', left: 190 + x, top, width: 700, height: h}}>
     {/* partition */}
     <div
       style={{
@@ -75,7 +75,14 @@ export const Stall: React.FC<{occupied: number; x?: number}> = ({occupied, x = 0
       }}
     />
     {/* hinges */}
-    {[160, 1020].map((y) => (
+    {/* coat hook, scratches, a reflection streak */}
+    <div style={{position: 'absolute', left: 330, top: 70, width: 40, height: 18, borderRadius: 9, background: 'linear-gradient(180deg,#c9d0da,#5a626e)', boxShadow: '0 6px 10px rgba(0,0,0,.4)'}} />
+    <div style={{position: 'absolute', left: 344, top: 84, width: 12, height: 46, borderRadius: 6, background: 'linear-gradient(90deg,#5a626e,#c9d0da,#5a626e)'}} />
+    <svg width="700" height="600" style={{position: 'absolute', left: 0, top: 160, opacity: 0.35}}>
+      <path d="M90 120 l60 -18 M100 140 l38 -6 M520 420 q30 -20 60 -6 M540 446 l40 4 M120 470 l24 30 M134 470 l-10 34" stroke="#2c323b" strokeWidth="3" fill="none" />
+    </svg>
+    <div style={{position: 'absolute', left: 120, top: 0, width: 60, height: '100%', background: 'linear-gradient(90deg, transparent, rgba(255,255,255,.12), transparent)', transform: 'skewX(-8deg)'}} />
+    {[160, h - 230].map((y) => (
       <div key={y} style={{position: 'absolute', left: -14, top: y, width: 26, height: 90, borderRadius: 6, background: 'linear-gradient(90deg,#3a3f47,#9aa3b1,#3a3f47)'}} />
     ))}
     {/* lock indicator */}
