@@ -1,0 +1,1095 @@
+{
+ "title": "The Tip",
+ "fps": 30,
+ "total": 49.167,
+ "lines": [
+  {
+   "id": "L01",
+   "start": 0.35,
+   "end": 4.72,
+   "text": "In most of America, your tip isn't a bonus. Legally, it's part of your server's wage.",
+   "words": [
+    {
+     "w": "In",
+     "s": 0.35,
+     "e": 0.458,
+     "hi": false
+    },
+    {
+     "w": "most",
+     "s": 0.504,
+     "e": 0.702,
+     "hi": false
+    },
+    {
+     "w": "of",
+     "s": 0.748,
+     "e": 0.806,
+     "hi": false
+    },
+    {
+     "w": "America,",
+     "s": 0.864,
+     "e": 1.363,
+     "hi": false
+    },
+    {
+     "w": "your",
+     "s": 1.433,
+     "e": 1.561,
+     "hi": false
+    },
+    {
+     "w": "tip",
+     "s": 1.595,
+     "e": 1.758,
+     "hi": false
+    },
+    {
+     "w": "isn't",
+     "s": 1.816,
+     "e": 2.037,
+     "hi": false
+    },
+    {
+     "w": "a",
+     "s": 2.071,
+     "e": 2.095,
+     "hi": false
+    },
+    {
+     "w": "bonus.",
+     "s": 2.141,
+     "e": 2.606,
+     "hi": false
+    },
+    {
+     "w": "Legally,",
+     "s": 2.664,
+     "e": 3.093,
+     "hi": false
+    },
+    {
+     "w": "it's",
+     "s": 3.128,
+     "e": 3.279,
+     "hi": false
+    },
+    {
+     "w": "part",
+     "s": 3.314,
+     "e": 3.453,
+     "hi": false
+    },
+    {
+     "w": "of",
+     "s": 3.476,
+     "e": 3.523,
+     "hi": false
+    },
+    {
+     "w": "your",
+     "s": 3.569,
+     "e": 3.674,
+     "hi": false
+    },
+    {
+     "w": "server's",
+     "s": 3.709,
+     "e": 4.092,
+     "hi": false
+    },
+    {
+     "w": "wage.",
+     "s": 4.161,
+     "e": 4.695,
+     "hi": true
+    }
+   ]
+  },
+  {
+   "id": "L02",
+   "start": 5.02,
+   "end": 10.193,
+   "text": "The federal minimum wage for servers is two dollars and thirteen cents an hour. It hasn't changed since 1991.",
+   "words": [
+    {
+     "w": "The",
+     "s": 5.02,
+     "e": 5.136,
+     "hi": false
+    },
+    {
+     "w": "federal",
+     "s": 5.194,
+     "e": 5.461,
+     "hi": false
+    },
+    {
+     "w": "minimum",
+     "s": 5.496,
+     "e": 5.798,
+     "hi": false
+    },
+    {
+     "w": "wage",
+     "s": 5.856,
+     "e": 6.065,
+     "hi": false
+    },
+    {
+     "w": "for",
+     "s": 6.088,
+     "e": 6.193,
+     "hi": false
+    },
+    {
+     "w": "servers",
+     "s": 6.239,
+     "e": 6.587,
+     "hi": false
+    },
+    {
+     "w": "is",
+     "s": 6.634,
+     "e": 6.715,
+     "hi": false
+    },
+    {
+     "w": "two",
+     "s": 6.773,
+     "e": 6.889,
+     "hi": true
+    },
+    {
+     "w": "dollars",
+     "s": 6.936,
+     "e": 7.191,
+     "hi": true
+    },
+    {
+     "w": "and",
+     "s": 7.226,
+     "e": 7.296,
+     "hi": true
+    },
+    {
+     "w": "thirteen",
+     "s": 7.33,
+     "e": 7.714,
+     "hi": true
+    },
+    {
+     "w": "cents",
+     "s": 7.76,
+     "e": 7.992,
+     "hi": true
+    },
+    {
+     "w": "an",
+     "s": 8.027,
+     "e": 8.097,
+     "hi": false
+    },
+    {
+     "w": "hour.",
+     "s": 8.143,
+     "e": 8.445,
+     "hi": false
+    },
+    {
+     "w": "It",
+     "s": 8.468,
+     "e": 8.549,
+     "hi": false
+    },
+    {
+     "w": "hasn't",
+     "s": 8.596,
+     "e": 8.84,
+     "hi": false
+    },
+    {
+     "w": "changed",
+     "s": 8.863,
+     "e": 9.083,
+     "hi": false
+    },
+    {
+     "w": "since",
+     "s": 9.107,
+     "e": 9.281,
+     "hi": false
+    },
+    {
+     "w": "1991.",
+     "s": 9.304,
+     "e": 10.175,
+     "hi": true
+    }
+   ]
+  },
+  {
+   "id": "L03",
+   "start": 10.493,
+   "end": 15.301,
+   "text": "Restaurants can count your tips toward the rest. If tips fall short, the owner has to make up the difference.",
+   "words": [
+    {
+     "w": "Restaurants",
+     "s": 10.493,
+     "e": 10.934,
+     "hi": false
+    },
+    {
+     "w": "can",
+     "s": 10.981,
+     "e": 11.097,
+     "hi": false
+    },
+    {
+     "w": "count",
+     "s": 11.155,
+     "e": 11.341,
+     "hi": false
+    },
+    {
+     "w": "your",
+     "s": 11.375,
+     "e": 11.491,
+     "hi": false
+    },
+    {
+     "w": "tips",
+     "s": 11.538,
+     "e": 11.758,
+     "hi": false
+    },
+    {
+     "w": "toward",
+     "s": 11.793,
+     "e": 12.002,
+     "hi": false
+    },
+    {
+     "w": "the",
+     "s": 12.037,
+     "e": 12.107,
+     "hi": false
+    },
+    {
+     "w": "rest.",
+     "s": 12.176,
+     "e": 12.536,
+     "hi": false
+    },
+    {
+     "w": "If",
+     "s": 12.56,
+     "e": 12.676,
+     "hi": false
+    },
+    {
+     "w": "tips",
+     "s": 12.722,
+     "e": 12.943,
+     "hi": false
+    },
+    {
+     "w": "fall",
+     "s": 12.978,
+     "e": 13.14,
+     "hi": false
+    },
+    {
+     "w": "short,",
+     "s": 13.21,
+     "e": 13.5,
+     "hi": false
+    },
+    {
+     "w": "the",
+     "s": 13.535,
+     "e": 13.628,
+     "hi": false
+    },
+    {
+     "w": "owner",
+     "s": 13.674,
+     "e": 13.837,
+     "hi": false
+    },
+    {
+     "w": "has",
+     "s": 13.895,
+     "e": 14.022,
+     "hi": false
+    },
+    {
+     "w": "to",
+     "s": 14.08,
+     "e": 14.127,
+     "hi": false
+    },
+    {
+     "w": "make",
+     "s": 14.185,
+     "e": 14.336,
+     "hi": false
+    },
+    {
+     "w": "up",
+     "s": 14.382,
+     "e": 14.475,
+     "hi": false
+    },
+    {
+     "w": "the",
+     "s": 14.533,
+     "e": 14.603,
+     "hi": false
+    },
+    {
+     "w": "difference.",
+     "s": 14.649,
+     "e": 15.276,
+     "hi": true
+    }
+   ]
+  },
+  {
+   "id": "L04",
+   "start": 15.601,
+   "end": 16.908,
+   "text": "So how did it get like this?",
+   "words": [
+    {
+     "w": "So",
+     "s": 15.601,
+     "e": 15.729,
+     "hi": false
+    },
+    {
+     "w": "how",
+     "s": 15.787,
+     "e": 15.891,
+     "hi": false
+    },
+    {
+     "w": "did",
+     "s": 15.938,
+     "e": 16.054,
+     "hi": false
+    },
+    {
+     "w": "it",
+     "s": 16.1,
+     "e": 16.147,
+     "hi": false
+    },
+    {
+     "w": "get",
+     "s": 16.193,
+     "e": 16.309,
+     "hi": false
+    },
+    {
+     "w": "like",
+     "s": 16.356,
+     "e": 16.495,
+     "hi": false
+    },
+    {
+     "w": "this?",
+     "s": 16.53,
+     "e": 16.901,
+     "hi": false
+    }
+   ]
+  },
+  {
+   "id": "L05",
+   "start": 17.208,
+   "end": 22.982,
+   "text": "After the Civil War, the Pullman Company hired thousands of Black men, many formerly enslaved, as porters on its sleeper trains.",
+   "words": [
+    {
+     "w": "After",
+     "s": 17.208,
+     "e": 17.452,
+     "hi": false
+    },
+    {
+     "w": "the",
+     "s": 17.498,
+     "e": 17.568,
+     "hi": false
+    },
+    {
+     "w": "Civil",
+     "s": 17.614,
+     "e": 17.87,
+     "hi": false
+    },
+    {
+     "w": "War,",
+     "s": 17.928,
+     "e": 18.195,
+     "hi": false
+    },
+    {
+     "w": "the",
+     "s": 18.241,
+     "e": 18.323,
+     "hi": false
+    },
+    {
+     "w": "Pullman",
+     "s": 18.369,
+     "e": 18.648,
+     "hi": true
+    },
+    {
+     "w": "Company",
+     "s": 18.706,
+     "e": 18.973,
+     "hi": true
+    },
+    {
+     "w": "hired",
+     "s": 19.031,
+     "e": 19.263,
+     "hi": false
+    },
+    {
+     "w": "thousands",
+     "s": 19.321,
+     "e": 19.797,
+     "hi": false
+    },
+    {
+     "w": "of",
+     "s": 19.832,
+     "e": 19.878,
+     "hi": false
+    },
+    {
+     "w": "Black",
+     "s": 19.925,
+     "e": 20.134,
+     "hi": false
+    },
+    {
+     "w": "men,",
+     "s": 20.192,
+     "e": 20.401,
+     "hi": false
+    },
+    {
+     "w": "many",
+     "s": 20.447,
+     "e": 20.633,
+     "hi": false
+    },
+    {
+     "w": "formerly",
+     "s": 20.691,
+     "e": 21.028,
+     "hi": false
+    },
+    {
+     "w": "enslaved,",
+     "s": 21.074,
+     "e": 21.457,
+     "hi": false
+    },
+    {
+     "w": "as",
+     "s": 21.48,
+     "e": 21.573,
+     "hi": false
+    },
+    {
+     "w": "porters",
+     "s": 21.643,
+     "e": 21.956,
+     "hi": false
+    },
+    {
+     "w": "on",
+     "s": 22.003,
+     "e": 22.073,
+     "hi": false
+    },
+    {
+     "w": "its",
+     "s": 22.119,
+     "e": 22.2,
+     "hi": false
+    },
+    {
+     "w": "sleeper",
+     "s": 22.224,
+     "e": 22.525,
+     "hi": false
+    },
+    {
+     "w": "trains.",
+     "s": 22.572,
+     "e": 22.967,
+     "hi": false
+    }
+   ]
+  },
+  {
+   "id": "L06",
+   "start": 23.232,
+   "end": 26.159,
+   "text": "It paid them so little that tips made up most of their income.",
+   "words": [
+    {
+     "w": "It",
+     "s": 23.232,
+     "e": 23.36,
+     "hi": false
+    },
+    {
+     "w": "paid",
+     "s": 23.395,
+     "e": 23.58,
+     "hi": false
+    },
+    {
+     "w": "them",
+     "s": 23.615,
+     "e": 23.743,
+     "hi": false
+    },
+    {
+     "w": "so",
+     "s": 23.812,
+     "e": 23.975,
+     "hi": false
+    },
+    {
+     "w": "little",
+     "s": 24.08,
+     "e": 24.37,
+     "hi": false
+    },
+    {
+     "w": "that",
+     "s": 24.405,
+     "e": 24.521,
+     "hi": false
+    },
+    {
+     "w": "tips",
+     "s": 24.544,
+     "e": 24.765,
+     "hi": false
+    },
+    {
+     "w": "made",
+     "s": 24.799,
+     "e": 24.939,
+     "hi": false
+    },
+    {
+     "w": "up",
+     "s": 24.962,
+     "e": 25.032,
+     "hi": false
+    },
+    {
+     "w": "most",
+     "s": 25.078,
+     "e": 25.252,
+     "hi": true
+    },
+    {
+     "w": "of",
+     "s": 25.299,
+     "e": 25.345,
+     "hi": false
+    },
+    {
+     "w": "their",
+     "s": 25.391,
+     "e": 25.542,
+     "hi": false
+    },
+    {
+     "w": "income.",
+     "s": 25.6,
+     "e": 26.158,
+     "hi": false
+    }
+   ]
+  },
+  {
+   "id": "L07",
+   "start": 26.459,
+   "end": 29.245,
+   "text": "People hated it. Six states actually made tipping illegal.",
+   "words": [
+    {
+     "w": "People",
+     "s": 26.459,
+     "e": 26.762,
+     "hi": false
+    },
+    {
+     "w": "hated",
+     "s": 26.809,
+     "e": 27.088,
+     "hi": false
+    },
+    {
+     "w": "it.",
+     "s": 27.134,
+     "e": 27.215,
+     "hi": false
+    },
+    {
+     "w": "Six",
+     "s": 27.273,
+     "e": 27.494,
+     "hi": true
+    },
+    {
+     "w": "states",
+     "s": 27.54,
+     "e": 27.819,
+     "hi": true
+    },
+    {
+     "w": "actually",
+     "s": 27.865,
+     "e": 28.156,
+     "hi": false
+    },
+    {
+     "w": "made",
+     "s": 28.19,
+     "e": 28.33,
+     "hi": false
+    },
+    {
+     "w": "tipping",
+     "s": 28.353,
+     "e": 28.643,
+     "hi": false
+    },
+    {
+     "w": "illegal.",
+     "s": 28.701,
+     "e": 29.235,
+     "hi": true
+    }
+   ]
+  },
+  {
+   "id": "L08",
+   "start": 29.545,
+   "end": 36.625,
+   "text": "Every ban was gone by the late 1920s. Now, seventy-two percent of Americans say tipping is expected in more places than five years ago.",
+   "words": [
+    {
+     "w": "Every",
+     "s": 29.545,
+     "e": 29.789,
+     "hi": false
+    },
+    {
+     "w": "ban",
+     "s": 29.824,
+     "e": 29.986,
+     "hi": false
+    },
+    {
+     "w": "was",
+     "s": 30.033,
+     "e": 30.137,
+     "hi": false
+    },
+    {
+     "w": "gone",
+     "s": 30.195,
+     "e": 30.393,
+     "hi": false
+    },
+    {
+     "w": "by",
+     "s": 30.416,
+     "e": 30.497,
+     "hi": false
+    },
+    {
+     "w": "the",
+     "s": 30.555,
+     "e": 30.625,
+     "hi": false
+    },
+    {
+     "w": "late",
+     "s": 30.671,
+     "e": 30.857,
+     "hi": false
+    },
+    {
+     "w": "1920s.",
+     "s": 30.892,
+     "e": 31.739,
+     "hi": false
+    },
+    {
+     "w": "Now,",
+     "s": 31.786,
+     "e": 31.995,
+     "hi": false
+    },
+    {
+     "w": "seventy-two",
+     "s": 32.064,
+     "e": 32.61,
+     "hi": true
+    },
+    {
+     "w": "percent",
+     "s": 32.68,
+     "e": 32.982,
+     "hi": true
+    },
+    {
+     "w": "of",
+     "s": 33.005,
+     "e": 33.063,
+     "hi": false
+    },
+    {
+     "w": "Americans",
+     "s": 33.121,
+     "e": 33.597,
+     "hi": false
+    },
+    {
+     "w": "say",
+     "s": 33.632,
+     "e": 33.783,
+     "hi": false
+    },
+    {
+     "w": "tipping",
+     "s": 33.841,
+     "e": 34.131,
+     "hi": false
+    },
+    {
+     "w": "is",
+     "s": 34.189,
+     "e": 34.259,
+     "hi": false
+    },
+    {
+     "w": "expected",
+     "s": 34.328,
+     "e": 34.746,
+     "hi": false
+    },
+    {
+     "w": "in",
+     "s": 34.793,
+     "e": 34.839,
+     "hi": false
+    },
+    {
+     "w": "more",
+     "s": 34.886,
+     "e": 35.013,
+     "hi": false
+    },
+    {
+     "w": "places",
+     "s": 35.048,
+     "e": 35.396,
+     "hi": false
+    },
+    {
+     "w": "than",
+     "s": 35.443,
+     "e": 35.571,
+     "hi": false
+    },
+    {
+     "w": "five",
+     "s": 35.64,
+     "e": 35.849,
+     "hi": false
+    },
+    {
+     "w": "years",
+     "s": 35.884,
+     "e": 36.116,
+     "hi": false
+    },
+    {
+     "w": "ago.",
+     "s": 36.163,
+     "e": 36.604,
+     "hi": false
+    }
+   ]
+  },
+  {
+   "id": "L09",
+   "start": 36.975,
+   "end": 43.402,
+   "text": "But here's the twist. When Massachusetts voters got the chance to end the lower tipped wage, they voted no. By almost two to one.",
+   "words": [
+    {
+     "w": "But",
+     "s": 36.975,
+     "e": 37.138,
+     "hi": false
+    },
+    {
+     "w": "here's",
+     "s": 37.172,
+     "e": 37.37,
+     "hi": false
+    },
+    {
+     "w": "the",
+     "s": 37.428,
+     "e": 37.509,
+     "hi": false
+    },
+    {
+     "w": "twist.",
+     "s": 37.567,
+     "e": 37.927,
+     "hi": false
+    },
+    {
+     "w": "When",
+     "s": 37.95,
+     "e": 38.101,
+     "hi": false
+    },
+    {
+     "w": "Massachusetts",
+     "s": 38.148,
+     "e": 38.844,
+     "hi": false
+    },
+    {
+     "w": "voters",
+     "s": 38.891,
+     "e": 39.169,
+     "hi": false
+    },
+    {
+     "w": "got",
+     "s": 39.216,
+     "e": 39.367,
+     "hi": false
+    },
+    {
+     "w": "the",
+     "s": 39.401,
+     "e": 39.471,
+     "hi": false
+    },
+    {
+     "w": "chance",
+     "s": 39.518,
+     "e": 39.796,
+     "hi": false
+    },
+    {
+     "w": "to",
+     "s": 39.831,
+     "e": 39.901,
+     "hi": false
+    },
+    {
+     "w": "end",
+     "s": 39.982,
+     "e": 40.145,
+     "hi": false
+    },
+    {
+     "w": "the",
+     "s": 40.214,
+     "e": 40.284,
+     "hi": false
+    },
+    {
+     "w": "lower",
+     "s": 40.33,
+     "e": 40.539,
+     "hi": false
+    },
+    {
+     "w": "tipped",
+     "s": 40.597,
+     "e": 40.853,
+     "hi": false
+    },
+    {
+     "w": "wage,",
+     "s": 40.911,
+     "e": 41.247,
+     "hi": false
+    },
+    {
+     "w": "they",
+     "s": 41.271,
+     "e": 41.422,
+     "hi": false
+    },
+    {
+     "w": "voted",
+     "s": 41.48,
+     "e": 41.77,
+     "hi": false
+    },
+    {
+     "w": "no.",
+     "s": 41.84,
+     "e": 42.107,
+     "hi": true
+    },
+    {
+     "w": "By",
+     "s": 42.153,
+     "e": 42.281,
+     "hi": false
+    },
+    {
+     "w": "almost",
+     "s": 42.35,
+     "e": 42.675,
+     "hi": false
+    },
+    {
+     "w": "two",
+     "s": 42.71,
+     "e": 42.861,
+     "hi": true
+    },
+    {
+     "w": "to",
+     "s": 42.919,
+     "e": 42.977,
+     "hi": true
+    },
+    {
+     "w": "one.",
+     "s": 43.059,
+     "e": 43.384,
+     "hi": true
+    }
+   ]
+  },
+  {
+   "id": "L10",
+   "start": 43.752,
+   "end": 47.567,
+   "text": "So should tipping be banned? Or is it the only way servers make real money?",
+   "words": [
+    {
+     "w": "So",
+     "s": 43.752,
+     "e": 43.891,
+     "hi": false
+    },
+    {
+     "w": "should",
+     "s": 43.949,
+     "e": 44.147,
+     "hi": false
+    },
+    {
+     "w": "tipping",
+     "s": 44.193,
+     "e": 44.495,
+     "hi": false
+    },
+    {
+     "w": "be",
+     "s": 44.553,
+     "e": 44.658,
+     "hi": false
+    },
+    {
+     "w": "banned?",
+     "s": 44.716,
+     "e": 45.122,
+     "hi": true
+    },
+    {
+     "w": "Or",
+     "s": 45.157,
+     "e": 45.261,
+     "hi": false
+    },
+    {
+     "w": "is",
+     "s": 45.331,
+     "e": 45.435,
+     "hi": false
+    },
+    {
+     "w": "it",
+     "s": 45.482,
+     "e": 45.563,
+     "hi": false
+    },
+    {
+     "w": "the",
+     "s": 45.598,
+     "e": 45.668,
+     "hi": false
+    },
+    {
+     "w": "only",
+     "s": 45.737,
+     "e": 45.935,
+     "hi": false
+    },
+    {
+     "w": "way",
+     "s": 45.981,
+     "e": 46.109,
+     "hi": false
+    },
+    {
+     "w": "servers",
+     "s": 46.178,
+     "e": 46.55,
+     "hi": false
+    },
+    {
+     "w": "make",
+     "s": 46.608,
+     "e": 46.771,
+     "hi": false
+    },
+    {
+     "w": "real",
+     "s": 46.829,
+     "e": 47.026,
+     "hi": true
+    },
+    {
+     "w": "money?",
+     "s": 47.096,
+     "e": 47.56,
+     "hi": true
+    }
+   ]
+  }
+ ]
+}

@@ -72,3 +72,39 @@ Educational content. Not affiliated with or endorsed by The Coca-Cola Company or
 - "79 days": April 23 to July 10/11, 1985.
 - Sip-test effect: a widely cited argument (Gladwell, *Blink*), phrased as "tends to win".
 - Keough quote: "we're not that dumb, and we're not that smart." (Donald Keough, Coca-Cola president)
+
+---
+
+## SHORT 3: "Your Engagement Ring Was a 1938 Ad Campaign" (diamonds)
+
+- **File:** `deliveries/Your_Ring_Was_an_Ad_Campaign_1080x1920.mp4` (≈52 s)
+- **Captions:** `shorts/captions/diamonds.en.srt`
+
+**Fact notes:**
+- "One in ten" refers to diamonds in engagement rings around 1939.
+- "Eight in ten within a few decades": sources disagree on the year (1965 to 1990), so the script doesn't name one.
+- De Beers "controlled most of the world's diamond trade": its London selling organisation handled about 80–90% of
+  rough sales for decades.
+- 1938: N.W. Ayer. 1947: Frances Gerety.
+- Salary rule: one month's salary in early ads; "Isn't two months' salary a small price…" in 1980s ads.
+- Production: over 100M carats a year (Kimberley Process, 2024: 107.9M).
+- Resale: dealers typically pay 20–50% of retail.
+- 61%: The Knot 2026 Real Weddings Study, couples married in 2025.
+- Lightbox closure: announced May 2025, citing lab-grown wholesale prices down about 90%.
+
+## SHORT 4: "Your Tip Isn't a Bonus. It's Their Wage." (tipping)
+
+- **File:** `deliveries/Your_Tip_Is_Their_Wage_1080x1920.mp4` (≈49 s)
+- **Captions:** `shorts/captions/tipping.en.srt`
+
+**Fact notes:**
+- $2.13: the federal tipped minimum, frozen since 1991. Tips may cover up to $5.12 of the $7.25 minimum, and
+  employers must make up any shortfall.
+- "In most of America": 7 states allow no tip credit.
+- Pullman porters: low wages, with tips as the bulk of income. The 1915 Commission on Industrial Relations found $27.50
+  a month in wages against about $58 in tips.
+- Six states banned tipping between 1909 and 1915: WA, MS, AR, IA and SC are confirmed. Sources differ on TN vs GA, so
+  the sixth paper reads "Another state". All bans were gone by the late 1920s.
+- 72%: Pew Research Center, Nov 2023.
+- Massachusetts Question 5 (2024) failed 64.1% to 35.9%.
+- Framing avoids the contested "tipping was invented by racism" claim. It says what Pullman did, which is documented.

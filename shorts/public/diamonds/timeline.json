@@ -1,0 +1,1073 @@
+{
+ "title": "The Diamond Ad",
+ "fps": 30,
+ "total": 52.356,
+ "lines": [
+  {
+   "id": "L01",
+   "start": 0.35,
+   "end": 4.269,
+   "text": "Before 1939, only about one in ten engagement rings had a diamond.",
+   "words": [
+    {
+     "w": "Before",
+     "s": 0.35,
+     "e": 0.663,
+     "hi": false
+    },
+    {
+     "w": "1939,",
+     "s": 0.71,
+     "e": 1.708,
+     "hi": false
+    },
+    {
+     "w": "only",
+     "s": 1.766,
+     "e": 1.964,
+     "hi": false
+    },
+    {
+     "w": "about",
+     "s": 2.022,
+     "e": 2.242,
+     "hi": false
+    },
+    {
+     "w": "one",
+     "s": 2.3,
+     "e": 2.417,
+     "hi": true
+    },
+    {
+     "w": "in",
+     "s": 2.451,
+     "e": 2.509,
+     "hi": true
+    },
+    {
+     "w": "ten",
+     "s": 2.556,
+     "e": 2.73,
+     "hi": true
+    },
+    {
+     "w": "engagement",
+     "s": 2.776,
+     "e": 3.206,
+     "hi": false
+    },
+    {
+     "w": "rings",
+     "s": 3.241,
+     "e": 3.45,
+     "hi": false
+    },
+    {
+     "w": "had",
+     "s": 3.485,
+     "e": 3.601,
+     "hi": false
+    },
+    {
+     "w": "a",
+     "s": 3.636,
+     "e": 3.67,
+     "hi": false
+    },
+    {
+     "w": "diamond.",
+     "s": 3.729,
+     "e": 4.251,
+     "hi": false
+    }
+   ]
+  },
+  {
+   "id": "L02",
+   "start": 4.519,
+   "end": 6.898,
+   "text": "Then one company decided that had to change.",
+   "words": [
+    {
+     "w": "Then",
+     "s": 4.519,
+     "e": 4.74,
+     "hi": false
+    },
+    {
+     "w": "one",
+     "s": 4.809,
+     "e": 4.96,
+     "hi": false
+    },
+    {
+     "w": "company",
+     "s": 5.007,
+     "e": 5.332,
+     "hi": false
+    },
+    {
+     "w": "decided",
+     "s": 5.39,
+     "e": 5.784,
+     "hi": false
+    },
+    {
+     "w": "that",
+     "s": 5.819,
+     "e": 5.97,
+     "hi": false
+    },
+    {
+     "w": "had",
+     "s": 6.04,
+     "e": 6.168,
+     "hi": false
+    },
+    {
+     "w": "to",
+     "s": 6.214,
+     "e": 6.272,
+     "hi": false
+    },
+    {
+     "w": "change.",
+     "s": 6.342,
+     "e": 6.887,
+     "hi": true
+    }
+   ]
+  },
+  {
+   "id": "L03",
+   "start": 7.198,
+   "end": 12.188,
+   "text": "De Beers controlled most of the world's diamond trade. So in 1938, it hired an ad agency.",
+   "words": [
+    {
+     "w": "De",
+     "s": 7.198,
+     "e": 7.302,
+     "hi": false
+    },
+    {
+     "w": "Beers",
+     "s": 7.361,
+     "e": 7.628,
+     "hi": false
+    },
+    {
+     "w": "controlled",
+     "s": 7.686,
+     "e": 8.057,
+     "hi": false
+    },
+    {
+     "w": "most",
+     "s": 8.115,
+     "e": 8.324,
+     "hi": false
+    },
+    {
+     "w": "of",
+     "s": 8.382,
+     "e": 8.429,
+     "hi": false
+    },
+    {
+     "w": "the",
+     "s": 8.487,
+     "e": 8.556,
+     "hi": false
+    },
+    {
+     "w": "world's",
+     "s": 8.591,
+     "e": 8.858,
+     "hi": false
+    },
+    {
+     "w": "diamond",
+     "s": 8.905,
+     "e": 9.207,
+     "hi": false
+    },
+    {
+     "w": "trade.",
+     "s": 9.253,
+     "e": 9.624,
+     "hi": false
+    },
+    {
+     "w": "So",
+     "s": 9.659,
+     "e": 9.787,
+     "hi": false
+    },
+    {
+     "w": "in",
+     "s": 9.857,
+     "e": 9.903,
+     "hi": false
+    },
+    {
+     "w": "1938,",
+     "s": 9.95,
+     "e": 10.797,
+     "hi": false
+    },
+    {
+     "w": "it",
+     "s": 10.82,
+     "e": 10.902,
+     "hi": false
+    },
+    {
+     "w": "hired",
+     "s": 10.96,
+     "e": 11.215,
+     "hi": false
+    },
+    {
+     "w": "an",
+     "s": 11.25,
+     "e": 11.32,
+     "hi": false
+    },
+    {
+     "w": "ad",
+     "s": 11.366,
+     "e": 11.529,
+     "hi": true
+    },
+    {
+     "w": "agency.",
+     "s": 11.563,
+     "e": 12.167,
+     "hi": true
+    }
+   ]
+  },
+  {
+   "id": "L04",
+   "start": 12.488,
+   "end": 17.589,
+   "text": "In 1947, a copywriter named Frances Gerety wrote four words. A diamond is forever.",
+   "words": [
+    {
+     "w": "In",
+     "s": 12.488,
+     "e": 12.596,
+     "hi": false
+    },
+    {
+     "w": "1947,",
+     "s": 12.642,
+     "e": 13.617,
+     "hi": false
+    },
+    {
+     "w": "a",
+     "s": 13.664,
+     "e": 13.71,
+     "hi": false
+    },
+    {
+     "w": "copywriter",
+     "s": 13.78,
+     "e": 14.314,
+     "hi": false
+    },
+    {
+     "w": "named",
+     "s": 14.36,
+     "e": 14.558,
+     "hi": false
+    },
+    {
+     "w": "Frances",
+     "s": 14.616,
+     "e": 14.964,
+     "hi": false
+    },
+    {
+     "w": "Gerety",
+     "s": 15.034,
+     "e": 15.347,
+     "hi": false
+    },
+    {
+     "w": "wrote",
+     "s": 15.394,
+     "e": 15.591,
+     "hi": false
+    },
+    {
+     "w": "four",
+     "s": 15.649,
+     "e": 15.87,
+     "hi": false
+    },
+    {
+     "w": "words.",
+     "s": 15.939,
+     "e": 16.369,
+     "hi": false
+    },
+    {
+     "w": "A",
+     "s": 16.392,
+     "e": 16.462,
+     "hi": true
+    },
+    {
+     "w": "diamond",
+     "s": 16.531,
+     "e": 16.833,
+     "hi": true
+    },
+    {
+     "w": "is",
+     "s": 16.891,
+     "e": 16.984,
+     "hi": true
+    },
+    {
+     "w": "forever.",
+     "s": 17.042,
+     "e": 17.576,
+     "hi": true
+    }
+   ]
+  },
+  {
+   "id": "L05",
+   "start": 17.889,
+   "end": 20.633,
+   "text": "Within a few decades, about eight in ten brides got one.",
+   "words": [
+    {
+     "w": "Within",
+     "s": 17.889,
+     "e": 18.168,
+     "hi": false
+    },
+    {
+     "w": "a",
+     "s": 18.202,
+     "e": 18.237,
+     "hi": false
+    },
+    {
+     "w": "few",
+     "s": 18.295,
+     "e": 18.435,
+     "hi": false
+    },
+    {
+     "w": "decades,",
+     "s": 18.493,
+     "e": 18.922,
+     "hi": false
+    },
+    {
+     "w": "about",
+     "s": 18.957,
+     "e": 19.224,
+     "hi": false
+    },
+    {
+     "w": "eight",
+     "s": 19.271,
+     "e": 19.445,
+     "hi": true
+    },
+    {
+     "w": "in",
+     "s": 19.468,
+     "e": 19.526,
+     "hi": true
+    },
+    {
+     "w": "ten",
+     "s": 19.572,
+     "e": 19.747,
+     "hi": true
+    },
+    {
+     "w": "brides",
+     "s": 19.805,
+     "e": 20.118,
+     "hi": false
+    },
+    {
+     "w": "got",
+     "s": 20.165,
+     "e": 20.339,
+     "hi": false
+    },
+    {
+     "w": "one.",
+     "s": 20.397,
+     "e": 20.629,
+     "hi": false
+    }
+   ]
+  },
+  {
+   "id": "L06",
+   "start": 20.883,
+   "end": 24.803,
+   "text": "The ads even told men what to spend. First, one month's salary. Later, two.",
+   "words": [
+    {
+     "w": "The",
+     "s": 20.883,
+     "e": 21.011,
+     "hi": false
+    },
+    {
+     "w": "ads",
+     "s": 21.057,
+     "e": 21.231,
+     "hi": false
+    },
+    {
+     "w": "even",
+     "s": 21.278,
+     "e": 21.452,
+     "hi": false
+    },
+    {
+     "w": "told",
+     "s": 21.487,
+     "e": 21.661,
+     "hi": false
+    },
+    {
+     "w": "men",
+     "s": 21.719,
+     "e": 21.812,
+     "hi": false
+    },
+    {
+     "w": "what",
+     "s": 21.847,
+     "e": 21.974,
+     "hi": false
+    },
+    {
+     "w": "to",
+     "s": 22.009,
+     "e": 22.079,
+     "hi": false
+    },
+    {
+     "w": "spend.",
+     "s": 22.137,
+     "e": 22.52,
+     "hi": false
+    },
+    {
+     "w": "First,",
+     "s": 22.601,
+     "e": 22.973,
+     "hi": false
+    },
+    {
+     "w": "one",
+     "s": 23.042,
+     "e": 23.217,
+     "hi": false
+    },
+    {
+     "w": "month's",
+     "s": 23.251,
+     "e": 23.495,
+     "hi": false
+    },
+    {
+     "w": "salary.",
+     "s": 23.53,
+     "e": 23.971,
+     "hi": false
+    },
+    {
+     "w": "Later,",
+     "s": 24.029,
+     "e": 24.366,
+     "hi": false
+    },
+    {
+     "w": "two.",
+     "s": 24.401,
+     "e": 24.784,
+     "hi": true
+    }
+   ]
+  },
+  {
+   "id": "L07",
+   "start": 25.103,
+   "end": 31.948,
+   "text": "But diamonds aren't especially rare. Mines dig up over a hundred million carats a year. The price stayed high because the supply was controlled.",
+   "words": [
+    {
+     "w": "But",
+     "s": 25.103,
+     "e": 25.254,
+     "hi": false
+    },
+    {
+     "w": "diamonds",
+     "s": 25.289,
+     "e": 25.602,
+     "hi": false
+    },
+    {
+     "w": "aren't",
+     "s": 25.649,
+     "e": 25.858,
+     "hi": false
+    },
+    {
+     "w": "especially",
+     "s": 25.904,
+     "e": 26.345,
+     "hi": false
+    },
+    {
+     "w": "rare.",
+     "s": 26.427,
+     "e": 26.81,
+     "hi": false
+    },
+    {
+     "w": "Mines",
+     "s": 26.879,
+     "e": 27.146,
+     "hi": false
+    },
+    {
+     "w": "dig",
+     "s": 27.193,
+     "e": 27.344,
+     "hi": false
+    },
+    {
+     "w": "up",
+     "s": 27.402,
+     "e": 27.495,
+     "hi": false
+    },
+    {
+     "w": "over",
+     "s": 27.553,
+     "e": 27.762,
+     "hi": false
+    },
+    {
+     "w": "a",
+     "s": 27.82,
+     "e": 27.855,
+     "hi": true
+    },
+    {
+     "w": "hundred",
+     "s": 27.924,
+     "e": 28.226,
+     "hi": true
+    },
+    {
+     "w": "million",
+     "s": 28.273,
+     "e": 28.563,
+     "hi": true
+    },
+    {
+     "w": "carats",
+     "s": 28.632,
+     "e": 28.992,
+     "hi": false
+    },
+    {
+     "w": "a",
+     "s": 29.039,
+     "e": 29.074,
+     "hi": false
+    },
+    {
+     "w": "year.",
+     "s": 29.132,
+     "e": 29.364,
+     "hi": false
+    },
+    {
+     "w": "The",
+     "s": 29.387,
+     "e": 29.468,
+     "hi": false
+    },
+    {
+     "w": "price",
+     "s": 29.515,
+     "e": 29.77,
+     "hi": false
+    },
+    {
+     "w": "stayed",
+     "s": 29.793,
+     "e": 30.037,
+     "hi": false
+    },
+    {
+     "w": "high",
+     "s": 30.084,
+     "e": 30.258,
+     "hi": false
+    },
+    {
+     "w": "because",
+     "s": 30.304,
+     "e": 30.595,
+     "hi": false
+    },
+    {
+     "w": "the",
+     "s": 30.653,
+     "e": 30.734,
+     "hi": false
+    },
+    {
+     "w": "supply",
+     "s": 30.792,
+     "e": 31.094,
+     "hi": false
+    },
+    {
+     "w": "was",
+     "s": 31.152,
+     "e": 31.256,
+     "hi": false
+    },
+    {
+     "w": "controlled.",
+     "s": 31.314,
+     "e": 31.93,
+     "hi": true
+    }
+   ]
+  },
+  {
+   "id": "L08",
+   "start": 32.248,
+   "end": 36.481,
+   "text": "Try to sell yours back, and you'll usually be offered a fraction. Often less than half.",
+   "words": [
+    {
+     "w": "Try",
+     "s": 32.248,
+     "e": 32.434,
+     "hi": false
+    },
+    {
+     "w": "to",
+     "s": 32.492,
+     "e": 32.55,
+     "hi": false
+    },
+    {
+     "w": "sell",
+     "s": 32.62,
+     "e": 32.794,
+     "hi": false
+    },
+    {
+     "w": "yours",
+     "s": 32.852,
+     "e": 33.107,
+     "hi": false
+    },
+    {
+     "w": "back,",
+     "s": 33.177,
+     "e": 33.409,
+     "hi": false
+    },
+    {
+     "w": "and",
+     "s": 33.432,
+     "e": 33.502,
+     "hi": false
+    },
+    {
+     "w": "you'll",
+     "s": 33.537,
+     "e": 33.699,
+     "hi": false
+    },
+    {
+     "w": "usually",
+     "s": 33.746,
+     "e": 34.001,
+     "hi": false
+    },
+    {
+     "w": "be",
+     "s": 34.048,
+     "e": 34.117,
+     "hi": false
+    },
+    {
+     "w": "offered",
+     "s": 34.164,
+     "e": 34.442,
+     "hi": false
+    },
+    {
+     "w": "a",
+     "s": 34.477,
+     "e": 34.5,
+     "hi": false
+    },
+    {
+     "w": "fraction.",
+     "s": 34.547,
+     "e": 35.081,
+     "hi": true
+    },
+    {
+     "w": "Often",
+     "s": 35.139,
+     "e": 35.476,
+     "hi": false
+    },
+    {
+     "w": "less",
+     "s": 35.522,
+     "e": 35.719,
+     "hi": false
+    },
+    {
+     "w": "than",
+     "s": 35.754,
+     "e": 35.894,
+     "hi": false
+    },
+    {
+     "w": "half.",
+     "s": 35.963,
+     "e": 36.474,
+     "hi": true
+    }
+   ]
+  },
+  {
+   "id": "L09",
+   "start": 36.781,
+   "end": 41.902,
+   "text": "Now labs grow diamonds that are chemically identical. Last year, sixty-one percent of couples chose one.",
+   "words": [
+    {
+     "w": "Now",
+     "s": 36.781,
+     "e": 36.967,
+     "hi": false
+    },
+    {
+     "w": "labs",
+     "s": 37.036,
+     "e": 37.257,
+     "hi": false
+    },
+    {
+     "w": "grow",
+     "s": 37.292,
+     "e": 37.443,
+     "hi": false
+    },
+    {
+     "w": "diamonds",
+     "s": 37.524,
+     "e": 37.872,
+     "hi": false
+    },
+    {
+     "w": "that",
+     "s": 37.907,
+     "e": 38.023,
+     "hi": false
+    },
+    {
+     "w": "are",
+     "s": 38.058,
+     "e": 38.151,
+     "hi": false
+    },
+    {
+     "w": "chemically",
+     "s": 38.186,
+     "e": 38.65,
+     "hi": false
+    },
+    {
+     "w": "identical.",
+     "s": 38.708,
+     "e": 39.382,
+     "hi": true
+    },
+    {
+     "w": "Last",
+     "s": 39.44,
+     "e": 39.683,
+     "hi": false
+    },
+    {
+     "w": "year,",
+     "s": 39.73,
+     "e": 39.904,
+     "hi": false
+    },
+    {
+     "w": "sixty-one",
+     "s": 39.939,
+     "e": 40.357,
+     "hi": true
+    },
+    {
+     "w": "percent",
+     "s": 40.392,
+     "e": 40.659,
+     "hi": true
+    },
+    {
+     "w": "of",
+     "s": 40.682,
+     "e": 40.728,
+     "hi": false
+    },
+    {
+     "w": "couples",
+     "s": 40.786,
+     "e": 41.1,
+     "hi": false
+    },
+    {
+     "w": "chose",
+     "s": 41.158,
+     "e": 41.413,
+     "hi": false
+    },
+    {
+     "w": "one.",
+     "s": 41.483,
+     "e": 41.889,
+     "hi": false
+    }
+   ]
+  },
+  {
+   "id": "L10",
+   "start": 42.202,
+   "end": 46.539,
+   "text": "And De Beers? It shut down its own lab diamond brand, after prices fell ninety percent.",
+   "words": [
+    {
+     "w": "And",
+     "s": 42.202,
+     "e": 42.341,
+     "hi": false
+    },
+    {
+     "w": "De",
+     "s": 42.388,
+     "e": 42.469,
+     "hi": false
+    },
+    {
+     "w": "Beers?",
+     "s": 42.539,
+     "e": 42.968,
+     "hi": false
+    },
+    {
+     "w": "It",
+     "s": 43.003,
+     "e": 43.119,
+     "hi": false
+    },
+    {
+     "w": "shut",
+     "s": 43.166,
+     "e": 43.351,
+     "hi": false
+    },
+    {
+     "w": "down",
+     "s": 43.398,
+     "e": 43.549,
+     "hi": false
+    },
+    {
+     "w": "its",
+     "s": 43.595,
+     "e": 43.711,
+     "hi": false
+    },
+    {
+     "w": "own",
+     "s": 43.758,
+     "e": 43.885,
+     "hi": false
+    },
+    {
+     "w": "lab",
+     "s": 43.943,
+     "e": 44.141,
+     "hi": false
+    },
+    {
+     "w": "diamond",
+     "s": 44.199,
+     "e": 44.466,
+     "hi": false
+    },
+    {
+     "w": "brand,",
+     "s": 44.524,
+     "e": 44.849,
+     "hi": false
+    },
+    {
+     "w": "after",
+     "s": 44.872,
+     "e": 45.081,
+     "hi": false
+    },
+    {
+     "w": "prices",
+     "s": 45.128,
+     "e": 45.464,
+     "hi": false
+    },
+    {
+     "w": "fell",
+     "s": 45.511,
+     "e": 45.662,
+     "hi": false
+    },
+    {
+     "w": "ninety",
+     "s": 45.72,
+     "e": 45.929,
+     "hi": true
+    },
+    {
+     "w": "percent.",
+     "s": 45.987,
+     "e": 46.521,
+     "hi": true
+    }
+   ]
+  },
+  {
+   "id": "L11",
+   "start": 46.889,
+   "end": 50.756,
+   "text": "So is your ring a symbol of love... or the most successful ad ever written?",
+   "words": [
+    {
+     "w": "So",
+     "s": 46.889,
+     "e": 47.075,
+     "hi": false
+    },
+    {
+     "w": "is",
+     "s": 47.144,
+     "e": 47.261,
+     "hi": false
+    },
+    {
+     "w": "your",
+     "s": 47.307,
+     "e": 47.435,
+     "hi": false
+    },
+    {
+     "w": "ring",
+     "s": 47.481,
+     "e": 47.62,
+     "hi": false
+    },
+    {
+     "w": "a",
+     "s": 47.667,
+     "e": 47.69,
+     "hi": false
+    },
+    {
+     "w": "symbol",
+     "s": 47.748,
+     "e": 48.05,
+     "hi": false
+    },
+    {
+     "w": "of",
+     "s": 48.108,
+     "e": 48.178,
+     "hi": false
+    },
+    {
+     "w": "love...",
+     "s": 48.282,
+     "e": 48.619,
+     "hi": false
+    },
+    {
+     "w": "or",
+     "s": 48.642,
+     "e": 48.712,
+     "hi": false
+    },
+    {
+     "w": "the",
+     "s": 48.758,
+     "e": 48.828,
+     "hi": false
+    },
+    {
+     "w": "most",
+     "s": 48.886,
+     "e": 49.048,
+     "hi": false
+    },
+    {
+     "w": "successful",
+     "s": 49.083,
+     "e": 49.687,
+     "hi": false
+    },
+    {
+     "w": "ad",
+     "s": 49.757,
+     "e": 49.954,
+     "hi": true
+    },
+    {
+     "w": "ever",
+     "s": 50.0,
+     "e": 50.186,
+     "hi": false
+    },
+    {
+     "w": "written?",
+     "s": 50.244,
+     "e": 50.744,
+     "hi": false
+    }
+   ]
+  }
+ ]
+}

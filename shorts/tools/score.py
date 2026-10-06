@@ -327,6 +327,119 @@ def newcoke():
     return finish("newcoke", tl, M, F, N)
 
 
+def diamonds():
+    tl, L, w = load("diamonds")
+    T = tl["total"]
+    N = int(T * SR)
+    k = Drums(T, seed=31)
+    M = Bus(N)
+    F = Bus(N)
+    bpm = 84
+    beat = 60 / bpm
+    s = lambda lid: L[lid]["start"]
+    Am, F_, C_, E_ = [57, 60, 64], [53, 57, 60], [55, 60, 64], [56, 59, 64]
+    prog = [Am, F_, C_, E_]
+    M.add(0, k.boom(1.2), 0.6)
+    # elegant pulse: pad + piano tines + soft kick, intensifying through the story
+    bars = int(np.ceil(T / (4 * beat)))
+    for bi in range(bars):
+        tb = bi * 4 * beat
+        if tb >= T - 1:
+            break
+        ch = prog[bi % 4]
+        M.add(tb, k.pad([midi(m - 12) for m in ch], 4 * beat + 0.3, 400, 1400, 0.3, 0.4), 0.22)
+        for q in range(8):
+            tq = tb + q * beat / 2
+            m = ch[[0, 2, 1, 2, 0, 2, 1, 2][q]] + 12
+            M.add(tq, k.tine(midi(m), 1.0), 0.11 if q % 2 else 0.15, -0.3 if q % 2 else 0.3)
+        if tb >= s("L03") - 0.1:
+            for q in (0, 2):
+                M.add(tb + q * beat, k.kick(0.2, 0.9), 0.4)
+            M.add(tb + beat, k.snare(0.12), 0.12)
+            M.add(tb + 3 * beat, k.snare(0.12), 0.12)
+    M.add(w("L04", "a", 0.0) if False else L["L04"]["words"][10]["s"] - 0.05, k.bell(midi(76), 2.5, 0.9), 0.3)  # "A diamond is forever"
+    M.add(w("L07", "controlled") - 0.02, k.boom(0.7), 0.6)
+    M.add(w("L10", "ninety") - 0.4, k.tapestop(0.7), 0.4)
+    M.add(s("L11"), k.bell(midi(69), 3.0, 1.0), 0.25)
+    M.reverb(0.28, 2.6, 7000)
+    for ln in tl["lines"][1:]:
+        F.add(ln["start"] - 0.25, k.whoosh(0.4, 300, 5000), 0.3, np.sin(len(ln["text"])) * 0.4)
+    F.add(w("L01", "one"), k.chirp(), 0.12)
+    F.add(w("L03", "1938"), k.stamp(), 0.4)
+    F.add(L["L04"]["words"][10]["s"], k.typing(1.1, 18), 0.3)
+    grid(F, w("L05", "eight") - 0.25, w("L05", "eight") + 0.35, 900, 1, lambda b, t, i: b.add(t, k.tine(midi(88 + i * 2), 0.5), 0.06))
+    F.add(w("L06", "one"), k.paper(0.3), 0.4)
+    F.add(w("L06", "two"), k.paper(0.3), 0.45)
+    grid(F, w("L07", "mines"), w("L07", "year") + 0.2, 500, 1, lambda b, t, i: b.add(t, k.tick(4200, 0.004), 0.07))
+    F.add(w("L07", "controlled"), k.stamp(), 0.55)
+    F.add(w("L08", "half"), k.stamp(), 0.4)
+    F.add(w("L09", "labs"), k.hum(2.0, 60), 0.1)
+    F.add(w("L10", "shut"), k.wood(600), 0.4)
+    return finish("diamonds", tl, M, F, N)
+
+
+def tipping():
+    tl, L, w = load("tipping")
+    T = tl["total"]
+    N = int(T * SR)
+    k = Drums(T, seed=41)
+    M = Bus(N)
+    F = Bus(N)
+    bpm = 108
+    beat = 60 / bpm
+    s = lambda lid: L[lid]["start"]
+    # diner groove: Rhodes-ish stabs, walking bass, brushed swing
+    chords = [[50, 53, 57, 60], [55, 59, 62, 65], [48, 52, 55, 59], [45, 48, 52, 55]]  # Dm7 G7 Cmaj7 Am7
+    walk = [[38, 41, 43, 45], [43, 47, 45, 41], [36, 40, 43, 47], [45, 43, 41, 40]]
+
+    def groove(t0, t1, gain=1.0, oldtime=False):
+        bars = int(np.ceil((t1 - t0) / (4 * beat)))
+        for bi in range(bars):
+            tb = t0 + bi * 4 * beat
+            ch = chords[bi % 4]
+            for q in range(4):
+                tq = tb + q * beat
+                if tq >= t1:
+                    break
+                M.add(tq, k.pluck(midi(walk[bi % 4][q]), 0.4, 900), 0.38 * gain)
+                if oldtime:
+                    M.add(tq + (0 if q % 2 == 0 else beat * 0.5), k.pluck(midi(ch[q % 4] + 12), 0.3, 3200), 0.12 * gain)
+                else:
+                    if q in (1, 3):
+                        M.add(tq + beat * 0.66, k.stab([midi(m) for m in ch], 0.35, 2000), 0.16 * gain)
+                M.add(tq, k.hat(0.02), 0.08 * gain, 0.2)
+                M.add(tq + beat * 0.66, k.hat(0.02), 0.06 * gain, 0.2)
+                if q % 2 == 1:
+                    M.add(tq, k.snare(0.1) * 0.6, 0.12 * gain)
+                else:
+                    M.add(tq, k.kick(0.16, 0.8), 0.3 * gain)
+
+    groove(0, s("L04"))
+    M.add(s("L04"), k.tapestop(0.6), 0.4)                              # "So how did it get like this?" → rewind
+    M.add(s("L04") + 0.1, k.riser(1.0, 3000, 300), 0.15)
+    groove(s("L05") - 0.1, s("L08") + 1.2, gain=0.85, oldtime=True)    # sepia era
+    groove(w("L08", "now") - 0.05, s("L09"), gain=1.0)
+    M.add(s("L09"), k.pad([midi(m) for m in (50, 57, 62)], s("L10") - s("L09"), 300, 1000, 0.3, 0.4), 0.3)
+    grid(M, s("L09"), s("L10"), 72, 1, lambda b, t, i: b.add(t, k.heartbeat(), 0.35))
+    M.add(w("L09", "no") - 0.02, k.boom(0.7), 0.6)
+    groove(s("L10") - 0.05, T - 0.5, gain=0.8)
+    M.reverb(0.2, 1.8, 6000)
+    for ln in tl["lines"][1:]:
+        F.add(ln["start"] - 0.25, k.whoosh(0.4, 300, 5000), 0.3, np.cos(len(ln["text"])) * 0.4)
+    F.add(0.35, k.typing(1.6, 30), 0.22)                                # receipt printer
+    F.add(w("L01", "wage"), k.stamp(), 0.45)
+    F.add(w("L02", "1991"), k.chirp(), 0.12)
+    F.add(w("L03", "difference"), k.wood(800), 0.3)
+    F.add(w("L05", "pullman"), k.whoosh(1.2, 120, 900), 0.3)            # train passing
+    F.add(w("L06", "most"), k.tine(midi(84), 0.8), 0.15)
+    for i in range(6):
+        F.add(w("L07", "six") + i * 0.14, k.paper(0.2), 0.3)
+    F.add(w("L08", "gone"), k.stamp(), 0.45)
+    F.add(w("L08", "now"), k.blip(1400), 0.25)
+    F.add(w("L09", "no"), k.stamp(), 0.55)
+    return finish("tipping", tl, M, F, N)
+
+
 def finish(short, tl, M, F, N):
     out = os.path.join(ROOT, "public", short)
     music, sfx = M.stereo(), F.stereo()
@@ -341,7 +454,7 @@ def finish(short, tl, M, F, N):
         vo = np.pad(vo, ((0, N - len(vo)), (0, 0)))
     m, _ = sf.read(os.path.join(out, "music.wav"))
     e, _ = sf.read(os.path.join(out, "sfx.wav"))
-    mg = {'monopoly': 0.42, 'newcoke': 0.52}[short]
+    mg = {'monopoly': 0.42, 'newcoke': 0.52, 'diamonds': 0.5, 'tipping': 0.5}[short]
     mix = vo + mg * m[:N] + 0.6 * e[:N]
     meter = pyln.Meter(SR)
     for _ in range(3):
@@ -352,4 +465,4 @@ def finish(short, tl, M, F, N):
 
 
 if __name__ == "__main__":
-    {"monopoly": monopoly, "newcoke": newcoke}[sys.argv[1]]()
+    {"monopoly": monopoly, "newcoke": newcoke, "diamonds": diamonds, "tipping": tipping}[sys.argv[1]]()
