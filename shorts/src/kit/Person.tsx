@@ -5,7 +5,8 @@ import {useCurrentFrame} from 'remotion';
    of real individuals. A bust: head + shoulders + upper torso, in a 400×520 viewBox. Blinks and breathes on its own. */
 
 export type Hair = 'side' | 'receding' | 'buzz' | 'bob' | 'long' | 'curly' | 'bun' | 'bald';
-export type Outfit = 'suit' | 'police' | 'sweater' | 'blouse' | 'tee' | 'blazer' | 'vest';
+export type Outfit = 'suit' | 'police' | 'sweater' | 'blouse' | 'tee' | 'blazer' | 'vest' | 'porter' | 'apron';
+export type Hat = 'none' | 'porter' | 'fedora';
 export type Mood = 'neutral' | 'smirk' | 'worried' | 'angry' | 'shout' | 'smile' | 'stern' | 'shock';
 
 export type PersonProps = {
@@ -26,6 +27,8 @@ export type PersonProps = {
   badge?: boolean;
   lanyard?: boolean;
   headphones?: boolean;
+  hat?: Hat;
+  loupe?: boolean; // jeweler's loupe over the right eye
   rim?: string; // rim-light color from the scene
   look?: number; // -1 … 1 eye direction
   turn?: number; // head tilt in degrees
@@ -61,6 +64,8 @@ export const Person: React.FC<PersonProps> = ({
   badge = false,
   lanyard = false,
   headphones = false,
+  hat = 'none',
+  loupe = false,
   rim = '#ffcf8a',
   look = 0,
   turn = 0,
@@ -258,6 +263,25 @@ export const Person: React.FC<PersonProps> = ({
           <path d="M168 340 Q200 368 232 340" fill="none" stroke={clothD} strokeWidth="7" />
         </g>
       ),
+      porter: (
+        <g>
+          <path d={base} fill={cloth} />
+          <path d="M166 340 L200 384 L234 340 Z" fill="#f2efe8" />
+          <path d="M193 352 L207 352 L205 372 L195 372 Z" fill="#1b1b1b" />
+          <path d="M166 340 L140 372 L196 520 L200 520 L200 390 Z" fill={clothL} opacity=".35" />
+          {[410, 450, 490].map((y) => <g key={y}><circle cx="178" cy={y} r="5.5" fill="#d8b45a" /><circle cx="222" cy={y} r="5.5" fill="#d8b45a" /></g>)}
+          <path d="M84 430 L120 424" stroke="#d8b45a" strokeWidth="4" />
+        </g>
+      ),
+      apron: (
+        <g>
+          <path d={base} fill={cloth} />
+          <path d="M150 380 L250 380 L262 520 L138 520 Z" fill="#f4f1ea" />
+          <path d="M150 380 L166 340 M250 380 L234 340" stroke="#f4f1ea" strokeWidth="8" />
+          <rect x="176" y="430" width="48" height="34" rx="4" fill="#e6e1d6" />
+          <path d="M186 420 l0 -46" stroke="#1d3a6b" strokeWidth="5" />
+        </g>
+      ),
       vest: (
         <g>
           <path d={base} fill="#ece6da" />
@@ -304,7 +328,7 @@ export const Person: React.FC<PersonProps> = ({
           )}
           {badge && <path d="M268 418 l6 12 13 2 -9 9 2 13 -12 -6 -12 6 2 -13 -9 -9 13 -2 z" fill="#e3c35a" stroke="#8a6a12" strokeWidth="1.5" />}
         </g>
-        {backHair()}
+        {hat === 'none' && backHair()}
         <g transform={`rotate(${turn} 200 300)`}>
           {/* neck */}
           <path d="M168 262 L166 346 Q200 362 234 346 L232 262 Z" fill={skinD} />
@@ -341,7 +365,29 @@ export const Person: React.FC<PersonProps> = ({
               <path d="M148 176 L160 172" stroke="#fff" strokeWidth="2.5" opacity=".5" />
             </g>
           )}
-          {frontHair()}
+          {hat === 'none' ? frontHair() : hair === 'long' || hair === 'bob' ? null : <path d="M120 186 C116 158 122 142 134 136 L136 188 Z M280 186 C284 158 278 142 266 136 L264 188 Z" fill={hc} />}
+          {loupe && (
+            <g>
+              <ellipse cx="234" cy="186" rx="30" ry="30" fill="#1d1a17" />
+              <ellipse cx="234" cy="186" rx="22" ry="22" fill="rgba(170,210,255,.35)" stroke="#8a93a6" strokeWidth="3" />
+              <path d="M222 176 L232 172" stroke="#fff" strokeWidth="3" opacity=".7" />
+            </g>
+          )}
+          {hat === 'porter' && (
+            <g>
+              <path d="M126 128 C130 82 168 64 200 64 C232 64 270 82 274 128 Z" fill="#1d2a4a" />
+              <rect x="122" y="118" width="156" height="22" rx="6" fill="#152038" />
+              <path d="M128 140 Q200 168 272 140 L268 150 Q200 180 132 150 Z" fill="#0d1424" />
+              <rect x="176" y="90" width="48" height="16" rx="3" fill="#d8b45a" />
+            </g>
+          )}
+          {hat === 'fedora' && (
+            <g>
+              <path d="M90 140 Q200 108 310 140 Q300 156 200 150 Q100 156 90 140 Z" fill="#3a3128" />
+              <path d="M132 136 C128 80 164 58 200 66 C236 58 272 80 268 136 Q200 122 132 136 Z" fill="#4a3f34" />
+              <path d="M134 124 Q200 110 266 124 L266 136 Q200 122 134 136 Z" fill="#1d1712" />
+            </g>
+          )}
           {headphones && (
             <g>
               <path d="M112 186 Q112 60 200 60 Q288 60 288 186" fill="none" stroke="#2a2e36" strokeWidth="13" />
