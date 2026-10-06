@@ -4,3 +4,4 @@ hot-water-opening-project.zip
 # local secrets (never commit)
 .env
 *.env
+send/
