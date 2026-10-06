@@ -120,6 +120,13 @@ python3 tools/srt.py && cp renders/*.srt captions/
 - **Shorts are different: use the voice's native model.** For Shorts, use `eleven_multilingual_v2` (speed about 1.08),
   with plain text and no time-stretching. v4 with "low/hushed" tags plus a speed-up sounded robotic, whispery and
   "sexy" to the owner, and measured 2–3× breathier. See `shorts/tools/vo.py`.
+- **Shorts layout (center captions):** use `CenterCaptions` (`shorts/src/kit/Captions.tsx`), 1–3 word bursts at the
+  vertical center (y ≈ 975) with keyword highlight boxes.
+  - Lay out every scene in three zones: visuals at the top (90–860), the caption band in the middle, and visuals at the
+    bottom (1110–1650). Never leave the lower half empty.
+  - Keep key content out of the Shorts UI: the right-edge button rail (x > 960, y 1050–1650) and the title strip below
+    1650.
+  - If a visual has to fill the middle, move the captions with `bands`, or `hide` them while the words are on screen.
 - **People, not silhouettes:** use `shorts/src/kit/Person.tsx`, illustrated people with faces, hair, outfits and
   moods. Port it to HyperFrames projects as plain SVG if needed.
 - **Keep sound effects out of the narration.** The score and SFX bus handle them, so they can be ducked and timed.

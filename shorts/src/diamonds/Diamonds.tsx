@@ -8,7 +8,7 @@ import tlData from '../../public/diamonds/timeline.json';
 import {makeT, T} from '../kit/timeline';
 import {EZ, kf, prog, rnd, spr} from '../kit/motion';
 import {Chroma, drift, Flash, FlareSweep, FxDefs, Grain, LightLeaks, Particles, shake, Vignette} from '../kit/fx';
-import {Captions} from '../kit/Captions';
+import {CenterCaptions} from '../kit/Captions';
 import {Scene} from '../kit/Scene';
 import {Odometer, Typewriter, useStamp} from '../kit/Brand';
 import {Gem, Glints} from '../kit/Gem';
@@ -62,23 +62,26 @@ const Hook: React.FC = () => {
   const inn = 0.55 + 0.45 * spr(f, fps, 0, {damping: 16, stiffness: 80});
   return (
     <AbsoluteFill style={{background: velvet}}>
-      <div style={{position: 'absolute', left: 540 - 300, top: 170, transform: `scale(${inn})`, transformOrigin: '50% 60%'}}>
+      <div style={{position: 'absolute', left: 540 - 300, top: 60, transform: `scale(${inn})`, transformOrigin: '50% 60%'}}>
         <div style={{position: 'absolute', left: 50, top: 300}}><Band w={500} /></div>
         <Gem size={600} rotY={f * 0.022} tilt={0.42} />
         <Glints f={f} size={600} spots={[[0.36, 0.4, 4], [0.64, 0.44, 40], [0.5, 0.33, 70]]} />
       </div>
-      <div style={{...center, top: 780, ...big, fontSize: 150, color: D.cream, opacity: prog(f, fYear - 4, fYear + 4), letterSpacing: 8}}>1939</div>
-      <div style={{position: 'absolute', left: 90, top: 960, display: 'flex', gap: 14, opacity: prog(f, fOne - 6, fOne)}}>
-        {Array.from({length: 10}).map((_, i) => <RingIcon key={i} lit={i === 0 ? prog(f, fOne, fOne + 8, EZ.back) : 0} />)}
+      <div style={{...center, top: 730, ...big, fontSize: 130, color: D.cream, opacity: prog(f, fYear - 4, fYear + 4), letterSpacing: 8}}>1939</div>
+      <div style={{position: 'absolute', left: 84, top: 1140, display: 'flex', gap: 12, opacity: prog(f, fOne - 6, fOne)}}>
+        {Array.from({length: 10}).map((_, i) => <RingIcon key={i} lit={i === 0 ? prog(f, fOne, fOne + 8, EZ.back) : 0} w={80} />)}
       </div>
-      <div style={{...center, top: 1060, fontFamily: 'Oswald', fontWeight: 700, fontSize: 52, color: D.gold, letterSpacing: 8, opacity: prog(f, fOne + 4, fOne + 12)}}>1 IN 10 HAD A DIAMOND</div>
+      <div style={{...center, top: 1265, opacity: prog(f, fOne + 2, fOne + 10), transform: `scale(${0.9 + 0.1 * prog(f, fOne + 2, fOne + 14, EZ.back)})`}}>
+        <div style={{...big, fontSize: 190, color: '#fff', textShadow: '0 0 40px rgba(207,230,255,.45)'}}><span style={{color: D.gold}}>1</span> IN 10</div>
+        <div style={{fontFamily: 'Oswald', fontWeight: 700, fontSize: 46, color: D.ice, letterSpacing: 8, marginTop: 12}}>ENGAGEMENT RINGS HAD A DIAMOND</div>
+      </div>
     </AbsoluteFill>
   );
 };
 
 /* ---------- S2-3: one company, most of the trade → London; 1938 ad agency ---------- */
 const COUNTRIES = feature(world as never, (world as never as {objects: {countries: never}}).objects.countries) as never as {features: unknown[]};
-const PROJ = geoNaturalEarth1().scale(255).translate([540, 700]).rotate([-25, 0]);
+const PROJ = geoNaturalEarth1().scale(262).translate([540, 560]).rotate([-25, 0]);
 const worldPath = geoPath(PROJ);
 const MINES: [number, number][] = [[24.7, -24.6], [24.8, -28.7], [15.5, -27.0], [23.6, -6.1], [113.9, 62.5], [-110.6, 64.7], [128.4, -16.7], [17.0, -12.0]];
 const LONDON: [number, number] = [-0.13, 51.5];
@@ -111,15 +114,19 @@ const TradeScene: React.FC = () => {
           );
         })}
         <circle cx={L[0]} cy={L[1]} r={14 + 6 * prog(f, fMost - 4, fMost + 10)} fill={D.gold} style={{filter: 'drop-shadow(0 0 16px rgba(232,199,106,.9))'}} />
-        <text x={L[0]} y={L[1] - 34} textAnchor="middle" fontFamily="Oswald" fontWeight={700} fontSize={34} fill="#fff" letterSpacing={3} opacity={prog(f, fComp, fComp + 8)}>ONE SELLER · LONDON</text>
+        <text x={L[0]} y={L[1] - 34} textAnchor="middle" fontFamily="Oswald" fontWeight={700} fontSize={34} fill="#fff" letterSpacing={3} opacity={prog(f, fComp, fComp + 8) * (1 - prog(f, f38 - 6, f38))}>ONE SELLER · LONDON</text>
       </svg>
-      <div style={{...center, top: 230, ...big, fontSize: 110, color: '#fff', opacity: prog(f, fMost - 4, fMost + 4) * (1 - prog(f, f38 - 4, f38 + 4))}}>
+      <div style={{...center, top: 1170, ...big, fontSize: 160, color: '#fff', opacity: prog(f, fComp - 4, fComp + 4) * (1 - prog(f, fMost - 6, fMost)), transform: `scale(${0.85 + 0.15 * prog(f, fComp - 4, fComp + 10, EZ.back)})`}}>
+        ONE <span style={{color: D.gold}}>COMPANY</span>
+        <div style={{fontFamily: 'Oswald', fontSize: 50, color: D.ice, letterSpacing: 10, marginTop: 16}}>DE BEERS · SINCE 1888</div>
+      </div>
+      <div style={{...center, top: 1170, ...big, fontSize: 116, color: '#fff', opacity: prog(f, fMost - 4, fMost + 4) * (1 - prog(f, f38 - 4, f38 + 4))}}>
         DE BEERS <span style={{color: D.gold}}>CONTROLLED</span>
         <div style={{fontFamily: 'Oswald', fontSize: 50, color: D.ice, letterSpacing: 8, marginTop: 10}}>MOST OF THE WORLD'S DIAMOND TRADE</div>
       </div>
       {/* 1938: the ad men */}
       <div style={{...center, top: 170, ...big, fontSize: 170, color: D.cream, opacity: prog(f, f38 - 2, f38 + 6), letterSpacing: 10}}>1938</div>
-      <div style={{position: 'absolute', left: 0, right: 0, top: 380 + (1 - men) * 900, opacity: men}}>
+      <div style={{position: 'absolute', left: 0, right: 0, top: 360 + (1 - men) * 900, opacity: men}}>
         {[
           {x: 20, p: {skin: SKIN[0], hair: 'side' as const, hairColor: HAIRC.brown, outfit: 'suit' as const, cloth: '#3a3428', tie: '#7a2a1a', age: 0.5, hat: 'fedora' as const, mood: 'smirk' as const, seed: 31}},
           {x: 360, p: {skin: SKIN[1], hair: 'side' as const, hairColor: HAIRC.black, outfit: 'suit' as const, cloth: '#2c2c34', tie: '#c9a227', age: 0.4, hat: 'fedora' as const, mood: 'smile' as const, mustache: true, seed: 32}},
@@ -130,8 +137,21 @@ const TradeScene: React.FC = () => {
           </div>
         ))}
       </div>
-      <div style={{position: 'absolute', left: 140, top: 1020, padding: '16px 34px', background: D.cream, color: '#2a2016', fontFamily: 'Playfair Display', fontWeight: 900, fontSize: 56, transform: `rotate(-2deg) scale(${prog(f, fAd - 4, fAd + 6, EZ.back)})`, boxShadow: '0 20px 50px rgba(0,0,0,.5)'}}>
-        N.W. AYER &amp; SON · ADVERTISING
+      <div style={{position: 'absolute', left: 0, right: 0, top: 1180, display: 'flex', justifyContent: 'center'}}>
+        <div style={{padding: '22px 40px', background: D.cream, color: '#2a2016', fontFamily: 'Playfair Display', fontWeight: 900, fontSize: 60, textAlign: 'center', lineHeight: 1.1, transform: `rotate(-2deg) scale(${prog(f, fAd - 4, fAd + 6, EZ.back)})`, boxShadow: '0 20px 50px rgba(0,0,0,.5)'}}>
+          N.W. AYER &amp; SON
+          <div style={{fontFamily: 'Oswald', fontWeight: 700, fontSize: 34, letterSpacing: 10, color: '#8a6a2a', marginTop: 6}}>ADVERTISING · PHILADELPHIA</div>
+        </div>
+      </div>
+      {/* a fan of vintage ad proofs under the agency card */}
+      <div style={{position: 'absolute', left: 0, right: 0, top: 1400, display: 'flex', justifyContent: 'center', gap: 24}}>
+        {['SPARKLE', 'ROMANCE', 'FOR HER'].map((w, i) => (
+          <div key={i} style={{width: 230, height: 200, background: 'linear-gradient(170deg,#efe4c8,#cdbb92)', boxShadow: '0 14px 36px rgba(0,0,0,.5)', transform: `rotate(${(i - 1) * 6}deg) translateY(${(1 - prog(f, fAd + 2 + i * 3, fAd + 12 + i * 3, EZ.back)) * 400}px)`, opacity: prog(f, fAd + 2 + i * 3, fAd + 8 + i * 3), padding: 16, filter: 'sepia(.3)'}}>
+            <div style={{height: 90, background: 'radial-gradient(circle at 50% 60%, #fff 0 12%, #9a8a6a 13% 40%, #6a5a40 41%)', borderRadius: 6}} />
+            <div style={{fontFamily: 'Playfair Display', fontStyle: 'italic', fontWeight: 900, fontSize: 30, color: '#3a2a1a', marginTop: 12, textAlign: 'center'}}>{w}</div>
+            <div style={{height: 6, background: '#9a8a6a', margin: '10px 20px 0'}} />
+          </div>
+        ))}
       </div>
     </AbsoluteFill>
   );
@@ -147,14 +167,14 @@ const SloganScene: React.FC = () => {
   const ad = prog(f, fA - 2, fA + 16, EZ.inOut);
   return (
     <AbsoluteFill style={{background: 'radial-gradient(ellipse at 50% 40%, #3a2c1c, #0c0805 78%)'}}>
-      <div style={{position: 'absolute', left: 60, top: 140, ...big, fontSize: 130, color: D.cream, opacity: prog(f, f47 - 4, f47 + 4) * (1 - ad), letterSpacing: 8}}>1947</div>
+      <div style={{position: 'absolute', left: 70, top: 200, ...big, fontSize: 150, color: D.cream, opacity: prog(f, f47 - 4, f47 + 4) * (1 - ad), letterSpacing: 8}}>1947</div>
       {/* the copywriter at her typewriter */}
-      <div style={{position: 'absolute', left: 560, top: 150 + ad * -40, opacity: prog(f, fCopy - 6, fCopy + 4) * (1 - ad * 0.6), filter: 'sepia(.3)'}}>
-        <Person skin={SKIN[0]} hair="bob" hairColor={HAIRC.auburn} outfit="blouse" cloth="#3f5a7a" age={0.4} earrings mood={f >= fFour ? 'smile' : 'neutral'} look={-0.6} rim="#ffd9a0" w={400} seed={34} />
+      <div style={{position: 'absolute', left: 500, top: 120 + ad * -40, opacity: prog(f, fCopy - 6, fCopy + 4) * (1 - ad), filter: 'sepia(.3)'}}>
+        <Person skin={SKIN[0]} hair="bob" hairColor={HAIRC.auburn} outfit="blouse" cloth="#3f5a7a" age={0.4} earrings mood={f >= fFour ? 'smile' : 'neutral'} look={-0.6} rim="#ffd9a0" w={500} seed={34} />
         <div style={{fontFamily: 'Oswald', fontWeight: 700, fontSize: 30, color: D.gold, letterSpacing: 4, textAlign: 'center', marginTop: -20}}>COPYWRITER · N.W. AYER</div>
       </div>
       {/* the typed page becomes the magazine ad */}
-      <div style={{position: 'absolute', left: 90 - ad * 0, top: 640 - ad * 420, width: 900, height: 520 + ad * 420, background: 'linear-gradient(170deg,#f6efdd,#e4d6b6)', boxShadow: '0 40px 100px rgba(0,0,0,.6)', transform: `rotate(${-2 + ad * 2}deg)`, overflow: 'hidden'}}>
+      <div style={{position: 'absolute', left: 90, top: 1110 - ad * 990, width: 900, height: 540 + ad * 990, background: 'linear-gradient(170deg,#f6efdd,#e4d6b6)', boxShadow: '0 40px 100px rgba(0,0,0,.6)', transform: `rotate(${-2 + ad * 2}deg)`, overflow: 'hidden'}}>
         {/* the draft page: header + crossed-out attempts before the four words */}
         <div style={{position: 'absolute', left: 50, top: 40, right: 50, fontFamily: 'Special Elite', fontSize: 30, color: '#5a4a34', opacity: Math.max(0, 1 - ad * 2.5), lineHeight: 1.6}}>
           <div style={{letterSpacing: 3}}>N.W. AYER · DE BEERS ACCOUNT · DRAFT SLOGANS</div>
@@ -165,11 +185,11 @@ const SloganScene: React.FC = () => {
             </div>
           ))}
         </div>
-        <div style={{position: 'absolute', left: 50, top: 60 + (1 - ad) * 200 + ad * 380, fontFamily: ad > 0.5 ? 'Playfair Display' : 'Special Elite', fontStyle: ad > 0.5 ? 'italic' : 'normal', fontWeight: ad > 0.5 ? 900 : 400, fontSize: 78 + ad * 30, color: '#2a2016', lineHeight: 1.1}}>
+        <div style={{position: 'absolute', left: 50, top: 60 + (1 - ad) * 200 + ad * 1000, fontFamily: ad > 0.5 ? 'Playfair Display' : 'Special Elite', fontStyle: ad > 0.5 ? 'italic' : 'normal', fontWeight: ad > 0.5 ? 900 : 400, fontSize: 78 + ad * 40, color: '#2a2016', lineHeight: 1.1}}>
           <Typewriter text="A Diamond Is Forever." at={fA} cps={20} cursor={ad < 0.5} />
         </div>
-        <div style={{position: 'absolute', left: 290, top: 60, opacity: ad}}>
-          <Gem size={320} rotY={f * 0.02} tilt={0.4} glow={0.2} />
+        <div style={{position: 'absolute', left: 150, top: 160, opacity: ad, transform: `scale(${0.8 + 0.2 * ad})`}}>
+          <Gem size={600} rotY={f * 0.02} tilt={0.4} glow={0.2} />
         </div>
         <div style={{position: 'absolute', left: 50, right: 50, bottom: 40, fontFamily: 'Playfair Display', fontSize: 30, color: '#5a4a34', opacity: ad, textAlign: 'center', fontStyle: 'italic'}}>
           — a magazine advertisement, 1940s style —
@@ -186,8 +206,8 @@ const BridesScene: React.FC = () => {
   const fEight = t.find('L05', 'eight');
   return (
     <AbsoluteFill style={{background: velvet}}>
-      <div style={{...center, top: 160, fontFamily: 'Oswald', fontWeight: 700, fontSize: 56, color: D.ice, letterSpacing: 8, opacity: prog(f, fFew - 6, fFew + 2)}}>WITHIN A FEW DECADES</div>
-      <div style={{position: 'absolute', left: 60, top: 280, display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '30px 20px', width: 960}}>
+      <div style={{...center, top: 110, fontFamily: 'Oswald', fontWeight: 700, fontSize: 56, color: D.ice, letterSpacing: 8, opacity: prog(f, fFew - 6, fFew + 2)}}>WITHIN A FEW DECADES</div>
+      <div style={{position: 'absolute', left: 60, top: 210, display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '30px 20px', width: 960}}>
         {Array.from({length: 10}).map((_, i) => {
           const lit = i < 8 ? prog(f, fEight - 8 + i * 2, fEight + i * 2, EZ.back) : 0;
           return (
@@ -200,8 +220,26 @@ const BridesScene: React.FC = () => {
           );
         })}
       </div>
-      <div style={{...center, top: 980, ...big, fontSize: 160, color: '#fff', opacity: prog(f, fEight, fEight + 6), textShadow: '0 0 40px rgba(207,230,255,.6)'}}>
+      <div style={{...center, top: 1130, ...big, fontSize: 150, color: '#fff', opacity: prog(f, fEight, fEight + 6), textShadow: '0 0 40px rgba(207,230,255,.6)'}}>
         <span style={{color: '#7a7090'}}>1 IN 10</span> → <span style={{color: D.gold}}>8 IN 10</span>
+      </div>
+      {/* the climb as bars: 1939 vs a few decades later */}
+      <div style={{position: 'absolute', left: 110, top: 1320, width: 820}}>
+        {[
+          ['1939', 0.1, '#7a7090', fFew],
+          ['1990', 0.8, D.gold, fEight],
+        ].map(([l, v, c, at], i) => {
+          const p = prog(f, (at as number) - 2, (at as number) + 16, EZ.inOut);
+          return (
+            <div key={i} style={{display: 'flex', alignItems: 'center', gap: 22, marginBottom: 26, opacity: prog(f, (at as number) - 6, at as number)}}>
+              <div style={{width: 130, ...big, fontSize: 60, color: D.cream}}>{l as string}</div>
+              <div style={{flex: 1, height: 70, borderRadius: 12, background: 'rgba(255,255,255,.08)', overflow: 'hidden'}}>
+                <div style={{height: '100%', width: `${(v as number) * 100 * p}%`, background: c as string, borderRadius: 12, boxShadow: `0 0 26px ${c}`}} />
+              </div>
+              <div style={{width: 120, ...big, fontSize: 56, color: '#fff', textAlign: 'right'}}>{Math.round((v as number) * 100 * p)}%</div>
+            </div>
+          );
+        })}
       </div>
     </AbsoluteFill>
   );
@@ -217,7 +255,7 @@ const SalaryScene: React.FC = () => {
     Array.from({length: n}).map((_, i) => {
       const p = prog(f, at + i * 3, at + i * 3 + 10, EZ.back);
       return (
-        <div key={i} style={{position: 'absolute', left: x, top: 820 - i * 60 - (1 - p) * 300, width: 380, height: 220, borderRadius: 14, background: 'linear-gradient(160deg,#efe7d2,#d9caa6)', boxShadow: '0 16px 40px rgba(0,0,0,.5)', opacity: p, transform: `rotate(${(rnd(i + x) - 0.5) * 8}deg)`}}>
+        <div key={i} style={{position: 'absolute', left: x, top: 1300 - i * 60 - (1 - p) * 300, width: 380, height: 220, borderRadius: 14, background: 'linear-gradient(160deg,#efe7d2,#d9caa6)', boxShadow: '0 16px 40px rgba(0,0,0,.5)', opacity: p, transform: `rotate(${(rnd(i + x) - 0.5) * 8}deg)`}}>
           <div style={{position: 'absolute', left: 24, top: 20, fontFamily: 'Oswald', fontWeight: 700, fontSize: 28, color: '#5a4a2a', letterSpacing: 4}}>PAYCHECK</div>
           <div style={{position: 'absolute', right: 24, top: 70, fontFamily: 'Playfair Display', fontWeight: 900, fontSize: 70, color: '#2f5a2c'}}>$$$</div>
           <div style={{position: 'absolute', left: 24, bottom: 24, width: 200, height: 4, background: '#8a7a5a'}} />
@@ -226,16 +264,16 @@ const SalaryScene: React.FC = () => {
     });
   return (
     <AbsoluteFill style={{background: 'radial-gradient(ellipse at 50% 40%, #2a2a18, #090905 78%)'}}>
-      <div style={{position: 'absolute', left: 80, top: 150, width: 920, padding: '30px 40px', background: D.cream, transform: 'rotate(-1.5deg)', boxShadow: '0 30px 70px rgba(0,0,0,.6)', opacity: prog(f, fSpend - 10, fSpend)}}>
-        <div style={{fontFamily: 'Playfair Display', fontStyle: 'italic', fontWeight: 700, fontSize: 48, color: '#2a2016', lineHeight: 1.25}}>
+      <div style={{position: 'absolute', left: 70, top: 130, width: 940, padding: '40px 46px', background: D.cream, transform: 'rotate(-1.5deg)', boxShadow: '0 30px 70px rgba(0,0,0,.6)', opacity: prog(f, fSpend - 10, fSpend)}}>
+        <div style={{fontFamily: 'Playfair Display', fontStyle: 'italic', fontWeight: 700, fontSize: 64, color: '#2a2016', lineHeight: 1.22}}>
           "Isn't two months' salary a small price to pay for something that lasts forever?"
         </div>
         <div style={{fontFamily: 'Oswald', fontWeight: 700, fontSize: 28, color: '#8a6a2a', letterSpacing: 4, marginTop: 14}}>— DIAMOND ADVERTISING, 1980s</div>
       </div>
       {stack(1, 140, fOne - 4)}
       {stack(2, 580, fTwo - 4)}
-      <div style={{position: 'absolute', left: 140, top: 1080, width: 380, textAlign: 'center', ...big, fontSize: 70, color: D.cream, opacity: prog(f, fOne, fOne + 6)}}>1 MONTH</div>
-      <div style={{position: 'absolute', left: 580, top: 1080, width: 380, textAlign: 'center', ...big, fontSize: 70, color: D.gold, opacity: prog(f, fTwo, fTwo + 6)}}>2 MONTHS</div>
+      <div style={{position: 'absolute', left: 140, top: 1550, width: 380, textAlign: 'center', ...big, fontSize: 70, color: D.cream, opacity: prog(f, fOne, fOne + 6)}}>1 MONTH</div>
+      <div style={{position: 'absolute', left: 580, top: 1550, width: 380, textAlign: 'center', ...big, fontSize: 70, color: D.gold, opacity: prog(f, fTwo, fTwo + 6)}}>2 MONTHS</div>
     </AbsoluteFill>
   );
 };
@@ -250,25 +288,25 @@ const MineScene: React.FC = () => {
   const gate = prog(f, fCtrl - 6, fCtrl + 6, EZ.inOut);
   return (
     <AbsoluteFill style={{background: 'radial-gradient(ellipse at 50% 30%, #1c1810, #050403 80%)'}}>
-      <div style={{...center, top: 140, ...big, fontSize: 96, color: '#fff', opacity: prog(f, fRare - 6, fRare + 2) * (1 - prog(f, fMines - 4, fMines + 2))}}>
+      <div style={{...center, top: 200, ...big, fontSize: 120, color: '#fff', opacity: prog(f, fRare - 6, fRare + 2) * (1 - prog(f, fMines - 4, fMines + 2))}}>
         NOT ESPECIALLY <span style={{color: D.red}}>RARE</span>
       </div>
       {/* conveyor of rough stones pouring into a vault */}
       {Array.from({length: 60}).map((_, i) => {
         const at = fMines + rnd(i) * (fCtrl - fMines);
         const tt = f - at;
-        if (tt < 0 || tt > 70) return null;
+        if (tt < 0 || tt > 80) return null;
         const blocked = f > fCtrl;
-        const y = 260 + tt * 11;
-        const stop = blocked ? Math.min(y, 760) : y;
+        const y = 420 + tt * 11;
+        const stop = blocked ? Math.min(y, 1170) : y;
         return <div key={i} style={{position: 'absolute', left: 300 + rnd(i + 4) * 480, top: stop, width: 26 + rnd(i + 2) * 18, height: 22 + rnd(i + 3) * 16, background: 'linear-gradient(135deg,#e8f2ff,#9fb2c8)', clipPath: 'polygon(20% 0, 80% 0, 100% 50%, 70% 100%, 20% 100%, 0 45%)', opacity: 0.9}} />;
       })}
-      <div style={{...center, top: 200, opacity: prog(f, fMines - 2, fMines + 6)}}>
+      <div style={{...center, top: 150, opacity: prog(f, fMines - 2, fMines + 6)}}>
         <Odometer from={0} to={100000000} a={fMines} b={fYear + 4} style={{...big, fontSize: 150, color: D.ice, justifyContent: 'center', textShadow: '0 0 40px rgba(207,230,255,.5)'}} />
         <div style={{fontFamily: 'Oswald', fontWeight: 700, fontSize: 46, color: D.cream, letterSpacing: 8}}>CARATS MINED · EVERY YEAR</div>
       </div>
       {/* the vault and its gate */}
-      <div style={{position: 'absolute', left: 190, top: 800, width: 700, height: 360, borderRadius: 20, background: 'linear-gradient(180deg,#3a3f48,#1a1d22)', boxShadow: 'inset 0 0 0 8px #555c68, 0 30px 80px rgba(0,0,0,.6)', overflow: 'hidden'}}>
+      <div style={{position: 'absolute', left: 150, top: 1200, width: 780, height: 400, borderRadius: 20, background: 'linear-gradient(180deg,#3a3f48,#1a1d22)', boxShadow: 'inset 0 0 0 8px #555c68, 0 30px 80px rgba(0,0,0,.6)', overflow: 'hidden'}}>
         {Array.from({length: 5}).map((_, k) => <div key={k} style={{position: 'absolute', left: 30, right: 30, top: 40 + k * 64, height: 10, background: '#2a2e35'}} />)}
         {Array.from({length: 36}).map((_, i) => <div key={i} style={{position: 'absolute', left: 50 + (i % 12) * 50, top: 26 + Math.floor(i / 12) * 64, width: 30, height: 24, background: 'linear-gradient(135deg,#e8f2ff,#8aa0b8)', clipPath: 'polygon(20% 0, 80% 0, 100% 50%, 70% 100%, 20% 100%, 0 45%)', opacity: 0.85}} />)}
         <div style={{position: 'absolute', left: 0, right: 0, top: 0, height: `${gate * 100}%`, background: 'repeating-linear-gradient(90deg,#6a717c 0 18px,#3a3f48 18px 40px)', boxShadow: '0 10px 30px rgba(0,0,0,.6)'}} />
@@ -288,24 +326,24 @@ const ResaleScene: React.FC = () => {
   return (
     <AbsoluteFill style={{background: 'radial-gradient(ellipse at 50% 35%, #2a2018, #080605 78%)'}}>
       {/* jeweler behind the counter with a loupe */}
-      <div style={{position: 'absolute', left: 540 - 230, top: 120, opacity: prog(f, fSell - 8, fSell + 2)}}>
-        <Person skin={SKIN[1]} hair="receding" hairColor={HAIRC.grey} outfit="vest" cloth="#3a2e24" tie="#6a2a2a" age={0.75} glasses={false} loupe mood={f >= fFrac ? 'stern' : 'neutral'} look={0.2} rim="#ffd9a0" w={460} seed={51} />
+      <div style={{position: 'absolute', left: 540 - 260, top: 90, opacity: prog(f, fSell - 8, fSell + 2)}}>
+        <Person skin={SKIN[1]} hair="receding" hairColor={HAIRC.grey} outfit="vest" cloth="#3a2e24" tie="#6a2a2a" age={0.75} glasses={false} loupe mood={f >= fFrac ? 'stern' : 'neutral'} look={0.2} rim="#ffd9a0" w={520} seed={51} />
       </div>
-      <div style={{position: 'absolute', left: 0, right: 0, top: 700, height: 40, background: 'linear-gradient(180deg,#5a4030,#2a1c12)', boxShadow: '0 -10px 30px rgba(0,0,0,.5)'}} />
-      <div style={{position: 'absolute', left: 390, top: 600}}><Gem size={300} rotY={f * 0.02} tilt={0.5} glow={0.4} /></div>
+      <div style={{position: 'absolute', left: 0, right: 0, top: 740, height: 40, background: 'linear-gradient(180deg,#5a4030,#2a1c12)', boxShadow: '0 -10px 30px rgba(0,0,0,.5)'}} />
+      <div style={{position: 'absolute', left: 410, top: 640}}><Gem size={260} rotY={f * 0.02} tilt={0.5} glow={0.4} /></div>
       {/* paid vs offered */}
-      <div style={{position: 'absolute', left: 120, top: 820, width: 840}}>
+      <div style={{position: 'absolute', left: 110, top: 1130, width: 840}}>
         {[
           ['YOU PAID', 1, D.gold],
           ['THEY OFFER', offer, D.red],
         ].map(([l, v, c], i) => (
-          <div key={i} style={{display: 'flex', alignItems: 'center', marginBottom: 26, opacity: prog(f, fSell + i * 8, fSell + i * 8 + 8)}}>
-            <div style={{width: 260, fontFamily: 'Oswald', fontWeight: 700, fontSize: 44, color: '#fff', letterSpacing: 3}}>{l as string}</div>
-            <div style={{height: 70, width: `${(v as number) * 70}%`, background: c as string, borderRadius: 10, boxShadow: `0 0 24px ${c}`}} />
+          <div key={i} style={{display: 'flex', alignItems: 'center', marginBottom: 30, opacity: prog(f, fSell + i * 8, fSell + i * 8 + 8)}}>
+            <div style={{width: 270, fontFamily: 'Oswald', fontWeight: 700, fontSize: 46, color: '#fff', letterSpacing: 3}}>{l as string}</div>
+            <div style={{height: 84, width: `${(v as number) * 68}%`, background: c as string, borderRadius: 10, boxShadow: `0 0 24px ${c}`}} />
           </div>
         ))}
       </div>
-      <div style={{...center, top: 1080, ...big, fontSize: 100, color: D.red, opacity: prog(f, fHalf, fHalf + 6)}}>LESS THAN HALF</div>
+      <div style={{...center, top: 1390, ...big, fontSize: 130, color: D.red, opacity: prog(f, fHalf, fHalf + 6), transform: `scale(${0.85 + 0.15 * prog(f, fHalf, fHalf + 10, EZ.back)})`}}>LESS THAN HALF</div>
     </AbsoluteFill>
   );
 };
@@ -338,17 +376,20 @@ const LabScene: React.FC = () => {
             <div style={{fontFamily: 'Oswald', fontWeight: 700, fontSize: 40, color: '#fff', letterSpacing: 3, lineHeight: 1.1}}>{l}<br /><span style={{fontSize: 26, color: '#9fe0a0'}}>CARBON ✓ HARDNESS 10 ✓</span></div>
           </div>
         ))}
-        <div style={{...big, fontSize: 70, color: '#9fe0a0', marginTop: 10}}>IDENTICAL</div>
+      </div>
+      <div style={{...center, top: 1150, ...big, fontSize: 170, color: '#9fe0a0', opacity: prog(f, fId - 2, fId + 6) * (1 - prog(f, f61 - 6, f61 + 2)), textShadow: '0 0 40px rgba(159,224,160,.45)', transform: `scale(${0.85 + 0.15 * prog(f, fId - 2, fId + 10, EZ.back)})`}}>
+        MINED <span style={{color: '#fff'}}>=</span> LAB
+        <div style={{fontFamily: 'Oswald', fontWeight: 700, fontSize: 42, color: '#c9b8ff', letterSpacing: 6, marginTop: 14}}>SAME CARBON · SAME CRYSTAL</div>
       </div>
       {/* 61% */}
-      <div style={{position: 'absolute', left: 540 - R, top: 300 - R + 120, opacity: prog(f, f61 - 6, f61 + 2)}}>
+      <div style={{position: 'absolute', left: 540 - R * 1.6, top: 160, opacity: prog(f, f61 - 6, f61 + 2), transform: 'scale(1.6)', transformOrigin: '0 0'}}>
         <svg width={R * 2} height={R * 2} viewBox={`${-R} ${-R} ${R * 2} ${R * 2}`} style={{overflow: 'visible'}}>
           <circle r={R} fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.25)" strokeWidth={3} />
           <path d={pieD} fill="#b69cff" style={{filter: 'drop-shadow(0 0 16px rgba(182,156,255,.8))'}} />
         </svg>
       </div>
-      <div style={{...center, top: 800, opacity: prog(f, f61, f61 + 6)}}>
-        <div style={{...big, fontSize: 190, color: '#fff'}}>{Math.round(pie * 100)}%</div>
+      <div style={{...center, top: 1120, opacity: prog(f, f61, f61 + 6)}}>
+        <div style={{...big, fontSize: 230, color: '#fff'}}>{Math.round(pie * 100)}%</div>
         <div style={{fontFamily: 'Oswald', fontWeight: 700, fontSize: 40, color: '#c9b8ff', letterSpacing: 5}}>OF COUPLES CHOSE LAB-GROWN · THE KNOT, 2025</div>
       </div>
     </AbsoluteFill>
@@ -366,26 +407,37 @@ const ClosedScene: React.FC = () => {
   const pts = Array.from({length: 30}, (_, i) => {
     const x = i / 29;
     const y = x < 0.25 ? 0.1 + x * 0.1 : 0.125 + (x - 0.25) * 1.15 + 0.03 * Math.sin(i * 1.3);
-    return `${80 + x * 920 * Math.min(1, crash * 1.05)},${700 + Math.min(0.95, y) * 420}`;
+    return `${80 + x * 860 * Math.min(1, crash * 1.05)},${1150 + Math.min(0.95, y) * 440}`;
   }).join(' ');
   return (
     <AbsoluteFill style={{background: 'radial-gradient(ellipse at 50% 30%, #1a1424, #050308 80%)'}}>
       {/* shop window + sign */}
-      <div style={{position: 'absolute', left: 120, top: 130, width: 840, height: 460, borderRadius: 16, background: 'linear-gradient(180deg,#22202c,#121018)', boxShadow: 'inset 0 0 0 8px #3a3646'}}>
+      <div style={{position: 'absolute', left: 100, top: 110, width: 880, height: 700, borderRadius: 16, background: 'linear-gradient(180deg,#22202c,#121018)', boxShadow: 'inset 0 0 0 8px #3a3646'}}>
         <div style={{position: 'absolute', left: 0, right: 0, top: 30, textAlign: 'center', fontFamily: 'Playfair Display', fontWeight: 900, fontSize: 64, color: '#e8e2ff', letterSpacing: 4}}>LAB DIAMOND BOUTIQUE</div>
-        <div style={{position: 'absolute', left: 300, top: 140, width: 240, height: 150, perspective: 800}}>
+        <div style={{position: 'absolute', left: 320, top: 140, width: 240, height: 150, perspective: 800}}>
           <div style={{position: 'absolute', inset: 0, background: flip < 0.5 ? '#2fbf5a' : D.red, borderRadius: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', ...big, fontSize: 70, color: '#fff', transform: `rotateY(${flip * 180}deg)`}}>
             <span style={{transform: flip >= 0.5 ? 'scaleX(-1)' : 'none'}}>{flip < 0.5 ? 'OPEN' : 'CLOSED'}</span>
           </div>
         </div>
-        <div style={{position: 'absolute', left: 0, right: 0, top: 330, textAlign: 'center', fontFamily: 'Oswald', fontWeight: 700, fontSize: 34, color: '#b0a8c8', letterSpacing: 4, opacity: prog(f, fShut + 6, fShut + 14)}}>DE BEERS' OWN LAB BRAND · CLOSED 2025</div>
+        {/* window display: lab stones with price tags, going dark when it closes */}
+        <div style={{position: 'absolute', left: 60, right: 60, top: 330, display: 'flex', justifyContent: 'space-around', opacity: 1 - 0.65 * flip, filter: `saturate(${1 - flip * 0.8})`}}>
+          {[0, 1, 2].map((i) => (
+            <div key={i} style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+              <Gem size={170} rotY={f * 0.02 + i * 0.7} tilt={0.45} glow={0.5} />
+              <div style={{marginTop: -4, padding: '4px 14px', background: '#e8e2ff', color: '#2a2436', fontFamily: 'JetBrains Mono', fontWeight: 700, fontSize: 26, borderRadius: 6, transform: `rotate(${(i - 1) * 4}deg)`}}>LAB · 1 CT</div>
+            </div>
+          ))}
+        </div>
+        <div style={{position: 'absolute', left: 50, right: 50, top: 590, height: 16, borderRadius: 6, background: 'linear-gradient(180deg,#4a4458,#24202e)'}} />
+        <div style={{position: 'absolute', left: 0, right: 0, top: 630, textAlign: 'center', fontFamily: 'Oswald', fontWeight: 700, fontSize: 36, color: '#b0a8c8', letterSpacing: 4, opacity: prog(f, fShut + 6, fShut + 14)}}>DE BEERS' OWN LAB BRAND · CLOSED 2025</div>
       </div>
       <svg width={1080} height={1920} style={{position: 'absolute', inset: 0, opacity: prog(f, fFell - 8, fFell)}}>
-        <line x1={80} x2={1000} y1={700} y2={700} stroke="rgba(255,255,255,.12)" strokeWidth={2} />
+        <line x1={80} x2={940} y1={1150} y2={1150} stroke="rgba(255,255,255,.12)" strokeWidth={2} />
+        <line x1={80} x2={80} y1={1150} y2={1600} stroke="rgba(255,255,255,.12)" strokeWidth={2} />
         <polyline points={pts} fill="none" stroke={D.red} strokeWidth={10} strokeLinejoin="round" strokeLinecap="round" style={{filter: 'drop-shadow(0 0 14px rgba(216,67,58,.8))'}} />
-        <text x={90} y={680} fontFamily="Oswald" fontWeight={700} fontSize={32} fill="#b0a8c8" letterSpacing={3}>LAB-GROWN WHOLESALE PRICE</text>
+        <text x={90} y={1130} fontFamily="Oswald" fontWeight={700} fontSize={32} fill="#b0a8c8" letterSpacing={3}>LAB-GROWN WHOLESALE PRICE</text>
       </svg>
-      <div style={{position: 'absolute', right: 80, top: 960, ...big, fontSize: 170, color: D.red, opacity: prog(f, fNinety, fNinety + 6), textShadow: '0 0 40px rgba(216,67,58,.6)'}}>−90%</div>
+      <div style={{position: 'absolute', left: 100, top: 1410, ...big, fontSize: 180, color: D.red, opacity: prog(f, fNinety, fNinety + 6), textShadow: '0 0 40px rgba(216,67,58,.6)'}}>−90%</div>
     </AbsoluteFill>
   );
 };
@@ -398,17 +450,17 @@ const EndScene: React.FC = () => {
   const loop = prog(f, t.frames - 20, t.frames, EZ.inOut);
   return (
     <AbsoluteFill style={{background: velvet}}>
-      <div style={{position: 'absolute', left: 30, top: 380, opacity: 1 - loop}}>
+      <div style={{position: 'absolute', left: 30, top: 1110, opacity: 1 - loop}}>
         <Person skin={SKIN[2]} hair="side" hairColor={HAIRC.black} outfit="suit" cloth="#2a2f3a" tie="#8a2a3a" age={0.25} mood="smile" look={0.8} rim="#ffd9e0" w={420} seed={61} />
       </div>
-      <div style={{position: 'absolute', left: 630, top: 380, opacity: 1 - loop}}>
+      <div style={{position: 'absolute', left: 630, top: 1110, opacity: 1 - loop}}>
         <Person skin={SKIN[0]} hair="long" hairColor={HAIRC.auburn} outfit="blouse" cloth="#f4f1ea" age={0.2} earrings mood="smile" look={-0.8} rim="#ffd9e0" w={420} seed={62} />
       </div>
-      <div style={{position: 'absolute', left: 540 - 170, top: 170 + loop * 0, transform: `scale(${1 + loop * 0.75})`, transformOrigin: '50% 60%'}}>
-        <Gem size={340} rotY={f * 0.022} tilt={0.42} />
+      <div style={{position: 'absolute', left: 540 - 210, top: 110 + loop * 112, transform: `scale(${1 - loop * 0.214})`, transformOrigin: '50% 0%'}}>
+        <Gem size={420} rotY={f * 0.022} tilt={0.42} />
       </div>
-      <div style={{position: 'absolute', left: 60, top: 1000, ...big, fontSize: 110, color: '#ff9ab0', opacity: prog(f, fLove - 4, fLove + 4) * (1 - loop)}}>LOVE?</div>
-      <div style={{position: 'absolute', right: 60, top: 1000, ...big, fontSize: 110, color: D.gold, opacity: prog(f, fAd - 4, fAd + 4) * (1 - loop)}}>OR AN AD?</div>
+      <div style={{position: 'absolute', left: 60, top: 620, ...big, fontSize: 130, color: '#ff9ab0', opacity: prog(f, fLove - 4, fLove + 4) * (1 - loop)}}>LOVE?</div>
+      <div style={{position: 'absolute', right: 60, top: 620, ...big, fontSize: 130, color: D.gold, opacity: prog(f, fAd - 4, fAd + 4) * (1 - loop)}}>OR AN AD?</div>
     </AbsoluteFill>
   );
 };
@@ -464,7 +516,7 @@ export const Diamonds: React.FC = () => {
       <FlareSweep at={t.find('L04', 'a', 10) - 4} color="#fff3d8" />
       <FlareSweep at={t.find('L09', 'sixty-one') - 4} color="#e8dcff" />
       <Flash at={[t.find('L07', 'controlled')]} peak={0.25} />
-      <Captions t={t as T} accent={D.gold} y={1330} />
+      <CenterCaptions t={t as T} accent={D.gold} hide={[[t.find('L04', 'a', 10) - 2, S('L05', -0.1)]]} />
       <Vignette strength={0.7} />
       <Grain opacity={0.08} />
     </AbsoluteFill>
