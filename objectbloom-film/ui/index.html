@@ -1,0 +1,123 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>
+@font-face{font-family:Manrope;font-weight:400;src:url(../film/assets/fonts/Manrope-400.ttf)}
+@font-face{font-family:Manrope;font-weight:500;src:url(../film/assets/fonts/Manrope-500.ttf)}
+@font-face{font-family:Manrope;font-weight:600;src:url(../film/assets/fonts/Manrope-600.ttf)}
+@font-face{font-family:Manrope;font-weight:700;src:url(../film/assets/fonts/Manrope-700.ttf)}
+@font-face{font-family:Manrope;font-weight:800;src:url(../film/assets/fonts/Manrope-800.ttf)}
+:root{--page:#f4f4ef;--panel:#fbfbf8;--ink:#233432;--mute:#7c8a86;--line:#e2e5dc;--green:#26483e;--teal:#178378;--row:#dceade}
+*{box-sizing:border-box;margin:0}
+html,body{width:1920px;height:1200px;overflow:hidden;background:var(--page);font-family:Manrope,sans-serif;color:var(--ink)}
+#app{position:absolute;inset:0}
+.side{position:absolute;left:0;top:0;bottom:0;width:104px;background:var(--green);display:flex;flex-direction:column;align-items:center;padding-top:34px;gap:34px}
+.side .logo{width:48px;height:48px}
+.side .ic{width:44px;height:44px;border-radius:13px;background:rgba(255,255,255,.08)}
+.side .ic.on{background:rgba(255,255,255,.95)}
+.head{position:absolute;left:152px;top:44px;right:48px;height:70px;display:flex;align-items:center;justify-content:space-between}
+.head h1{font-size:46px;font-weight:700;letter-spacing:-1px}
+.head .sub{font-size:21px;color:var(--mute);font-weight:500;margin-top:2px}
+.pill{font-size:20px;font-weight:600;padding:13px 24px;border-radius:999px;border:2px solid var(--line);background:var(--panel)}
+.pill.go{background:var(--green);color:#fff;border-color:var(--green)}
+.card{position:absolute;background:var(--panel);border:2px solid var(--line);border-radius:26px;padding:30px 34px;will-change:transform}
+.lab{font-size:21px;color:var(--mute);font-weight:600}
+.big{font-size:60px;font-weight:700;letter-spacing:-2px;margin-top:10px;font-variant-numeric:tabular-nums}
+.delta{position:absolute;right:30px;top:30px;font-size:19px;font-weight:700;color:var(--teal);background:var(--row);padding:6px 13px;border-radius:999px}
+.ttl{font-size:26px;font-weight:700}
+.tsub{font-size:19px;color:var(--mute);font-weight:500;margin-top:4px}
+svg{position:absolute;left:0;top:0;overflow:visible}
+.row{position:absolute;left:34px;right:34px;height:62px;display:flex;align-items:center;gap:20px;font-size:21px;font-weight:600;border-top:2px solid var(--line)}
+.row .dot{width:38px;height:38px;border-radius:11px;background:var(--row)}
+.row .r{margin-left:auto;color:var(--mute);font-weight:500}
+.row .tag{font-size:17px;font-weight:700;color:var(--teal);background:var(--row);padding:5px 12px;border-radius:999px}
+#slot{position:absolute;border:3px dashed #c9d2c6;border-radius:26px;display:none}
+#cursor{position:absolute;width:34px;height:34px;z-index:9}
+</style>
+<div id="app">
+  <div class="side">
+    <svg class="logo" viewBox="-50 -50 100 100" style="position:static" id="mark"></svg>
+    <div class="ic on"></div><div class="ic"></div><div class="ic"></div><div class="ic"></div><div class="ic"></div>
+  </div>
+  <div class="head"><div><h1>Overview</h1><div class="sub">Spring launch · last 7 days</div></div>
+    <div style="display:flex;gap:14px"><div class="pill">7 days</div><div class="pill">Compare</div><div class="pill go">Export</div></div></div>
+  <div id="cards"></div>
+  <div id="slot"></div>
+  <svg id="cursor" viewBox="0 0 24 24"><path d="M4 2 L4 19 L8.6 14.8 L11.8 22 L14.6 20.8 L11.5 13.8 L18 13.6 Z" fill="#233432" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg>
+</div>
+<script>
+const Q = new URLSearchParams(location.search);
+const NOBARS = Q.has('nobars');
+const ease = t => t<=0?0:t>=1?1:1-Math.pow(1-t,3);
+const eio = t => t<=0?0:t>=1?1:t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+const back = t => {t=Math.min(1,Math.max(0,t));const c=1.70158;return 1+(c+1)*Math.pow(t-1,3)+c*Math.pow(t-1,2)};
+const pr = (f,a,b) => (f-a)/(b-a);
+// the bloom mark
+(() => {let s='';for(let k=0;k<8;k++){const a=k*45;s+=`<path transform="rotate(${a})" d="M0 0 C 14 -10, 34 -9, 44 0 C 34 9, 14 10, 0 0Z" fill="none" stroke="#fff" stroke-width="3.2"/>`}
+ document.getElementById('mark').innerHTML=s+'<circle r="5" fill="#fff"/>'})();
+const X0=152, R=1872, G=28;
+const kpiW=(R-X0-3*G)/4;
+const KPI=[['Revenue',1284,'$','K','+12.4%'],['Active users',48210,'','','+8.1%'],['Conversion',4.8,'','%','+0.6 pt'],['Avg. order',86.4,'$','','+3.2%']];
+const BARS=[0.34,0.47,0.41,0.62,0.55,0.92,0.76], HI=5, DAYS=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+const C={ // card rects
+  kpi:i=>({x:X0+i*(kpiW+G),y:150,w:kpiW,h:170}),
+  line:{x:X0,y:348,w:1000,h:500},
+  bars:{x:X0+1000+G,y:348,w:R-X0-1000-G,h:500},
+  table:{x:X0,y:876,w:1000,h:290},
+  donut:{x:X0+1000+G,y:876,w:R-X0-1000-G,h:290},
+};
+const cards=document.getElementById('cards');
+function mk(id,r,html){const d=document.createElement('div');d.className='card';d.id=id;Object.assign(d.style,{left:r.x+'px',top:r.y+'px',width:r.w+'px',height:r.h+'px'});d.innerHTML=html;cards.appendChild(d);return d}
+KPI.forEach((k,i)=>mk('k'+i,C.kpi(i),`<div class="lab">${k[0]}</div><div class="big" id="kv${i}"></div><div class="delta">${k[4]}</div>`));
+mk('line',C.line,`<div class="ttl">Growth</div><div class="tsub">Revenue, this launch vs. the last</div><svg id="ls" width="1000" height="500"></svg>`);
+mk('bars',C.bars,`<div class="ttl">Weekly signups</div><div class="tsub">New accounts per day</div><svg id="bs" width="${C.bars.w}" height="500"></svg>`);
+mk('table',C.table,`<div class="ttl">Recent activity</div><div id="rows"></div>`);
+mk('donut',C.donut,`<div class="ttl">Channels</div><div class="tsub">Where signups came from</div><svg id="ds" width="${C.donut.w}" height="290"></svg>`);
+const ROWS=[['Checkout flow v3 shipped','Live','2 min'],['Pricing page experiment','Running','18 min'],['Onboarding emails','Scheduled','1 h']];
+document.getElementById('rows').innerHTML=ROWS.map((r,i)=>`<div class="row" id="row${i}" style="top:${92+i*62}px"><div class="dot"></div>${r[0]}<span class="tag">${r[1]}</span><span class="r">${r[2]} ago</span></div>`).join('');
+// line chart geometry
+const LP=(()=>{const n=40,pts=[],pts2=[];for(let i=0;i<=n;i++){const t=i/n;pts.push([60+t*890,400-(40+250*Math.pow(t,1.7)+26*Math.sin(t*9)+14*Math.sin(t*23))]);pts2.push([60+t*890,400-(30+150*t+18*Math.sin(t*7+1))])}return [pts,pts2]})();
+const path=p=>p.map((q,i)=>(i?'L':'M')+q[0].toFixed(1)+' '+q[1].toFixed(1)).join(' ');
+// bar chart geometry (inside the bars card)
+const BW=C.bars.w, bx0=70, bx1=BW-50, by=420, bh=280, bw=46;
+const barX=i=>bx0+(bx1-bx0)*(i+0.5)/7;
+window.LAYOUT=()=>({card:C.bars,bars:BARS.map((v,i)=>({x:C.bars.x+barX(i),y:C.bars.y+by,w:bw,h:v*bh})),hi:HI,screen:[1920,1200]});
+const DETACH=108;
+window.setFrame=function(f){
+  KPI.forEach((k,i)=>{const p=ease(pr(f,2+i*3,20+i*3));const el=document.getElementById('k'+i);el.style.opacity=p;el.style.transform=`translateY(${(1-p)*40}px)`;
+    const c=ease(pr(f,8+i*3,50+i*3))*k[1];document.getElementById('kv'+i).textContent=k[2]+(k[1]<100?c.toFixed(1):Math.round(c).toLocaleString('en-US'))+k[3]});
+  [['line',10],['bars',14],['table',20],['donut',24]].forEach(([id,a])=>{const p=ease(pr(f,a,a+20));const el=document.getElementById(id);el.style.opacity=p;el.style.transform=`translateY(${(1-p)*50}px)`});
+  // line chart
+  const lp=eio(pr(f,22,74));const n=Math.max(2,Math.round(lp*LP[0].length));
+  const a=LP[0].slice(0,n), b=LP[1].slice(0,n);
+  let g='';for(let i=0;i<5;i++)g+=`<line x1="60" x2="950" y1="${400-i*75}" y2="${400-i*75}" stroke="#e2e5dc" stroke-width="2"/>`;
+  g+=`<path d="${path(b)}" fill="none" stroke="#c3ccc4" stroke-width="4" stroke-dasharray="3 10" stroke-linecap="round"/>`;
+  g+=`<path d="${path(a)} L${a[a.length-1][0]} 400 L60 400 Z" fill="#178378" opacity=".12"/><path d="${path(a)}" fill="none" stroke="#178378" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>`;
+  const e=a[a.length-1];g+=`<circle cx="${e[0]}" cy="${e[1]}" r="${10+3*Math.sin(f/5)}" fill="#fff" stroke="#178378" stroke-width="6"/>`;
+  document.getElementById('ls').innerHTML=g;
+  // bars
+  let s=`<line x1="${bx0-20}" x2="${bx1+20}" y1="${by}" y2="${by}" stroke="#e2e5dc" stroke-width="3"/>`;
+  for(let i=1;i<4;i++)s+=`<line x1="${bx0-20}" x2="${bx1+20}" y1="${by-i*bh/3}" y2="${by-i*bh/3}" stroke="#eceee6" stroke-width="2"/>`;
+  BARS.forEach((v,i)=>{const p=back(pr(f,30+i*4,58+i*4));const h=Math.max(0,v*bh*p);
+    if(!NOBARS)s+=`<rect x="${barX(i)-bw/2}" y="${by-h}" width="${bw}" height="${h}" fill="${i==HI?'#178378':'#26483e'}"/>`;
+    s+=`<text x="${barX(i)}" y="${by+38}" text-anchor="middle" font-size="19" font-weight="600" fill="#7c8a86">${DAYS[i]}</text>`});
+  document.getElementById('bs').innerHTML=s;
+  // table rows
+  ROWS.forEach((r,i)=>{const p=ease(pr(f,44+i*7,62+i*7));const el=document.getElementById('row'+i);el.style.opacity=p;el.style.transform=`translateX(${(1-p)*-40}px)`});
+  // donut
+  const dp=eio(pr(f,40,84));const cx=C.donut.w-170,cy=150,r=74;let d='',a0=-Math.PI/2;
+  [[.46,'#26483e'],[.3,'#178378'],[.24,'#c9d6cb']].forEach(([v,c])=>{const a1=a0+v*dp*Math.PI*2;const big=(a1-a0)>Math.PI?1:0;
+    d+=`<path d="M ${cx+r*Math.cos(a0)} ${cy+r*Math.sin(a0)} A ${r} ${r} 0 ${big} 1 ${cx+r*Math.cos(a1)} ${cy+r*Math.sin(a1)}" fill="none" stroke="${c}" stroke-width="30"/>`;a0=a1});
+  [['Search','46%','#26483e'],['Referral','30%','#178378'],['Social','24%','#c9d6cb']].forEach((l,i)=>{d+=`<rect x="34" y="${118+i*46}" width="20" height="20" rx="6" fill="${l[2]}"/><text x="68" y="${136+i*46}" font-size="21" font-weight="600" fill="#233432">${l[0]}</text><text x="230" y="${136+i*46}" font-size="21" font-weight="500" fill="#7c8a86">${l[1]}</text>`});
+  document.getElementById('ds').innerHTML=d;
+  // the cursor picks the bar card up; at DETACH the card leaves the screen (the 3D card takes over)
+  const cu=document.getElementById('cursor');const tgt=[C.bars.x+C.bars.w-90,C.bars.y+60];const from=[1100,1010];
+  const cp=eio(pr(f,72,98));cu.style.left=(from[0]+(tgt[0]-from[0])*cp)+'px';cu.style.top=(from[1]+(tgt[1]-from[1])*cp)+'px';
+  cu.style.opacity=f<66?0:f<DETACH?1:Math.max(0,1-pr(f,DETACH,DETACH+10));
+  const bc=document.getElementById('bars'), slot=document.getElementById('slot');
+  if(f>=DETACH&&!Q.has('card')){bc.style.display='none';Object.assign(slot.style,{display:'block',left:C.bars.x+'px',top:C.bars.y+'px',width:C.bars.w+'px',height:C.bars.h+'px',opacity:Math.min(1,pr(f,DETACH+6,DETACH+24))})}
+  else{bc.style.display='block';slot.style.display='none';
+    if(f>=99){const l=ease(pr(f,99,DETACH));bc.style.boxShadow=`0 ${30*l}px ${70*l}px rgba(35,52,50,${.18*l})`;bc.style.transform=`scale(${1+.012*l})`}else bc.style.boxShadow='none'}
+  if(Q.has('card')){cu.style.opacity=0;bc.style.boxShadow='none';bc.style.transform='none'}
+};
+setFrame(+(Q.get('f')||60));
+</script>

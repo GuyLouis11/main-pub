@@ -1,0 +1,10 @@
+node_modules
+out
+__pycache__
+*.pyc
+film/assets/ui/ui_*.jpg
+film/assets/ui/seq
+audio/*.wav
+audio/raw
+post/mix.wav
+package-lock.json
