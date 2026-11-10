@@ -8,3 +8,4 @@ audio/*.wav
 audio/raw
 post/mix.wav
 package-lock.json
+deliver
