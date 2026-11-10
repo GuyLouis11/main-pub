@@ -4,7 +4,7 @@ import fs from 'fs';
 import path from 'path';
 const N = 150, out = path.resolve('film/assets/ui');
 fs.mkdirSync(out, {recursive: true});
-const exe = process.env.CHROME_PATH || '/opt/pw-browsers/chromium-1243/chrome-linux/chrome';
+const exe = process.env.CHROME_PATH || '/opt/pw-browsers/chromium-1243/chrome-linux64/chrome';
 const b = await chromium.launch({executablePath: exe, args: ['--allow-file-access-from-files']});
 const url = 'file://' + path.resolve('ui/index.html');
 const pg = await b.newPage({viewport: {width: 1920, height: 1200}, deviceScaleFactor: 3});
